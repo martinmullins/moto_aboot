@@ -1,0 +1,80 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = *0x8f7125ec;
+    r6 = 0x8f7125ec;
+    stack[2041] = *0x8f7112f4;
+    if (r5 != 0x0) {
+            r7 = 0x0;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f650614;
+
+loc_8f6504cc:
+    loc_ffffffff8f656968(0x1, "Initializing eMMC\n");
+    r0 = loc_ffffffff8f64aacc(0x50);
+    *0x8f7125ec = r0;
+    if (r0 != 0x0) goto loc_8f6504fc;
+
+loc_8f6504ec:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "ERROR: out of memory\n");
+    goto loc_8f650530;
+
+loc_8f650530:
+    r7 = 0x0 ^ 0xffffffff;
+    goto loc_8f650614;
+
+loc_8f650614:
+    r0 = r7;
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f6504fc:
+    loc_ffffffff8f64adc8();
+    r0 = *0x8f7125ec;
+    r0 = loc_ffffffff8f6066fc(r0);
+    COND = r7 == 0x0;
+    if (COND) goto loc_8f650538;
+
+loc_8f650518:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "ERROR: target_mmc_init() failed\n");
+    r0 = *0x8f7125ec;
+    loc_ffffffff8f64ab9c(r0);
+    *0x8f7125ec = r5;
+    goto loc_8f650530;
+
+loc_8f650538:
+    r12 = *0x8f7125ec;
+    r2 = 0x40000000;
+    r3 = 0x0;
+    asm{ ldrd       r4, r5, [ip, #0x20] };
+    do {
+            if (r3 == r5) {
+                    CMP(r2, 0x8f7125ec);
+            }
+            if (CPU_FLAGS & NB) {
+                break;
+            }
+            r2 = r2 + r2;
+            r3 = r3 + r3 + CARRY(FLAGS);
+    } while (true);
+    *(r12 + 0x28) = r2 >> r2 / 0x40000000 | r3 * 0x4;
+    loc_ffffffff8f656968(0x2, "mmc card: block size=%u\n", *r12);
+    r3 = *r6;
+    loc_ffffffff8f656968(0x2, "mmc card: page size=%u\n", *(r3 + 0x4), r3);
+    r3 = *r6;
+    loc_ffffffff8f656968(0x2, "mmc card: sector size=%u\n", *(r3 + 0x8), r3);
+    r3 = *r6;
+    loc_ffffffff8f656968(0x2, "mmc card: num_blocks=%u\n", *(r3 + 0xc), r3);
+    r3 = *r6;
+    loc_ffffffff8f656968(0x2, "mmc card: num_pages=%u\n", *(r3 + 0x10), r3);
+    r3 = *r6;
+    loc_ffffffff8f656968(0x2, "mmc card: num_sectors=%u\n", *(r3 + 0x14), r3);
+    r0 = 0x2;
+    r1 = "mmc card: size=%llu\n";
+    asm{ ldrd       r2, r3, [r3, #0x20] };
+    loc_ffffffff8f656968(r0, r1);
+    r3 = *r6;
+    loc_ffffffff8f656968(0x2, "mmc card: size_in_gb=%u\n", *(r3 + 0x28), r3);
+    loc_ffffffff8f656968(0x1, "eMMC successfully initialized\n");
+    goto loc_8f650614;
+

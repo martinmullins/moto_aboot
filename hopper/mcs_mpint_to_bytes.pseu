@@ -1,0 +1,49 @@
+    r2 = arg2;
+    r1 = arg1;
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    COND = r5 < 0x0;
+    if (COND) {
+            r5 = r2 + 0x6;
+    }
+    r2 = r2 & 0x80000003;
+    COND = r2 < 0x0;
+    if (COND) {
+            r2 = r2 - 0x1;
+    }
+    r5 = SAR(r5, r5 / 0x4);
+    if (CPU_FLAGS & S) {
+            r2 = r2 * 0x40000000 ^ 0xffffffff;
+    }
+    if (CPU_FLAGS & S) {
+            r2 = r2 / 0x40000000 ^ 0xffffffff;
+    }
+    if (CPU_FLAGS & S) {
+            r2 = r2 + 0x1;
+    }
+    r1 = r1 + r5 * 0x4;
+    r2 = 0x0 - (0x4 - r2 & 0x3);
+    r6 = 0x8f7112f4;
+    stack[2041] = *0x8f7112f4;
+    r12 = 0x0;
+    while (r12 < r5) {
+            r1 = r1 + 0xfffffffffffffffc;
+            r4 = *r1;
+            r7 = r0 + r2;
+            r3 = 0x3;
+            do {
+                    if (r3 >= -r2) {
+                            *(r7 + r3) = r4;
+                    }
+                    r3 = r3 - 0x1;
+                    COND = r3 >= 0x0;
+                    r4 = r4 >> r4 / 0x100;
+            } while (COND);
+            r12 = r12 + 0x1;
+            r2 = r2 + 0x4;
+    }
+    if (stack[2041] != *r6) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

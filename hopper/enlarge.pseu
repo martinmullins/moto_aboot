@@ -1,0 +1,44 @@
+    r0 = arg0;
+    r5 = arg1;
+    r1 = *0x8f7112f4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    COND = r4 != 0x0;
+    stack[2041] = r1;
+    if (!COND) {
+            r1 = "ASSERT FAILED at (%s:%d): %s\n";
+            r0 = loc_ffffffff8f6484ac(lr, r1, "lib/regex/regcomp.c", 0x6e6, "p != ((void *)0)");
+    }
+    r6 = *(r4 + 0x10);
+    if (r6 >= r5) goto loc_8f65b7a8;
+
+loc_8f65b750:
+    r3 = *(r4 + 0x1c);
+    r2 = *(r4 + 0x18);
+    *(r4 + 0x10) = r5;
+    if ((r1 << r5 * 0x4) + (r3 << r2 * 0x10) + *(r3 + 0x8) * (r0 >> r2 / 0x8) < 0x8000000) goto loc_8f65b794;
+
+loc_8f65b77c:
+    *(r4 + 0x10) = r6;
+    loc_ffffffff8f65b358(r4, 0xc);
+    r0 = 0x0;
+    goto loc_8f65b7ac;
+
+loc_8f65b7ac:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f65b794:
+    r0 = *(r4 + 0xc);
+    r0 = loc_ffffffff8f64abd0(r0);
+    if (r0 == 0x0) goto loc_8f65b77c;
+
+loc_8f65b7a4:
+    *(r4 + 0xc) = r0;
+    goto loc_8f65b7a8;
+
+loc_8f65b7a8:
+    r0 = 0x1;
+    goto loc_8f65b7ac;
+

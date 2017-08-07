@@ -1,0 +1,71 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg0;
+    r5 = arg1;
+    r6 = 0x8f7112f4;
+    stack[2041] = *0x8f7112f4;
+    r3 = "clear";
+    loc_ffffffff8f656968();
+    r0 = *r4;
+    r0 = loc_ffffffff8f645994(r0);
+    COND = r8 != 0x0;
+    if (!COND) {
+            if (stack[2041] == *0x8f7112f4) {
+                    r0 = loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: invalid LDO\n", "set_ldo");
+            }
+            else {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    else {
+            r0 = *(r4 + 0x8);
+            if (r0 <= 0x9) {
+                    loc_ffffffff8f60c558();
+            }
+            else {
+                    if (r0 > 0x9) {
+                            loc_ffffffff8f61b944();
+                    }
+            }
+            if (r5 == 0x0) {
+                    loc_ffffffff8f6459fc(r8, *(r4 + 0x4));
+            }
+            loc_ffffffff8f645afc(r8, r5 ^ 0x1);
+            r0 = *(r4 + 0xc);
+            if (r0 <= 0x9) {
+                    r0 = loc_ffffffff8f60c558();
+            }
+            else {
+                    if (r0 > 0x9) {
+                            r0 = loc_ffffffff8f61b944();
+                    }
+            }
+            r3 = *(r4 + 0x10);
+            r2 = stack[2041];
+            if (r3 == 0x1) {
+                    if (r2 == *r6) {
+                            r0 = loc_ffffffff8f617b28(r4 + 0x14, r5);
+                    }
+                    else {
+                            r0 = loc_ffffffff8f648514();
+                    }
+            }
+            else {
+                    COND = r3 != 0x2;
+                    r3 = *r6;
+                    if (!COND) {
+                            if (r2 == r3) {
+                                    r0 = loc_ffffffff8f617c60(r4 + 0x14, r5);
+                            }
+                            else {
+                                    r0 = loc_ffffffff8f648514();
+                            }
+                    }
+                    else {
+                            if (r2 != r3) {
+                                    r0 = loc_ffffffff8f648514();
+                            }
+                    }
+            }
+    }
+    return r0;
+

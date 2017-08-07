@@ -1,0 +1,48 @@
+    r1 = arg1;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = arg0 - 0x1;
+    r4 = r1;
+    stack[2041] = *0x8f7112f4;
+    if (r5 <= 0x0) goto loc_8f6272dc;
+
+loc_8f6272c4:
+    r6 = *(r1 + 0x4);
+    if (loc_ffffffff8f64b0ac(r6, 0x8f685dfd) != 0x0) goto loc_8f6272e4;
+
+loc_8f6272dc:
+    loc_ffffffff8f6243b4();
+    goto loc_8f62733c;
+
+loc_8f62733c:
+    r0 = 0x1;
+    goto loc_8f627350;
+
+loc_8f627350:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f6272e4:
+    if ((loc_ffffffff8f64b0ac(r6, "match") != 0x0) || (r5 <= 0x2)) goto loc_8f627300;
+
+loc_8f627308:
+    loc_ffffffff8f62192c(0x8f683451, "matching \"%s\" against \"%s\"", *(r4 + 0x8), *(r4 + 0xc));
+    if (loc_ffffffff8f6620f8(*(r4 + 0x8), *(r4 + 0xc)) == 0x0) goto loc_8f627344;
+
+loc_8f627334:
+    loc_ffffffff8f62192c();
+    goto loc_8f62733c;
+
+loc_8f627344:
+    loc_ffffffff8f62192c();
+    goto loc_8f62734c;
+
+loc_8f62734c:
+    r0 = 0x3;
+    goto loc_8f627350;
+
+loc_8f627300:
+    loc_ffffffff8f6243b4();
+    goto loc_8f62734c;
+

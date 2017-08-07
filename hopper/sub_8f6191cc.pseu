@@ -1,0 +1,6 @@
+    r7 = arg0;
+    asm{ mrs        ip, apsr };
+    asm{ cpsid      aif };
+    TEST(r7 & 0x2);
+    return;
+

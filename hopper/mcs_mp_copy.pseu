@@ -1,0 +1,23 @@
+    r2 = arg2;
+    r1 = arg1;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    r0 = *(arg0 + 0x4);
+    stack[2045] = r3;
+    r3 = 0x0;
+    do {
+            if (r3 < r0) {
+                    r4 = *(r2 + r3 * 0x4);
+            }
+            if (CPU_FLAGS & L) {
+                    *(r1 + r3 * 0x4) = r4;
+            }
+            if (CPU_FLAGS & L) {
+                    r3 = r3 + 0x1;
+            }
+    } while (CPU_FLAGS & L);
+    if (stack[2045] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

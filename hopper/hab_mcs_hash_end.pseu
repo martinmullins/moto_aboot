@@ -1,0 +1,20 @@
+    r2 = arg2;
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    if (r0 != 0x0) {
+            CMP(r2, 0x0);
+    }
+    r5 = r0;
+    stack[2037] = *0x8f7112f4;
+    if (!CPU_FLAGS & E) {
+            r1 = *r5;
+            if (r1 < 0x10) {
+                    loc_8f66e434();
+            }
+    }
+    r0 = 0x1;
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

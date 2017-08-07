@@ -1,0 +1,221 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4c;
+    r3 = *0x8f7112f4;
+    stack[2037] = r3;
+    r0 = loc_ffffffff8f632f34("panels", arg1, arg2, r3, stack[2020]);
+    COND = r8 >= 0x0;
+    if (COND) goto loc_8f61893c;
+
+loc_8f618980:
+    r0 = loc_ffffffff8f656968();
+    goto loc_8f618f9c;
+
+loc_8f618f9c:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f61893c:
+    if (((loc_ffffffff8f6309d0("panel_count", r8, sp + 0xc) != 0x0) || (loc_ffffffff8f6309d0("auto_detect", r8, sp + 0x10) != 0x0)) || (stack[2023] <= 0x0)) goto loc_8f618980;
+
+loc_8f618988:
+    if (stack[2024] > 0x0) {
+            loc_ffffffff8f6340c8();
+    }
+    loc_ffffffff8f630b54("cont-splash-enabled", r8);
+    r7 = 0x0;
+    loc_ffffffff8f634108();
+    r0 = loc_ffffffff8f630b54("hbm-disabled", r8);
+    r0 = loc_ffffffff8f634270(zero_extend_32(r0 ^ 0x1));
+    goto loc_8f6189c4;
+
+loc_8f6189c4:
+    if (r7 >= stack[2023]) goto loc_8f618f9c;
+
+loc_8f6189d0:
+    r0 = loc_ffffffff8f631c84(r8, r7);
+    r5 = r0;
+    if (CPU_FLAGS & E) goto loc_8f618f90;
+
+loc_8f6189f0:
+    r0 = loc_ffffffff8f630c30(0x8f684089, r5);
+    COND = r6 != 0x0;
+    if (COND) {
+            r4 = 0x8f6b015c;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f618a30;
+
+loc_8f618f90:
+    r0 = loc_ffffffff8f656968();
+    goto loc_8f618f94;
+
+loc_8f618f94:
+    r7 = r7 + 0x1;
+    goto loc_8f6189c4;
+
+loc_8f618a30:
+    if (r4 != 0x8f6b1608) goto loc_8f618a18;
+    goto loc_8f618f90;
+
+loc_8f618a18:
+    r0 = loc_ffffffff8f64b0ac(r6, r4 + 0x8);
+    COND = r10 == 0x0;
+    if (COND) goto loc_8f618a40;
+
+loc_8f618a2c:
+    r4 = r4 + 0x24c;
+    goto loc_8f618a30;
+
+loc_8f618a40:
+    loc_ffffffff8f656968(0x1, "create panel for %s...\n", r6);
+    *(0x2 + 0xffffffffffffffcc) = r10;
+    loc_ffffffff8f656968(0x2 + 0xffffffffffffffcc, "%s is called\n", "create_mipi_mot_panel");
+    loc_ffffffff8f6309d0("reserved_column", r5, sp + 0x48);
+    r3 = stack[2025];
+    *(r4 + 0x64) = r3;
+    r0 = loc_ffffffff8f630990("backlight_setting", r5);
+    COND = r10 < 0x0;
+    if (!CPU_FLAGS & L) {
+            r0 = loc_ffffffff8f630c30(0x8f6812c2, r10);
+            *r0 = r0;
+            if (r0 == 0x0) {
+                    loc_ffffffff8f656968();
+            }
+            else {
+                    r0 = loc_ffffffff8f63f964();
+                    *(r0 + 0x4) = r0;
+                    if (r0 != 0x0) {
+                            r3 = 0x8f63f7d0;
+                    }
+                    if (CPU_FLAGS & NE) {
+                            *(r0 + 0x8) = r3;
+                    }
+                    if (CPU_FLAGS & NE) {
+                            r3 = 0x8f63f820;
+                    }
+                    if (CPU_FLAGS & NE) {
+                            *(r0 + 0xc) = r3;
+                    }
+            }
+    }
+    else {
+            loc_ffffffff8f656968();
+    }
+    loc_ffffffff8f64ac90(r4 + 0x1dc, 0x8f6b8c84, 0x10);
+    r0 = loc_ffffffff8f630990("font_setting", r5);
+    COND = r1 >= 0x0;
+    if (!COND) {
+            *(r4 + 0x1ec) = 0x0;
+            loc_ffffffff8f656968(0x2, "No backlight settings\n");
+    }
+    else {
+            *(r4 + 0x1ec) = loc_ffffffff8f630c30(0x8f6812f1);
+    }
+    s0 = loc_ffffffff8f630990("power_on_setting", r5);
+    loc_ffffffff8f656968(0x2, "%s is called\n", "parse_panel_power_on_setting");
+    if (s0 != -0x1) goto loc_8f618b80;
+
+loc_8f618b58:
+    loc_ffffffff8f656968(s0, "Not found power_on_setting for offset %d!\n", r5);
+    loc_ffffffff8f656968(s0, "Failed to get panel power on settings\n");
+    goto loc_8f618f90;
+
+loc_8f618b80:
+    loc_ffffffff8f64adc8(0x8f7112fc, 0x0, 0x78);
+    *0x8f6ac0d8 = loc_ffffffff8f618030(s0, 0x8f7112fc, 0xf, "power_on");
+    loc_ffffffff8f64ac90(r4 + 0x68, 0x8f7112fc, 0x78);
+    *(r4 + 0xe0) = *0x8f6ac0d8;
+    r6 = loc_ffffffff8f630990("power_on_reset_setting", r5);
+    loc_ffffffff8f656968(0x2, "%s is called\n", "parse_panel_power_on_reset_setting");
+    if (r6 == -0x1) {
+            loc_ffffffff8f656968(r6, "Not found power_on_reset_setting for offset %d!\n", r5);
+            loc_ffffffff8f656968(0x1, "No panel power on reset settings\n");
+            *(r4 + 0x210) = 0x0;
+    }
+    else {
+            loc_ffffffff8f64adc8(0x8f7113ec, 0x0, 0x78);
+            r0 = loc_ffffffff8f618030(r6, 0x8f7113ec, 0xf, "power_on_reset");
+            *(r4 + 0x210) = 0x8f6187b4;
+            *0x8f6ac0d4 = r0;
+            loc_ffffffff8f64ac90(r4 + 0xe4, 0x8f7113ec, 0x78, 0x8f6187b4);
+            *(r4 + 0x15c) = *0x8f6ac0d4;
+    }
+    r0 = loc_ffffffff8f630990("power_off_setting", r5);
+    s0 = r0;
+    if (r0 != -0x1) {
+            loc_ffffffff8f656968(0x2, "%s is called\n", "parse_panel_power_off_setting");
+            loc_ffffffff8f64adc8(0x8f711374, 0x0, 0x78);
+            *0x8f6ac0d0 = loc_ffffffff8f618030(s0, 0x8f711374, 0xf, "power_off");
+    }
+    loc_ffffffff8f64ac90(r4 + 0x160, 0x8f711374, 0x78);
+    r3 = *0x8f6ac0d0;
+    *(r4 + 0x1d8) = r3;
+    loc_ffffffff8f64adc8(r4 + 0x2c, 0x0, 0x30, r3);
+    s0 = loc_ffffffff8f61a57c();
+    r11 = loc_ffffffff8f630990("mipi_clock_override_setting", r5);
+    if (*(r4 + 0x248) != 0x0) {
+            loc_ffffffff8f656968(0x2, "%s is called\n", "parse_panel_mipi_override");
+            if (r11 == -0x1) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "MIPI override is not used\n");
+            }
+            else {
+                    r0 = loc_ffffffff8f6309d0("mipi_clock_override_count", r11, sp + 0x18);
+                    COND = r10 != 0x0;
+                    if (!COND) {
+                            s0 = zero_extend_32(s0);
+                            loc_ffffffff8f656968(0x2, "Searching %d settings for radio id %d\n", stack[2026], s0);
+                            while (r10 < stack[2026]) {
+                                    loc_ffffffff8f64adc8(sp + 0x24, 0x0, 0x20);
+                                    loc_ffffffff8f64a9f0(sp + 0x24, 0x20, "mipi_clock_override@%d", r10);
+                                    r0 = loc_ffffffff8f630990(sp + 0x24, r11);
+                                    COND = r6 < 0x0;
+                                    if ((!CPU_FLAGS & L) && (loc_ffffffff8f6309d0("modem_id", r6, sp + 0x20) == 0x0)) {
+                                            if (stack[2028] != s0) {
+                                                    loc_ffffffff8f656968(0x2, "Modem ID %d does not match target ID %d\n");
+                                            }
+                                            else {
+                                                    loc_ffffffff8f656968(0x1, "Modem ID %d matches target ID %d\n", s0, s0);
+                                                    stack[2021] = loc_ffffffff8f6309d0("bitclock", r6, r4 + 0x30);
+                                                    stack[2021] = stack[2021] + loc_ffffffff8f6309d0("t-hfp", r6, r4 + 0x34);
+                                                    stack[2021] = stack[2021] + loc_ffffffff8f6309d0("t-hbp", r6, r4 + 0x38);
+                                                    stack[2021] = stack[2021] + loc_ffffffff8f6309d0("t-hpw", r6, r4 + 0x3c);
+                                                    stack[2021] = stack[2021] + loc_ffffffff8f6309d0("t-vfp", r6, r4 + 0x40);
+                                                    stack[2021] = stack[2021] + loc_ffffffff8f6309d0("t-vbp", r6, r4 + 0x44);
+                                                    stack[2021] = stack[2021] + loc_ffffffff8f6309d0("t-vpw", r6, r4 + 0x48);
+                                                    r0 = loc_ffffffff8f6309d0("t-clk-pre", r6, sp + 0x1c);
+                                                    *(r4 + 0x4c) = stack[2027];
+                                                    stack[2021] = stack[2021] + r0;
+                                                    r0 = loc_ffffffff8f6309d0("t-clk-post", r6, sp + 0x1c, stack[2027], stack[2020]);
+                                                    *(r4 + 0x4d) = stack[2027];
+                                                    r3 = 0xc;
+                                                    if (loc_ffffffff8f631420("panel-timings", r6, r4 + 0x4e, r3, stack[2020]) + stack[2021] + r0 == 0x0) {
+                                                            r3 = 0x1;
+                                                    }
+                                                    if (CPU_FLAGS & E) {
+                                                            *(r4 + 0x2c) = r3;
+                                                    }
+                                                    if (!CPU_FLAGS & E) {
+                                                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed getting MIPI settings from DT\n");
+                                                    }
+                                            }
+                                    }
+                                    else {
+                                            loc_ffffffff8f656968();
+                                    }
+                                    r10 = r10 + 0x1;
+                            }
+                    }
+                    else {
+                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "MIPI override is not used\n");
+                    }
+            }
+    }
+    *(r4 + 0x28) = r5;
+    *(r4 + 0x214) = 0x8f61873c;
+    *(r4 + 0x218) = 0x8f6185f4;
+    *(r4 + 0x22c) = 0x8f617fcc;
+    *(r4 + 0x1fc) = 0x8f617a8c;
+    *(r4 + 0x200) = 0x8f6179f0;
+    r0 = loc_ffffffff8f6337f8(r4);
+    goto loc_8f618f94;
+

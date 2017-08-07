@@ -1,0 +1,49 @@
+    stack[2045] = r7;
+    stack[2046] = r8;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r7 = arg0;
+    r8 = arg1;
+    r3 = *0x8f7112f4;
+    stack[2040] = r3;
+    r0 = loc_ffffffff8f63084c("battery", arg1, arg2, r3, arg0, stack[2040], arg2, r4, r5, 0x8f7112f4, stack[2045], stack[2046], lr);
+    COND = r5 < 0x0;
+    if (CPU_FLAGS & L) goto loc_8f632e60;
+
+loc_8f632e4c:
+    r0 = loc_ffffffff8f632c34();
+    COND = r4 != 0x0;
+    if (COND) goto loc_8f632e68;
+
+loc_8f632e60:
+    loc_ffffffff8f656968();
+    goto loc_8f632ebc;
+
+loc_8f632ebc:
+    r0 = 0x0;
+    goto loc_8f632ec0;
+
+loc_8f632ec0:
+    if (stack[2040] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f632e68:
+    r0 = loc_ffffffff8f64c090(0x8f68ac00, r5, "temp-conv");
+    COND = s0 >= 0x0;
+    if (COND) goto loc_8f632e94;
+
+loc_8f632e80:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to get temp-conv at node@0x%x\n", r5);
+    goto loc_8f632ebc;
+
+loc_8f632e94:
+    if (loc_ffffffff8f64b0ac(r8, r4) == 0x0) {
+            loc_ffffffff8f632d0c(r7, s0);
+            r0 = 0x1;
+    }
+    else {
+            r0 = 0x0;
+    }
+    goto loc_8f632ec0;
+

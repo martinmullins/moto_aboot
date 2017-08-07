@@ -1,0 +1,241 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2041] = *0x8f7112f4;
+    if (*0x8f6e07a4 != 0x0) goto loc_8f637c50;
+
+loc_8f6378ac:
+    loc_ffffffff8f646158();
+    if (loc_ffffffff8f604438(0x193, sp + 0x4, 0x8) != 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "ERROR: unable to read shared memory \t\t\t\tfor power on status\n");
+    }
+    else {
+            stack[2040] = 0x0;
+            stack[2039] = 0x0;
+            asm{ ldmib      sp, {r2, r3} };
+            loc_ffffffff8f656968(0x1, "Power on status from SBL: 0x%llX Decoded:\n");
+            loc_ffffffff8f656968(0x2, "power_on_reason1: %02x power_on_reason2: %02x \n", stack[2039], stack[2040]);
+            loc_ffffffff8f656968(0x2, "warm_reset_reason1: %02x warm_reset_reason2: %02x \n", stack[2040], stack[2040]);
+            loc_ffffffff8f656968(0x2, "power_off_reason1: %02x power_off_reason2: %02x \n", stack[2040], stack[2041]);
+            loc_ffffffff8f656968(0x2, "soft_reset_reason1: %02x soft_reset_reason2 %02x \n", stack[2041], stack[2041]);
+    }
+    loc_ffffffff8f6012c8(sp + 0x4);
+    r3 = 0x0;
+    if ((!CPU_FLAGS & NE) && ((r3 & 0x8) == 0x0)) {
+            r3 = 0x0;
+            if ((CPU_FLAGS & NE) || ((r3 & 0x8) != 0x0)) {
+                    loc_ffffffff8f64675c();
+            }
+    }
+    else {
+            loc_ffffffff8f64675c();
+    }
+    r5 = loc_ffffffff8f646de4(0xffff);
+    loc_ffffffff8f656968(0x1, "PMIC extra reset info = 0x%x\n", r5);
+    r3 = 0x0;
+    if ((r3 & 0x40) != 0x0) {
+            r3 = 0x20;
+    }
+    if (CPU_FLAGS & NE) {
+            *0x8f6e07a0 = r3;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f637b80;
+
+loc_8f6379c0:
+    if (((r3 & 0x1) == 0x0) || ((r3 & 0x80) == 0x0)) goto loc_8f6379e8;
+
+loc_8f6379d0:
+    asm{ ldrsb      r3, [sp, #0x28 + var_20] };
+    if (r3 >= 0x0) goto loc_8f6379e8;
+
+loc_8f6379dc:
+    r3 = 0x0;
+    if ((r3 & 0x2) == 0x0) goto loc_8f637a34;
+
+loc_8f6379e8:
+    asm{ ldrsb      r3, [sp, #0x28 + var_1F] };
+    if (r3 >= 0x0) goto loc_8f637a00;
+
+loc_8f6379f4:
+    r3 = 0x0;
+    if (r3 == 0x0) goto loc_8f637a34;
+
+loc_8f637a00:
+    if ((r5 & 0x2) != 0x0) goto loc_8f637a34;
+
+loc_8f637a08:
+    if (loc_ffffffff8f632f68() == 0x0) goto loc_8f637a3c;
+
+loc_8f637a14:
+    asm{ ldrsb      r3, [sp, #0x28 + var_24] };
+    if (((r3 >= 0x0) || ((r5 & 0x200) != 0x0)) || ((0x0 & 0x10) == 0x0)) goto loc_8f637a3c;
+
+loc_8f637a34:
+    r3 = 0x100000;
+    goto loc_8f637bdc;
+
+loc_8f637bdc:
+    *0x8f6e07a0 = r3;
+    goto loc_8f637be0;
+
+loc_8f637be0:
+    loc_ffffffff8f646d70(0x7a, 0x0);
+    if (loc_ffffffff8f632f68() != 0x0) {
+            loc_ffffffff8f646d70(0x200, 0x200);
+    }
+    r0 = loc_ffffffff8f646de4(0xffff);
+    loc_ffffffff8f656968(0x1, "The extra reset info is reset to 0x%x\n", r0);
+    if (*0x8f6e07a0 == 0x8) {
+            loc_ffffffff8f645ffc();
+            *0x8f6e07a0 = 0x0;
+    }
+    if (loc_ffffffff8f6458d4() == 0x0) {
+            loc_ffffffff8f64675c();
+    }
+    *0x8f6e07a4 = 0x1;
+    goto loc_8f637c50;
+
+loc_8f637c50:
+    loc_ffffffff8f656968(0x2, "%s: 0x%08X\n", "get_powerup_reason", *0x8f6e07a0);
+    r3 = *0x8f7112f4;
+    r0 = *0x8f6e07a0;
+    if (stack[2041] != r3) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f637a3c:
+    if ((loc_ffffffff8f60dcc0() == 0x77665505) || ((r5 & 0x8) != 0x0)) goto loc_8f637a54;
+
+loc_8f637a5c:
+    if ((0x0 & 0x2) == 0x0) goto loc_8f637a70;
+
+loc_8f637a68:
+    r3 = 0x8000;
+    goto loc_8f637bdc;
+
+loc_8f637a70:
+    if (loc_ffffffff8f60dcc0() == 0x77665507) goto loc_8f637a68;
+
+loc_8f637a80:
+    if (loc_ffffffff8f60dcc0() == 0x77665508) goto loc_8f637aa8;
+
+loc_8f637a90:
+    r2 = 0x0;
+    if ((r2 & 0x4) != 0x0) goto loc_8f637aa8;
+
+loc_8f637a9c:
+    r3 = 0x0;
+    if ((r3 & 0x4) == 0x0) goto loc_8f637ab0;
+
+loc_8f637aa8:
+    r3 = 0x400000;
+    goto loc_8f637bdc;
+
+loc_8f637ab0:
+    if ((r2 & 0x2) == 0x0) goto loc_8f637acc;
+
+loc_8f637ab8:
+    r5 = r5 & 0x70;
+    if (r5 != 0x10) goto loc_8f637b00;
+
+loc_8f637ac4:
+    r3 = 0x8000;
+    goto loc_8f637b1c;
+
+loc_8f637b1c:
+    *0x8f6e07a8 = r3;
+    goto loc_8f637bdc;
+
+loc_8f637b00:
+    if (r5 == 0x20) {
+            r3 = 0x400000;
+    }
+    if (CPU_FLAGS & E) goto loc_8f637b1c;
+
+loc_8f637b0c:
+    if (r5 != 0x30) {
+            r3 = 0x4000;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f637bdc;
+
+loc_8f637b18:
+    r3 = 0x20000;
+    goto loc_8f637b1c;
+
+loc_8f637acc:
+    if (((r3 & 0x2) != 0x0) || ((stack[2041] & 0x8) != 0x0)) goto loc_8f637ae0;
+
+loc_8f637aec:
+    r3 = 0x77665501;
+    if (loc_ffffffff8f60dcc0() != r3) goto loc_8f637b28;
+    goto loc_8f637ab8;
+
+loc_8f637b28:
+    r3 = 0x0;
+    if ((r3 & 0x4) != 0x0) {
+            r3 = 0x8;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f637bdc;
+
+loc_8f637b38:
+    if ((r3 & 0x10) != 0x0) goto loc_8f637b4c;
+
+loc_8f637b40:
+    r2 = 0x0;
+    if ((r2 & 0x1) == 0x0) goto loc_8f637bac;
+
+loc_8f637b4c:
+    *0x8f6e07a0 = 0x10;
+    r0 = loc_ffffffff8f601fd4();
+    r8 = r0;
+    if (r0 != 0x3) goto loc_8f637b88;
+
+loc_8f637b68:
+    loc_ffffffff8f656968(0x1, "Factory cable detection failed in SBL1, overriding");
+    *0x8f6e07a0 = 0x20;
+    goto loc_8f637b80;
+
+loc_8f637b80:
+    loc_ffffffff8f64675c();
+    goto loc_8f637be0;
+
+loc_8f637b88:
+    if (loc_ffffffff8f631704() != 0x0) {
+            loc_ffffffff8f656968(0x1, "Treating USB cable as charger\n");
+            *0x8f6e07a0 = 0x100;
+    }
+    goto loc_8f637be0;
+
+loc_8f637bac:
+    if ((r3 & 0x8) != 0x0) {
+            r3 = 0x100;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f637bdc;
+
+loc_8f637bb8:
+    if ((r2 & 0x8) != 0x0) {
+            r3 = 0x800000;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f637bdc;
+
+loc_8f637bc4:
+    if ((r3 & 0x80) != 0x0) {
+            r3 = 0x80;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f637bdc;
+
+loc_8f637bd0:
+    if ((r3 & 0x2) == 0x0) goto loc_8f637be0;
+
+loc_8f637bd8:
+    r3 = 0x200;
+    goto loc_8f637bdc;
+
+loc_8f637ae0:
+    r3 = 0x0;
+    if ((r3 & 0x1) != 0x0) goto loc_8f637ab8;
+    goto loc_8f637aec;
+
+loc_8f637a54:
+    r3 = 0x20000;
+    goto loc_8f637bdc;
+

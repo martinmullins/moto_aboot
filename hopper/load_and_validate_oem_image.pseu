@@ -1,0 +1,50 @@
+    r1 = arg1;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r3 = *arg0;
+    stack[2037] = r3;
+    r10 = loc_ffffffff8f60155c(arg0, r1, arg2, r3, stack[2034]);
+    r0 = loc_ffffffff8f65385c(0x8f68302e);
+    COND = r8 != 0x0;
+    if (COND) goto loc_8f620c08;
+
+loc_8f620bf4:
+    loc_ffffffff8f656968(0x1, "oem partition not found, ignore validation\n");
+    r0 = r8;
+    goto loc_8f620cf0;
+
+loc_8f620cf0:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f620c08:
+    r4 = *(r8 + 0x20) | *(r8 + 0x21) * 0x100 | *(r8 + 0x22) * 0x10000 | *(r8 + 0x23) * 0x1000000;
+    r5 = *(r8 + 0x24) | *(r8 + 0x25) * 0x100 | *(r8 + 0x26) * 0x10000 | *(r8 + 0x27) * 0x1000000;
+    r6 = *(r8 + 0x28) | *(r8 + 0x29) * 0x100 | *(r8 + 0x2a) * 0x10000 | *(r8 + 0x2b) * 0x1000000;
+    r2 = *(r8 + 0x2d);
+    r3 = *(r8 + 0x2c);
+    r6 = r6 + 0x1;
+    r3 = r3 | r2 * 0x100 | *(r8 + 0x2e) * 0x10000;
+    r7 = (r3 | *(r8 + 0x2f) * 0x1000000) + 0x0 + CARRY(FLAGS);
+    r6 = r6 - r4;
+    r3 = r3 << (r7 - r5 + !CARRY(FLAGS)) * 0x200;
+    r7 = r7 - r5 + !CARRY(FLAGS) << r6 * 0x200;
+    r0 = loc_ffffffff8f6507a4(r0 << r4 * 0x200, r1 << r5 * 0x200 | r4 / 0x800000, r7, r3 | r6 / 0x800000, r10);
+    COND = r3 == 0x0;
+    if (COND) goto loc_8f620cc8;
+
+loc_8f620cb4:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error: Failed to read oem partition\n");
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f620cf0;
+
+loc_8f620cc8:
+    if (stack[2037] == *r0) {
+            r0 = loc_ffffffff8f673264(r8, r10, r7);
+    }
+    else {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

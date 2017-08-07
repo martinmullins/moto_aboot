@@ -1,0 +1,40 @@
+    stack[2044] = r4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg1;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r0 = loc_ffffffff8f6537f0(arg1, arg1, arg2, r3, arg0, arg1, arg2, stack[2043], stack[2044], r5, 0x8f7112f4, lr);
+    loc_ffffffff8f656968(0x1, "Validating sparse partition %s...\n", r0);
+    if (loc_ffffffff8f674a88() == 0x0) {
+            loc_ffffffff8f6537f0(r4);
+            if (loc_ffffffff8f67759c() != 0x0) {
+                    r0 = loc_ffffffff8f6537f0(r4);
+                    loc_ffffffff8f656968(0x0, "Failed to find PIV entry from SP for %s\n", r0);
+                    r0 = 0x0 ^ 0xffffffff;
+            }
+            else {
+                    r0 = 0x0;
+            }
+    }
+    else {
+            loc_ffffffff8f6537f0(r4);
+            if ((loc_ffffffff8f64b0ac() == 0x0) && (loc_ffffffff8f631890() != 0x0)) {
+                    r0 = 0x0;
+            }
+            else {
+                    loc_ffffffff8f6537f0(r4);
+                    if (loc_ffffffff8f67759c() != 0x0) {
+                            r0 = loc_ffffffff8f6537f0(r4);
+                            loc_ffffffff8f656968(0x0, "Failed to find PIV entry from SP for %s\n", r0);
+                            r0 = 0x0 ^ 0xffffffff;
+                    }
+                    else {
+                            r0 = 0x0;
+                    }
+            }
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,34 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    stack[2041] = *0x8f7112f4;
+    loc_ffffffff8f61ac4c(0x8f6e06c0);
+    loc_ffffffff8f656968(0x1, "power down now!\n");
+    loc_ffffffff8f6500ec();
+    loc_ffffffff8f656968(0x2, "call all callbacks for poweroff...\n");
+    for (r4 = *(0x8f6e06b8 + 0x4); r4 != 0x8f6e06b8; r4 = *(r4 + 0x4)) {
+            r0 = loc_ffffffff8f61b490("callback handler", 0x8f6342ac, r4, 0x18, 0x2000);
+            COND = r1 != 0x0;
+            if (!COND) {
+                    loc_ffffffff8f61ac84(r4 + 0x8);
+            }
+            else {
+                    loc_ffffffff8f61b6fc();
+            }
+    }
+    for (r4 = *(0x8f6e06b8 + 0x4); r4 != 0x8f6e06b8; r4 = *(r4 + 0x4)) {
+            loc_ffffffff8f61ac4c(r4 + 0x8);
+    }
+    do {
+    } while (loc_ffffffff8f6456c4() != 0x0);
+    r3 = *0x8f6ac0f0;
+    *0x8f6ac0f0 = r3 + 0x1;
+    if (r3 == 0x0) {
+            loc_ffffffff8f619448();
+    }
+    loc_ffffffff8f601a7c();
+    loc_ffffffff8f6008c0();
+    r0 = 0x0;
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

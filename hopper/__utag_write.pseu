@@ -1,0 +1,93 @@
+    r4 = arg3;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r8 = arg0;
+    r7 = arg1;
+    r11 = arg2;
+    r3 = *0x8f7112f4;
+    stack[2037] = r3;
+    r0 = loc_ffffffff8f6788e4(arg0, arg1, arg2, r3, stack[2034]);
+    s0 = r0;
+    if (r4 == 0x0) goto loc_8f6796c4;
+
+loc_8f679650:
+    if (*(r0 + 0xc) == 0x0) goto loc_8f679688;
+
+loc_8f67965c:
+    r5 = s0 + 0x14;
+    loc_ffffffff8f61afc0(r5);
+    r0 = loc_ffffffff8f679520(r8, r7, r11, r4);
+    COND = r6 != 0x0;
+    if (COND) goto loc_8f67969c;
+
+loc_8f6796bc:
+    loc_ffffffff8f61b098(r5);
+    goto loc_8f6796c4;
+
+loc_8f6796c4:
+    r0 = 0x0;
+    goto loc_8f67979c;
+
+loc_8f67979c:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f67969c:
+    r0 = loc_ffffffff8f6791d0(r8, r7);
+    COND = r6 == 0x0;
+    if (COND) goto loc_8f679718;
+
+loc_8f6796b0:
+    if ((*(r6 + 0x24) & 0x1) == 0x0) goto loc_8f6796cc;
+    goto loc_8f6796bc;
+
+loc_8f6796cc:
+    r0 = loc_ffffffff8f64aacc(r4);
+    COND = s0 == 0x0;
+    if (COND) goto loc_8f6796bc;
+
+loc_8f6796dc:
+    if (*(r6 + 0x2c) != 0x0) {
+            loc_ffffffff8f64ab9c();
+    }
+    loc_ffffffff8f64b2c0(r6, r7, 0x20);
+    *(r6 + 0x20) = r4;
+    *(r6 + 0x2c) = s0;
+    loc_ffffffff8f64ac90(s0, r11, r4);
+    goto loc_8f679784;
+
+loc_8f679784:
+    loc_ffffffff8f61b098(r5);
+    loc_ffffffff8f678954(r8, r7);
+    r0 = r4;
+    goto loc_8f67979c;
+
+loc_8f679718:
+    r0 = loc_ffffffff8f64ab44(0x1, 0x34);
+    COND = r6 == 0x0;
+    if (COND) goto loc_8f6796bc;
+
+loc_8f67972c:
+    loc_ffffffff8f64b2c0();
+    *(r6 + 0x20) = r4;
+    r0 = loc_ffffffff8f64aacc(r4);
+    r3 = r0;
+    *(r6 + 0x2c) = r0;
+    if (r0 != 0x0) goto loc_8f679764;
+
+loc_8f679754:
+    loc_ffffffff8f64ab9c(r6);
+    goto loc_8f6796bc;
+
+loc_8f679764:
+    r0 = loc_ffffffff8f64ac90();
+    r3 = *(r0 + 0xc);
+    *(r6 + 0x30) = *(r3 + 0x30);
+    *(r3 + 0x30) = r6;
+    *(r0 + 0x10) = r6;
+    goto loc_8f679784;
+
+loc_8f679688:
+    if (loc_ffffffff8f679074(r8) == 0x0) goto loc_8f67965c;
+

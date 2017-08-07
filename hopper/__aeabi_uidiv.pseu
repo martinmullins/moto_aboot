@@ -1,0 +1,3 @@
+    r0 = loc_ffffffff8f67b868(0x1);
+    return r0;
+

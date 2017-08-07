@@ -1,0 +1,26 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x14;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    loc_ffffffff8f61ab4c(0x8f6e08b8, 0x0, 0x1, r3, stack[2040]);
+    r0 = loc_ffffffff8f61b490("key_process", 0x8f639250, 0x0, 0x10, 0x1000);
+    r5 = r0;
+    *0x8f6e0918 = r0;
+    if (r0 == 0x0) {
+            loc_ffffffff8f656968(0x1, "%s: clogo loading thread_create fail\n", "try_load_clogo");
+            if (stack[2043] == *0x8f7112f4) {
+                    r0 = loc_ffffffff8f61ac84(0x8f6e08b8, r5);
+            }
+            else {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (stack[2043] != *0x8f7112f4) {
+                    r0 = loc_ffffffff8f648514();
+            }
+            else {
+                    r0 = loc_ffffffff8f61b6fc();
+            }
+    }
+    return r0;
+

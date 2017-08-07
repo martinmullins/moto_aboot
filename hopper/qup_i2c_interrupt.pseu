@@ -1,0 +1,90 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    COND = r4 != 0x0;
+    stack[2041] = *0x8f7112f4;
+    if (COND) goto loc_8f612258;
+
+loc_8f612244:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "dev is NULL, that means i2c_qup_init failed...\n");
+    r0 = 0x3;
+    goto loc_8f61231c;
+
+loc_8f61231c:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f612258:
+    r0 = *(r4 + 0x14);
+    r3 = *(r4 + 0x4);
+    r6 = *(r3 + 0x404);
+    r5 = *(r3 + 0x1c);
+    r1 = *(r3 + 0x18);
+    if (r0 == 0x0) goto loc_8f612318;
+
+loc_8f612274:
+    r2 = r6 & 0x38000fc;
+    if (r2 == 0x0) goto loc_8f6122b0;
+
+loc_8f612284:
+    r1 = "QUP: I2C status flags :0x%x \n";
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, r1, r6);
+    r3 = *(r4 + 0x10);
+    r2 = 0x0 - r6;
+    if (r3 == 0x1) {
+            r3 = *(r4 + 0x4);
+    }
+    if (CPU_FLAGS & E) {
+            r1 = 0x0;
+    }
+    if (CPU_FLAGS & E) {
+            *(r3 + 0x4) = r1;
+    }
+    goto loc_8f612314;
+
+loc_8f612314:
+    *(r4 + 0x20) = r2;
+    goto loc_8f612318;
+
+loc_8f612318:
+    r0 = 0x1;
+    goto loc_8f61231c;
+
+loc_8f6122b0:
+    if ((r5 & 0x7f) == 0x0) goto loc_8f6122e4;
+
+loc_8f6122b8:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "QUP: QUP status flags :0x%x\n", r5);
+    r3 = *(r4 + 0x10);
+    r2 = 0x0 - r5;
+    if (r3 == 0x1) {
+            r5 = r5 & 0x7c;
+    }
+    if (CPU_FLAGS & E) {
+            r3 = *(r4 + 0x4);
+    }
+    if (CPU_FLAGS & E) {
+            *(r3 + 0x1c) = r5;
+    }
+    goto loc_8f612314;
+
+loc_8f6122e4:
+    if ((r1 & 0x100) != 0x0) {
+            r2 = 0x100;
+    }
+    if (CPU_FLAGS & NE) {
+            *(r3 + 0x18) = r2;
+    }
+    if (*(r0 + 0x2) != 0x1) goto loc_8f612310;
+
+loc_8f6122fc:
+    if ((r1 & 0xa00) == 0x0) goto loc_8f612318;
+
+loc_8f612304:
+    *(*(r4 + 0x4) + 0x18) = 0x200;
+    goto loc_8f612310;
+
+loc_8f612310:
+    r2 = 0x0;
+    goto loc_8f612314;
+

@@ -1,0 +1,66 @@
+    r5 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x2c;
+    s0 = *(r5 + 0x14);
+    r8 = arg1;
+    stack[2032] = arg3;
+    r7 = arg4;
+    s0 = s0 + 0x7 >> (s0 + 0x7) / 0x8;
+    r11 = r11 << s0 * 0x8;
+    r4 = r7;
+    stack[2031] = arg2;
+    stack[2037] = *0x8f7112f4;
+    stack[2030] = arg5;
+    stack[2033] = arg6;
+    stack[2035] = r11 - 0x1;
+    do {
+            r2 = *(r5 + 0x18);
+            r3 = r4 - r7;
+            if (r3 >= r2) {
+                break;
+            }
+            r2 = 0x0;
+            r1 = s0 * ((0x0 >> 0x0 / 0x2) * stack[2031] + r3 / 0x2);
+            r3 = r2;
+            while (r3 != s0) {
+                    r0 = *r5;
+                    r0 = r0 + r3;
+                    r3 = r3 + 0x1;
+                    r2 = *(r0 + r1) | r2 * 0x100;
+            }
+            r3 = 0x0;
+            r10 = r3;
+            while (r3 != r11) {
+                    r10 = r10 |     r2 >> stack[2035] - r3 & 0x1;
+    r3;
+;
+                    r3 = r3 + 0x1;
+                    r10 = zero_extend_32(r10);
+            }
+            r6 = 0x0;
+            stack[2034] = r4 + 0x1;
+            while (r6 < *(r5 + 0x14)) {
+                    if ((r10 & 0x1) != 0x0) {
+                            loc_ffffffff8f6493dc(r8, r6 + stack[2032], r4, stack[2030], stack[2028]);
+                            loc_ffffffff8f6493dc(r8, r6 + stack[2032], stack[2034], stack[2030]);
+                    }
+                    r10 = r10 >> r10 / 0x2;
+                    r6 = r6 + 0x1;
+            }
+            r4 = r4 + 0x2;
+    } while (true);
+    r3 = 0x8f7112f4;
+    if (stack[2033] != 0x0) {
+            if (stack[2037] == *r3) {
+                    loc_ffffffff8f649488(r8, r7, r2 + r7);
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (stack[2037] != *r3) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

@@ -1,0 +1,24 @@
+    r5 = arg3;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x1c;
+    r10 = arg2;
+    s0 = arg1;
+    r7 = arg5;
+    r6 = arg0;
+    r11 = arg4;
+    r12 = 0x0;
+    r4 = r7;
+    stack[2037] = *0x8f7112f4;
+    while (r4 > 0x0) {
+            r4 = r4 - 0x1;
+            if ((SAR(r11, r4) & 0x1) != 0x0) {
+                    loc_ffffffff8f64fac8(r6, s0, r10, r5, r12);
+                    r12 = r12;
+            }
+            r6 = r6 + r5;
+    }
+    r0 = (r7 & !(r7 / 0x80000000)) * r5;
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

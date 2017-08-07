@@ -1,0 +1,24 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = *0x8f6c0620;
+    stack[2043] = *0x8f7112f4;
+    if (r5 != 0x0) {
+            loc_ffffffff8f61c324(0x8f6c05e4);
+            r0 = 0x1;
+            *0x8f6c0620 = 0x0;
+    }
+    else {
+            loc_ffffffff8f62192c(0x8f683451, "** IMPORTANT WARNING **");
+            loc_ffffffff8f62192c(0x8f683451, 0x8f69c35d);
+            loc_ffffffff8f62192c(0x8f683451, "THIS ACTION WILL CAUSE YOU TO LOSE ALL PERSONAL DATA, INCLUDING CONTENT ON YOUR INTERNAL SD CARD!");
+            loc_ffffffff8f62192c(0x8f683451, 0x8f6a4e20);
+            loc_ffffffff8f62192c(0x8f683451, "TO CONFIRM AND PROCEED, RUN THE SAME COMMAND AGAIN WITHIN %d SECONDS", 0x1e);
+            *0x8f6c0620 = 0x1;
+            loc_ffffffff8f61c234(0x8f6c05e4);
+            loc_ffffffff8f61c28c(0x8f6c05e4, 0x7530, 0x8f6240a0, 0x8f6c0620);
+            r0 = r5;
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

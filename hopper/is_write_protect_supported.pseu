@@ -1,0 +1,120 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x24;
+    r5 = arg1;
+    r8 = arg0;
+    stack[2037] = *0x8f7112f4;
+    s0 = loc_ffffffff8f65385c(arg0, arg1);
+    r0 = loc_ffffffff8f6511fc();
+    r10 = r0;
+    if (s0 != 0x0) {
+            r4 = *(r0 + 0x30);
+            r4 = r4 >> r4 / 0x80;
+            COND = r4 == 0x0;
+            if (!COND) {
+                    r0 = *(r0 + 0x21);
+                    r1 = *(r0 + 0x20);
+                    r1 = r1 | r0 * 0x100;
+                    r0 = *(r0 + 0x22);
+                    r1 = r1 | r0 * 0x10000;
+                    r0 = *(r0 + 0x23);
+                    r2 = r1 | r0 * 0x1000000;
+                    r0 = *(r0 + 0x25);
+                    r1 = *(r0 + 0x24);
+                    r12 = r12 << r2 * 0x200;
+                    r1 = r1 | r0 * 0x100;
+                    r0 = *(r0 + 0x26);
+                    r1 = r1 | r0 * 0x10000;
+                    r0 = *(r0 + 0x27);
+                    r3 = r1 | r0 * 0x1000000;
+                    r0 = *(r0 + 0x29);
+                    r1 = *(r0 + 0x28);
+                    r1 = r1 | r0 * 0x100;
+                    r0 = *(r0 + 0x2a);
+                    r1 = r1 | r0 * 0x10000;
+                    r0 = *(r0 + 0x2b);
+                    r6 = r1 | r0 * 0x1000000;
+                    r0 = *(r0 + 0x2d);
+                    r1 = *(r0 + 0x2c);
+                    r1 = r1 | r0 * 0x100;
+                    r0 = *(r0 + 0x2e);
+                    r7 = r1 | r0 * 0x10000 | *(r0 + 0x2f) * 0x1000000;
+                    r0 = r6 + 0x1;
+                    r1 = r7 + 0x0 + CARRY(FLAGS);
+                    r0 = r0 - r2;
+                    r7 = r7 << r3 * 0x200 | r2 / 0x800000;
+                    s0 = s0 << r0 * 0x200;
+                    r6 = r6 << (r1 - r3 + !CARRY(FLAGS)) * 0x200 | r0 / 0x800000;
+                    COND = r1 != 0x0;
+                    if (COND) {
+                            r4 = 0x0;
+                    }
+                    if (CPU_FLAGS & E) {
+                            r4 = 0x1;
+                    }
+                    COND = r2 == 0x0;
+                    if (COND) {
+                            r4 = r4 | 0x1;
+                    }
+                    if (r4 != 0x0) {
+                            if (r5 == 0x0) {
+                                    r4 = r5;
+                            }
+                            if (!CPU_FLAGS & E) {
+                                    r4 = 0x0;
+                                    loc_ffffffff8f62192c(0x8f683451, "Could not get %s partition info", r8);
+                            }
+                    }
+                    else {
+                            r10 = r10 << r10 * 0x200;
+                            COND = r10 != 0x0;
+                            if (!COND) {
+                                    if (r5 != 0x0) {
+                                            loc_ffffffff8f62192c(0x8f683451, 0x8f689541);
+                                    }
+                            }
+                            else {
+                                    r2 = r10;
+                                    r3 = 0x0;
+                                    r0 = r12;
+                                    r1 = r7;
+                                    stack[2033] = r12;
+                                    asm{ strd       r2, r3, [sp, #0x48 + var_38] };
+                                    loc_ffffffff8f67b5cc(r0, r1, r2, r3, stack[2030]);
+                                    r12 = stack[2033];
+                                    COND = r1 == 0x0;
+                                    if (!COND) {
+                                            if (r5 != 0x0) {
+                                                    r2 = r8;
+                                                    loc_ffffffff8f62192c(0x8f683451, "WARNING: %s partition starts at 0x%x", r2);
+                                            }
+                                            r4 = 0x1;
+                                    }
+                                    r3 = 0x0;
+                                    r0 = s0;
+                                    r1 = r6;
+                                    asm{ ldrd       r2, r3, [sp, #0x48 + var_38] };
+                                    loc_ffffffff8f67b5cc(r0, r1);
+                                    COND = r1 == 0x0;
+                                    if (!COND) {
+                                            if (r5 != 0x0) {
+                                                    loc_ffffffff8f62192c(0x8f683451, "WARNING: %s partition size is 0x%x", r8);
+                                            }
+                                            r4 = 0x1;
+                                    }
+                                    if ((r4 & r5) != 0x0) {
+                                            loc_ffffffff8f62192c(0x8f683451, "Only multiples of 0x%x allowed for write-protection", r10);
+                                            loc_ffffffff8f62192c(0x8f683451, "Write protect will not be enabled");
+                                    }
+                                    r4 = zero_extend_32(r4 ^ 0x1);
+                            }
+                    }
+            }
+    }
+    else {
+            r4 = s0;
+    }
+    r0 = r4;
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

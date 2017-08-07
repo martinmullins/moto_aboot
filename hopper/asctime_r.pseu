@@ -1,0 +1,11 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x24;
+    r2 = *(arg0 + 0x18);
+    lr = *(arg0 + 0x10);
+    stack[2043] = *0x8f7112f4;
+    loc_ffffffff8f64aa80(arg1, "%.3s %.3s%3d %.2d:%.2d:%.2d UTC %d", 0x8f6a9088 + r2 * 0x4, 0x8f6a90c7 + lr * 0x4, *(arg0 + 0xc), *(arg0 + 0x8), *(arg0 + 0x4), *arg0, *(arg0 + 0x14) + 0x76c);
+    r0 = arg1;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

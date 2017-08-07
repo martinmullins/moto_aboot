@@ -1,0 +1,37 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r5 = *0x8f6e0720;
+    r7 = 0x8f7112f4;
+    stack[2041] = *0x8f7112f4;
+    if (r5 != 0x0) goto loc_8f634790;
+
+loc_8f6346f8:
+    loc_ffffffff8f61c234(0x8f6e06fc);
+    *(0x8f6e0740 + 0x4) = 0x8f6e0740;
+    *0x8f6e0740 = 0x8f6e0740;
+    loc_ffffffff8f61af70(0x8f6e0724);
+    *(0x8f6e0718 + 0x4) = 0x8f6e0718;
+    *0x8f6e0718 = 0x8f6e0718;
+    loc_ffffffff8f61af70(0x8f6e0748);
+    loc_ffffffff8f61ab4c(0x8f6e0764, r5, 0x1);
+    if (loc_ffffffff8f61b490("usb_status_thread", 0x8f634848, r5, 0x10, 0x1000) != 0x0) goto loc_8f634784;
+
+loc_8f63475c:
+    if (stack[2041] == *0x8f7112f4) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: usb_status  thread_create fail\n", "usb_detection_init");
+    }
+    else {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f634784:
+    loc_ffffffff8f61b6fc();
+    *0x8f6e0720 = 0x1;
+    goto loc_8f634790;
+
+loc_8f634790:
+    if (stack[2041] != *r7) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

@@ -1,0 +1,51 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x1c;
+    stack[2035] = arg3;
+    r11 = lr;
+    r3 = *0x8f7112f4;
+    r7 = arg0;
+    stack[2037] = r3;
+    s0 = arg5;
+    r6 = loc_ffffffff8f601d18(arg0, arg1, arg2, r3, stack[2032], stack[2033]);
+    r4 = loc_ffffffff8f601d18(arg1);
+    r8 = loc_ffffffff8f601d18(arg4);
+    r10 = loc_ffffffff8f61eecc(arg2, arg1);
+    loc_ffffffff8f656968(0x1, "Updating device tree: start\n");
+    if (loc_ffffffff8f6155dc(arg1, r10, r8, s0) != 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "ERROR: Updating Device Tree Failed \n");
+            loc_ffffffff8f6484ac(r11, "ASSERT FAILED at (%s:%d): %s\n", "app/mbm/linux_boot.c", 0x376, 0x8f69c66f);
+    }
+    loc_ffffffff8f656968(0x1, "Updating device tree: done\n");
+    loc_ffffffff8f64ab9c(r10);
+    loc_ffffffff8f656968(0x1, "Booting linux @ %p, ramdisk @ %p (%d), tags/device tree @ %p\n", r6, r8, s0, r4);
+    if ((loc_ffffffff8f6364dc() != 0x0) && (loc_ffffffff8f635424() != 0x0)) {
+            loc_ffffffff8f652284();
+            loc_ffffffff8f6520c8(0x1);
+            loc_ffffffff8f6522e8();
+    }
+    loc_ffffffff8f656cb4();
+    loc_ffffffff8f600cc8();
+    r3 = *0x8f6ac0f0;
+    *0x8f6ac0f0 = r3 + 0x1;
+    if (r3 == 0x0) {
+            loc_ffffffff8f619448();
+    }
+    loc_ffffffff8f601a7c();
+    loc_ffffffff8f6191cc(0x3);
+    loc_ffffffff8f619a54();
+    loc_ffffffff8f6062c0(0x1);
+    if (*(r7 + 0x38) == 0x644d5241) {
+            if (stack[2037] == *0x8f7112f4) {
+                    r0 = loc_ffffffff8f61704c(r7, r4);
+            }
+            else {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    else {
+            r0 = (r6)(0x0, stack[2035], r4);
+            if (stack[2037] != *0x8f7112f4) {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    return r0;
+

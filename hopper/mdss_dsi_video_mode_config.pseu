@@ -1,0 +1,99 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x2c;
+    r7 = arg0;
+    r6 = arg1;
+    r10 = stack[2061];
+    r2 = *0x8f7112f4;
+    stack[2028] = stack[2050];
+    r5 = stack[2049];
+    r4 = stack[2051];
+    stack[2029] = stack[2054];
+    r11 = stack[2048];
+    stack[2037] = r2;
+    stack[2030] = stack[2055];
+    s0 = stack[2052];
+    r8 = stack[2053];
+    stack[2031] = stack[2056];
+    stack[2032] = stack[2057];
+    stack[2033] = stack[2058];
+    stack[2034] = stack[2059];
+    stack[2035] = stack[2060];
+    loc_ffffffff8f60f3cc(arg0, arg1, r2, stack[2060], stack[2028], stack[2029], stack[2030], stack[2031], stack[2032], stack[2033], stack[2034], stack[2035]);
+    *(r10 + 0x11c) = 0x0;
+    *(r10 + 0x11c) = 0x2;
+    *(r10 + 0x11c) = 0x6;
+    *(r10 + 0x11c) = 0xe;
+    *(r10 + 0x11c) = 0x1e;
+    *(r10 + 0x11c) = 0x23f;
+    *(r10 + 0x4) = 0x0;
+    *(r10 + 0x10c) = 0x3f03fe0;
+    *(r10 + 0x110) = 0x2020202;
+    r2 = 0x10030001;
+    if (*r10 == r2) {
+            r2 = 0x1;
+    }
+    if (CPU_FLAGS & E) {
+            *(r10 + 0x1e8) = r2;
+    }
+    r2 = r7 + r5;
+    r7 = r7 + r11;
+    *(r10 + 0x24) = r5 | r2 * 0x10000;
+    *(r10 + 0x28) = r4 | (r6 + r4) * 0x10000;
+    r6 = r6 + stack[2028];
+    if (loc_ffffffff8f60e610() > 0x8) {
+            r7 = r7 + r5 - 0x1;
+            r6 = r6 + r4 - 0x1;
+    }
+    else {
+            if ((loc_ffffffff8f60e610() != 0x5) && (loc_ffffffff8f60e610() != 0x6)) {
+                    r7 = r7 + r5;
+                    r6 = r6 + r4;
+            }
+            else {
+                    r7 = r7 + r5 - 0x1;
+                    r6 = r6 + r4 - 0x1;
+            }
+    }
+    r6 = r7 | r6 * 0x10000;
+    *(r10 + 0x2c) = r6;
+    *(r10 + 0x30) = s0 << s0 * 0x10000;
+    *(r10 + 0x34) = 0x0;
+    *(r10 + 0x38) = r8 << r8 * 0x10000;
+    r2 = 0x10030001;
+    r3 = stack[2035];
+    if (*r10 == r2) {
+            r2 = 0x1;
+    }
+    if (CPU_FLAGS & E) {
+            *(r10 + 0x1e4) = r2;
+    }
+    COND = r2 != 0x0;
+    if (COND) {
+            r2 = 0x1;
+    }
+    *(r10 + 0xcc) = r2;
+    *(r10 + 0xa4) = 0x100;
+    r6 = r6 << stack[2030] * 0x100;
+    r7 = r7 << stack[2029] * 0x10;
+    r5 = r5 << stack[2033] * 0x1000;
+    r4 = r4 << stack[2032] * 0x10000;
+    if (loc_ffffffff8f60e610() <= 0x8) {
+            if (loc_ffffffff8f60e610() != 0x5) {
+                    r7 = r7 | 0x11000000;
+            }
+            if (CPU_FLAGS & NE) {
+                    r7 = r7 | 0x100000;
+            }
+    }
+    *(r10 + 0x10) = r7 | r6 | r5 | r4;
+    *(r10 + 0xbc) = 0x3fd08;
+    r0 = 0x0;
+    *(r10 + 0xa4) = 0x10100;
+    *(r10 + 0x110) = 0x10100;
+    *(r10 + 0x110) = 0x2010202;
+    *(r10 + 0x110) = 0x2030303;
+    *(r10 + 0x4) = 0x2030303 << stack[2031] * 0x10 | 0x100 | 0x3 | stack[2034] * 0x40000000;
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

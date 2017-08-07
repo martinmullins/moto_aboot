@@ -1,0 +1,58 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0xbc;
+    r4 = *(arg1 + 0x4);
+    r3 = *0x8f7112f4;
+    s0 = lr;
+    stack[2039] = r3;
+    loc_ffffffff8f64b2c0(sp + 0x14, *arg1, 0x20, r3, stack[1994]);
+    loc_ffffffff8f67a578(0x0, sp + 0x14) == 0x0;
+    if (CPU_FLAGS & E) goto loc_8f628aa4;
+
+loc_8f628a78:
+    r0 = loc_ffffffff8f64b5d8(sp + 0x14, 0x3a);
+    r0 = loc_ffffffff8f6263a8();
+    r7 = r0;
+    if (r0 != 0xff) goto loc_8f628ab0;
+
+loc_8f628aa4:
+    loc_ffffffff8f62192c();
+    r0 = 0x3;
+    goto loc_8f629028;
+
+loc_8f629028:
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f628ab0:
+    if (r0 != 0x0) goto loc_8f628b18;
+
+loc_8f628ab8:
+    r7 = loc_ffffffff8f6270d8(r4);
+    loc_ffffffff8f64b21c(sp + 0x14, 0x8f686ac4, 0x1f);
+    loc_ffffffff8f64b21c();
+    r0 = loc_ffffffff8f64b5d8(sp + 0x14, 0x3a);
+    r0 = loc_ffffffff8f6263a8();
+    r7 = r0;
+    if (CPU_FLAGS & E) goto loc_8f628aa4;
+
+loc_8f628b18:
+    if (loc_ffffffff8f67a490(0x0, sp + 0x14) == 0x0) goto loc_8f628b44;
+
+loc_8f628b2c:
+    loc_ffffffff8f62192c(0x8f683451, "utag is read-only!");
+    goto loc_8f628aa4;
+
+loc_8f628b44:
+    if (r7 < 0x7) {
+            loc_8f628b54();
+    }
+    loc_ffffffff8f6484ac(s0, "ASSERT FAILED at (%s:%d): %s\n", "app/mbm/fastboot_oem.c", 0x28d, "((void *)0) == \"should not reach here\"");
+    if (loc_ffffffff8f679ff0(0x0) == 0x0) {
+            r0 = loc_ffffffff8f6264ac(sp + 0x14);
+    }
+    else {
+            r0 = 0x3;
+    }
+    goto loc_8f629028;
+

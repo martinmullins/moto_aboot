@@ -1,0 +1,45 @@
+    stack[2043] = r7;
+    stack[2044] = r8;
+    stack[2045] = r10;
+    stack[2046] = r11;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    s0 = arg3;
+    r11 = arg1;
+    r10 = arg2;
+    r8 = stack[2049];
+    r3 = *0x8f7112f4;
+    stack[2038] = r3;
+    r5 = loc_ffffffff8f6788e4(arg0, arg1, arg2, r3, arg0, stack[2038], arg2, r4, r5, 0x8f7112f4, stack[2043], stack[2044], stack[2045], stack[2046], lr);
+    r0 = loc_ffffffff8f64ab44(0x1, 0x234);
+    COND = r4 != 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f69b2a8);
+            r0 = 0x4 ^ 0xffffffff;
+    }
+    else {
+            loc_ffffffff8f64b2c0(r4 + 0x8, r11, 0x20);
+            loc_ffffffff8f64b21c(r4 + 0x28, r10, 0x200);
+            *(r4 + 0x230) = 0x8f6ac0f0;
+            *(r4 + 0x228) = s0;
+            r2 = *0x8f6ac0f0;
+            *(r4 + 0x22c) = r8;
+            *0x8f6ac0f0 = r2 + 0x1;
+            if (r2 == 0x0) {
+                    loc_ffffffff8f619448();
+            }
+            r7 = 0x8f6ac0f0;
+            asm{ stm        r4, {r2, r3} };
+            *(*(r5 + 0x38) + 0x4) = r4;
+            *(r5 + 0x38) = r4;
+            r4 = *r7;
+            *r7 = r4 - 0x1;
+            if (r4 == 0x1) {
+                    loc_ffffffff8f619438();
+            }
+            r0 = 0x0;
+    }
+    if (stack[2038] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

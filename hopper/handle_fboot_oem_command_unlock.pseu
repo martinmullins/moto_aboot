@@ -1,0 +1,83 @@
+    r2 = arg2;
+    stack[2044] = r6;
+    stack[2045] = r7;
+    stack[2046] = r8;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r7 = arg0;
+    r4 = 0x8f7112f4;
+    r8 = arg1;
+    r3 = *r4;
+    r6 = r4;
+    stack[2041] = r3;
+    if (loc_ffffffff8f62a9c0(arg0, arg1, r2, r3, arg0, stack[2041], 0x8f7112f4, r5, stack[2044], stack[2045], stack[2046], lr) == 0x0) goto loc_8f62ab1c;
+
+loc_8f62ab00:
+    loc_ffffffff8f62192c(0x8f683451, "Check 'Allow OEM Unlock' in Developer Options.");
+    loc_ffffffff8f656968(0x1, "reset protected\n");
+    goto loc_8f62ab34;
+
+loc_8f62ab34:
+    r0 = 0x3;
+    goto loc_8f62acdc;
+
+loc_8f62acdc:
+    if (stack[2041] != *r6) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f62ab1c:
+    if (loc_ffffffff8f652bd8() != 0x0) goto loc_8f62ab3c;
+
+loc_8f62ab28:
+    loc_ffffffff8f62192c(0x8f683451, "Not found valid partition table!");
+    goto loc_8f62ab34;
+
+loc_8f62ab3c:
+    if (loc_ffffffff8f674a48() != 0x0) goto loc_8f62abac;
+
+loc_8f62ab48:
+    r0 = loc_ffffffff8f674a88();
+    COND = r5 != 0x0;
+    if (COND) goto loc_8f62abac;
+
+loc_8f62ab54:
+    r4 = *(r8 + 0x4);
+    if ((r7 <= 0x1) || (loc_ffffffff8f64b57c(r4, 0x15) >= 0x14)) goto loc_8f62ab74;
+
+loc_8f62ab88:
+    loc_ffffffff8f62192c(0x8f683451, "Unlock code = %s\n", r4);
+    (*(0x8f6ac374 + 0xc))();
+    goto loc_8f62abc4;
+
+loc_8f62abc4:
+    if (loc_ffffffff8f6752bc(0x4, r4) < 0x16) {
+            loc_8f62abe0();
+    }
+    loc_ffffffff8f62192c(0x8f683451, "Unexpected error, please reboot and try again!");
+    (*(0x8f6ac374 + 0x4))("fastboot_screen", 0x0);
+    (*(0x8f6ac374 + 0x18))("fastboot_screen", 0x20);
+    r0 = 0x3;
+    goto loc_8f62acdc;
+
+loc_8f62ab74:
+    loc_ffffffff8f62192c(0x8f683451, "fastboot oem unlock [ unlock code ]");
+    r0 = 0x0;
+    goto loc_8f62acdc;
+
+loc_8f62abac:
+    r0 = loc_ffffffff8f674a48();
+    if (r0 != 0x0) {
+            r2 = 0x8f627020;
+    }
+    if (CPU_FLAGS & E) {
+            r2 = r0;
+    }
+    if (CPU_FLAGS & NE) {
+            r4 = 0x0;
+    }
+    if (CPU_FLAGS & E) {
+            r4 = r2;
+    }
+    goto loc_8f62abc4;
+

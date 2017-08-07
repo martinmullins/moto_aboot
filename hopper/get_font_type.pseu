@@ -1,0 +1,33 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r0 = loc_ffffffff8f63084c("font_setting", arg1, arg2, r3, arg0, stack[2043], arg2, r4, 0x8f7112f4, lr);
+    COND = r1 >= 0x0;
+    if (COND) goto loc_8f631b5c;
+
+loc_8f631b48:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Font not set!\n");
+    goto loc_8f631b54;
+
+loc_8f631b54:
+    r0 = 0x0;
+    goto loc_8f631b84;
+
+loc_8f631b84:
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f631b5c:
+    r0 = loc_ffffffff8f630c30(0x8f6812f1);
+    COND = r4 != 0x0;
+    if (COND) {
+            r0 = r4;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f631b84;
+
+loc_8f631b70:
+    loc_ffffffff8f656968(0x2, "Not found setting for %s\n", 0x8f6812f1);
+    goto loc_8f631b54;
+

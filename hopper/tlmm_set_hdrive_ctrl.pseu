@@ -1,0 +1,15 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r7 = arg1;
+    r5 = arg0;
+    r4 = 0x0;
+    stack[2041] = *0x8f7112f4;
+    while (r4 != r7) {
+            loc_ffffffff8f6161a0(r5);
+            r5 = r5 + 0xc;
+            r4 = zero_extend_32(r4 + 0x1);
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

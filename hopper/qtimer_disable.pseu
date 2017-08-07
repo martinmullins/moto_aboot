@@ -1,0 +1,9 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    *(0xb021000 + 0x2c) = *(0xb021000 + 0x2c) & !0x1 | 0x2;
+    asm{ dsb        sy };
+    if (stack[2045] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

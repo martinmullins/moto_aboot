@@ -1,0 +1,57 @@
+    r0 = arg0;
+    asm{ mrc        p15, #0x0, r0, c1, c0, #0x0 };
+    asm{ mcr        p15, #0x0, r0, c1, c0, #0x0 };
+    r0 = 0x8f60003c - 0x3c;
+    r1 = 0x8f600000;
+    if (r0 == r1) goto loc_8f600070;
+
+loc_8f60004c:
+    do {
+            r3 = *r0;
+            r0 = r0 + 0x4;
+            *r1 = r3;
+            r1 = r1 + 0x4;
+    } while (r1 != 0x8f6b18bc);
+    r0 = loc_8f600070(0x8f600070);
+    return r0;
+
+loc_8f600070:
+    r0 = 0x8f6aa114;
+    asm{ mrs        r0, apsr };
+    r0 = r0 & !0x1f;
+    r2 = 0x8f6b5000;
+    asm{ msr        cpsr_c, r1 };
+    asm{ msr        cpsr_c, r1 };
+    asm{ msr        cpsr_c, r1 };
+    asm{ msr        cpsr_c, r1 };
+    asm{ msr        cpsr_c, r1 };
+    asm{ msr        cpsr_c, r1 };
+    r0 = 0x8f6aa114;
+    r1 = 0x8f6aa114;
+    if (r0 != r1) {
+            do {
+                    if (r1 < 0x8f6b18bc) {
+                            r3 = *r0;
+                            r0 = r0 + 0x4;
+                    }
+                    if (CPU_FLAGS & L) {
+                            *r1 = r3;
+                            r1 = r1 + 0x4;
+                    }
+            } while (CPU_FLAGS & L);
+    }
+    r0 = 0x8f6b18bc;
+    do {
+            if (r0 < 0x8f713054) {
+                    *r0 = 0x0;
+                    r0 = r0 + 0x4;
+            }
+    } while (CPU_FLAGS & L);
+    asm{ dsb        sy };
+    asm{ isb        sy };
+    loc_ffffffff8f61ae4c();
+    goto loc_8f60010c;
+
+loc_8f60010c:
+    goto loc_8f60010c;
+

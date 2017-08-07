@@ -1,0 +1,402 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x7c;
+    r5 = arg0;
+    stack[2019] = arg3;
+    r6 = arg1;
+    r7 = arg2;
+    r4 = arg4;
+    stack[2037] = *0x8f7112f4;
+    if (arg1 < 0x3) goto loc_8f6593a4;
+
+loc_8f65937c:
+    loc_ffffffff8f64ac90(sp + 0x54, r5, 0x4);
+    r3 = stack[2029];
+    if (*0x8f6a4214 == 0x0) {
+            asm{ reveq      r3, r3 };
+    }
+    if (r3 != 0x184d2204) goto loc_8f659bd0;
+
+loc_8f6593e4:
+    r6 = r6 - 0x4;
+    stack[2018] = r6;
+    if (r6 < 0x2) goto loc_8f6595cc;
+
+loc_8f6593f4:
+    stack[2017] = r5 + 0x4;
+    r0 = loc_ffffffff8f64ac90(sp + 0x60, r5 + 0x4, 0x3);
+    r11 = stack[2032];
+    r3 = stack[2033];
+    r5 = stack[2033];
+    if (0x3 >> r11 / 0x40 == 0x1) goto loc_8f659454;
+
+loc_8f659424:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0x77);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6a3f7e, 0x3e);
+    goto loc_8f659c04;
+
+loc_8f659c04:
+    loc_ffffffff8f656968();
+    goto loc_8f659c08;
+
+loc_8f659c08:
+    r0 = 0x0;
+    goto loc_8f659c10;
+
+loc_8f659c10:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f659454:
+    if ((r11 & 0x8) == 0x0) goto loc_8f65948c;
+
+loc_8f65945c:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0x7a);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6a3f7e, 0x40);
+    goto loc_8f659c04;
+
+loc_8f65948c:
+    if ((r11 & 0x2) == 0x0) goto loc_8f6594b8;
+
+loc_8f659494:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0x7d);
+    goto loc_8f659518;
+
+loc_8f659518:
+    loc_ffffffff8f656968();
+    goto loc_8f659c04;
+
+loc_8f6594b8:
+    if ((r11 & 0x1) == 0x0) goto loc_8f6594f0;
+
+loc_8f6594c0:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0x80);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6a3f7e, 0x42);
+    goto loc_8f659c04;
+
+loc_8f6594f0:
+    r0 = r0 >> r3 / 0x80;
+    COND = r0 == 0x0;
+    if (COND) goto loc_8f659528;
+
+loc_8f659508:
+    loc_ffffffff8f656968();
+    goto loc_8f659518;
+
+loc_8f659528:
+    r6 = r6 >> r3 / 0x10;
+    if (r6 > 0x3) goto loc_8f659564;
+
+loc_8f659534:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0x86);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6a3f7e, 0x44);
+    goto loc_8f659c04;
+
+loc_8f659564:
+    COND = r2 != 0x0;
+    if (CPU_FLAGS & NE) {
+            r3 = 0x89;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f659508;
+
+loc_8f65957c:
+    r0 = loc_ffffffff8f658670(sp + 0x60, 0x2);
+    asm{ ubfx       r0, r0, #0x8, #0x8 };
+    if (r5 == r0) goto loc_8f6595fc;
+
+loc_8f65959c:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0x91);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6a3f7e, 0x45);
+    goto loc_8f659c04;
+
+loc_8f6595fc:
+    asm{ ubfx       sl, fp, #0x5, #0x1 };
+    r3 = 0x8f657e68;
+    r6 = r6 + 0x4;
+    stack[2022] = r10;
+    if (r10 == 0x0) {
+            r8 = 0x10000;
+    }
+    if (CPU_FLAGS & NE) {
+            r8 = 0x0;
+    }
+    if (CPU_FLAGS & E) {
+            r3 = 0x8f658270;
+    }
+    stack[2027] = r3;
+    r6 = 0x1 << r6 << r6 * 0x2;
+    r10 = r8 + r6;
+    if (r10 < 0x110000) {
+            r10 = 0x110000;
+    }
+    if ((r4 & 0x1) != 0x0) {
+            r6 = r10 + r6;
+    }
+    if (CPU_FLAGS & NE) {
+            r0 = r6;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f659c10;
+
+loc_8f65964c:
+    if (r4 == 0x0) goto loc_8f65968c;
+
+loc_8f659654:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0xab);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6a3f7e, 0x4f);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error: Unknown flag (0x%x)\n", r4);
+    goto loc_8f659c08;
+
+loc_8f65968c:
+    r12 = stack[2019];
+    r5 = r12 + r7 - r6;
+    s0 = r5 - r10;
+    if (r5 >= r12) {
+            CMP(s0, r12);
+    }
+    if (CPU_FLAGS & NB) goto loc_8f6596e8;
+
+loc_8f6596a8:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0xb6);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6a3f7e, 0x46);
+    asm{ stm        sp, {sb, sl} };
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Allocation error : not enough memory %p %d %p %d", r5, r6);
+    goto loc_8f659c08;
+
+loc_8f6596e8:
+    asm{ ubfx       ip, fp, #0x2, #0x1 };
+    stack[2020] = r12;
+    stack[2026] = s0 + r10;
+    stack[2023] = s0 + r8;
+    stack[2024] = r7 - r6 - r10;
+    if (stack[2020] == 0x0) {
+            stack[2021] = r4;
+    }
+    if (!CPU_FLAGS & E) {
+            stack[2021] = loc_ffffffff8f658c28(r4);
+    }
+    r11 = 0x0;
+    r4 = stack[2023];
+    asm{ ubfx       fp, fp, #0x4, #0x1 };
+    r7 = 0x3;
+    stack[2025] = r11;
+    goto loc_8f659740;
+
+loc_8f659740:
+    asm{ strd       sl, fp, [sp, #0xa0 + var_88] };
+    r11 = stack[2018];
+    if (r11 - r7 < 0x3) goto loc_8f65977c;
+
+loc_8f659754:
+    r1 = stack[2017] + r7;
+    r7 = r7 + 0x4;
+    r0 = loc_ffffffff8f64ac90(sp + 0x58, r1, 0x4);
+    r2 = stack[2030];
+    if (r2 != 0x0) goto loc_8f6597a0;
+
+loc_8f659b08:
+    if (stack[2020] == 0x0) goto loc_8f659bc8;
+
+loc_8f659b14:
+    r4 = loc_ffffffff8f659304(stack[2021]);
+    if (stack[2018] - r7 < 0x3) goto loc_8f659b5c;
+
+loc_8f659b30:
+    r0 = loc_ffffffff8f64ac90(sp + 0x5c, stack[2017] + r7, 0x4);
+    r3 = stack[2031];
+    if (*0x8f6a4214 == 0x0) {
+            asm{ reveq      r3, r3 };
+    }
+    if (r4 == r3) goto loc_8f659bc8;
+
+loc_8f659b98:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0x134);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6a3f7e, 0x4b);
+    goto loc_8f659c04;
+
+loc_8f659bc8:
+    asm{ ldrd       r0, r1, [sp, #0xa0 + var_88] };
+    goto loc_8f659c10;
+
+loc_8f659b5c:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0x130);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6a3f7e, 0x4a);
+    goto loc_8f659c04;
+
+loc_8f6597a0:
+    r10 = *0x8f6a4214;
+    if (r10 == 0x0) {
+            asm{ reveq      r2, r2 };
+    }
+    r11 = r11 >> r2 / 0x80000000;
+    r2 = r2 & !0x80000000;
+    stack[2030] = r2;
+    if (r2 < r6) goto loc_8f6597f4;
+
+loc_8f6597c4:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0xd5);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6a3f7e, 0x48);
+    goto loc_8f659c04;
+
+loc_8f6597f4:
+    if (stack[2018] - r7 < r2) goto loc_8f65982c;
+
+loc_8f659804:
+    loc_ffffffff8f64ac90(r5, stack[2017] + r7);
+    r7 = r7 + stack[2030];
+    if (stack[2025] == 0x0) goto loc_8f659918;
+
+loc_8f65985c:
+    r3 = loc_ffffffff8f658670(r5);
+    if (stack[2018] - r7 < 0x3) goto loc_8f6598ac;
+
+loc_8f65987c:
+    r10 = *0x8f6a4214;
+    r1 = stack[2017] + r7;
+    r7 = r7 + 0x4;
+    loc_ffffffff8f64ac90(sp + 0x5c, r1, 0x4);
+    r2 = stack[2031];
+    r3 = r3;
+    if (r10 == 0x0) {
+            asm{ reveq      r2, r2 };
+    }
+    stack[2031] = r2;
+    if (r3 == r2) goto loc_8f659918;
+
+loc_8f6598e8:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0xea);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6a3f7e, 0x4b);
+    goto loc_8f659c04;
+
+loc_8f659918:
+    if (r11 == 0x0) goto loc_8f6599ec;
+
+loc_8f659920:
+    r11 = 0x0;
+    asm{ ldrd       sl, fp, [sp, #0xa0 + var_88] };
+    r10 = r10 + stack[2030];
+    asm{ strd       sl, fp, [sp, #0xa0 + var_98] };
+    r10 = stack[2024];
+    r11 = 0x0;
+    r1 = r11;
+    r0 = r10;
+    asm{ ldrd       sl, fp, [sp, #0xa0 + var_98] };
+    if (r11 == r1) {
+            CMP(r10, r0);
+    }
+    if (CPU_FLAGS & B) goto loc_8f659978;
+
+loc_8f659954:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0xf1);
+    goto loc_8f659aa0;
+
+loc_8f659aa0:
+    loc_ffffffff8f656968();
+    goto loc_8f659c04;
+
+loc_8f659978:
+    r11 = stack[2019];
+    r1 = r5;
+    loc_ffffffff8f64ac90(r11 + stack[2014], r1);
+    asm{ ldrd       sl, fp, [sp, #0xa0 + var_88] };
+    r10 = r10 + stack[2030];
+    if (stack[2020] != 0x0) {
+            r1 = r5;
+            loc_ffffffff8f658c74(stack[2021], r1);
+    }
+    if (stack[2022] == 0x0) {
+            r2 = stack[2030];
+            if (r2 >= r8) {
+                    r1 = r2 - r8;
+            }
+            if (!CPU_FLAGS & NB) {
+                    loc_ffffffff8f64ac90(r4, r5);
+                    r3 = stack[2030];
+                    r4 = r4 + r3;
+                    if (stack[2026] - r4 < r6) {
+                            loc_ffffffff8f64ac90();
+                            r4 = stack[2023];
+                    }
+            }
+            else {
+                    loc_ffffffff8f64ac90();
+                    r4 = stack[2023];
+            }
+    }
+    goto loc_8f659740;
+
+loc_8f6599ec:
+    r10 = stack[2027];
+    r0 = (r10)(r5, r4, stack[2030], r6);
+    COND = r3 >= 0x0;
+    if (COND) goto loc_8f659a3c;
+
+loc_8f659a0c:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0x111);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6a3f7e, 0x4d);
+    goto loc_8f659c04;
+
+loc_8f659a3c:
+    r11 = stack[2020];
+    if (r11 != 0x0) {
+            loc_ffffffff8f658c74(stack[2021], r4, r3);
+            r3 = r3;
+    }
+    asm{ ldrd       sl, fp, [sp, #0xa0 + var_88] };
+    r0 = stack[2024];
+    r10 = r10 + r3;
+    if (r11 + r3 / 0x80000000 + CARRY(FLAGS) == 0x0) {
+            CMP(r10, r0);
+    }
+    if (CPU_FLAGS & B) goto loc_8f659ab0;
+
+loc_8f659a80:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0x116);
+    goto loc_8f659aa0;
+
+loc_8f659ab0:
+    loc_ffffffff8f64ac90(stack[2019] + stack[2014], r4, r3);
+    r3 = r3;
+    if (stack[2022] == 0x0) {
+            r4 = r4 + r3;
+            if (stack[2026] - r4 < r6) {
+                    loc_ffffffff8f64ac90();
+                    r4 = stack[2023];
+            }
+    }
+    goto loc_8f659740;
+
+loc_8f6598ac:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0xe7);
+    goto loc_8f6598cc;
+
+loc_8f6598cc:
+    loc_ffffffff8f656968();
+    goto loc_8f659c04;
+
+loc_8f65982c:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0xdc);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6a3f7e, 0x49);
+    goto loc_8f659c04;
+
+loc_8f65977c:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0xcc);
+    goto loc_8f6598cc;
+
+loc_8f6595cc:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0x93);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6a3f7e, 0x3d);
+    goto loc_8f659c04;
+
+loc_8f659bd0:
+    if (r4 == 0x1) goto loc_8f659c08;
+
+loc_8f659bd8:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0x14f);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6a3f7e, 0x2c);
+    goto loc_8f659c04;
+
+loc_8f6593a4:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error defined at %s, line %i : \n", "lib/lz4/lz4mem.c", 0x144);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6a3f7e, 0x29);
+    goto loc_8f659c04;
+

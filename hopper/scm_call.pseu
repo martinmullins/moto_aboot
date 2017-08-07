@@ -1,0 +1,46 @@
+    r2 = arg2;
+    r11 = (sp - 0x4 - 0x4) + 0x4;
+    *(r11 + 0xffffffffffffffe0) = arg0;
+    *(r11 + 0xffffffffffffffdc) = arg1;
+    *(r11 + 0xffffffffffffffd8) = r2;
+    *(r11 + 0xffffffffffffffd4) = arg3;
+    *(r11 + 0xffffffffffffffd0) = *(r11 + 0x4);
+    *(r11 + 0xffffffffffffffcc) = *(r11 + 0x8);
+    r3 = *0x8f7112f4;
+    *(r11 + 0xfffffffffffffff8) = r3;
+    *(r11 + 0xffffffffffffffe8) = loc_ffffffff8f616464(*(r11 + 0xffffffffffffffd4), *(r11 + 0xffffffffffffffcc), r2, r3, stack[2034], stack[2035]);
+    if (*(r11 + 0xffffffffffffffe8) != 0x0) {
+            *(*(r11 + 0xffffffffffffffe8) + 0xc) = r2 << *(r11 + 0xffffffffffffffe0) * 0x400 | *(r11 + 0xffffffffffffffdc);
+            if (*(r11 + 0xffffffffffffffd8) != 0x0) {
+                    r0 = *(r11 + 0xffffffffffffffe8);
+                    r0 = loc_ffffffff8f616320(r0);
+                    loc_ffffffff8f64ac90(r0, *(r11 + 0xffffffffffffffd8), *(r11 + 0xffffffffffffffd4), r0);
+            }
+            r2 = *(r11 + 0xffffffffffffffe8);
+            r3 = *(r11 + 0xffffffffffffffe8);
+            r3 = *r3;
+            loc_ffffffff8f6193d4(r2, r3, r2, r3);
+            *(r11 + 0xffffffffffffffec) = loc_ffffffff8f616534(*(r11 + 0xffffffffffffffe8));
+            if (*(r11 + 0xffffffffffffffec) == 0x0) {
+                    if (*(r11 + 0xffffffffffffffcc) != 0x0) {
+                            *(r11 + 0xfffffffffffffff0) = loc_ffffffff8f6162c8(*(r11 + 0xffffffffffffffe8));
+                            do {
+                                    loc_ffffffff8f6193f8(*(r11 + 0xfffffffffffffff0), 0xc);
+                            } while (*(*(r11 + 0xfffffffffffffff0) + 0x8) == 0x0);
+                            *(r11 + 0xfffffffffffffff4) = loc_ffffffff8f616370(*(r11 + 0xfffffffffffffff0));
+                            loc_ffffffff8f6193f8(*(r11 + 0xfffffffffffffff4), *(r11 + 0xffffffffffffffcc));
+                            if (*(r11 + 0xffffffffffffffd0) != 0x0) {
+                                    r0 = *(r11 + 0xffffffffffffffd0);
+                                    loc_ffffffff8f64ac90(r0, *(r11 + 0xfffffffffffffff4), *(r11 + 0xffffffffffffffcc));
+                            }
+                    }
+            }
+            r0 = *(r11 + 0xffffffffffffffe8);
+            loc_ffffffff8f6163c8(r0);
+    }
+    r0 = *0x8f7112f4;
+    if (*(r11 + 0xfffffffffffffff8) != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

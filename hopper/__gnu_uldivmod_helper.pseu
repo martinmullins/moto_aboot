@@ -1,0 +1,13 @@
+    stack[2048] = arg4;
+    stack[2044] = r6;
+    stack[2045] = r7;
+    r6 = arg0;
+    r7 = arg1;
+    r4 = loc_ffffffff8f67bb18(arg0, arg1, arg2, arg3, r4, r5, stack[2044], stack[2045], r8, lr, stack[2048]) * arg3;
+    r3 = r4 + arg2 * arg1;
+    asm{ umull      r4, r5, r0, r8 };
+    r5 = r3 + r5;
+    r4 = r6 - r4;
+    asm{ strd       r4, r5, [r3] };
+    return;
+

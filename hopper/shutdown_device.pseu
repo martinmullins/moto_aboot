@@ -1,0 +1,13 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x14;
+    r3 = *0x8f7112f4;
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Going down for shutdown.\n");
+    loc_ffffffff8f645928(0x4);
+    *0x4ab000 = 0x0;
+    loc_ffffffff8f60c558(0x1388);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "shutdown failed\n");
+    r0 = loc_ffffffff8f6484ac(lr, "ASSERT FAILED at (%s:%d): %s\n", "target/msm8916/init.c", 0x171, 0x8f69c66f);
+    if (r3 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

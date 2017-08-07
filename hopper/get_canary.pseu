@@ -1,0 +1,12 @@
+    r11 = (sp - 0x4 - 0x4) + 0x4;
+    *(r11 + 0xfffffffffffffff8) = *0x8f7112f4;
+    if (loc_ffffffff8f6171cc(r11 - 0xc, 0x4) != 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "scm_call for random failed !!!");
+            *(r11 + 0xfffffffffffffff4) = loc_ffffffff8f64ac04();
+    }
+    r0 = *(r11 + 0xfffffffffffffff4);
+    if (*(r11 + 0xfffffffffffffff8) != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

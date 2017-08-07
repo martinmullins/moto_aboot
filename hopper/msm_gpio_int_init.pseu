@@ -1,0 +1,29 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    *(0x8f6b505c + 0x4) = 0x8f6b505c;
+    *0x8f6b505c = 0x8f6b505c;
+    loc_ffffffff8f60cae0(0xf0, 0x8f6032d4, 0x0, 0x8f6b505c, arg0, r3, r4, lr);
+    r2 = r3;
+    if (r2 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            sp = sp + 0x8;
+            r1 = 0x8f6032d4;
+            sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+            if (*0x8f7112f4 != *0x8f7112f4) {
+                    r0 = loc_ffffffff8f648514();
+            }
+            else {
+                    sp = sp + 0xc;
+                    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+                    r2 = *0x8f7112f4;
+                    *((0x0 >> 0x0 / 0x20) + 0x2c00040 << ((0x0 >> 0x0 / 0x20) + 0x2c00040) * 0x4) = 0x1 << (0x0 & 0x1f);
+                    r0 = 0x0;
+                    if (r2 != *0x8f7112f4) {
+                            r0 = loc_ffffffff8f648514();
+                    }
+            }
+    }
+    return r0;
+

@@ -1,0 +1,52 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    loc_ffffffff8f656968(0x1, "Check for DCP!\n", arg2, 0x0, arg0, 0x0, r4, r5, 0x8f7112f4, lr);
+    r0 = loc_ffffffff8f647270(0xc, 0x10);
+    COND = r2 >= 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "5Vs config_apsd error %d\n");
+    }
+    r0 = loc_ffffffff8f647270(0xc, 0x70);
+    COND = r2 >= 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "9V config_apsd error %d\n");
+    }
+    r0 = loc_ffffffff8f647270(0x11, 0xa0);
+    COND = r2 >= 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Disable config_apsd error %d\n");
+    }
+    r0 = loc_ffffffff8f647270(0x11, 0xa1);
+    COND = r2 >= 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Enable config_apsd error %d\n");
+    }
+    r0 = loc_ffffffff8f647270(0xc, 0x10);
+    COND = r2 >= 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "5Ve config_apsd error %d\n");
+    }
+    r0 = loc_ffffffff8f647270(0xc, 0x4d);
+    COND = r2 >= 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f69ed53);
+    }
+    r4 = 0x0;
+    do {
+            r0 = loc_ffffffff8f647204(0x56, sp + 0x3);
+            COND = r5 >= 0x0;
+            if (!COND) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Read IRQ G error %d\n", r5);
+            }
+            if ((0x0 & 0x40) != 0x0) {
+                break;
+            }
+            r4 = r4 + 0x1;
+            loc_ffffffff8f61b944(0x32);
+    } while (r4 != 0x6);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Check APSD Done i = %d\n", r4);
+    r0 = r5;
+    if (0x0 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

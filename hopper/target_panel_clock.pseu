@@ -1,0 +1,143 @@
+    stack[2042] = r6;
+    stack[2043] = r7;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r6 = arg0;
+    r7 = arg1;
+    r3 = *0x8f7112f4;
+    stack[2038] = r3;
+    loc_ffffffff8f656968(0x2, "target_panel_clock\n", arg2, r3, arg0, stack[2038], arg2, r4, r5, stack[2042], stack[2043], 0x8f7112f4, r10, r11, lr);
+    r5 = *(r7 + 0xdc);
+    *(r5 + 0x18) = 0x3e8;
+    if (r6 == 0x0) goto loc_8f60188c;
+
+loc_8f601654:
+    loc_ffffffff8f60248c(r6);
+    loc_ffffffff8f60277c();
+    loc_ffffffff8f602538();
+    r0 = loc_ffffffff8f616c34(0x1);
+    COND = r4 == 0x0;
+    if (COND) goto loc_8f601694;
+
+loc_8f601674:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: Failed to restore MDP security configs", "target_panel_clock");
+    loc_ffffffff8f6026cc();
+    loc_ffffffff8f60273c();
+    goto loc_8f6018b0;
+
+loc_8f6018b0:
+    loc_ffffffff8f60248c();
+    goto loc_8f6018b4;
+
+loc_8f6018b4:
+    r0 = r4;
+    if (stack[2038] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f601694:
+    r10 = 0x1a98000;
+    r11 = 0x1;
+    *(0x1a98000 + 0x368) = 0x1;
+    loc_ffffffff8f60c558(0x1);
+    *(0x1a98000 + 0x368) = 0x1a98000;
+    loc_ffffffff8f60c558(0x1);
+    loc_ffffffff8f61165c(0x1a98300, 0x1a98000, r5);
+    do {
+            *(0x1a98000 + 0x368) = r11;
+            loc_ffffffff8f60c5a0(0x1);
+            *(0x1a98000 + 0x368) = 0x0;
+            *(0x1a98000 + 0x370) = 0x34;
+            *(0x1a98000 + 0x320) = 0x1;
+            *(0x1a98000 + 0x320) = 0x5;
+            *(0x1a98000 + 0x320) = 0xf;
+            r10 = r10 + 0x1;
+            loc_ffffffff8f60c5a0(0x1f4);
+            loc_ffffffff8f6015c4();
+            r6 = *(0x1a98000 + 0x3c0);
+            r6 = r6 & 0x1;
+            loc_ffffffff8f656968(0x2, "TSMC pll locked status is %d\n", r6);
+            r3 = r6 ^ 0x1;
+            if (r10 > 0x2) {
+                    r3 = 0x0;
+            }
+            if (CPU_FLAGS & B) {
+                    r3 = r3 & 0x1;
+            }
+    } while (r3 != 0x0);
+    if (r6 == 0x0) {
+            s0 = r6;
+            r11 = 0x1;
+            do {
+                    *(0x1a98000 + 0x368) = r11;
+                    loc_ffffffff8f60c5a0(0x1);
+                    *(0x1a98000 + 0x368) = 0x0;
+                    *(0x1a98000 + 0x370) = 0x14;
+                    *(0x1a98000 + 0x320) = 0x1;
+                    *(0x1a98000 + 0x320) = 0x5;
+                    s0 = s0 + 0x1;
+                    loc_ffffffff8f60c5a0(0x3);
+                    *(0x1a98000 + 0x320) = 0xf;
+                    loc_ffffffff8f60c5a0(0x1f4);
+                    loc_ffffffff8f6015c4();
+                    r6 = *(0x1a98000 + 0x3c0);
+                    r6 = r6 & 0x1;
+                    loc_ffffffff8f656968(0x2, "GF P1 pll locked status is %d\n", r6);
+                    r3 = r6 ^ 0x1;
+                    if (s0 > 0x2) {
+                            r3 = 0x0;
+                    }
+                    if (CPU_FLAGS & B) {
+                            r3 = r3 & 0x1;
+                    }
+            } while (r3 != 0x0);
+            if (r6 == 0x0) {
+                    r11 = 0x1;
+                    do {
+                            *(0x1a98000 + 0x368) = r11;
+                            loc_ffffffff8f60c5a0(0x1);
+                            *(0x1a98000 + 0x368) = 0x0;
+                            *(0x1a98000 + 0x370) = 0x4;
+                            *(0x1a98000 + 0x320) = 0x1;
+                            *(0x1a98000 + 0x320) = 0x5;
+                            r6 = r6 + 0x1;
+                            loc_ffffffff8f60c5a0(0x3);
+                            *(0x1a98000 + 0x320) = 0xf;
+                            loc_ffffffff8f60c5a0(0x1f4);
+                            loc_ffffffff8f6015c4();
+                            s0 = *(0x1a98000 + 0x3c0);
+                            s0 = s0 & 0x1;
+                            loc_ffffffff8f656968(0x2, "GF P2 pll locked status is %d\n", s0);
+                            r3 = s0 ^ 0x1;
+                            if (r6 > 0x2) {
+                                    r3 = 0x0;
+                            }
+                            if (CPU_FLAGS & B) {
+                                    r3 = r3 & 0x1;
+                            }
+                    } while (r3 != 0x0);
+                    if (s0 == 0x0) {
+                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Not able to enable the pll\n");
+                    }
+            }
+    }
+    r0 = *(r7 + 0xff);
+    r4 = 0x0;
+    loc_ffffffff8f602880(r0, *(r5 + 0x1f), *(r5 + 0x20), *(r5 + 0x21));
+    goto loc_8f6018b4;
+
+loc_8f60188c:
+    r0 = loc_ffffffff8f619fe8();
+    COND = r4 != 0x0;
+    if (COND) {
+            r4 = r6;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f6018b4;
+
+loc_8f60189c:
+    r0 = *(r7 + 0xff);
+    loc_ffffffff8f602808(r0);
+    loc_ffffffff8f6026cc();
+    loc_ffffffff8f60273c();
+    goto loc_8f6018b0;
+

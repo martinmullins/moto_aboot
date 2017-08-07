@@ -1,0 +1,22 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r0 = *(arg0 + 0xc);
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r0 = loc_ffffffff8f64b0ac(r0 + 0x1, "clogo", arg2, r3, arg0, stack[2043], arg2, 0x8f7112f4, r5, lr);
+    COND = r5 != 0x0;
+    if (!COND) {
+            loc_ffffffff8f67a3d0();
+            if (loc_ffffffff8f679aec(r5, 0x8f68834d) == 0x0) {
+                    loc_ffffffff8f656968();
+            }
+            loc_ffffffff8f67a310(0x0, 0x8f68834d);
+            if (loc_ffffffff8f679ff0(0x0) != 0x0) {
+                    loc_ffffffff8f656968(0x0, "Failed to flush UTAG for \"%s\"!\n", 0x8f68834d);
+            }
+    }
+    r0 = 0x1;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

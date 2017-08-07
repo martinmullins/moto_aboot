@@ -1,0 +1,32 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = arg0;
+    r4 = 0x8f6a9eec;
+    stack[2041] = *0x8f7112f4;
+    goto loc_8f648950;
+
+loc_8f648950:
+    if (r4 == 0x8f6a9f58) goto loc_8f648994;
+
+loc_8f648958:
+    if (loc_ffffffff8f64b470(r5, r4 + 0x4, 0x10) != 0x0) goto loc_8f64898c;
+
+loc_8f648970:
+    *0x8f6e0be4 = r4;
+    if (stack[2041] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f64898c:
+    r4 = r4 + 0x24;
+    goto loc_8f648950;
+
+loc_8f648994:
+    if (stack[2041] == *0x8f7112f4) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "unsupported font type %s\n", r5);
+    }
+    else {
+            loc_ffffffff8f648514();
+    }
+    return;
+

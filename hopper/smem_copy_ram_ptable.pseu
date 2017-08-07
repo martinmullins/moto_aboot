@@ -1,0 +1,387 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x1c;
+    r4 = arg0;
+    r8 = lr;
+    r5 = 0x8f7112f4;
+    stack[2037] = *0x8f7112f4;
+    r0 = loc_ffffffff8f64ac90(0x8f6b50a8, r4, 0x14, 0x8f6b50a8, stack[2032]);
+    r1 = *(r0 + 0x9);
+    r7 = r0;
+    r2 = *(r0 + 0x8);
+    r2 = r2 | r1 * 0x100 | *(r0 + 0xa) * 0x10000;
+    r2 = r2 | *(r0 + 0xb) * 0x1000000;
+    if (r2 == 0x1) {
+            if (stack[2037] == *0x8f7112f4) {
+                    r1 = r4;
+                    sp = sp + 0x20;
+                    if (0x818 != 0x0) {
+                            CMP(r1, r0);
+                    }
+                    if (CPU_FLAGS & E) {
+                            return;
+                    }
+                    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+                    COND = r3 > 0x0;
+                    if (COND) {
+                            CMP(0x818, r3);
+                    }
+                    if (!CPU_FLAGS & G) {
+                            r2 = 0x818;
+                            if (r2 >= 0x14) {
+                                    r3 = r0 ^ r1;
+                                    if ((r3 & 0x3) == 0x0) {
+                                            if ((r0 & 0xf) == 0x0) {
+                                                    r2 = 0x818;
+                                                    if (r2 >= 0x20) {
+                                                            asm{ pld        [r1] };
+                                                            asm{ pld        [r1, #0x40] };
+                                                            asm{ pld        [r1, #0x80] };
+                                                            asm{ pld        [r1, #0xc0] };
+                                                            asm{ pld        [r1, #0x100] };
+                                                            if (r2 >= 0x140) {
+                                                                    asm{ pld        [r1, #0x140] };
+                                                                    asm{ pld        [r1, #0x180] };
+                                                                    asm{ pld        [r1, #0x1c0] };
+                                                            }
+                                                            r2 = r2 - 0x20;
+                                                            do {
+                                                                    asm{ pld        [r1, #0x200] };
+                                                                    asm{ ldm        r1!, {r4, r5, r6, r7} };
+                                                                    asm{ stm        r0!, {r4, r5, r6, r7} };
+                                                                    asm{ ldm        r1!, {r4, r5, r6, r7} };
+                                                                    r2 = r2 - 0x20;
+                                                                    COND = r2 >= 0x0;
+                                                                    asm{ stm        r0!, {r4, r5, r6, r7} };
+                                                            } while (COND);
+                                                            r2 = r2 + 0x20;
+                                                            COND = r2 == 0x0;
+                                                            if (!COND) {
+                                                                    if (r2 >= 0x4) {
+                                                                            r2 = r2 - 0x4;
+                                                                            do {
+                                                                                    r3 = *r1;
+                                                                                    r1 = r1 + 0x4;
+                                                                                    r2 = r2 - 0x4;
+                                                                                    COND = r2 >= 0x0;
+                                                                                    *r0 = r3;
+                                                                                    r0 = r0 + 0x4;
+                                                                            } while (COND);
+                                                                            r2 = r2 + 0x4;
+                                                                            COND = r2 == 0x0;
+                                                                            if (!COND) {
+                                                                                    do {
+                                                                                            r3 = *r1;
+                                                                                            r1 = r1 + 0x1;
+                                                                                            r2 = r2 - 0x1;
+                                                                                            COND = r2 > 0x0;
+                                                                                            *r0 = r3;
+                                                                                            r0 = r0 + 0x1;
+                                                                                    } while (COND);
+                                                                            }
+                                                                    }
+                                                                    else {
+                                                                            do {
+                                                                                    r3 = *r1;
+                                                                                    r1 = r1 + 0x1;
+                                                                                    r2 = r2 - 0x1;
+                                                                                    COND = r2 > 0x0;
+                                                                                    *r0 = r3;
+                                                                                    r0 = r0 + 0x1;
+                                                                            } while (COND);
+                                                                    }
+                                                            }
+                                                    }
+                                                    else {
+                                                            r2 = r2 - 0x4;
+                                                            do {
+                                                                    r3 = *r1;
+                                                                    r1 = r1 + 0x4;
+                                                                    r2 = r2 - 0x4;
+                                                                    COND = r2 >= 0x0;
+                                                                    *r0 = r3;
+                                                                    r0 = r0 + 0x4;
+                                                            } while (COND);
+                                                            r2 = r2 + 0x4;
+                                                            COND = r2 == 0x0;
+                                                            if (!COND) {
+                                                                    do {
+                                                                            r3 = *r1;
+                                                                            r1 = r1 + 0x1;
+                                                                            r2 = r2 - 0x1;
+                                                                            COND = r2 > 0x0;
+                                                                            *r0 = r3;
+                                                                            r0 = r0 + 0x1;
+                                                                    } while (COND);
+                                                            }
+                                                    }
+                                            }
+                                            else {
+                                                    r12 = 0x0 - (r12 << r0 * 0x10000000);
+                                                    asm{ msr        apsr_nzcvq, ip };
+                                                    if (CPU_FLAGS & O) {
+                                                            r3 = *r1;
+                                                            r1 = r1 + 0x1;
+                                                    }
+                                                    if (CPU_FLAGS & NS) {
+                                                            r4 = *r1;
+                                                            r1 = r1 + 0x2;
+                                                    }
+                                                    if (CPU_FLAGS & E) {
+                                                            r5 = *r1;
+                                                            r1 = r1 + 0x4;
+                                                    }
+                                                    if (CPU_FLAGS & O) {
+                                                            *r0 = r3;
+                                                            r0 = r0 + 0x1;
+                                                    }
+                                                    if (CPU_FLAGS & NS) {
+                                                            *r0 = r4;
+                                                            r0 = r0 + 0x2;
+                                                    }
+                                                    if (CPU_FLAGS & E) {
+                                                            *r0 = r5;
+                                                            r0 = r0 + 0x4;
+                                                    }
+                                                    if (CPU_FLAGS & S) {
+                                                            asm{ ldmmi      r1!, {r3, r4} };
+                                                    }
+                                                    if (CPU_FLAGS & S) {
+                                                            asm{ stmmi      r0!, {r3, r4} };
+                                                    }
+                                                    r2 = r2 - r12 / 0x10000000;
+                                                    if (r2 < 0x20) {
+                                                            r2 = r2 - 0x4;
+                                                            do {
+                                                                    r3 = *r1;
+                                                                    r1 = r1 + 0x4;
+                                                                    r2 = r2 - 0x4;
+                                                                    COND = r2 >= 0x0;
+                                                                    *r0 = r3;
+                                                                    r0 = r0 + 0x4;
+                                                            } while (COND);
+                                                            r2 = r2 + 0x4;
+                                                            COND = r2 == 0x0;
+                                                            if (!COND) {
+                                                                    do {
+                                                                            r3 = *r1;
+                                                                            r1 = r1 + 0x1;
+                                                                            r2 = r2 - 0x1;
+                                                                            COND = r2 > 0x0;
+                                                                            *r0 = r3;
+                                                                            r0 = r0 + 0x1;
+                                                                    } while (COND);
+                                                            }
+                                                    }
+                                                    else {
+                                                            asm{ pld        [r1] };
+                                                            asm{ pld        [r1, #0x40] };
+                                                            asm{ pld        [r1, #0x80] };
+                                                            asm{ pld        [r1, #0xc0] };
+                                                            asm{ pld        [r1, #0x100] };
+                                                            if (r2 >= 0x140) {
+                                                                    asm{ pld        [r1, #0x140] };
+                                                                    asm{ pld        [r1, #0x180] };
+                                                                    asm{ pld        [r1, #0x1c0] };
+                                                            }
+                                                            r2 = r2 - 0x20;
+                                                            do {
+                                                                    asm{ pld        [r1, #0x200] };
+                                                                    asm{ ldm        r1!, {r4, r5, r6, r7} };
+                                                                    asm{ stm        r0!, {r4, r5, r6, r7} };
+                                                                    asm{ ldm        r1!, {r4, r5, r6, r7} };
+                                                                    r2 = r2 - 0x20;
+                                                                    COND = r2 >= 0x0;
+                                                                    asm{ stm        r0!, {r4, r5, r6, r7} };
+                                                            } while (COND);
+                                                            r2 = r2 + 0x20;
+                                                            COND = r2 == 0x0;
+                                                            if (!COND) {
+                                                                    if (r2 >= 0x4) {
+                                                                            r2 = r2 - 0x4;
+                                                                            do {
+                                                                                    r3 = *r1;
+                                                                                    r1 = r1 + 0x4;
+                                                                                    r2 = r2 - 0x4;
+                                                                                    COND = r2 >= 0x0;
+                                                                                    *r0 = r3;
+                                                                                    r0 = r0 + 0x4;
+                                                                            } while (COND);
+                                                                            r2 = r2 + 0x4;
+                                                                            COND = r2 == 0x0;
+                                                                            if (!COND) {
+                                                                                    do {
+                                                                                            r3 = *r1;
+                                                                                            r1 = r1 + 0x1;
+                                                                                            r2 = r2 - 0x1;
+                                                                                            COND = r2 > 0x0;
+                                                                                            *r0 = r3;
+                                                                                            r0 = r0 + 0x1;
+                                                                                    } while (COND);
+                                                                            }
+                                                                    }
+                                                                    else {
+                                                                            do {
+                                                                                    r3 = *r1;
+                                                                                    r1 = r1 + 0x1;
+                                                                                    r2 = r2 - 0x1;
+                                                                                    COND = r2 > 0x0;
+                                                                                    *r0 = r3;
+                                                                                    r0 = r0 + 0x1;
+                                                                            } while (COND);
+                                                                    }
+                                                            }
+                                                    }
+                                            }
+                                    }
+                                    else {
+                                            do {
+                                                    r3 = *r1;
+                                                    r1 = r1 + 0x1;
+                                                    r2 = r2 - 0x1;
+                                                    COND = r2 > 0x0;
+                                                    *r0 = r3;
+                                                    r0 = r0 + 0x1;
+                                            } while (COND);
+                                    }
+                            }
+                            else {
+                                    do {
+                                            r3 = *r1;
+                                            r1 = r1 + 0x1;
+                                            r2 = r2 - 0x1;
+                                            COND = r2 > 0x0;
+                                            *r0 = r3;
+                                            r0 = r0 + 0x1;
+                                    } while (COND);
+                            }
+                    }
+                    else {
+                            r2 = 0x818;
+                            r1 = r1 + r2 - 0x1;
+                            r0 = r0 + r2 - 0x1;
+                            do {
+                                    r3 = *r1;
+                                    r1 = r1 + 0x1;
+                                    r2 = r2 - 0x1;
+                                    COND = r2 > 0x0;
+                                    *r0 = r3;
+                                    r0 = r0 + 0x1;
+                            } while (COND);
+                    }
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (r2 == 0x0) {
+                    s0 = *(r4 + 0x11);
+                    s0 = *(r4 + 0x10) | s0 * 0x100;
+                    s0 = s0 | *(r4 + 0x12) * 0x10000;
+                    s0 = s0 | *(r4 + 0x13) * 0x1000000;
+                    r3 = r2;
+                    while (r2 != s0) {
+                            r8 = 0x38;
+                            r0 = r4 + r8 * r2;
+                            r1 = r7 + r2 * 0x40;
+                            r2 = r2 + 0x1;
+                            r0 = r0 + 0x30;
+                            r11 = *(r0 + 0xfffffffffffffff5);
+                            r10 = *(r0 + 0xfffffffffffffff4);
+                            r10 = r10 | r11 * 0x100 | *(r0 + 0xfffffffffffffff6) * 0x10000;
+                            r11 = *(r0 + 0xfffffffffffffff7);
+                            *(r1 + 0x2c) = r3;
+                            *(r1 + 0x2d) = r3;
+                            r10 = r10 | r11 * 0x1000000;
+                            *(r1 + 0x2e) = r3;
+                            *(r1 + 0x28) = r10;
+                            asm{ ubfx       fp, sl, #0x8, #0x8 };
+                            *(r1 + 0x2f) = r3;
+                            *(r1 + 0x29) = r11;
+                            asm{ ubfx       fp, sl, #0x10, #0x8 };
+                            *(r1 + 0x2a) = r11;
+                            *(r1 + 0x2b) = r10 >> r10 / 0x1000000;
+                            r11 = *(r0 + 0xfffffffffffffff9);
+                            r10 = *(r0 + 0xfffffffffffffff8);
+                            r12 = *(r0 + 0xfffffffffffffffb);
+                            r10 = r10 | r11 * 0x100;
+                            r11 = *(r0 + 0xfffffffffffffffa);
+                            *(r1 + 0x34) = r3;
+                            *(r1 + 0x35) = r3;
+                            r10 = r10 | r11 * 0x10000;
+                            *(r1 + 0x36) = r3;
+                            r12 = r10 | r12 * 0x1000000;
+                            *(r1 + 0x37) = r3;
+                            *(r1 + 0x30) = r12;
+                            asm{ ubfx       sl, ip, #0x8, #0x8 };
+                            *(r1 + 0x31) = r10;
+                            asm{ ubfx       sl, ip, #0x10, #0x8 };
+                            *(r1 + 0x32) = r10;
+                            *(r1 + 0x33) = r12 >> r12 / 0x1000000;
+                            r11 = *(r0 + 0xfffffffffffffffd);
+                            r10 = *(r0 + 0xfffffffffffffffc);
+                            r10 = r10 | r11 * 0x100 | *(r0 + 0xfffffffffffffffe) * 0x10000;
+                            r11 = *(r0 + 0xffffffffffffffff);
+                            r10 = r10 | r11 * 0x1000000;
+                            *(r1 + 0x38) = r10;
+                            asm{ ubfx       fp, sl, #0x8, #0x8 };
+                            *(r1 + 0x39) = r11;
+                            asm{ ubfx       fp, sl, #0x10, #0x8 };
+                            *(r1 + 0x3a) = r11;
+                            *(r1 + 0x3b) = r10 >> r10 / 0x1000000;
+                            r11 = *(r0 + 0x1);
+                            r10 = *r0;
+                            r12 = *(r0 + 0x3);
+                            r10 = r10 | r11 * 0x100 | *(r0 + 0x2) * 0x10000;
+                            r12 = r10 | r12 * 0x1000000;
+                            *(r1 + 0x3c) = r12;
+                            asm{ ubfx       sl, ip, #0x8, #0x8 };
+                            *(r1 + 0x3d) = r10;
+                            asm{ ubfx       sl, ip, #0x10, #0x8 };
+                            *(r1 + 0x3e) = r10;
+                            *(r1 + 0x3f) = r12 >> r12 / 0x1000000;
+                            r6 = *(r0 + 0x5);
+                            r6 = *(r0 + 0x4) | r6 * 0x100;
+                            r6 = r6 | *(r0 + 0x6) * 0x10000;
+                            r6 = r6 | *(r0 + 0x7) * 0x1000000;
+                            r12 = r7 + r2 * 0x40;
+                            *(r7 + r2 * 0x40) = r6;
+                            asm{ ubfx       sl, r6, #0x8, #0x8 };
+                            *(r12 + 0x1) = r10;
+                            asm{ ubfx       sl, r6, #0x10, #0x8 };
+                            *(r12 + 0x2) = r10;
+                            *(r12 + 0x3) = r6 >> r6 / 0x1000000;
+                            r10 = *(r0 + 0x9);
+                            r6 = *(r0 + 0x8);
+                            r6 = r6 | r10 * 0x100;
+                            r10 = *(r0 + 0xa);
+                            r0 = *(r0 + 0xb);
+                            r6 = r6 | r10 * 0x10000;
+                            r0 = r6 | r0 * 0x1000000;
+                            *(r12 + 0x4) = r0;
+                            asm{ ubfx       r6, r0, #0x8, #0x8 };
+                            *(r12 + 0x5) = r6;
+                            asm{ ubfx       r6, r0, #0x10, #0x8 };
+                            *(r12 + 0x6) = r6;
+                            r6 = r1 + 0x48;
+                            *(r12 + 0x7) = r0 >> r0 / 0x1000000;
+                            r10 = *(0x5 + r4 + r8 * r2);
+                            r0 = *(0x4 + r4 + r8 * r2);
+                            r0 = r0 | r10 * 0x100 | *(0x6 + r4 + r8 * r2) * 0x10000 | *(0x7 + r4 + r8 * r2) * 0x1000000;
+                            *(r1 + 0x48) = r0;
+                            asm{ ubfx       r1, r0, #0x8, #0x8 };
+                            *(r6 + 0x1) = r1;
+                            asm{ ubfx       r1, r0, #0x10, #0x8 };
+                            *(r6 + 0x2) = r1;
+                            *(r6 + 0x3) = r0 >> r0 / 0x1000000;
+                    }
+            }
+            else {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "ERROR: Unknown smem ram ptable version: %u");
+                    loc_ffffffff8f6484ac(r8, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm_shared/smem_ptable.c", 0xbd, 0x8f69c66f);
+            }
+            if (stack[2037] != *r5) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

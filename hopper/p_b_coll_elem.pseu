@@ -1,0 +1,71 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = arg1;
+    COND = r4 != 0x0;
+    stack[2040] = *0x8f7112f4;
+    if (!COND) {
+            loc_ffffffff8f6484ac(lr, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/regcomp.c", 0x3e5, "p != ((void *)0)");
+    }
+    r8 = *r4;
+    r3 = *(r4 + 0x4);
+    goto loc_8f65b508;
+
+loc_8f65b508:
+    r2 = *r4;
+    if (r2 >= r3) goto loc_8f65b5b8;
+
+loc_8f65b514:
+    r0 = r2 + 0x1;
+    if (r0 < r3) goto loc_8f65b528;
+
+loc_8f65b520:
+    *r4 = r0;
+    goto loc_8f65b508;
+
+loc_8f65b528:
+    if ((*r2 != r5) || (*(r2 + 0x1) != 0x5d)) goto loc_8f65b520;
+
+loc_8f65b540:
+    r5 = 0x8f6a4524;
+    r7 = r2 - r8;
+    goto loc_8f65b548;
+
+loc_8f65b548:
+    r6 = *(r5 + 0xfffffffffffffff8);
+    r10 = r5 - 0x8;
+    if (r6 == 0x0) goto loc_8f65b588;
+
+loc_8f65b558:
+    r0 = loc_ffffffff8f64b470(r6, r8, r7);
+    if (r0 != 0x0) goto loc_8f65b580;
+
+loc_8f65b570:
+    if (*(r6 + r7) == 0x0) {
+            r0 = *(r10 + 0x4);
+    }
+    if (CPU_FLAGS & E) goto loc_8f65b5a4;
+
+loc_8f65b580:
+    r5 = r5 + 0x8;
+    goto loc_8f65b548;
+
+loc_8f65b5a4:
+    if (stack[2040] != *r0) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f65b588:
+    if (r7 == 0x1) {
+            r0 = *r8;
+    }
+    if (!CPU_FLAGS & E) {
+            loc_ffffffff8f65b358(r4, 0x3);
+            r0 = r6;
+    }
+    goto loc_8f65b5a4;
+
+loc_8f65b5b8:
+    loc_ffffffff8f65b358(r4, 0x7);
+    r0 = 0x0;
+    goto loc_8f65b5a4;
+

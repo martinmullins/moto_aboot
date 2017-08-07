@@ -1,0 +1,11 @@
+
+sub_8f6194a8:
+    r1 = arg1;
+    asm{ ldrex      ip, [r0] };
+    asm{ strex      r3, r2, [r0] };
+    if (r3 != 0x0) goto sub_8f6194a8;
+
+loc_8f6194bc:
+    r0 = r12;
+    return r0;
+

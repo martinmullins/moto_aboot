@@ -1,0 +1,56 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x1c;
+    r3 = *0x8f7112f4;
+    r6 = 0x8f6e0a98;
+    stack[2041] = r3;
+    loc_ffffffff8f656968(0x2, 0x8f69b5ea, "lp8556_init", r3, stack[2036]);
+    if (*0x8f6e0a98 != 0x0) goto loc_8f6408f4;
+
+loc_8f640800:
+    r3 = *0x8f6e0a88;
+    if (loc_ffffffff8f6309d0(0x8f69d038, *(r3 + 0x2c), sp + 0x8, r3) != 0x0) goto loc_8f6408b8;
+
+loc_8f640820:
+    r3 = *0x8f6e0a88;
+    if (loc_ffffffff8f6309d0(0x8f69d081, *(r3 + 0x2c), sp + 0xc, r3) == 0x0) goto loc_8f640848;
+
+loc_8f6408b8:
+    r0 = loc_ffffffff8f656968();
+    goto loc_8f640970;
+
+loc_8f640970:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f640848:
+    r0 = loc_ffffffff8f612c30(stack[2038], stack[2039], 0x186a0, 0x124f800);
+    *0x8f6e0a98 = r0;
+    if (CPU_FLAGS & E) goto loc_8f6408b8;
+
+loc_8f640874:
+    loc_ffffffff8f656968(0x2, "%s, qup_blsp_i2c_init(BLSP_ID_%d, QUP_ID_%d, 100000, 19200000)\n", "lp8556_init", stack[2038], stack[2039]);
+    r3 = *0x8f6e0a88;
+    r0 = loc_ffffffff8f6309d0("reset", *(r3 + 0x2c), sp + 0x10, r3);
+    COND = r1 == 0x0;
+    if (COND) goto loc_8f6408c0;
+    goto loc_8f6408b8;
+
+loc_8f6408c0:
+    loc_ffffffff8f602f2c(stack[2040]);
+    loc_ffffffff8f602f7c(stack[2040], 0x2);
+    loc_ffffffff8f602fb8(stack[2040], 0x1);
+    goto loc_8f6408f4;
+
+loc_8f6408f4:
+    loc_ffffffff8f60c558(0x5);
+    loc_ffffffff8f656968(0x2, "%s, LP8556_I2C_ADDRESS = 0x%x\n", "lp8556_init", 0x2c);
+    if (loc_ffffffff8f612ea4(*r6, 0x2c, 0x0, 0xff) < 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: fail to write\n", "lp8556_init");
+    }
+    if (loc_ffffffff8f612ea4(*r6, 0x2c, 0x1, 0x85) < 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: fail to write\n", "lp8556_init");
+    }
+    r0 = loc_ffffffff8f60c558(0x2);
+    goto loc_8f640970;
+

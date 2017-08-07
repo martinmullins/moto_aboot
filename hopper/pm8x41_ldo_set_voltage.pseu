@@ -1,0 +1,34 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    COND = r4 != 0x0;
+    r6 = arg1;
+    stack[2041] = *0x8f7112f4;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "LDO pointer is invalid: %p\n", r4);
+            r0 = 0x1;
+    }
+    else {
+            r0 = *(r4 + 0x4);
+            loc_ffffffff8f6452d8(r0 + 0x45, 0x80);
+            if ((*r4 == 0x0) && (r6 >= 0x1775db)) {
+                    if (r6 > 0x2eebb7) {
+                            r5 = 0x4;
+                    }
+                    if (CPU_FLAGS & B) {
+                            r5 = 0x3;
+                    }
+            }
+            else {
+                    r5 = 0x2;
+            }
+            r6 = loc_ffffffff8f67b3c0(r6 - 0x0);
+            r0 = *(r4 + 0x4);
+            loc_ffffffff8f6452d8(r0 + 0x40, r5);
+            r0 = *(r4 + 0x4);
+            loc_ffffffff8f6452d8(r0 + 0x41, zero_extend_32(r6));
+            r0 = 0x0;
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

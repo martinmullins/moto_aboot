@@ -1,0 +1,96 @@
+    stack[2045] = r6;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = 0x8f7112f4;
+    r3 = *r4;
+    r6 = r4;
+    stack[2041] = r3;
+    r7 = loc_ffffffff8f65353c(arg0, arg1, arg2, r3, arg0, stack[2041], arg2, 0x8f7112f4, r5, stack[2045], r7, lr);
+    loc_ffffffff8f673228() == 0x0;
+    if (CPU_FLAGS & E) goto loc_8f620d64;
+
+loc_8f620d4c:
+    r0 = loc_ffffffff8f674320();
+    if (r0 == 0x0) {
+            r4 = r0;
+    }
+    if (CPU_FLAGS & E) goto loc_8f620d90;
+
+loc_8f620d64:
+    loc_ffffffff8f656968();
+    goto loc_8f620dc8;
+
+loc_8f620dc8:
+    r0 = loc_ffffffff8f61e414();
+    r4 = r0;
+    if ((r0 == 0x1) && (loc_ffffffff8f674cc4() != 0x5)) {
+            r0 = loc_ffffffff8f61feac("recovery");
+            COND = r4 == 0x0;
+            if (!COND) {
+                    loc_ffffffff8f656968(0x5, "failed to validate recovery image\n");
+            }
+            r0 = r4;
+    }
+    else {
+            r0 = loc_ffffffff8f61feac(0x8f68503b);
+            COND = r5 == 0x0;
+            if (!COND) {
+                    loc_ffffffff8f656968(0x5, "failed to validate boot image\n");
+                    r0 = r5;
+            }
+            else {
+                    if (r4 == 0x1) {
+                            r0 = loc_ffffffff8f61feac("recovery");
+                            COND = r4 == 0x0;
+                            if (!COND) {
+                                    loc_ffffffff8f656968(0x5, "failed to validate recovery image\n");
+                            }
+                            r0 = r4;
+                    }
+                    else {
+                            if (loc_ffffffff8f674cc4() == 0x5) {
+                                    r0 = loc_ffffffff8f61feac("recovery");
+                                    COND = r4 == 0x0;
+                                    if (!COND) {
+                                            loc_ffffffff8f656968(0x5, "failed to validate recovery image\n");
+                                    }
+                                    r0 = r4;
+                            }
+                            else {
+                                    r0 = r5;
+                            }
+                    }
+            }
+    }
+    goto loc_8f620e04;
+
+loc_8f620e04:
+    if (stack[2041] != *r6) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f620d90:
+    if (r4 != r7) goto loc_8f620d6c;
+    goto loc_8f620dc8;
+
+loc_8f620d6c:
+    r0 = loc_ffffffff8f65360c(r4);
+    COND = r5 == 0x0;
+    if (COND) goto loc_8f620dc8;
+
+loc_8f620d7c:
+    if ((*(r5 + 0x31) & 0xf) == 0x6) goto loc_8f620d9c;
+
+loc_8f620d8c:
+    r4 = r4 + 0x1;
+    goto loc_8f620d90;
+
+loc_8f620d9c:
+    if (loc_ffffffff8f67319c() == 0x0) goto loc_8f620d8c;
+
+loc_8f620da8:
+    r0 = loc_ffffffff8f6537f0(r5);
+    loc_ffffffff8f656968(0x5, "failed to validate %s image\n", r0);
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f620e04;
+

@@ -1,0 +1,22 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    loc_ffffffff8f656968(0x2, 0x8f69b5ea, "mipi_backlight_init", r3, arg0, stack[2043], arg2, r4, 0x8f6e0a88, lr);
+    r3 = *0x8f6e0a88;
+    r0 = loc_ffffffff8f6309d0(0x8f69d685, *(r3 + 0x2c), 0x8f6acaa8, r3);
+    r2 = stack[2043];
+    if (r0 != 0x0) {
+            if (r2 == *0x8f7112f4) {
+                    r0 = loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Property \"bit\" is not defined in dev tree for backlight device %s!", *0x8f6e0a88);
+            }
+            else {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (r2 != *0x8f7112f4) {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    return r0;
+

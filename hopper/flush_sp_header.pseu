@@ -1,0 +1,18 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x14;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r0 = loc_ffffffff8f67b2cc(0xff, 0x8f710c70, 0x200, r3, 0x8f710c48);
+    *(0x8f710c48 + 0x1c) = 0x0;
+    *(0x8f710c48 + 0x20) = r0;
+    *(0x8f710c48 + 0x1c) = loc_ffffffff8f67b2cc(0xff, 0x8f710c48, 0x228, 0x0);
+    asm{ ldrd       r0, r1, [r3] };
+    r0 = loc_ffffffff8f650ad0();
+    if (r0 != 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to flush SP header\n");
+            r0 = 0x0 ^ 0xffffffff;
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

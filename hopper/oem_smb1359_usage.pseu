@@ -1,0 +1,16 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    loc_ffffffff8f62192c(0x8f683451, "usage: fastboot oem smb1359 [options]", arg2, r3, arg0, r3, r4, lr);
+    loc_ffffffff8f62192c(0x8f683451, 0x8f6a4e20);
+    loc_ffffffff8f62192c(0x8f683451, "options:");
+    loc_ffffffff8f62192c(0x8f683451, "  rd <reg>          read a register");
+    loc_ffffffff8f62192c(0x8f683451, "  wr <reg> <value>  write a register");
+    loc_ffffffff8f62192c(0x8f683451, "  help              show usage");
+    if (r3 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = loc_ffffffff8f62192c(0x8f683451, 0x8f6a4e20);
+    }
+    return r0;
+

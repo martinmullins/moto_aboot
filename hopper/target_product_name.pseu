@@ -1,0 +1,15 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    if ((*0x8f6c0018 == 0x0) && (loc_ffffffff8f619de0("device", 0x8f6c0018, 0x21) == 0x0)) {
+            r0 = loc_ffffffff8f6314ac();
+            COND = r1 == 0x0;
+            if (!COND) {
+                    loc_ffffffff8f64b21c(0x8f6c0018);
+            }
+    }
+    r0 = 0x8f6c0018;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

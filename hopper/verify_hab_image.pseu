@@ -1,0 +1,155 @@
+    r10 = arg1;
+    r8 = arg0;
+    r0 = *(r10 + 0x29);
+    r1 = *(arg1 + 0x28);
+    s0 = arg2;
+    r4 = *(r10 + 0x21);
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x18;
+    r1 = r1 | r0 * 0x100;
+    r0 = *(r10 + 0x2a);
+    lr = *(r10 + 0x20);
+    r1 = r1 | r0 * 0x10000;
+    r0 = *(r10 + 0x2b);
+    lr = lr | r4 * 0x100;
+    r4 = *(r10 + 0x22);
+    r2 = *0x8f7112f4;
+    r6 = r1 | r0 * 0x1000000;
+    r0 = *(r10 + 0x2d);
+    r1 = *(r10 + 0x2c);
+    lr = lr | r4 * 0x10000;
+    r4 = *(r10 + 0x23);
+    r6 = r6 + 0x1;
+    stack[2039] = r2;
+    r2 = arg3;
+    r7 = r1 | r0 * 0x100 | *(r10 + 0x2e) * 0x10000 | *(r10 + 0x2f) * 0x1000000;
+    r0 = lr | r4 * 0x1000000;
+    r4 = *(r10 + 0x25);
+    r7 = r7 + 0x0 + CARRY(FLAGS);
+    lr = *(r10 + 0x24);
+    lr = lr | r4 * 0x100 | *(r10 + 0x26) * 0x10000;
+    r4 = *(r10 + 0x27);
+    r6 = r6 - r0;
+    r5 = r5 << (r7 - (lr | r4 * 0x1000000) + !CARRY(FLAGS)) * 0x200;
+    r4 = r4 << r6 * 0x200;
+    r5 = r5 | r6 / 0x800000;
+    if (0x0 == r5) {
+            CMP(r2, r4);
+    }
+    if (CPU_FLAGS & E) goto loc_8f675968;
+
+loc_8f67594c:
+    r0 = loc_ffffffff8f6537f0();
+    r4 = 0x0 ^ 0xffffffff;
+    loc_ffffffff8f656968(0x5, "Mismatched partition size (%s)", r0);
+    goto loc_8f675bbc;
+
+loc_8f675bbc:
+    r0 = r4;
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f675968:
+    loc_ffffffff8f6537f0();
+    if (!CPU_FLAGS & E) {
+            loc_ffffffff8f60155c();
+    }
+    loc_ffffffff8f606a74(s0);
+    r2 = *(r10 + 0x29);
+    r3 = *(r10 + 0x28);
+    r0 = *(r10 + 0x21);
+    r3 = r3 | r2 * 0x100;
+    r2 = *(r10 + 0x2a);
+    r1 = *(r10 + 0x20);
+    r7 = *(r8 + 0x4);
+    r3 = r3 | r2 * 0x10000;
+    r2 = *(r10 + 0x2b);
+    r1 = r1 | r0 * 0x100;
+    r0 = *(r10 + 0x22);
+    r4 = r3 | r2 * 0x1000000;
+    r2 = *(r10 + 0x2d);
+    r3 = *(r10 + 0x2c);
+    r1 = r1 | r0 * 0x10000;
+    r0 = *(r10 + 0x23);
+    r4 = r4 + 0x1;
+    r5 = r3 | r2 * 0x100 | *(r10 + 0x2e) * 0x10000 | *(r10 + 0x2f) * 0x1000000;
+    r2 = r1 | r0 * 0x1000000;
+    r0 = *(r10 + 0x25);
+    r5 = r5 + 0x0 + CARRY(FLAGS);
+    r1 = *(r10 + 0x24);
+    r1 = r1 | r0 * 0x100 | *(r10 + 0x26) * 0x10000;
+    r0 = *(r10 + 0x27);
+    r4 = r4 - r2;
+    r5 = *(r8 + 0x8);
+    r0 = loc_ffffffff8f66dbd8(r0, r1, r2, r1 | r0 * 0x1000000, stack[2034]);
+    r4 = zero_extend_32(r0);
+    if (r4 != 0xf0) goto loc_8f675a54;
+
+loc_8f675a34:
+    r0 = loc_ffffffff8f66dee8(r7, r5);
+    r4 = zero_extend_32(r0);
+    if (r4 == 0xf0) goto loc_8f675a70;
+
+loc_8f675b10:
+    loc_ffffffff8f6537f0(r10);
+    goto loc_8f675b70;
+
+loc_8f675b70:
+    loc_ffffffff8f656968();
+    goto loc_8f675b74;
+
+loc_8f675b74:
+    r0 = loc_ffffffff8f6537f0(r10);
+    r3 = r4;
+    r4 = 0x0 ^ 0xffffffff;
+    loc_ffffffff8f656968(0x0, "%s: HAB error 0x%x for %s", "check_hab_signature", r3, r0);
+    r0 = loc_ffffffff8f6537f0(r10);
+    loc_ffffffff8f656968(0x5, "Failed to verify hab image %s", r0);
+    goto loc_8f675bb0;
+
+loc_8f675bb0:
+    loc_ffffffff8f606a74(0x0, 0x0);
+    goto loc_8f675bbc;
+
+loc_8f675a70:
+    loc_ffffffff8f6537f0(r10);
+    if ((loc_ffffffff8f672fec() == 0x0) && ((*(r10 + 0x30) & 0x4) == 0x0)) {
+            r0 = loc_ffffffff8f6624cc(0x1, sp + 0x10);
+    }
+    else {
+            r0 = loc_ffffffff8f6537f0(r10);
+            loc_ffffffff8f656968(0x2, "Skip cid validation for %s!\n", r0);
+            r0 = loc_ffffffff8f66dc7c(0x1, sp + 0x10, 0x0);
+    }
+    r4 = zero_extend_32(r0);
+    if (r4 == 0xf0) goto loc_8f675b28;
+
+loc_8f675adc:
+    r0 = loc_ffffffff8f6537f0();
+    loc_ffffffff8f656968(0x5, "hab check failed for %s", r0);
+    r0 = loc_ffffffff8f6537f0(r10);
+    loc_ffffffff8f656968(0x0, "Failed to hab check for %s: error=0x%02x\n", r0, r4);
+    goto loc_8f675b74;
+
+loc_8f675b28:
+    loc_ffffffff8f6537f0();
+    if (!CPU_FLAGS & E) {
+            loc_ffffffff8f60155c();
+    }
+    r0 = loc_ffffffff8f66de4c();
+    r4 = zero_extend_32(r0);
+    if (r4 == 0xf0) {
+            r4 = 0x0;
+    }
+    if (CPU_FLAGS & E) goto loc_8f675bb0;
+
+loc_8f675b5c:
+    loc_ffffffff8f6537f0(r10);
+    goto loc_8f675b70;
+
+loc_8f675a54:
+    r0 = loc_ffffffff8f6537f0(r10);
+    loc_ffffffff8f656968(0x5, "Failed to do health check for %s\n", r0);
+    goto loc_8f675b10;
+

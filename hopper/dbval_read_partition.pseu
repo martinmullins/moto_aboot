@@ -1,0 +1,49 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    s0 = arg0;
+    r5 = arg1;
+    r3 = *0x8f7112f4;
+    stack[2039] = r3;
+    r0 = loc_ffffffff8f64aacc(0x1000, arg1, arg2, r3, stack[2036]);
+    COND = r4 == 0x0;
+    if (CPU_FLAGS & E) goto loc_8f66c4b4;
+
+loc_8f66c430:
+    r0 = loc_ffffffff8f6539b0(0x8f687f5a);
+    r7 = r0;
+    if (r0 != -0x1) goto loc_8f66c458;
+
+loc_8f66c444:
+    loc_ffffffff8f656968(0x1, "No CID partition found!\n");
+    goto loc_8f66c450;
+
+loc_8f66c450:
+    r0 = 0x0;
+    goto loc_8f66c4d8;
+
+loc_8f66c4d8:
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f66c458:
+    loc_ffffffff8f653b20();
+    asm{ strd       r0, r1, [r6] };
+    loc_ffffffff8f653a28(r7);
+    asm{ strd       r0, r1, [r3] };
+    if (CPU_FLAGS & E) goto loc_8f66c4b4;
+
+loc_8f66c48c:
+    asm{ ldrd       r0, r1, [r6] };
+    if (loc_ffffffff8f6507a4() == 0x0) goto loc_8f66c4bc;
+
+loc_8f66c4b4:
+    loc_ffffffff8f656968();
+    goto loc_8f66c450;
+
+loc_8f66c4bc:
+    loc_ffffffff8f64ac90(s0, r4, r5);
+    loc_ffffffff8f64ab9c(r4);
+    r0 = 0x1;
+    goto loc_8f66c4d8;
+

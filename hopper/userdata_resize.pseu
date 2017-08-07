@@ -1,0 +1,87 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x30;
+    r4 = arg0;
+    r5 = arg1;
+    r10 = arg2;
+    r0 = sp + 0xc;
+    r1 = 0x0;
+    r8 = lr;
+    stack[2039] = *r0;
+    stack[2031] = 0x0 ^ 0xffffffff;
+    r3 = 0x0;
+    asm{ strd       r2, r3, [sp, #0x50 + var_40] };
+    r2 = sp + 0x10;
+    if (loc_ffffffff8f634d98(r0, r1, r2, r3, stack[2028]) != 0x0) {
+            r3 = stack[2031];
+            if (r3 != -0x1) {
+                    asm{ ldrd       r2, r3, [sp, #0x50 + var_40] };
+                    COND = r1 != 0x0;
+                    if (!COND) {
+                            loc_ffffffff8f6484ac(r8, "ASSERT FAILED at (%s:%d): %s\n", "app/mbm/sod.c", 0x129, "idx!=-1 && size && new_size");
+                    }
+                    else {
+                            COND = r3 != 0x0;
+                            if (!COND) {
+                                    loc_ffffffff8f6484ac(r8, "ASSERT FAILED at (%s:%d): %s\n", "app/mbm/sod.c", 0x129, "idx!=-1 && size && new_size");
+                            }
+                    }
+            }
+            else {
+                    loc_ffffffff8f6484ac(r8, "ASSERT FAILED at (%s:%d): %s\n", "app/mbm/sod.c", 0x129, "idx!=-1 && size && new_size");
+            }
+            asm{ ldrd       r6, r7, [sp, #0x50 + var_40] };
+            if (r7 == r5) {
+                    CMP(r6, r4);
+            }
+            if (!CPU_FLAGS & E) {
+                    if (r10 == 0x0) {
+                            r0 = loc_ffffffff8f654be4(stack[2031]);
+                    }
+                    else {
+                            r3 = 0x0;
+                            r0 = 0x0;
+                            asm{ strd       r2, r3, [sp, #0x50 + var_38] };
+                            asm{ strd       r2, r3, [sp, #0x50 + var_30] };
+                            r2 = sp + 0x20;
+                            if (loc_ffffffff8f634d98(r0, sp + 0x18, r2, r3) != 0x0) {
+                                    r3 = 0x0;
+                                    asm{ ldrd       r2, r3, [sp, #0x50 + var_38] };
+                                    COND = r1 == 0x0;
+                                    if (!COND) {
+                                            r3 = 0x0;
+                                            asm{ ldrd       r2, r3, [sp, #0x50 + var_30] };
+                                            COND = r1 != 0x0;
+                                            if (!COND) {
+                                                    loc_ffffffff8f6484ac(r8, "ASSERT FAILED at (%s:%d): %s\n", "app/mbm/sod.c", 0x115, "offset && size");
+                                            }
+                                    }
+                                    else {
+                                            loc_ffffffff8f6484ac(r8, "ASSERT FAILED at (%s:%d): %s\n", "app/mbm/sod.c", 0x115, "offset && size");
+                                    }
+                                    loc_ffffffff8f656968(0x1, "WIPING OUT USERDATA!\n");
+                                    asm{ ldrd       r0, r1, [sp, #0x50 + var_38] };
+                                    asm{ ldrd       r2, r3, [sp, #0x50 + var_30] };
+                                    if (loc_ffffffff8f650f94() != 0x0) {
+                                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to erase userdata\n");
+                                            r0 = 0x13 ^ 0xffffffff;
+                                    }
+                                    else {
+                                            r0 = loc_ffffffff8f654be4(stack[2031]);
+                                    }
+                            }
+                            else {
+                                    r0 = 0x1 ^ 0xffffffff;
+                            }
+                    }
+            }
+            else {
+                    r0 = 0x0;
+            }
+    }
+    else {
+            r0 = 0x1 ^ 0xffffffff;
+    }
+    if (stack[2039] != *r0) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

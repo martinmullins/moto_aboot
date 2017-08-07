@@ -1,0 +1,81 @@
+    stack[2046] = r7;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r7 = arg0;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    if ((loc_ffffffff8f674b74(arg0, arg1, arg2, r3, arg0, stack[2041], arg2, r4, r5, 0x8f7112f4, stack[2046], lr) == 0x0) || (loc_ffffffff8f674cc4() != 0x3)) goto loc_8f62df18;
+
+loc_8f62df10:
+    loc_ffffffff8f62ddd4();
+    goto loc_8f62e060;
+
+loc_8f62e060:
+    r0 = 0x3;
+    goto loc_8f62e06c;
+
+loc_8f62e06c:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f62df18:
+    r4 = *(r7 + 0xc);
+    r4 = r4 + 0x1;
+    r0 = loc_ffffffff8f64b0ac(r4, 0x8f683f68);
+    if (r0 == 0x0) {
+            r4 = r0;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f62dfa4;
+
+loc_8f62df38:
+    if (r4 >= loc_ffffffff8f65353c()) goto loc_8f62df9c;
+
+loc_8f62df44:
+    r5 = loc_ffffffff8f65367c(r4);
+    if (loc_ffffffff8f62de5c(r4) == 0x0) goto loc_8f62df94;
+
+loc_8f62df60:
+    loc_ffffffff8f62192c(0x8f683451, "erasing %s ...", r5);
+    if (loc_ffffffff8f622518(r5) != -0x1) goto loc_8f62df94;
+
+loc_8f62df80:
+    loc_ffffffff8f62192c(0x8f683451, "Failed to erase partition %s", r5);
+    goto loc_8f62df9c;
+
+loc_8f62df9c:
+    r0 = 0x0;
+    goto loc_8f62e06c;
+
+loc_8f62df94:
+    r4 = r4 + 0x1;
+    goto loc_8f62df38;
+
+loc_8f62dfa4:
+    if (loc_ffffffff8f6539b0(r4) != -0x1) goto loc_8f62dfc8;
+
+loc_8f62dfb4:
+    loc_ffffffff8f62192c(0x8f683451, "Invalid partition name %s", r4);
+    goto loc_8f62e060;
+
+loc_8f62dfc8:
+    if (loc_ffffffff8f62de5c() != 0x0) goto loc_8f62e068;
+
+loc_8f62dfd4:
+    if (((((loc_ffffffff8f64b0ac(r4, 0x8f68503b) == 0x0) || (loc_ffffffff8f64b0ac(r4, "recovery") == 0x0)) || (loc_ffffffff8f64b0ac(r4, "system") == 0x0)) || (loc_ffffffff8f64b0ac(r4, "cache") == 0x0)) || (loc_ffffffff8f64b0ac(r4, "userdata") == 0x0)) goto loc_8f62e038;
+
+loc_8f62e054:
+    loc_ffffffff8f62192c(0x8f683451, "Permission denied");
+    goto loc_8f62e060;
+
+loc_8f62e038:
+    if (loc_ffffffff8f674cc4() != 0x4) goto loc_8f62e054;
+
+loc_8f62e044:
+    loc_ffffffff8f62192c(0x8f683451, "Erase allowed in unlocked state");
+    goto loc_8f62e068;
+
+loc_8f62e068:
+    r0 = 0x1;
+    goto loc_8f62e06c;
+

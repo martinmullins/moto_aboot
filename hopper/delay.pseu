@@ -1,0 +1,52 @@
+    r2 = arg2;
+    stack[2042] = r4;
+    stack[2043] = r5;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg0;
+    r5 = arg1;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    loc_ffffffff8f60c8c4(arg0, arg1, r2, r3, arg0, arg1, r2, stack[2041], stack[2042], stack[2043], r6, r7, 0x8f7112f4, lr);
+    asm{ strd       r0, r1, [sp, #0x28 + var_28] };
+    asm{ ldrd       r6, r7, [sp, #0x28 + var_28] };
+    asm{ ldrd       r2, r3, [sp, #0x28 + var_28] };
+    r4 = r4 + r2;
+    r2 = 0x0 ^ 0xffffffff;
+    r5 = r5 + r3 + CARRY(FLAGS);
+    r4 = r4 & r2;
+    r3 = 0xff000000 ^ 0xffffffff;
+    r5 = r5 & r3;
+    do {
+            asm{ ldrd       r2, r3, [sp, #0x28 + var_28] };
+            if (r5 == r3) {
+                    CMP(r4, r2);
+            }
+            if (CPU_FLAGS & NB) {
+                break;
+            }
+            asm{ ldrd       r2, r3, [sp, #0x28 + var_28] };
+            if (r7 == r3) {
+                    CMP(r6, r2);
+            }
+            if (CPU_FLAGS & A) {
+                break;
+            }
+            loc_ffffffff8f60c8c4();
+            asm{ strd       r0, r1, [sp, #0x28 + var_28] };
+    } while (true);
+    do {
+            asm{ ldrd       r2, r3, [sp, #0x28 + var_28] };
+            if (r5 == r3) {
+                    CMP(r4, r2);
+            }
+            if (CPU_FLAGS & B) {
+                break;
+            }
+            loc_ffffffff8f60c8c4();
+            asm{ strd       r0, r1, [sp, #0x28 + var_28] };
+    } while (true);
+    if (stack[2041] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

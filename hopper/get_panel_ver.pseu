@@ -1,0 +1,39 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x18;
+    r4 = arg0;
+    stack[2043] = *0x8f7112f4;
+    if ((((*(arg0 + 0x238))(sp + 0x8, arg1) == 0x1) || ((*(r4 + 0x23c))(sp + 0xc) == 0x1)) || ((*(r4 + 0x240))(sp + 0x10) == 0x1)) goto loc_8f610354;
+
+loc_8f6102e0:
+    r2 = stack[2040];
+    r3 = stack[2042];
+    if (((r2 == 0xffff) || (stack[2041] == 0xffff)) || (r3 == 0xffff)) goto loc_8f610308;
+
+loc_8f610320:
+    r1 = "Panel ver = 0x%llx";
+    r0 = 0x1;
+    r2 = zero_extend_32(0x0 << 0x0 * 0x100) | zero_extend_32(0x0) * 0x10000 | zero_extend_32(r2);
+    r3 = 0x0;
+    asm{ strd       r2, r3, [r5] };
+    loc_ffffffff8f656968(r0, r1, r2, r3);
+    r0 = 0x0;
+    goto loc_8f610370;
+
+loc_8f610370:
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f610308:
+    loc_ffffffff8f656968(0x0, "Error detected in getting panel ver, manufacture id=0x%x, controller ver=0x%x, controller drv ver=0x%x\n");
+    goto loc_8f610354;
+
+loc_8f610354:
+    r2 = 0x0 ^ 0xffffffff;
+    r3 = 0x0 ^ 0xffffffff;
+    r0 = 0x0;
+    asm{ strd       r2, r3, [r5] };
+    loc_ffffffff8f656968(r0, "Not able to get panel version\n", r2, r3);
+    r0 = 0x1;
+    goto loc_8f610370;
+

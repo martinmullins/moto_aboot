@@ -1,0 +1,37 @@
+    stack[2044] = r4;
+    stack[2046] = r6;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg0;
+    r6 = arg1;
+    stack[2043] = *0x8f7112f4;
+    *arg0 = 0x0;
+    if (loc_ffffffff8f61e95c(0x8f6822ef, r4, r6, 0x0, arg0, stack[2043], stack[2044], 0x8f7112f4, stack[2046], lr) != 0x0) {
+            loc_ffffffff8f656968(0x1, "SKU: %s\n", r4);
+    }
+    r0 = loc_ffffffff8f64b354(r4);
+    if ((r0 == 0x0) || (*r4 == 0x30)) goto loc_8f61eb60;
+
+loc_8f61eb94:
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f61eb60:
+    r0 = loc_ffffffff8f63153c();
+    COND = r1 == 0x0;
+    if (COND) goto loc_8f61eb90;
+
+loc_8f61eb6c:
+    if (stack[2043] == *0x8f7112f4) {
+            r0 = loc_ffffffff8f64b2c0(r4);
+    }
+    else {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f61eb90:
+    *r4 = r1;
+    goto loc_8f61eb94;
+

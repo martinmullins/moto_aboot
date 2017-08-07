@@ -1,0 +1,102 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg0;
+    s0 = arg1;
+    r5 = arg0;
+    r6 = 0x0;
+    stack[2040] = *0x8f7112f4;
+    while (*r5 != 0x0) {
+            r7 = r5;
+            do {
+                    r5 = r7;
+                    r7 = r7 + 0x1;
+            } while (loc_ffffffff8f649ffc(*r5) != 0x0);
+            if (*r5 != 0x0) {
+                    r6 = r6 + 0x1;
+                    r7 = r5;
+                    do {
+                            r5 = r7;
+                            r0 = *r7;
+                            r7 = r7 + 0x1;
+                            if ((r0 == 0x0) || (loc_ffffffff8f649ffc() != 0x0)) {
+                                break;
+                            }
+                            else {
+                                continue;
+                            }
+                    } while (true);
+            }
+            else {
+                    if (loc_ffffffff8f649ffc(*(r5 + 0xffffffffffffffff)) != 0x0) {
+                            r6 = r6 + 0x1;
+                    }
+            }
+    }
+    r0 = loc_ffffffff8f64aacc(r6 + 0x1 << (r6 + 0x1) * 0x4);
+    COND = r7 == 0x0;
+    if (COND) goto loc_8f67ae04;
+
+loc_8f67ad3c:
+    r5 = r7;
+    if (s0 != 0x0) {
+            *r0 = r6;
+    }
+    goto loc_8f67ad48;
+
+loc_8f67ad48:
+    r3 = *r4;
+    if (r3 == 0x0) goto loc_8f67adec;
+
+loc_8f67ad54:
+    r6 = r4;
+    do {
+            r4 = r6;
+            r6 = r6 + 0x1;
+    } while (loc_ffffffff8f649ffc(*r4) != 0x0);
+    s0 = r4;
+    if (*r4 == 0x0) goto loc_8f67adc4;
+
+loc_8f67ad80:
+    r6 = r4;
+    do {
+            r4 = r6;
+            r0 = *r6;
+            r6 = r6 + 0x1;
+            if (r0 == 0x0) {
+                break;
+            }
+    } while (loc_ffffffff8f649ffc() == 0x0);
+    r0 = loc_ffffffff8f64b1b0(s0, r4 - s0);
+    COND = r6 == 0x0;
+    if (COND) goto loc_8f67adf4;
+
+loc_8f67ada8:
+    *r5 = r6;
+    r5 = r5 + 0x4;
+    goto loc_8f67ad48;
+
+loc_8f67adf4:
+    loc_ffffffff8f67ac40(r7);
+    r0 = r6;
+    goto loc_8f67ae08;
+
+loc_8f67ae08:
+    if (stack[2040] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f67adc4:
+    if (loc_ffffffff8f649ffc(*(r4 + 0xffffffffffffffff)) != 0x0) {
+            *r5 = loc_ffffffff8f64b154(0x8f6a4e20);
+            r5 = r5 + 0x4;
+    }
+    goto loc_8f67ad48;
+
+loc_8f67adec:
+    *r5 = r3;
+    goto loc_8f67ae04;
+
+loc_8f67ae04:
+    r0 = r7;
+    goto loc_8f67ae08;
+

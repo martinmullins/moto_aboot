@@ -1,0 +1,19 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r0 = loc_ffffffff8f6359f4(arg0, arg1, arg2, r3, arg0, stack[2043], arg2, r4, 0x8f7112f4, lr);
+    COND = r4 == 0x0;
+    if ((!COND) && (loc_ffffffff8f6364dc() != 0x0)) {
+            r0 = loc_ffffffff8f6798a8(0x0, "time.offset");
+            if (r0 == 0x8) {
+                    loc_ffffffff8f6797bc(0x0, "time.offset", r4 + 0x28);
+            }
+            *(r4 + 0x30) = loc_ffffffff8f61a0a4();
+            loc_ffffffff8f635198(r4);
+    }
+    r0 = 0x0;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

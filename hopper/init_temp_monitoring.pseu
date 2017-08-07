@@ -1,0 +1,39 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x14;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    loc_ffffffff8f64ac90(sp, "max17050", 0x9, r3, stack[2040]);
+    r0 = loc_ffffffff8f6330b0();
+    COND = r5 == 0x0;
+    if (COND) goto loc_8f603d24;
+
+loc_8f603cf8:
+    r0 = loc_ffffffff8f643568(sp);
+    if (r0 == 0x0) goto loc_8f603d68;
+
+loc_8f603d08:
+    loc_ffffffff8f61c234(0x8f6b5080);
+    goto loc_8f603d58;
+
+loc_8f603d58:
+    r0 = loc_ffffffff8f61c28c();
+    *0x8f6b509c = 0x1;
+    goto loc_8f603d68;
+
+loc_8f603d68:
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f603d24:
+    r0 = loc_ffffffff8f633290();
+    if (r0 == 0x0) goto loc_8f603d68;
+
+loc_8f603d30:
+    r0 = loc_ffffffff8f643950("max17058");
+    if (r0 == 0x0) goto loc_8f603d68;
+
+loc_8f603d40:
+    loc_ffffffff8f61c234(0x8f6b5080);
+    goto loc_8f603d58;
+

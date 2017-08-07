@@ -1,0 +1,18 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2045] = r3;
+    if (loc_ffffffff8f60dcc0(arg0, arg1, arg2, r3, arg0, stack[2045], 0x8f7112f4, lr) != 0x77665502) {
+            if (stack[2045] == *0x8f7112f4) {
+                    loc_ffffffff8f65aa7c(0x0);
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (stack[2045] != *0x8f7112f4) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

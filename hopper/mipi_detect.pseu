@@ -1,0 +1,48 @@
+    COND = r5 == 0x0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x16c;
+    r6 = arg1;
+    stack[2041] = *0x8f7112f4;
+    if (!COND) {
+            r4 = *(r5 + 0x1f4);
+            loc_ffffffff8f656968(0x2, "%s is called \n", "mipi_detect");
+            **(r5 + 0x1f8) = 0x83200000;
+            loc_ffffffff8f60e5d4(r6);
+            (*(r5 + 0x20c))(sp + 0x8);
+            (*(r5 + 0x214))();
+            (*(r5 + 0x22c))(0x1, sp + 0x8);
+            r2 = *r4;
+            if (!CPU_FLAGS & E) {
+                    if (r2 == 0x2) {
+                            if ((r6 & !0x8) != 0x5) {
+                                    loc_ffffffff8f610e14();
+                                    loc_ffffffff8f610460(r4, 0x0);
+                            }
+                            else {
+                                    loc_ffffffff8f6113f0();
+                                    if (stack[2018] != 0x0) {
+                                            loc_ffffffff8f6113f0(r4, 0x1aa0000, 0x1aa0500);
+                                    }
+                                    loc_ffffffff8f60fa88(r4, stack[2018], stack[2018], 0x0, stack[2015]);
+                                    loc_ffffffff8f611384(r4, 0x1a98500);
+                                    loc_ffffffff8f60f3fc();
+                                    loc_ffffffff8f61039c(0x0);
+                            }
+                    }
+            }
+            else {
+                    loc_ffffffff8f6113f0();
+                    if (stack[2018] != 0x0) {
+                            loc_ffffffff8f6113f0(r4, 0x1aa0000, 0x1aa0500);
+                    }
+                    loc_ffffffff8f60fa88(r4, stack[2018], stack[2018], 0x0, stack[2015]);
+                    loc_ffffffff8f611384(r4, 0x1a98500);
+                    loc_ffffffff8f60f3fc();
+                    loc_ffffffff8f61039c(0x0);
+            }
+            loc_ffffffff8f656968(0x2, "%s is done\n", "mipi_detect");
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

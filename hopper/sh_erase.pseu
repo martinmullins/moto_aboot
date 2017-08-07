@@ -1,0 +1,34 @@
+    COND = r4 == 0x0;
+    r2 = *0x8f7112f4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x14;
+    r5 = 0x8f7112f4;
+    stack[2043] = r2;
+    if (!COND) {
+            r3 = 0x8f7112f4;
+            asm{ ldrd       r2, r3, [r4, #0x8] };
+            COND = r1 != 0x0;
+            if (!COND) {
+                    loc_ffffffff8f6484ac(lr, "ASSERT FAILED at (%s:%d): %s\n", "app/mbm/sod.c", 0xc5, "sh && sh->preamble.offset");
+            }
+    }
+    else {
+            loc_ffffffff8f6484ac(lr, "ASSERT FAILED at (%s:%d): %s\n", "app/mbm/sod.c", 0xc5, "sh && sh->preamble.offset");
+    }
+    asm{ ldrd       r0, r1, [r4, #0x8] };
+    r0 = loc_ffffffff8f650f94();
+    if (r0 == 0x0) {
+            r4 = r0;
+    }
+    if (!CPU_FLAGS & E) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to erase SOD header\n");
+            r4 = 0x13 ^ 0xffffffff;
+    }
+    loc_ffffffff8f67a3d0(0x0, "sod.offset");
+    loc_ffffffff8f679aec(0x0, "sod.offset");
+    loc_ffffffff8f679ff0(0x0);
+    r0 = r4;
+    if (stack[2043] != *r5) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

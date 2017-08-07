@@ -1,0 +1,41 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    r3 = *(0x8f6c01d0 + 0x4);
+    r3 = r3 - 0x4;
+    goto loc_8f61bfdc;
+
+loc_8f61bfdc:
+    r1 = r3 + 0x4;
+    if (r1 == 0x8f6c01d0) goto loc_8f61c028;
+
+loc_8f61bfe8:
+    if (*(r3 + 0xc) <= *(r0 + 0xc)) goto loc_8f61c01c;
+
+loc_8f61bffc:
+    r4 = *(r3 + 0x4);
+    *(r0 + 0x8) = r1;
+    *(r0 + 0x4) = r4;
+    *(*(r3 + 0x4) + 0x4) = r0 + 0x4;
+    *(r3 + 0x4) = r0 + 0x4;
+    goto loc_8f61c03c;
+
+loc_8f61c03c:
+    if (stack[2043] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f61c01c:
+    r3 = *(r3 + 0x8);
+    r3 = r3 - 0x4;
+    goto loc_8f61bfdc;
+
+loc_8f61c028:
+    r1 = *0x8f6c01d0;
+    r3 = r0 + 0x4;
+    *0x8f6c01d0 = r3;
+    asm{ stmib      r0, {r1, r2} };
+    *(r1 + 0x4) = r3;
+    goto loc_8f61c03c;
+

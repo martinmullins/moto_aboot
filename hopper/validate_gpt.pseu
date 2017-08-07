@@ -1,0 +1,107 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r10 = arg0;
+    s0 = 0x0;
+    r0 = 0x2;
+    r6 = r2;
+    r7 = r3;
+    r11 = stack[2048];
+    stack[2037] = *0x8f7112f4;
+    r8 = *(*0x8f7125ec + 0x14);
+    r1 = "validating GPT header, lba=0x%llx, secotr_count=0x%llx\n";
+    asm{ strd       r8, sb, [sp, #0x38 + var_38] };
+    loc_ffffffff8f656968(r0, r1);
+    r2 = *r10 | *(r10 + 0x1) * 0x100 | *(r10 + 0x2) * 0x10000 | *(r10 + 0x3) * 0x1000000;
+    if ((*(r10 + 0x4) | *(r10 + 0x5) * 0x100 | *(r10 + 0x6) * 0x10000 | *(r10 + 0x7) * 0x1000000) == 0x54524150) {
+            CMP(r2, 0x20494645);
+    }
+    if (CPU_FLAGS & E) goto loc_8f65292c;
+
+loc_8f652920:
+    loc_ffffffff8f656968();
+    goto loc_8f652924;
+
+loc_8f652924:
+    r0 = 0x0;
+    goto loc_8f652b44;
+
+loc_8f652b44:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f65292c:
+    r2 = *(r10 + 0x28) | *(r10 + 0x29) * 0x100 | *(r10 + 0x2a) * 0x10000 | *(r10 + 0x2b) * 0x1000000;
+    r3 = *(r10 + 0x2c) | *(r10 + 0x2d) * 0x100 | *(r10 + 0x2e) * 0x10000 | *(r10 + 0x2f) * 0x1000000;
+    r4 = *(r10 + 0x30) | *(r10 + 0x31) * 0x100 | *(r10 + 0x32) * 0x10000 | *(r10 + 0x33) * 0x1000000;
+    r5 = *(r10 + 0x34) | *(r10 + 0x35) * 0x100 | *(r10 + 0x36) * 0x10000 | *(r10 + 0x37) * 0x1000000;
+    if (r3 == r5) {
+            CMP(r2, r4);
+    }
+    if (CPU_FLAGS & A) goto loc_8f6529bc;
+
+loc_8f6529a8:
+    r8 = r8 - 0x1;
+    if (r5 == s0 - 0x0 + !CARRY(FLAGS)) {
+            CMP(r4, r8);
+    }
+    if (CPU_FLAGS & B) goto loc_8f6529d0;
+
+loc_8f6529bc:
+    asm{ strd       r4, r5, [sp, #0x38 + var_38] };
+    loc_ffffffff8f656968(0x0, "Invalid usable lba range(0x%llx..0x%llx)\n");
+    goto loc_8f652924;
+
+loc_8f6529d0:
+    r5 = *(r10 + 0x11);
+    r3 = *(r10 + 0x10);
+    r2 = *(r10 + 0xd);
+    r5 = r3 | r5 * 0x100;
+    r3 = *(r10 + 0x12);
+    *(r10 + 0x10) = 0x0;
+    *(r10 + 0x11) = 0x0;
+    r5 = r5 | r3 * 0x10000;
+    r3 = *(r10 + 0x13);
+    *(r10 + 0x12) = 0x0;
+    *(r10 + 0x13) = 0x0;
+    r5 = r5 | r3 * 0x1000000;
+    r3 = *(r10 + 0xc);
+    r3 = r3 | r2 * 0x100 | *(r10 + 0xe) * 0x10000;
+    if (CPU_FLAGS & NE) goto loc_8f652920;
+
+loc_8f652a38:
+    asm{ ubfx       r3, r5, #0x8, #0x8 };
+    r0 = 0x2;
+    *(r10 + 0x11) = r3;
+    r2 = r5;
+    asm{ ubfx       r3, r5, #0x10, #0x8 };
+    *(r10 + 0x12) = r3;
+    *(r10 + 0x10) = r5;
+    *(r10 + 0x13) = r3 >> r5 / 0x1000000;
+    loc_ffffffff8f656968(r0, "valid GPT header CRC32: 0x%x\n", r2, r3 >> r5 / 0x1000000);
+    r2 = *(r10 + 0x18) | *(r10 + 0x19) * 0x100 | *(r10 + 0x1a) * 0x10000 | *(r10 + 0x1b) * 0x1000000;
+    if ((*(r10 + 0x1c) | *(r10 + 0x1d) * 0x100 | *(r10 + 0x1e) * 0x10000 | *(r10 + 0x1f) * 0x1000000) == r7) {
+            CMP(r2, r6);
+    }
+    if (CPU_FLAGS & E) goto loc_8f652ac0;
+
+loc_8f652aa8:
+    loc_ffffffff8f656968(0x0, "mismatched my lba: 0x%llx\n", r6, r7);
+    goto loc_8f652924;
+
+loc_8f652ac0:
+    r2 = *(r10 + 0x55);
+    r3 = *(r10 + 0x54);
+    r1 = *(r10 + 0x51);
+    r3 = r3 | r2 * 0x100 | *(r10 + 0x56) * 0x10000;
+    r3 = r3 | *(r10 + 0x57) * 0x1000000;
+    r0 = loc_ffffffff8f67b2cc(0x0, r11, (*(r10 + 0x50) | r1 * 0x100 | *(r10 + 0x52) * 0x10000 | *(r10 + 0x53) * 0x1000000) * r3, r3);
+    if (r0 == (*(r10 + 0x58) | *(r10 + 0x59) * 0x100 | *(r10 + 0x5a) * 0x10000 | *(r10 + 0x5b) * 0x1000000)) {
+            r0 = 0x1;
+    }
+    if (CPU_FLAGS & E) goto loc_8f652b44;
+
+loc_8f652b34:
+    loc_ffffffff8f656968(0x0, "Invalid partition entry array crc32: original=0x%x, caluated=0x%x.\n");
+    goto loc_8f652924;
+

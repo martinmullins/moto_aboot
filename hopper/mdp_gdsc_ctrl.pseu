@@ -1,0 +1,36 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r0 = 0x8f7112f4;
+    stack[2045] = *0x8f7112f4;
+    r2 = *(0x184d000 + 0x78);
+    if (arg0 == 0x0) goto loc_8f6024fc;
+
+loc_8f6024b0:
+    if (r2 < 0x0) goto loc_8f6024d8;
+
+loc_8f6024b8:
+    *(0x184d000 + 0x78) = r2 & !0xf0000 & !0x1 | 0x80000;
+    do {
+    } while (*(0x184d000 + 0x78) >= 0x0);
+    goto loc_8f602510;
+
+loc_8f602510:
+    if (stack[2045] != *r0) {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f6024d8:
+    if (stack[2045] == *0x8f7112f4) {
+            loc_ffffffff8f656968(0x2, "MDP GDSC already enabled\n");
+    }
+    else {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f6024fc:
+    *(0x184d000 + 0x78) = r2 | 0x1;
+    do {
+    } while (*(0x184d000 + 0x78) < 0x0);
+    goto loc_8f602510;
+

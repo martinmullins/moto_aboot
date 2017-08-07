@@ -1,0 +1,28 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r6 = lr;
+    stack[2041] = *0x8f7112f4;
+    r0 = loc_ffffffff8f604504(0x192, sp + 0x8, 0x4, 0x8, stack[2038]);
+    COND = r7 == 0x0;
+    if (!COND) {
+            r0 = 0x0;
+    }
+    else {
+            r2 = stack[2040];
+            if ((r2 != 0x1) && (!CPU_FLAGS & E)) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "ERROR: Wrong smem_ram_ptable version: %u");
+                    loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm_shared/smem_ptable.c", 0xf2, 0x8f69c66f);
+            }
+            if (((loc_ffffffff8f604438(0x192, 0x8f6b58c0) == 0x0) && (*0x8f6b58c0 == 0x9da5e0a8)) && (*(0x8f6b58c0 + 0x4) == 0xaf9ec4e2)) {
+                    loc_ffffffff8f6045bc(0x8f6b58c0);
+                    loc_ffffffff8f656968(0x2, "smem ram ptable found: ver: %u len: %u\n", *(0x8f6b58c0 + 0x8), *(0x8f6b58c0 + 0x10));
+                    r0 = 0x1;
+            }
+            else {
+                    r0 = 0x0;
+            }
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

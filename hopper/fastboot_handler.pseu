@@ -1,0 +1,153 @@
+    r4 = (sp - 0x4 - 0x4 - 0x4 - 0x8c) + 0x43 & !0x3f;
+    loc_ffffffff8f61ac4c(0x8f711534);
+    r7 = 0x8f6ac374;
+    goto loc_8f62168c;
+
+loc_8f62168c:
+    do {
+            do {
+                    loc_ffffffff8f61afc0(0x8f6c0398);
+                    *0x8f6c0398 = 0x0;
+                    loc_ffffffff8f61b098(0x8f6c0398);
+                    loc_ffffffff8f64adc8(r4, 0x0, 0x40);
+                    loc_ffffffff8f6193d4(r4, 0x40);
+                    r0 = loc_ffffffff8f62d7e8(r4, 0x40);
+                    r6 = r0;
+            } while (r0 == -0xd);
+            if (r0 >= 0x0) {
+                break;
+            }
+            loc_ffffffff8f656968(0x1, "%s: usb disconnected, start waiting for usb online\n", "fastboot_command_handler");
+            loc_ffffffff8f61ac4c(0x8f711534);
+    } while (true);
+    loc_ffffffff8f61afc0(0x8f6c0398);
+    *0x8f6c0398 = 0x1;
+    loc_ffffffff8f61b098(0x8f6c0398);
+    *(r4 + r6) = 0x0;
+    (*(0x8f6ac374 + 0x4))("fastboot_screen", 0x0);
+    loc_ffffffff8f656968(0x6, "cmd: %s\n", r4);
+    r2 = r4;
+    goto loc_8f621740;
+
+loc_8f621740:
+    r1 = r2;
+    r3 = *r2;
+    r2 = r2 + 0x1;
+    if (r3 == 0x0) goto loc_8f621764;
+
+loc_8f621750:
+    if (r3 != 0x3a) {
+            CMP(r3, 0x20);
+    }
+    if (CPU_FLAGS & NE) goto loc_8f621740;
+
+loc_8f62175c:
+    *r1 = 0x0;
+    goto loc_8f621764;
+
+loc_8f621764:
+    r5 = 0x0;
+    goto loc_8f62176c;
+
+loc_8f62176c:
+    r0 = loc_ffffffff8f64b0ac(r4, *(0x8f68422c + r5 * 0x8));
+    r10 = r10 << r5 * 0x8;
+    s0 = 0x8f68422c;
+    if (r0 != 0x0) goto loc_8f6217b8;
+
+loc_8f621788:
+    r0 = *(r0 + r5 * 0x8);
+    r6 = zero_extend_32(r5);
+    r0 = loc_ffffffff8f64b354(r0);
+    *(0x8f7114fc + 0xc) = r4 + r0;
+    (*(r7 + 0x10))(r4 + r0);
+    r5 = *(0x8f71150c + 0x4);
+    goto loc_8f6217e4;
+
+loc_8f6217e4:
+    if (r5 != 0x8f71150c) goto loc_8f6217d4;
+
+loc_8f621818:
+    r0 = (*(0x8f7114fc + 0x4))(0x8f7114fc);
+    if (r0 == 0x5) goto loc_8f6218a8;
+
+loc_8f621830:
+    if ((r0 == 0x0) || (r0 == 0x3)) goto loc_8f6218a0;
+
+loc_8f621840:
+    r5 = *(0x8f7114f4 + 0x4);
+    goto loc_8f62184c;
+
+loc_8f62184c:
+    if (r5 == 0x8f7114f4) goto loc_8f62188c;
+
+loc_8f621854:
+    if (*(r5 + 0x8) != r6) goto loc_8f621884;
+
+loc_8f621860:
+    r3 = *(r5 + 0xc);
+    if (r3 == 0x0) goto loc_8f621884;
+
+loc_8f62186c:
+    r0 = (r3)(0x8f7114fc);
+    if ((r0 == 0x0) || (r0 == 0x3)) goto loc_8f6218a0;
+
+loc_8f621884:
+    r5 = *(r5 + 0x4);
+    goto loc_8f62184c;
+
+loc_8f6218a0:
+    loc_ffffffff8f621534();
+    goto loc_8f6218a8;
+
+loc_8f6218a8:
+    r3 = *0x8f6c0390;
+    *(0x8f6ac1c8 + r3) = r6;
+    r3 = r3 + 0x1 & 0x80000001;
+    COND = r3 < 0x0;
+    if (COND) {
+            r3 = r3 - 0x1;
+    }
+    if (CPU_FLAGS & S) {
+            r3 = r3 * 0x80000000 ^ 0xffffffff;
+    }
+    if (CPU_FLAGS & S) {
+            r3 = r3 / 0x80000000 ^ 0xffffffff;
+    }
+    if (CPU_FLAGS & S) {
+            r3 = r3 + 0x1;
+    }
+    *0x8f6c0390 = r3;
+    (*(r7 + 0x14))();
+    goto loc_8f62168c;
+
+loc_8f62188c:
+    if (r0 != 0x2) {
+            loc_ffffffff8f621534();
+    }
+    goto loc_8f6218a8;
+
+loc_8f6217d4:
+    if (*(r5 + 0x8) == r6) goto loc_8f6217f0;
+
+loc_8f6217e0:
+    r5 = *(r5 + 0x4);
+    goto loc_8f6217e4;
+
+loc_8f6217f0:
+    r3 = *(r5 + 0xc);
+    if (r3 == 0x0) goto loc_8f6217e0;
+
+loc_8f6217fc:
+    r0 = (r3)(0x8f7114fc);
+    if ((r0 == 0x0) || (r0 == 0x3)) goto loc_8f6218a0;
+    goto loc_8f6217e0;
+
+loc_8f6217b8:
+    r5 = r5 + 0x1;
+    if (r5 != 0xa) goto loc_8f62176c;
+
+loc_8f6217c4:
+    loc_ffffffff8f621534(0x8f68342a, "Unknown command");
+    goto loc_8f62168c;
+

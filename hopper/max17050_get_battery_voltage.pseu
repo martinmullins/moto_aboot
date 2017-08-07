@@ -1,0 +1,15 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    if (*0x8f6e0b48 != 0x0) {
+            r0 = loc_ffffffff8f612d58();
+            COND = r2 >= 0x0;
+            if (!COND) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Read MAX17050 error %d\n");
+            }
+    }
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Read MAX17050 Raw  Battery voltage %d\n", 0x0);
+    r0 = 0x271 * (0x0 >> 0x0 / 0x8);
+    if (0x0 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

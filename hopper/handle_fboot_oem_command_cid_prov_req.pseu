@@ -1,0 +1,90 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x34;
+    s0 = arg0;
+    r4 = 0xffffffffffffffd4 + sp + 0x30;
+    *r4 = 0x0;
+    r8 = arg1;
+    r3 = *0x8f7112f4;
+    stack[2039] = r3;
+    r0 = loc_ffffffff8f662f08(0xf0, 0x0, r4, r3, stack[2028]);
+    if ((r0 != 0xf) || (stack[2029] != 0xb6)) goto loc_8f62a70c;
+
+loc_8f62a720:
+    r0 = loc_ffffffff8f64aacc();
+    COND = r5 == 0x0;
+    if (CPU_FLAGS & E) goto loc_8f62a794;
+
+loc_8f62a734:
+    loc_ffffffff8f64adc8();
+    r0 = loc_ffffffff8f662f08(0xf0, r5, r4);
+    if (r0 == 0xf) goto loc_8f62a76c;
+
+loc_8f62a75c:
+    loc_ffffffff8f62192c(0x8f683451, "CID prov request failed, dbval_rsp %lx\n");
+    goto loc_8f62a7c0;
+
+loc_8f62a7c0:
+    loc_ffffffff8f64ab9c(r5);
+    goto loc_8f62a7c8;
+
+loc_8f62a7c8:
+    r0 = 0x3;
+    goto loc_8f62a988;
+
+loc_8f62a988:
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f62a76c:
+    if ((s0 <= 0x1) || (loc_ffffffff8f662e60(r5, stack[2029], *(r8 + 0x4)) == 0xf)) goto loc_8f62a79c;
+
+loc_8f62a794:
+    loc_ffffffff8f62192c();
+    goto loc_8f62a7c8;
+
+loc_8f62a79c:
+    r0 = loc_ffffffff8f64aacc((stack[2029] << stack[2029] * 0x2) + 0x1);
+    COND = r4 != 0x0;
+    if (COND) goto loc_8f62a7d0;
+
+loc_8f62a7b4:
+    loc_ffffffff8f62192c(0x8f683451, "Failed to malloc memory for CID prov request\n");
+    goto loc_8f62a7c0;
+
+loc_8f62a7d0:
+    loc_ffffffff8f64adc8();
+    loc_ffffffff8f62a644(r4, r5, stack[2029]);
+    loc_ffffffff8f64ab9c(r5);
+    loc_ffffffff8f64a9f0(sp + 0x8, 0x21, 0x8f6853ea, r4);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0x8);
+    loc_ffffffff8f64a9f0(sp + 0x8, 0x21, 0x8f6853ea, r4 + 0x20);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0x8);
+    loc_ffffffff8f64a9f0(sp + 0x8, 0x21, 0x8f6853ea, r4 + 0x40);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0x8);
+    loc_ffffffff8f64a9f0(sp + 0x8, 0x21, 0x8f6853ea, r4 + 0x60);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0x8);
+    loc_ffffffff8f64a9f0(sp + 0x8, 0x21, 0x8f6853ea, r4 + 0x80);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0x8);
+    loc_ffffffff8f64a9f0(sp + 0x8, 0x21, 0x8f6853ea, r4 + 0xa0);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0x8);
+    loc_ffffffff8f64a9f0(sp + 0x8, 0x21, 0x8f6853ea, r4 + 0xc0);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0x8);
+    loc_ffffffff8f64a9f0(sp + 0x8, 0x21, 0x8f6853ea, r4 + 0xe0);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0x8);
+    loc_ffffffff8f64a9f0(sp + 0x8, 0x21, 0x8f6853ea, r4 + 0x100);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0x8);
+    loc_ffffffff8f64a9f0(sp + 0x8, 0x21, 0x8f6853ea, r4 + 0x120);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0x8);
+    loc_ffffffff8f64a9f0(sp + 0x8, 0x21, 0x8f6853ea, r4 + 0x140);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0x8);
+    loc_ffffffff8f64a9f0(sp + 0x8, 0xd, 0x8f6853ea, r4 + 0x160);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0x8);
+    loc_ffffffff8f64ab9c(r4);
+    r0 = 0x0;
+    goto loc_8f62a988;
+
+loc_8f62a70c:
+    loc_ffffffff8f62192c(0x8f683451, "prov req failed dbval_rsp %lx db_len %d\n");
+    goto loc_8f62a7c8;
+

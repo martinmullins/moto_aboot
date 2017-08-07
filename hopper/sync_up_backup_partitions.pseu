@@ -1,0 +1,144 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r7 = 0x0;
+    stack[2037] = *0x8f7112f4;
+    goto loc_8f673f14;
+
+loc_8f673f14:
+    r5 = *(r0 + 0x4);
+    if (r5 == 0x0) goto loc_8f6741d0;
+
+loc_8f673f24:
+    r4 = *(r7 + 0x8f6affb4);
+    r6 = loc_ffffffff8f65385c(r4);
+    r8 = loc_ffffffff8f65385c(r5);
+    r0 = loc_ffffffff8f67305c(r4);
+    if (r6 == 0x0) {
+            r0 = r6;
+    }
+    if (CPU_FLAGS & E) goto loc_8f674104;
+
+loc_8f673f58:
+    if (r8 != 0x0) goto .l4;
+
+loc_8f673f60:
+    r0 = loc_ffffffff8f656968(0x1, "Backup partition %s not exist, ignore\n", r5);
+    goto loc_8f6741d0;
+
+loc_8f6741d0:
+    r7 = r7 + 0x8;
+    if (r7 != 0x28) goto loc_8f673f14;
+
+loc_8f6741dc:
+    r0 = 0x0;
+    goto loc_8f6741e0;
+
+loc_8f6741e0:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+.l4:
+    if (CPU_FLAGS & E) goto loc_8f674104;
+
+loc_8f673f80:
+    r0 = (*(r0 + 0x20))();
+    if (r0 == 0x0) goto loc_8f6741d0;
+
+loc_8f673f98:
+    loc_ffffffff8f656968(0x1, "try to update backup partition %s for %s\n", r5, r4);
+    r0 = *(r6 + 0x29);
+    r1 = *(r6 + 0x28);
+    lr = *(r6 + 0x21);
+    r1 = r1 | r0 * 0x100;
+    r0 = *(r6 + 0x2a);
+    r12 = *(r6 + 0x20);
+    r1 = r1 | r0 * 0x10000;
+    r0 = *(r6 + 0x2b);
+    r12 = r12 | lr * 0x100;
+    lr = *(r6 + 0x22);
+    r2 = r1 | r0 * 0x1000000;
+    r0 = *(r6 + 0x2d);
+    r1 = *(r6 + 0x2c);
+    r12 = r12 | lr * 0x10000;
+    lr = *(r6 + 0x23);
+    r2 = r2 + 0x1;
+    r3 = r1 | r0 * 0x100 | *(r6 + 0x2e) * 0x10000 | *(r6 + 0x2f) * 0x1000000;
+    r0 = r12 | lr * 0x1000000;
+    lr = *(r6 + 0x25);
+    r3 = r3 + 0x0 + CARRY(FLAGS);
+    r12 = *(r6 + 0x24);
+    r12 = r12 | lr * 0x100 | *(r6 + 0x26) * 0x10000;
+    lr = *(r6 + 0x27);
+    r2 = r2 - r0;
+    r0 = r6;
+    r1 = 0x90000000;
+    asm{ stm        sp, {r2, r3} };
+    r0 = loc_ffffffff8f67ae2c(r0, r1, 0x0, 0x0);
+    COND = r5 != 0x0;
+    if (CPU_FLAGS & NE) goto loc_8f674104;
+
+loc_8f674060:
+    r0 = *(r6 + 0x29);
+    r1 = *(r6 + 0x28);
+    lr = *(r6 + 0x21);
+    r1 = r1 | r0 * 0x100;
+    r0 = *(r6 + 0x2a);
+    r12 = *(r6 + 0x20);
+    r1 = r1 | r0 * 0x10000;
+    r0 = *(r6 + 0x2b);
+    r12 = r12 | lr * 0x100;
+    lr = *(r6 + 0x22);
+    r2 = r1 | r0 * 0x1000000;
+    r0 = *(r6 + 0x2d);
+    r1 = *(r6 + 0x2c);
+    r12 = r12 | lr * 0x10000;
+    lr = *(r6 + 0x23);
+    r2 = r2 + 0x1;
+    r3 = r1 | r0 * 0x100 | *(r6 + 0x2e) * 0x10000 | *(r6 + 0x2f) * 0x1000000;
+    r3 = r3 + 0x0 + CARRY(FLAGS);
+    r2 = r2 - (r12 | lr * 0x1000000);
+    if (loc_ffffffff8f673264(r6, 0x90000000, r2 << r2 * 0x200, r5) == 0x0) goto loc_8f674110;
+
+loc_8f674104:
+    loc_ffffffff8f656968();
+    goto loc_8f6741f4;
+
+loc_8f6741f4:
+    loc_ffffffff8f656968(0x5, "Failed to sync up backup partition for %s\n", *0x5);
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f6741e0;
+
+loc_8f674110:
+    r2 = *(r6 + 0x29);
+    r3 = *(r6 + 0x28);
+    r0 = *(r6 + 0x21);
+    r3 = r3 | r2 * 0x100;
+    r2 = *(r6 + 0x2a);
+    r1 = *(r6 + 0x20);
+    r3 = r3 | r2 * 0x10000;
+    r2 = *(r6 + 0x2b);
+    r1 = r1 | r0 * 0x100;
+    r0 = *(r6 + 0x22);
+    r4 = r3 | r2 * 0x1000000;
+    r2 = *(r6 + 0x2d);
+    r3 = *(r6 + 0x2c);
+    r1 = r1 | r0 * 0x10000;
+    r0 = *(r6 + 0x23);
+    r4 = r4 + 0x1;
+    r5 = r3 | r2 * 0x100 | *(r6 + 0x2e) * 0x10000 | *(r6 + 0x2f) * 0x1000000;
+    r2 = r1 | r0 * 0x1000000;
+    r0 = *(r6 + 0x25);
+    r5 = r5 + 0x0 + CARRY(FLAGS);
+    r1 = *(r6 + 0x24);
+    r1 = r1 | r0 * 0x100 | *(r6 + 0x26) * 0x10000;
+    r0 = *(r6 + 0x27);
+    r4 = r4 - r2;
+    r0 = loc_ffffffff8f67b0d0(r8, 0x90000000, 0x0, 0x0, r4 << r4 * 0x200, (r1 | r0 * 0x1000000) << (r5 - (r1 | r0 * 0x1000000) + !CARRY(FLAGS)) * 0x200 | r4 / 0x800000);
+    if (r0 == 0x0) goto loc_8f6741d0;
+
+loc_8f6741c0:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to update backup GPT\n");
+    goto loc_8f6741f4;
+

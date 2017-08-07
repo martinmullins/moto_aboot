@@ -1,0 +1,10 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    if (arg1 != 0x0) {
+            (*(*(0x8f6b1698 + 0x28) + 0x3c))();
+    }
+    if (stack[2045] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

@@ -1,0 +1,58 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r5 = loc_ffffffff8f674cc4(arg0, arg1, arg2, r3, arg0, stack[2043], arg2, 0x8f7112f4, r5, lr);
+    loc_ffffffff8f672a18();
+    if (r5 == 0x4) {
+            if (loc_ffffffff8f677818("system") != 0x0) {
+                    loc_ffffffff8f656968();
+                    r0 = 0x2;
+            }
+            else {
+                    if (loc_ffffffff8f677818(0x8f68302e) == 0x0) {
+                            if (loc_ffffffff8f671718() != 0x0) {
+                                    loc_ffffffff8f656968();
+                                    r0 = 0x2;
+                            }
+                            else {
+                                    r0 = loc_ffffffff8f674a88();
+                                    COND = r5 != 0x0;
+                                    if ((!COND) && (loc_ffffffff8f622518("userdata") != 0x0)) {
+                                            loc_ffffffff8f656968(r5, "Failed to wipe userdata for verified state\n");
+                                            r0 = 0x8;
+                                    }
+                                    else {
+                                            loc_ffffffff8f674774(0x6, 0x1);
+                                            r0 = 0x0;
+                                    }
+                            }
+                    }
+                    else {
+                            loc_ffffffff8f656968();
+                            r0 = 0x2;
+                    }
+            }
+    }
+    else {
+            if (loc_ffffffff8f671718() != 0x0) {
+                    loc_ffffffff8f656968();
+                    r0 = 0x2;
+            }
+            else {
+                    r0 = loc_ffffffff8f674a88();
+                    COND = r5 != 0x0;
+                    if ((!COND) && (loc_ffffffff8f622518("userdata") != 0x0)) {
+                            loc_ffffffff8f656968(r5, "Failed to wipe userdata for verified state\n");
+                            r0 = 0x8;
+                    }
+                    else {
+                            loc_ffffffff8f674774(0x6, 0x1);
+                            r0 = 0x0;
+                    }
+            }
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,23 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    loc_ffffffff8f60c7ac(arg0, arg1, arg2, r3, arg0, stack[2043], r4, r5, r6, lr);
+    r0 = loc_ffffffff8f60c650();
+    r0 = loc_ffffffff8f67b3c0(arg0 * r0, 0x3e8);
+    *0x8f6b8acc = r0;
+    *0x8f6b8ac0 = arg0;
+    *0x8f6b8ac4 = arg2;
+    *0x8f6b8ac8 = arg1;
+    *(0xb021000 + 0x28) = r0;
+    asm{ dsb        sy };
+    loc_ffffffff8f601e1c();
+    loc_ffffffff8f60cae0();
+    loc_ffffffff8f601e1c();
+    r0 = loc_ffffffff8f60caac();
+    *(0xb021000 + 0x2c) = *(0xb021000 + 0x2c) & !0x2 | 0x1;
+    asm{ dsb        sy };
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,44 @@
+    stack[2045] = r8;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r8 = arg0;
+    r3 = *arg0;
+    stack[2040] = r3;
+    r0 = loc_ffffffff8f64b000(arg0, 0x3a, arg2, r3, arg0, arg1, arg2, stack[2040], r4, r5, r6, r7, stack[2045], r10, lr);
+    if (r0 != 0x0) {
+            COND = r4 != 0x0;
+            if (!COND) {
+                    loc_ffffffff8f656968();
+                    r0 = 0x0;
+            }
+            else {
+                    r0 = loc_ffffffff8f65385c(r4);
+                    COND = r10 == 0x0;
+                    if (!CPU_FLAGS & E) {
+                            r4 = *(r10 + 0x28) | *(r10 + 0x29) * 0x100 | *(r10 + 0x2a) * 0x10000 | *(r10 + 0x2b) * 0x1000000;
+                            r4 = r4 + 0x1;
+                            r5 = *(r10 + 0x2c) | *(r10 + 0x2d) * 0x100 | *(r10 + 0x2e) * 0x10000 | *(r10 + 0x2f) * 0x1000000;
+                            r5 = r5 + 0x0 + CARRY(FLAGS);
+                            r6 = *(r10 + 0x20) | *(r10 + 0x21) * 0x100 | *(r10 + 0x22) * 0x10000 | *(r10 + 0x23) * 0x1000000;
+                            r2 = *(r10 + 0x25);
+                            r3 = *(r10 + 0x24);
+                            r3 = r3 | r2 * 0x100 | *(r10 + 0x26) * 0x10000;
+                            r2 = *(r10 + 0x27);
+                            r4 = r4 - r6;
+                            loc_ffffffff8f64a9f0(r8, 0x40, "0x%016llx", r3 << (r5 - (r3 | r2 * 0x1000000) + !CARRY(FLAGS)) * 0x200 | r4 / 0x800000, r4 << r4 * 0x200, r3 << (r5 - (r3 | r2 * 0x1000000) + !CARRY(FLAGS)) * 0x200 | r4 / 0x800000);
+                            r0 = 0x1;
+                    }
+                    else {
+                            loc_ffffffff8f656968();
+                            r0 = 0x0;
+                    }
+            }
+    }
+    else {
+            loc_ffffffff8f656968();
+            r0 = 0x0;
+    }
+    if (stack[2040] != *r0) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

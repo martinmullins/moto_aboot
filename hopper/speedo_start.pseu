@@ -1,0 +1,64 @@
+    stack[2046] = r7;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r7 = arg0;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    r0 = loc_ffffffff8f677d10(arg0, arg1, arg2, r3, arg0, stack[2041], arg2, 0x8f6ac0f0, r5, 0x8f7112f4, stack[2046], lr);
+    r3 = *0x8f6ac0f0;
+    *0x8f6ac0f0 = r3 + 0x1;
+    r5 = r0;
+    if (r3 == 0x0) {
+            loc_ffffffff8f619448();
+    }
+    if (r5 != 0x0) goto loc_8f677eb4;
+
+loc_8f677e18:
+    r0 = loc_ffffffff8f64ab44(0x38, 0x1);
+    COND = r5 != 0x0;
+    if (COND) goto loc_8f677e54;
+
+loc_8f677e2c:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error: out of memory\n");
+    r3 = *0x8f6ac0f0;
+    *0x8f6ac0f0 = r3 - 0x1;
+    if (r3 == 0x1) {
+            loc_ffffffff8f619438();
+    }
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f677ed8;
+
+loc_8f677ed8:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f677e54:
+    loc_ffffffff8f64b21c(r5 + 0x8, r7, 0x1f);
+    r3 = *0x8f6ac0f0;
+    *0x8f6ac0f0 = r3 + 0x1;
+    if (r3 == 0x0) {
+            loc_ffffffff8f619448();
+    }
+    r4 = 0x8f6ac0f0;
+    r2 = *0x8f710e80;
+    *0x8f710e80 = r5;
+    asm{ stm        r5, {r2, r3} };
+    r3 = *r4;
+    *(r2 + 0x4) = r5;
+    *r4 = r3 - 0x1;
+    if (r3 == 0x1) {
+            loc_ffffffff8f619438();
+    }
+    goto loc_8f677eb4;
+
+loc_8f677eb4:
+    *(r5 + 0x28) = loc_ffffffff8f60c68c();
+    r5 = *0x8f6ac0f0;
+    *0x8f6ac0f0 = r5 - 0x1;
+    if (r5 == 0x1) {
+            loc_ffffffff8f619438();
+    }
+    r0 = 0x0;
+    goto loc_8f677ed8;
+

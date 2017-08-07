@@ -1,0 +1,45 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r4 = *(arg0 + 0xc);
+    r5 = *arg0;
+    r2 = *0x8f7112f4;
+    r4 = r4 + 0x1;
+    r8 = *(arg0 + 0x8);
+    stack[2037] = r2;
+    r0 = loc_ffffffff8f64b470(r4, "motoboot", 0x48);
+    COND = r6 != 0x0;
+    if (!COND) {
+            r8 = r5 + 0x400;
+            r4 = r5 + 0x4;
+            r7 = r5 + 0x290;
+            s0 = r6;
+            r10 = loc_ffffffff8f600d34();
+            stack[2035] = loc_ffffffff8f64b0ac(r5 + 0x284, "MBOOTV1");
+            loc_ffffffff8f656968(0x1, "start motoboot backup\n");
+            while (r6 < *r5) {
+                    r8 = r8 + s0;
+                    s0 = *(r4 + 0x1c);
+                    s0 = s0 + 0x1 - *(r4 + 0x18);
+                    s0 = *(*0x8f7125ec + 0x8) * s0;
+                    if (((stack[2035] == 0x0) && (loc_ffffffff8f64b0ac(r7, "HABSIG") != 0x0)) && (loc_ffffffff8f64b6a0(r10, r7) == 0x0)) {
+                            loc_ffffffff8f656968(0x1, "Image/MSM ID mismatch - Skip backup flashing");
+                    }
+                    else {
+                            loc_ffffffff8f656968(0x1, "Backup motoboot component: %s...\n", r4);
+                            if (loc_ffffffff8f64b470(r4, 0x8f682073, loc_ffffffff8f64b354(0x8f682073)) != 0x0) {
+                                    loc_ffffffff8f62e7fc(r4, r8, s0);
+                            }
+                    }
+                    r6 = r6 + 0x1;
+                    r4 = r4 + 0x20;
+                    r7 = r7 + 0xc;
+            }
+    }
+    else {
+            loc_ffffffff8f62e7fc(r4, r5, r8);
+    }
+    r0 = 0x1;
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

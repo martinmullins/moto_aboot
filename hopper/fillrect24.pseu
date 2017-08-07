@@ -1,0 +1,123 @@
+    r3 = arg3;
+    r2 = arg2;
+    r1 = arg1;
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r6 = arg4;
+    r10 = arg5;
+    r12 = *0x8f7112f4;
+    r11 = *(r0 + 0x18);
+    stack[2037] = r12;
+    r12 = *(r0 + 0x8);
+    if (r12 == 0x0) goto loc_8f648f50;
+
+loc_8f648ef8:
+    r4 = *(r0 + 0x10);
+    if (r3 + r1 > r4) goto loc_8f648f18;
+
+loc_8f648f08:
+    r12 = *(r0 + 0x14);
+    if (r2 + r6 < r12) goto loc_8f648f40;
+
+loc_8f648f18:
+    if (stack[2037] == *0x8f7112f4) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s width/height checking fails in gfx!", "fillrect24");
+    }
+    else {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f648f40:
+    r1 = r4 - r1 - r3;
+    r2 = r12 - r2 - r6;
+    goto loc_8f648f50;
+
+loc_8f648f50:
+    r0 = 0x0;
+    r2 = r1 + r11 * r2;
+    r5 = r10 & !0xff000000;
+    asm{ ubfx       ip, r5, #0x8, #0x8 };
+    r7 = r7 >> r5 / 0x10000;
+    r5 = zero_extend_32(r5);
+    r4 = zero_extend_32(r7);
+    r2 = *r0 + r2 + r2 * 0x2;
+    r1 = r7 | zero_extend_32(r10) * 0x10000;
+    r11 = (r11 - r3) + (r11 - r3) * 0x2;
+    r0 = 0x0;
+    stack[2035] = r1 | r7 * 0x1000000 | r12 * 0x100;
+    while (r0 != r6) {
+            r1 = r2 & 0x3;
+            if (r1 != 0x2) {
+                    if (r1 != 0x3) {
+                            if (r1 == 0x1) {
+                                    *r2 = r4;
+                            }
+                            if (CPU_FLAGS & E) {
+                                    *(r2 + 0x1) = r12;
+                            }
+                            if (CPU_FLAGS & E) {
+                                    *(r2 + 0x2) = r5;
+                            }
+                            if (CPU_FLAGS & NE) {
+                                    r1 = 0x0;
+                            }
+                            if (CPU_FLAGS & E) {
+                                    r2 = r2 + 0x3;
+                            }
+                    }
+                    else {
+                            *r2 = r4;
+                            r2 = r2 + 0x9;
+                            *(r2 + 0xfffffffffffffff8) = r12;
+                            *(r2 + 0xfffffffffffffff9) = r5;
+                            *(r2 + 0xfffffffffffffffa) = r4;
+                            *(r2 + 0xfffffffffffffffb) = r12;
+                            *(r2 + 0xfffffffffffffffc) = r5;
+                            *(r2 + 0xfffffffffffffffd) = r4;
+                            *(r2 + 0xfffffffffffffffe) = r12;
+                            *(r2 + 0xffffffffffffffff) = r5;
+                    }
+            }
+            else {
+                    *r2 = r4;
+                    r2 = r2 + 0x6;
+                    *(r2 + 0xfffffffffffffffb) = r12;
+                    *(r2 + 0xfffffffffffffffc) = r5;
+                    *(r2 + 0xfffffffffffffffd) = r4;
+                    *(r2 + 0xfffffffffffffffe) = r12;
+                    *(r2 + 0xffffffffffffffff) = r5;
+            }
+            while (r1 < r3) {
+                    r7 = r1 + 0x4;
+                    if (r7 >= r3) {
+                            *r2 = r4;
+                    }
+                    if (CPU_FLAGS & NS) {
+                            r7 = r1 + 0x1;
+                    }
+                    if (CPU_FLAGS & NS) {
+                            *(r2 + 0x1) = r12;
+                    }
+                    if (CPU_FLAGS & NS) {
+                            *(r2 + 0x2) = r5;
+                    }
+                    if (CPU_FLAGS & NS) {
+                            r2 = r2 + 0x3;
+                    }
+                    if (CPU_FLAGS & S) {
+                            asm{ stmlo      r2, {r1, sb, sl} };
+                    }
+                    if (CPU_FLAGS & S) {
+                            r2 = r2 + 0xc;
+                    }
+                    r1 = r7;
+            }
+            r2 = r2 + r11;
+            r0 = r0 + 0x1;
+    }
+    if (stack[2037] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

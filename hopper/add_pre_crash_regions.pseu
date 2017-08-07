@@ -1,0 +1,26 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x7c;
+    r5 = arg0;
+    stack[2039] = *0x8f7112f4;
+    if (*(arg0 + 0x20) != 0x0) {
+            stack[2010] = "sh->preamble.num_regions == 0";
+            loc_ffffffff8f6484ac(lr, "ASSERT FAILED at (%s:%d): %s\n", "app/mbm/sod.c", 0x98, stack[2010]);
+    }
+    r4 = 0x8f6ac224;
+    r8 = sp + 0x20;
+    r7 = sp + 0x38;
+    s0 = r4 + 0x50;
+    do {
+            r4 = r4 + 0x10;
+            loc_ffffffff8f64adc8(sp + 0x8, 0x0, 0x68);
+            r1 = *(r4 + 0xfffffffffffffff8);
+            stack[2012] = stack[2012] | 0x2;
+            r3 = *(r4 + 0xfffffffffffffff4);
+            loc_ffffffff8f64b2c0(r8, r1, 0x18, r3, stack[2010]);
+            loc_ffffffff8f64b2c0(r7, *(r4 + 0xfffffffffffffffc), 0x18);
+            r0 = loc_ffffffff8f6354a0(r5, sp + 0x8);
+    } while (r4 != s0);
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

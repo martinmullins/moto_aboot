@@ -1,0 +1,32 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r0 = loc_ffffffff8f636834(arg0, arg1, arg2, r3, arg0, stack[2043], arg2, r4, 0x8f7112f4, lr);
+    COND = r4 == 0x0;
+    if (!COND) {
+            r0 = loc_ffffffff8f63787c();
+            if (r0 != 0x8000) {
+                    CMP(r0, 0x20000);
+            }
+            if ((!CPU_FLAGS & E) && (r0 != 0x400000)) {
+                    loc_ffffffff8f656968(0x1, "unexpected crash detected (POR = 0x%08x)\n");
+                    loc_ffffffff8f656968(0x1, "rebooting normally...\n");
+                    loc_ffffffff8f60c558(0x64);
+                    r3 = *0x8f6ac0f0;
+                    *0x8f6ac0f0 = r3 + 0x1;
+                    if (r3 == 0x0) {
+                            loc_ffffffff8f619448();
+                    }
+                    loc_ffffffff8f601a7c();
+                    loc_ffffffff8f60dd74(0x0);
+                    r4 = 0x0;
+            }
+            r0 = loc_ffffffff8f636410();
+            loc_ffffffff8f656968(0x1, "** Entering RAM dump mode for %s!! **\n", r0);
+    }
+    r0 = r4;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,52 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x2c;
+    stack[2041] = *0x8f7112f4;
+    r3 = 0x8f6ac218;
+    r7 = r3;
+    if (*r3 != 0xffff) {
+            r3 = 0x8f711550;
+    }
+    if (CPU_FLAGS & NE) {
+            r4 = *(r3 + 0x4);
+    }
+    if (CPU_FLAGS & NE) {
+            r5 = r3;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f634004;
+
+loc_8f633fe4:
+    r0 = 0x0;
+    goto loc_8f634094;
+
+loc_8f634094:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f634004:
+    if (r4 != r5) goto loc_8f633fec;
+    goto loc_8f633fe4;
+
+loc_8f633fec:
+    if ((*(r4 + 0x230))(*r7) != 0x0) goto loc_8f634010;
+
+loc_8f634000:
+    r4 = *(r4 + 0x4);
+    goto loc_8f634004;
+
+loc_8f634010:
+    r5 = r4 + 0x8;
+    if ((loc_ffffffff8f6335f4(sp, 0x20) == 0x0) || (loc_ffffffff8f64b470(r5, sp, loc_ffffffff8f64b354(sp)) != 0x0)) {
+            loc_ffffffff8f656968(0x1, "programming UTAG \"%s\" to %s.\n", 0x8f684a2d, r5);
+            if (loc_ffffffff8f6334d8(r5) == 0x0) {
+                    loc_ffffffff8f656968(0x0, "Failed to program UTAG \"%s\"!\n", 0x8f684a2d);
+            }
+            else {
+                    if (loc_ffffffff8f679ff0(0x0) != 0x0) {
+                            loc_ffffffff8f656968(0x0, "Failed to program UTAG \"%s\"!\n", 0x8f684a2d);
+                    }
+            }
+    }
+    r0 = r4;
+    goto loc_8f634094;
+

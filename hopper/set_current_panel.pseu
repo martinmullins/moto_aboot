@@ -1,0 +1,20 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    COND = r5 == 0x0;
+    stack[2043] = *0x8f7112f4;
+    if (!COND) {
+            *0x8f6e06b0 = r5;
+            loc_ffffffff8f61882c();
+            if (stack[2043] == *0x8f7112f4) {
+                    loc_ffffffff8f656968(0x1, "set current panel to %s!", r5 + 0x8);
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (stack[2043] != *0x8f7112f4) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

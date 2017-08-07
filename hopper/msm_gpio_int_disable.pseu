@@ -1,0 +1,14 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    r3 = *(0x8 + (arg0 << arg0 * 0x1000) + 0x1000000);
+    *(0x8 + (arg0 << arg0 * 0x1000) + 0x1000000) = r3 & !0x1;
+    loc_ffffffff8f61951c(arg0 << arg0 * 0x1000, arg1, arg2, r3 & !0x1, arg0, stack[2043], arg2, r4, r5, lr);
+    *(0xc + (arg0 << arg0 * 0x1000) + 0x1000000) = 0x0;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = loc_ffffffff8f61951c();
+    }
+    return r0;
+

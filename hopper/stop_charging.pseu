@@ -1,0 +1,18 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2045] = r3;
+    loc_ffffffff8f656968(0x2, "%s called\n", "stop_charging", r3, arg0, stack[2045], 0x8f7112f4, lr);
+    loc_ffffffff8f645fb4();
+    if (loc_ffffffff8f646cd0() != 0x0) {
+            *(0x8f6e07ec + 0x8) = *(0x8f6e07ec + 0x8) | 0x40000000;
+            loc_ffffffff8f61ac84(0x8f6e07ec, 0x1);
+            loc_ffffffff8f61ac4c(0x8f6e07ac);
+    }
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = loc_ffffffff8f656968(0x2, "%s ended\n", "stop_charging");
+    }
+    return r0;
+

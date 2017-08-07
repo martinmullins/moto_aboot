@@ -1,0 +1,54 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x5c;
+    stack[2043] = *0x8f7112f4;
+    loc_ffffffff8f656cb4(arg0);
+    loc_ffffffff8f61a900(arg0);
+    if (arg0 < 0x77665508) {
+            loc_8f60ddac();
+    }
+    r0 = loc_ffffffff8f6798a8(0x0, "disable-reset");
+    if (r0 != 0x1) {
+            r4 = 0x7;
+    }
+    else {
+            if ((loc_ffffffff8f6797bc(0x0, "disable-reset", sp + 0x7) != 0x0) && (stack[2024] != *0x8f7114b0)) {
+                    r4 = 0x9;
+            }
+            else {
+                    r4 = 0x7;
+            }
+    }
+    loc_ffffffff8f60dc34(0x0);
+    loc_ffffffff8f645928(r4);
+    r0 = loc_ffffffff8f616414();
+    COND = r4 != 0x0;
+    if (!COND) {
+            r0 = loc_ffffffff8f616628(0x1, 0x9, 0x1, r4);
+            COND = r2 == 0x0;
+            if (!COND) {
+                    loc_ffffffff8f656968(r4, "Failed to disable wdog debug: %d\n");
+            }
+    }
+    else {
+            loc_ffffffff8f64adc8(sp + 0x14, 0x0, 0x40);
+            loc_ffffffff8f64adc8(sp + 0x8, 0x0, 0xc);
+            r0 = loc_ffffffff8f6168f8(sp + 0x14, sp + 0x8);
+            if (stack[2024] == 0x0) {
+                    CMP(r0, 0x0);
+            }
+            if (!CPU_FLAGS & E) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to disable the wdog debug \n");
+            }
+    }
+    r0 = loc_ffffffff8f616f08();
+    COND = r2 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to halt pmic arbiter: %d\n");
+    }
+    *0x4ab000 = 0x0;
+    loc_ffffffff8f60c558(0x1388);
+    r0 = loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Rebooting failed\n");
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

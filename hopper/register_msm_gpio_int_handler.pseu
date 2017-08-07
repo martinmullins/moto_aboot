@@ -1,0 +1,60 @@
+    stack[2042] = r5;
+    stack[2044] = r7;
+    stack[2045] = r8;
+    stack[2046] = r10;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = arg0;
+    r10 = lr;
+    s0 = arg1;
+    r8 = arg2;
+    r3 = *0x8f7112f4;
+    r7 = 0x8f7112f4;
+    stack[2040] = r3;
+    r0 = loc_ffffffff8f64aacc(0x14, arg1, arg2, r3, arg0, arg1, arg2, stack[2040], r4, stack[2042], 0x8f7112f4, stack[2044], stack[2045], stack[2046], lr);
+    COND = r4 != 0x0;
+    if (!COND) {
+            if (stack[2040] == *0x8f7112f4) {
+                    r0 = loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Cannot allocate memory for GPIO %d int handler!\n", r5);
+            }
+            else {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (r5 >= 0xac) {
+                    r0 = loc_ffffffff8f6484ac(r10, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/gpio.c", 0x114, "gpio < NR_GPIO_IRQS");
+            }
+            *(r4 + 0x8) = 0x8f6ac0f0;
+            *(r4 + 0xc) = s0;
+            r2 = *0x8f6ac0f0;
+            *(r4 + 0x10) = r8;
+            *0x8f6ac0f0 = r2 + 0x1;
+            if (r2 == 0x0) {
+                    r0 = loc_ffffffff8f619448();
+            }
+            r5 = 0x8f6ac0f0;
+            r2 = *0x8f6b505c;
+            *0x8f6b505c = r4;
+            asm{ stm        r4, {r2, r3} };
+            *(r2 + 0x4) = r4;
+            r2 = *r5;
+            *r5 = r2 - 0x1;
+            COND = r2 != 0x1;
+            r2 = stack[2040];
+            r3 = *r7;
+            if (!COND) {
+                    if (r2 == r3) {
+                            r0 = loc_ffffffff8f619438();
+                    }
+                    else {
+                            r0 = loc_ffffffff8f648514();
+                    }
+            }
+            else {
+                    if (r2 != r3) {
+                            r0 = loc_ffffffff8f648514();
+                    }
+            }
+    }
+    return r0;
+

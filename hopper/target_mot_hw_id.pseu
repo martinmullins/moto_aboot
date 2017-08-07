@@ -1,0 +1,21 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    if (*0x8f6ac0e4 == -0x1) {
+            r2 = *(0x8600000 + 0xa95);
+            r3 = *(0x8600000 + 0xa94);
+            if (r3 != zero_extend_32(r2 ^ 0xffffffff)) {
+                    loc_ffffffff8f656968(0x1, "Motorola Hardware ID data passed from SBL1\n");
+                    loc_ffffffff8f656968(0x1, "is incorrect or has been corrupted.\n");
+                    loc_ffffffff8f656968(0x1, "The following was read from shared IMEM:\n");
+                    loc_ffffffff8f656968(0x1, "    ID=0x%02X, IDchk=0x%02X\n", *(0x8600000 + 0xa94), *(0x8600000 + 0xa95));
+                    r3 = 0x41;
+            }
+            *0x8f6ac0e4 = r3;
+    }
+    r3 = *0x8f7112f4;
+    r0 = *0x8f6ac0e4;
+    if (stack[2043] != r3) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

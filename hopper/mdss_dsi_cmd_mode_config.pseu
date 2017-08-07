@@ -1,0 +1,12 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2040] = *0x8f7112f4;
+    if (stack[2049] < 0x3) {
+            loc_8f60ff34();
+    }
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "unsupported dst format\n");
+    r0 = 0x0 ^ 0xffffffff;
+    if (stack[2040] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

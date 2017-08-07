@@ -1,0 +1,28 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2045] = r3;
+    if (loc_ffffffff8f601fd4(arg0, arg1, arg2, r3, arg0, stack[2045], 0x8f7112f4, lr) != 0x3) {
+            r0 = loc_ffffffff8f64710c();
+            r0 = r0 & 0x2 & 0xff;
+            COND = r0 == 0x0;
+            if (!COND) {
+                    r0 = loc_ffffffff8f647188();
+                    loc_ffffffff8f64675c();
+                    loc_ffffffff8f6381d8(0xfa0);
+            }
+            else {
+                    loc_ffffffff8f64675c();
+            }
+    }
+    else {
+            loc_ffffffff8f64675c();
+    }
+    loc_ffffffff8f646720();
+    if (stack[2045] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    else {
+            loc_ffffffff8f656968(0x1, "set accessory type %d\n");
+    }
+    return;
+

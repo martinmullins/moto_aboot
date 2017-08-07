@@ -1,0 +1,29 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r8 = arg2;
+    COND = r4 != 0x0;
+    r7 = lr;
+    r6 = arg1;
+    r5 = r8 - arg1;
+    r2 = *0x8f7112f4;
+    stack[2040] = r2;
+    if (!COND) {
+            r2 = "lib/regex/regcomp.c";
+            loc_ffffffff8f6484ac(lr, "ASSERT FAILED at (%s:%d): %s\n", r2, 0x66d, "p != ((void *)0)");
+    }
+    r10 = *(r4 + 0x14);
+    if (r8 < r6) {
+            r2 = "lib/regex/regcomp.c";
+            loc_ffffffff8f6484ac(r7, "ASSERT FAILED at (%s:%d): %s\n", r2, 0x671, 0x8f6a4842);
+    }
+    if ((r5 != 0x0) && (loc_ffffffff8f65b704(r4, r5 + *(r4 + 0x10)) != 0x0)) {
+            r0 = *(r4 + 0x14);
+            r1 = *(r4 + 0xc);
+            loc_ffffffff8f64ac90(r1 + r0 * 0x4, r1 + r6 * 0x4, r2 << r5 * 0x4);
+            *(r4 + 0x14) = *(r4 + 0x14) + r5;
+    }
+    r0 = r10;
+    if (stack[2040] != *r0) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

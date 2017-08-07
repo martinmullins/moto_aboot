@@ -1,0 +1,30 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    if (*0x8f6ac1f4 >= 0x0) goto loc_8f631964;
+
+loc_8f631950:
+    loc_ffffffff8f656968(0x1, "Not found HW_REV specific setting\n");
+    goto loc_8f63195c;
+
+loc_8f63195c:
+    r0 = 0x0;
+    goto loc_8f63198c;
+
+loc_8f63198c:
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f631964:
+    r0 = loc_ffffffff8f630c30(0x8f68a45d);
+    COND = r4 != 0x0;
+    if (COND) {
+            r0 = r4;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f63198c;
+
+loc_8f631978:
+    loc_ffffffff8f656968(0x2, "Not found setting for %s\n", 0x8f68a45d);
+    goto loc_8f63195c;
+

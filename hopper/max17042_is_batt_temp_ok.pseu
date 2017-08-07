@@ -1,0 +1,24 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r0 = loc_ffffffff8f643474(sp + 0x2, arg1, arg2, r3, arg0, stack[2043], arg2, 0x8f6acab4, 0x8f7112f4, lr);
+    asm{ ldrsh      r2, [sp, #0x18 + var_16] };
+    if ((r0 >= 0x0) && (*0x8f6acab4 < 0x3)) {
+            loc_8f6435e4();
+    }
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Temp %d Temp State %d\n");
+    r0 = *0x8f6acab4;
+    r2 = stack[2043];
+    r3 = *0x8f7112f4;
+    r0 = zero_extend_32(r0 - 0x1);
+    if (r0 < 0x1) {
+            r0 = 0x0;
+    }
+    if (CPU_FLAGS & A) {
+            r0 = 0x1;
+    }
+    if (r2 != r3) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

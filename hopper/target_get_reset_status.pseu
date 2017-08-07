@@ -1,0 +1,9 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    if (*0x8f7112f4 != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    else {
+            loc_ffffffff8f656968(0x1, "GCC_RESET_STATUS = 0x%x\n", *(0x8600000 + 0x24), 0x8600000);
+    }
+    return;
+

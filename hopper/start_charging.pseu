@@ -1,0 +1,48 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    stack[2041] = *0x8f7112f4;
+    if (loc_ffffffff8f646cd0(arg0) != 0x0) goto loc_8f638294;
+
+loc_8f638200:
+    r0 = loc_ffffffff8f6465d4();
+    COND = r7 != 0x0;
+    if (COND) goto loc_8f638294;
+
+loc_8f63820c:
+    loc_ffffffff8f645f28();
+    *0x8f6e07e8 = 0x8f6e0808;
+    r4 = *0x8f6e0808;
+    if (r4 != 0x0) goto loc_8f6382a8;
+
+loc_8f638228:
+    loc_ffffffff8f61ab4c(0x8f6e07ec, r4, 0x1);
+    loc_ffffffff8f61ab4c(0x8f6e07cc, 0x1, 0x1);
+    loc_ffffffff8f61ab4c(0x8f6e07ac, r4, 0x1);
+    loc_ffffffff8f61c234(0x8f6e080c);
+    r0 = loc_ffffffff8f61b490("usb_charging_thread", 0x8f637e98, r4, 0x10, 0x1000);
+    *0x8f6e0808 = r0;
+    if (r0 != 0x0) goto loc_8f63829c;
+
+loc_8f638288:
+    loc_ffffffff8f656968();
+    goto loc_8f638294;
+
+loc_8f638294:
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f6382b8;
+
+loc_8f6382b8:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f63829c:
+    loc_ffffffff8f61b6fc();
+    r0 = r4;
+    goto loc_8f6382b8;
+
+loc_8f6382a8:
+    loc_ffffffff8f61ac84(0x8f6e07cc, 0x1);
+    r0 = r7;
+    goto loc_8f6382b8;
+

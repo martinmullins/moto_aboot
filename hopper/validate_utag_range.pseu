@@ -1,0 +1,72 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x2c;
+    r8 = arg0;
+    r6 = arg1;
+    r5 = arg2;
+    r3 = *0x8f7112f4;
+    stack[2039] = r3;
+    r0 = loc_ffffffff8f64b354(arg2, arg1, arg2, r3, stack[2030]);
+    COND = r7 != 0x0;
+    if (COND) goto loc_8f6290dc;
+
+loc_8f6290c8:
+    loc_ffffffff8f656968(0x2, "DEBUG %s: allow empty value\n", "validate_utag_range");
+    goto loc_8f6291e0;
+
+loc_8f6291e0:
+    r0 = 0x0;
+    goto loc_8f6291e4;
+
+loc_8f6291e4:
+    if (stack[2039] != *r0) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f6290dc:
+    loc_ffffffff8f64b2c0(sp, r6, 0x21);
+    loc_ffffffff8f64b21c(sp, 0x8f686fbc, 0x21);
+    loc_ffffffff8f64b21c(sp, ".range", 0x21);
+    r0 = loc_ffffffff8f6798a8(r8, sp);
+    COND = r7 != 0x0;
+    if (COND) goto loc_8f629138;
+
+loc_8f629120:
+    loc_ffffffff8f656968(0x2, "%s: utag [%s] does not have .range\n", "validate_utag_range", r6);
+    goto loc_8f6291e0;
+
+loc_8f629138:
+    r0 = loc_ffffffff8f64aacc();
+    COND = r4 != 0x0;
+    if (COND) goto loc_8f629158;
+
+loc_8f629144:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: out of memory", "validate_utag_range");
+    goto loc_8f6291d0;
+
+loc_8f6291d0:
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f6291e4;
+
+loc_8f629158:
+    if (loc_ffffffff8f6283a0(r8, sp, r4, r7) != 0x0) goto loc_8f62918c;
+
+loc_8f629174:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: failed to read utag [%s]\n", "validate_utag_range", sp);
+    goto loc_8f6291c8;
+
+loc_8f6291c8:
+    loc_ffffffff8f64ab9c(r4);
+    goto loc_8f6291d0;
+
+loc_8f62918c:
+    if (loc_ffffffff8f656184(r4, 0x8f682749, r5) != 0x0) goto loc_8f6291d8;
+
+loc_8f6291a4:
+    loc_ffffffff8f656968(0x2, "%s: utag [%s] .range validation failed", "validate_utag_range", r6);
+    loc_ffffffff8f62192c(0x8f683451, "validation failed [%s]", r5);
+    goto loc_8f6291c8;
+
+loc_8f6291d8:
+    loc_ffffffff8f64ab9c(r4);
+    goto loc_8f6291e0;
+

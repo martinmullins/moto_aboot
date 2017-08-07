@@ -1,0 +1,90 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x38;
+    r4 = 0x8f7112f4;
+    r6 = arg0;
+    r7 = arg1;
+    r3 = *r4;
+    r8 = r4;
+    stack[2041] = r3;
+    loc_ffffffff8f64adc8(sp + 0x14, 0x0, 0x20, r3, stack[2028], stack[2029], stack[2030], stack[2031], stack[2032], stack[2033], stack[2034]);
+    stack[2028] = r6 - 0x40;
+    loc_ffffffff8f64a9f0(sp + 0x14, 0x20, "/%s,product@%d", *0x8f6e06a0, stack[2028]);
+    r0 = loc_ffffffff8f64c50c(0x8f68ac00, sp + 0x14);
+    COND = r5 >= 0x0;
+    if (COND) {
+            r4 = 0x0;
+    }
+    if (CPU_FLAGS & GE) goto loc_8f631290;
+
+loc_8f631388:
+    loc_ffffffff8f656968();
+    goto loc_8f6313a4;
+
+loc_8f6313a4:
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f6313a8;
+
+loc_8f6313a8:
+    if (stack[2041] != *r8) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f631290:
+    r0 = loc_ffffffff8f64bc10(0x8f68ac00, r5, sp + 0xc);
+    COND = r5 > 0x0;
+    if (COND) goto loc_8f63126c;
+
+loc_8f631390:
+    loc_ffffffff8f656968(0x1, "No valid HW_ID found for product@%c and hwrev@0x%x\n", r6, r7);
+    goto loc_8f6313a4;
+
+loc_8f63126c:
+    if (stack[2031] < 0x0) goto loc_8f631368;
+
+loc_8f631278:
+    r0 = loc_ffffffff8f64c0e8(0x8f68ac00, r5, 0x0);
+    COND = r4 != 0x0;
+    if (COND) goto loc_8f6312ac;
+    goto loc_8f631290;
+
+loc_8f6312ac:
+    if (loc_ffffffff8f64b470() != 0x0) goto loc_8f631290;
+
+loc_8f6312c0:
+    if (loc_ffffffff8f64b354(r4) > 0x3) goto loc_8f6312e0;
+
+loc_8f6312d0:
+    loc_ffffffff8f656968(0x1, "Invalid hw name\n");
+    goto loc_8f631290;
+
+loc_8f6312e0:
+    if (loc_ffffffff8f64b470(r4, 0x8f68a353, 0xa) != 0x0) goto loc_8f631308;
+
+loc_8f6312f8:
+    loc_ffffffff8f656968(0x1, "Get default HW node\n");
+    goto loc_8f631368;
+
+loc_8f631368:
+    r0 = loc_ffffffff8f630c30(0x8f67fb65, r5);
+    COND = r5 != 0x0;
+    if (COND) goto loc_8f6313bc;
+    goto loc_8f631388;
+
+loc_8f6313bc:
+    loc_ffffffff8f656968(0x1, "Got valid HW_ID: %c\n", *r5);
+    r0 = *r5;
+    goto loc_8f6313a8;
+
+loc_8f631308:
+    stack[2032] = 0x0 ^ 0xffffffff;
+    loc_ffffffff8f656968(0x2, "get valid %s\n", r4, 0x0 ^ 0xffffffff, stack[2028]);
+    if (loc_ffffffff8f6309d0(0x8f680621, r5, sp + 0x10) >= 0x0) goto loc_8f63134c;
+
+loc_8f631338:
+    loc_ffffffff8f656968(0x1, "No hw rev defined in %s\n", r4);
+    goto loc_8f631290;
+
+loc_8f63134c:
+    loc_ffffffff8f656968(0x2, "get hw rev: 0x%X\n", stack[2032]);
+    if (r7 != stack[2032]) goto loc_8f631290;
+

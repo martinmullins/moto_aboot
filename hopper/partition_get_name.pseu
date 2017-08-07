@@ -1,0 +1,82 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = r0;
+    stack[2040] = *0x8f7112f4;
+    if ((*0x8f6e1310 == 0x0) || (r0 >= *0x8f6e1310)) goto loc_8f6536ac;
+
+loc_8f6536c0:
+    if (*0x8f6e9400 == 0x0) goto loc_8f6536dc;
+
+loc_8f6536d0:
+    r0 = *(*0x8f6e9400 + r0 * 0x4);
+    if (r0 != 0x0) goto loc_8f6537b0;
+
+loc_8f6536dc:
+    r0 = loc_ffffffff8f64aacc(0x25);
+    COND = r5 == 0x0;
+    if (COND) goto loc_8f6537ac;
+
+loc_8f6536ec:
+    loc_ffffffff8f64adc8();
+    r0 = loc_ffffffff8f65360c(r4);
+    COND = r6 != 0x0;
+    if (COND) goto loc_8f653718;
+
+loc_8f653708:
+    loc_ffffffff8f64ab9c(r5);
+    r0 = r6;
+    goto loc_8f6537b0;
+
+loc_8f6537b0:
+    if (stack[2040] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f653718:
+    loc_ffffffff8f652b90(r6 + 0x38, r5);
+    r2 = *0x8f6e1310;
+    if ((r2 == 0x0) || (r4 >= r2)) goto loc_8f653738;
+
+loc_8f65374c:
+    s0 = *0x8f6e9400;
+    r7 = 0x8f6e9400;
+    if (s0 != 0x0) goto loc_8f653790;
+
+loc_8f653760:
+    r0 = loc_ffffffff8f64aacc(0x200);
+    *0x8f6e9400 = r0;
+    if (r0 != 0x0) goto loc_8f653784;
+
+loc_8f653774:
+    loc_ffffffff8f656968(0x1 ^ 0xffffffff, "failed to allocate for name cache\n");
+    goto loc_8f6537c4;
+
+loc_8f6537c4:
+    loc_ffffffff8f64ab9c(r5);
+    r0 = 0x0;
+    goto loc_8f6537b0;
+
+loc_8f653784:
+    loc_ffffffff8f64adc8();
+    goto loc_8f653790;
+
+loc_8f653790:
+    if (*(*r7 + r4 * 0x4) != 0x0) {
+            loc_ffffffff8f64ab9c();
+    }
+    *(*r7 + r4 * 0x4) = r5;
+    goto loc_8f6537ac;
+
+loc_8f6537ac:
+    r0 = r5;
+    goto loc_8f6537b0;
+
+loc_8f653738:
+    loc_ffffffff8f656968(0x0, "invalid index: entry_count=%d, index=%d\n");
+    goto loc_8f6537c4;
+
+loc_8f6536ac:
+    loc_ffffffff8f656968(0x0, "invalid index: entry_count=%d, index=%d\n");
+    goto loc_8f6536dc;
+

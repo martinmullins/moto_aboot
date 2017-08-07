@@ -1,0 +1,71 @@
+    r3 = arg3;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = *arg0;
+    r4 = stack[2049];
+    stack[2040] = *0x8f7112f4;
+    r12 = *(arg0 + 0x18);
+    r2 = r5 + (arg1 + r12 * arg2) * 0x2;
+    r0 = r5 + (stack[2050] + r12 * stack[2051]) * 0x2;
+    r5 = r12 - r3 << (r12 - r3) * 0x2;
+    if (r0 < r2) {
+            r7 = r7 << r3 * 0x2;
+    }
+    if (CPU_FLAGS & S) {
+            r12 = 0x0;
+    }
+    if (!CPU_FLAGS & NB) {
+            while (r12 != r4) {
+                    r1 = 0x0;
+                    do {
+                            if (r1 != r3) {
+                                    r8 = r8 << r1 * 0x2;
+                            }
+                            if (CPU_FLAGS & NE) {
+                                    r1 = r1 + 0x1;
+                            }
+                            if (CPU_FLAGS & NE) {
+                                    s0 = *(r2 + r8);
+                            }
+                            if (CPU_FLAGS & NE) {
+                                    *(r0 + r8) = s0;
+                            }
+                    } while (CPU_FLAGS & NE);
+                    r0 = r5 + r0 + r7;
+                    r2 = r5 + r2 + r7;
+                    r12 = r12 + 0x1;
+            }
+    }
+    else {
+            r7 = (0x1 ^ 0xffffffff) * r3;
+            r8 = 0x0 - 0x0;
+            s0 = 0x1 ^ 0xffffffff;
+            r5 = 0x0;
+            r12 = r3 + r12 * r4 << (r3 + r12 * r4) * 0x2;
+            r2 = r2 + r12;
+            r0 = r0 + r12;
+            while (r5 != r4) {
+                    r1 = 0x0;
+                    do {
+                            if (r1 != r3) {
+                                    r12 = s0 * r1;
+                            }
+                            if (CPU_FLAGS & NE) {
+                                    r1 = r1 + 0x1;
+                            }
+                            if (CPU_FLAGS & NE) {
+                                    r10 = *(r2 + r12);
+                            }
+                            if (CPU_FLAGS & NE) {
+                                    *(r0 + r12) = r10;
+                            }
+                    } while (CPU_FLAGS & NE);
+                    r0 = r8 + r0 + r7;
+                    r2 = r8 + r2 + r7;
+                    r5 = r5 + 0x1;
+            }
+    }
+    if (stack[2040] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

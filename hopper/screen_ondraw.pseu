@@ -1,0 +1,29 @@
+    r4 = *0x8f6e09e8;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    loc_ffffffff8f61afc0(0x8f6e09cc, arg1, arg2, r3, arg0, stack[2043], r4, 0x0, 0x8f7112f4, lr);
+    r4 = *0x8f6e09e8;
+    *0x8f6e09e8 = 0x0;
+    loc_ffffffff8f61b098(0x8f6e09cc);
+    if (r4 < 0x0) {
+            loc_ffffffff8f64de10(0x0);
+            loc_ffffffff8f64f108();
+    }
+    if ((*0x8f6e09e8 & 0x1000000) != 0x0) {
+            loc_ffffffff8f64f890(0x0, *0x8f6e09bc, 0x0, 0x8f6e09bc);
+            loc_ffffffff8f64f730("Unlock Bootloader?", 0x1, 0x0, 0xff0000);
+            loc_ffffffff8f64fdb8(0x0, 0x2, 0x3, 0x808000);
+            loc_ffffffff8f64f730("Unlocking the bootloader allows you to install a custom\noperating system ('OS').\n\nA custom OS is not tested as thoroughly as your original\nsoftware and your device may behave abnormally.  This \naction may void your warranty and any legal terms \nbetween you…", 0x3, 0x0, 0xff000000 ^ 0xffffffff);
+    }
+    if ((*0x8f6e09e8 & 0x2000000) != 0x0) {
+            (*(*(0x8f6b1698 + 0x28) + 0x38))();
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = loc_ffffffff8f64f850(0x0, 0x0, 0x1);
+    }
+    return r0;
+

@@ -1,0 +1,18 @@
+    stack[2045] = r4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg0;
+    r5 = 0x8f7112f4;
+    r3 = *r5;
+    stack[2043] = r3;
+    r0 = loc_ffffffff8f656968(0x2, "%s is called\n", "add_panel_to_manager", r3, arg0, stack[2043], arg2, stack[2045], 0x8f7112f4, lr);
+    r3 = 0x8f711550;
+    asm{ stm        r4, {r2, r3} };
+    r2 = *r3;
+    *r3 = r4;
+    *(r2 + 0x4) = r4;
+    *0x8f6e06b4 = *0x8f6e06b4 + 0x1;
+    if (stack[2043] != *r5) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

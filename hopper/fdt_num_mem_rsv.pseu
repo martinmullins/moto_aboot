@@ -1,0 +1,22 @@
+    r1 = arg1;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = 0x0;
+    r0 = *(arg0 + 0x10);
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r5 = arg0 + loc_ffffffff8f64bd6c(r0, r1, arg2, r3, arg0, stack[2043], 0x0, r5, 0x8f7112f4, lr);
+    do {
+            asm{ ldrd       r0, r1, [r5, #0x8] };
+            r5 = r5 + 0x10;
+            r0 = loc_ffffffff8f64bdc0();
+            COND = r3 != 0x0;
+            if (COND) {
+                    r4 = r4 + 0x1;
+            }
+    } while (CPU_FLAGS & NE);
+    r0 = r4;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

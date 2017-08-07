@@ -1,0 +1,75 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x1c;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    loc_ffffffff8f656968(0x2, 0x8f69b5ea, "bd65b60_init", r3, stack[2036]);
+    if (*0x8f6e0a94 != 0x0) goto loc_8f640150;
+
+loc_8f640024:
+    r3 = *0x8f6e0a88;
+    r6 = 0x8f6e0a88;
+    if (loc_ffffffff8f6309d0(0x8f69d038, *(r3 + 0x2c), sp + 0x8, r3) != 0x0) goto loc_8f640114;
+
+loc_8f640048:
+    r3 = *0x8f6e0a88;
+    if (loc_ffffffff8f6309d0(0x8f69d081, *(r3 + 0x2c), sp + 0xc, r3) == 0x0) goto loc_8f640074;
+
+loc_8f640114:
+    r0 = loc_ffffffff8f656968();
+    goto loc_8f6402ac;
+
+loc_8f6402ac:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f640074:
+    r3 = *0x8f6e0a88;
+    if (loc_ffffffff8f6309d0(0x8f689602, *(r3 + 0x2c), 0x8f6aca8c, r3) != 0x0) {
+            loc_ffffffff8f656968(0x1, "Property \"led\" is not defined in dev tree for backlight device %s!", *0x8f6e0a88);
+    }
+    r0 = loc_ffffffff8f612c30(stack[2038], stack[2039], 0x186a0, 0x124f800);
+    *0x8f6e0a94 = r0;
+    if (CPU_FLAGS & E) goto loc_8f640114;
+
+loc_8f6400cc:
+    loc_ffffffff8f656968(0x2, "%s, qup_blsp_i2c_init(BLSP_ID_%d, QUP_ID_%d, 100000, 19200000)\n", "bd65b60_init", stack[2038], stack[2039]);
+    r3 = *r6;
+    r0 = loc_ffffffff8f6309d0("reset", *(r3 + 0x2c), sp + 0x10, r3);
+    COND = r1 == 0x0;
+    if (COND) goto loc_8f64011c;
+    goto loc_8f640114;
+
+loc_8f64011c:
+    loc_ffffffff8f602f2c(stack[2040]);
+    loc_ffffffff8f602f7c(stack[2040], 0x2);
+    loc_ffffffff8f602fb8(stack[2040], 0x1);
+    goto loc_8f640150;
+
+loc_8f640150:
+    loc_ffffffff8f60c558(0x5);
+    loc_ffffffff8f656968(0x2, "%s, BD65B60_I2C_ADDRESS = 0x%x\n", "bd65b60_init", 0x64);
+    if (loc_ffffffff8f612ea4(*0x8f6e0a94, 0x64, 0x0, 0x1) < 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: fail to write REG_SFTRST\n", "bd65b60_init");
+    }
+    if (loc_ffffffff8f612ea4(*0x8f6e0a94, 0x64, 0x1, 0x11) < 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: fail to write REG_COM1\n", "bd65b60_init");
+    }
+    if (loc_ffffffff8f612ea4(*0x8f6e0a94, 0x64, 0x2, 0x0) < 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: fail to write REG_FBVS\n", "bd65b60_init");
+    }
+    if (loc_ffffffff8f612ea4(*0x8f6e0a94, 0x64, 0x3, *0x8f6aca8c) < 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: fail to write REG_LED_SEL\n", "bd65b60_init");
+    }
+    if (loc_ffffffff8f612ea4(*0x8f6e0a94, 0x64, 0x5, 0xff) < 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: fail to write REG_LED_CRS\n", "bd65b60_init");
+    }
+    if (loc_ffffffff8f612ea4(*0x8f6e0a94, 0x64, 0x7, 0x26) < 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: fail to write REG_CONTROL_SETTING\n", "bd65b60_init");
+    }
+    if (loc_ffffffff8f612ea4(*0x8f6e0a94, 0x64, 0xe, 0x1) < 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: fail to write REG_PON\n", "bd65b60_init");
+    }
+    r0 = loc_ffffffff8f60c558(0x2);
+    goto loc_8f6402ac;
+

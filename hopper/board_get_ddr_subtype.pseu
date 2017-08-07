@@ -1,0 +1,29 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x54;
+    r5 = lr;
+    stack[2041] = *0x8f7112f4;
+    if (loc_ffffffff8f604894() == 0x0) {
+            loc_ffffffff8f6484ac(r5, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm_shared/board.c", 0xf3, "smem_ram_ptable_init_v1()");
+    }
+    r4 = 0x0;
+    r5 = r4;
+    r7 = loc_ffffffff8f604a00();
+    while (r5 != r7) {
+            loc_ffffffff8f6049b8(sp + 0xc, r5);
+            if (stack[2034] == 0xe) {
+                    r3 = stack[2036];
+                    if (r3 == 0x1) {
+                            r3 = stack[2031];
+                    }
+                    if (CPU_FLAGS & E) {
+                            r4 = r4 + r3;
+                    }
+            }
+            r5 = r5 + 0x1;
+    }
+    r0 = 0x0 - r4 - 0x20000000;
+    r0 = r0 + (r4 - 0x20000000) + CARRY(FLAGS);
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

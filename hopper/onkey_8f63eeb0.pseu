@@ -1,0 +1,14 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    if ((arg1 != 0x0) && (r0 >= 0x114)) {
+            r3 = 0x116;
+            if ((r0 < r3) || (r0 == r3 + 0xe8)) {
+                    (*(0x8f6ac374 + 0x4))("fastboot_screen", 0x0);
+            }
+    }
+    if (stack[2045] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

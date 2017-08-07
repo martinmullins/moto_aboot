@@ -1,0 +1,88 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r7 = arg0;
+    stack[2041] = *0x8f7112f4;
+    if (*0x8f6e0ae8 != 0x0) goto loc_8f642d5c;
+
+loc_8f642ca4:
+    r0 = loc_ffffffff8f632f34("regulator_isl98611");
+    COND = r4 >= 0x0;
+    if (COND) goto loc_8f642cc0;
+
+loc_8f642d48:
+    r0 = loc_ffffffff8f656968();
+    goto loc_8f642f30;
+
+loc_8f642f30:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f642cc0:
+    if ((((loc_ffffffff8f6309d0(0x8f69d038, r4, sp + 0x4) != 0x0) || (loc_ffffffff8f6309d0(0x8f69d081, r4, sp + 0x8) != 0x0)) || (loc_ffffffff8f6309d0(0x8f69dcc9, r4, 0x8f6e0ae4) != 0x0)) || (loc_ffffffff8f6309d0(0x8f69dcce, r4, 0x8f6e0af0) != 0x0)) goto loc_8f642d48;
+
+loc_8f642d20:
+    r0 = loc_ffffffff8f612c30(stack[2039], stack[2040], 0x61a80, 0x124f800);
+    *0x8f6e0ae8 = r0;
+    if (r0 != 0x0) goto loc_8f642d54;
+    goto loc_8f642d48;
+
+loc_8f642d54:
+    loc_ffffffff8f60c558(0x1);
+    goto loc_8f642d5c;
+
+loc_8f642d5c:
+    *0x8f6e0aec = r7;
+    if (loc_ffffffff8f642b88(0x2, 0x80, 0x0, 0x8f6e0aec) < 0x0) {
+            r0 = loc_ffffffff8f656968();
+    }
+    else {
+            loc_ffffffff8f60c558(0x5);
+            if (((loc_ffffffff8f642b88(0x13, 0x7, 0x0) >= 0x0) && (loc_ffffffff8f642b88(0x13, 0xf0, 0x80) >= 0x0)) && (loc_ffffffff8f642b88(0x14, 0x80, 0x80) >= 0x0)) {
+                    r0 = *0x8f6e0ae4;
+                    r0 = loc_ffffffff8f67b488(r0, 0x3e8);
+                    r0 = loc_ffffffff8f67b488(r0 - 0x1180 - 0x14, 0x32);
+                    if ((loc_ffffffff8f642b88(0x4, 0x1f, zero_extend_32(r0)) >= 0x0) && (loc_ffffffff8f642b88(0x2, 0x4, 0x4) >= 0x0)) {
+                            r0 = *0x8f6e0af0;
+                            r0 = loc_ffffffff8f67b488(r0, 0x3e8);
+                            r0 = loc_ffffffff8f67b488(r0 - 0x1180 - 0x14, 0x32);
+                            stack[2040] = zero_extend_32(r0);
+                            if (((((loc_ffffffff8f642b88(0x5, 0x1f, zero_extend_32(r0)) >= 0x0) && (loc_ffffffff8f642b88(0x2, 0x2, 0x2) >= 0x0)) && (loc_ffffffff8f642b14(0x12, 0xbf) >= 0x0)) && (loc_ffffffff8f642b14(0x15, 0x86) >= 0x0)) && (loc_ffffffff8f642b14(0x10, 0x0) >= 0x0)) {
+                                    if (loc_ffffffff8f642b14(0x11, 0x0) >= 0x0) {
+                                            r0 = loc_ffffffff8f642aa0(0x0, sp + 0x8);
+                                            if (r0 != 0x0) {
+                                                    r0 = loc_ffffffff8f656968();
+                                            }
+                                            else {
+                                                    r4 = stack[2040];
+                                                    if (r4 == 0x8) {
+                                                            if (loc_ffffffff8f642b88(0x9, 0x40, 0x40) >= 0x0) {
+                                                                    r0 = loc_ffffffff8f642b88(r4, 0xf3, 0xf3);
+                                                                    if (r0 < 0x0) {
+                                                                            r0 = loc_ffffffff8f656968();
+                                                                    }
+                                                            }
+                                                            else {
+                                                                    r0 = loc_ffffffff8f656968();
+                                                            }
+                                                    }
+                                            }
+                                    }
+                                    else {
+                                            r0 = loc_ffffffff8f656968();
+                                    }
+                            }
+                            else {
+                                    r0 = loc_ffffffff8f656968();
+                            }
+                    }
+                    else {
+                            r0 = loc_ffffffff8f656968();
+                    }
+            }
+            else {
+                    r0 = loc_ffffffff8f656968();
+            }
+    }
+    goto loc_8f642f30;
+

@@ -1,0 +1,90 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x74;
+    stack[2039] = *0x8f7112f4;
+    r0 = loc_ffffffff8f6359f4(arg0, arg1);
+    r4 = r0;
+    r0 = *r0;
+    if (r0 != 0x0) {
+            r0 = 0x1;
+    }
+    if (!CPU_FLAGS & NE) {
+            if (r4 != 0x0) {
+                    r3 = *(r4 + 0x4);
+                    COND = r2 == 0x0;
+                    if (COND) {
+                            r0 = r2;
+                    }
+                    if (!CPU_FLAGS & E) {
+                            *(r4 + 0x4) = r3 & !0x4;
+                            *(r4 + 0x24) = loc_ffffffff8f6784a4();
+                            r0 = loc_ffffffff8f63787c();
+                            r3 = *(r4 + 0x4);
+                            if (r0 == 0x20000) {
+                                    r3 = r3 | 0x8;
+                            }
+                            if (CPU_FLAGS & NE) {
+                                    r3 = r3 & !0x8;
+                            }
+                            *(r4 + 0x4) = r3;
+                            r0 = loc_ffffffff8f63787c();
+                            r3 = *(r4 + 0x4);
+                            if (r0 == 0x400000) {
+                                    r3 = r3 | 0x80;
+                            }
+                            if (CPU_FLAGS & NE) {
+                                    r3 = r3 & !0x80;
+                            }
+                            *(r4 + 0x4) = r3;
+                            r0 = loc_ffffffff8f635424();
+                            COND = r1 != 0x0;
+                            if (!COND) {
+                                    r6 = sp + 0x18;
+                                    r5 = sp + 0x30;
+                                    loc_ffffffff8f64adc8(sp);
+                                    loc_ffffffff8f64b2c0(r6, "SOD_HO.BIN", 0x18, 0xda8, stack[2012], stack[2013]);
+                                    loc_ffffffff8f64b2c0(r5, "SOD Handover", 0x18);
+                                    stack[2012] = stack[2012] | 0x4;
+                                    loc_ffffffff8f6354a0(r4, sp);
+                                    r0 = loc_ffffffff8f6563dc(0x8f6e078c);
+                                    *0x8f6e0798 = r0;
+                                    if (r0 != 0x0) {
+                                            r3 = *0x8f6e078c;
+                                            loc_ffffffff8f64b2c0(r6, "kernel_log.txt", 0x18, r3, stack[2012], stack[2013]);
+                                            loc_ffffffff8f64b2c0(r5, "Kernel log buffer", 0x18);
+                                            stack[2012] = stack[2012] | 0x4;
+                                            loc_ffffffff8f6354a0(r4, sp);
+                                    }
+                                    loc_ffffffff8f652284();
+                                    loc_ffffffff8f652104("*=========================================*\n");
+                                    loc_ffffffff8f652104("*       CRASH SCENE ANALYSIS REPORT       *\n");
+                                    loc_ffffffff8f652104("*=========================================*\n");
+                                    loc_ffffffff8f652104(0x8f6826e7);
+                                    r0 = loc_ffffffff8f636410();
+                                    loc_ffffffff8f652104(0x8f69b5df, r0);
+                                    r0 = loc_ffffffff8f63639c();
+                                    loc_ffffffff8f652104("TIMESTAMP: %s\n", r0);
+                                    loc_ffffffff8f652104(0x8f6826e7);
+                                    loc_ffffffff8f6522e8();
+                                    loc_ffffffff8f652104(0x8f6826e7);
+                                    loc_ffffffff8f652104("Contact kernel-bsp@motorola.com if any assistance is needed\n");
+                                    if (loc_ffffffff8f652248() != 0x0) {
+                                            loc_ffffffff8f65220c();
+                                            loc_ffffffff8f652248();
+                                            loc_ffffffff8f64b2c0(sp + 0x18, "summary.txt", 0x18);
+                                            loc_ffffffff8f64b2c0(sp + 0x30, "Crash dump summary", 0x18);
+                                            loc_ffffffff8f6354a0(r4, sp);
+                                    }
+                            }
+                            loc_ffffffff8f635198(r4);
+                            r0 = 0x1;
+                            *r0 = r0;
+                    }
+            }
+            else {
+                    r0 = r4;
+            }
+    }
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

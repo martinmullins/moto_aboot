@@ -1,0 +1,45 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    r8 = loc_ffffffff8f606ecc(0x66, arg1, arg2, r3, arg0, stack[2041], r4, r5, r6, 0x8f7112f4, r8, lr);
+    r6 = loc_ffffffff8f6730f0(0x8f6809af);
+    r4 = loc_ffffffff8f6730f0(0x8f6809ab);
+    r5 = loc_ffffffff8f6730f0("aboot");
+    r0 = loc_ffffffff8f6730f0(0x8f6809b2);
+    COND = r3 < 0x0;
+    if (COND) goto loc_8f673c50;
+
+loc_8f673bf8:
+    COND = r3 < 0x0;
+    if (COND) goto loc_8f673c50;
+
+loc_8f673c00:
+    if (r0 == r5) {
+            CMP(r6, r5);
+    }
+    if ((CPU_FLAGS & NE) || (r4 != r5)) goto loc_8f673c4c;
+
+loc_8f673c20:
+    if (r4 > r8) goto loc_8f673c30;
+
+loc_8f673c28:
+    r0 = 0x0;
+    goto loc_8f673c54;
+
+loc_8f673c54:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f673c30:
+    if (loc_ffffffff8f6074b8(0x66, r4) == 0x0) goto loc_8f673c28;
+
+loc_8f673c4c:
+    loc_ffffffff8f656968();
+    goto loc_8f673c50;
+
+loc_8f673c50:
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f673c54;
+

@@ -1,0 +1,754 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x74;
+    r8 = arg1;
+    r2 = 0x20494645;
+    r5 = 0x8f6e1314;
+    stack[2037] = *0x8f7112f4;
+    stack[2023] = arg0;
+    r4 = 0x8f6e9404;
+    asm{ strd       r2, r3, [sp, #0x98 + var_60] };
+    if (*r5 != 0x0) {
+            r4 = 0x8f6e9404;
+            r3 = *(r4 + 0x4);
+            if (r3 == r4) {
+                    do {
+                            r4 = 0x8f6e9404;
+                            r0 = *(r4 + 0x4);
+                            if (r0 == r4) {
+                                break;
+                            }
+                            r6 = 0x0;
+                            asm{ ldm        r0, {r2, r3} };
+                            *r3 = r2;
+                            r2 = *r0;
+                            *(r2 + 0x4) = r3;
+                            *(r0 + 0x4) = r6;
+                            *r0 = r6;
+                            loc_ffffffff8f64ab9c();
+                    } while (true);
+            }
+            *0x8f6e1314 = 0x0;
+    }
+    *r4 = r4;
+    *(r4 + 0x4) = r4;
+    *0x8f6e1324 = get_default_backup_zone(r0, r1, r2) + (*(0x8f6afe20 + 0x4))() - 0x1;
+    *0x8f6e1314 = 0x1;
+    loc_ffffffff8f6527f4("Flashing primary GPT image...");
+    stack[2020] = r8 + 0x200;
+    stack[2021] = r8 + 0x400;
+    r0 = loc_ffffffff8f64af40(r8 + 0x200, sp + 0x38, 0x8);
+    COND = r11 == 0x0;
+    if (COND) goto loc_8f653cc4;
+
+loc_8f653cb4:
+    loc_ffffffff8f656968(0x0, "Invalid EFI signature\n");
+    goto loc_8f654668;
+
+loc_8f654668:
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f65489c;
+
+loc_8f65489c:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f653cc4:
+    if ((*(r8 + 0x250) | *(r8 + 0x251) * 0x100 | *(r8 + 0x252) * 0x10000 | *(r8 + 0x253) * 0x1000000) < 0x80) {
+            r10 = r8 + 0x430;
+    }
+    if (CPU_FLAGS & B) {
+            r10 = r10 + 0x8;
+    }
+    if (CPU_FLAGS & B) goto loc_8f653d10;
+
+loc_8f653cf0:
+    loc_ffffffff8f656968();
+    goto loc_8f654668;
+
+loc_8f653d10:
+    r12 = 0x8f7125ec;
+    if (r11 >= (*(r8 + 0x250) | *(r8 + 0x251) * 0x100 | *(r8 + 0x252) * 0x10000 | *(r8 + 0x253) * 0x1000000)) goto loc_8f654254;
+
+loc_8f653d38:
+    s0 = r10 - 0x38;
+    r4 = *(r10 + 0xfffffffffffffff0) | *(r10 + 0xfffffffffffffff1) * 0x100 | *(r10 + 0xfffffffffffffff2) * 0x10000 | *(r10 + 0xfffffffffffffff3) * 0x1000000;
+    r5 = *(r10 + 0xfffffffffffffff4) | *(r10 + 0xfffffffffffffff5) * 0x100 | *(r10 + 0xfffffffffffffff6) * 0x10000 | *(r10 + 0xfffffffffffffff7) * 0x1000000;
+    r6 = *(r10 + 0xffffffffffffffe8) | *(r10 + 0xffffffffffffffe9) * 0x100 | *(r10 + 0xffffffffffffffea) * 0x10000 | *(r10 + 0xffffffffffffffeb) * 0x1000000;
+    r6 = r6 - 0x1;
+    r7 = (*(r10 + 0xffffffffffffffec) | *(r10 + 0xffffffffffffffed) * 0x100 | *(r10 + 0xffffffffffffffee) * 0x10000 | *(r10 + 0xffffffffffffffef) * 0x1000000) - 0x0 + !CARRY(FLAGS);
+    if (r5 == r7) {
+            CMP(r4, r6);
+    }
+    if (CPU_FLAGS & NE) goto loc_8f653e1c;
+
+loc_8f653dc0:
+    r1 = *(*r12 + 0x14);
+    r3 = 0x0;
+    r1 = r1 - 0x22;
+    *(r0 + 0x28) = r1;
+    asm{ ubfx       r0, r1, #0x8, #0x8 };
+    *(r0 + 0x29) = r0;
+    r2 = r1;
+    asm{ ubfx       r0, r1, #0x10, #0x8 };
+    *(r0 + 0x2a) = r0;
+    *(r0 + 0x2b) = r1 >> r1 / 0x1000000;
+    *(0x1 + 0x2c) = 0x0;
+    *(0x1 + 0x2d) = 0x0;
+    *(0x1 + 0x2e) = 0x0;
+    *(0x1 + 0x2f) = 0x0;
+    loc_ffffffff8f656968(0x1, "last partition's ending_lba is 0x%llx\n", r2, r3, stack[2010]);
+    r12 = r12;
+    goto loc_8f654254;
+
+loc_8f654254:
+    r1 = 0x0;
+    r3 = *r12;
+    r6 = 0x0;
+    r4 = 0x1;
+    *(r8 + 0x210) = r6;
+    *(r8 + 0x211) = r6;
+    r5 = 0x22;
+    r3 = *(r3 + 0x14);
+    r0 = r6;
+    *(r8 + 0x212) = r6;
+    r7 = 0x0;
+    r2 = r3 - 0x1;
+    r3 = r3 - 0x22;
+    asm{ ubfx       r1, r2, #0x8, #0x8 };
+    *(r8 + 0x213) = r6;
+    *(r8 + 0x219) = r6;
+    *(r8 + 0x21a) = r6;
+    *(r8 + 0x21b) = r6;
+    *(r8 + 0x21c) = r6;
+    *(r8 + 0x21d) = r6;
+    *(r8 + 0x21e) = r6;
+    *(r8 + 0x21f) = r6;
+    *(r8 + 0x220) = r2;
+    *(r8 + 0x221) = r1;
+    asm{ ubfx       r1, r2, #0x10, #0x8 };
+    *(r8 + 0x224) = r6;
+    r2 = r2 >> r2 / 0x1000000;
+    *(r8 + 0x222) = r1;
+    *(r8 + 0x223) = r2;
+    asm{ ubfx       r2, r3, #0x8, #0x8 };
+    *(r8 + 0x225) = r6;
+    *(r8 + 0x226) = r6;
+    *(r8 + 0x227) = r6;
+    *(r8 + 0x229) = r6;
+    *(r8 + 0x22a) = r6;
+    *(r8 + 0x22b) = r6;
+    *(r8 + 0x22c) = r6;
+    *(r8 + 0x22d) = r6;
+    *(r8 + 0x22e) = r6;
+    *(r8 + 0x22f) = r6;
+    *(r8 + 0x230) = r3;
+    *(r8 + 0x231) = r2;
+    asm{ ubfx       r2, r3, #0x10, #0x8 };
+    *(r8 + 0x218) = r4;
+    *(r8 + 0x232) = r2;
+    *(r8 + 0x228) = r5;
+    *(r8 + 0x233) = r3 >> r3 / 0x1000000;
+    r2 = *(r8 + 0x255);
+    *(r8 + 0x248) = 0x2;
+    r3 = *(r8 + 0x254);
+    r1 = *(r8 + 0x251);
+    r3 = r3 | r2 * 0x100;
+    r2 = *(r8 + 0x256);
+    *(r8 + 0x234) = r6;
+    *(r8 + 0x235) = r6;
+    r3 = r3 | r2 * 0x10000;
+    r2 = *(r8 + 0x257);
+    *(r8 + 0x236) = r6;
+    *(r8 + 0x237) = r6;
+    r3 = r3 | r2 * 0x1000000;
+    r2 = *(r8 + 0x250);
+    *(r8 + 0x249) = r6;
+    r2 = r2 | r1 * 0x100;
+    r1 = *(r8 + 0x252);
+    *(r8 + 0x24a) = r6;
+    *(r8 + 0x24b) = r6;
+    r2 = r2 | r1 * 0x10000;
+    r1 = *(r8 + 0x253);
+    *(r8 + 0x24c) = r6;
+    *(r8 + 0x24d) = r6;
+    *(r8 + 0x24e) = r6;
+    *(r8 + 0x24f) = r6;
+    r0 = loc_ffffffff8f67b2cc(r0, stack[2021], (r2 | r1 * 0x1000000) * r3, r3);
+    r2 = *(r8 + 0x20d);
+    r1 = stack[2020];
+    asm{ ubfx       r3, r0, #0x8, #0x8 };
+    *(r8 + 0x259) = r3;
+    asm{ ubfx       r3, r0, #0x10, #0x8 };
+    *(r8 + 0x25a) = r3;
+    r3 = *(r8 + 0x20c);
+    *(r8 + 0x258) = r0;
+    r3 = r3 | r2 * 0x100;
+    r2 = *(r8 + 0x20e);
+    *(r8 + 0x25b) = r0 >> r0 / 0x1000000;
+    r3 = r3 | r2 * 0x10000;
+    r0 = loc_ffffffff8f67b2cc(r6, r1, r3 | *(r8 + 0x20f) * 0x1000000, r3);
+    r1 = 0x0;
+    r2 = stack[2023];
+    *(r8 + 0x210) = r0;
+    asm{ ubfx       r3, r0, #0x8, #0x8 };
+    *(r8 + 0x211) = r3;
+    asm{ ubfx       r3, r0, #0x10, #0x8 };
+    *(r8 + 0x212) = r3;
+    *(r8 + 0x213) = r0 >> r0 / 0x1000000;
+    r0 = loc_ffffffff8f650ad0(0x0, r1, r2, r7, r8);
+    COND = r6 != 0x0;
+    if (CPU_FLAGS & NE) goto loc_8f654664;
+
+loc_8f654410:
+    r5 = 0x22;
+    r4 = 0x1;
+    loc_ffffffff8f6527f4("Flashing backup GPT image...");
+    *(r8 + 0x210) = r6;
+    r0 = r6;
+    *(r8 + 0x211) = r6;
+    r3 = *0x8f7125ec;
+    *(r8 + 0x212) = r6;
+    *(r8 + 0x213) = r6;
+    r3 = *(r3 + 0x14);
+    *(r8 + 0x21c) = r6;
+    r2 = r3 - 0x1;
+    *(r8 + 0x218) = r2;
+    asm{ ubfx       r1, r2, #0x8, #0x8 };
+    *(r8 + 0x219) = r1;
+    asm{ ubfx       r1, r2, #0x10, #0x8 };
+    *(r8 + 0x21b) = r2 >> r2 / 0x1000000;
+    r2 = r3 - 0x22;
+    r3 = r3 - 0x21;
+    *(r8 + 0x21a) = r1;
+    *(r8 + 0x230) = r2;
+    asm{ ubfx       r1, r2, #0x8, #0x8 };
+    *(r8 + 0x21d) = r6;
+    *(r8 + 0x231) = r1;
+    asm{ ubfx       r1, r2, #0x10, #0x8 };
+    *(r8 + 0x21e) = r6;
+    r2 = r2 >> r2 / 0x1000000;
+    *(r8 + 0x232) = r1;
+    *(r8 + 0x21f) = r6;
+    *(r8 + 0x220) = r4;
+    *(r8 + 0x221) = r6;
+    *(r8 + 0x222) = r6;
+    *(r8 + 0x223) = r6;
+    *(r8 + 0x224) = r6;
+    *(r8 + 0x225) = r6;
+    *(r8 + 0x226) = r6;
+    *(r8 + 0x227) = r6;
+    *(r8 + 0x228) = r5;
+    *(r8 + 0x229) = r6;
+    *(r8 + 0x22a) = r6;
+    *(r8 + 0x22b) = r6;
+    *(r8 + 0x22c) = r6;
+    *(r8 + 0x22d) = r6;
+    *(r8 + 0x22e) = r6;
+    *(r8 + 0x22f) = r6;
+    *(r8 + 0x233) = r2;
+    asm{ ubfx       r2, r3, #0x8, #0x8 };
+    *(r8 + 0x249) = r2;
+    asm{ ubfx       r2, r3, #0x10, #0x8 };
+    *(r8 + 0x24a) = r2;
+    r2 = *(r8 + 0x255);
+    *(r8 + 0x248) = r3;
+    *(r8 + 0x24b) = r3 >> r3 / 0x1000000;
+    r3 = *(r8 + 0x254);
+    r1 = *(r8 + 0x251);
+    r3 = r3 | r2 * 0x100;
+    r2 = *(r8 + 0x256);
+    *(r8 + 0x234) = r6;
+    *(r8 + 0x235) = r6;
+    r3 = r3 | r2 * 0x10000;
+    r2 = *(r8 + 0x257);
+    *(r8 + 0x236) = r6;
+    *(r8 + 0x237) = r6;
+    r3 = r3 | r2 * 0x1000000;
+    r2 = *(r8 + 0x250);
+    *(r8 + 0x24c) = r6;
+    r2 = r2 | r1 * 0x100;
+    r1 = *(r8 + 0x252);
+    *(r8 + 0x24d) = r6;
+    *(r8 + 0x24e) = r6;
+    r2 = r2 | r1 * 0x10000;
+    r1 = *(r8 + 0x253);
+    *(r8 + 0x24f) = r6;
+    r0 = loc_ffffffff8f67b2cc(r0, stack[2021], (r2 | r1 * 0x1000000) * r3, r3);
+    r2 = *(r8 + 0x20d);
+    r1 = stack[2020];
+    asm{ ubfx       r3, r0, #0x8, #0x8 };
+    *(r8 + 0x259) = r3;
+    asm{ ubfx       r3, r0, #0x10, #0x8 };
+    *(r8 + 0x25a) = r3;
+    r3 = *(r8 + 0x20c);
+    *(r8 + 0x258) = r0;
+    r3 = r3 | r2 * 0x100;
+    r2 = *(r8 + 0x20e);
+    *(r8 + 0x25b) = r0 >> r0 / 0x1000000;
+    r3 = r3 | r2 * 0x10000;
+    r0 = loc_ffffffff8f67b2cc(r6, r1, r3 | *(r8 + 0x20f) * 0x1000000, r3);
+    r2 = *(r8 + 0x219);
+    r1 = *(r8 + 0x21d);
+    r7 = stack[2020];
+    asm{ ubfx       r3, r0, #0x8, #0x8 };
+    *(r8 + 0x211) = r3;
+    asm{ ubfx       r3, r0, #0x10, #0x8 };
+    *(r8 + 0x212) = r3;
+    r3 = *(r8 + 0x218);
+    *(r8 + 0x210) = r0;
+    r3 = r3 | r2 * 0x100;
+    r2 = *(r8 + 0x21a);
+    *(r8 + 0x213) = r0 >> r0 / 0x1000000;
+    r3 = r3 | r2 * 0x10000 | *(r8 + 0x21b) * 0x1000000;
+    r1 = *(r8 + 0x21c) | r1 * 0x100;
+    r2 = *(r8 + 0x21e);
+    r0 = loc_ffffffff8f650ad0(r0 >> r0 / 0x1000000 << r3 * 0x200, (r1 | r2 * 0x10000) << (r1 | r2 * 0x10000) * 0x200 | r3 / 0x800000, 0x200, 0x0, r7);
+    if (r0 != 0x0) {
+            r0 = "Failed to write EFI backup GPT header.\n";
+    }
+    if (CPU_FLAGS & NE) goto loc_8f654664;
+
+loc_8f654608:
+    r2 = *(r8 + 0x249);
+    r3 = *(r8 + 0x248);
+    r1 = *(r8 + 0x24d);
+    r3 = r3 | r2 * 0x100 | *(r8 + 0x24a) * 0x10000;
+    r3 = r3 | *(r8 + 0x24b) * 0x1000000;
+    r1 = *(r8 + 0x24c) | r1 * 0x100;
+    r2 = *(r8 + 0x24e);
+    r0 = loc_ffffffff8f650ad0(r0 << r3 * 0x200, (r1 | r2 * 0x10000) << (r1 | r2 * 0x10000) * 0x200 | r3 / 0x800000, 0x4000, 0x0, stack[2021]);
+    COND = r11 == 0x0;
+    if (COND) goto loc_8f654670;
+
+loc_8f654664:
+    loc_ffffffff8f6527f4();
+    goto loc_8f654668;
+
+loc_8f654670:
+    loc_ffffffff8f652cdc();
+    r3 = 0x8f6e9404;
+    r2 = *(r3 + 0x4);
+    if (r2 == r3) goto loc_8f654890;
+
+loc_8f654684:
+    r7 = *(0x8f6e9404 + 0x4);
+    if (r7 == 0x8f6e9404) goto loc_8f654890;
+
+loc_8f654694:
+    asm{ ldm        r7, {r2, r3} };
+    s0 = *(r7 + 0x8);
+    r8 = *(r7 + 0xc);
+    *r3 = r2;
+    r2 = *r7;
+    *(r2 + 0x4) = r3;
+    *(r7 + 0x4) = 0x0;
+    *r7 = 0x0;
+    r6 = r7 + 0x10;
+    stack[2017] = loc_ffffffff8f65385c(r6, 0x0, r2);
+    loc_ffffffff8f6527f4("restoring %s", r6);
+    r3 = stack[2017];
+    if (r3 != 0x0) goto loc_8f6546fc;
+
+loc_8f6546e4:
+    r2 = r6;
+    loc_ffffffff8f656968(r3, "Unable to find partition \"%s\"\n", r2);
+    goto loc_8f65487c;
+
+loc_8f65487c:
+    loc_ffffffff8f6527f4();
+    goto loc_8f654884;
+
+loc_8f654884:
+    loc_ffffffff8f64ab9c(r7);
+    goto loc_8f654684;
+
+loc_8f6546fc:
+    r1 = *(r3 + 0x21);
+    r2 = *(r3 + 0x20);
+    r12 = *(r3 + 0x29);
+    r4 = r2 | r1 * 0x100 | *(r3 + 0x22) * 0x10000 | *(r3 + 0x23) * 0x1000000;
+    r10 = r10 << r4 * 0x200;
+    r5 = *(r3 + 0x24) | *(r3 + 0x25) * 0x100 | *(r3 + 0x26) * 0x10000 | *(r3 + 0x27) * 0x1000000;
+    r11 = r11 << r5 * 0x200 | r4 / 0x800000;
+    r0 = *(r3 + 0x28) | r12 * 0x100 | *(r3 + 0x2a) * 0x10000 | *(r3 + 0x2b) * 0x1000000;
+    r12 = *(r3 + 0x2d);
+    r2 = *(r3 + 0x2c);
+    r0 = r0 + 0x1;
+    r2 = r2 | r12 * 0x100 | *(r3 + 0x2e) * 0x10000;
+    r1 = (r2 | *(r3 + 0x2f) * 0x1000000) + 0x0 + CARRY(FLAGS);
+    r0 = r0 - r4;
+    r1 = r1 - r5 + !CARRY(FLAGS);
+    r4 = r8;
+    r5 = 0x0;
+    r2 = (r2 << r1 * 0x200 | r0 / 0x800000) << r0 * 0x200;
+    stack[2018] = r2;
+    asm{ ldrd       r0, r1, [sp, #0x98 + var_78] };
+    if (r1 == r5) {
+            CMP(r0, r4);
+    }
+    if (CPU_FLAGS & NB) goto loc_8f6547d4;
+
+loc_8f6547b4:
+    r2 = r6;
+    r3 = stack[2018];
+    loc_ffffffff8f656968(0x0, "Dest partition %s has smaller size(0x%llx) than backuped size(0x%llx)\n", r2, r3, r8);
+    goto loc_8f65487c;
+
+loc_8f6547d4:
+    if (loc_ffffffff8f67423c(*(r3 + 0x31) & 0xf) == 0x0) goto loc_8f654818;
+
+loc_8f6547e8:
+    r5 = 0x0;
+    asm{ ldrd       r2, r3, [sp, #0x98 + var_78] };
+    if (r3 == r5) {
+            CMP(r2, r4);
+    }
+    if (CPU_FLAGS & B) goto loc_8f654818;
+
+loc_8f6547f8:
+    r2 = r6;
+    r3 = stack[2018];
+    loc_ffffffff8f656968(0x0, "Dest partition %s size doesn't match: [0x%llx, 0x%llx]\n", r2, r3, r8);
+    goto loc_8f65487c;
+
+loc_8f654818:
+    r5 = 0x0;
+    asm{ ldrd       r0, r1, [sp, #0x98 + var_78] };
+    r2 = r6;
+    asm{ strd       r0, r1, [sp, #0x98 + var_98] };
+    loc_ffffffff8f656968(0x2, "write partition %s: size=0x%llx, offset=0x%llx, buff=%p\n", r2);
+    r2 = r4;
+    r3 = r5;
+    if (loc_ffffffff8f650ad0(r10, r11, r2, r3, s0) == 0x0) goto loc_8f654884;
+
+loc_8f65485c:
+    r0 = 0x0 ^ 0xffffffff;
+    asm{ stm        sp, {sl, fp} };
+    r2 = r6;
+    loc_ffffffff8f656968(r0, "mmc_write[%s](0x%llx, %p, %d)\n", r2);
+    goto loc_8f65487c;
+
+loc_8f654890:
+    r0 = 0x0;
+    *0x8f6e1314 = r0;
+    goto loc_8f65489c;
+
+loc_8f653e1c:
+    r12 = *(*0x8f7125ec + 0x14);
+    r2 = r12 - 0x22;
+    if (0x0 == r5) {
+            CMP(r2, r4);
+    }
+    if (CPU_FLAGS & NB) goto loc_8f653e58;
+
+loc_8f653e3c:
+    asm{ strd       r4, r5, [sp, #0x98 + var_98] };
+    loc_ffffffff8f656968(0x0, "Invalid partition[%d] size: %d, %lld\n", r11, r12 - 0x21);
+    goto loc_8f654668;
+
+loc_8f653e58:
+    r4 = *(0x8f7125ec + 0x30);
+    asm{ ubfx       r4, r4, #0x5, #0x1 };
+    if (r4 == 0x0) goto loc_8f653ec4;
+
+loc_8f653e68:
+    loc_ffffffff8f64adc8(sp + 0x44, 0x0, 0x25);
+    r0 = loc_ffffffff8f652b90(r10, sp + 0x44);
+    r5 = *0x8f6e1318;
+    if (r5 != 0x0) goto loc_8f653f54;
+
+loc_8f653e94:
+    r3 = *0x8f6e1320;
+    r7 = *(r3 + 0x51);
+    r7 = *(r3 + 0x50) | r7 * 0x100;
+    r7 = r7 | *(r3 + 0x52) * 0x10000 | *(r3 + 0x53) * 0x1000000;
+    r4 = *0x8f6e130c;
+    goto loc_8f653f34;
+
+loc_8f653f34:
+    if (r5 < r7) goto loc_8f653f10;
+
+loc_8f653d08:
+    r11 = r11 + 0x1;
+    r10 = r10 + 0x80;
+    goto loc_8f653d10;
+
+loc_8f653f10:
+    r6 = r4;
+    r0 = loc_ffffffff8f64af40(r4 + 0x38, r10, 0x48);
+    r4 = r4 + 0x80;
+    if (r0 == 0x0) goto loc_8f653f40;
+
+loc_8f653f30:
+    r5 = r5 + 0x1;
+    goto loc_8f653f34;
+
+loc_8f653f40:
+    if (r6 != 0x0) {
+            r0 = loc_ffffffff8f656968();
+            if (r6 != 0x0) {
+                    r0 = loc_ffffffff8f6537f0(s0);
+                    loc_ffffffff8f656968(0x1, "partition[%d] %s needs backup\n", r11, r0);
+                    loc_ffffffff8f64adc8(sp + 0x44, 0x0, 0x25);
+                    loc_ffffffff8f652b90(r6 + 0x38, sp + 0x44);
+                    loc_ffffffff8f6527f4("caching %s ...", sp + 0x44);
+                    r0 = loc_ffffffff8f64aacc(0x58);
+                    COND = r4 != 0x0;
+                    if (!COND) {
+                            r0 = loc_ffffffff8f6527f4("Failed to cache %s", sp + 0x44);
+                    }
+                    else {
+                            loc_ffffffff8f64adc8();
+                            r0 = *(r6 + 0x21);
+                            r1 = *(r6 + 0x20);
+                            lr = *(r6 + 0x29);
+                            r1 = r1 | r0 * 0x100;
+                            r0 = *(r6 + 0x22);
+                            r12 = *(r6 + 0x28);
+                            r1 = r1 | r0 * 0x10000;
+                            r0 = *(r6 + 0x23);
+                            r12 = r12 | lr * 0x100;
+                            lr = *(r6 + 0x2a);
+                            r2 = r1 | r0 * 0x1000000;
+                            r0 = *(r6 + 0x25);
+                            r1 = *(r6 + 0x24);
+                            r12 = r12 | lr * 0x10000;
+                            lr = *(r6 + 0x2b);
+                            stack[2022] = r7 << r2 * 0x200;
+                            r3 = r1 | r0 * 0x100 | *(r6 + 0x26) * 0x10000 | *(r6 + 0x27) * 0x1000000;
+                            r0 = (r12 | lr * 0x1000000) + 0x1;
+                            s0 = s0 << r3 * 0x200 | r2 / 0x800000;
+                            r1 = (*(r6 + 0x2c) | *(r6 + 0x2d) * 0x100 | *(r6 + 0x2e) * 0x10000 | *(r6 + 0x2f) * 0x1000000) + 0x0 + CARRY(FLAGS);
+                            r0 = r0 - r2;
+                            r5 = r5 << r0 * 0x200;
+                            r2 = *0x8f6e1324;
+                            r6 = r6 << (r1 - r3 + !CARRY(FLAGS)) * 0x200 | r0 / 0x800000;
+                            *0x8f6e1324 = r2 - r5;
+                            r7 = (r2 - r5) + 0x1;
+                            r0 = loc_ffffffff8f6539b0(sp + 0x44, r1 - r3 + !CARRY(FLAGS), r2 - r5, 0x8f6e1324, stack[2010]);
+                            r1 = "read partition %s[%d]: size=0x%llx, offset=0x%llx, buff=0x%x\n";
+                            r2 = sp + 0x44;
+                            asm{ stm        sp, {r5, r6} };
+                            loc_ffffffff8f656968(0x2, r1, r2, r0, stack[2010], stack[2011], stack[2022]);
+                            stack[2010] = r7;
+                            if (loc_ffffffff8f6507a4(stack[2022], s0, r5, r6, stack[2010]) != 0x0) {
+                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to read partition %s\n", sp + 0x44);
+                                    loc_ffffffff8f6527f4("Failed to cache %s", sp + 0x44);
+                                    r0 = loc_ffffffff8f64ab9c(r4);
+                            }
+                            else {
+                                    *(r4 + 0x8) = r7;
+                                    *(r4 + 0xc) = r5;
+                                    r0 = loc_ffffffff8f64ac90(r4 + 0x10, sp + 0x44, 0x48);
+                                    r2 = *0x8f6e9404;
+                                    *0x8f6e9404 = r4;
+                                    asm{ stm        r4, {r2, r3} };
+                                    *(r2 + 0x4) = r4;
+                            }
+                    }
+            }
+    }
+    goto loc_8f653d08;
+
+loc_8f653f54:
+    r0 = loc_ffffffff8f65385c(sp + 0x44);
+    COND = r6 == 0x0;
+    if (!COND) {
+            r0 = loc_ffffffff8f64af40(r6 + 0x38, r10, 0x48);
+            if (r0 == 0x0) {
+                    r2 = *(r0 + 0x21);
+                    r3 = *(r0 + 0x20);
+                    r0 = *(r6 + 0x21);
+                    r3 = r3 | r2 * 0x100;
+                    r2 = *(r0 + 0x22);
+                    r1 = *(r6 + 0x20);
+                    r3 = r3 | r2 * 0x10000;
+                    r2 = *(r0 + 0x23);
+                    r1 = r1 | r0 * 0x100;
+                    r0 = *(r6 + 0x22);
+                    r4 = r3 | r2 * 0x1000000;
+                    r2 = *(r0 + 0x25);
+                    r3 = *(r0 + 0x24);
+                    r1 = r1 | r0 * 0x10000;
+                    r0 = *(r6 + 0x23);
+                    r5 = r3 | r2 * 0x100 | *(r0 + 0x26) * 0x10000 | *(r0 + 0x27) * 0x1000000;
+                    r2 = r1 | r0 * 0x1000000;
+                    r0 = *(r6 + 0x25);
+                    r1 = *(r6 + 0x24);
+                    r1 = r1 | r0 * 0x100 | *(r6 + 0x26) * 0x10000;
+                    r0 = *(r6 + 0x27);
+                    if (r5 == (r1 | r0 * 0x1000000)) {
+                            CMP(r4, r2);
+                    }
+                    if (!CPU_FLAGS & NE) {
+                            r2 = *(r0 + 0x29);
+                            r3 = *(r0 + 0x28);
+                            lr = *(r6 + 0x29);
+                            r3 = r3 | r2 * 0x100;
+                            r2 = *(r0 + 0x2a);
+                            r12 = *(r6 + 0x28);
+                            r3 = r3 | r2 * 0x10000;
+                            r2 = *(r0 + 0x2b);
+                            r12 = r12 | lr * 0x100;
+                            lr = *(r6 + 0x2a);
+                            r0 = r3 | r2 * 0x1000000;
+                            r2 = *(r0 + 0x2d);
+                            r3 = *(r0 + 0x2c);
+                            r12 = r12 | lr * 0x10000;
+                            lr = *(r6 + 0x2b);
+                            r1 = r3 | r2 * 0x100 | *(r0 + 0x2e) * 0x10000 | *(r0 + 0x2f) * 0x1000000;
+                            r2 = r12 | lr * 0x1000000;
+                            if (r1 == (*(r6 + 0x2c) | *(r6 + 0x2d) * 0x100 | *(r6 + 0x2e) * 0x10000 | *(r6 + 0x2f) * 0x1000000)) {
+                                    CMP(r0, r2);
+                            }
+                            if (!CPU_FLAGS & E) {
+                                    r0 = loc_ffffffff8f656968();
+                                    if (r6 != 0x0) {
+                                            r0 = loc_ffffffff8f6537f0(s0);
+                                            loc_ffffffff8f656968(0x1, "partition[%d] %s needs backup\n", r11, r0);
+                                            loc_ffffffff8f64adc8(sp + 0x44, 0x0, 0x25);
+                                            loc_ffffffff8f652b90(r6 + 0x38, sp + 0x44);
+                                            loc_ffffffff8f6527f4("caching %s ...", sp + 0x44);
+                                            r0 = loc_ffffffff8f64aacc(0x58);
+                                            COND = r4 != 0x0;
+                                            if (!COND) {
+                                                    r0 = loc_ffffffff8f6527f4("Failed to cache %s", sp + 0x44);
+                                            }
+                                            else {
+                                                    loc_ffffffff8f64adc8();
+                                                    r0 = *(r6 + 0x21);
+                                                    r1 = *(r6 + 0x20);
+                                                    lr = *(r6 + 0x29);
+                                                    r1 = r1 | r0 * 0x100;
+                                                    r0 = *(r6 + 0x22);
+                                                    r12 = *(r6 + 0x28);
+                                                    r1 = r1 | r0 * 0x10000;
+                                                    r0 = *(r6 + 0x23);
+                                                    r12 = r12 | lr * 0x100;
+                                                    lr = *(r6 + 0x2a);
+                                                    r2 = r1 | r0 * 0x1000000;
+                                                    r0 = *(r6 + 0x25);
+                                                    r1 = *(r6 + 0x24);
+                                                    r12 = r12 | lr * 0x10000;
+                                                    lr = *(r6 + 0x2b);
+                                                    stack[2022] = r7 << r2 * 0x200;
+                                                    r3 = r1 | r0 * 0x100 | *(r6 + 0x26) * 0x10000 | *(r6 + 0x27) * 0x1000000;
+                                                    r0 = (r12 | lr * 0x1000000) + 0x1;
+                                                    s0 = s0 << r3 * 0x200 | r2 / 0x800000;
+                                                    r1 = (*(r6 + 0x2c) | *(r6 + 0x2d) * 0x100 | *(r6 + 0x2e) * 0x10000 | *(r6 + 0x2f) * 0x1000000) + 0x0 + CARRY(FLAGS);
+                                                    r0 = r0 - r2;
+                                                    r5 = r5 << r0 * 0x200;
+                                                    r2 = *0x8f6e1324;
+                                                    r6 = r6 << (r1 - r3 + !CARRY(FLAGS)) * 0x200 | r0 / 0x800000;
+                                                    *0x8f6e1324 = r2 - r5;
+                                                    r7 = (r2 - r5) + 0x1;
+                                                    r0 = loc_ffffffff8f6539b0(sp + 0x44, r1 - r3 + !CARRY(FLAGS), r2 - r5, 0x8f6e1324, stack[2010]);
+                                                    r1 = "read partition %s[%d]: size=0x%llx, offset=0x%llx, buff=0x%x\n";
+                                                    r2 = sp + 0x44;
+                                                    asm{ stm        sp, {r5, r6} };
+                                                    loc_ffffffff8f656968(0x2, r1, r2, r0, stack[2010], stack[2011], stack[2022]);
+                                                    stack[2010] = r7;
+                                                    if (loc_ffffffff8f6507a4(stack[2022], s0, r5, r6, stack[2010]) != 0x0) {
+                                                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to read partition %s\n", sp + 0x44);
+                                                            loc_ffffffff8f6527f4("Failed to cache %s", sp + 0x44);
+                                                            r0 = loc_ffffffff8f64ab9c(r4);
+                                                    }
+                                                    else {
+                                                            *(r4 + 0x8) = r7;
+                                                            *(r4 + 0xc) = r5;
+                                                            r0 = loc_ffffffff8f64ac90(r4 + 0x10, sp + 0x44, 0x48);
+                                                            r2 = *0x8f6e9404;
+                                                            *0x8f6e9404 = r4;
+                                                            asm{ stm        r4, {r2, r3} };
+                                                            *(r2 + 0x4) = r4;
+                                                    }
+                                            }
+                                    }
+                            }
+                    }
+                    else {
+                            r0 = loc_ffffffff8f656968();
+                            if (r6 != 0x0) {
+                                    r0 = loc_ffffffff8f6537f0(s0);
+                                    loc_ffffffff8f656968(0x1, "partition[%d] %s needs backup\n", r11, r0);
+                                    loc_ffffffff8f64adc8(sp + 0x44, 0x0, 0x25);
+                                    loc_ffffffff8f652b90(r6 + 0x38, sp + 0x44);
+                                    loc_ffffffff8f6527f4("caching %s ...", sp + 0x44);
+                                    r0 = loc_ffffffff8f64aacc(0x58);
+                                    COND = r4 != 0x0;
+                                    if (!COND) {
+                                            r0 = loc_ffffffff8f6527f4("Failed to cache %s", sp + 0x44);
+                                    }
+                                    else {
+                                            loc_ffffffff8f64adc8();
+                                            r0 = *(r6 + 0x21);
+                                            r1 = *(r6 + 0x20);
+                                            lr = *(r6 + 0x29);
+                                            r1 = r1 | r0 * 0x100;
+                                            r0 = *(r6 + 0x22);
+                                            r12 = *(r6 + 0x28);
+                                            r1 = r1 | r0 * 0x10000;
+                                            r0 = *(r6 + 0x23);
+                                            r12 = r12 | lr * 0x100;
+                                            lr = *(r6 + 0x2a);
+                                            r2 = r1 | r0 * 0x1000000;
+                                            r0 = *(r6 + 0x25);
+                                            r1 = *(r6 + 0x24);
+                                            r12 = r12 | lr * 0x10000;
+                                            lr = *(r6 + 0x2b);
+                                            stack[2022] = r7 << r2 * 0x200;
+                                            r3 = r1 | r0 * 0x100 | *(r6 + 0x26) * 0x10000 | *(r6 + 0x27) * 0x1000000;
+                                            r0 = (r12 | lr * 0x1000000) + 0x1;
+                                            s0 = s0 << r3 * 0x200 | r2 / 0x800000;
+                                            r1 = (*(r6 + 0x2c) | *(r6 + 0x2d) * 0x100 | *(r6 + 0x2e) * 0x10000 | *(r6 + 0x2f) * 0x1000000) + 0x0 + CARRY(FLAGS);
+                                            r0 = r0 - r2;
+                                            r5 = r5 << r0 * 0x200;
+                                            r2 = *0x8f6e1324;
+                                            r6 = r6 << (r1 - r3 + !CARRY(FLAGS)) * 0x200 | r0 / 0x800000;
+                                            *0x8f6e1324 = r2 - r5;
+                                            r7 = (r2 - r5) + 0x1;
+                                            r0 = loc_ffffffff8f6539b0(sp + 0x44, r1 - r3 + !CARRY(FLAGS), r2 - r5, 0x8f6e1324, stack[2010]);
+                                            r1 = "read partition %s[%d]: size=0x%llx, offset=0x%llx, buff=0x%x\n";
+                                            r2 = sp + 0x44;
+                                            asm{ stm        sp, {r5, r6} };
+                                            loc_ffffffff8f656968(0x2, r1, r2, r0, stack[2010], stack[2011], stack[2022]);
+                                            stack[2010] = r7;
+                                            if (loc_ffffffff8f6507a4(stack[2022], s0, r5, r6, stack[2010]) != 0x0) {
+                                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to read partition %s\n", sp + 0x44);
+                                                    loc_ffffffff8f6527f4("Failed to cache %s", sp + 0x44);
+                                                    r0 = loc_ffffffff8f64ab9c(r4);
+                                            }
+                                            else {
+                                                    *(r4 + 0x8) = r7;
+                                                    *(r4 + 0xc) = r5;
+                                                    r0 = loc_ffffffff8f64ac90(r4 + 0x10, sp + 0x44, 0x48);
+                                                    r2 = *0x8f6e9404;
+                                                    *0x8f6e9404 = r4;
+                                                    asm{ stm        r4, {r2, r3} };
+                                                    *(r2 + 0x4) = r4;
+                                            }
+                                    }
+                            }
+                    }
+            }
+    }
+    goto loc_8f653d08;
+
+loc_8f653ec4:
+    loc_ffffffff8f64adc8(sp + 0x44, r4, 0x25);
+    loc_ffffffff8f652b90(r10, sp + 0x44);
+    goto loc_8f653ee0;
+
+loc_8f653ee0:
+    r0 = loc_ffffffff8f64b470(sp + 0x44, *(r4 + 0x8f6a2b9c), 0x48);
+    if (r0 != 0x0) goto loc_8f653cfc;
+
+loc_8f653efc:
+    loc_ffffffff8f656968(0x1, "found compulsory backup partition: %s\n", sp + 0x44);
+    goto loc_8f653e68;
+
+loc_8f653cfc:
+    r4 = r4 + 0x4;
+    if (r4 != 0x1c) goto loc_8f653ee0;
+

@@ -1,0 +1,15 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x14;
+    r5 = lr;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r0 = loc_ffffffff8f60cdc4("mdss_axi_clk", 0x0, 0x1, r3, stack[2040]);
+    COND = r2 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to set mdss_axi_clk ret = %d\n");
+            r0 = loc_ffffffff8f6484ac(r5, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/acpuclock.c", 0x105, 0x8f69c66f);
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

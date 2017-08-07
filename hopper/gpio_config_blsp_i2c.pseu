@@ -1,0 +1,19 @@
+    r3 = arg1;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x14;
+    r4 = lr;
+    stack[2043] = *0x8f7112f4;
+    if (arg0 == 0x1) {
+            if (r3 < 0x5) {
+                    loc_8f603114();
+            }
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Configure gpios for QUP instance: %u\n", 0x9e);
+    }
+    else {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Incorrect BLSP id %d\n");
+    }
+    r0 = loc_ffffffff8f6484ac();
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

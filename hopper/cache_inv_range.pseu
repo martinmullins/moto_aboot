@@ -1,0 +1,16 @@
+    r3 = 0x8f7112f4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *r3;
+    r0 = arg0 & !0x3f;
+    r2 = ((arg1 - 0x1) + arg0 | 0x3f) + 0x1;
+    while (r0 < r2) {
+            asm{ mcr        p15, #0x0, r0, c7, c6, #0x1 };
+            r0 = r0 + 0x40;
+    }
+    asm{ dsb        sy };
+    asm{ isb        sy };
+    if (stack[2045] != *r3) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

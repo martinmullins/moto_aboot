@@ -1,0 +1,37 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r6 = arg3;
+    stack[2041] = *0x8f7112f4;
+    if ((*0x8f6afe0c == 0x0) && (*0x8f6e0c38 != 0x0)) {
+            if (r0 != 0x0) {
+                    if (*0x8f6e0c40 == 0x0) {
+                            loc_ffffffff8f64f39c();
+                    }
+                    else {
+                            loc_ffffffff8f64f4ec();
+                    }
+            }
+            if (r6 != 0x0) {
+                    r0 = *0x8f6e0c38;
+                    loc_ffffffff8f64942c(r0);
+                    if (*0x8f6e0c3c != 0x0) {
+                            loc_ffffffff8f61017c();
+                    }
+            }
+            if (stack[2041] != *0x8f7112f4) {
+                    loc_ffffffff8f648514();
+            }
+            else {
+                    loc_ffffffff8f64d5d8();
+            }
+    }
+    else {
+            if (stack[2041] == *0x8f7112f4) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Display is not initialized!\n");
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

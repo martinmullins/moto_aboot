@@ -1,0 +1,33 @@
+    r6 = arg3;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    s0 = arg2;
+    r4 = arg0;
+    r5 = arg1;
+    r7 = arg4;
+    r3 = *0x8f7112f4;
+    stack[2039] = r3;
+    r0 = loc_ffffffff8f64f330(arg0, arg1, arg2, r3, stack[2036]);
+    if (r0 < s0) {
+            lr = r0;
+    }
+    if (CPU_FLAGS & GE) {
+            lr = s0;
+    }
+    r3 = 0x8f6e0c38;
+    if (0x8f6e0c38 == 0x0) {
+            r1 = *(0x8f6e0c00 + 0x8);
+            r2 = *0x8f6e0c00;
+    }
+    else {
+            r1 = *0x8f6e0c00;
+            r5 = r5 + lr;
+            r2 = *(0x8f6e0c00 + 0x8);
+            r1 = r0 + r1;
+            asm{ stm        sp, {r6, r7} };
+    }
+    r0 = loc_ffffffff8f649350();
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

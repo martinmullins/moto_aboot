@@ -1,0 +1,92 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x7c;
+    r6 = sp + 0x34;
+    r4 = sp + 0x24;
+    r3 = *(sp + 0x14);
+    stack[2037] = r3;
+    loc_ffffffff8f64adc8(sp + 0x14, 0x0, 0x10, r3, stack[2008]);
+    loc_ffffffff8f64adc8(r6, 0x0, 0x20);
+    loc_ffffffff8f64adc8(r4, 0x0, 0x10);
+    loc_ffffffff8f64adc8(sp + 0x54, 0x0, 0x20);
+    r7 = loc_ffffffff8f61a0dc();
+    loc_ffffffff8f61a17c();
+    r10 = loc_ffffffff8f61a280();
+    r0 = loc_ffffffff8f64b880(0x8f68ac00);
+    COND = r5 != 0x0;
+    if (CPU_FLAGS & NE) goto loc_8f630e80;
+
+loc_8f630d24:
+    loc_ffffffff8f64a9f0(sp + 0x14, 0x10, "/platform@%d", r7);
+    loc_ffffffff8f656968(0x2, "Try to get fdt platform offset: %s\n", sp + 0x14);
+    r0 = loc_ffffffff8f64c50c(0x8f68ac00, sp + 0x14);
+    *0x8f6ac200 = r0;
+    if (r0 >= 0x0) goto loc_8f630d80;
+
+loc_8f630d74:
+    loc_ffffffff8f656968();
+    goto loc_8f630d78;
+
+loc_8f630d78:
+    r5 = 0x0 ^ 0xffffffff;
+    goto loc_8f630fa8;
+
+loc_8f630fa8:
+    r0 = r5;
+    if (stack[2037] != *r0) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f630d80:
+    r0 = loc_ffffffff8f630c30("platform_name");
+    *0x8f6e06a0 = r0;
+    if (CPU_FLAGS & E) goto loc_8f630e80;
+
+loc_8f630da4:
+    loc_ffffffff8f656968(0x2, "get platform name: %s\n");
+    loc_ffffffff8f64a9f0(r6, 0x20, "/%s,product@%d", *0x8f6e06a0, r10 - 0x40);
+    loc_ffffffff8f64a9f0(r4, 0x10, "hw@%d", 0x8f6ac214 - 0x40);
+    r0 = loc_ffffffff8f64c50c(0x8f68ac00, r6);
+    r10 = 0x8f6ac214;
+    *0x8f6ac214 = r0;
+    if (CPU_FLAGS & L) goto loc_8f630d74;
+
+loc_8f630e0c:
+    loc_ffffffff8f656968(0x2, "get product name: %s\n", r6);
+    r0 = loc_ffffffff8f64c090(0x8f68ac00, *0x8f6ac214, r4);
+    *0x8f6ac1f4 = r0;
+    if (r0 >= 0x0) goto loc_8f630e88;
+
+loc_8f630e3c:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No setting for %s, using default setting\n", r4);
+    loc_ffffffff8f64a9f0(r4, 0x10, "hw@default");
+    r0 = loc_ffffffff8f64c090(0x8f68ac00, *0x8f6ac214, r4);
+    *0x8f6ac1f4 = r0;
+    if (r0 >= 0x0) goto loc_8f630e88;
+
+loc_8f630e80:
+    loc_ffffffff8f656968();
+    goto loc_8f630d78;
+
+loc_8f630e88:
+    stack[2008] = 0x8f6ac1f4;
+    r2 = r7;
+    r0 = 0x2;
+    r6 = 0x8f6ac1f4;
+    r8 = 0x8f6ac200;
+    asm{ stmib      sp, {r3, r4} };
+    loc_ffffffff8f656968(r0, "get node for platform@%d(0x%x), %s(0x%x), %s(0x%x)\n", r2, *r8, stack[2008]);
+    loc_ffffffff8f64b21c(sp + 0x54, "/devices@0", 0x20);
+    *0x8f6ac1f8 = loc_ffffffff8f64c50c(0x8f68ac00, sp + 0x54);
+    loc_ffffffff8f64adc8(sp + 0x54, 0x0, 0x20);
+    loc_ffffffff8f64a9f0(sp + 0x54, 0x20, "devices@%d", r7);
+    *0x8f6ac20c = loc_ffffffff8f64c090(0x8f68ac00, *r8, sp + 0x54);
+    loc_ffffffff8f64adc8(sp + 0x54, 0x0, 0x20);
+    loc_ffffffff8f64b21c(sp + 0x54, 0x8f6859e4, 0x20);
+    *0x8f6ac1e8 = loc_ffffffff8f64c090(0x8f68ac00, *r10, sp + 0x54);
+    loc_ffffffff8f64adc8(sp + 0x54, 0x0, 0x20);
+    loc_ffffffff8f64b21c(sp + 0x54, 0x8f6859e4, 0x20);
+    r0 = loc_ffffffff8f64c090(0x8f68ac00, *r6, sp + 0x54);
+    *0x8f6ac204 = r0;
+    loc_ffffffff8f656968(0x2, "get devices nodes offset: [%d, %d, %d, %d]\n", *0x8f6ac1f8, *0x8f6ac20c, *0x8f6ac1e8, r0);
+    goto loc_8f630fa8;
+

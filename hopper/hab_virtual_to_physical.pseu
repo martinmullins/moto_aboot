@@ -1,0 +1,21 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    r1 = *0x8f6b7988;
+    if (r0 == r1) {
+            r1 = 0x8f6b798c;
+    }
+    if (CPU_FLAGS & E) {
+            r0 = *r1;
+    }
+    if (CPU_FLAGS & E) {
+            r1 = 0x0;
+    }
+    if (CPU_FLAGS & E) {
+            *0x8f6b7988 = r1;
+    }
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

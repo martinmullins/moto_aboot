@@ -1,0 +1,27 @@
+    r1 = arg1;
+    r4 = arg2;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x24;
+    COND = r6 == 0x0;
+    r5 = r1;
+    stack[2041] = *0x8f7112f4;
+    if ((!COND) && (*r6 == 0x12)) {
+            if (r1 != 0x0) {
+                    CMP(r4, 0x0);
+            }
+            if (!CPU_FLAGS & E) {
+                    loc_ffffffff8f667304(sp + 0x8, 0x0, 0x14);
+                    loc_ffffffff8f6679d4(sp + 0x8, 0x14, r5, r4, r6 + 0x1);
+                    r0 = 0x0;
+            }
+            else {
+                    r0 = 0x1;
+            }
+    }
+    else {
+            r0 = 0x1;
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

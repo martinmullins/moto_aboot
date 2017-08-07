@@ -1,0 +1,30 @@
+#!/bin/bash
+if [[ -z "$1" ]] || [[ -z "$2" ]]; then
+    echo "$0 <binary file> <retdec.com api key>"
+    exit 1
+fi
+
+FILE=$1
+KEY=$2
+
+echo "[" >symbols; awk '{ printf "(\"%s\",%s,\"%s\"),\n", $2, $3, $8; }' <(readelf -Ws $FILE | grep FUNC) >>symbols; echo "]" >> symbols
+
+python dec.py >cmds
+i=1
+while read c; do
+    i=$((i+1))
+    x=$((i%4))
+    if [[ $x -eq 0 ]]; then
+        echo "wait okokokokokokok"
+        wait
+    fi
+    (
+        echo $c
+        sleep 20
+        if ! eval "$c"; then
+            echo "Failed at $c"
+            break
+        fi
+        echo done
+    ) &>.okok.great.$i &
+done <cmds

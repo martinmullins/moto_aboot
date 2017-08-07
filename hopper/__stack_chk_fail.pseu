@@ -1,0 +1,7 @@
+    r3 = *0x8f7112f4;
+    loc_ffffffff8f6484ac(lr, "stack smashing detected.", arg2, r3, arg0, r3, arg2, lr);
+    goto loc_8f648530;
+
+loc_8f648530:
+    goto loc_8f648530;
+

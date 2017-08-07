@@ -1,0 +1,125 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    r0 = loc_ffffffff8f656968(0x2, "%s is called \n", "display_init", r3, arg0, stack[2041], r4, 0x8f7112f4, 0x8f6afe0c, r7, r8, lr);
+    if (*0x8f6afe0c != 0x2) goto loc_8f64dca0;
+
+loc_8f64da50:
+    loc_ffffffff8f633794();
+    r0 = loc_ffffffff8f633874();
+    *0x8f6e0c30 = r0;
+    if (r0 == 0x0) goto loc_8f64dc7c;
+
+loc_8f64da68:
+    if (loc_ffffffff8f633d20() == 0x0) goto loc_8f64da98;
+
+loc_8f64da74:
+    loc_ffffffff8f656968(0x1, "Start display auto detection\n");
+    if (loc_ffffffff8f64d900() != 0x0) goto loc_8f64da98;
+
+loc_8f64db94:
+    loc_ffffffff8f656968();
+    goto loc_8f64dc7c;
+
+loc_8f64dc7c:
+    if (loc_ffffffff8f6152d4() != 0x0) {
+            loc_ffffffff8f619c48();
+    }
+    r0 = loc_ffffffff8f656968(0x1, "Display initialization failed!\n");
+    *0x8f6afe0c = 0x1;
+    goto loc_8f64dca0;
+
+loc_8f64dca0:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f64da98:
+    r0 = *0x8f6e0c30;
+    r1 = *0x8f6e0bfc;
+    if (loc_ffffffff8f6106a0(r0, r1) != 0x0) goto loc_8f64dad4;
+
+loc_8f64dab4:
+    r3 = *0x8f6e0c30;
+    r2 = *(r3 + 0x1f4);
+    r2 = *r2;
+    if (r2 == 0x2) {
+            r2 = 0x8f6e0c3c;
+    }
+    if (CPU_FLAGS & E) {
+            r1 = 0x1;
+    }
+    if (CPU_FLAGS & E) {
+            *r2 = r1;
+    }
+    r3 = *(r3 + 0x1f8);
+    if (r3 == 0x0) goto loc_8f64dc7c;
+
+loc_8f64db34:
+    r2 = *(r3 + 0x14);
+    if (r2 == 0x0) goto loc_8f64db6c;
+
+loc_8f64db40:
+    if (r2 != 0x3) goto loc_8f64db94;
+
+loc_8f64db48:
+    *(0x8f6e0c10 + 0x4) = r2;
+    *0x8f6afe08 = 0xff000000 ^ 0xffffffff;
+    *0x8f6e0c34 = 0x0;
+    goto loc_8f64db9c;
+
+loc_8f64db9c:
+    r1 = *(r3 + 0x8);
+    r2 = *r3;
+    *(0x8f6e0c10 + 0xc) = r1;
+    r1 = *(r3 + 0x4);
+    *0x8f6e0c10 = r2;
+    *(0x8f6e0c10 + 0x8) = r1;
+    r1 = *(r3 + 0xc);
+    r3 = *(r3 + 0x18);
+    *(0x8f6e0c10 + 0x18) = 0x0;
+    *(0x8f6e0c10 + 0x10) = r1;
+    *(0x8f6e0c10 + 0x14) = r3;
+    loc_ffffffff8f656968(0x2, "display buffer: %p\n", r2, r3);
+    loc_ffffffff8f656968(0x2, "display format: %d\n", *(0x8f6e0c10 + 0x4));
+    loc_ffffffff8f656968(0x2, "display width: %d\n", *(0x8f6e0c10 + 0x8));
+    loc_ffffffff8f656968(0x2, "display height: %d\n", *(0x8f6e0c10 + 0xc));
+    loc_ffffffff8f656968(0x2, "display stride: %d\n", *(0x8f6e0c10 + 0x10));
+    loc_ffffffff8f656968(0x2, "display flush: %p\n", *(0x8f6e0c10 + 0x18));
+    loc_ffffffff8f656968(0x2, "display flip: %d\n", *(0x8f6e0c10 + 0x14));
+    r0 = loc_ffffffff8f6496a4(0x8f6e0c10);
+    *0x8f6afe0c = 0x0;
+    *0x8f6e0c38 = r0;
+    *0x8f6afe14 = 0x1;
+    if (stack[2041] == *0x8f7112f4) {
+            r0 = loc_ffffffff8f656968();
+    }
+    else {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f64db6c:
+    *(0x8f6e0c10 + 0x4) = r2;
+    *0x8f6afe08 = 0xffff;
+    *0x8f6e0c34 = r2;
+    goto loc_8f64db9c;
+
+loc_8f64dad4:
+    if (loc_ffffffff8f633d20() == 0x0) goto loc_8f64dc7c;
+
+loc_8f64dae0:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Display is altered! Re-start display auto detection\n");
+    loc_ffffffff8f6341bc();
+    r0 = *0x8f6e0c30;
+    loc_ffffffff8f610c70(r0);
+    loc_ffffffff8f634164();
+    loc_ffffffff8f60c558(0xc8);
+    if (loc_ffffffff8f64d900() == 0x0) goto loc_8f64db94;
+
+loc_8f64db10:
+    r0 = *0x8f6e0c30;
+    r1 = *0x8f6e0bfc;
+    if (loc_ffffffff8f6106a0(r0, r1) != 0x0) goto loc_8f64dc7c;
+

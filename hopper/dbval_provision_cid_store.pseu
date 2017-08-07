@@ -1,0 +1,46 @@
+    stack[2041] = r4;
+    stack[2043] = r6;
+    stack[2046] = r10;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg0;
+    r6 = arg1;
+    r10 = arg2;
+    r3 = *0xa46;
+    stack[2040] = r3;
+    r0 = loc_ffffffff8f66c8a8(0xa46, arg1, arg2, r3, arg0, arg1, arg2, stack[2040], stack[2041], r5, stack[2043], r7, r8, stack[2046], lr);
+    *r6 = 0x12;
+    COND = r5 == 0x0;
+    if (COND) {
+            r4 = 0x55;
+    }
+    if (!CPU_FLAGS & E) {
+            r8 = r4 + 0x9a;
+            r7 = r4 + ((*(r4 + 0x1) | *r4 * 0x100) - 0x960 - 0x8);
+            loc_ffffffff8f663b90("dbval_provision_cid_store - Call Validate DB");
+            r0 = loc_ffffffff8f6631d8(r8, r7, 0xf0, r6, r10);
+            r4 = r0;
+            if (r0 == 0xf) {
+                    *r6 = 0x11;
+                    loc_ffffffff8f66c80c(r5, r8, 0xe2, 0x11);
+                    loc_ffffffff8f66c80c(r5 + 0xe2, r7, 0x964);
+                    loc_ffffffff8f663b90("dbval_provision_cid_store - finalise cid datablock");
+                    r0 = loc_ffffffff8f66c3c0();
+                    r4 = r0;
+                    if (r0 == 0xf) {
+                            loc_ffffffff8f663b90("dbval_provision_cid_store - Write CID DB");
+                            r0 = loc_ffffffff8f66c674(0x8, r5, 0xa46);
+                            r4 = r0;
+                            if (r0 == 0xf) {
+                                    *r6 = 0x0;
+                                    loc_ffffffff8f663b90("dbval_provision_cid_store - Success");
+                            }
+                    }
+            }
+            loc_ffffffff8f66c8dc(r5);
+    }
+    r0 = r4;
+    if (stack[2040] != *r0) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

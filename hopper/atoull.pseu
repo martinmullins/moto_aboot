@@ -1,0 +1,68 @@
+    r2 = arg2;
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2040] = *0x8f7112f4;
+    r3 = *r0;
+    if (r3 != 0x30) {
+            r4 = 0x0;
+            r5 = 0x0;
+            while (*r0 != 0xffffffff) {
+                    r0 = loc_ffffffff8f64a0c8();
+                    if (r0 == 0x0) {
+                        break;
+                    }
+                    r10 = 0xa;
+                    asm{ umull      r2, r3, r4, sl };
+                    r4 = r2 - 0x30;
+                    r3 = r3 + r10 * r5;
+                    r5 = r3 - 0x0 + !CARRY(FLAGS);
+                    r4 = r4 + *(r0 + 0xffffffffffffffff);
+                    r5 = r5 + 0x0 + CARRY(FLAGS);
+            }
+    }
+    else {
+            r3 = *(r0 + 0x1);
+            if (CPU_FLAGS & E) {
+                    r4 = 0x0;
+            }
+            if (CPU_FLAGS & E) {
+                    r5 = 0x0;
+            }
+            if (!CPU_FLAGS & NE) {
+                    while (*r0 != 0xffffffff) {
+                            r0 = loc_ffffffff8f64a1e0();
+                            if (r0 == 0x0) {
+                                break;
+                            }
+                            r0 = *(r0 + 0xffffffffffffffff);
+                            r0 = loc_ffffffff8f649be4(r0);
+                            r7 = r7 << r5 * 0x10 | r4 / 0x10000000;
+                            r6 = r6 << r4 * 0x10;
+                            r4 = r6 + r0;
+                            r5 = r7 + r0 / 0x80000000 + CARRY(FLAGS);
+                    }
+            }
+            else {
+                    r4 = 0x0;
+                    r5 = 0x0;
+                    while (*r0 != 0xffffffff) {
+                            r0 = loc_ffffffff8f64a0c8();
+                            if (r0 == 0x0) {
+                                break;
+                            }
+                            r10 = 0xa;
+                            asm{ umull      r2, r3, r4, sl };
+                            r4 = r2 - 0x30;
+                            r3 = r3 + r10 * r5;
+                            r5 = r3 - 0x0 + !CARRY(FLAGS);
+                            r4 = r4 + *(r0 + 0xffffffffffffffff);
+                            r5 = r5 + 0x0 + CARRY(FLAGS);
+                    }
+            }
+    }
+    r0 = r4;
+    if (stack[2040] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

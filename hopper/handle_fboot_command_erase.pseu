@@ -1,0 +1,29 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    loc_ffffffff8f646e34(arg0, arg1, arg2, r3, arg0, stack[2043], r4, 0x8f7112f4, r6, lr);
+    r4 = *(arg0 + 0xc);
+    r4 = r4 + 0x1;
+    if (loc_ffffffff8f622518(r4) == -0x1) {
+            loc_ffffffff8f656968(0x0, "Failed to erase partition %s\n", r4);
+            r0 = 0x3;
+    }
+    else {
+            r0 = loc_ffffffff8f64b0ac(r4, 0x8f686d91);
+            COND = r6 != 0x0;
+            if (!COND) {
+                    loc_ffffffff8f622518("utagsBackup");
+                    loc_ffffffff8f679f54(r6);
+            }
+            if (loc_ffffffff8f64b0ac(r4, 0x8f680735) == 0x0) {
+                    loc_ffffffff8f679f54(0x1);
+            }
+            loc_ffffffff8f646e70();
+            loc_ffffffff8f656968(0x1, "Succeeded to erase partition %s\n", r4);
+            r0 = 0x1;
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,36 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = 0x8f7112f4;
+    stack[2043] = *0x8f7112f4;
+    if (*0x8f6e0aa0 != 0x0) {
+            if (loc_ffffffff8f6415a8(0x1, 0x0, 0x4, 0x1) < 0x0) {
+                    if (stack[2043] == *0x8f7112f4) {
+                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "BQ24296: Error setting chg disable\n");
+                    }
+                    else {
+                            loc_ffffffff8f648514();
+                    }
+            }
+            else {
+                    if (((loc_ffffffff8f6415a8(0x0, 0x7, 0x0, 0x3) >= 0x0) && (loc_ffffffff8f6415a8(0x4, 0x2b, 0x2, 0x6) >= 0x0)) && (loc_ffffffff8f6415a8(0x5, 0x0, 0x4, 0x2) >= 0x0)) {
+                            loc_ffffffff8f656968(0x1, "bq24296_config_for_fact_cbl\n");
+                            if (stack[2043] == *0x8f7112f4) {
+                                    loc_ffffffff8f641680();
+                            }
+                            else {
+                                    loc_ffffffff8f648514();
+                            }
+                    }
+                    else {
+                            if (stack[2043] != *r5) {
+                                    loc_ffffffff8f648514();
+                            }
+                    }
+            }
+    }
+    else {
+            if (stack[2043] != *r5) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

@@ -1,0 +1,109 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r6 = arg0;
+    r4 = arg1;
+    r5 = 0x65;
+    stack[2041] = *0x8f7112f4;
+    *(*arg0 + 0x2f) = arg1;
+    goto loc_8f607764;
+
+loc_8f607764:
+    if ((*(*r6 + 0x2f) & r4) == 0x0) goto loc_8f6077b0;
+
+loc_8f607774:
+    r5 = r5 - 0x1;
+    COND = r5 != 0x0;
+    if (COND) goto loc_8f6077a4;
+
+loc_8f60777c:
+    r3 = *0x8f7112f4;
+    if (stack[2041] != r3) goto loc_8f6077c0;
+
+loc_8f60778c:
+    r0 = 0x0 ^ 0xffffffff;
+    r1 = "Error: sdhci reset failed for: %x\n";
+    r2 = r4;
+    sp = sp + 0xc;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x410 - 0xc;
+    r6 = sp + 0x14;
+    r4 = r0;
+    r10 = r1;
+    r3 = *r0;
+    stack[2035] = r3;
+    r0 = loc_ffffffff8f64adc8(r6, 0x0, 0x400, r3, stack[1774]);
+    r7 = uart_logger;
+    asm{ ldmib      r3, {r5, r8} };
+    if ((*(r7 + 0x2c) != 0x0) || (*(r8 + 0x2c) != 0x0)) goto loc_8f6569e4;
+
+loc_8f6569c4:
+    r3 = *(r5 + 0x2c);
+    if (r3 != 0x0) goto loc_8f6569e4;
+
+loc_8f6569d0:
+    if (r4 <= 0x2) goto loc_8f656ab8;
+
+loc_8f6569d8:
+    asm{ ldrsb      r3, [r8] };
+    if (r3 < r4) goto loc_8f656ab8;
+
+loc_8f6569e4:
+    loc_ffffffff8f64adc8(r6, 0x0, 0x400, sp + 0x440, stack[1774], sp + 0x440);
+    loc_ffffffff8f64a49c(r6, 0x400, r10, sp + 0x440);
+    r0 = loc_ffffffff8f64b354(r6);
+    if (*0x8f6ed801 == 0x0) goto loc_8f656ab8;
+
+loc_8f656a34:
+    if (*0x8f6ed800 != 0x0) goto loc_8f656a58;
+
+loc_8f656a44:
+    (*(r5 + 0x3c))(sp + 0x8);
+    r3 = *(uart_logger + 0x3c);
+    goto loc_8f656ab0;
+
+loc_8f656ab0:
+    r0 = (r3)(sp + 0x8);
+    goto loc_8f656ab8;
+
+loc_8f656ab8:
+    if (stack[2035] != *r0) {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f656a58:
+    if (r4 > 0x2) goto loc_8f656a74;
+
+loc_8f656a60:
+    (*(r5 + 0x40))(sp + 0x8);
+    r3 = *(uart_logger + 0x40);
+    goto loc_8f656ab0;
+
+loc_8f656a74:
+    if (r4 > 0x7) goto loc_8f656aa4;
+
+loc_8f656a7c:
+    (*(r5 + 0x40))(sp + 0x8);
+    (*(uart_logger + 0x40))(sp + 0x8);
+    r3 = *(r8 + 0x40);
+    goto loc_8f656ab0;
+
+loc_8f656aa4:
+    if (r4 > 0xc) goto loc_8f656ab8;
+
+loc_8f656aac:
+    r3 = *(r5 + 0x40);
+    goto loc_8f656ab0;
+
+loc_8f6077c0:
+    loc_ffffffff8f648514();
+    return;
+
+loc_8f6077a4:
+    loc_ffffffff8f60c558(0x1);
+    goto loc_8f607764;
+
+loc_8f6077b0:
+    if (stack[2041] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

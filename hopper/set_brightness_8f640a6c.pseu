@@ -1,0 +1,31 @@
+    r0 = arg0;
+    r3 = 0x8f7112f4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = r3;
+    stack[2043] = *r3;
+    r2 = *0x8f6e0a98;
+    if (r2 == 0x0) {
+            if (stack[2043] == *r3) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: lp8556 dev is not initialized\n", "set_brightness");
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (r0 < 0xff) {
+                    r4 = r0;
+            }
+            if (CPU_FLAGS & NS) {
+                    r4 = 0xff;
+            }
+            if (loc_ffffffff8f612ea4(r2, 0x2c, 0x0, zero_extend_32(r4)) < 0x0) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: fail to write REG_LED_CRS\n", "set_brightness");
+            }
+            *0x8f6aca94 = r4;
+            if (stack[2043] != *r5) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

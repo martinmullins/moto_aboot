@@ -1,0 +1,63 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    r3 = *(0x8f6e0be8 + 0xc);
+    goto loc_8f649778;
+
+loc_8f649778:
+    r1 = 0x8f6e0bf0;
+    if (r3 == 0x8f6e0bf0) goto loc_8f6497b0;
+
+loc_8f649788:
+    if (r0 >= r3) goto loc_8f6497a8;
+
+loc_8f649790:
+    asm{ stm        r0, {r2, r3} };
+    *(*r3 + 0x4) = r0;
+    *r3 = r0;
+    goto loc_8f6497c8;
+
+loc_8f6497c8:
+    r2 = *r0;
+    if ((r2 != r1) && (r2 != 0x0)) {
+            r1 = *(r2 + 0x8);
+            if (r0 == r2 + r1) {
+                    *(r2 + 0x8) = *(r0 + 0x8) + r1;
+                    r1 = *(r0 + 0x4);
+                    *r1 = r2;
+                    *(*r0 + 0x4) = r1;
+                    *(r0 + 0x4) = 0x0;
+                    *r0 = 0x0;
+                    r0 = r2;
+            }
+    }
+    if (r3 != 0x0) {
+            r2 = *(r0 + 0x8);
+            if (r3 == r0 + r2) {
+                    r1 = *(r3 + 0x8);
+                    r2 = r1 + r2;
+                    *(r0 + 0x8) = r2;
+                    asm{ ldm        r3, {r1, r2} };
+                    *r2 = r1;
+                    *(*r3 + 0x4) = r2;
+                    *(r3 + 0x4) = 0x0;
+                    *r3 = 0x0;
+            }
+    }
+    if (stack[2045] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f6497a8:
+    r3 = *(r3 + 0x4);
+    goto loc_8f649778;
+
+loc_8f6497b0:
+    r4 = *(0x8f6e0be8 + 0x8);
+    *(r0 + 0x4) = r3;
+    *r0 = r4;
+    *(*(0x8f6e0be8 + 0x8) + 0x4) = r0;
+    *(0x8f6e0be8 + 0x8) = r0;
+    goto loc_8f6497c8;
+

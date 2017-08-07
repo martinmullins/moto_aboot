@@ -1,0 +1,56 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    stack[2041] = 0x0;
+    r7 = loc_ffffffff8f6539b0(0x8f6872f7);
+    r0 = loc_ffffffff8f674a88();
+    COND = r4 == 0x0;
+    if (COND) goto loc_8f62aa08;
+
+loc_8f62a9f4:
+    loc_ffffffff8f656968(0x1, "Factory product, always allow unlock\n");
+    r4 = 0x0;
+    goto loc_8f62aaa8;
+
+loc_8f62aaa8:
+    r0 = r4;
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f62aa08:
+    if (r7 == -0x1) goto loc_8f62aa34;
+
+loc_8f62aa10:
+    r4 = loc_ffffffff8f653b20(r7);
+    r5 = r1;
+    r0 = loc_ffffffff8f653a28(r7);
+    COND = r3 == 0x0;
+    if (COND) goto loc_8f62aaa4;
+
+loc_8f62aa30:
+    r4 = r4 + r0;
+    r5 = r5 + r1 + CARRY(FLAGS);
+    r4 = r4 - 0x1;
+    r5 = r5 - 0x0 + !CARRY(FLAGS);
+    r0 = loc_ffffffff8f6507a4(r4, r5, 0x1, 0x0, sp + 0xb);
+    if (r0 == 0x0) goto loc_8f62aa94;
+
+loc_8f62aa78:
+    loc_ffffffff8f656968(0x1, "Couldn't read from %llx, err %d\n", r4, r5, r0);
+    goto loc_8f62aaa4;
+
+loc_8f62aaa4:
+    r4 = 0x1;
+    goto loc_8f62aaa8;
+
+loc_8f62aa94:
+    r4 = 0x1 - stack[2041];
+    COND = r4 < 0x0;
+    if (COND) {
+            r4 = 0x0;
+    }
+    goto loc_8f62aaa8;
+
+loc_8f62aa34:
+    if (loc_ffffffff8f65353c() < 0xa) goto loc_8f62aa10;
+

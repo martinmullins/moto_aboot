@@ -1,0 +1,64 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r0 = loc_ffffffff8f605c0c(0x3, 0x97, arg2, r3, arg0, stack[2043], arg2, r4, 0x8f7112f4, lr);
+    r4 = r0;
+    if (r0 != -0x1) goto loc_8f600b48;
+
+loc_8f600b3c:
+    loc_ffffffff8f656968();
+    goto loc_8f600c34;
+
+loc_8f600c34:
+    r0 = r4;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f600b48:
+    *(0x78d9000 + 0xa0) = *(0x78d9000 + 0xa0) | 0x80;
+    r2 = *(0x78d9000 + 0x140);
+    *(0x78d9000 + 0x140) = r2 | 0x2000000;
+    r3 = 0x50000000 ^ 0xffffffff;
+    r4 = *(r3 + 0xfffffffffffffc01);
+    r2 = zero_extend_32(r4 / 0x100 + r4 + ((r2 | 0x2000000) >> r4 / 0x10000) + r4 / 0x1000000);
+    if (*(r3 + 0xfffffffffffffc05) != zero_extend_32(r2 ^ 0xffffffff)) goto loc_8f600bac;
+
+loc_8f600b94:
+    *(r3 + 0xfffffffffffffc05) = r2;
+    loc_ffffffff8f656968(0x1, "oem tuning USB: 0x%x\n", r4);
+    goto loc_8f600c04;
+
+loc_8f600c04:
+    if (r4 != -0x1) {
+            asm{ ubfx       r0, r4, #0x10, #0x8 };
+            loc_ffffffff8f605c0c();
+            asm{ ubfx       r0, r4, #0x8, #0x8 };
+            loc_ffffffff8f605c0c();
+            loc_ffffffff8f605c0c(zero_extend_32(r4), 0x83);
+    }
+    else {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "USB PHY not tuned!\n");
+    }
+    goto loc_8f600c30;
+
+loc_8f600c30:
+    r4 = 0x0;
+    goto loc_8f600c34;
+
+loc_8f600bac:
+    r0 = loc_ffffffff8f632f34("usbphy_setting");
+    COND = r1 < 0x0;
+    if ((CPU_FLAGS & L) || (loc_ffffffff8f6309d0("usbphy_init_seq") != 0x0)) goto loc_8f600be8;
+
+loc_8f600bf0:
+    loc_ffffffff8f656968(0x2, "USB Phy init sequence is 0x%08x\n", 0x0);
+    r4 = 0x0;
+    goto loc_8f600c04;
+
+loc_8f600be8:
+    loc_ffffffff8f656968();
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "USB PHY not tuned!\n");
+    goto loc_8f600c30;
+

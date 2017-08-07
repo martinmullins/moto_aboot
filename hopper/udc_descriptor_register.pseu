@@ -1,0 +1,11 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r2 = *0x8f7112f4;
+    r1 = *0x8f6b7948;
+    *0x8f6b7948 = arg0;
+    r3 = *0x8f7112f4;
+    *arg0 = r1;
+    if (r2 != r3) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

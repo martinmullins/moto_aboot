@@ -1,0 +1,33 @@
+    r8 = arg3;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x1c;
+    r4 = 0x0;
+    r10 = sp + 0xf;
+    r5 = arg0;
+    r11 = arg1;
+    s0 = arg2;
+    r0 = r4;
+    do {
+            COND = r3 < 0x0;
+            if (COND) {
+                    r3 = 0x0;
+            }
+            if (r4 >= r8) {
+                    r3 = 0x0;
+            }
+            if (r3 == 0x0) {
+                break;
+            }
+            r6 = r4 + 0x1;
+            r0 = loc_ffffffff8f664f8c(r5, sp + 0x10, 0x6, 0x2, r10);
+            if (r0 == 0x0) {
+                    r2 = 0x18;
+                    asm{ uxtab      r0, r5, r3 };
+                    r0 = loc_ffffffff8f665364();
+            }
+            r4 = zero_extend_32(r6);
+    } while (true);
+    if (0x2 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

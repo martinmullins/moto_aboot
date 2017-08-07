@@ -1,0 +1,5 @@
+    asm{ mrs        r0, apsr };
+    r0 = r0 | 0x80;
+    asm{ msr        cpsr_c, r0 };
+    return r0;
+

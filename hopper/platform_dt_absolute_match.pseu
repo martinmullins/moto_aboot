@@ -1,0 +1,60 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x2c;
+    r4 = arg0;
+    s0 = *arg0;
+    r6 = arg1;
+    r8 = *(arg0 + 0x4);
+    r3 = *0x8f7112f4;
+    r5 = *(arg0 + 0x8);
+    stack[2039] = r3;
+    if ((((((s0 == zero_extend_32(loc_ffffffff8f60d6f8(arg0, arg1, arg2, r3, stack[2030]))) && (zero_extend_32(r8) == loc_ffffffff8f60d7ac())) && (zero_extend_32(r5) == loc_ffffffff8f60d7e8())) && ((r5 & !0xff000000 & !0xff) == loc_ffffffff8f601070())) && (*(r4 + 0xc) <= loc_ffffffff8f60d8ac())) && ((loc_ffffffff8f60d734() & !0xff000000 & !0xff) >= (*(r4 + 0x4) & !0xff000000 & !0xff))) {
+            if ((loc_ffffffff8f60d860(0x0) & !0xff000000 & !0xff) >= (*(r4 + 0x10) & !0xff000000 & !0xff)) {
+                    if ((loc_ffffffff8f60d860(0x1) & !0xff000000 & !0xff) >= (*(r4 + 0x14) & !0xff000000 & !0xff)) {
+                            if ((loc_ffffffff8f60d860(0x2) & !0xff000000 & !0xff) >= (*(r4 + 0x18) & !0xff000000 & !0xff)) {
+                                    if ((loc_ffffffff8f60d860(0x3) & !0xff000000 & !0xff) >= (*(r4 + 0x1c) & !0xff000000 & !0xff)) {
+                                            r0 = loc_ffffffff8f613088();
+                                            r5 = r0;
+                                            r0 = *(r0 + 0x8);
+                                            loc_ffffffff8f64ac90(r0, r4, 0x28);
+                                            r3 = *(r5 + 0x8);
+                                            r0 = 0x2;
+                                            r1 = "Add DTB entry %u/%08x/0x%08x/%x/%x/%x/%x/%x/%x/%x\n";
+                                            stack[2030] = *(r3 + 0x8);
+                                            stack[2031] = *(r3 + 0xc);
+                                            stack[2032] = *(r3 + 0x10);
+                                            stack[2033] = *(r3 + 0x14);
+                                            stack[2034] = *(r3 + 0x18);
+                                            stack[2035] = *(r3 + 0x1c);
+                                            stack[2036] = *(r3 + 0x20);
+                                            r2 = *(r3 + 0x24);
+                                            stack[2037] = r2;
+                                            asm{ ldm        r3, {r2, r3} };
+                                            loc_ffffffff8f656968(r0, r1, r2, r3, stack[2030], stack[2031], stack[2032], stack[2033], stack[2034], stack[2035], stack[2036], stack[2037]);
+                                            r0 = 0x1;
+                                            asm{ stm        r5, {r3, r6} };
+                                            *(*r6 + 0x4) = r5;
+                                            *r6 = r5;
+                                    }
+                                    else {
+                                            r0 = 0x0;
+                                    }
+                            }
+                            else {
+                                    r0 = 0x0;
+                            }
+                    }
+                    else {
+                            r0 = 0x0;
+                    }
+            }
+            else {
+                    r0 = 0x0;
+            }
+    }
+    else {
+            r0 = 0x0;
+    }
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

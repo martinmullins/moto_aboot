@@ -1,0 +1,46 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r7 = arg0;
+    stack[2041] = *0x8f7112f4;
+    asm{ ldm        r2, {r4, r6} };
+    if (r4 != 0x0) {
+            CMP(r6, 0x0);
+    }
+    if (CPU_FLAGS & NE) {
+            r5 = 0x0;
+    }
+    if (CPU_FLAGS & E) {
+            r5 = 0x1;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f60cd5c;
+
+loc_8f60cd4c:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Alert!! clock list not defined!\n");
+    goto loc_8f60cd94;
+
+loc_8f60cd94:
+    r0 = 0x0;
+    goto loc_8f60cd98;
+
+loc_8f60cd98:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f60cd5c:
+    r0 = *r4;
+    r0 = loc_ffffffff8f64b0ac(r0, r7);
+    if (r0 == 0x0) {
+            r0 = *(r4 + 0x4);
+    }
+    if (CPU_FLAGS & E) goto loc_8f60cd98;
+
+loc_8f60cd74:
+    r5 = r5 + 0x1;
+    r4 = r4 + 0x8;
+    if (r5 != r6) goto loc_8f60cd5c;
+
+loc_8f60cd84:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Alert!! Requested clock \"%s\" is not supported!", r7);
+    goto loc_8f60cd94;
+

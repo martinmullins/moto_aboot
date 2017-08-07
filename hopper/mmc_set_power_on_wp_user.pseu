@@ -1,0 +1,126 @@
+    r5 = arg3;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x64;
+    r8 = arg0;
+    r11 = arg1;
+    r4 = arg2;
+    r3 = *0x8f7112f4;
+    stack[2037] = r3;
+    loc_ffffffff8f64adc8(sp + 0x18, 0x0, 0x40, r3, stack[2014]);
+    r0 = loc_ffffffff8f60b0c4(r8);
+    if (r0 != 0x0) goto loc_8f60b3a8;
+
+loc_8f60b1a4:
+    r0 = loc_ffffffff8f60b028(r8);
+    if (r0 != 0x0) goto loc_8f60b3a8;
+
+loc_8f60b1b4:
+    r10 = r8 + 0x30;
+    r0 = loc_ffffffff8f608f6c(r8, r10, 0x1, 0xab, 0x10);
+    COND = r6 != 0x0;
+    if (CPU_FLAGS & NE) goto loc_8f60b200;
+
+loc_8f60b1e4:
+    r0 = loc_ffffffff8f609518(r8, r8 + 0x50);
+    COND = r6 == 0x0;
+    if (COND) goto loc_8f60b20c;
+
+loc_8f60b200:
+    loc_ffffffff8f656968();
+    r0 = r6;
+    goto loc_8f60b3a8;
+
+loc_8f60b3a8:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f60b20c:
+    r3 = *(r8 + 0x50);
+    if ((CPU_FLAGS & NE) || (CPU_FLAGS & E)) goto loc_8f60b330;
+
+loc_8f60b238:
+    r6 = 0x1;
+    r0 = loc_ffffffff8f60afd4(r8);
+    r2 = r0;
+    if (r5 == 0x0) {
+            CMP(r4, r2);
+    }
+    s0 = r0;
+    asm{ strd       r2, r3, [sp, #0x88 + var_80] };
+    if (CPU_FLAGS & B) goto loc_8f60b200;
+
+loc_8f60b268:
+    r0 = loc_ffffffff8f608f6c(r8, r10, 0x1, 0xab, 0x1);
+    COND = r7 == 0x0;
+    if (COND) goto loc_8f60b29c;
+
+loc_8f60b288:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to set power on WP for user\n");
+    r0 = r7;
+    goto loc_8f60b3a8;
+
+loc_8f60b29c:
+    r7 = 0x2710;
+    r3 = 0x0;
+    r2 = r4 + (s0 - 0x1) & 0x0 - s0;
+    r1 = r3;
+    r4 = r7;
+    r5 = r7;
+    r0 = r2;
+    asm{ ldrd       r2, r3, [sp, #0x88 + var_80] };
+    r6 = loc_ffffffff8f67b5cc(r0, r1, r2, r3, stack[2014]);
+    goto loc_8f60b2fc;
+
+loc_8f60b2fc:
+    if (r4 >= r6) goto loc_8f60b39c;
+
+loc_8f60b304:
+    if (loc_ffffffff8f607a2c(r8, sp + 0x18) != 0x0) goto loc_8f60b3a4;
+
+loc_8f60b31c:
+    r3 = 0x2;
+    if (r3 >= 0x0) goto loc_8f60b2e8;
+
+loc_8f60b330:
+    loc_ffffffff8f656968();
+    goto loc_8f60b3a4;
+
+loc_8f60b3a4:
+    r0 = 0x1;
+    goto loc_8f60b3a8;
+
+loc_8f60b2e8:
+    stack[2019] = r3;
+    if ((r3 & 0x100) == 0x0) goto loc_8f60b338;
+
+loc_8f60b2f4:
+    r4 = r4 + 0x1;
+    r11 = r11 + s0;
+    goto loc_8f60b2fc;
+
+loc_8f60b338:
+    asm{ ubfx       r3, r3, #0x9, #0x4 };
+    if (r3 == 0x7) goto loc_8f60b2f4;
+
+.l20:
+    if (CPU_FLAGS & NE) goto loc_8f60b330;
+
+loc_8f60b364:
+    r3 = stack[2019];
+    if ((r3 & 0x100) != 0x0) goto loc_8f60b2f4;
+
+loc_8f60b370:
+    asm{ ubfx       r3, r3, #0x9, #0x4 };
+    if (r3 == 0x7) goto loc_8f60b2f4;
+
+loc_8f60b37c:
+    r5 = r5 + 0x1;
+    loc_ffffffff8f60c5a0(0x3e8);
+    if (r5 != 0x2710) goto .l20;
+    goto loc_8f60b330;
+
+loc_8f60b39c:
+    r0 = 0x0;
+    goto loc_8f60b3a8;
+

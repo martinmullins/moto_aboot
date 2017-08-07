@@ -1,0 +1,58 @@
+    r0 = arg0;
+    stack[2041] = arg1;
+    stack[2042] = arg2;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    if (*0x8f6e0bd4 != 0x0) {
+            r0 = 0x0;
+    }
+    if (!CPU_FLAGS & NE) {
+            r0 = loc_ffffffff8f633070("smb1359");
+            COND = r5 >= 0x0;
+            if (!COND) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6811c5, "smb1359");
+                    r0 = 0x0 ^ 0xffffffff;
+            }
+            else {
+                    if ((loc_ffffffff8f6309d0(0x8f69d038, r5, sp + 0x4) == 0x0) && (loc_ffffffff8f6309d0(0x8f69d081, r5, sp + 0x8) == 0x0)) {
+                            r0 = loc_ffffffff8f612c30(stack[2041], stack[2042], 0x61a80, 0x124f800);
+                            *0x8f6e0bd4 = r0;
+                            if (r0 == 0x0) {
+                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed initializing I2C to SMB1359\n");
+                                    r0 = 0x13 ^ 0xffffffff;
+                            }
+                            else {
+                                    r0 = loc_ffffffff8f6472dc();
+                                    if (r0 == 0x0) {
+                                            if (loc_ffffffff8f647270(0xc, 0x4d) != 0x0) {
+                                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "smb1359 set USB power source failed\n");
+                                            }
+                                            if (loc_ffffffff8f647270(0xa, 0x46) != 0x0) {
+                                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "smb1359 set DC power source failed\n");
+                                            }
+                                            if (loc_ffffffff8f64748c(0x41, 0x60, 0x0) != 0x0) {
+                                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f69eb30);
+                                            }
+                                            if (loc_ffffffff8f64748c(0x42, 0x10, 0x10) != 0x0) {
+                                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "smb1359 Thermistor monitor disable failed\n");
+                                            }
+                                            r0 = loc_ffffffff8f64748c(0xe, 0x10, 0x10);
+                                            COND = r4 == 0x0;
+                                            if (!COND) {
+                                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "smb1359 HVDCP adapter select is failed\n");
+                                            }
+                                            r0 = r4;
+                                    }
+                            }
+                    }
+                    else {
+                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6811c5, "smb1359");
+                            r0 = 0x0 ^ 0xffffffff;
+                    }
+            }
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

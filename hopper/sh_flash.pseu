@@ -1,0 +1,64 @@
+    COND = r4 == 0x0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x3c;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    if (!COND) {
+            asm{ ldrd       r2, r3, [r4, #0x8] };
+            COND = r1 != 0x0;
+            if (!COND) {
+                    loc_ffffffff8f6484ac(lr, "ASSERT FAILED at (%s:%d): %s\n", "app/mbm/sod.c", 0xae, "sh && sh->preamble.offset>0");
+            }
+    }
+    else {
+            loc_ffffffff8f6484ac(lr, "ASSERT FAILED at (%s:%d): %s\n", "app/mbm/sod.c", 0xae, "sh && sh->preamble.offset>0");
+    }
+    asm{ ldrd       r0, r1, [r4, #0x8] };
+    r0 = loc_ffffffff8f650ad0();
+    COND = r7 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to flash SOD header\n");
+            r7 = 0x13 ^ 0xffffffff;
+    }
+    else {
+            loc_ffffffff8f67a3d0();
+            stack[2041] = r7;
+            loc_ffffffff8f64b418(sp + 0x14, "sod.offset", 0x1f);
+            r0 = loc_ffffffff8f64b5d8(sp + 0x14, 0x3a);
+            r0 = loc_ffffffff8f635094();
+            if (r0 == 0x0) {
+                    loc_ffffffff8f64b21c(sp + 0x14, 0x8f686ac4, 0x1f);
+                    loc_ffffffff8f64b21c(sp + 0x14, 0x8f67c05c, 0x1f);
+                    r0 = loc_ffffffff8f64b5d8(sp + 0x14, 0x3a);
+                    r0 = loc_ffffffff8f635094();
+            }
+            if (zero_extend_32(r0 - 0x1) <= 0xfd) {
+                    if (r0 == 0x7) {
+                            asm{ ldrd       r4, r5, [r4, #0x8] };
+                            r2 = sp + 0x38;
+                            r0 = 0x0;
+                            r1 = sp + 0x14;
+                            r3 = 0x8;
+                            asm{ strd       r4, r5, [r2, #-0x30]! };
+                            loc_ffffffff8f67961c(r0, r1, r2, r3);
+                    }
+            }
+            else {
+                    if (r0 != 0xff) {
+                            asm{ ldrd       r4, r5, [r4, #0x8] };
+                            r2 = sp + 0x38;
+                            r0 = 0x0;
+                            r1 = sp + 0x14;
+                            r3 = 0x8;
+                            asm{ strd       r4, r5, [r2, #-0x30]! };
+                            loc_ffffffff8f67961c(r0, r1, r2, r3);
+                    }
+            }
+            loc_ffffffff8f67a310(0x0, "sod.offset");
+            loc_ffffffff8f679ff0(0x0);
+    }
+    r0 = r7;
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

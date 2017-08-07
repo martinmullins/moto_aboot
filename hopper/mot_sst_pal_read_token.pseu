@@ -1,0 +1,21 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    if (r0 == 0x0) {
+            r0 = 0xff;
+    }
+    r4 = 0x8f7112f4;
+    stack[2045] = *0x8f7112f4;
+    if (!CPU_FLAGS & E) {
+            r0 = loc_ffffffff8f67759c("sst_token");
+            if (r0 != 0x0) {
+                    r0 = 0xff;
+            }
+            if (CPU_FLAGS & E) {
+                    r0 = 0x0;
+            }
+    }
+    if (stack[2045] != *r4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

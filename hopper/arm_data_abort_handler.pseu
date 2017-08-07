@@ -1,0 +1,4 @@
+    r3 = *0x8f7112f4;
+    loc_ffffffff8f619614(arg0, 0x7 ^ 0xffffffff, "data abort, halting\n", r3, arg0, r3, arg2, lr);
+    return;
+

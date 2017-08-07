@@ -1,0 +1,15 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x54;
+    r5 = lr;
+    stack[2043] = *0x8f7112f4;
+    loc_ffffffff8f64a9f0(sp + 0xc, 0x40, "sdc%u_iface_clk", arg0, stack[2024]);
+    r0 = loc_ffffffff8f60cdc4(sp + 0xc, 0x0, 0x1);
+    COND = r2 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to set sdc1_iface_clk ret = %d\n");
+            r0 = loc_ffffffff8f6484ac(r5, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/acpuclock.c", 0x6b, 0x8f69c66f);
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

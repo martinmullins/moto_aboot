@@ -1,0 +1,44 @@
+    stack[2042] = r4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = lr;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    r0 = loc_ffffffff8f60cdc4("usb_iface_clk", 0x0, 0x1, r3, arg0, arg1, arg2, stack[2041], stack[2042], r5, r6, r7, 0x8f7112f4, lr);
+    COND = r2 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to set usb_iface_clk ret = %d\n");
+            loc_ffffffff8f6484ac(r4, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/acpuclock.c", 0x30, 0x8f69c66f);
+    }
+    r0 = loc_ffffffff8f60cdc4("usb_core_clk", 0x4c4b400, 0x1);
+    COND = r2 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to set usb_core_clk ret = %d\n");
+            loc_ffffffff8f6484ac(r4, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/acpuclock.c", 0x37, 0x8f69c66f);
+    }
+    loc_ffffffff8f60c558(0x14);
+    r6 = loc_ffffffff8f60cd18("usb_iface_clk");
+    r5 = loc_ffffffff8f60cd18("usb_core_clk");
+    loc_ffffffff8f60cb64(r6);
+    loc_ffffffff8f60cb64(r5);
+    loc_ffffffff8f60c558(0x14);
+    *0x1841000 = 0x1;
+    loc_ffffffff8f60c558(0x14);
+    *0x1841000 = 0x0;
+    loc_ffffffff8f60c558(0x14);
+    r0 = loc_ffffffff8f60cbe0(r6);
+    COND = r2 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to set usb_iface_clk after async ret = %d\n");
+            loc_ffffffff8f6484ac(r4, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/acpuclock.c", 0x53, 0x8f69c66f);
+    }
+    r0 = loc_ffffffff8f60cbe0(r5);
+    COND = r2 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to set usb_iface_clk after async ret = %d\n");
+            r0 = loc_ffffffff8f6484ac(r4, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/acpuclock.c", 0x5b, 0x8f69c66f);
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,13 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    r0 = loc_ffffffff8f60bbd4(arg0, arg1, arg2);
+    COND = r5 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: mmc_erase_card() failed\n", "target_mmc_erase");
+    }
+    r0 = r5;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

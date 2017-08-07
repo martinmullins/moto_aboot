@@ -1,0 +1,23 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = *0x8f70da50;
+    stack[2043] = *0x8f7112f4;
+    if (r4 == 0x0) {
+            loc_ffffffff8f656968(r4, "PIV process not started\n");
+            r0 = r4;
+    }
+    else {
+            if (*0x8f70da8c != 0x2) {
+                    loc_ffffffff8f656968(0x0, "PIV process not done\n");
+                    r0 = 0x0 ^ 0xffffffff;
+            }
+            else {
+                    loc_ffffffff8f64adc8(0x8f6eda40, 0x0, 0x20000);
+                    r0 = 0x0;
+                    *0x8f70da50 = r0;
+            }
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

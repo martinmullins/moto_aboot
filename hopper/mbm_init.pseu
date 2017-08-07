@@ -1,0 +1,136 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x48;
+    r1 = 0x0;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    loc_ffffffff8f64adc8(sp + 0x20, r1, 0x21, r3, stack[2024], stack[2025], stack[2026], stack[2027], stack[2028], stack[2029], stack[2030]);
+    r4 = loc_ffffffff8f63787c();
+    loc_ffffffff8f673b44();
+    loc_ffffffff8f6794a8();
+    loc_ffffffff8f62bc6c();
+    loc_ffffffff8f678160();
+    loc_ffffffff8f60dcc0();
+    if (r4 != 0x20000) {
+            CMP(r4, 0x8000);
+    }
+    if (!CPU_FLAGS & E) {
+            r1 = "Forcing modem shutdown\n";
+            loc_ffffffff8f656968(0x1, r1);
+            loc_ffffffff8f61a8d0();
+    }
+    if (r4 == 0x0) {
+            r1 = "powerup reason INVALID_TURN_ON: power down.\n";
+            loc_ffffffff8f656968(0x1, r1);
+            r3 = *0x8f6ac0f0;
+            *0x8f6ac0f0 = r3 + 0x1;
+            if (r3 == 0x0) {
+                    loc_ffffffff8f619448();
+            }
+            loc_ffffffff8f601a7c();
+            loc_ffffffff8f6008c0();
+    }
+    if (loc_ffffffff8f67b38c("security_test_cert") != 0x0) {
+            r1 = "SRK.CA614.wtls.crt";
+    }
+    if (CPU_FLAGS & NE) {
+            r4 = r1;
+    }
+    if (!CPU_FLAGS & NE) {
+            r4 = loc_ffffffff8f6326f8("boot_srk");
+            loc_ffffffff8f6326f8("ap_srk");
+    }
+    if ((loc_ffffffff8f6742ec(r4) == 0x0) || (loc_ffffffff8f673228() == 0x0)) goto loc_8f61d0d8;
+
+loc_8f61d0c8:
+    loc_ffffffff8f6010a4();
+    loc_ffffffff8f60dd74(0x77665501);
+    goto loc_8f61d0d4;
+
+loc_8f61d0d4:
+    goto loc_8f61d0d4;
+
+loc_8f61d0d8:
+    if (loc_ffffffff8f6504a4() >= 0x0) {
+            loc_ffffffff8f6534d0(0x8f6ac19c);
+            if ((loc_ffffffff8f652cdc() == 0x0) && (loc_ffffffff8f67376c() != 0x0)) {
+                    loc_ffffffff8f656968(0x4, "Invalid GPT, please re-flash it");
+                    loc_ffffffff8f652c14();
+            }
+    }
+    loc_ffffffff8f656790();
+    *(0xffffffffffffffc0 + sp + 0x48) = loc_ffffffff8f6784a4(0x0);
+    r0 = loc_ffffffff8f6786f0(0xffffffffffffffc0 + sp + 0x48);
+    if ((stack[2026] != -0x1) && (r0 != 0x0)) {
+            r0 = loc_ffffffff8f6787c8();
+            loc_ffffffff8f656968(0x1, "Time is: \"%s\"\n", r0);
+    }
+    loc_ffffffff8f62b564();
+    loc_ffffffff8f65620c();
+    if (((loc_ffffffff8f6317c8() == 0x0) && (loc_ffffffff8f61caf4("bootmode", sp + 0xc, 0x11) != 0x0)) && (loc_ffffffff8f64b0ac(sp + 0xc, "factory") == 0x0)) {
+            loc_ffffffff8f656968(0x1, "Configuring device power for factory mode\n");
+            loc_ffffffff8f601144();
+    }
+    loc_ffffffff8f600990();
+    if (loc_ffffffff8f61caf4("device", sp + 0x20, 0x21) != 0x0) {
+            r7 = loc_ffffffff8f61a280();
+            r6 = loc_ffffffff8f61a17c();
+            r0 = loc_ffffffff8f63103c(sp + 0x20);
+            COND = r5 >= 0x0;
+            if (!COND) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Invalid product name %s\n", sp + 0x20);
+            }
+            else {
+                    r0 = loc_ffffffff8f61a378();
+                    COND = r1 == 0x0;
+                    if (!CPU_FLAGS & E) {
+                            r0 = loc_ffffffff8f6311f4(r5);
+                            COND = r4 >= 0x0;
+                            if (!COND) {
+                                    loc_ffffffff8f656968();
+                                    r4 = r6;
+                            }
+                    }
+                    else {
+                            loc_ffffffff8f656968();
+                            r4 = r6;
+                    }
+                    if (r5 == r7) {
+                            CMP(r4, r6);
+                    }
+                    if (!CPU_FLAGS & E) {
+                            r2 = r5;
+                            r1 = "Oops, mismatch IDs (%c:%c, %c:%c), reloading FDT...\n";
+                            r3 = r7;
+                            asm{ stm        sp, {r4, r6} };
+                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, r1, r2, r3);
+                            if (r5 == 0x0) {
+                                    r5 = r7;
+                            }
+                            if (r4 == 0x0) {
+                                    r4 = r6;
+                            }
+                            loc_ffffffff8f61a2e8();
+                            loc_ffffffff8f61a234(zero_extend_32(r4));
+                            loc_ffffffff8f630c98();
+                    }
+            }
+    }
+    if (loc_ffffffff8f673228() != 0x0) {
+            loc_ffffffff8f656968(0x1, "Disabling RAM dump for secure HW\n");
+            loc_ffffffff8f636604();
+    }
+    else {
+            if (loc_ffffffff8f6359f4() == 0x0) {
+                    loc_ffffffff8f656968(0x1, "Enabling RAM dump by default\n");
+                    loc_ffffffff8f636b00();
+            }
+    }
+    loc_ffffffff8f636e54();
+    if (loc_ffffffff8f6364dc() != 0x0) {
+            loc_ffffffff8f656968(0x1, "RAM dump is enabled\n");
+    }
+    r0 = loc_ffffffff8f63657c();
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

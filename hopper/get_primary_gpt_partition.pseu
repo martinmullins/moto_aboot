@@ -1,0 +1,39 @@
+    stack[2042] = arg0;
+    stack[2044] = arg2;
+    stack[2045] = 0x8f70f725;
+    stack[2046] = 0x8f7112f4;
+    stack[2047] = lr;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = 0x8f7112f4;
+    r4 = 0x8f70f725;
+    r1 = "primary_gpt";
+    r3 = *r5;
+    r0 = r4 + 0x38;
+    *(r4 + 0x28) = 0x3f;
+    stack[2043] = r3;
+    *(r4 + 0x20) = 0x0;
+    *(r4 + 0x21) = 0x0;
+    *(r4 + 0x22) = 0x0;
+    *(r4 + 0x23) = 0x0;
+    *(r4 + 0x24) = 0x0;
+    *(r4 + 0x25) = 0x0;
+    *(r4 + 0x26) = 0x0;
+    *(r4 + 0x27) = 0x0;
+    *(r4 + 0x29) = 0x0;
+    *(r4 + 0x2a) = 0x0;
+    *(r4 + 0x2b) = 0x0;
+    *(r4 + 0x2c) = 0x0;
+    *(r4 + 0x2d) = 0x0;
+    *(r4 + 0x2e) = 0x0;
+    *(r4 + 0x2f) = 0x0;
+    *(r4 + 0x30) = *(r4 + 0x30) | 0x4;
+    r3 = *(r4 + 0x31);
+    asm{ bfi        r3, r2, #0x0, #0x4 };
+    *(r4 + 0x31) = r3;
+    loc_ffffffff8f64ac90(r0, r1, 0x48, r3, stack[2042], stack[2043], stack[2044], stack[2045], stack[2046], stack[2047]);
+    r0 = r4;
+    if (stack[2043] != *r5) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

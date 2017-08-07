@@ -1,0 +1,21 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x54;
+    r4 = arg1;
+    r6 = arg0;
+    r7 = lr;
+    stack[2041] = *0x8f7112f4;
+    r0 = loc_ffffffff8f64ab04(0x40, 0x200);
+    *r4 = r0;
+    if (r0 == 0x0) {
+            stack[2022] = "card->ext_csd";
+            loc_ffffffff8f6484ac(r7, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm_shared/mmc_sdhci.c", 0x2a4, stack[2022]);
+    }
+    r0 = *r4;
+    loc_ffffffff8f64adc8(r0, 0x0, 0x4);
+    loc_ffffffff8f64adc8(sp + 0x8, 0x0, 0x40);
+    r2 = *r4;
+    r0 = loc_ffffffff8f607a2c(r6, sp + 0x8, r2, 0x1, stack[2022]);
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

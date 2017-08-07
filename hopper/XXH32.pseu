@@ -1,0 +1,287 @@
+    r2 = arg2;
+    r1 = arg1;
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2038] = *0x8f7112f4;
+    r3 = r0 + r1;
+    if ((r0 & 0x3) != 0x0) {
+            if (*0x8f6a3f48 == 0x1) {
+                    if (r1 > 0xf) {
+                            s0 = r3 - 0x10;
+                            r5 = r2 + 0x24234428;
+                            r4 = r2 + 0x85ebca77;
+                            r12 = r2 + 0x61c8864f;
+                            do {
+                                    r8 = 0x85ebca77;
+                                    r7 = 0x9e3779b1;
+                                    r10 = *r0;
+                                    r0 = r0 + 0x10;
+                                    r5 = r5 + r8 * r10;
+                                    r4 = r4 + r8 * *(r0 + 0xfffffffffffffff4);
+                                    r10 = *(r0 + 0xfffffffffffffff8);
+                                    asm{ ror        r5, r5, #0x13 };
+                                    r2 = r2 + r8 * r10;
+                                    r10 = *(r0 + 0xfffffffffffffffc);
+                                    asm{ ror        r4, r4, #0x13 };
+                                    COND = r0 < s0;
+                                    r5 = r7 * r5;
+                                    r12 = r12 + r8 * r10;
+                                    asm{ ror        r2, r2, #0x13 };
+                                    r4 = r7 * r4;
+                                    r2 = r7 * r2;
+                                    asm{ ror        ip, ip, #0x13 };
+                                    r12 = r7 * r12;
+                            } while (COND);
+                            asm{ ror        r5, r5, #0x1f };
+                            r2 = (ROR(r2, 0x14)) + r5 + (ROR(r4, 0x19));
+                            r12 = r2 + (ROR(r12, 0xe));
+                    }
+                    else {
+                            r12 = r2 + 0x165667b1;
+                    }
+                    r1 = r12 + r1;
+                    r12 = r3 - 0x4;
+                    do {
+                            if (r0 < r12) {
+                                    r2 = *r0;
+                                    r0 = r0 + 0x4;
+                            }
+                            if (CPU_FLAGS & B) {
+                                    r1 = r1 + 0xc2b2ae3d * r2;
+                            }
+                            if (CPU_FLAGS & B) {
+                                    asm{ rorls      r1, r1, #0xf };
+                            }
+                            if (CPU_FLAGS & B) {
+                                    r1 = 0x27d4eb2f * r1;
+                            }
+                    } while (CPU_FLAGS & B);
+                    while (r0 < r3) {
+                            r4 = 0x9e3779b1;
+                            r2 = *r0;
+                            r0 = r0 + 0x1;
+                            r1 = r1 + 0x165667b1 * r2;
+                            asm{ ror        r1, r1, #0x15 };
+                            r1 = r4 * r1;
+                    }
+            }
+            else {
+                    if (r1 > 0xf) {
+                            s0 = r3 - 0x10;
+                            r5 = r2 + 0x24234428;
+                            r4 = r2 + 0x85ebca77;
+                            r12 = r2 + 0x61c8864f;
+                            do {
+                                    r8 = 0x85ebca77;
+                                    r7 = 0x9e3779b1;
+                                    r10 = *r0;
+                                    r0 = r0 + 0x10;
+                                    asm{ rev        sl, sl };
+                                    r5 = r5 + r8 * r10;
+                                    r10 = *(r0 + 0xfffffffffffffff4);
+                                    asm{ rev        sl, sl };
+                                    r4 = r4 + r8 * r10;
+                                    r10 = *(r0 + 0xfffffffffffffff8);
+                                    asm{ ror        r5, r5, #0x13 };
+                                    asm{ rev        sl, sl };
+                                    r5 = r7 * r5;
+                                    r2 = r2 + r8 * r10;
+                                    r10 = *(r0 + 0xfffffffffffffffc);
+                                    asm{ ror        r4, r4, #0x13 };
+                                    COND = r0 < s0;
+                                    asm{ rev        sl, sl };
+                                    r4 = r7 * r4;
+                                    r12 = r12 + r8 * r10;
+                                    asm{ ror        r2, r2, #0x13 };
+                                    r2 = r7 * r2;
+                                    asm{ ror        ip, ip, #0x13 };
+                                    r12 = r7 * r12;
+                            } while (COND);
+                            asm{ ror        r5, r5, #0x1f };
+                            r12 = (ROR(r12, 0xe)) + (ROR(r2, 0x14)) + r5 + (ROR(r4, 0x19));
+                    }
+                    else {
+                            r12 = r2 + 0x165667b1;
+                    }
+                    r1 = r12 + r1;
+                    r12 = r3 - 0x4;
+                    while (r0 <= r12) {
+                            r5 = 0x27d4eb2f;
+                            r4 = 0xc2b2ae3d;
+                            r2 = *r0;
+                            r0 = r0 + 0x4;
+                            asm{ rev        r2, r2 };
+                            r1 = r1 + r4 * r2;
+                            asm{ ror        r1, r1, #0xf };
+                            r1 = r5 * r1;
+                    }
+                    while (r0 < r3) {
+                            r4 = 0x9e3779b1;
+                            r2 = *r0;
+                            r0 = r0 + 0x1;
+                            r1 = r1 + 0x165667b1 * r2;
+                            asm{ ror        r1, r1, #0x15 };
+                            r1 = r4 * r1;
+                    }
+            }
+    }
+    else {
+            if (*0x8f6a3f48 == 0x1) {
+                    if (r1 > 0xf) {
+                            s0 = r3 - 0x10;
+                            r5 = r2 + 0x24234428;
+                            r4 = r2 + 0x85ebca77;
+                            r12 = r2 + 0x61c8864f;
+                            do {
+                                    r8 = 0x85ebca77;
+                                    r7 = 0x9e3779b1;
+                                    r11 = *(r0 + 0x1);
+                                    r0 = r0 + 0x10;
+                                    r10 = *(r0 + 0xfffffffffffffff0);
+                                    r10 = r10 | r11 * 0x100 | *(r0 + 0xfffffffffffffff2) * 0x10000;
+                                    r10 = r10 | *(r0 + 0xfffffffffffffff3) * 0x1000000;
+                                    r11 = *(r0 + 0xfffffffffffffff5);
+                                    r5 = r5 + r8 * r10;
+                                    r10 = *(r0 + 0xfffffffffffffff4);
+                                    r10 = r10 | r11 * 0x100 | *(r0 + 0xfffffffffffffff6) * 0x10000;
+                                    r11 = *(r0 + 0xfffffffffffffff7);
+                                    asm{ ror        r5, r5, #0x13 };
+                                    r10 = r10 | r11 * 0x1000000;
+                                    r11 = *(r0 + 0xfffffffffffffff9);
+                                    r5 = r7 * r5;
+                                    r4 = r4 + r8 * r10;
+                                    r10 = *(r0 + 0xfffffffffffffff8);
+                                    r10 = r10 | r11 * 0x100 | *(r0 + 0xfffffffffffffffa) * 0x10000;
+                                    r11 = *(r0 + 0xfffffffffffffffb);
+                                    asm{ ror        r4, r4, #0x13 };
+                                    r10 = r10 | r11 * 0x1000000;
+                                    r11 = *(r0 + 0xfffffffffffffffd);
+                                    r4 = r7 * r4;
+                                    r2 = r2 + r8 * r10;
+                                    r10 = *(r0 + 0xfffffffffffffffc);
+                                    r10 = r10 | r11 * 0x100 | *(r0 + 0xfffffffffffffffe) * 0x10000;
+                                    r11 = *(r0 + 0xffffffffffffffff);
+                                    asm{ ror        r2, r2, #0x13 };
+                                    COND = r0 < s0;
+                                    r2 = r7 * r2;
+                                    r12 = r12 + r8 * (r10 | r11 * 0x1000000);
+                                    asm{ ror        ip, ip, #0x13 };
+                                    r12 = r7 * r12;
+                            } while (COND);
+                            asm{ ror        r5, r5, #0x1f };
+                            r12 = (ROR(r12, 0xe)) + (ROR(r2, 0x14)) + r5 + (ROR(r4, 0x19));
+                    }
+                    else {
+                            r12 = r2 + 0x165667b1;
+                    }
+                    r1 = r12 + r1;
+                    r12 = r3 - 0x4;
+                    while (r0 <= r12) {
+                            r5 = 0x27d4eb2f;
+                            r7 = *(r0 + 0x1);
+                            r0 = r0 + 0x4;
+                            r1 = r1 + 0xc2b2ae3d * (*(r0 + 0xfffffffffffffffc) | r7 * 0x100 | *(r0 + 0xfffffffffffffffe) * 0x10000 | *(r0 + 0xffffffffffffffff) * 0x1000000);
+                            asm{ ror        r1, r1, #0xf };
+                            r1 = r5 * r1;
+                    }
+                    while (r0 < r3) {
+                            r4 = 0x9e3779b1;
+                            r2 = *r0;
+                            r0 = r0 + 0x1;
+                            r1 = r1 + 0x165667b1 * r2;
+                            asm{ ror        r1, r1, #0x15 };
+                            r1 = r4 * r1;
+                    }
+            }
+            else {
+                    if (r1 > 0xf) {
+                            s0 = r3 - 0x10;
+                            r5 = r2 + 0x24234428;
+                            r4 = r2 + 0x85ebca77;
+                            r12 = r2 + 0x61c8864f;
+                            do {
+                                    r8 = 0x85ebca77;
+                                    r7 = 0x9e3779b1;
+                                    r11 = *(r0 + 0x1);
+                                    r0 = r0 + 0x10;
+                                    r10 = *(r0 + 0xfffffffffffffff0);
+                                    r10 = r10 | r11 * 0x100 | *(r0 + 0xfffffffffffffff2) * 0x10000;
+                                    r10 = r10 | *(r0 + 0xfffffffffffffff3) * 0x1000000;
+                                    r11 = *(r0 + 0xfffffffffffffff5);
+                                    asm{ rev        sl, sl };
+                                    r5 = r5 + r8 * r10;
+                                    r10 = *(r0 + 0xfffffffffffffff4);
+                                    r10 = r10 | r11 * 0x100 | *(r0 + 0xfffffffffffffff6) * 0x10000;
+                                    r11 = *(r0 + 0xfffffffffffffff7);
+                                    asm{ ror        r5, r5, #0x13 };
+                                    r10 = r10 | r11 * 0x1000000;
+                                    r11 = *(r0 + 0xfffffffffffffff9);
+                                    asm{ rev        sl, sl };
+                                    r5 = r7 * r5;
+                                    r4 = r4 + r8 * r10;
+                                    r10 = *(r0 + 0xfffffffffffffff8);
+                                    r10 = r10 | r11 * 0x100 | *(r0 + 0xfffffffffffffffa) * 0x10000;
+                                    r11 = *(r0 + 0xfffffffffffffffb);
+                                    asm{ ror        r4, r4, #0x13 };
+                                    r10 = r10 | r11 * 0x1000000;
+                                    r11 = *(r0 + 0xfffffffffffffffd);
+                                    asm{ rev        sl, sl };
+                                    r4 = r7 * r4;
+                                    r2 = r2 + r8 * r10;
+                                    r10 = *(r0 + 0xfffffffffffffffc);
+                                    r10 = r10 | r11 * 0x100 | *(r0 + 0xfffffffffffffffe) * 0x10000;
+                                    r11 = *(r0 + 0xffffffffffffffff);
+                                    asm{ ror        r2, r2, #0x13 };
+                                    COND = r0 < s0;
+                                    r10 = r10 | r11 * 0x1000000;
+                                    asm{ rev        sl, sl };
+                                    r2 = r7 * r2;
+                                    r12 = r12 + r8 * r10;
+                                    asm{ ror        ip, ip, #0x13 };
+                                    r12 = r7 * r12;
+                            } while (COND);
+                            asm{ ror        r5, r5, #0x1f };
+                            r2 = (ROR(r2, 0x14)) + r5 + (ROR(r4, 0x19));
+                            r12 = r2 + (ROR(r12, 0xe));
+                    }
+                    else {
+                            r12 = r2 + 0x165667b1;
+                    }
+                    r1 = r12 + r1;
+                    r12 = r3 - 0x4;
+                    while (r0 <= r12) {
+                            r5 = 0x27d4eb2f;
+                            r4 = 0xc2b2ae3d;
+                            r7 = *(r0 + 0x1);
+                            r0 = r0 + 0x4;
+                            r2 = *(r0 + 0xfffffffffffffffc);
+                            r2 = r2 | r7 * 0x100 | *(r0 + 0xfffffffffffffffe) * 0x10000;
+                            r2 = r2 | *(r0 + 0xffffffffffffffff) * 0x1000000;
+                            asm{ rev        r2, r2 };
+                            r1 = r1 + r4 * r2;
+                            asm{ ror        r1, r1, #0xf };
+                            r1 = r5 * r1;
+                    }
+                    do {
+                            if (r0 < r3) {
+                                    r2 = *r0;
+                                    r0 = r0 + 0x1;
+                            }
+                            if (CPU_FLAGS & S) {
+                                    r1 = r1 + 0x165667b1 * r2;
+                            }
+                            if (CPU_FLAGS & S) {
+                                    asm{ rorlo      r1, r1, #0x15 };
+                            }
+                            if (CPU_FLAGS & S) {
+                                    r1 = 0x9e3779b1 * r1;
+                            }
+                    } while (CPU_FLAGS & B);
+            }
+    }
+    r0 = 0xc2b2ae3d * (0x85ebca77 * (r1 ^ r1 / 0x8000) ^ 0x85ebca77 * (r1 ^ r1 / 0x8000) / 0x2000) ^ 0xc2b2ae3d * (0x85ebca77 * (r1 ^ r1 / 0x8000) ^ 0x85ebca77 * (r1 ^ r1 / 0x8000) / 0x2000) / 0x10000;
+    if (stack[2038] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

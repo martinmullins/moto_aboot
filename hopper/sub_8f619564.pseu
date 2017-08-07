@@ -1,0 +1,18 @@
+    r3 = arg3;
+    r2 = arg2;
+    r1 = arg1;
+    stack[2035] = arg0;
+    stack[2036] = r1;
+    stack[2037] = r2;
+    stack[2038] = r3;
+    stack[2039] = r4;
+    stack[2040] = r5;
+    stack[2041] = r6;
+    stack[2042] = r7;
+    stack[2043] = r8;
+    r0 = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0xc;
+    asm{ mrs        r1, spsr };
+    asm{ stm        r0, {r1, sp, lr} ^ };
+    r0 = loc_ffffffff8f619948(r0, r1, r2, r3, stack[2032], stack[2033], stack[2034], stack[2035], stack[2036], stack[2037], stack[2038], stack[2039], stack[2040], stack[2041], stack[2042], stack[2043]);
+    return r0;
+

@@ -1,0 +1,17 @@
+    stack[2044] = arg0;
+    stack[2046] = arg2;
+    stack[2047] = lr;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    *0x8f6b8abc = *0x8f6b8abc + *0x8f6b8ac0;
+    *(0xb021000 + 0x28) = *0x8f6b8acc;
+    asm{ dsb        sy };
+    r1 = *0x4a3000;
+    r0 = *0x8f6b8ac4;
+    r3 = *0x8f6b8ac8;
+    r0 = (r3)(r0, r1, 0x8f6b8ac4, r3, stack[2044], stack[2045], stack[2046], stack[2047]);
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

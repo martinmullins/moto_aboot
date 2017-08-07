@@ -1,0 +1,22 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x30;
+    r4 = arg0;
+    r5 = 0x8f7112f4;
+    stack[2043] = *0x8f7112f4;
+    if (*(arg0 + 0x4) != 0x0) {
+            r3 = 0x8f7112f4;
+            asm{ ldrsb      r3, [r0] };
+            if (r3 >= -0x2) {
+                    r6 = loc_ffffffff8f60c68c();
+                    asm{ ldrsb      r0, [r4] };
+                    r0 = loc_ffffffff8f656898();
+                    loc_ffffffff8f64a9f0(sp + 0xc, 0x20, "[%8u] %s - ", r6, r0);
+                    loc_ffffffff8f648408(sp + 0xc);
+            }
+            r0 = *(r4 + 0x4);
+            loc_ffffffff8f648408(r0);
+    }
+    if (stack[2043] != *r5) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

@@ -1,0 +1,28 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    r2 = *0x8f6ac0f0;
+    *0x8f6ac0f0 = r2 + 0x1;
+    if (r2 == 0x0) {
+            loc_ffffffff8f619448();
+    }
+    loc_ffffffff8f61b308();
+    r2 = *0x8f6ac0f0;
+    *0x8f6ac0f0 = r2 - 0x1;
+    COND = r2 != 0x1;
+    r2 = stack[2043];
+    r3 = *0x8f7112f4;
+    if (!COND) {
+            if (r2 == r3) {
+                    loc_ffffffff8f619438();
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (r2 != r3) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

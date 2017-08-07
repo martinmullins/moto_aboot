@@ -1,0 +1,82 @@
+    r7 = arg3;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x28;
+    s0 = arg0;
+    r6 = arg1;
+    r5 = arg2;
+    r3 = *0x8f7112f4;
+    stack[2039] = r3;
+    r0 = loc_ffffffff8f6798a8(arg0, arg1, arg2, r3, stack[2030], stack[2031], stack[2032], stack[2033], stack[2034], stack[2035], stack[2036], stack[2037], stack[2038]);
+    r4 = r0;
+    if (r0 > r7) {
+            r10 = 0x0;
+    }
+    if (CPU_FLAGS & B) {
+            r10 = 0x1;
+    }
+    if (r0 == 0x0) {
+            r10 = 0x0;
+    }
+    if (r10 == 0x0) goto loc_8f655248;
+
+loc_8f655140:
+    if (loc_ffffffff8f6797bc(s0, r6, r5, r4) == 0x0) goto loc_8f655208;
+
+loc_8f65515c:
+    r3 = *(0xffffffffffffffff + r5 + r4);
+    if (r3 == 0x0) goto loc_8f65517c;
+
+loc_8f65516c:
+    if (r4 != r7) {
+            r3 = 0x0;
+    }
+    if (CPU_FLAGS & NE) {
+            *(r5 + r4) = r3;
+    }
+    if (CPU_FLAGS & E) goto loc_8f655208;
+
+loc_8f65517c:
+    stack[2039] = 0x0;
+    loc_ffffffff8f64b418(sp + 0x4, r6, 0x1f, 0x0, stack[2030]);
+    r0 = loc_ffffffff8f64b5d8(sp + 0x4, 0x3a);
+    r0 = loc_ffffffff8f654ff4();
+    if (r0 == 0x0) {
+            loc_ffffffff8f64b21c(sp + 0x4, 0x8f686ac4, 0x1f);
+            loc_ffffffff8f64b21c(sp + 0x4, 0x8f67c04d, 0x1f);
+            r0 = loc_ffffffff8f64b5d8(sp + 0x4, 0x3a);
+            r0 = loc_ffffffff8f654ff4();
+    }
+    if (r0 != 0xff) goto loc_8f655210;
+
+loc_8f6551f4:
+    loc_ffffffff8f654e98();
+    loc_ffffffff8f656968();
+    goto loc_8f655208;
+
+loc_8f655208:
+    r0 = 0x0;
+    goto loc_8f655260;
+
+loc_8f655260:
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f655210:
+    r0 = loc_ffffffff8f679520(s0, sp + 0x4, r5, r4);
+    COND = r4 != 0x0;
+    if (COND) {
+            r0 = r5;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f655260;
+
+loc_8f655230:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "!!! utag_validation FAIL for %s:%s\n", r6, r5);
+    goto loc_8f655208;
+
+loc_8f655248:
+    if (r0 >= r7) {
+            loc_ffffffff8f656968();
+    }
+    goto loc_8f655208;
+

@@ -1,0 +1,12 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x18;
+    r4 = 0x8f7112f4;
+    asm{ ubfx       r2, r0, #0x8, #0x8 };
+    r3 = *r4;
+    loc_ffffffff8f611ca4(sp + 0x4, sp + 0xc);
+    r0 = 0x0;
+    if (r3 != *r4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

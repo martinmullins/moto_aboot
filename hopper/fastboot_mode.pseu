@@ -1,0 +1,50 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    loc_ffffffff8f656968(0x1, "Entering fastboot mode\n", arg2, r3, arg0, arg1, arg2, stack[2043], r4, r5, 0x8f7112f4, lr);
+    loc_ffffffff8f656968(0x6, 0x8f682528, 0x8f6c02ec);
+    if (loc_ffffffff8f636aac() != 0x0) {
+            loc_ffffffff8f656968(0x6, "New RAM dump available");
+            loc_ffffffff8f656968(0x6, "  (see 'fastboot oem ramdump')");
+    }
+    *0x8f6ac1b0 = 0x6;
+    *0x8f6ac1b4 = 0x0;
+    loc_ffffffff8f61ab4c(0x8f7114b8, 0x0, 0x1, 0x8f6ac1b4);
+    r0 = loc_ffffffff8f61b490("boot_handler", 0x8f61d5f8, 0x0, 0x10, 0x2000);
+    *0x8f6c02e8 = r0;
+    if (r0 == 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: boot_handler thread_create fail\n", "fastboot_mode");
+    }
+    else {
+            loc_ffffffff8f61b6fc();
+    }
+    loc_ffffffff8f61d428();
+    loc_ffffffff8f6623b4();
+    loc_ffffffff8f63f924(0x32);
+    loc_ffffffff8f6341bc();
+    (*(0x8f6ac374 + 0x4))("fastboot_screen", 0x1);
+    r0 = *0x8f7114b4;
+    loc_ffffffff8f60642c(r0);
+    if (loc_ffffffff8f605ca4(*0x8f7114b4) == -0x1) {
+            loc_ffffffff8f656968();
+            r3 = *0x8f6ac0f0;
+            *0x8f6ac0f0 = r3 + 0x1;
+            if (r3 == 0x0) {
+                    loc_ffffffff8f619448();
+            }
+            loc_ffffffff8f601a7c();
+            loc_ffffffff8f60dd74(0x77665500);
+    }
+    loc_ffffffff8f60100c();
+    r4 = loc_ffffffff8f60155c();
+    r0 = loc_ffffffff8f601590();
+    loc_ffffffff8f623f54(r4, r0);
+    loc_ffffffff8f634b64();
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = loc_ffffffff8f605ed4();
+    }
+    return r0;
+

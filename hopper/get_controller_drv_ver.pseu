@@ -1,0 +1,17 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r7 = arg0;
+    stack[2041] = *0x8f7112f4;
+    if (*0x8f6acb6c != 0xffff) {
+            r5 = 0x0;
+    }
+    if (!CPU_FLAGS & NE) {
+            r5 = loc_ffffffff8f643b00(0x8f6acb6c, 0x8f6acb94, 0x1);
+            loc_ffffffff8f656968(0x2, "MOT panel controller driver ver = 0x%x\n", *0x8f6acb6c);
+    }
+    r0 = r5;
+    *r7 = *0x8f6acb6c;
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

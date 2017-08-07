@@ -1,0 +1,50 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = arg3;
+    r6 = arg0;
+    s0 = arg1;
+    r4 = arg2;
+    r8 = stack[2049];
+    stack[2040] = *0x8f7112f4;
+    if (*0x8f6c03cc != 0x0) goto loc_8f623340;
+
+loc_8f6232e0:
+    if ((loc_ffffffff8f64b0ac() == 0x0) || (loc_ffffffff8f64b0ac(r6, "recovery") == 0x0)) goto loc_8f623304;
+
+loc_8f623338:
+    *0x8f6c03cc = 0x1;
+    goto loc_8f623340;
+
+loc_8f623340:
+    if (loc_ffffffff8f62308c(r6, s0, r4, r5, r8) != -0x1) goto loc_8f62338c;
+
+loc_8f623360:
+    loc_ffffffff8f656968(0x0, "Failed to multiflash partition %s\n", r6);
+    goto loc_8f623378;
+
+loc_8f623378:
+    loc_ffffffff8f62192c();
+    r0 = 0x3;
+    *0x8f6c03cc = 0x0;
+    goto loc_8f6233b4;
+
+loc_8f6233b4:
+    if (stack[2040] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f62338c:
+    if (r8 != 0x0) {
+            *0x8f6c03cc = 0x0;
+            loc_ffffffff8f646e70();
+    }
+    loc_ffffffff8f656968(0x1, "Succeeded to multiflash partition %s\n", r6);
+    r0 = 0x1;
+    goto loc_8f6233b4;
+
+loc_8f623304:
+    if (r5 == 0x0) {
+            CMP(r4, 0x7);
+    }
+    if ((CPU_FLAGS & B) || (CPU_FLAGS & NE)) goto loc_8f623378;
+

@@ -1,0 +1,16 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    *0x8f6ed830 = 0x8fe00000;
+    r0 = loc_ffffffff8f64b470(0x8fe00000, "MBM_LOGGER", 0x10, 0x8f6ed830, arg0, stack[2043], arg2, 0x8fe00000, 0x8f7112f4, lr);
+    if (r0 != 0x0) {
+            r0 = 0x0;
+    }
+    if (!CPU_FLAGS & NE) {
+            loc_ffffffff8f656968(0x2, "boot seq = %d\n", *(0x8fe00000 + 0x10));
+            r0 = *(0x8fe00000 + 0x10);
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,55 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x10c;
+    r4 = arg0 + 0x10;
+    r8 = arg0;
+    stack[2037] = *0x8f7112f4;
+    r3 = sp + 0x4;
+    COND = r7 != 0x0;
+    r11 = arg1;
+    if (COND) {
+            r7 = 0x8 - r7;
+    }
+    r6 = 0x0;
+    r5 = r6;
+    r7 = r7 + r3;
+    goto loc_8f60f6f4;
+
+loc_8f60f6f4:
+    if (r6 >= r11) goto loc_8f60f778;
+
+loc_8f60f6fc:
+    if (*(r8 + 0xc) == 0x0) goto loc_8f60f71c;
+
+loc_8f60f708:
+    r0 = loc_ffffffff8f60f600();
+    COND = r5 != 0x0;
+    if (COND) goto loc_8f60f778;
+
+loc_8f60f714:
+    loc_ffffffff8f60c558(0x4);
+    goto loc_8f60f71c;
+
+loc_8f60f71c:
+    r0 = loc_ffffffff8f64ac90(r7, *(r4 + 0xfffffffffffffff4), *(r4 + 0xfffffffffffffff0));
+    *(r0 + 0x48) = r7;
+    *(r0 + 0x4c) = *(r4 + 0xfffffffffffffff0);
+    *(0x1aa0000 + 0x48) = r7;
+    *(0x1aa0000 + 0x4c) = *(r4 + 0xfffffffffffffff0);
+    asm{ dsb        sy };
+    r5 = r5 + loc_ffffffff8f60f454();
+    if (*(r4 + 0xfffffffffffffff8) != 0x0) {
+            loc_ffffffff8f60c558();
+    }
+    else {
+            loc_ffffffff8f60c5a0(0x50);
+    }
+    r6 = r6 + 0x1;
+    r4 = r4 + 0x10;
+    goto loc_8f60f6f4;
+
+loc_8f60f778:
+    r0 = r5;
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

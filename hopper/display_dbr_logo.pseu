@@ -1,0 +1,10 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    loc_ffffffff8f639d98(0x2, arg1);
+    loc_ffffffff8f639dd4(0x1);
+    r0 = (*(0x8f6ac374 + 0x4))("logo_screen", 0x1);
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,8 @@
+    sp = sp - 0x4 - 0x4 - 0x28;
+    r2 = *0x8f7112f4;
+    loc_ffffffff8f6124e0(arg0, sp + 0xc, 0x2, arg3, stack[2036], stack[2037], arg2, arg1, 0x1, sp + 0x7, arg1, 0x1, arg3, r2);
+    if (r2 != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

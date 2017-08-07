@@ -1,0 +1,260 @@
+    r3 = 0x8f7112f4;
+    COND = r6 == 0x0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x11c;
+    r7 = arg0;
+    stack[2037] = *r3;
+    if (COND) goto loc_8f6727c0;
+
+loc_8f672374:
+    r0 = loc_ffffffff8f64aacc(0xa46);
+    COND = r4 == 0x0;
+    if (COND) {
+            r3 = 0x1;
+    }
+    if (CPU_FLAGS & E) {
+            *r6 = r3;
+    }
+    if (CPU_FLAGS & E) goto loc_8f6727c0;
+
+loc_8f67238c:
+    if (r7 == 0x0) {
+            r3 = 0x1;
+    }
+    if (CPU_FLAGS & E) {
+            *r6 = r3;
+    }
+    if (CPU_FLAGS & E) goto loc_8f6724ac;
+
+loc_8f67239c:
+    loc_ffffffff8f672c38(sp + 0x104);
+    if (loc_ffffffff8f66c3f4(r4, 0xa46) != 0x0) goto loc_8f6723cc;
+
+loc_8f6723b8:
+    loc_ffffffff8f656968(0x1, "read datablock error: %x\n", 0xff);
+    goto loc_8f672438;
+
+loc_8f672438:
+    r3 = 0x3;
+    goto loc_8f6724a4;
+
+loc_8f6724a4:
+    *r6 = r3;
+    goto loc_8f6724ac;
+
+loc_8f6724ac:
+    loc_ffffffff8f64ab9c();
+    goto loc_8f6727c0;
+
+loc_8f6727c0:
+    r5 = 0xff;
+    goto loc_8f6727c4;
+
+loc_8f6727c4:
+    r0 = r5;
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f6723cc:
+    if (*(r4 + 0x2) != 0x0) goto loc_8f67242c;
+
+loc_8f6723d8:
+    r5 = *(r4 + 0x3);
+    if (r5 != 0x1) goto loc_8f67242c;
+
+loc_8f6723e4:
+    loc_ffffffff8f656968(r5, "cid_get_cid_data: Version 1 datablock\n");
+    r8 = r4 + 0xe2;
+    if (loc_ffffffff8f663924(r4, 0xf0, sp + 0x103) != 0xf) {
+            loc_ffffffff8f656968(r5, "validate header error: %x\n", 0xff);
+            *r6 = 0x4;
+    }
+    if (loc_ffffffff8f662690(r8, 0x0, 0x0) == 0xf) goto loc_8f672470;
+
+loc_8f672458:
+    loc_ffffffff8f656968(0x1, "validate cert chain error: %x\n", 0xff);
+    r3 = 0x5;
+    goto loc_8f6724a4;
+
+loc_8f672470:
+    if (loc_ffffffff8f6627f8(r4, 0x62, r4 + 0x62, 0x80, r8) == 0xf) goto loc_8f6724b4;
+
+loc_8f672490:
+    loc_ffffffff8f656968(0x1, "validate signature error: %x\n", 0xff);
+    r3 = 0x6;
+    goto loc_8f6724a4;
+
+loc_8f6724b4:
+    r11 = *(r4 + 0x4e);
+    r10 = *(r4 + 0x4f);
+    s0 = *(r4 + 0x50);
+    r8 = *(r4 + 0x51);
+    lr = *(r4 + 0x52);
+    r12 = *(r4 + 0x53);
+    r0 = *(r4 + 0x54);
+    r1 = *(r4 + 0x55);
+    r2 = *(r4 + 0x56);
+    if ((((((((((((((r11 == 0xff) && (r10 == 0xff)) && (s0 == 0xff)) && (r8 == 0xff)) && (lr == 0xff)) && (r12 == 0xff)) && (r0 == 0xff)) && (r1 == 0xff)) && (r2 == 0xff)) && (*(r4 + 0x57) == 0xff)) && (*(r4 + 0x58) == 0xff)) && (*(r4 + 0x59) == 0xff)) && (*(r4 + 0x5a) == 0xff)) && (*(r4 + 0x5b) == 0xff)) {
+            if (*(r4 + 0x5c) == 0xff) {
+                    if (*(r4 + 0x5d) == 0xff) {
+                            if (*(r4 + 0x5e) == 0xff) {
+                                    if (*(r4 + 0x5f) == 0xff) {
+                                            if (*(r4 + 0x60) == 0xff) {
+                                                    r5 = *(r4 + 0x61);
+                                                    if (r5 == 0xff) {
+                                                            *r6 = 0x8;
+                                                            loc_ffffffff8f64ab9c(r4);
+                                                    }
+                                                    else {
+                                                            r5 = *(r4 + 0x2f);
+                                                            r3 = *(r4 + 0x2e);
+                                                            stack[1968] = r5;
+                                                            stack[1969] = *(r4 + 0x30);
+                                                            stack[1970] = *(r4 + 0x31);
+                                                            stack[1971] = *(r4 + 0x32);
+                                                            stack[1972] = *(r4 + 0x33);
+                                                            stack[1973] = *(r4 + 0x34);
+                                                            stack[1974] = *(r4 + 0x35);
+                                                            stack[1975] = *(r4 + 0x38);
+                                                            stack[1976] = *(r4 + 0x39);
+                                                            stack[1977] = *(r4 + 0x3a);
+                                                            stack[1978] = *(r4 + 0x3b);
+                                                            stack[1979] = *(r4 + 0x3c);
+                                                            r5 = 0x0;
+                                                            loc_ffffffff8f64a9f0(r7, 0x84, "%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%…", r3, stack[1968], stack[1969], stack[1970], stack[1971], stack[1972], stack[1973], stack[1974], stack[1975], stack[1976], stack[1977], stack[1978], stack[1979]);
+                                                            loc_ffffffff8f66c840(r4, 0x0, 0xa46);
+                                                            loc_ffffffff8f64ab9c(r4);
+                                                    }
+                                            }
+                                            else {
+                                                    r5 = *(r4 + 0x2f);
+                                                    r3 = *(r4 + 0x2e);
+                                                    stack[1968] = r5;
+                                                    stack[1969] = *(r4 + 0x30);
+                                                    stack[1970] = *(r4 + 0x31);
+                                                    stack[1971] = *(r4 + 0x32);
+                                                    stack[1972] = *(r4 + 0x33);
+                                                    stack[1973] = *(r4 + 0x34);
+                                                    stack[1974] = *(r4 + 0x35);
+                                                    stack[1975] = *(r4 + 0x38);
+                                                    stack[1976] = *(r4 + 0x39);
+                                                    stack[1977] = *(r4 + 0x3a);
+                                                    stack[1978] = *(r4 + 0x3b);
+                                                    stack[1979] = *(r4 + 0x3c);
+                                                    r5 = 0x0;
+                                                    loc_ffffffff8f64a9f0(r7, 0x84, "%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%…", r3, stack[1968], stack[1969], stack[1970], stack[1971], stack[1972], stack[1973], stack[1974], stack[1975], stack[1976], stack[1977], stack[1978], stack[1979]);
+                                                    loc_ffffffff8f66c840(r4, 0x0, 0xa46);
+                                                    loc_ffffffff8f64ab9c(r4);
+                                            }
+                                    }
+                                    else {
+                                            r5 = *(r4 + 0x2f);
+                                            r3 = *(r4 + 0x2e);
+                                            stack[1968] = r5;
+                                            stack[1969] = *(r4 + 0x30);
+                                            stack[1970] = *(r4 + 0x31);
+                                            stack[1971] = *(r4 + 0x32);
+                                            stack[1972] = *(r4 + 0x33);
+                                            stack[1973] = *(r4 + 0x34);
+                                            stack[1974] = *(r4 + 0x35);
+                                            stack[1975] = *(r4 + 0x38);
+                                            stack[1976] = *(r4 + 0x39);
+                                            stack[1977] = *(r4 + 0x3a);
+                                            stack[1978] = *(r4 + 0x3b);
+                                            stack[1979] = *(r4 + 0x3c);
+                                            r5 = 0x0;
+                                            loc_ffffffff8f64a9f0(r7, 0x84, "%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%…", r3, stack[1968], stack[1969], stack[1970], stack[1971], stack[1972], stack[1973], stack[1974], stack[1975], stack[1976], stack[1977], stack[1978], stack[1979]);
+                                            loc_ffffffff8f66c840(r4, 0x0, 0xa46);
+                                            loc_ffffffff8f64ab9c(r4);
+                                    }
+                            }
+                            else {
+                                    r5 = *(r4 + 0x2f);
+                                    r3 = *(r4 + 0x2e);
+                                    stack[1968] = r5;
+                                    stack[1969] = *(r4 + 0x30);
+                                    stack[1970] = *(r4 + 0x31);
+                                    stack[1971] = *(r4 + 0x32);
+                                    stack[1972] = *(r4 + 0x33);
+                                    stack[1973] = *(r4 + 0x34);
+                                    stack[1974] = *(r4 + 0x35);
+                                    stack[1975] = *(r4 + 0x38);
+                                    stack[1976] = *(r4 + 0x39);
+                                    stack[1977] = *(r4 + 0x3a);
+                                    stack[1978] = *(r4 + 0x3b);
+                                    stack[1979] = *(r4 + 0x3c);
+                                    r5 = 0x0;
+                                    loc_ffffffff8f64a9f0(r7, 0x84, "%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%…", r3, stack[1968], stack[1969], stack[1970], stack[1971], stack[1972], stack[1973], stack[1974], stack[1975], stack[1976], stack[1977], stack[1978], stack[1979]);
+                                    loc_ffffffff8f66c840(r4, 0x0, 0xa46);
+                                    loc_ffffffff8f64ab9c(r4);
+                            }
+                    }
+                    else {
+                            r5 = *(r4 + 0x2f);
+                            r3 = *(r4 + 0x2e);
+                            stack[1968] = r5;
+                            stack[1969] = *(r4 + 0x30);
+                            stack[1970] = *(r4 + 0x31);
+                            stack[1971] = *(r4 + 0x32);
+                            stack[1972] = *(r4 + 0x33);
+                            stack[1973] = *(r4 + 0x34);
+                            stack[1974] = *(r4 + 0x35);
+                            stack[1975] = *(r4 + 0x38);
+                            stack[1976] = *(r4 + 0x39);
+                            stack[1977] = *(r4 + 0x3a);
+                            stack[1978] = *(r4 + 0x3b);
+                            stack[1979] = *(r4 + 0x3c);
+                            r5 = 0x0;
+                            loc_ffffffff8f64a9f0(r7, 0x84, "%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%…", r3, stack[1968], stack[1969], stack[1970], stack[1971], stack[1972], stack[1973], stack[1974], stack[1975], stack[1976], stack[1977], stack[1978], stack[1979]);
+                            loc_ffffffff8f66c840(r4, 0x0, 0xa46);
+                            loc_ffffffff8f64ab9c(r4);
+                    }
+            }
+            else {
+                    r5 = *(r4 + 0x2f);
+                    r3 = *(r4 + 0x2e);
+                    stack[1968] = r5;
+                    stack[1969] = *(r4 + 0x30);
+                    stack[1970] = *(r4 + 0x31);
+                    stack[1971] = *(r4 + 0x32);
+                    stack[1972] = *(r4 + 0x33);
+                    stack[1973] = *(r4 + 0x34);
+                    stack[1974] = *(r4 + 0x35);
+                    stack[1975] = *(r4 + 0x38);
+                    stack[1976] = *(r4 + 0x39);
+                    stack[1977] = *(r4 + 0x3a);
+                    stack[1978] = *(r4 + 0x3b);
+                    stack[1979] = *(r4 + 0x3c);
+                    r5 = 0x0;
+                    loc_ffffffff8f64a9f0(r7, 0x84, "%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%…", r3, stack[1968], stack[1969], stack[1970], stack[1971], stack[1972], stack[1973], stack[1974], stack[1975], stack[1976], stack[1977], stack[1978], stack[1979]);
+                    loc_ffffffff8f66c840(r4, 0x0, 0xa46);
+                    loc_ffffffff8f64ab9c(r4);
+            }
+    }
+    else {
+            r5 = *(r4 + 0x2f);
+            r3 = *(r4 + 0x2e);
+            stack[1968] = r5;
+            stack[1969] = *(r4 + 0x30);
+            stack[1970] = *(r4 + 0x31);
+            stack[1971] = *(r4 + 0x32);
+            stack[1972] = *(r4 + 0x33);
+            stack[1973] = *(r4 + 0x34);
+            stack[1974] = *(r4 + 0x35);
+            stack[1975] = *(r4 + 0x38);
+            stack[1976] = *(r4 + 0x39);
+            stack[1977] = *(r4 + 0x3a);
+            stack[1978] = *(r4 + 0x3b);
+            stack[1979] = *(r4 + 0x3c);
+            r5 = 0x0;
+            loc_ffffffff8f64a9f0(r7, 0x84, "%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X#%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%…", r3, stack[1968], stack[1969], stack[1970], stack[1971], stack[1972], stack[1973], stack[1974], stack[1975], stack[1976], stack[1977], stack[1978], stack[1979]);
+            loc_ffffffff8f66c840(r4, 0x0, 0xa46);
+            loc_ffffffff8f64ab9c(r4);
+    }
+    goto loc_8f6727c4;
+
+loc_8f67242c:
+    loc_ffffffff8f656968(0x1, "cid_get_cid_data: Version 0 datablock\n");
+    goto loc_8f672438;
+

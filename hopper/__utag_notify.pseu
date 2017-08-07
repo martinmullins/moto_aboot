@@ -1,0 +1,43 @@
+    stack[2046] = r8;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r8 = arg3;
+    s0 = arg1;
+    r3 = *0x8f7112f4;
+    stack[2040] = r3;
+    r5 = loc_ffffffff8f6788e4(arg0, arg1, arg2, r3, arg0, stack[2040], arg2, r4, r5, r6, 0x8f7112f4, stack[2046], lr);
+    if (arg2 != 0x0) {
+            r0 = loc_ffffffff8f64ab44(0x1, 0x30);
+            COND = r4 != 0x0;
+            if (!COND) {
+                    loc_ffffffff8f656968(0x1 ^ 0xffffffff, 0x8f69b2a8);
+                    r0 = 0x4 ^ 0xffffffff;
+            }
+            else {
+                    loc_ffffffff8f64b2c0(r4 + 0x8, s0, 0x20);
+                    *(r4 + 0x28) = 0x8f6ac0f0;
+                    *(r4 + 0x2c) = r8;
+                    r2 = *0x8f6ac0f0;
+                    *0x8f6ac0f0 = r2 + 0x1;
+                    if (r2 == 0x0) {
+                            loc_ffffffff8f619448();
+                    }
+                    r6 = 0x8f6ac0f0;
+                    asm{ stm        r4, {r2, r3} };
+                    *(*(r5 + 0x30) + 0x4) = r4;
+                    *(r5 + 0x30) = r4;
+                    r4 = *r6;
+                    *r6 = r4 - 0x1;
+                    if (r4 == 0x1) {
+                            loc_ffffffff8f619438();
+                    }
+                    r0 = 0x0;
+            }
+    }
+    else {
+            r0 = 0x0 ^ 0xffffffff;
+    }
+    if (stack[2040] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

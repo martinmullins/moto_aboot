@@ -1,0 +1,38 @@
+    stack[2044] = r4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg0;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r5 = loc_ffffffff8f65385c(arg0, arg1, arg2, r3, arg0, stack[2043], stack[2044], r5, 0x8f7112f4, lr);
+    r0 = loc_ffffffff8f67305c(r4);
+    r3 = r0;
+    if (CPU_FLAGS & E) goto loc_8f673164;
+
+loc_8f673128:
+    if (r3 != 0x0) goto loc_8f673144;
+
+loc_8f673130:
+    loc_ffffffff8f656968(0x5, "System error!");
+    goto loc_8f67313c;
+
+loc_8f67313c:
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f673170;
+
+loc_8f673170:
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f673144:
+    r0 = (*(r3 + 0x18))();
+    if (r0 != -0x1) {
+            r0 = r0;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f673170;
+
+loc_8f673164:
+    loc_ffffffff8f656968();
+    goto loc_8f67313c;
+

@@ -1,0 +1,96 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r4 = arg0;
+    r5 = stack[2048];
+    r8 = arg1;
+    r10 = *arg0;
+    r7 = arg2;
+    r3 = *0x8f7112f4;
+    s0 = *(arg0 + 0x1);
+    stack[2037] = r3;
+    loc_ffffffff8f663b90("Checking SigRsp Version", arg1, arg2, r3, stack[2034]);
+    *r5 = 0xe;
+    if (*(r4 + 0x2) != 0x1) {
+            r0 = 0x55;
+    }
+    else {
+            loc_ffffffff8f663b90("Checking SigRsp Version - Success");
+            loc_ffffffff8f663b90("Checking SigRsp Message ID");
+            *r5 = 0xf;
+            if (*(r4 + 0x3) == 0x6) {
+                    loc_ffffffff8f663b90("Checking SigRsp Message ID - Success");
+                    loc_ffffffff8f663b90("Checking SigRsp Status");
+                    *r5 = 0x10;
+                    r2 = *(r4 + 0x4);
+                    r3 = *(r4 + 0x5);
+                    r3 = r3 | r2 * 0x100;
+                    COND = r3 != 0x0;
+                    if (!COND) {
+                            loc_ffffffff8f663b90("Checking SigRsp Status - Success");
+                            loc_ffffffff8f663b90("Checking SigRsp CRC");
+                            *r5 = 0xa;
+                            r0 = r4;
+                            r1 = *r4;
+                            r1 = *(r4 + 0x1) | r1 * 0x100;
+                            r3 = 0x0 ^ 0xffffffff;
+                            r1 = r1 - 0x4;
+                            r2 = r1;
+                            do {
+                                    r2 = r2 - 0x1;
+                                    COND = r2 < 0x0;
+                                    if (COND) {
+                                        break;
+                                    }
+                                    r11 = *r0;
+                                    r0 = r0 + 0x1;
+                                    r3 = *(0x8f6a5fe0 + zero_extend_32(r11 ^ r3) * 0x4) ^ r3 / 0x100;
+                            } while (true);
+                            r2 = r4 + r1;
+                            r0 = *(r4 + r1);
+                            r1 = *(r2 + 0x1);
+                            if ((r1 << r1 * 0x10000 | r0 * 0x1000000 | *(r2 + 0x3) | *(r2 + 0x2) * 0x100) == (r3 ^ 0xffffffff)) {
+                                    loc_ffffffff8f663b90("Checking SigRsp CRC - Success");
+                                    *r5 = 0x6;
+                                    loc_ffffffff8f663b90("CID OVERRIDE: SigRsp Serial Number Type & Length");
+                                    loc_ffffffff8f663b90("Checking SigRsp IMEI - Success");
+                                    *r5 = 0xc;
+                                    loc_ffffffff8f663b90("dbval_sigrsp_verify_outer - Check SigRsp Signature");
+                                    r0 = loc_ffffffff8f6627f8(r4, r4 + ((s0 | r10 * 0x100) - 0x9e0 - 0x8) - r4, r4 + ((s0 | r10 * 0x100) - 0x9e0 - 0x8), 0x80, r4 + ((s0 | r10 * 0x100) - 0x960 - 0x8));
+                                    s0 = r0;
+                                    if (r0 == 0xf) {
+                                            *r5 = 0x7;
+                                            loc_ffffffff8f663b90("dbval_sigrsp_verify_outer - Check Nonce");
+                                            if (loc_ffffffff8f66c874(r4 + 0x88, r8, 0x10) == 0x0) {
+                                                    *r5 = 0x9;
+                                                    loc_ffffffff8f663b90("dbval_sigrsp_verify_outer - Number of DB");
+                                                    if (r7 == (*(r4 + 0x99) | *(r4 + 0x98) * 0x100)) {
+                                                            r0 = s0;
+                                                    }
+                                                    else {
+                                                            r0 = 0x55;
+                                                    }
+                                            }
+                                            else {
+                                                    r0 = 0x55;
+                                            }
+                                    }
+                                    else {
+                                            r0 = 0x55;
+                                    }
+                            }
+                            else {
+                                    r0 = 0x55;
+                            }
+                    }
+                    else {
+                            r0 = 0x55;
+                    }
+            }
+            else {
+                    r0 = 0x55;
+            }
+    }
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

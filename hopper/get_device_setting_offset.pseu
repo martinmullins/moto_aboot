@@ -1,0 +1,223 @@
+    stack[2044] = r4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg0;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    loc_ffffffff8f656968(0x2, "try to get settings for %s...\n", r4, r3, arg0, stack[2043], stack[2044], 0x8f7112f4, r6, lr);
+    if (*0x8f6ac204 != -0x1) {
+            r0 = loc_ffffffff8f64c090(0x8f68ac00);
+            COND = r6 > 0x0;
+            if (!CPU_FLAGS & G) {
+                    if (*0x8f6ac1e8 != -0x1) {
+                            r0 = loc_ffffffff8f64c090(0x8f68ac00);
+                            COND = r6 > 0x0;
+                            if (!CPU_FLAGS & G) {
+                                    if (*0x8f6ac20c != -0x1) {
+                                            r0 = loc_ffffffff8f64c090(0x8f68ac00);
+                                            COND = r6 > 0x0;
+                                            if (!CPU_FLAGS & G) {
+                                                    if (*0x8f6ac1f8 != -0x1) {
+                                                            r0 = loc_ffffffff8f64c090(0x8f68ac00);
+                                                            COND = r6 <= 0x0;
+                                                            if (!COND) {
+                                                                    loc_ffffffff8f656968();
+                                                                    r0 = r6;
+                                                            }
+                                                            else {
+                                                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No settings for %s in FDT\n", r4);
+                                                                    r0 = 0x0 ^ 0xffffffff;
+                                                            }
+                                                    }
+                                                    else {
+                                                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No settings for %s in FDT\n", r4);
+                                                            r0 = 0x0 ^ 0xffffffff;
+                                                    }
+                                            }
+                                            else {
+                                                    loc_ffffffff8f656968();
+                                                    r0 = r6;
+                                            }
+                                    }
+                                    else {
+                                            if (*0x8f6ac1f8 != -0x1) {
+                                                    r0 = loc_ffffffff8f64c090(0x8f68ac00);
+                                                    COND = r6 <= 0x0;
+                                                    if (!COND) {
+                                                            loc_ffffffff8f656968();
+                                                            r0 = r6;
+                                                    }
+                                                    else {
+                                                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No settings for %s in FDT\n", r4);
+                                                            r0 = 0x0 ^ 0xffffffff;
+                                                    }
+                                            }
+                                            else {
+                                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No settings for %s in FDT\n", r4);
+                                                    r0 = 0x0 ^ 0xffffffff;
+                                            }
+                                    }
+                            }
+                            else {
+                                    loc_ffffffff8f656968();
+                                    r0 = r6;
+                            }
+                    }
+                    else {
+                            if (*0x8f6ac20c != -0x1) {
+                                    r0 = loc_ffffffff8f64c090(0x8f68ac00);
+                                    COND = r6 > 0x0;
+                                    if (!CPU_FLAGS & G) {
+                                            if (*0x8f6ac1f8 != -0x1) {
+                                                    r0 = loc_ffffffff8f64c090(0x8f68ac00);
+                                                    COND = r6 <= 0x0;
+                                                    if (!COND) {
+                                                            loc_ffffffff8f656968();
+                                                            r0 = r6;
+                                                    }
+                                                    else {
+                                                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No settings for %s in FDT\n", r4);
+                                                            r0 = 0x0 ^ 0xffffffff;
+                                                    }
+                                            }
+                                            else {
+                                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No settings for %s in FDT\n", r4);
+                                                    r0 = 0x0 ^ 0xffffffff;
+                                            }
+                                    }
+                                    else {
+                                            loc_ffffffff8f656968();
+                                            r0 = r6;
+                                    }
+                            }
+                            else {
+                                    if (*0x8f6ac1f8 != -0x1) {
+                                            r0 = loc_ffffffff8f64c090(0x8f68ac00);
+                                            COND = r6 <= 0x0;
+                                            if (!COND) {
+                                                    loc_ffffffff8f656968();
+                                                    r0 = r6;
+                                            }
+                                            else {
+                                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No settings for %s in FDT\n", r4);
+                                                    r0 = 0x0 ^ 0xffffffff;
+                                            }
+                                    }
+                                    else {
+                                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No settings for %s in FDT\n", r4);
+                                            r0 = 0x0 ^ 0xffffffff;
+                                    }
+                            }
+                    }
+            }
+            else {
+                    loc_ffffffff8f656968();
+                    r0 = r6;
+            }
+    }
+    else {
+            if (*0x8f6ac1e8 != -0x1) {
+                    r0 = loc_ffffffff8f64c090(0x8f68ac00);
+                    COND = r6 > 0x0;
+                    if (!CPU_FLAGS & G) {
+                            if (*0x8f6ac20c != -0x1) {
+                                    r0 = loc_ffffffff8f64c090(0x8f68ac00);
+                                    COND = r6 > 0x0;
+                                    if (!CPU_FLAGS & G) {
+                                            if (*0x8f6ac1f8 != -0x1) {
+                                                    r0 = loc_ffffffff8f64c090(0x8f68ac00);
+                                                    COND = r6 <= 0x0;
+                                                    if (!COND) {
+                                                            loc_ffffffff8f656968();
+                                                            r0 = r6;
+                                                    }
+                                                    else {
+                                                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No settings for %s in FDT\n", r4);
+                                                            r0 = 0x0 ^ 0xffffffff;
+                                                    }
+                                            }
+                                            else {
+                                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No settings for %s in FDT\n", r4);
+                                                    r0 = 0x0 ^ 0xffffffff;
+                                            }
+                                    }
+                                    else {
+                                            loc_ffffffff8f656968();
+                                            r0 = r6;
+                                    }
+                            }
+                            else {
+                                    if (*0x8f6ac1f8 != -0x1) {
+                                            r0 = loc_ffffffff8f64c090(0x8f68ac00);
+                                            COND = r6 <= 0x0;
+                                            if (!COND) {
+                                                    loc_ffffffff8f656968();
+                                                    r0 = r6;
+                                            }
+                                            else {
+                                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No settings for %s in FDT\n", r4);
+                                                    r0 = 0x0 ^ 0xffffffff;
+                                            }
+                                    }
+                                    else {
+                                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No settings for %s in FDT\n", r4);
+                                            r0 = 0x0 ^ 0xffffffff;
+                                    }
+                            }
+                    }
+                    else {
+                            loc_ffffffff8f656968();
+                            r0 = r6;
+                    }
+            }
+            else {
+                    if (*0x8f6ac20c != -0x1) {
+                            r0 = loc_ffffffff8f64c090(0x8f68ac00);
+                            COND = r6 > 0x0;
+                            if (!CPU_FLAGS & G) {
+                                    if (*0x8f6ac1f8 != -0x1) {
+                                            r0 = loc_ffffffff8f64c090(0x8f68ac00);
+                                            COND = r6 <= 0x0;
+                                            if (!COND) {
+                                                    loc_ffffffff8f656968();
+                                                    r0 = r6;
+                                            }
+                                            else {
+                                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No settings for %s in FDT\n", r4);
+                                                    r0 = 0x0 ^ 0xffffffff;
+                                            }
+                                    }
+                                    else {
+                                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No settings for %s in FDT\n", r4);
+                                            r0 = 0x0 ^ 0xffffffff;
+                                    }
+                            }
+                            else {
+                                    loc_ffffffff8f656968();
+                                    r0 = r6;
+                            }
+                    }
+                    else {
+                            if (*0x8f6ac1f8 != -0x1) {
+                                    r0 = loc_ffffffff8f64c090(0x8f68ac00);
+                                    COND = r6 <= 0x0;
+                                    if (!COND) {
+                                            loc_ffffffff8f656968();
+                                            r0 = r6;
+                                    }
+                                    else {
+                                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No settings for %s in FDT\n", r4);
+                                            r0 = 0x0 ^ 0xffffffff;
+                                    }
+                            }
+                            else {
+                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No settings for %s in FDT\n", r4);
+                                    r0 = 0x0 ^ 0xffffffff;
+                            }
+                    }
+            }
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

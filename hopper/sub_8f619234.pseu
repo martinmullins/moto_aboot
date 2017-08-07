@@ -1,0 +1,21 @@
+    r0 = arg0;
+    r7 = r0;
+    asm{ mrs        ip, apsr };
+    asm{ cpsid      aif };
+    if ((r7 & 0x2) != 0x0) {
+            asm{ mrc        p15, #0x0, r0, c1, c0, #0x0 };
+            if ((r0 & 0x4) == 0x0) {
+                    r0 = loc_ffffffff8f619320();
+                    asm{ mrc        p15, #0x0, r0, c1, c0, #0x0 };
+                    asm{ mcr        p15, #0x0, r0, c1, c0, #0x0 };
+            }
+    }
+    if ((r7 & 0x1) != 0x0) {
+            r0 = 0x0;
+            asm{ mcr        p15, #0x0, r0, c7, c5, #0x0 };
+            asm{ mrc        p15, #0x0, r0, c1, c0, #0x0 };
+            asm{ mcr        p15, #0x0, r0, c1, c0, #0x0 };
+    }
+    asm{ msr        cpsr_fc, ip };
+    return;
+

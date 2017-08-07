@@ -1,0 +1,27 @@
+    r11 = (sp - 0x4 - 0x4) + 0x4;
+    *(r11 + 0xffffffffffffffa8) = arg0;
+    *(r11 + 0xfffffffffffffff8) = *0x8f7112f4;
+    *(r11 + 0xffffffffffffffac) = 0x0;
+    *(r11 + 0xffffffffffffffb0) = *(r11 + 0xffffffffffffffa8);
+    *(r11 + 0xffffffffffffffb4) = 0x0;
+    loc_ffffffff8f64adc8(r11 - 0x48, 0x0, 0x40, 0x40, stack[2022], stack[2023]);
+    if (zero_extend_32(*0x8f6b8c80 ^ 0x1) != 0x0) {
+            *(r11 + 0xffffffffffffffac) = loc_ffffffff8f6166bc(0xc, 0x2, r11 - 0x50, 0x8, 0x0, 0x0);
+    }
+    else {
+            *(r11 + 0xffffffffffffffb8) = 0x2000c02;
+            *(r11 + 0xffffffffffffffbc) = 0x2;
+            *(r11 + 0xffffffffffffffc0) = *(r11 + 0xffffffffffffffa8);
+            *(r11 + 0xffffffffffffffc4) = 0x0;
+            *(r11 + 0xffffffffffffffac) = loc_ffffffff8f6168f8(r11 - 0x48, 0x0);
+    }
+    if (*(r11 + 0xffffffffffffffac) != 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Secure Config failed\n");
+            *(r11 + 0xffffffffffffffac) = 0x1;
+    }
+    r0 = *(r11 + 0xffffffffffffffac);
+    if (*(r11 + 0xfffffffffffffff8) != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

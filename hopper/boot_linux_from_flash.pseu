@@ -1,0 +1,271 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r3 = *0x8f7112f4;
+    r5 = 0x8f7112f4;
+    stack[2037] = r3;
+    r6 = loc_ffffffff8f63787c(arg0, arg1, arg2, r3, stack[2034]);
+    loc_ffffffff8f6377b0();
+    if (((loc_ffffffff8f674b74() == 0x0) || (loc_ffffffff8f674320() != 0x0)) || (loc_ffffffff8f620854() == 0x0)) goto loc_8f620ee0;
+
+loc_8f620ec8:
+    r1 = "ERROR: Invalid LOGO image\n";
+    loc_ffffffff8f656968(0x4, r1);
+    r2 = stack[2037];
+    r3 = *0x8f7112f4;
+    goto loc_8f62136c;
+
+loc_8f62136c:
+    if (r2 == r3) {
+            sp = sp + 0x18;
+            r0 = 0x1;
+            sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+            r2 = *0x8f7112f4;
+            *0x8f6c032c = r0;
+            if (r2 != *0x8f7112f4) {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    else {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f620ee0:
+    if (loc_ffffffff8f674a48() != 0x0) {
+            if (loc_ffffffff8f674cc4() == 0x3) {
+                    r4 = 0x0;
+            }
+            else {
+                    r0 = loc_ffffffff8f674cc4();
+                    COND = r4 != 0x0;
+                    if (COND) {
+                            r4 = 0x1;
+                    }
+            }
+    }
+    else {
+            if (loc_ffffffff8f673228() != 0x0) {
+                    r4 = loc_ffffffff8f674b30();
+            }
+            else {
+                    r4 = 0x0;
+            }
+    }
+    if (loc_ffffffff8f61e414() == 0x5) {
+            r4 = 0x4;
+    }
+    if (!CPU_FLAGS & E) {
+            if (r4 != 0x0) {
+                    r4 = 0x1;
+            }
+            if (!CPU_FLAGS & NE) {
+                    loc_ffffffff8f639c98();
+            }
+    }
+    if (r6 == 0x80) {
+            if (*0x8f6ac1b4 != 0x0) {
+                    do {
+                            if (loc_ffffffff8f6456c4() == 0x0) {
+                                    loc_ffffffff8f656968(0x1, "power key not pressed power down!\n");
+                                    loc_ffffffff8f634528();
+                            }
+                            loc_ffffffff8f61b944(0xa);
+                    } while (loc_ffffffff8f60c68c() < 0x707);
+            }
+    }
+    if (loc_ffffffff8f65385c(0x8f68503b) != 0x0) goto loc_8f620fb0;
+
+loc_8f620f5c:
+    r1 = "ERROR: No bootimage found. Skip to fastboot\n";
+    goto loc_8f621360;
+
+loc_8f621360:
+    loc_ffffffff8f656968();
+    r2 = stack[2037];
+    r3 = *r5;
+    goto loc_8f62136c;
+
+loc_8f620fb0:
+    if ((loc_ffffffff8f64689c(0xde8) == 0x0) && (loc_ffffffff8f61e414() != 0x4)) {
+            if (loc_ffffffff8f646664() != 0x0) {
+                    loc_ffffffff8f656cb4();
+                    loc_ffffffff8f603e48();
+            }
+            else {
+                    if ((loc_ffffffff8f646540() != 0x0) || (loc_ffffffff8f64661c() != 0x0)) {
+                            loc_ffffffff8f656cb4();
+                            loc_ffffffff8f603e48();
+                    }
+            }
+    }
+    if (r4 == 0x0) {
+            loc_ffffffff8f639d5c();
+    }
+    loc_ffffffff8f656cb4();
+    loc_ffffffff8f639d98(0x8f6ac374);
+    (*(0x8f6ac374 + 0x4))("logo_screen", 0x1);
+    loc_ffffffff8f656968(0x1, "Showing logo completed\n");
+    (*(0x8f6ac374 + 0xc))();
+    loc_ffffffff8f6623b4();
+    if ((loc_ffffffff8f673228() != 0x0) && (loc_ffffffff8f662654() == 0x0)) {
+            r0 = loc_ffffffff8f662564();
+            loc_ffffffff8f656968(0x4, "Invalid customer ID, contact dealer: 0x%04x", r0);
+    }
+    loc_ffffffff8f61e48c(0x1);
+    loc_ffffffff8f674e58();
+    r0 = loc_ffffffff8f620d1c();
+    COND = r6 == 0x0;
+    if (COND) goto loc_8f6210e8;
+
+loc_8f621084:
+    r1 = "ERROR: Failed to pass validaton, backup to fastboot\n";
+    loc_ffffffff8f656968(0x0, r1);
+    if (r6 != -0x1) goto loc_8f6210e8;
+
+.l6:
+    if (CPU_FLAGS & E) {
+            r1 = "ERROR: Failed to pass validaton, backup to fastboot\n";
+    }
+    if (CPU_FLAGS & E) goto loc_8f621360;
+
+loc_8f6210ac:
+    r0 = loc_ffffffff8f674b74();
+    if (r0 != 0x0) {
+            loc_ffffffff8f61e8ec();
+            (*(0x8f6ac374 + 0x4))("red_screen", 0x1);
+            loc_ffffffff8f61ac4c(0x8f7114d4);
+            r0 = (*(0x8f6ac374 + 0x4))("fastboot_screen", 0x1);
+    }
+    goto loc_8f621384;
+
+loc_8f621384:
+    if (stack[2037] != *r5) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f6210e8:
+    r0 = loc_ffffffff8f60155c();
+    r6 = r0;
+    *0x8f6c0330 = r0;
+    r0 = loc_ffffffff8f64af40();
+    if (r0 != 0x0) {
+            r0 = 0x4;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f621274;
+
+loc_8f621114:
+    r1 = *(r6 + 0x24);
+    *(r6 + 0x23f) = r0;
+    COND = r3 == 0x0;
+    if (COND) goto loc_8f62113c;
+
+.l10:
+    if (CPU_FLAGS & A) {
+            r1 = "ERROR: Invalid page size\n";
+    }
+    if (CPU_FLAGS & A) goto loc_8f621274;
+
+loc_8f621134:
+    r10 = r1 - 0x1;
+    goto loc_8f621144;
+
+loc_8f621144:
+    s0 = r6 + r1;
+    r11 = r10 ^ 0xffffffff;
+    r3 = *(r6 + 0x38) - 0x644d5241;
+    r1 = 0x0 - r3;
+    loc_ffffffff8f61ee5c(r6, r1 + r3 + CARRY(FLAGS));
+    r3 = *0x8f6c0330;
+    loc_ffffffff8f656968(0x2, "kernel  @ %x (%d bytes)\n", *(r3 + 0xc), *(r3 + 0x8));
+    r3 = *0x8f6c0330;
+    loc_ffffffff8f656968(0x2, "ramdisk @ %x (%d bytes)\n", *(r3 + 0x14), *(r3 + 0x10));
+    r3 = *0x8f6c0330;
+    loc_ffffffff8f656968(0x2, "devtree @ %x (%d bytes)\n", *(r3 + 0x20), *(r3 + 0x28));
+    r3 = *0x8f6c0330;
+    r6 = *(r3 + 0xc);
+    r2 = *(r3 + 0x14);
+    r8 = *(r3 + 0x8);
+    r8 = r11 & r10 + r8;
+    if ((r6 >= r2) || (r8 + r6 <= r2)) goto loc_8f6211dc;
+
+loc_8f621274:
+    loc_ffffffff8f656968();
+    goto loc_8f6212dc;
+
+loc_8f6212dc:
+    r1 = "Error: failed to load kernel!\n";
+    goto loc_8f621360;
+
+loc_8f6211dc:
+    r3 = *(r3 + 0x20);
+    if ((r6 >= r3) || (r8 + r6 < r3)) goto loc_8f621200;
+    goto loc_8f621274;
+
+loc_8f621200:
+    if (loc_ffffffff8f61fe3c(r6, r8) != 0x0) {
+            r3 = 0x52c;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f621294;
+
+loc_8f621218:
+    loc_ffffffff8f64ac90(r6, s0, r8);
+    r3 = *0x8f6c0330;
+    r6 = *(r3 + 0x14);
+    r2 = *(r3 + 0xc);
+    r7 = *(r3 + 0x10);
+    r7 = r10 + r7 & r11;
+    if ((r6 >= r2) || (r7 + r6 <= r2)) goto loc_8f621254;
+    goto loc_8f621274;
+
+loc_8f621254:
+    r3 = *(r3 + 0x20);
+    if ((r6 >= r3) || (r7 + r6 < r3)) goto loc_8f62127c;
+    goto loc_8f621274;
+
+loc_8f62127c:
+    if (loc_ffffffff8f61fe3c(r6, r7) == 0x0) goto loc_8f6212b0;
+
+loc_8f621290:
+    r3 = 0x539;
+    goto loc_8f621294;
+
+loc_8f621294:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s:%s(%d): Address overlap with aboot address.\n", "app/mbm/linux_boot.c", "deploy_kernel", r3);
+    goto loc_8f6212dc;
+
+loc_8f6212b0:
+    loc_ffffffff8f64ac90(0x8f6c0330, s0 + r8, r7);
+    r1 = r7 + s0 + r8;
+    if (loc_ffffffff8f6203fc(*0x8f6c0330, r1) != 0x0) goto .l14;
+    goto loc_8f6212dc;
+
+.l14:
+    if (CPU_FLAGS & NE) {
+            r1 = "Error: failed to finalize security policies\n";
+    }
+    if (CPU_FLAGS & NE) goto loc_8f621360;
+
+loc_8f6212fc:
+    r4 = *0x8f6c0330;
+    r8 = *(r4 + 0xc);
+    r7 = *(r4 + 0x20);
+    r0 = loc_ffffffff8f60088c();
+    r2 = *0x8f6c0330;
+    loc_ffffffff8f62067c(r8, r7, r4 + 0x40, r0, *(r2 + 0x14), *(r2 + 0x10));
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "ERROR: Linux boot failed.\n");
+    r0 = loc_ffffffff8f673228();
+    if (r0 == 0x0) goto loc_8f621384;
+
+loc_8f62134c:
+    r0 = loc_ffffffff8f674320();
+    if (r0 != 0x0) goto loc_8f621384;
+
+loc_8f621358:
+    r1 = "ERROR: Linux boot failed.\n";
+    goto loc_8f621360;
+
+loc_8f62113c:
+    r10 = 0x7ff;
+    r1 = 0x800;
+    goto loc_8f621144;
+

@@ -1,0 +1,355 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4e0 - 0x4;
+    r4 = arg0;
+    r8 = arg1;
+    s0 = arg2;
+    r3 = *0x8f7112f4;
+    r6 = lr;
+    stack[2037] = r3;
+    loc_ffffffff8f64adc8(sp + 0x58, 0x0, 0x40, r3, stack[1726]);
+    r5 = *(r4 + 0x28);
+    *(r4 + 0xc) = 0x1;
+    if (((*(r5 + 0x8) == 0x0) || (*(r5 + 0x9) != 0x0)) || (*(r4 + 0x8) != 0x3)) goto loc_8f608a58;
+
+loc_8f6087bc:
+    r0 = loc_ffffffff8f64ab04(0x40, 0x80);
+    COND = r7 != 0x0;
+    if (!COND) {
+            stack[1726] = "tuning_data";
+            loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm_shared/sdhci_msm.c", 0x26e, stack[1726]);
+    }
+    if (loc_ffffffff8f608270(r4) != 0x0) goto loc_8f608df8;
+
+loc_8f6087fc:
+    r0 = loc_ffffffff8f60843c(r4, *(*(r4 + 0x28) + 0xa));
+    if (r0 != 0x0) goto loc_8f608df8;
+
+loc_8f608814:
+    r3 = *r4;
+    *(r3 + 0x100) = *(r3 + 0x100) | 0x1;
+    r3 = *(r4 + 0x10);
+    if (r3 == 0x0) goto loc_8f608980;
+
+loc_8f608834:
+    *(0x32 + 0x184) = *(0x32 + 0x184) & !0x1;
+    r3 = *r4;
+    r6 = 0x32;
+    *(r3 + 0x184) = *(r3 + 0x184) & !0x40;
+    r3 = *r4;
+    *(r3 + 0x178) = *(r3 + 0x178) & !0x1;
+    r3 = *r4;
+    *(r3 + 0x178) = *(r3 + 0x178) | 0x2;
+    r3 = *r4;
+    *(r3 + 0x184) = *(r3 + 0x184) & !0x40;
+    *(*r4 + 0x130) = 0x11800ec;
+    *(*r4 + 0x134) = 0x3011111;
+    *(*r4 + 0x138) = 0x1201000;
+    *(*r4 + 0x13c) = 0x4;
+    *(*r4 + 0x140) = 0xcb732020;
+    *(*r4 + 0x144) = 0xb19;
+    *(*r4 + 0x150) = 0x4e2;
+    *(*r4 + 0x14c) = r0;
+    *(*r4 + 0x160) = 0x16334;
+    r3 = *r4;
+    *(r3 + 0x130) = *(r3 + 0x130) | 0x10000;
+    r3 = *r4;
+    *(r3 + 0x130) = *(r3 + 0x130) & !0x10000;
+    r3 = *r4;
+    *(r3 + 0x130) = *(r3 + 0x130) | 0x20000;
+    r3 = *r4;
+    *(r3 + 0x138) = *(r3 + 0x138) | 0x10000;
+    goto loc_8f60892c;
+
+loc_8f60892c:
+    r3 = *r4;
+    r1 = *(r3 + 0x164);
+    if ((r1 & 0x1) != 0x0) goto loc_8f608958;
+
+loc_8f60893c:
+    loc_ffffffff8f60c558(0x1);
+    r6 = r6 - 0x1;
+    COND = r6 != 0x0;
+    if (COND) goto loc_8f60892c;
+
+loc_8f6089c4:
+    loc_ffffffff8f656968();
+    goto loc_8f6089c8;
+
+loc_8f6089c8:
+    r6 = 0x1;
+    goto loc_8f6089e0;
+
+loc_8f6089e0:
+    loc_ffffffff8f64adc8(sp + 0xd8, 0x0, 0x40);
+    *(sp + 0xd8) = 0x15;
+    *(sp + 0xe2) = 0x1;
+    if (loc_ffffffff8f607a2c(r4, sp + 0xd8, 0x80, 0x1, stack[1726]) == 0x0) {
+            loc_ffffffff8f656968(0x2, "Sending CMD21 after HS400 calibration\n");
+    }
+    if (CPU_FLAGS & E) {
+            *(r5 + 0x9) = 0x1;
+    }
+    if (!CPU_FLAGS & E) {
+            r6 = 0x1;
+    }
+    goto loc_8f608dfc;
+
+loc_8f608dfc:
+    *(r4 + 0xc) = 0x0;
+    r0 = r6;
+    *(*(r4 + 0x28) + 0x8) = 0x1;
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f608958:
+    r2 = *(r3 + 0x164);
+    r2 = r2 & 0x7000000;
+    COND = r2 == 0x0;
+    if (COND) {
+            r1 = *(r3 + 0x184);
+    }
+    if (CPU_FLAGS & E) {
+            r1 = r1 | 0x40;
+    }
+    if (CPU_FLAGS & E) {
+            *(r3 + 0x184) = r1;
+    }
+    if (CPU_FLAGS & E) goto loc_8f6089dc;
+
+loc_8f608970:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "CDC error set during calibration: %x\n");
+    goto loc_8f6089c8;
+
+loc_8f6089dc:
+    r6 = 0x0;
+    goto loc_8f6089e0;
+
+loc_8f608980:
+    *(0x32 + 0x1b8) = loc_ffffffff8f61a144();
+    r6 = 0x32;
+    r3 = *r4;
+    *(r3 + 0x1b4) = *(r3 + 0x1b4) | 0x1;
+    goto loc_8f60899c;
+
+loc_8f60899c:
+    r3 = *r4;
+    if ((*(r3 + 0x108) & 0x800) != 0x0) goto loc_8f6089d0;
+
+loc_8f6089ac:
+    loc_ffffffff8f60c558(0x1);
+    r6 = r6 - 0x1;
+    COND = r6 != 0x0;
+    if (COND) goto loc_8f60899c;
+    goto loc_8f6089c4;
+
+loc_8f6089d0:
+    *(r3 + 0x1b0) = *(r3 + 0x1b0) | 0x8;
+    goto loc_8f6089dc;
+
+loc_8f608df8:
+    r6 = 0x1;
+    goto loc_8f608dfc;
+
+loc_8f608a58:
+    r3 = 0x8f67d950;
+    stack[1729] = 0x8f67db7c;
+    if (CPU_FLAGS & NE) {
+            r3 = 0x8f67db7c;
+    }
+    stack[1731] = r3;
+    r0 = loc_ffffffff8f64ab04();
+    stack[1730] = r0;
+    if (r0 == 0x0) {
+            stack[1726] = "tuning_data";
+            loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm_shared/sdhci_msm.c", 0x2c6, stack[1726]);
+    }
+    r0 = loc_ffffffff8f608270(r4);
+    if (r0 != 0x0) goto loc_8f608d48;
+
+loc_8f608abc:
+    r7 = r0;
+    r6 = r0;
+    goto loc_8f608ac4;
+
+loc_8f608ac4:
+    loc_ffffffff8f64adc8(sp + 0x18, 0x0, 0x40);
+    r5 = 0x0;
+    s0 = r5;
+    goto loc_8f608ae4;
+
+loc_8f608ae4:
+    r0 = loc_ffffffff8f60843c(r4, s0);
+    if (r0 != 0x0) goto loc_8f608d48;
+
+loc_8f608af8:
+    *(sp + 0x22) = 0x1;
+    if (loc_ffffffff8f607a2c(r4, sp + 0x18, 0x1, stack[1729], stack[1726], stack[1727], stack[1728], stack[1729]) == 0x0) {
+            r1 = stack[1731];
+            r2 = stack[1729];
+            if (loc_ffffffff8f64af40(stack[1730], r1, r2) == 0x0) {
+                    r1 = sp + 0x4e0;
+            }
+            if (CPU_FLAGS & E) {
+                    r2 = r1 + r5 * 0x4;
+            }
+            if (CPU_FLAGS & E) {
+                    r5 = r5 + 0x1;
+            }
+            if (CPU_FLAGS & E) {
+                    *(r2 + 0xfffffffffffffb78) = s0;
+            }
+    }
+    s0 = s0 + 0x1;
+    if (s0 != 0x10) goto loc_8f608ae4;
+
+loc_8f608b70:
+    if (r5 != 0x10) goto loc_8f608ba8;
+
+loc_8f608b78:
+    r6 = zero_extend_32(r6 + 0x1);
+    if (r6 > 0x3) goto loc_8f608ba4;
+
+loc_8f608b88:
+    r0 = loc_ffffffff8f6095f0(r4, r8, r6);
+    COND = r7 == 0x0;
+    if (COND) goto loc_8f608b78;
+    goto loc_8f608ac4;
+
+loc_8f608ba4:
+    r5 = 0x10;
+    goto loc_8f608ba8;
+
+loc_8f608ba8:
+    if (r7 != 0x0) {
+            loc_ffffffff8f6095f0(r4, r8, 0x0);
+    }
+    if (r5 == 0x0) goto loc_8f608d44;
+
+loc_8f608bc8:
+    r11 = sp + 0x98;
+    loc_ffffffff8f64adc8(sp + 0xd8, 0x0, 0x400);
+    loc_ffffffff8f64adc8(r11, 0x0, 0x40);
+    if (stack[1748] != 0x0) {
+            r7 = 0x0;
+    }
+    if (!CPU_FLAGS & NE) {
+            r3 = *(0xfffffffffffffb74 + r5 * 0x4 + sp + 0x4e0) - 0xf;
+            r7 = 0x0 - r3;
+            r7 = r7 + r3 + CARRY(FLAGS);
+    }
+    r0 = 0x0;
+    r12 = sp + 0x5c;
+    r2 = r0;
+    lr = r0;
+    do {
+            r8 = *(r12 + 0xfffffffffffffffc);
+            r6 = r6 << r2 * 0x4;
+            lr = lr + 0x1;
+            r10 = r12;
+            *(0xfffffffffffffbf8 + (r0 + r2 * 0x10) * 0x4 + sp + 0x4e0) = r8;
+            r1 = *(r0 + 0xfffffffffffffbb8);
+            r1 = r1 + 0x1;
+            *(r0 + 0xfffffffffffffbb8) = r1;
+            if (lr == r5) {
+                break;
+            }
+            r12 = r12 + 0x4;
+            if (r8 + 0x1 == *r10) {
+                    r0 = r0 + 0x1;
+            }
+            if (CPU_FLAGS & NE) {
+                    r2 = r2 + 0x1;
+            }
+            if (!CPU_FLAGS & NE) {
+                continue;
+            }
+            r0 = 0x0;
+    } while (true);
+    if (r5 > 0xf) {
+            r7 = 0x0;
+    }
+    if (CPU_FLAGS & B) {
+            r7 = r7 & 0x1;
+    }
+    if (r7 != 0x0) {
+            r8 = stack[1764];
+            r12 = sp + 0xd4;
+            r10 = r10 << r1 * 0x4;
+            r7 = r7 << r2 * 0x40;
+            r0 = 0x0;
+            while (r0 + r1 < 0xf) {
+                    r12 = r12 + 0x4;
+                    r0 = r0 + 0x1;
+                    *(r7 + r12 + r10) = *r12;
+                    if (r0 >= r8) {
+                        break;
+                    }
+                    else {
+                        continue;
+                    }
+            }
+            *(0xfffffffffffffbb8 + r6 + sp + 0x4e0) = r1 + 0x0;
+    }
+    r12 = 0x0;
+    lr = r12;
+    r0 = r12;
+    do {
+            r1 = *(r11 + r0 * 0x4);
+            if (r1 > lr) {
+                    r12 = r0;
+            }
+            r0 = r0 + 0x1;
+            if (CPU_FLAGS & B) {
+                    r1 = lr;
+            }
+            if (r0 < r2) {
+                    lr = r1;
+            }
+    } while (CPU_FLAGS & B);
+    r2 = sp + 0x4e0;
+    r1 = r1 + r1 * 0x2 >> (r1 + r1 * 0x2) / 0x4;
+    COND = r1 != 0x0;
+    if (COND) {
+            r1 = r1 - 0x1;
+    }
+    r6 = *(0xfffffffffffffbf8 + r2 + (r1 + r12 * 0x10) * 0x4);
+    if (r6 >= 0x0) goto loc_8f608d50;
+
+loc_8f608d44:
+    loc_ffffffff8f656968();
+    goto loc_8f608d48;
+
+loc_8f608d48:
+    r6 = 0x1;
+    goto loc_8f608dec;
+
+loc_8f608dec:
+    loc_ffffffff8f64ab9c(stack[1730]);
+    goto loc_8f608dfc;
+
+loc_8f608d50:
+    r0 = loc_ffffffff8f60843c(r4, r6);
+    if (r0 != 0x0) {
+            r6 = 0x0;
+    }
+    else {
+            *(*(r4 + 0x28) + 0xa) = r6;
+            if (r5 == 0x10) {
+                    *(sp + 0x18) = 0x15;
+                    *(sp + 0x22) = 0x1;
+                    r0 = loc_ffffffff8f607a2c(r4, sp + 0x18, stack[1730], 0x1, stack[1726], stack[1727], stack[1728]);
+                    COND = r6 != 0x0;
+                    if (!COND) {
+                            loc_ffffffff8f656968(0x2, "Sending CMD21 after CDR enable with default phases fail\n");
+                    }
+                    else {
+                            r6 = 0x0;
+                    }
+            }
+            else {
+                    r6 = 0x0;
+            }
+    }
+    goto loc_8f608dec;
+

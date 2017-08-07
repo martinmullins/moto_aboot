@@ -1,0 +1,29 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r6 = arg0;
+    s0 = arg1;
+    r4 = arg0;
+    stack[2039] = *0x8f7112f4;
+    while (r4 - r6 < s0) {
+            loc_ffffffff8f64a450("0x%08lx: ", r4);
+            r0 = "%08x %08x %08x %08x |";
+            r5 = 0x0;
+            asm{ ldm        r4, {r1, r2, r3} };
+            loc_ffffffff8f64a450(r0);
+            do {
+                    r7 = *(r5 + r4);
+                    if (loc_ffffffff8f64a14c(r7) != 0x0) {
+                            loc_ffffffff8f64a450(0x8f686e45, r7);
+                    }
+                    else {
+                            loc_ffffffff8f64a450(0x8f688719);
+                    }
+                    r5 = r5 + 0x1;
+            } while (r5 != 0x10);
+            r4 = r4 + 0x10;
+            loc_ffffffff8f64a450(0x8f69eec9);
+    }
+    if (stack[2039] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

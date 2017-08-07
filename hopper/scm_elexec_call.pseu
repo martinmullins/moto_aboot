@@ -1,0 +1,31 @@
+    r11 = (sp - 0x4 - 0x4 - 0x4) + 0x8;
+    r4 = lr;
+    *(r11 + 0xffffffffffffff98) = arg0;
+    *(r11 + 0xffffffffffffff94) = arg1;
+    *(r11 + 0xfffffffffffffff0) = *0x8f7112f4;
+    *(r11 + 0xffffffffffffffa0) = 0x1;
+    *(r11 + 0xffffffffffffffa4) = 0xf;
+    loc_ffffffff8f64adc8(r11 - 0x50, 0x0, 0x40, 0x40, stack[2018], stack[2019], stack[2020]);
+    asm{ strd       r0, r1, [r3] };
+    asm{ strd       r0, r1, [r3, #0x48] };
+    loc_ffffffff8f656968(0x1, "Jumping to kernel via monitor\n");
+    if (zero_extend_32(*0x8f6b8c80 ^ 0x1) != 0x0) {
+            *(r11 + 0xffffffffffffffa8) = 0x8f6b8c30;
+            *(r11 + 0xffffffffffffffac) = 0x50;
+            r0 = *(r11 + 0xffffffffffffffa0);
+            loc_ffffffff8f6166bc(r0, *(r11 + 0xffffffffffffffa4), *(r11 + 0xffffffffffffffa8), *(r11 + 0xffffffffffffffac), 0x0, 0x0);
+    }
+    else {
+            *(r11 + 0xffffffffffffffb0) = 0x200010f;
+            *(r11 + 0xffffffffffffffb4) = 0x12;
+            *(r11 + 0xffffffffffffffb8) = 0x8f6b8c30;
+            *(r11 + 0xffffffffffffffbc) = 0x50;
+            loc_ffffffff8f6168f8(r11 - 0x50, 0x0);
+    }
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to jump to kernel\n");
+    r0 = loc_ffffffff8f6484ac(r4, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm_shared/scm.c", 0x377, 0x8f680d48);
+    if (*(r11 + 0xfffffffffffffff0) != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

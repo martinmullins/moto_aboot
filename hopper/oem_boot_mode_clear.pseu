@@ -1,0 +1,26 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x1c;
+    r5 = arg0;
+    stack[2043] = *0x8f7112f4;
+    if ((loc_ffffffff8f6283a0(0x0, "bootmode", sp, 0x11, stack[2038]) != 0x0) && (loc_ffffffff8f64b0ac(sp, r5) == 0x0)) {
+            r0 = loc_ffffffff8f679aec();
+            if (r0 != 0x0) {
+                    r0 = 0x3;
+            }
+            if (!CPU_FLAGS & NE) {
+                    r0 = loc_ffffffff8f679ff0();
+                    if (r0 != 0x0) {
+                            r0 = 0x3;
+                    }
+                    if (CPU_FLAGS & E) {
+                            r0 = 0x1;
+                    }
+            }
+    }
+    else {
+            r0 = 0x1;
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

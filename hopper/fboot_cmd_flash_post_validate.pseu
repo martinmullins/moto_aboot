@@ -1,0 +1,163 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0xbc;
+    r4 = *(arg0 + 0xc);
+    s0 = *arg0;
+    r3 = *0x8f7112f4;
+    r4 = r4 + 0x1;
+    r8 = *(arg0 + 0x8);
+    stack[2039] = r3;
+    r0 = loc_ffffffff8f64b0ac(r4, "clogo");
+    COND = r6 != 0x0;
+    if (COND) goto loc_8f62ed3c;
+
+loc_8f62eba4:
+    r5 = sp + 0x60;
+    r4 = r6;
+    loc_ffffffff8f64adc8(r5, r6, 0x10);
+    loc_ffffffff8f64adc8(sp + 0x90, r6, 0x21);
+    loc_ffffffff8f65a754(sp + 0x8);
+    loc_ffffffff8f65a7c0(sp + 0x8, s0, r8);
+    loc_ffffffff8f65a8c8(sp + 0x8, r5);
+    do {
+            r2 = *(r5 + r4);
+            r0 = r4 * 0x2 + sp + 0x90;
+            r4 = r4 + 0x1;
+            loc_ffffffff8f64aa80(r0, 0x8f684e2f, r2, sp + 0x90);
+    } while (r4 != 0x10);
+    loc_ffffffff8f656968(0x1, "clogo image md5 checksum %s\n", sp + 0x90);
+    loc_ffffffff8f67a3d0(0x0, 0x8f68834d);
+    loc_ffffffff8f64b418(sp + 0x70, 0x8f68834d, 0x1f, 0x0, stack[1994]);
+    r0 = loc_ffffffff8f64b5d8(sp + 0x70, 0x3a);
+    r0 = loc_ffffffff8f62e354();
+    if (r0 == 0x0) {
+            loc_ffffffff8f64b21c(sp + 0x70, 0x8f686ac4, 0x1f);
+            loc_ffffffff8f64b21c(sp + 0x70, 0x8f67c04d, 0x1f);
+            r0 = loc_ffffffff8f64b5d8(sp + 0x70, 0x3a);
+            r0 = loc_ffffffff8f62e354();
+    }
+    if (r0 != 0xff) goto loc_8f62ecb8;
+
+loc_8f62eca4:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error: not a string type: %s\n", "<invalid>");
+    goto loc_8f62ecfc;
+
+loc_8f62ecfc:
+    loc_ffffffff8f656968(0x0, "Failed to put UTAG \"%s\"!\n", 0x8f68834d);
+    goto loc_8f62ed0c;
+
+loc_8f62ed0c:
+    loc_ffffffff8f67a310(0x0, 0x8f68834d);
+    if (loc_ffffffff8f679ff0(0x0) != 0x0) {
+            loc_ffffffff8f656968(0x0, "Failed to flush UTAG for \"%s\"!\n", 0x8f68834d);
+    }
+    goto loc_8f62ee9c;
+
+loc_8f62ee9c:
+    r0 = 0x1;
+    goto loc_8f62eed0;
+
+loc_8f62eed0:
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f62ecb8:
+    r0 = loc_ffffffff8f64b57c(sp + 0x90, 0x400);
+    r3 = r0;
+    if (r0 != 0x400) goto loc_8f62ece0;
+
+loc_8f62ecd0:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error: string too long\n");
+    goto loc_8f62ecfc;
+
+loc_8f62ece0:
+    if (loc_ffffffff8f67961c(0x0, sp + 0x70, sp + 0x90, r3 + 0x1) == 0x0) {
+            loc_ffffffff8f656968(0x0, "Failed to put UTAG \"%s\"!\n", 0x8f68834d);
+    }
+    goto loc_8f62ed0c;
+
+loc_8f62ed3c:
+    loc_ffffffff8f64b0ac(r4, "motoboot") == 0x0;
+    if (CPU_FLAGS & E) goto loc_8f62ee30;
+
+loc_8f62ed58:
+    if (loc_ffffffff8f64b0ac(r4, 0x8f682073) != 0x0) goto loc_8f62ed8c;
+
+loc_8f62ed6c:
+    if (loc_ffffffff8f673228() != 0x0) {
+            loc_ffffffff8f656968(0x2, "Re-initializing CID...\n");
+            loc_ffffffff8f6623b4();
+    }
+    goto loc_8f62ee9c;
+
+loc_8f62ed8c:
+    if (loc_ffffffff8f64b0ac(r4, "cid_prov") == 0x0) goto loc_8f62ee9c;
+
+loc_8f62eda0:
+    r0 = loc_ffffffff8f65385c(r4);
+    COND = r5 != 0x0;
+    if (COND) goto loc_8f62edc0;
+
+loc_8f62edb0:
+    loc_ffffffff8f62192c(0x8f683451, "partition name is corrupted");
+    goto loc_8f62eecc;
+
+loc_8f62eecc:
+    r0 = 0x3;
+    goto loc_8f62eed0;
+
+loc_8f62edc0:
+    if (loc_ffffffff8f674320() == 0x0) goto loc_8f62ede8;
+
+loc_8f62edcc:
+    loc_ffffffff8f656968(0x2, "skip post flash validation on eng & unlocked HW\n");
+    *0x8f6e0698 = 0x0;
+    goto loc_8f62ee9c;
+
+loc_8f62ede8:
+    if (loc_ffffffff8f67436c(r5) != 0x0) goto loc_8f62edcc;
+
+loc_8f62edf8:
+    if ((*(r5 + 0x31) & 0xf) != 0x6) goto loc_8f62ee9c;
+
+loc_8f62ee08:
+    r3 = *0x8f6e0698;
+    if (CPU_FLAGS & E) goto loc_8f62eeac;
+
+loc_8f62ee20:
+    if (r3 != 0x1) goto loc_8f62ee38;
+
+loc_8f62ee30:
+    loc_ffffffff8f656968();
+    goto loc_8f62ee9c;
+
+loc_8f62ee38:
+    r5 = *0x8f6c0690;
+    if (CPU_FLAGS & E) goto loc_8f62ee80;
+
+loc_8f62ee50:
+    if (r3 != 0x2) goto loc_8f62eeac;
+
+loc_8f62ee58:
+    r5 = 0x0;
+    if (loc_ffffffff8f6772c0(r4) != -0x1) goto loc_8f62ee8c;
+
+loc_8f62ee80:
+    loc_ffffffff8f62192c();
+    *0x8f6e0698 = r5;
+    goto loc_8f62eeb0;
+
+loc_8f62eeb0:
+    if (*0x8f6c0690 != 0x0) {
+            loc_ffffffff8f64adc8();
+    }
+    goto loc_8f62eecc;
+
+loc_8f62ee8c:
+    loc_ffffffff8f64adc8(0x8f6c0690, 0x0, 0x20000);
+    goto loc_8f62ee9c;
+
+loc_8f62eeac:
+    loc_ffffffff8f62192c();
+    goto loc_8f62eeb0;
+

@@ -1,0 +1,156 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r8 = arg1;
+    stack[2035] = arg0;
+    r3 = *arg1;
+    stack[2037] = r3;
+    r4 = loc_ffffffff8f6539b0(arg1, arg1, arg2, r3, stack[2034]);
+    r6 = loc_ffffffff8f653b20();
+    r7 = arg1;
+    COND = r1 == 0x0;
+    if (COND) goto loc_8f678eb4;
+
+loc_8f678e54:
+    r0 = loc_ffffffff8f653a28(r4);
+    COND = r3 == 0x0;
+    if (COND) goto loc_8f678eb4;
+
+loc_8f678e64:
+    if (r1 == 0x0) {
+            CMP(r0, 0x100000);
+    }
+    if (CPU_FLAGS & B) {
+            r4 = r0;
+    }
+    if (CPU_FLAGS & A) {
+            r4 = 0x100000;
+    }
+    r0 = loc_ffffffff8f64aacc(r4);
+    COND = r11 == 0x0;
+    if (COND) goto loc_8f678eb4;
+
+loc_8f678e84:
+    r0 = loc_ffffffff8f60b8ec(r6, r7, r11, r4);
+    if (r0 == 0x0) goto loc_8f678ebc;
+
+loc_8f678ea0:
+    loc_ffffffff8f656968(0x0, "ERROR: Cannot read device info\n");
+    loc_ffffffff8f64ab9c(r11);
+    goto loc_8f678eb4;
+
+loc_8f678eb4:
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f679040;
+
+loc_8f679040:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f678ebc:
+    if (r4 < 0x57) goto loc_8f679000;
+
+loc_8f678ec4:
+    r6 = r11;
+    s0 = r0;
+    r5 = r0;
+    goto loc_8f678ed0;
+
+loc_8f678ed0:
+    if (r5 != 0x0) goto loc_8f678eec;
+
+loc_8f678ed8:
+    r0 = loc_ffffffff8f64ab44(0x1, 0x34);
+    COND = s0 == 0x0;
+    if (COND) goto loc_8f67900c;
+
+loc_8f678eec:
+    r0 = loc_ffffffff8f64b2c0(s0, r6, 0x20);
+    r3 = *(r6 + 0x24);
+    COND = r5 != 0x0;
+    asm{ rev        r3, r3 };
+    *(r0 + 0x24) = r3;
+    asm{ rev        sl, r3 };
+    *(r0 + 0x20) = r10;
+    if (COND) goto loc_8f678f3c;
+
+loc_8f678f1c:
+    r5 = s0;
+    if ((loc_ffffffff8f64b0ac(s0, "__UTAG_HEAD__") != 0x0) || (r10 != 0x0)) goto loc_8f678fd4;
+
+loc_8f678f3c:
+    if (loc_ffffffff8f64b0ac(s0, "__UTAG_TAIL__") != 0x0) goto loc_8f678f64;
+
+loc_8f678f50:
+    if (r10 != 0x0) goto loc_8f678fdc;
+
+loc_8f678f58:
+    s0 = r5;
+    r4 = r10;
+    goto loc_8f679010;
+
+loc_8f679010:
+    *stack[2035] = s0;
+    if (s0 == 0x0) {
+            loc_ffffffff8f656968(0x1, "failed to thaw utags from partition \"%s\", error: %d\n", r8, r4);
+    }
+    loc_ffffffff8f64ab9c(r11);
+    r0 = r4;
+    goto loc_8f679040;
+
+loc_8f678fdc:
+    r4 = 0x6;
+    goto loc_8f678ff0;
+
+loc_8f678ff0:
+    s0 = 0x0;
+    loc_ffffffff8f678880(r5);
+    goto loc_8f679010;
+
+loc_8f678f64:
+    r7 = r6 + (r10 + 0x3 & !0x3) + 0x2c;
+    if ((r7 - r11) + 0x2c > r4) goto loc_8f678fe4;
+
+loc_8f678f84:
+    if (r10 == 0x0) goto loc_8f678fb0;
+
+loc_8f678f8c:
+    r0 = loc_ffffffff8f64ab44(0x1, r10);
+    *(r0 + 0x2c) = r0;
+    if (r0 == 0x0) goto loc_8f678fec;
+
+loc_8f678fa4:
+    loc_ffffffff8f64ac90();
+    goto loc_8f678fb0;
+
+loc_8f678fb0:
+    r0 = loc_ffffffff8f64ab44(0x1, 0x34);
+    *(r0 + 0x30) = r0;
+    if (r0 == 0x0) goto loc_8f678fec;
+
+loc_8f678fc8:
+    r6 = r7;
+    s0 = r0;
+    goto loc_8f678ed0;
+
+loc_8f678fec:
+    r4 = 0x4;
+    goto loc_8f678ff0;
+
+loc_8f678fe4:
+    r4 = 0x7;
+    goto loc_8f678ff0;
+
+loc_8f678fd4:
+    r4 = 0x5;
+    goto loc_8f678ff0;
+
+loc_8f67900c:
+    r4 = 0x4;
+    goto loc_8f679010;
+
+loc_8f679000:
+    r4 = 0x3;
+    s0 = r0;
+    goto loc_8f679010;
+

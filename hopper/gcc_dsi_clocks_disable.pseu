@@ -1,0 +1,18 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    loc_ffffffff8f60cd18("mdss_esc0_clk", arg1, arg2, r3, arg0, stack[2041], arg2, 0x184d000, 0x0, 0x8f7112f4, r7, lr);
+    r0 = loc_ffffffff8f60cb64();
+    *(0x184d000 + 0x84) = 0x0;
+    *(0x184d000 + 0x94) = 0x0;
+    if (arg0 != 0x0) {
+            loc_ffffffff8f60cd18("mdss_esc1_clk");
+            r0 = loc_ffffffff8f60cb64();
+            *(0x184d000 + 0xa4) = 0x0;
+            *(0x184d000 + 0xa0) = 0x0;
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

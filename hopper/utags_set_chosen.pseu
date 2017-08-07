@@ -1,0 +1,16 @@
+    r0 = arg0;
+    stack[2042] = r0;
+    stack[2043] = arg1;
+    stack[2044] = arg2;
+    stack[2046] = 0x8f7112f4;
+    stack[2047] = lr;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = 0x8f7112f4;
+    asm{ stmib      sp, {r1, r2} };
+    r3 = *r4;
+    loc_ffffffff8f679d80(r0, 0x8f655294, sp + 0x4, r3, stack[2042], stack[2043], stack[2044], r3, stack[2046], stack[2047]);
+    if (r3 != *r4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

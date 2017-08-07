@@ -1,0 +1,134 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2041] = *0x8f7112f4;
+    if (arg1 == 0x0) goto loc_8f63bc9c;
+
+loc_8f63bab4:
+    r3 = *(0x8f6ac5d0 + 0x8);
+    if ((r3 == 0x0) || (*(r3 + 0x2c) != 0x0)) goto loc_8f63bad0;
+
+loc_8f63bc9c:
+    if (stack[2041] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f63bad0:
+    if (*0x8f6e0980 != 0x0) goto loc_8f63bc9c;
+
+loc_8f63bae0:
+    r3 = 0x116;
+    if (r0 == r3) goto loc_8f63bbd4;
+
+loc_8f63baec:
+    if (r0 == r3 + 0xe8) goto loc_8f63bc80;
+
+loc_8f63baf8:
+    if (r0 != 0x115) goto loc_8f63bc9c;
+
+loc_8f63bb04:
+    r5 = *0x8f6e09a0;
+    if (r5 != 0x0) goto loc_8f63bb38;
+
+loc_8f63bb14:
+    loc_ffffffff8f61d994(0x8f6ac618);
+    if (!CPU_FLAGS & E) {
+            loc_ffffffff8f648514();
+    }
+    else {
+            loc_ffffffff8f61ac84();
+    }
+    return;
+
+loc_8f63bb38:
+    r3 = *(r5 + 0x48);
+    if (r3 != 0x4) goto loc_8f63bb60;
+
+loc_8f63bb44:
+    if (stack[2041] == *0x8f7112f4) {
+            sp = sp + 0x8;
+            r2 = *0x8f7112f4;
+            sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+            stack[2043] = *0x8f7112f4;
+            if (*0x8f6e09a0 == 0x8f6ac7a8) {
+                    r0 = *0x8f6ac614;
+                    r1 = *0x8f6ac52c;
+                    loc_ffffffff8f67b564(r0 + 0x1, r1);
+                    *0x8f6ac614 = r1;
+                    loc_ffffffff8f63b6d0();
+            }
+            if (stack[2043] != *0x8f7112f4) {
+                    loc_ffffffff8f648514();
+            }
+            else {
+                    loc_ffffffff8f63b43c();
+            }
+    }
+    else {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f63bb60:
+    if (r3 != 0x5) goto loc_8f63bb80;
+
+loc_8f63bb68:
+    (*(0x8f6ac374 + 0x4))("barcode_screen", *0x8f6e0980);
+    goto loc_8f63bc9c;
+
+loc_8f63bb80:
+    loc_ffffffff8f61d994(r5);
+    loc_ffffffff8f656968(0x2, "Received Volume Up - %s\n", *0x8f6e09a0 + 0x8);
+    r0 = *(0x8f6e0984 + *0x8f6ac614 * 0x4);
+    loc_ffffffff8f61ed88(r0);
+    if (!CPU_FLAGS & NE) {
+            loc_ffffffff8f61ac84();
+    }
+    else {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f63bc80:
+    if (stack[2041] == *0x8f7112f4) {
+            loc_ffffffff8f634528();
+    }
+    else {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f63bbd4:
+    r6 = *0x8f6e09a0;
+    if (r6 == 0x0) {
+            if (stack[2041] == *0x8f7112f4) {
+                    loc_ffffffff8f656968(0x1, "No selectable menu item\n");
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    else {
+            r8 = 0x8f6e09a0;
+            *0x8f6e0998 = r6;
+            do {
+                    r1 = *(*0x8f6e09a0 + 0x4);
+                    if (r1 == 0x8f6e09b0) {
+                            r1 = 0x0;
+                    }
+                    *0x8f6e09a0 = r1;
+                    if (r1 == 0x0) {
+                            *r8 = loc_ffffffff8f63b7d4(0x8f6e09b0);
+                    }
+                    r2 = *0x8f6e09a0;
+            } while (*(r2 + 0x48) < 0x2);
+            loc_ffffffff8f656968(0x1, "Received Volume Down - CS %s, last %s\n", r2 + 0x8, r6 + 0x8);
+            if (stack[2041] == *0x8f7112f4) {
+                    loc_ffffffff8f63b43c();
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

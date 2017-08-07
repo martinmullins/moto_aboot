@@ -1,0 +1,18 @@
+    stack[2042] = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r0 = loc_ffffffff8f60f7a8(0x8f6acb18, 0x1, arg2, r3, stack[2042], stack[2043], arg2, r4, 0x8f7112f4, lr);
+    COND = r4 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to send power on command. Ret =%d\n", r4);
+    }
+    r4 = r4 + loc_ffffffff8f60fa20();
+    r4 = r4 + loc_ffffffff8f643b00(sp, 0x8f6acacc, 0x1);
+    loc_ffffffff8f656968(0x1, "MOT panel on and power_mode =0x%x\n", stack[2042]);
+    r0 = r4;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

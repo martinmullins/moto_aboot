@@ -1,0 +1,38 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x50;
+    r4 = arg0;
+    r5 = lr;
+    stack[2043] = *0x8f7112f4;
+    loc_ffffffff8f64a9f0(sp + 0xc, 0x40, "ce%u_src_clk", r4, stack[2024], stack[2025], stack[2026], stack[2027], stack[2028]);
+    r0 = loc_ffffffff8f60cdc4(sp + 0xc, 0x9896800, 0x1);
+    COND = r3 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to set ce%u_src_clk ret = %d\n", r4);
+            loc_ffffffff8f6484ac(r5, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/acpuclock.c", 0x164, 0x8f69c66f);
+    }
+    loc_ffffffff8f64a9f0(sp + 0xc, 0x40, "ce%u_core_clk", r4);
+    r0 = loc_ffffffff8f60cdc4(sp + 0xc, 0x0, 0x1);
+    COND = r3 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to set ce%u_core_clk ret = %d\n", r4);
+            loc_ffffffff8f6484ac(r5, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/acpuclock.c", 0x16c, 0x8f69c66f);
+    }
+    loc_ffffffff8f64a9f0(sp + 0xc, 0x40, "ce%u_ahb_clk", r4);
+    r0 = loc_ffffffff8f60cdc4(sp + 0xc, 0x0, 0x1);
+    COND = r3 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to set ce%u_ahb_clk ret = %d\n", r4);
+            loc_ffffffff8f6484ac(r5, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/acpuclock.c", 0x174, 0x8f69c66f);
+    }
+    loc_ffffffff8f64a9f0(sp + 0xc, 0x40, "ce%u_axi_clk", r4);
+    r0 = loc_ffffffff8f60cdc4(sp + 0xc, 0x0, 0x1);
+    COND = r3 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to set ce%u_axi_clk ret = %d\n", r4);
+            loc_ffffffff8f6484ac(r5, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/acpuclock.c", 0x17c, 0x8f69c66f);
+    }
+    r0 = loc_ffffffff8f60c5a0(0x1);
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

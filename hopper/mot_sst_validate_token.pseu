@@ -1,0 +1,86 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x48;
+    r3 = *0x8f7112f4;
+    stack[2039] = r3;
+    r0 = loc_ffffffff8f64aacc(0x3c, arg1, arg2, r3, stack[2022], stack[2023], stack[2024], stack[2025], stack[2026], stack[2027], stack[2028], stack[2029], stack[2030]);
+    COND = r4 == 0x0;
+    if (COND) goto loc_8f671b74;
+
+loc_8f6719e4:
+    loc_ffffffff8f64adc8();
+    loc_ffffffff8f64adc8(r4, 0x0, 0x4);
+    r6 = r4 + 0xa;
+    r5 = r4 + 0x1a;
+    loc_ffffffff8f64adc8(r4 + 0x4, 0xff, 0x2);
+    loc_ffffffff8f64adc8(r4 + 0x6, 0x0, 0x4);
+    loc_ffffffff8f64adc8(r6, 0xff, 0x10);
+    loc_ffffffff8f64adc8(r5, 0xff, 0x10);
+    loc_ffffffff8f64adc8(sp + 0x14, 0x0, 0x10);
+    s0 = r4 + 0x2c;
+    loc_ffffffff8f64adc8(sp + 0x24, 0x0, 0x10);
+    loc_ffffffff8f64adc8(r4 + 0x2a, 0xff, 0x2);
+    loc_ffffffff8f64adc8(s0, 0xff, 0x10);
+    loc_ffffffff8f672950(r4);
+    if ((((*r4 != 0x4e) || (*(r4 + 0x1) != 0x4b)) || (*(r4 + 0x2) != 0x4f)) || (*(r4 + 0x3) != 0x54)) goto loc_8f671ac4;
+
+loc_8f671ae8:
+    if ((((((*(r4 + 0x4) != 0x0) || (*(r4 + 0x5) != 0x0)) || (*(r4 + 0x6) != 0x0)) || (*(r4 + 0x7) != 0x0)) || (*(r4 + 0x8) != 0x0)) || (*(r4 + 0x9) != 0x2c)) goto loc_8f671b24;
+
+loc_8f671b44:
+    if (((loc_ffffffff8f672bb0(sp + 0x24) != 0x0) || (loc_ffffffff8f672c38(sp + 0x14) != 0x0)) || (loc_ffffffff8f64af40(r6, sp + 0x14, 0x10) != 0x0)) goto loc_8f671c08;
+
+loc_8f671bbc:
+    r0 = loc_ffffffff8f64af40(r5, sp + 0x24, 0x10);
+    COND = r7 != 0x0;
+    if (COND) goto loc_8f671c08;
+
+loc_8f671bd4:
+    r8 = 0x10;
+    r0 = r6;
+    r5 = 0xff;
+    asm{ stm        sp, {r5, r7} };
+    r0 = loc_ffffffff8f672dd0(r0, r8, sp + 0x34, sp + r8, stack[2022]);
+    COND = r6 == 0x0;
+    if (COND) goto loc_8f671c10;
+
+loc_8f671c08:
+    loc_ffffffff8f672d58();
+    goto loc_8f671b50;
+
+loc_8f671b50:
+    r5 = 0x0;
+    goto loc_8f671b54;
+
+loc_8f671b54:
+    loc_ffffffff8f64ab9c(r4);
+    goto loc_8f671b5c;
+
+loc_8f671b5c:
+    r0 = r5;
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f671c10:
+    if (loc_ffffffff8f64af40(sp + 0x34, s0, 0x10) == 0x0) goto loc_8f671b54;
+    goto loc_8f671c08;
+
+loc_8f671b24:
+    loc_ffffffff8f672d58();
+    goto loc_8f671b48;
+
+loc_8f671b48:
+    if (r4 == 0x0) goto loc_8f671b74;
+    goto loc_8f671b50;
+
+loc_8f671b74:
+    r5 = 0x0;
+    goto loc_8f671b5c;
+
+loc_8f671ac4:
+    if (*0x8f6affac == 0x1) {
+            loc_ffffffff8f672d58("mot_sst_validate_token: Token header incorrect\n");
+            *0x8f6affac = 0x0;
+    }
+    goto loc_8f671b48;
+

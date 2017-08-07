@@ -1,0 +1,54 @@
+    r4 = *0x1a01000;
+    r2 = arg2;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r0 = loc_ffffffff8f616c34(0x1, arg1, r2, r3, arg0, stack[2043], r2, r4, 0x8f7112f4, lr);
+    r4 = *0x1a01000;
+    if (r0 == 0x0) {
+            r0 = loc_ffffffff8f656968(0x2, "MDSS VBIF registers unlocked by TZ.\n");
+            r3 = 0x1002ffff;
+            COND = r4 < r3;
+            r4 = r4 >> r4 / 0x10000;
+            if (COND) {
+                    r3 = 0x1ac8000;
+            }
+            if (CPU_FLAGS & B) {
+                    r2 = 0x1;
+            }
+            if (CPU_FLAGS & B) {
+                    *(r3 + 0x4) = r2;
+            }
+            if (r4 == 0x1000) {
+                    *(0x1ac8000 + 0xd8) = 0x707;
+                    *(0x1ac8000 + 0xf0) = 0x30;
+                    *(0x1ac8000 + 0x124) = 0x1;
+                    *(0x1ac8000 + 0x178) = 0xfff;
+                    *(0x1ac8000 + 0x17c) = 0xfff0fff;
+                    *(0x1ac8000 + 0x160) = 0x22222222;
+                    *(0x1ac8000 + 0x164) = 0x2222;
+            }
+            else {
+                    r3 = 0x1001;
+                    if (r4 == r3) {
+                            r3 = 0x1ac8000;
+                    }
+                    if (CPU_FLAGS & E) {
+                            r2 = 0x707;
+                    }
+                    if (CPU_FLAGS & E) {
+                            *(r3 + 0xd8) = r2;
+                    }
+                    if (CPU_FLAGS & E) {
+                            r2 = 0x3;
+                    }
+                    if (CPU_FLAGS & E) {
+                            *(r3 + 0x124) = r2;
+                    }
+            }
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

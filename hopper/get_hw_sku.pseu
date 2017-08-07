@@ -1,0 +1,30 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    if (*0x8f6ac1f4 >= 0x0) goto loc_8f631574;
+
+loc_8f631560:
+    loc_ffffffff8f656968(0x1, "Not found radio specific setting\n");
+    goto loc_8f63156c;
+
+loc_8f63156c:
+    r0 = 0x0;
+    goto loc_8f63159c;
+
+loc_8f63159c:
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f631574:
+    r0 = loc_ffffffff8f630c30(0x8f6822ef);
+    COND = r4 != 0x0;
+    if (COND) {
+            r0 = r4;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f63159c;
+
+loc_8f631588:
+    loc_ffffffff8f656968(0x2, "Not found setting for %s\n", 0x8f6822ef);
+    goto loc_8f63156c;
+

@@ -1,0 +1,30 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = 0xa;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    loc_ffffffff8f61c234(0x8f6e0940, arg1, arg2, r3, arg0, stack[2043], 0xa, 0x8f7112f4, 0x8f6e0849, lr);
+    r0 = (*(0x8f6ac374 + 0x4))(0x0, 0x0);
+    do {
+            if (*0x8f6e0849 != 0x0) {
+                break;
+            }
+            loc_ffffffff8f656968(0x1, "Waiting for display to be ready\n");
+            r0 = loc_ffffffff8f61b944(0xc8);
+            r4 = r4 - 0x1;
+            COND = r4 != 0x0;
+    } while (COND);
+    if (*0x8f6e0849 != 0x0) {
+            if (stack[2043] == *0x8f7112f4) {
+                    r0 = loc_ffffffff8f636dd8(0x8f639e6c);
+            }
+            else {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (stack[2043] != *0x8f7112f4) {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    return r0;
+

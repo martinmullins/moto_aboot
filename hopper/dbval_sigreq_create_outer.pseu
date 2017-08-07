@@ -1,0 +1,44 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r4 = arg0;
+    r5 = arg1;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    loc_ffffffff8f66c5fc(sp + 0x3, arg1, arg2, r3, stack[2038]);
+    *(r4 + 0x53) = arg3;
+    *(r4 + 0x46) = stack[2039];
+    *(r4 + 0x1) = 0x1;
+    *(r4 + 0x52) = 0x1 >> arg3 / 0x100;
+    loc_ffffffff8f663b90("dbval_sigreq_create_outer: Generate Rand");
+    if (loc_ffffffff8f66c63c(r5, 0x10) != 0xf) goto loc_8f6634ac;
+
+loc_8f663438:
+    r6 = r4 + 0x2;
+    loc_ffffffff8f66c80c(r4 + 0x42, r5, 0x10);
+    loc_ffffffff8f66c840(r6, 0x0, 0x40);
+    loc_ffffffff8f663b90("dbval_sigreq_create_outer: Read Serial Number Data");
+    *r4 = 0x2;
+    r0 = loc_ffffffff8f663c30(sp + 0x4);
+    r5 = r0;
+    if (r0 != 0xf) goto loc_8f6634a4;
+
+loc_8f663480:
+    loc_ffffffff8f663b90("dbval_sigreq_create_outer - Success");
+    *r4 = 0x0;
+    loc_ffffffff8f66c80c(r6, sp + 0x4, 0x8, 0x0);
+    goto loc_8f6634b0;
+
+loc_8f6634b0:
+    r0 = r5;
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f6634a4:
+    loc_ffffffff8f663b90("dbval_sigreq_create_outer - ERROR getting PSN");
+    goto loc_8f6634ac;
+
+loc_8f6634ac:
+    r5 = 0x55;
+    goto loc_8f6634b0;
+

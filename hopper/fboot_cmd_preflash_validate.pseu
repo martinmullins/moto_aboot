@@ -1,0 +1,1006 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x13c;
+    r3 = *0x8f7112f4;
+    stack[1976] = arg0;
+    r11 = *arg0;
+    stack[2037] = r3;
+    r3 = *(arg0 + 0xc);
+    r4 = *(arg0 + 0x8);
+    stack[1973] = r3 + 0x1;
+    if (((loc_ffffffff8f674b74(arg0, arg1, arg2, r3 + 0x1, stack[1960]) == 0x0) || (loc_ffffffff8f674cc4() != 0x3)) || (loc_ffffffff8f64b0ac(stack[1973], "cid_prov") == 0x0)) goto loc_8f62f1ec;
+
+loc_8f62f1e4:
+    loc_ffffffff8f62ddd4();
+    goto loc_8f6304c8;
+
+loc_8f6304c8:
+    r0 = 0x3;
+    goto loc_8f6304cc;
+
+loc_8f6304cc:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f62f1ec:
+    if ((loc_ffffffff8f64b0ac(stack[1973], "system") == 0x0) || (loc_ffffffff8f64b0ac(stack[1973], 0x8f68302e) == 0x0)) {
+            loc_ffffffff8f62ef58(stack[1973], 0x1);
+    }
+    if (loc_ffffffff8f64b0ac(stack[1973], 0x8f682073) != 0x0) goto loc_8f62f244;
+
+loc_8f62f234:
+    r0 = loc_ffffffff8f6739e8(r11, r4);
+    goto loc_8f630154;
+
+loc_8f630154:
+    if (r0 != 0x0) goto loc_8f630498;
+
+loc_8f63015c:
+    r4 = 0x1;
+    goto loc_8f630160;
+
+loc_8f630160:
+    r0 = loc_ffffffff8f673228();
+    if (r0 == 0x0) {
+            r0 = loc_ffffffff8f64b0ac(stack[1973], 0x8f68503b);
+            if (r0 == 0x0) {
+                    r0 = loc_ffffffff8f6539b0(stack[1973]);
+                    if (r0 != -0x1) {
+                            r7 = 0x8f68503b;
+                            r6 = loc_ffffffff8f653b20();
+                            r0 = loc_ffffffff8f6507a4();
+                            COND = r2 != 0x0;
+                            if (!CPU_FLAGS & NE) {
+                                    r5 = 0x87000000;
+                                    r0 = loc_ffffffff8f64af40(r5, "ANDROID!", 0x8);
+                                    if (r0 == 0x0) {
+                                            r5 = *(r5 + 0x24);
+                                            r8 = r11 + 0x40;
+                                            if (r5 == 0x0) {
+                                                    r5 = 0x800;
+                                            }
+                                            if ((loc_ffffffff8f64b354() == 0x0) && (loc_ffffffff8f64b354(0x87000040) != 0x0)) {
+                                                    loc_ffffffff8f64b418(r8, 0x87000040, 0x200);
+                                            }
+                                            r0 = loc_ffffffff8f656968(0x2, "ramdisk_size=0x%08X in downloaded image\n", *(r11 + 0x10));
+                                            if (*(r11 + 0x10) == 0x0) {
+                                                    r8 = *(r0 + 0x10);
+                                                    if (r8 != 0x0) {
+                                                            r0 = *(r0 + 0x8);
+                                                            r10 = *(r11 + 0x8);
+                                                            r2 = r6 + r5;
+                                                            r3 = r7 + 0x0 + CARRY(FLAGS);
+                                                            r2 = r2 + (0x0 - r5 & (r0 - 0x1) + r5);
+                                                            r8 = (r8 - 0x1) + r5 & 0x0 - r5;
+                                                            r10 = r11 + ((r10 - 0x1) + r5 & 0x0 - r5) + r5;
+                                                            r0 = loc_ffffffff8f6507a4(r2, r3 + 0x0 + CARRY(FLAGS), r8, 0x0, r10);
+                                                            COND = r2 == 0x0;
+                                                            if (!COND) {
+                                                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed in loading ramdisk from boot image, %d\n");
+                                                            }
+                                                            else {
+                                                                    r0 = loc_ffffffff8f656968(0x1, "load ramdisk from emmc to 0x%x, size 0x%x\n", r10, r8);
+                                                                    *(r11 + 0x10) = *(r0 + 0x10);
+                                                                    *(r0 + 0x8) = *(r0 + 0x8) + r8;
+                                                            }
+                                                    }
+                                            }
+                                            r0 = loc_ffffffff8f656968(0x2, "dt_size=0x%08X in downloaded image\n", *(r11 + 0x28));
+                                            r3 = *(r11 + 0x28);
+                                            if (r3 == 0x0) {
+                                                    *(0xffffffffffffff10 + sp + 0x138) = r3;
+                                                    loc_ffffffff8f64ac90(0xffffffffffffff10 + sp + 0x138, 0x2c + r11 + r5, 0x4);
+                                                    r0 = loc_ffffffff8f656968(0x2, "app_dtb_offset=0x%08X in zImage\n", stack[1978]);
+                                                    r1 = stack[1978];
+                                                    if (r1 == 0x0) {
+                                                            s0 = *(0x87000000 + 0x28);
+                                                            if (s0 != 0x0) {
+                                                                    r10 = *(r11 + 0x8);
+                                                                    r6 = r6 + r5;
+                                                                    r7 = r7 + 0x0 + CARRY(FLAGS);
+                                                                    r10 = ((r10 - 0x1) + r5 & 0x0 - r5) + ((*(r11 + 0x10) - 0x1) + r5 & 0x0 - r5);
+                                                                    s0 = (s0 - 0x1) + r5 & 0x0 - r5;
+                                                                    r10 = ((*(r11 + 0x18) - 0x1) + r5 & 0x0 - r5) + r10 + r5;
+                                                                    r10 = r11 + r10;
+                                                                    r6 = r6 + (0x0 - r5 & (*(0x87000000 + 0x8) - 0x1) + r5);
+                                                                    r7 = r7 + 0x0 + CARRY(FLAGS);
+                                                                    r0 = r6 + ((*(0x87000000 + 0x10) - 0x1) + r5 & 0x0 - r5);
+                                                                    r1 = r7 + 0x0 + CARRY(FLAGS);
+                                                                    r0 = r0 + ((*(0x87000000 + 0x18) - 0x1) + r5 & 0x0 - r5);
+                                                                    r0 = loc_ffffffff8f6507a4(r0, r1 + 0x0 + CARRY(FLAGS), s0, 0x0, r10);
+                                                                    COND = r2 == 0x0;
+                                                                    if (!COND) {
+                                                                            r0 = loc_ffffffff8f656968();
+                                                                    }
+                                                                    else {
+                                                                            loc_ffffffff8f656968(0x1, "load DT from emmc to 0x%x, size 0x%x\n", r10, s0);
+                                                                            *(r11 + 0x28) = *(0x87000000 + 0x28);
+                                                                            *(stack[1976] + 0x8) = *(stack[1976] + 0x8) + s0;
+                                                                            r0 = loc_ffffffff8f61ee5c(r11);
+                                                                    }
+                                                            }
+                                                    }
+                                                    else {
+                                                            if (r1 < *(r11 + 0x8)) {
+                                                                    loc_ffffffff8f64ac90(sp + 0x4c, r11 + r5 + r1, 0x28);
+                                                                    loc_ffffffff8f656968(0x2, "dtb_hdr magic 0x%08X\n", stack[1979]);
+                                                                    r0 = loc_ffffffff8f64b880(sp + 0x4c);
+                                                                    if (r0 != 0x0) {
+                                                                            s0 = *(0x87000000 + 0x28);
+                                                                            if (s0 != 0x0) {
+                                                                                    r10 = *(r11 + 0x8);
+                                                                                    r6 = r6 + r5;
+                                                                                    r7 = r7 + 0x0 + CARRY(FLAGS);
+                                                                                    r10 = ((r10 - 0x1) + r5 & 0x0 - r5) + ((*(r11 + 0x10) - 0x1) + r5 & 0x0 - r5);
+                                                                                    s0 = (s0 - 0x1) + r5 & 0x0 - r5;
+                                                                                    r10 = ((*(r11 + 0x18) - 0x1) + r5 & 0x0 - r5) + r10 + r5;
+                                                                                    r10 = r11 + r10;
+                                                                                    r6 = r6 + (0x0 - r5 & (*(0x87000000 + 0x8) - 0x1) + r5);
+                                                                                    r7 = r7 + 0x0 + CARRY(FLAGS);
+                                                                                    r0 = r6 + ((*(0x87000000 + 0x10) - 0x1) + r5 & 0x0 - r5);
+                                                                                    r1 = r7 + 0x0 + CARRY(FLAGS);
+                                                                                    r0 = r0 + ((*(0x87000000 + 0x18) - 0x1) + r5 & 0x0 - r5);
+                                                                                    r0 = loc_ffffffff8f6507a4(r0, r1 + 0x0 + CARRY(FLAGS), s0, 0x0, r10);
+                                                                                    COND = r2 == 0x0;
+                                                                                    if (!COND) {
+                                                                                            r0 = loc_ffffffff8f656968();
+                                                                                    }
+                                                                                    else {
+                                                                                            loc_ffffffff8f656968(0x1, "load DT from emmc to 0x%x, size 0x%x\n", r10, s0);
+                                                                                            *(r11 + 0x28) = *(0x87000000 + 0x28);
+                                                                                            *(stack[1976] + 0x8) = *(stack[1976] + 0x8) + s0;
+                                                                                            r0 = loc_ffffffff8f61ee5c(r11);
+                                                                                    }
+                                                                            }
+                                                                    }
+                                                            }
+                                                            else {
+                                                                    s0 = *(0x87000000 + 0x28);
+                                                                    if (s0 != 0x0) {
+                                                                            r10 = *(r11 + 0x8);
+                                                                            r6 = r6 + r5;
+                                                                            r7 = r7 + 0x0 + CARRY(FLAGS);
+                                                                            r10 = ((r10 - 0x1) + r5 & 0x0 - r5) + ((*(r11 + 0x10) - 0x1) + r5 & 0x0 - r5);
+                                                                            s0 = (s0 - 0x1) + r5 & 0x0 - r5;
+                                                                            r10 = ((*(r11 + 0x18) - 0x1) + r5 & 0x0 - r5) + r10 + r5;
+                                                                            r10 = r11 + r10;
+                                                                            r6 = r6 + (0x0 - r5 & (*(0x87000000 + 0x8) - 0x1) + r5);
+                                                                            r7 = r7 + 0x0 + CARRY(FLAGS);
+                                                                            r0 = r6 + ((*(0x87000000 + 0x10) - 0x1) + r5 & 0x0 - r5);
+                                                                            r1 = r7 + 0x0 + CARRY(FLAGS);
+                                                                            r0 = r0 + ((*(0x87000000 + 0x18) - 0x1) + r5 & 0x0 - r5);
+                                                                            r0 = loc_ffffffff8f6507a4(r0, r1 + 0x0 + CARRY(FLAGS), s0, 0x0, r10);
+                                                                            COND = r2 == 0x0;
+                                                                            if (!COND) {
+                                                                                    r0 = loc_ffffffff8f656968();
+                                                                            }
+                                                                            else {
+                                                                                    loc_ffffffff8f656968(0x1, "load DT from emmc to 0x%x, size 0x%x\n", r10, s0);
+                                                                                    *(r11 + 0x28) = *(0x87000000 + 0x28);
+                                                                                    *(stack[1976] + 0x8) = *(stack[1976] + 0x8) + s0;
+                                                                                    r0 = loc_ffffffff8f61ee5c(r11);
+                                                                            }
+                                                                    }
+                                                            }
+                                                    }
+                                            }
+                                    }
+                            }
+                            else {
+                                    r0 = loc_ffffffff8f656968();
+                            }
+                    }
+            }
+    }
+    if (r4 != 0x0) {
+            r0 = 0x1;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f6304cc;
+
+loc_8f630498:
+    *0x8f6e0698 = 0x0;
+    if (*0x8f6c0690 != 0x0) {
+            loc_ffffffff8f64adc8();
+    }
+    loc_ffffffff8f62192c(0x8f683451, "Preflash validation failed");
+    goto loc_8f6304c8;
+
+loc_8f62f244:
+    r0 = loc_ffffffff8f64b0ac(stack[1973], "motoboot");
+    COND = r5 != 0x0;
+    if (COND) goto loc_8f62f420;
+
+loc_8f62f258:
+    loc_ffffffff8f656968(0x1, "start motoboot image validation\n");
+    r7 = r11 + 0x400;
+    r6 = r5;
+    goto loc_8f62f270;
+
+loc_8f62f270:
+    if (r6 >= *r11) goto loc_8f63015c;
+
+loc_8f62f27c:
+    r7 = r7 + r5;
+    s0 = 0x4 + r11 + r6 * 0x20;
+    r5 = *(0x20 + r11 + r6 * 0x20);
+    r5 = r5 + 0x1 - *(0x1c + r11 + r6 * 0x20);
+    r3 = *0x8f7125ec;
+    r3 = *(r3 + 0x8);
+    r5 = r3 * r5;
+    loc_ffffffff8f656968(0x1, "Validating motoboot image: %s...\n", s0, r3);
+    r0 = loc_ffffffff8f64b354(0x8f682073);
+    r0 = loc_ffffffff8f64b470(s0, 0x8f682073, r0);
+    COND = r4 != 0x0;
+    if (COND) goto loc_8f62f2f4;
+
+loc_8f62f2d4:
+    if (loc_ffffffff8f6739e8(r7, r5) == 0x0) goto loc_8f62f414;
+
+loc_8f62f30c:
+    loc_ffffffff8f62192c();
+    goto loc_8f630160;
+
+loc_8f62f414:
+    r6 = zero_extend_32(r6 + 0x1);
+    goto loc_8f62f270;
+
+loc_8f62f2f4:
+    r0 = loc_ffffffff8f65385c(s0);
+    COND = r4 != 0x0;
+    if (COND) goto loc_8f62f314;
+    goto loc_8f62f30c;
+
+loc_8f62f314:
+    r2 = *(r4 + 0x28) | *(r4 + 0x29) * 0x100 | *(r4 + 0x2a) * 0x10000 | *(r4 + 0x2b) * 0x1000000;
+    r2 = r2 + 0x1;
+    r3 = *(r4 + 0x2c) | *(r4 + 0x2d) * 0x100 | *(r4 + 0x2e) * 0x10000 | *(r4 + 0x2f) * 0x1000000;
+    r3 = r3 + 0x0 + CARRY(FLAGS);
+    asm{ ldrd       r8, sb, [sp, #0x160 + var_128] };
+    r2 = r2 - r8;
+    s0 = s0 << (r3 - s0 + !CARRY(FLAGS)) * 0x200;
+    r8 = r8 << r2 * 0x200;
+    r2 = r5;
+    asm{ ldrd       r8, sb, [sp, #0x160 + var_138] };
+    if (0x0 == s0) {
+            CMP(r2, r8);
+    }
+    if (CPU_FLAGS & B) goto loc_8f62f3dc;
+
+loc_8f62f3cc:
+    loc_ffffffff8f62192c(0x8f683451, "Image size exeeded partition limits");
+    goto loc_8f62f40c;
+
+loc_8f62f40c:
+    r4 = 0x0;
+    goto loc_8f630160;
+
+loc_8f62f3dc:
+    if (loc_ffffffff8f673264() == 0x0) goto loc_8f62f414;
+
+loc_8f62f3f4:
+    r0 = loc_ffffffff8f6537f0(r4);
+    loc_ffffffff8f62192c(0x8f683451, "Motoboot: Preflash validation for %s", r0);
+    goto loc_8f62f40c;
+
+loc_8f62f420:
+    if (loc_ffffffff8f64b0ac(stack[1973], "cid_prov") == 0x0) goto loc_8f63015c;
+
+loc_8f62f434:
+    r0 = loc_ffffffff8f65385c(stack[1973]);
+    COND = r8 == 0x0;
+    if (CPU_FLAGS & E) goto loc_8f6305ac;
+
+loc_8f62f44c:
+    r2 = *(r8 + 0x29);
+    r3 = *(r8 + 0x28);
+    lr = *(r8 + 0x21);
+    r3 = r3 | r2 * 0x100;
+    r2 = *(r8 + 0x2a);
+    r12 = *(r8 + 0x20);
+    r3 = r3 | r2 * 0x10000;
+    r2 = *(r8 + 0x2b);
+    r12 = r12 | lr * 0x100;
+    lr = *(r8 + 0x22);
+    r0 = r3 | r2 * 0x1000000;
+    r2 = *(r8 + 0x2d);
+    r3 = *(r8 + 0x2c);
+    r12 = r12 | lr * 0x10000;
+    lr = *(r8 + 0x23);
+    r0 = r0 + 0x1;
+    r1 = r3 | r2 * 0x100 | *(r8 + 0x2e) * 0x10000 | *(r8 + 0x2f) * 0x1000000;
+    r2 = r12 | lr * 0x1000000;
+    lr = *(r8 + 0x25);
+    r1 = r1 + 0x0 + CARRY(FLAGS);
+    r12 = *(r8 + 0x24);
+    r12 = r12 | lr * 0x100 | *(r8 + 0x26) * 0x10000;
+    lr = *(r8 + 0x27);
+    r0 = r0 - r2;
+    r2 = r2 << r0 * 0x200;
+    r3 = (r12 | lr * 0x1000000) << (r1 - (r12 | lr * 0x1000000) + !CARRY(FLAGS)) * 0x200 | r0 / 0x800000;
+    r0 = r4;
+    if (0x0 == r3) {
+            CMP(r0, r2);
+    }
+    if (CPU_FLAGS & A) goto loc_8f6305ac;
+
+loc_8f62f4f4:
+    if (loc_ffffffff8f6764b0(r11) == 0x0) goto loc_8f62ff8c;
+
+loc_8f62f504:
+    r0 = loc_ffffffff8f676500(r11, r4);
+    *0x8f6c03bc = r0;
+    if (r0 == 0x0) {
+            r0 = 0x8f683451;
+    }
+    if (CPU_FLAGS & E) goto loc_8f6305ac;
+
+loc_8f62f528:
+    r0 = (*(r0 + 0x8))();
+    COND = r4 == 0x0;
+    if (CPU_FLAGS & E) goto loc_8f62f968;
+
+loc_8f62f540:
+    r1 = *r4;
+    if (r1 != 0x0) goto loc_8f62f808;
+
+loc_8f62f54c:
+    r2 = 0x20000;
+    loc_ffffffff8f64adc8(0x8f6c0690);
+    r0 = *(r4 + 0x1c);
+    r1 = *(r4 + 0x10);
+    if (loc_ffffffff8f65ab0c(r0, r1) != 0x0) goto loc_8f62f5b8;
+
+loc_8f62f56c:
+    loc_ffffffff8f656968(0x1, "Non-signed image detected\n");
+    if ((*(r8 + 0x31) & 0xf) != 0x0) goto loc_8f62f590;
+
+loc_8f62f584:
+    r1 = "bypass piv validation\n";
+    goto loc_8f62f800;
+
+loc_8f62f800:
+    loc_ffffffff8f656968();
+    goto loc_8f62f9f0;
+
+loc_8f62f9f0:
+    if (*0x8f6c0690 != 0x0) {
+            r0 = loc_ffffffff8f65af38();
+            r2 = *(r8 + 0x29);
+            lr = *(r8 + 0x21);
+            r12 = *(r8 + 0x20);
+            r12 = r12 | lr * 0x100 | *(r8 + 0x22) * 0x10000;
+            lr = *(r8 + 0x23);
+            asm{ strd       r0, r1, [r3] };
+            r4 = *(r8 + 0x28) | r2 * 0x100 | *(r8 + 0x2a) * 0x10000 | *(r8 + 0x2b) * 0x1000000;
+            r4 = r4 + 0x1;
+            r5 = *(r8 + 0x2c) | *(r8 + 0x2d) * 0x100 | *(r8 + 0x2e) * 0x10000 | *(r8 + 0x2f) * 0x1000000;
+            r2 = r12 | lr * 0x1000000;
+            lr = *(r8 + 0x25);
+            r5 = r5 + 0x0 + CARRY(FLAGS);
+            r12 = *(r8 + 0x24);
+            r12 = r12 | lr * 0x100 | *(r8 + 0x26) * 0x10000;
+            lr = *(r8 + 0x27);
+            r4 = r4 - r2;
+            r5 = r5 - (r12 | lr * 0x1000000) + !CARRY(FLAGS);
+            r2 = (r2 << r4 * 0x200) + 0x40;
+            r3 = ((r12 | lr * 0x1000000) << r5 * 0x200 | r4 / 0x800000) + 0x0 + CARRY(FLAGS);
+    }
+    else {
+            r0 = *0x8f6c03bc;
+            r5 = (*(r0 + 0x4))(r0);
+            r0 = *0x8f6c03bc;
+            r0 = (*r0)(r0);
+            r2 = *(r8 + 0x29);
+            r3 = *(r8 + 0x28);
+            r1 = 0x0;
+            lr = *(r8 + 0x21);
+            r3 = r3 | r2 * 0x100;
+            r2 = *(r8 + 0x2a);
+            r12 = *(r8 + 0x20);
+            r3 = r3 | r2 * 0x10000;
+            r2 = *(r8 + 0x2b);
+            r12 = r12 | lr * 0x100;
+            lr = *(r8 + 0x22);
+            r4 = r3 | r2 * 0x1000000;
+            r2 = *(r8 + 0x2d);
+            r3 = *(r8 + 0x2c);
+            r12 = r12 | lr * 0x10000;
+            lr = *(r8 + 0x23);
+            r4 = r4 + 0x1;
+            r0 = r5 * r0;
+            r5 = r3 | r2 * 0x100 | *(r8 + 0x2e) * 0x10000 | *(r8 + 0x2f) * 0x1000000;
+            r2 = r12 | lr * 0x1000000;
+            lr = *(r8 + 0x25);
+            r12 = *(r8 + 0x24);
+            r5 = r5 + 0x0 + CARRY(FLAGS);
+            r12 = r12 | lr * 0x100 | *(r8 + 0x26) * 0x10000;
+            lr = *(r8 + 0x27);
+            r4 = r4 - r2;
+            r5 = r5 - (r12 | lr * 0x1000000) + !CARRY(FLAGS);
+            r2 = r2 << r4 * 0x200;
+            r3 = (r12 | lr * 0x1000000) << r5 * 0x200 | r4 / 0x800000;
+    }
+    if (r1 == r3) {
+            CMP(r0, r2);
+    }
+    if (CPU_FLAGS & B) goto loc_8f62fb74;
+
+loc_8f62faac:
+    loc_ffffffff8f656968(0x5, "Image is too large");
+    goto loc_8f630498;
+
+loc_8f62fb74:
+    if (*0x8f6c0690 == 0x0) goto loc_8f63015c;
+
+loc_8f62fb84:
+    r10 = *0x8f6c03bc;
+    r0 = (*(r10 + 0x8))(r10);
+    r7 = r0;
+    if (*r0 != 0x2) {
+            r2 = 0x0;
+            asm{ stm        r1, {r2, r3} };
+    }
+    else {
+            while (*r7 == 0x2) {
+                    r10 = *0x8f6c03bc;
+                    r7 = (*(r10 + 0xc))(r10);
+            }
+            asm{ ldrd       r4, r5, [r7, #0x8] };
+            asm{ strd       r4, r5, [sp, #0x160 + var_138] };
+    }
+    r10 = *0x8f6c03bc;
+    r0 = (*(r10 + 0x14))(r10);
+    r3 = *r0;
+    s0 = r0;
+    if (r3 == 0x0) {
+            loc_ffffffff8f656968(0x1, "Found last sparse image\n");
+            r4 = 0x0;
+            asm{ strd       r4, r5, [sp, #0x160 + var_128] };
+    }
+    else {
+            do {
+                    r3 = *r0;
+                    if (r3 != 0x2) {
+                        break;
+                    }
+                    r10 = *0x8f6c03bc;
+                    r0 = (*(r10 + 0x10))(r10);
+                    s0 = r0;
+            } while (true);
+            asm{ ldrd       r2, r3, [sb, #0x10] };
+            asm{ ldrd       r4, r5, [sb, #0x8] };
+            r0 = r2 + r4;
+            asm{ strd       r0, r1, [sp, #0x160 + var_128] };
+    }
+    asm{ ldrd       r4, r5, [sp, #0x160 + var_138] };
+    r0 = 0x2;
+    r1 = "currently: prev_offset = 0x%llx, head_offset = 0x%llx, tail_offset = 0x%llx\n";
+    asm{ strd       r4, r5, [sp, #0x160 + var_160] };
+    asm{ ldrd       r4, r5, [sp, #0x160 + var_128] };
+    asm{ strd       r4, r5, [sp, #0x160 + var_158] };
+    asm{ ldrd       r2, r3, [r6] };
+    loc_ffffffff8f656968(r0, r1);
+    asm{ ldrd       r2, r3, [r6] };
+    COND = r5 == 0x0;
+    if (COND) goto loc_8f62fd1c;
+
+loc_8f62fc88:
+    asm{ ldrd       r4, r5, [sp, #0x160 + var_138] };
+    if (r5 == r3) {
+            CMP(r4, r2);
+    }
+    if (CPU_FLAGS & B) goto loc_8f62fcfc;
+
+loc_8f62fc98:
+    r10 = *0x8f6c03bc;
+    r2 = r4 - r2;
+    loc_ffffffff8f656968(0x1, "hash the overlapped area: size=0x%llx, val=%d\n", r2, r5 - r3 + !CARRY(FLAGS), *(*0x8f7125ec + 0x30));
+    r3 = *r10;
+    (r3)(r10);
+    r12 = 0x8f7125ec;
+    asm{ ldrd       r2, r3, [r6] };
+    r1 = *r12;
+    r2 = r4 - r2;
+    r1 = *(r1 + 0x30);
+    if (loc_ffffffff8f62e458(r8, r1, r2, r5 - r3 + !CARRY(FLAGS), r1) == 0x0) goto loc_8f62fd1c;
+
+loc_8f630598:
+    loc_ffffffff8f656968(0x0, "Failed to validate sparse image\n");
+    goto loc_8f6305ac;
+
+loc_8f6305ac:
+    loc_ffffffff8f62192c();
+    goto loc_8f630498;
+
+loc_8f62fd1c:
+    r10 = *0x8f6c03bc;
+    r1 = r7;
+    r6 = r7;
+    (*(r10 + 0x18))(r10, r1);
+    r4 = r7;
+    goto loc_8f62fd34;
+
+loc_8f62fd34:
+    if (r4 == s0) goto loc_8f62fd6c;
+
+loc_8f62fd3c:
+    r1 = *0x8f6c03bc;
+    r2 = r4;
+    if (loc_ffffffff8f62e584(r8, r1, r2) != 0x0) goto loc_8f630568;
+
+loc_8f62fd54:
+    r10 = *0x8f6c03bc;
+    r6 = r4;
+    r4 = (*(r10 + 0xc))(r10);
+    goto loc_8f62fd34;
+
+loc_8f630568:
+    r3 = 0x8f6c0688;
+    asm{ ldrd       r2, r3, [r3] };
+    COND = r8 != 0x0;
+    r2 = "none-first";
+    r3 = 0x8f685ea4;
+    if (COND) {
+            r3 = r2;
+    }
+    loc_ffffffff8f656968();
+    goto loc_8f630598;
+
+loc_8f62fd6c:
+    r0 = loc_ffffffff8f65b224();
+    r3 = 0x8f6e0690;
+    r4 = r0;
+    r5 = r1;
+    asm{ ldrd       r0, r1, [r3] };
+    if (r5 == r1) {
+            CMP(r4, r0);
+    }
+    asm{ strd       r0, r1, [sp, #0x160 + var_148] };
+    if (CPU_FLAGS & B) goto loc_8f62fda8;
+
+loc_8f62fd90:
+    asm{ strd       r0, r1, [sp, #0x160 + var_160] };
+    r2 = r4;
+    goto loc_8f62fdf4;
+
+loc_8f62fdf4:
+    loc_ffffffff8f656968();
+    goto loc_8f630568;
+
+loc_8f62fda8:
+    r2 = stack[1975];
+    r1 = stack[1974] | r2;
+    COND = r1 != 0x0;
+    if (COND) {
+            r3 = 0x0;
+    }
+    if (CPU_FLAGS & E) {
+            r3 = 0x1;
+    }
+    stack[1977] = r3;
+    if (CPU_FLAGS & NE) goto loc_8f62fe18;
+
+loc_8f62fdc4:
+    asm{ ldrd       r2, r3, [sp, #0x160 + var_148] };
+    asm{ ldrd       r0, r1, [sb, #0x10] };
+    r2 = r2 - r4;
+    r3 = r3 - r5 + !CARRY(FLAGS);
+    if (r1 == r3) {
+            CMP(r0, r2);
+    }
+    asm{ strd       r0, r1, [sp, #0x160 + var_138] };
+    if (CPU_FLAGS & NB) goto loc_8f62fdfc;
+
+loc_8f62fde4:
+    asm{ strd       r2, r3, [sp, #0x160 + var_160] };
+    asm{ ldrd       r2, r3, [sp, #0x160 + var_138] };
+    goto loc_8f62fdf4;
+
+loc_8f62fdfc:
+    asm{ ldrd       r0, r1, [sp, #0x160 + var_148] };
+    asm{ strd       r2, r3, [sb, #0x10] };
+    asm{ strd       r4, r5, [sp, #0x160 + var_158] };
+    asm{ strd       r0, r1, [sp, #0x160 + var_160] };
+    loc_ffffffff8f656968(0x1, "for last sparse, size is adjusted to 0x%llx, according to image size (0x%llx) and validated size (0x%llx)\n");
+    goto loc_8f62fe18;
+
+loc_8f62fe18:
+    r2 = s0;
+    r0 = loc_ffffffff8f62e584(r8, *0x8f6c03bc, r2);
+    COND = r1 != 0x0;
+    if (COND) goto loc_8f630568;
+
+loc_8f62fe30:
+    r4 = stack[1977];
+    if (r4 == 0x0) goto loc_8f630620;
+
+loc_8f62fe3c:
+    asm{ ldrd       r4, r5, [sb, #0x10] };
+    if (r5 == 0x0) {
+            CMP(r4, 0x3f);
+    }
+    if (CPU_FLAGS & B) goto loc_8f62febc;
+
+loc_8f62fe4c:
+    if (loc_ffffffff8f65ab64((*(r0 + 0x1c) - 0x40) + r4, 0x40) == 0x0) goto loc_8f62ff38;
+
+loc_8f62fe68:
+    asm{ ldrd       r2, r3, [sb, #0x10] };
+    r0 = 0x1;
+    r1 = "found PIV tail in last sparse chunk %p, remove from sparse data, now size is 0x%llx\n";
+    r2 = r2 - 0x40;
+    r3 = r3 - 0x0 + !CARRY(FLAGS);
+    asm{ strd       r2, r3, [sb, #0x10] };
+    asm{ strd       r2, r3, [sp, #0x160 + var_160] };
+    r2 = s0;
+    loc_ffffffff8f656968(r0, r1, r2, r3);
+    asm{ ldrd       r2, r3, [sb, #0x10] };
+    COND = r5 != 0x0;
+    if (!COND) {
+            r10 = *0x8f6c03bc;
+            loc_ffffffff8f656968(0x1, "remove empty last chunk %p\n", s0);
+            (*(r10 + 0x1c))(r10, s0);
+    }
+    goto loc_8f6305b4;
+
+loc_8f6305b4:
+    if (((loc_ffffffff8f674320() != 0x0) || (loc_ffffffff8f67436c(r8) != 0x0)) || (loc_ffffffff8f65afec() != -0x1)) goto loc_8f6305ec;
+
+loc_8f6305dc:
+    loc_ffffffff8f656968(0x5, "Failed to validate sparse image");
+    goto loc_8f630598;
+
+loc_8f6305ec:
+    *0x8f6e0698 = 0x2;
+    r0 = loc_ffffffff8f673228();
+    COND = r1 != 0x0;
+    if ((!COND) && (*0x8f6c0690 != 0x0)) {
+            loc_ffffffff8f64adc8();
+    }
+    goto loc_8f63015c;
+
+loc_8f62ff38:
+    loc_ffffffff8f656968();
+    goto loc_8f630568;
+
+loc_8f62febc:
+    loc_ffffffff8f64adc8(sp + 0xf4);
+    r3 = *(r6 + 0x1c);
+    r5 = 0x40 - r4;
+    loc_ffffffff8f64ac90(sp + 0xf4, *(r6 + 0x10) + r3 - r5, r5, r3);
+    loc_ffffffff8f656968(0x2, "copy %d bytes from prev chunk %p\n", r5, r6);
+    loc_ffffffff8f64ac90(r5 + sp + 0xf4, *(0x1c + r5 + sp + 0xf4), r4);
+    r2 = r4;
+    loc_ffffffff8f656968(0x2, "copy %d bytes from last chunk %p\n", r2, s0);
+    if (loc_ffffffff8f65ab64(sp + 0xf4, 0x40) != 0x0) goto loc_8f62ff44;
+    goto loc_8f62ff38;
+
+loc_8f62ff44:
+    r10 = *0x8f6c03bc;
+    r3 = *(r10 + 0x1c);
+    (r3)(r10, s0);
+    asm{ ldrd       r2, r3, [r6, #0x10] };
+    r0 = 0x1;
+    r1 = "found PIV tail in last two sparse chunk(%p, %p), remove %p, and update %p size to: 0x%llx, removed len=%d\n";
+    r2 = r2 - r5;
+    asm{ strd       r2, r3, [r6, #0x10] };
+    asm{ strd       r2, r3, [sp, #0x160 + var_158] };
+    loc_ffffffff8f656968(r0, r1, r6, s0, s0, r6);
+    goto loc_8f6305b4;
+
+loc_8f630620:
+    asm{ ldrd       r4, r5, [sp, #0x160 + var_128] };
+    asm{ strd       r4, r5, [r3] };
+    goto loc_8f63015c;
+
+loc_8f62fcfc:
+    asm{ ldrd       r8, sb, [sp, #0x160 + var_138] };
+    r0 = 0x0;
+    asm{ strd       r2, r3, [sp, #0x160 + var_158] };
+    r1 = "%s: bogus sparse image: head_offset (0x%llx) is greater than prev_offset (0x%llx)\n";
+    asm{ strd       r8, sb, [sp, #0x160 + var_160] };
+    loc_ffffffff8f656968(r0, r1, "validate_sparse_image");
+    goto loc_8f630598;
+
+loc_8f62f590:
+    if ((loc_ffffffff8f674320() != 0x0) || (CPU_FLAGS & NE)) goto loc_8f62f584;
+
+loc_8f62f88c:
+    loc_ffffffff8f656968();
+    goto loc_8f6305ac;
+
+loc_8f62f5b8:
+    r4 = *0x8f6c03bc;
+    r5 = 0x20000;
+    r3 = *(r4 + 0x8);
+    r0 = (r3)(r4);
+    stack[1974] = 0x0;
+    s0 = 0x8f6c0690;
+    r10 = r0;
+    goto loc_8f62f5dc;
+
+loc_8f62f5dc:
+    if (r5 != 0x0) {
+            CMP(r10, 0x0);
+    }
+    if (CPU_FLAGS & E) goto loc_8f62f774;
+
+loc_8f62f5e8:
+    asm{ ldrd       r2, r3, [sl, #0x10] };
+    r6 = r5;
+    r7 = 0x0;
+    if (r7 == r3) {
+            CMP(r6, r2);
+    }
+    if (CPU_FLAGS & A) {
+            r7 = r3;
+    }
+    r3 = *r10;
+    if (CPU_FLAGS & A) {
+            r6 = r2;
+    }
+    stack[1970] = r6;
+    if (r3 == 0x1) goto loc_8f62f668;
+
+loc_8f62f614:
+    if (CPU_FLAGS & B) goto loc_8f62f648;
+
+loc_8f62f618:
+    if (r3 != 0x2) goto loc_8f62f68c;
+
+loc_8f62f620:
+    s0 = 0x8f6c0690;
+    loc_ffffffff8f64adc8(s0 + stack[1974], 0x0, r6);
+    goto loc_8f62f684;
+
+loc_8f62f684:
+    loc_ffffffff8f656968();
+    goto loc_8f62f68c;
+
+loc_8f62f68c:
+    r3 = stack[1970];
+    r0 = 0x2;
+    r5 = r5 - r3;
+    r1 = "got %d from chunk for PIV block, left piv len is %d, left chunk len is 0xx%llx\n";
+    r2 = stack[1974] + r3;
+    stack[1974] = r2;
+    asm{ ldrd       r2, r3, [sl, #0x10] };
+    r2 = r2 - r6;
+    asm{ strd       r2, r3, [sp, #0x160 + var_160] };
+    r2 = stack[1970];
+    r3 = r5;
+    loc_ffffffff8f656968(r0, r1, r2, r3, stack[1960]);
+    asm{ ldrd       r2, r3, [sl, #0x10] };
+    if (r3 == r7) {
+            CMP(r2, r6);
+    }
+    if (CPU_FLAGS & NE) goto loc_8f62f708;
+
+loc_8f62f6d4:
+    r2 = r10;
+    loc_ffffffff8f656968(0x1, "remove the chunk(%p) containing PIV block\n", r2);
+    r1 = r10;
+    (*(r4 + 0x1c))(r4, r1);
+    r3 = *(r4 + 0x8);
+    r0 = (r3)(r4);
+    r10 = r0;
+    goto loc_8f62f5dc;
+
+loc_8f62f708:
+    r3 = r10;
+    r2 = stack[1970];
+    loc_ffffffff8f656968(0x2, "remove %d bytes from sparse data(%p)\n", r2, r3);
+    r1 = *r10;
+    asm{ ldrd       r2, r3, [sl, #0x10] };
+    r2 = r2 - r6;
+    COND = r1 == 0x0;
+    asm{ strd       r2, r3, [sl, #0x10] };
+    if (COND) {
+            r1 = *(r10 + 0x1c);
+    }
+    if (CPU_FLAGS & E) {
+            s0 = stack[1970];
+    }
+    if (CPU_FLAGS & E) {
+            r7 = r1 + s0;
+    }
+    if (CPU_FLAGS & E) {
+            *(r10 + 0x1c) = r7;
+    }
+    asm{ strd       r0, r1, [sl, #0x8] };
+    r0 = 0x1;
+    asm{ strd       r2, r3, [sp, #0x160 + var_160] };
+    r1 = "update chunk(%p) containing PIV block: size=0x%llx\n";
+    loc_ffffffff8f656968(r0, r1, r10);
+    r0 = (*(r4 + 0xc))(r4);
+    r10 = r0;
+    goto loc_8f62f774;
+
+loc_8f62f774:
+    COND = r3 < 0x0;
+    if (COND) {
+            r3 = 0x0;
+    }
+    if (r5 == 0x0) {
+            r5 = r3;
+    }
+    if (CPU_FLAGS & NE) {
+            r5 = r3 | 0x1;
+    }
+    if (r5 != 0x0) {
+            r0 = 0x3;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f62f968;
+
+loc_8f62f794:
+    do {
+            asm{ ldrd       r0, r1, [sl, #0x8] };
+            asm{ ldrd       r2, r3, [sl, #0x10] };
+            r0 = r0 - 0x20000;
+            asm{ strd       r0, r1, [sl, #0x8] };
+            asm{ strd       r2, r3, [sp, #0x160 + var_160] };
+            r2 = r10;
+            asm{ strd       r0, r1, [sp, #0x160 + var_158] };
+            r1 = "update chunk(%p) offset after extracting PIV:size=0x%llx, offset=0x%llx\n";
+            loc_ffffffff8f656968(0x2, r1, r2);
+            r0 = (*(r4 + 0xc))(r4);
+            COND = r10 != 0x0;
+    } while (COND);
+    if (loc_ffffffff8f65b094(0x8f6c0690, 0x20000, stack[1973]) != 0x0) goto loc_8f6305ac;
+
+loc_8f62f7ec:
+    if ((*(r8 + 0x31) & 0xf) != 0x0) goto loc_8f6304e4;
+
+loc_8f62f7f8:
+    r1 = "skip validating PIV image\n";
+    goto loc_8f62f800;
+
+loc_8f6304e4:
+    if ((loc_ffffffff8f674320() != 0x0) || (loc_ffffffff8f67436c(r8) != 0x0)) goto loc_8f62f7f8;
+
+loc_8f630500:
+    if ((*(r8 + 0x31) & 0xf) != 0x6) goto loc_8f62f858;
+
+loc_8f630510:
+    *0x8f6e0698 = 0x1;
+    r0 = loc_ffffffff8f65385c(stack[1973]);
+    COND = r1 == 0x0;
+    if (CPU_FLAGS & E) {
+            r1 = "Invalid partition name %s";
+    }
+    if ((CPU_FLAGS & E) || ((*(r1 + 0x31) & 0xf) != 0x6)) goto loc_8f63054c;
+
+loc_8f62f978:
+    loc_ffffffff8f64ac90(sp + 0x74);
+    r3 = stack[2002];
+    r0 = sp + 0x74;
+    r1 = 0x8f6c0690;
+    asm{ bfi        r3, r4, #0x0, #0x4 };
+    if (loc_ffffffff8f673264(r0, r1, 0x20000, r10, stack[1960], stack[1961], stack[1962], stack[1963]) != 0x0) goto loc_8f630554;
+
+.l68:
+    loc_ffffffff8f656968();
+    r1 = "PIV block for %s validated\n";
+    loc_ffffffff8f656968(0x1, r1, stack[1973]);
+    goto loc_8f62f9f0;
+
+loc_8f630554:
+    loc_ffffffff8f656968(0x5, "Invalid PIV signed %s image", stack[1973]);
+    goto loc_8f6305ac;
+
+loc_8f63054c:
+    loc_ffffffff8f656968();
+    goto loc_8f630554;
+
+loc_8f62f858:
+    loc_ffffffff8f656968(0x5, "Not supported signed sparse image\n");
+    goto loc_8f6305ac;
+
+loc_8f62f968:
+    loc_ffffffff8f656968();
+    goto loc_8f6305ac;
+
+loc_8f62f648:
+    s0 = 0x8f6c0690;
+    loc_ffffffff8f64ac90(s0 + stack[1974], *(r10 + 0x1c), r6);
+    goto loc_8f62f684;
+
+loc_8f62f668:
+    s0 = 0x8f6c0690;
+    loc_ffffffff8f64adc8(s0 + stack[1974], *(r10 + 0x1c), r6);
+    goto loc_8f62f684;
+
+loc_8f62f808:
+    r3 = *(r8 + 0x31);
+    if (r1 != 0x2) goto loc_8f62f918;
+
+loc_8f62f814:
+    if ((r3 & 0xf) != 0x0) goto loc_8f62f82c;
+
+loc_8f62f81c:
+    r1 = "bypass validation for SKIP_DATA type\n";
+    loc_ffffffff8f656968(0x2, r1);
+    goto loc_8f62f89c;
+
+loc_8f62f89c:
+    if (*0x8f6c0690 == 0x0) goto loc_8f62f9f0;
+
+loc_8f62f8ac:
+    r0 = *0x8f6c03bc;
+    r0 = (*(r0 + 0x8))(r0);
+    COND = r7 != 0x0;
+    if (COND) goto loc_8f62f8cc;
+    goto loc_8f62f968;
+
+loc_8f62f8cc:
+    do {
+            r6 = 0x8f6c03bc;
+            asm{ ldrd       r4, r5, [r7, #0x8] };
+            r2 = r7;
+            r0 = 0x2;
+            r1 = "update chunk(%p) offset for consequent sparse from 0x%llx to 0x%llx\n";
+            asm{ strd       r4, r5, [sp, #0x160 + var_160] };
+            r4 = r4 - 0x20000;
+            r5 = r5 - 0x0 + !CARRY(FLAGS);
+            asm{ strd       r4, r5, [sp, #0x160 + var_158] };
+            loc_ffffffff8f656968(r0, r1, r2);
+            asm{ ldrd       r4, r5, [r7, #0x8] };
+            r0 = *r6;
+            r4 = r4 - 0x20000;
+            r5 = r5 - 0x0 + !CARRY(FLAGS);
+            asm{ strd       r4, r5, [r7, #0x8] };
+            r0 = (*(r0 + 0xc))(r0);
+            COND = r7 != 0x0;
+    } while (COND);
+    goto loc_8f62f9f0;
+
+loc_8f62f82c:
+    if ((loc_ffffffff8f674320() != 0x0) || (loc_ffffffff8f67436c(r8) != 0x0)) goto loc_8f62f81c;
+
+loc_8f62f848:
+    if ((*(r8 + 0x31) & 0xf) == 0x6) goto loc_8f62f870;
+    goto loc_8f62f858;
+
+loc_8f62f870:
+    if (*0x8f6e0698 == 0x1) goto loc_8f62f89c;
+
+loc_8f62f880:
+    *0x8f6e0698 = 0x1;
+    goto loc_8f62f88c;
+
+loc_8f62f918:
+    if ((r3 & 0xf) != 0x0) goto loc_8f62f92c;
+
+loc_8f62f920:
+    r1 = "bypass validation for FILL_DATA type\n";
+    goto loc_8f62f800;
+
+loc_8f62f92c:
+    if ((loc_ffffffff8f674320() != 0x0) || (loc_ffffffff8f67436c(r8) != 0x0)) goto loc_8f62f920;
+
+loc_8f62f948:
+    if ((*(r8 + 0x31) & 0xf) != 0x6) goto loc_8f62f858;
+
+loc_8f62f958:
+    *0x8f6e0698 = 0x3;
+    goto loc_8f62f968;
+
+loc_8f62ff8c:
+    if (loc_ffffffff8f674320() != 0x0) goto loc_8f62ffa8;
+
+loc_8f62ff98:
+    if (loc_ffffffff8f674b74() != 0x0) {
+            if (loc_ffffffff8f64b0ac(stack[1973], 0x8f6848d7) == 0x0) {
+                    r1 = r8;
+                    r8 = sp + 0x74;
+                    loc_ffffffff8f64ac90(sp + 0x74, r1, 0x80);
+                    r3 = stack[2002];
+                    asm{ bfi        r3, r2, #0x0, #0x4 };
+            }
+    }
+    r0 = loc_ffffffff8f673264(r8, r11, r4, 0x0);
+    goto loc_8f630154;
+
+loc_8f62ffa8:
+    if (loc_ffffffff8f672fec(stack[1973]) != 0x0) goto loc_8f62ff98;
+

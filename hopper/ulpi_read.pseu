@@ -1,0 +1,15 @@
+    r3 = 0x8f7112f4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *r3;
+    *(0x78d9000 + 0x170) = arg1 << zero_extend_32(arg0) * 0x10000 | 0x40000000;
+    do {
+    } while ((*(0x78d9000 + 0x170) & 0x40000000) != 0x0);
+    r0 = *(0x78d9000 + 0x170);
+    r2 = stack[2045];
+    r3 = *r3;
+    asm{ ubfx       r0, r0, #0x8, #0x8 };
+    if (r2 != r3) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

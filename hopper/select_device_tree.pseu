@@ -1,0 +1,97 @@
+    r5 = arg1;
+    r1 = *(arg0 + 0x24);
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x38;
+    r4 = arg0;
+    r6 = *(arg0 + 0x8);
+    if (r1 == 0x0) {
+            r1 = 0x800;
+    }
+    r6 = (r1 - 0x1) + r6 & !(r1 - 0x1);
+    stack[2041] = *0x8f7112f4;
+    loc_ffffffff8f656968();
+    r0 = *(r4 + 0xc);
+    r0 = loc_ffffffff8f613eec(r0, r6, *(r4 + 0x20));
+    COND = r7 != 0x0;
+    if (CPU_FLAGS & NE) goto loc_8f6205fc;
+
+loc_8f620460:
+    loc_ffffffff8f656968();
+    r6 = *(r4 + 0x28);
+    if (r6 == 0x0) goto loc_8f620608;
+
+loc_8f620474:
+    loc_ffffffff8f656968(0x1, "Selecting device tree from QCOM Device Tree Table\n");
+    r0 = loc_ffffffff8f65934c(r5, *(r4 + 0x28), r7, r7, 0x1);
+    COND = r3 == 0x0;
+    if (!CPU_FLAGS & E) {
+            r2 = *(r4 + 0x28);
+            r2 = r3 + r2 + r2 * 0x4;
+            if (r2 >= 0x1000000) {
+                    loc_ffffffff8f656968(0x1, "Warning: inflation of QCOM DTB might run out of space: scratch size = %d, LZ4 internal buffer size = %d estimated size needed to inflate = %d\n", 0x1000000);
+            }
+            loc_ffffffff8f656968(0x1, "Is QCOM DTB compressed?\n");
+            if (loc_ffffffff8f65934c(r5, *(r4 + 0x28), 0x1000000, 0x94000000, 0x0) != 0x0) {
+                    r5 = 0x94000000;
+                    loc_ffffffff8f656968();
+            }
+            else {
+                    loc_ffffffff8f656968();
+            }
+    }
+    else {
+            loc_ffffffff8f656968();
+    }
+    r0 = loc_ffffffff8f614be0(r5, *(r4 + 0x24), sp + 0x8);
+    COND = r6 == 0x0;
+    if (COND) goto .l12;
+
+loc_8f620540:
+    loc_ffffffff8f656968();
+    goto loc_8f620544;
+
+loc_8f620544:
+    r0 = 0x0;
+    goto loc_8f620618;
+
+loc_8f620618:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+.l12:
+    if (CPU_FLAGS & NE) goto loc_8f620540;
+
+loc_8f620568:
+    r6 = *(r4 + 0x20);
+    r3 = *(r4 + 0xc);
+    r7 = stack[2040];
+    if ((r6 >= r3) || (r6 + r7 <= r3)) goto loc_8f620588;
+    goto loc_8f620540;
+
+loc_8f620588:
+    r3 = *(r4 + 0x14);
+    if ((r6 >= r3) || (r6 + r7 < r3)) goto loc_8f6205ac;
+    goto loc_8f620540;
+
+loc_8f6205ac:
+    if (loc_ffffffff8f61fe3c(r6, r7) == 0x0) goto loc_8f6205e0;
+
+loc_8f6205c0:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s:%s(%d): Address overlap with aboot address.\n", "app/mbm/linux_boot.c", "select_device_tree", 0x352);
+    goto loc_8f620544;
+
+loc_8f6205e0:
+    loc_ffffffff8f64ac90(r6, r5 + stack[2039], r7);
+    goto loc_8f6205fc;
+
+loc_8f6205fc:
+    loc_ffffffff8f656968();
+    r0 = 0x1;
+    goto loc_8f620618;
+
+loc_8f620608:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "ERROR: No BOOT DT found!\n");
+    r0 = r6;
+    goto loc_8f620618;
+

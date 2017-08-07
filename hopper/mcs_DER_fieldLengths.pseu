@@ -1,0 +1,64 @@
+    r3 = arg3;
+    r2 = arg2;
+    r1 = arg1;
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = *0x8f7112f4;
+    stack[2041] = r4;
+    if (r0 != 0x0) {
+            r5 = *r1;
+            if (r5 >= 0x1) {
+                    r12 = *(r0 + 0x1);
+                    if ((r12 & 0x80) == 0x0) {
+                            r4 = 0x1;
+                    }
+                    if (!CPU_FLAGS & E) {
+                            r6 = r12 & 0x7f;
+                            r12 = r6 + 0x2;
+                            if (r5 >= r12) {
+                                    r4 = 0x0;
+                            }
+                            if (CPU_FLAGS & GE) {
+                                    r12 = r4;
+                            }
+                            if (!CPU_FLAGS & L) {
+                                    while (r4 < r6) {
+                                            r8 = *(0x2 + r0 + r4);
+                                            r4 = zero_extend_32(r4 + 0x1);
+                                            r12 = zero_extend_32(zero_extend_32(r12 << r12 * 0x100) + r8);
+                                    }
+                            }
+                            else {
+                                    r12 = 0x0;
+                            }
+                            r4 = r6 + 0x1;
+                    }
+                    if (r5 >= r12 + r4 + 0x1) {
+                            *r1 = 0x1 + r4 + r12;
+                            if (r2 != 0x0) {
+                                    *r2 = r4;
+                            }
+                            if (r3 != 0x0) {
+                                    *r3 = r12;
+                                    r0 = 0x0;
+                            }
+                            else {
+                                    r0 = r3;
+                            }
+                    }
+                    else {
+                            r0 = 0x1;
+                    }
+            }
+            else {
+                    r0 = 0x1;
+            }
+    }
+    else {
+            r0 = 0x1;
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

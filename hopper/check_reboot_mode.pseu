@@ -1,0 +1,27 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2040] = *0x8f7112f4;
+    if (*0x8f6b8af4 != 0x0) {
+            r0 = *0x8f6b8af0;
+    }
+    if (!CPU_FLAGS & NE) {
+            r7 = *0x8f6b8af4;
+            r0 = loc_ffffffff8f61a0a4();
+            r4 = *r0;
+            r6 = r0;
+            loc_ffffffff8f656968(0x1, "Reboot mode from IMEM: 0x%08X\n", r4);
+            *r6 = r7;
+            if (loc_ffffffff8f646fa0() != 0x0) {
+                    loc_ffffffff8f656968(0x1, "detect reboot_bl flag from extra_reset register\n");
+                    r4 = 0x77665500;
+                    loc_ffffffff8f646f64();
+            }
+            r0 = r4;
+            *0x8f6b8af0 = r4;
+            *r0 = 0x1;
+    }
+    if (stack[2040] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

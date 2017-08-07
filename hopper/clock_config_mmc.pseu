@@ -1,0 +1,23 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x50;
+    r4 = arg1;
+    r5 = lr;
+    stack[2043] = *0x8f7112f4;
+    loc_ffffffff8f64a9f0(sp + 0xc, 0x40, "sdc%u_core_clk", arg0, stack[2024], stack[2025], stack[2026], stack[2027], stack[2028]);
+    if ((r4 != 0x61a80) && ((!CPU_FLAGS & E) && ((r4 != 0xbebc200) && (r4 != 0xa988e10)))) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "sdc frequency (%u) is not supported\n", r4);
+            loc_ffffffff8f6484ac(r5, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/acpuclock.c", 0x8a, 0x8f69c66f);
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to set %s ret = %d\n", sp + 0xc);
+            r0 = loc_ffffffff8f6484ac(r5, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/acpuclock.c", 0x90, 0x8f69c66f);
+    }
+    else {
+            r0 = loc_ffffffff8f60cdc4();
+            if (r0 != 0x0) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to set %s ret = %d\n", sp + 0xc);
+                    r0 = loc_ffffffff8f6484ac(r5, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/acpuclock.c", 0x90, 0x8f69c66f);
+            }
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

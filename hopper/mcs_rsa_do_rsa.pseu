@@ -1,0 +1,76 @@
+    r2 = arg2;
+    r1 = arg1;
+    r0 = arg0;
+    r6 = arg3;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x118;
+    r12 = r0;
+    r7 = r2;
+    r5 = sp + 0x14;
+    stack[2041] = *0x8f7112f4;
+    if (r1 == 0x0) goto loc_8f667d90;
+
+loc_8f667d84:
+    if (r1 == 0x1) goto loc_8f667dac;
+
+loc_8f667e80:
+    r4 = 0x1;
+    goto loc_8f667e5c;
+
+loc_8f667e5c:
+    loc_ffffffff8f6673b4(r5, 0x100);
+    r0 = r4;
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f667dac:
+    r4 = *r0;
+    if (r4 != 0x1) goto loc_8f667e88;
+
+loc_8f667db8:
+    r3 = *(r0 + 0x1);
+    if (r3 == 0x0) goto loc_8f667e0c;
+
+loc_8f667dc4:
+    if (r3 != 0x1) goto loc_8f667e5c;
+
+loc_8f667dcc:
+    r0 = loc_ffffffff8f665834(r2, zero_extend_32(r6), r12 + 0x2, r12 + 0x82, r0 + 0x102, r0 + 0x182, r0 + 0x202, r5);
+    goto loc_8f667e30;
+
+loc_8f667e30:
+    if (r0 == 0xf0) {
+            r4 = 0x0;
+            loc_ffffffff8f667258(r7, r5, r6);
+    }
+    else {
+            if (r0 == 0x65) {
+                    r4 = 0xb;
+            }
+            if (CPU_FLAGS & NE) {
+                    r4 = 0x1;
+            }
+    }
+    goto loc_8f667e5c;
+
+loc_8f667e0c:
+    r2 = r6;
+    goto loc_8f667e1c;
+
+loc_8f667e1c:
+    r0 = r7;
+    asm{ stm        sp, {r2, r5} };
+    r0 = loc_ffffffff8f6658bc(r0);
+    goto loc_8f667e30;
+
+loc_8f667e88:
+    r4 = 0x6;
+    goto loc_8f667e5c;
+
+loc_8f667d90:
+    if (CPU_FLAGS & E) {
+            r2 = *(r0 + 0x288);
+    }
+    if (CPU_FLAGS & NE) goto loc_8f667e88;
+

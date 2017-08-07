@@ -1,0 +1,22 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x90;
+    r4 = lr;
+    stack[2043] = *0x8f7112f4;
+    loc_ffffffff8f64a9f0(sp + 0xc, 0x40, "uart%u_iface_clk", arg0, stack[2008], stack[2009], stack[2010], stack[2011], stack[2012]);
+    loc_ffffffff8f64a9f0(sp + 0x4c, 0x40, "uart%u_core_clk", arg0);
+    r0 = loc_ffffffff8f60cdc4(sp + 0xc, 0x0, 0x1);
+    COND = r3 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to set %s ret = %d\n", sp + 0xc);
+            loc_ffffffff8f6484ac(r4, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/acpuclock.c", 0xa2, 0x8f69c66f);
+    }
+    r0 = loc_ffffffff8f60cdc4(sp + 0x4c, 0x708000, 0x1);
+    COND = r3 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to set %s ret = %d\n", sp + 0x4c);
+            r0 = loc_ffffffff8f6484ac(r4, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/acpuclock.c", 0xa9, 0x8f69c66f);
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

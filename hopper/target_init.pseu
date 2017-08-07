@@ -1,0 +1,45 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2045] = r3;
+    loc_ffffffff8f656968(0x1, "target_init()\n", arg2, r3, arg0, arg1, arg2, stack[2045], 0x8f7112f4, lr);
+    loc_ffffffff8f61a68c();
+    loc_ffffffff8f611a54(0x0, 0x0);
+    loc_ffffffff8f6121dc(0x0);
+    if (loc_ffffffff8f6331a0() != 0x0) {
+            loc_ffffffff8f647fb0();
+    }
+    loc_ffffffff8f642f8c();
+    if (loc_ffffffff8f645608() != 0x0) {
+            loc_ffffffff8f642fe4(0x116, 0x1);
+    }
+    loc_ffffffff8f602f2c(0x6b, 0x0, 0x0, 0x3, 0x0, 0x0);
+    loc_ffffffff8f61b944(0xa);
+    if ((loc_ffffffff8f60302c(0x6b) & 0xff) == 0x0) {
+            loc_ffffffff8f642fe4(0x115, 0x1);
+    }
+    loc_ffffffff8f600498();
+    r0 = loc_ffffffff8f601104();
+    if (r0 != 0x0) {
+            loc_ffffffff8f656968(0x1, "Factory cable detected\n");
+            r0 = loc_ffffffff8f601144();
+            if (r0 != 0x0) {
+                    if (stack[2045] == *0x8f7112f4) {
+                            r0 = loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to set up for factory cable\n");
+                    }
+                    else {
+                            r0 = loc_ffffffff8f648514();
+                    }
+            }
+            else {
+                    if (stack[2045] != *0x8f7112f4) {
+                            r0 = loc_ffffffff8f648514();
+                    }
+            }
+    }
+    else {
+            if (stack[2045] != *0x8f7112f4) {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    return r0;
+

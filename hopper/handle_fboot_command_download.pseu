@@ -1,0 +1,47 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0xcc;
+    r5 = arg0;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    loc_ffffffff8f646e34(arg0, arg1, arg2, r3, stack[1992]);
+    r1 = *(r5 + 0xc);
+    *(r5 + 0x8) = 0x0;
+    loc_ffffffff8f64b2c0(sp + 0x6, r1 + 0x1, 0x3e, 0x78, stack[1992], 0x30);
+    r4 = loc_ffffffff8f649d58(sp + 0x4);
+    loc_ffffffff8f656968(0x2, "to download 0x%x\n", r4);
+    if (r4 >= *(r5 + 0x4)) {
+            loc_ffffffff8f62192c(0x8f683451, "Data size exceeds download buffer");
+            r0 = 0x3;
+    }
+    else {
+            r6 = sp + 0x83 & !0x3f;
+            loc_ffffffff8f64aa80(r6, "DATA%08x", r4);
+            if (loc_ffffffff8f62d948(r6, loc_ffffffff8f64b354(r6)) < 0x0) {
+                    r0 = 0x3;
+            }
+            else {
+                    r0 = *r5;
+                    r0 = loc_ffffffff8f62d7e8(r0, r4);
+                    if (r0 == -0xd) {
+                            r0 = 0x5;
+                    }
+                    if (!CPU_FLAGS & E) {
+                            r6 = r6 >> r0 / 0x80000000;
+                            if (r0 != r4) {
+                                    r6 = r6 | 0x1;
+                            }
+                            if (r6 == 0x0) {
+                                    *(r5 + 0x8) = r4;
+                                    loc_ffffffff8f656968(0x2, "downloaded data: size=0x%x\n", r4);
+                                    r0 = r6;
+                            }
+                            else {
+                                    r0 = 0x3;
+                            }
+                    }
+            }
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

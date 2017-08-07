@@ -1,0 +1,36 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r7 = arg2;
+    r4 = arg0;
+    r8 = arg1;
+    stack[2041] = *0x8f7112f4;
+    if (arg0 >= 0x1ac) {
+            loc_ffffffff8f6484ac(lr, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm_shared/qgic.c", 0xb0, "vector < NR_IRQS");
+    }
+    r0 = *0x8f6ac0f0;
+    r0 = r0 + 0x1;
+    *0x8f6ac0f0 = r0;
+    if (r0 == 0x1) {
+            r0 = loc_ffffffff8f619448();
+    }
+    r2 = *0x8f6ac0f0;
+    *(0x8f6b7d48 + r4 * 0x8) = r8;
+    COND = r2 != 0x1;
+    *0x8f6ac0f0 = r2 - 0x1;
+    *(0x4 + 0x8f6b7d48 + r4 * 0x8) = r7;
+    r2 = stack[2041];
+    r3 = *0x8f7112f4;
+    if (!COND) {
+            if (r2 == r3) {
+                    r0 = loc_ffffffff8f619438();
+            }
+            else {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (r2 != r3) {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    return r0;
+

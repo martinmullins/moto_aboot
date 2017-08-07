@@ -1,0 +1,80 @@
+    COND = r11 == 0x0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r7 = arg1;
+    stack[2037] = *0x8f7112f4;
+    if ((CPU_FLAGS & E) || (CPU_FLAGS & E)) goto loc_8f67607c;
+
+loc_8f675f00:
+    r4 = "SRK.CA614.wtls.crt";
+    *(0x8f71303c + 0x4) = 0x8f71303c;
+    *0x8f71303c = 0x8f71303c;
+    goto loc_8f675f14;
+
+loc_8f675f14:
+    if (r4 == 0x8f6a9eec) goto loc_8f675f58;
+
+loc_8f675f1c:
+    r0 = loc_ffffffff8f64aacc(0xc);
+    if (r0 != 0x0) goto loc_8f675f3c;
+
+loc_8f675f2c:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Out of memory for SRK\n");
+    goto loc_8f675f58;
+
+loc_8f675f58:
+    r6 = *(0x8f71303c + 0x4);
+    s0 = 0x0;
+    r10 = s0;
+    while (r6 != 0x8f71303c) {
+            r4 = *(r6 + 0x8);
+            if (loc_ffffffff8f64b470(r11, r4, 0x40) == 0x0) {
+                    loc_ffffffff8f656968(0x1, "got boot srk %s\n", r11);
+                    *0x8f710c2c = r4 + 0x40;
+                    loc_ffffffff8f64ac90(0x8f71302c, 0x8f6a84ee, 0x4);
+                    *(0x8f71302c + 0x4) = r4 + 0x40;
+                    *(0x8f71302c + 0x8) = 0x3;
+                    r10 = 0x1;
+                    *(0x8f71302c + 0xc) = r10;
+                    *(0x8f71302c + 0xa) = 0x100;
+                    *0x8f710c34 = r4 + 0x140;
+            }
+            if (loc_ffffffff8f64b470(r7, r4, 0x40) == 0x0) {
+                    loc_ffffffff8f656968(0x1, "got AP srk %s\n", r7);
+                    *0x8f710c28 = r4 + 0x40;
+                    r0 = loc_ffffffff8f64ac90(0x8f713044, 0x8f6a84ee, 0x4, r4 + 0x40, stack[2034]);
+                    *(r0 + 0x4) = r4 + 0x40;
+                    *(r0 + 0x8) = 0x3;
+                    *(r0 + 0xa) = 0x100;
+                    *(r0 + 0xc) = 0x1;
+                    s0 = 0x1;
+                    *0x8f710c30 = r4 + 0x140;
+            }
+            r6 = *(r6 + 0x4);
+    }
+    COND = r0 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968();
+            r0 = 0x0 ^ 0xffffffff;
+    }
+    goto loc_8f676084;
+
+loc_8f676084:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f675f3c:
+    r3 = *0x8f71303c;
+    *(r0 + 0x8) = r4;
+    r4 = r4 + 0x160;
+    *0x8f71303c = r0;
+    asm{ stm        r0, {r3, r5} };
+    *(r3 + 0x4) = r0;
+    goto loc_8f675f14;
+
+loc_8f67607c:
+    loc_ffffffff8f656968();
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f676084;
+

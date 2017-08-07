@@ -1,0 +1,181 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0xbc;
+    r3 = *0x8f7112f4;
+    stack[2037] = r3;
+    loc_ffffffff8f61afc0(0x8f6e0960, arg1, arg2, r3, stack[1992]);
+    r4 = *0x8f6e097c;
+    *0x8f6e097c = 0x0;
+    loc_ffffffff8f61b098(0x8f6e0960);
+    if (r4 < 0x0) {
+            loc_ffffffff8f64de10(0x0);
+            loc_ffffffff8f64f108();
+    }
+    if ((*0x8f6e097c & 0x1) != 0x0) {
+            loc_ffffffff8f64adc8(sp + 0x34, 0x0, 0x80);
+            if (loc_ffffffff8f63a590(0x0) != 0x0) {
+                    loc_ffffffff8f64b21c(sp + 0x34, "AP Fastboot Flash Mode", 0x80);
+                    loc_ffffffff8f64b21c(sp + 0x34, 0x8f69c770, 0x80);
+                    loc_ffffffff8f64b21c();
+                    loc_ffffffff8f64b21c(sp + 0x34, 0x8f687c45, 0x80);
+                    r0 = loc_ffffffff8f63aa60(0x0);
+                    loc_ffffffff8f64f730(sp + 0x34, r0, 0x0, 0xff000000 ^ 0xffffffff);
+            }
+    }
+    if ((*0x8f6e097c & 0x2) != 0x0) {
+            loc_ffffffff8f63aadc();
+    }
+    if ((*0x8f6e097c & 0x4) != 0x0) {
+            loc_ffffffff8f64adc8(sp + 0x34, 0x0, 0x40);
+            if (loc_ffffffff8f63a590(0x5) != 0x0) {
+                    r0 = loc_ffffffff8f600d34();
+                    loc_ffffffff8f64a9f0(sp + 0x34, 0x40, "CPU: %s", r0);
+                    r0 = loc_ffffffff8f63aa60(0x5);
+                    loc_ffffffff8f64f730(sp + 0x34, r0, 0x0, 0xff000000 ^ 0xffffffff);
+            }
+    }
+    if ((*0x8f6e097c & 0x8) != 0x0) {
+            loc_ffffffff8f64adc8(sp + 0x34, 0x0, 0x40);
+            if (loc_ffffffff8f63a590(0x6) != 0x0) {
+                    r3 = *0x8f7125ec;
+                    loc_ffffffff8f64a9f0(sp + 0x34, 0x40, "eMMC: %uGB %s RV=%02X PV=%02X TY=%02X", *(r3 + 0x28), *(r3 + 0x18), *(r3 + 0x36), *(r3 + 0x35), *(r3 + 0x37));
+                    r0 = loc_ffffffff8f63aa60(0x6);
+                    loc_ffffffff8f64f730(sp + 0x34, r0, 0x0, 0xff000000 ^ 0xffffffff);
+            }
+    }
+    if ((*0x8f6e097c & 0x10) != 0x0) {
+            loc_ffffffff8f64adc8(sp + 0x34, 0x0, 0x40);
+            if (loc_ffffffff8f63a590(0x7) != 0x0) {
+                    loc_ffffffff8f64a9f0(sp + 0x34, 0x40, "DRAM: %s", 0x8f711464);
+                    r0 = loc_ffffffff8f63aa60(0x7);
+                    loc_ffffffff8f64f730(sp + 0x34, r0, 0x0, 0xff000000 ^ 0xffffffff);
+            }
+    }
+    if ((*0x8f6e097c & 0x20) != 0x0) {
+            r5 = loc_ffffffff8f674ac8();
+            if (loc_ffffffff8f63a590(0xa) != 0x0) {
+                    COND = r0 == 0x0;
+                    if (!COND) {
+                            if (r0 != 0x1) {
+                                    if (r0 != 0x2) {
+                                            r3 = "Device is UNLOCKED.  Status Code: 3";
+                                            r6 = 0x8f69c64f;
+                                            r5 = 0xffff;
+                                            if (r0 != 0x3) {
+                                                    r5 = 0xff000000 ^ 0xffffffff;
+                                            }
+                                            if (CPU_FLAGS & E) {
+                                                    r6 = r3;
+                                            }
+                                    }
+                                    else {
+                                            r6 = "Device is LOCKED.  Status Code: 2";
+                                            r5 = 0xff000000 ^ 0xffffffff;
+                                    }
+                            }
+                            else {
+                                    r5 = 0xffff;
+                                    r6 = 0x8f69c671;
+                            }
+                    }
+                    else {
+                            r5 = 0xff000000 ^ 0xffffffff;
+                            r6 = 0x8f69c64f;
+                    }
+                    r0 = loc_ffffffff8f63aa60(0xa);
+                    loc_ffffffff8f64f730(r6, r0, 0x0, r5);
+            }
+    }
+    if ((loc_ffffffff8f63284c() != 0x1) && ((*0x8f6e097c & 0x40) != 0x0)) {
+            loc_ffffffff8f64adc8(sp + 0x34, 0x0, 0x21);
+            loc_ffffffff8f64adc8(sp + 0x14, 0x0, 0x20);
+            if (loc_ffffffff8f63a590(0xb) != 0x0) {
+                    r0 = loc_ffffffff8f62d21c();
+                    loc_ffffffff8f64b2c0(sp + 0x34, r0, 0x21);
+                    r0 = loc_ffffffff8f64b7f0(sp + 0x34, 0x8f686fbc);
+                    COND = r5 != 0x0;
+                    if (!COND) {
+                            r5 = 0x1;
+                    }
+                    else {
+                            r0 = loc_ffffffff8f64b354();
+                            if ((r0 != 0x0) && (*(0xffffffffffffffff + r5 + r0) == 0x30)) {
+                                    r5 = 0x0;
+                            }
+                            else {
+                                    r5 = 0x1;
+                            }
+                    }
+                    loc_ffffffff8f64a9f0(sp + 0x14, 0x20, "Software status: %s");
+                    r0 = loc_ffffffff8f63aa60(0xb);
+                    loc_ffffffff8f64f730(sp + 0x14, r0);
+            }
+    }
+    if ((*0x8f6e097c & 0x80) != 0x0) {
+            loc_ffffffff8f64adc8(sp + 0x34, 0x0, 0x40, 0x8f6e095c);
+            if (loc_ffffffff8f63a590(0x9) != 0x0) {
+                    r6 = "Battery Low";
+                    if (*0x8f6e095c == 0x0) {
+                            r6 = 0x8f69c6ed;
+                    }
+                    r0 = loc_ffffffff8f646cd0();
+                    r3 = " (Charging)";
+                    if (r0 == 0x0) {
+                            r0 = 0x8f6a4e20;
+                    }
+                    if (CPU_FLAGS & NE) {
+                            r0 = r3;
+                    }
+                    r5 = *0x8f6e095c;
+                    loc_ffffffff8f64a9f0(sp + 0x34);
+                    loc_ffffffff8f63aa60(0x9);
+                    loc_ffffffff8f64f890();
+                    r0 = loc_ffffffff8f63aa60(0x9);
+                    loc_ffffffff8f64f730(sp + 0x34, r0);
+            }
+    }
+    if (((*0x8f6e097c & 0x100) != 0x0) && (loc_ffffffff8f63a590(0xc) != 0x0)) {
+            if (*0x8f6ac3e8 != 0x0) {
+                    r3 = "Connect USB Data Cable   ";
+                    r5 = "Charger Connected";
+                    if (*0x8f6ac3e8 != 0x2) {
+                            r5 = r3;
+                    }
+            }
+            else {
+                    r5 = "Transfer Mode: USB Connected";
+            }
+            loc_ffffffff8f63aa60(0xc);
+            loc_ffffffff8f64f890();
+            r0 = loc_ffffffff8f63aa60(0xc);
+            loc_ffffffff8f64f730(r5, r0, 0x0, 0xff000000 ^ 0xffffffff);
+    }
+    if ((*0x8f6e097c & 0x1000) != 0x0) {
+            (*(*(0x8f6b1608 + 0x28) + 0x38))();
+    }
+    if ((*0x8f6e097c & 0x400) != 0x0) {
+            r4 = loc_ffffffff8f63aa60(0xd);
+            r4 = (*(*(0x8f6b1608 + 0x28) + 0x40))() + r4;
+            r8 = loc_ffffffff8f63ad28();
+            r0 = loc_ffffffff8f656854(0x2);
+            COND = r6 == 0x0;
+            if (!COND) {
+                    for (r5 = (*(r6 + 0x8))(); r5 != 0x0; r5 = (*(r6 + 0xc))()) {
+                            r0 = loc_ffffffff8f63aa60(0xd);
+                            if (r4 >= r8 + r0 + (*(*(r0 + 0x28) + 0x40))()) {
+                                break;
+                            }
+                            loc_ffffffff8f64f890(r4, 0x1, 0x1);
+                            if (*(r5 + 0x4) != 0x0) {
+                                    r10 = 0x8f69c574;
+                                    asm{ ldrsb      ip, [r5] };
+                                    loc_ffffffff8f64f730();
+                            }
+                            r4 = r4 + 0x1;
+                    }
+            }
+    }
+    r0 = loc_ffffffff8f64f850(0x0, 0x0, 0x1);
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

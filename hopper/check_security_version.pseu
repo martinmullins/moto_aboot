@@ -1,0 +1,29 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    if (arg1 >= arg2) goto loc_8f675614;
+
+loc_8f6755d8:
+    if (loc_ffffffff8f662654() == 0x0) {
+            loc_ffffffff8f6623b4();
+    }
+    if (loc_ffffffff8f674a88() == 0x0) goto loc_8f675604;
+
+loc_8f6755f4:
+    loc_ffffffff8f656968(0x1, "Factory CID - skip SV check\n");
+    goto loc_8f675614;
+
+loc_8f675614:
+    r0 = 0x0;
+    goto loc_8f675618;
+
+loc_8f675618:
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f675604:
+    loc_ffffffff8f656968();
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f675618;
+

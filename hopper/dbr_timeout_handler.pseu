@@ -1,0 +1,11 @@
+    goto loc_8f6390f4;
+
+loc_8f6390f4:
+    do {
+            loc_ffffffff8f61ac4c(0x8f6e08fc);
+    } while (loc_ffffffff8f64ff4c() == 0x0);
+    loc_ffffffff8f61afc0(0x8f6e08d8);
+    loc_ffffffff8f6500ec();
+    loc_ffffffff8f61b098(0x8f6e08d8);
+    goto loc_8f6390f4;
+

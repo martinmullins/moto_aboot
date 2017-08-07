@@ -1,0 +1,60 @@
+    r1 = arg1;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r6 = r1;
+    s0 = *(r1 + 0x31);
+    r3 = *0x8f7112f4;
+    s0 = s0 & 0xf;
+    if (s0 != 0x4) {
+            CMP(s0, 0x1);
+    }
+    stack[2039] = r3;
+    if (CPU_FLAGS & E) {
+            s0 = 0x0;
+    }
+    if (CPU_FLAGS & NE) {
+            s0 = 0x1;
+    }
+    if (CPU_FLAGS & E) goto loc_8f67568c;
+
+loc_8f675674:
+    r0 = loc_ffffffff8f6537f0(r1);
+    goto loc_8f675758;
+
+loc_8f675758:
+    loc_ffffffff8f656968();
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f675780;
+
+loc_8f675780:
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f67568c:
+    r2 = *(0x0 + 0x29);
+    r3 = *(0x0 + 0x28);
+    r0 = *(r6 + 0x21);
+    r7 = 0x8f710a26;
+    r4 = r3 | r2 * 0x100 | *(0x0 + 0x2a) * 0x10000 | *(0x0 + 0x2b) * 0x1000000;
+    r4 = r4 + 0x1;
+    r5 = (*(0x0 + 0x2c) | *(0x0 + 0x2d) * 0x100 | *(0x0 + 0x2e) * 0x10000 | *(0x0 + 0x2f) * 0x1000000) + 0x0 + CARRY(FLAGS);
+    r2 = *(0x0 + 0x20) | r0 * 0x100 | *(r6 + 0x22) * 0x10000 | *(r6 + 0x23) * 0x1000000;
+    r3 = *(r6 + 0x24) | *(r6 + 0x25) * 0x100 | *(r6 + 0x26) * 0x10000 | *(r6 + 0x27) * 0x1000000;
+    r4 = r4 - r2;
+    r5 = r5 - r3 + !CARRY(FLAGS);
+    asm{ strd       r0, r1, [sp, #0x30 + var_30] };
+    r2 = (r2 << r4 * 0x200) - 0x1200;
+    if (loc_ffffffff8f67ae2c(r6, r7, r2, (r3 << r5 * 0x200 | r4 / 0x800000) - 0x0 + !CARRY(FLAGS)) == 0x0) goto loc_8f675764;
+
+loc_8f675744:
+    loc_ffffffff8f6537f0(r6);
+    goto loc_8f675758;
+
+loc_8f675764:
+    r0 = *(0x8f710a26 + 0x1fd);
+    r0 = *(0x8f710a26 + 0x1fc) | r0 * 0x100;
+    r0 = r0 | *(0x8f710a26 + 0x1fe) * 0x10000;
+    r0 = r0 | *(0x8f710a26 + 0x1ff) * 0x1000000;
+    goto loc_8f675780;
+

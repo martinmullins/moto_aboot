@@ -1,0 +1,79 @@
+    r2 = arg2;
+    r1 = arg1;
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    if (r1 != 0x0) {
+            CMP(r0, 0x0);
+    }
+    sp = sp - 0x14;
+    r10 = r2;
+    r4 = r0;
+    r8 = r1;
+    if (CPU_FLAGS & NE) {
+            s0 = 0x0;
+    }
+    if (CPU_FLAGS & E) {
+            s0 = 0x1;
+    }
+    stack[2037] = *0x8f7112f4;
+    if (CPU_FLAGS & NE) goto loc_8f67445c;
+
+loc_8f674448:
+    loc_ffffffff8f656968(0x0, "Invalid partition entry\n");
+    s0 = 0x0;
+    goto loc_8f67458c;
+
+loc_8f67458c:
+    r0 = s0;
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f67445c:
+    loc_ffffffff8f64adc8(0x8f70e724, s0);
+    r0 = *(r4 + 0x29);
+    r1 = *(r4 + 0x28);
+    r3 = *(r4 + 0x20);
+    r2 = r1 | r0 * 0x100 | *(r4 + 0x2a) * 0x10000 | *(r4 + 0x2b) * 0x1000000;
+    r2 = r2 + 0x1;
+    r0 = r4;
+    r3 = r3 | *(r4 + 0x21) * 0x100;
+    r3 = r3 | *(r4 + 0x22) * 0x10000;
+    r1 = *(r4 + 0x23);
+    asm{ strd       r6, r7, [sp, #0x38 + var_38] };
+    if (loc_ffffffff8f67ae2c(r0, 0x8f70e724, (r2 - (r3 | r1 * 0x1000000)) * 0x200 - r10, 0x0) == 0x0) goto loc_8f6744e8;
+
+loc_8f6744d0:
+    loc_ffffffff8f6537f0(r4);
+    goto loc_8f67456c;
+
+loc_8f67456c:
+    loc_ffffffff8f656968();
+    goto loc_8f67458c;
+
+loc_8f6744e8:
+    loc_ffffffff8f64adc8(0x8f70fa25, s0, r10);
+    r0 = r8;
+    r1 = 0x8f70fa25;
+    r4 = *(r8 + 0x28) | *(r8 + 0x29) * 0x100 | *(r8 + 0x2a) * 0x10000 | *(r8 + 0x2b) * 0x1000000;
+    r2 = *(r8 + 0x21);
+    r3 = *(r8 + 0x20);
+    r4 = r4 + 0x1;
+    r3 = r3 | r2 * 0x100 | *(r8 + 0x22) * 0x10000;
+    r2 = *(r8 + 0x23);
+    asm{ strd       r6, r7, [sp, #0x38 + var_38] };
+    if (loc_ffffffff8f67ae2c(r0, r1, (r4 - (r3 | r2 * 0x1000000)) * 0x200 - r10, 0x0) == 0x0) goto loc_8f674574;
+
+loc_8f674558:
+    loc_ffffffff8f6537f0(r8);
+    goto loc_8f67456c;
+
+loc_8f674574:
+    r0 = loc_ffffffff8f64af40(0x8f70e724, 0x8f70fa25, r10);
+    COND = s0 != 0x0;
+    if (COND) {
+            s0 = 0x1;
+    }
+    goto loc_8f67458c;
+

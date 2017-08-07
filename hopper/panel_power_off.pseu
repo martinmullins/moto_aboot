@@ -1,0 +1,27 @@
+    r7 = *0x8f6ac0d0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2040] = r3;
+    r0 = loc_ffffffff8f656968(0x2, "%s is called\n", "panel_power_off", r3, arg0, stack[2040], arg2, r4, r5, r6, r7, r8, lr);
+    if (*0x8f6ac0d0 != -0x1) {
+            r4 = 0x0;
+            r6 = r4;
+            while (r6 < *0x8f6ac0d0) {
+                    if (*(r4 + 0x8f711374) < 0x5) {
+                            r0 = loc_8f618654();
+                    }
+                    r6 = r6 + 0x1;
+                    r4 = r4 + 0x8;
+            }
+    }
+    else {
+            r0 = loc_ffffffff8f618470(0x8f7112fc, *0x8f6ac0d8, 0x1, 0x8f6ac0d8);
+    }
+    if (stack[2040] != *r0) {
+            loc_ffffffff8f648514();
+    }
+    else {
+            loc_ffffffff8f656968(0x2, "%s is done \n", "panel_power_off");
+    }
+    return;
+

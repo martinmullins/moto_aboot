@@ -1,0 +1,45 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    if (*(0x8f6afe80 + 0x2c) != 0x0) {
+            r3 = *r0;
+            r2 = sign_extend_32(r3);
+            if (r2 > 0x2) {
+                    r3 = r3 - 0x5;
+            }
+            if (CPU_FLAGS & G) {
+                    *r0 = r3;
+            }
+            asm{ ldrsb      r3, [r1] };
+            asm{ ldrsb      r2, [r0] };
+            if (r2 <= r3) {
+                    r3 = *(0x8f6afe80 + 0x48);
+                    if (r3 != 0x0) {
+                            asm{ ldmib      r0, {r2, r3} };
+                            lr = r3 - 0x1;
+                            if (*(r2 + lr) != 0xa) {
+                                    if (r3 != 0x3ff) {
+                                            *(r2 + r3) = 0xa;
+                                    }
+                                    if (CPU_FLAGS & NE) {
+                                            r3 = *(r0 + 0x8);
+                                    }
+                                    if (CPU_FLAGS & E) {
+                                            *(r2 + lr) = 0xa;
+                                    }
+                                    if (CPU_FLAGS & NE) {
+                                            r3 = r3 + 0x1;
+                                    }
+                                    if (CPU_FLAGS & NE) {
+                                            *(r0 + 0x8) = r3;
+                                    }
+                            }
+                            (*(0x8f6afe80 + 0x48))();
+                    }
+            }
+    }
+    if (stack[2045] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

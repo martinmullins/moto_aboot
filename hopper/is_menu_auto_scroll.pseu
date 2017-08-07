@@ -1,0 +1,38 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r0 = *0x8f6ac210;
+    stack[2043] = *0x8f7112f4;
+    if (r0 != -0x1) {
+            r12 = r0 - 0x1;
+            r0 = 0x0 - r12;
+            r0 = r0 + r12 + CARRY(FLAGS);
+    }
+    else {
+            r0 = loc_ffffffff8f63084c("menu_setting");
+            COND = r1 >= 0x0;
+            if (!COND) {
+                    loc_ffffffff8f656968(0x1, "Use default setting for auto scroll: false\n");
+                    *0x8f6ac210 = 0x0;
+                    r0 = 0x0;
+            }
+            else {
+                    *0x8f6ac210 = 0x0;
+                    r0 = loc_ffffffff8f6309d0("auto_scroll");
+                    if (r0 == -0x1) {
+                            r0 = 0x1;
+                    }
+                    if (!CPU_FLAGS & E) {
+                            loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", "auto_scroll", *0x8f6ac210);
+                            r0 = *0x8f6ac210;
+                            r0 = r0 + 0x0;
+                            COND = r0 != 0x0;
+                            if (COND) {
+                                    r0 = 0x1;
+                            }
+                    }
+            }
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,237 @@
+    r7 = arg3;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x24;
+    r4 = arg1;
+    COND = r5 != 0x0;
+    r6 = lr;
+    r8 = arg2;
+    stack[2035] = arg4;
+    stack[2037] = *0x8f7112f4;
+    if (!COND) {
+            loc_ffffffff8f6484ac(lr, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x178, "m != ((void *)0)");
+    }
+    if (r4 == 0x0) {
+            loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x179, "start != ((void *)0)");
+    }
+    if (r8 == 0x0) {
+            loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x17a, "stop != ((void *)0)");
+    }
+    goto loc_8f65ed78;
+
+loc_8f65ed78:
+    if (r7 < stack[2035]) goto loc_8f65ed18;
+
+loc_8f65f25c:
+    if (r4 != r8) {
+            loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x21f, "sp == stop");
+    }
+    r0 = r4;
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f65ed18:
+    r10 = r10 << r7 * 0x4;
+    r0 = *(*r5 + 0x4);
+    r2 = *(r0 + r7 * 0x4);
+    r3 = r2 & 0xf8000000;
+    if (r3 != 0x58000000) {
+            if (r3 != 0x78000000) {
+                    if (r3 != 0x48000000) {
+                            s0 = r7;
+                    }
+                    if (CPU_FLAGS & E) {
+                            s0 = (r2 & !0xf8000000) + r7;
+                    }
+            }
+            else {
+                    s0 = r7;
+                    do {
+                            r1 = *(r0 + r0 * 0x4);
+                            if ((r1 & 0xf8000000) == 0x90000000) {
+                                break;
+                            }
+                            s0 = s0 + (r1 & !0xf8000000);
+                    } while (true);
+            }
+    }
+    else {
+            s0 = (r2 & !0xf8000000) + r7;
+    }
+    r1 = s0 + 0x1;
+    stack[2034] = r1;
+    if (r3 == 0x48000000) goto loc_8f65edec;
+
+loc_8f65ed58:
+    if (CPU_FLAGS & A) goto loc_8f65edb8;
+
+loc_8f65ed5c:
+    if (((r3 == 0x28000000) || (r3 == 0x30000000)) || (r3 == 0x10000000)) {
+            r4 = r4 + 0x1;
+    }
+    goto loc_8f65ed74;
+
+loc_8f65ed74:
+    r7 = stack[2034];
+    goto loc_8f65ed78;
+
+loc_8f65edb8:
+    if (r3 == 0x68000000) goto loc_8f65f21c;
+
+loc_8f65edc0:
+    if (CPU_FLAGS & A) goto loc_8f65edd4;
+
+loc_8f65edc4:
+    if (r3 == 0x58000000) {
+            r10 = r8;
+    }
+    if (CPU_FLAGS & E) goto loc_8f65ee48;
+    goto loc_8f65ed74;
+
+loc_8f65ee48:
+    do {
+            r0 = loc_ffffffff8f65e900(r5, r4, r10, r7, stack[2034]);
+            COND = r10 != 0x0;
+            if (!COND) {
+                    loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x1a6, "rest != ((void *)0)");
+            }
+            if (r8 == loc_ffffffff8f65e900(r5, r10, r8, stack[2034], stack[2035])) {
+                break;
+            }
+            r10 = r10 - 0x1;
+            if (r10 >= r4) {
+                continue;
+            }
+            loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x1ad, "stp >= sp");
+    } while (true);
+    r7 = r7 + 0x1;
+    if (CPU_FLAGS & NE) goto loc_8f65f028;
+
+loc_8f65eec0:
+    if (r4 == r10) goto loc_8f65ed74;
+
+loc_8f65eec8:
+    loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x1ba, "sp == rest");
+    goto loc_8f65f030;
+
+loc_8f65f030:
+    r4 = r10;
+    goto loc_8f65ed74;
+
+loc_8f65f028:
+    loc_ffffffff8f65ec7c();
+    goto loc_8f65f030;
+
+loc_8f65edd4:
+    if (r3 != 0x70000000) {
+            if (r3 == 0x78000000) {
+                    s0 = r8;
+            }
+            if (CPU_FLAGS & E) {
+                    do {
+                            r0 = loc_ffffffff8f65e900(r5, r4, s0, r7, stack[2034]);
+                            COND = s0 != 0x0;
+                            if (!COND) {
+                                    loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x1ea, "rest != ((void *)0)");
+                            }
+                            if (r8 == loc_ffffffff8f65e900(r5, s0, r8, stack[2034], stack[2035])) {
+                                break;
+                            }
+                            s0 = s0 - 0x1;
+                            if (s0 >= r4) {
+                                continue;
+                            }
+                            loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x1f1, "stp >= sp");
+                    } while (true);
+                    r3 = *r5;
+                    r11 = r7 + 0x1;
+                    r3 = *(r3 + 0x4);
+                    r7 = (r7 - 0x1) + (*(r3 + r10) & !0xf8000000);
+                    if ((*(r3 + r7 * 0x4) & 0xf8000000) != 0x80000000) {
+                            loc_ffffffff8f6484ac();
+                    }
+                    while (s0 != loc_ffffffff8f65e900(r5, r4, s0, r11, r7)) {
+                            r10 = r10 << r7 * 0x4;
+                            if ((*(*(*r5 + 0x4) + r7 * 0x4) & 0xf8000000) != 0x80000000) {
+                                    loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x1fa, "((m->g->strip[esub])&((uint32_t)0xf8000000UL)) == (((uint32_t)(16))<<((unsigned)27))");
+                            }
+                            r10 = r10 + 0x4;
+                            r12 = r7 + 0x1;
+                            if ((*(*(*r5 + 0x4) + r10) & 0xf8000000) != 0x88000000) {
+                                    loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x1fc, "((m->g->strip[esub])&((uint32_t)0xf8000000UL)) == (((uint32_t)(17))<<((unsigned)27))");
+                                    r12 = r12;
+                            }
+                            r3 = *r5;
+                            r11 = r7 + 0x2;
+                            r3 = *(r3 + 0x4);
+                            r7 = *(r3 + r10);
+                            r7 = (r7 & !0xf8000000) + r12;
+                            r3 = *(r3 + r7 * 0x4);
+                            r3 = r3 & 0xf8000000;
+                            if (r3 == 0x88000000) {
+                                    r7 = r7 - 0x1;
+                            }
+                            if ((!CPU_FLAGS & E) && (r3 != 0x90000000)) {
+                                    loc_ffffffff8f6484ac();
+                            }
+                    }
+                    r1 = r4;
+                    r4 = s0;
+                    loc_ffffffff8f65ec7c(r5, r1, s0, r11, r7);
+            }
+    }
+    else {
+            r3 = *(r5 + 0x8);
+            asm{ strd       r2, r3, [r1, #0x8] };
+    }
+    goto loc_8f65ed74;
+
+loc_8f65f21c:
+    asm{ strd       r2, r3, [r0, r1] };
+    goto loc_8f65ed74;
+
+loc_8f65edec:
+    r10 = r8;
+    do {
+            r0 = loc_ffffffff8f65e900(r5, r4, r10, r7, stack[2034]);
+            COND = r10 != 0x0;
+            if (!COND) {
+                    loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x1c2, "rest != ((void *)0)");
+            }
+            if (r8 == loc_ffffffff8f65e900(r5, r10, r8, stack[2034], stack[2035])) {
+                break;
+            }
+            r10 = r10 - 0x1;
+            if (r10 >= r4) {
+                continue;
+            }
+            loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x1c9, "stp >= sp");
+    } while (true);
+    r7 = r7 + 0x1;
+    r11 = r4;
+    do {
+            r0 = loc_ffffffff8f65e900(r5, r4, r10, r7, s0);
+            if (r0 != 0x0) {
+                    CMP(r0, r4);
+            }
+            if (CPU_FLAGS & NE) {
+                    r11 = r4;
+            }
+            if (CPU_FLAGS & NE) {
+                    r4 = r0;
+            }
+    } while (CPU_FLAGS & NE);
+    if (r0 != 0x0) {
+            r11 = r4;
+    }
+    if (CPU_FLAGS & NE) {
+            r4 = r0;
+    }
+    if (r4 != r10) {
+            loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x1db, "sep == rest");
+    }
+    if (r10 != loc_ffffffff8f65e900(r5, r11, r4, r7, s0)) {
+            loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x1dc, "sslow(m, ssp, sep, ssub, esub) == rest");
+    }
+    goto loc_8f65f028;
+

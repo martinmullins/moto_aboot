@@ -1,0 +1,74 @@
+    r1 = arg1;
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x54;
+    r5 = r0;
+    r6 = lr;
+    r4 = r1;
+    stack[2039] = *0x8f7112f4;
+    if (*0x8f6e0848 != 0x0) {
+            r0 = 0x1;
+    }
+    if (!CPU_FLAGS & NE) {
+            if (r1 != 0x0) {
+                    CMP(r5, 0x0);
+            }
+            if (!CPU_FLAGS & NE) {
+                    r0 = 0x0;
+            }
+            else {
+                    r0 = loc_ffffffff8f638394();
+                    COND = s0 < 0x0;
+                    if (!COND) {
+                            if (*(r5 + 0x1f8) == 0x0) {
+                                    loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "app/screenmanager/screen_manager.c", 0x12e, "panel->mipi_fb_cfg");
+                            }
+                            r3 = *(r5 + 0x1f8);
+                            stack[2039] = 0x0;
+                            loc_ffffffff8f64a9f0(sp + 0xc, 0x3f, "coordinates@%d,%d", *(r3 + 0x4), *(r3 + 0x8));
+                            r0 = loc_ffffffff8f630990(sp + 0xc, s0);
+                            COND = r5 < 0x0;
+                            if (!COND) {
+                                    if (loc_ffffffff8f630ba0("droid_operation", r5, r4, 0x8) < 0x0) {
+                                            loc_ffffffff8f656968(0x0, "Failed to get droid_operation\n");
+                                    }
+                                    if (loc_ffffffff8f630ba0("arrows", r5, r4 + 0x14, 0x8) < 0x0) {
+                                            loc_ffffffff8f656968(0x0, "Failed to get arrows\n");
+                                    }
+                                    if (loc_ffffffff8f630ba0("start", r5, r4 + 0x8, 0xc) < 0x0) {
+                                            loc_ffffffff8f656968(0x0, "Failed to get start\n");
+                                    }
+                                    if (loc_ffffffff8f630ba0(0x8f69c029, r5, r4 + 0x1c, 0xc) < 0x0) {
+                                            loc_ffffffff8f656968(0x0, "Failed to get text\n");
+                                    }
+                                    if (loc_ffffffff8f630ba0(0x8f68580f, r5, r4 + 0x28, 0x8) < 0x0) {
+                                            loc_ffffffff8f656968(0x0, "Failed to get yes\n");
+                                    }
+                                    if (loc_ffffffff8f630ba0(0x8f67c1fb, r5, r4 + 0x30, 0x8) < 0x0) {
+                                            loc_ffffffff8f656968(0x0, "Failed to get no\n");
+                                    }
+                                    if (loc_ffffffff8f630ba0("ic_unlocked_bootloader", r5, r4 + 0x38, 0x8) < 0x0) {
+                                            loc_ffffffff8f656968(0x0, "Failed to get ic_unlocked_bootloader\n");
+                                    }
+                                    if (loc_ffffffff8f630ba0("warning", r5, r4 + 0x40, 0x8) < 0x0) {
+                                            loc_ffffffff8f656968(0x0, "Failed to get warning\n");
+                                    }
+                                    if (loc_ffffffff8f630ba0("keystore_id", r5, r4 + 0x48, 0x8) < 0x0) {
+                                            loc_ffffffff8f656968(0x0, "Failed to get keystore_id\n");
+                                    }
+                                    r0 = 0x1;
+                                    *0x8f6e0848 = r0;
+                            }
+                            else {
+                                    r0 = 0x0;
+                            }
+                    }
+                    else {
+                            r0 = 0x0;
+                    }
+            }
+    }
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,18 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0xd8;
+    r4 = 0x0;
+    stack[2043] = *0x8f7112f4;
+    loc_ffffffff8f656968(0x1, "bq24296 REG: 00 01 02 03 04 05 06 07 08 09 0A\n");
+    loc_ffffffff8f64aa80(sp + 0xc, "     values: ");
+    do {
+            r0 = *0x8f6e0aa0;
+            loc_ffffffff8f612dc8(r0, 0x6b, zero_extend_32(r4), sp + 0x7);
+            loc_ffffffff8f64aa80(sp + 0x8, "%02X ", stack[1992]);
+            r4 = r4 + 0x1;
+            loc_ffffffff8f64afa0(sp + 0xc, sp + 0x8);
+    } while (r4 != 0xb);
+    r0 = loc_ffffffff8f656968(0x1, 0x8f69b5ea, sp + 0xc);
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

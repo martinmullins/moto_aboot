@@ -1,0 +1,42 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r4 = r2;
+    r5 = r3;
+    stack[2041] = *0x8f7112f4;
+    if (*0x8f6e131c != 0x0) {
+            if ((r0 != -0x1) && (r0 < *0x8f6e1310)) {
+                    r6 = r6 << r0 * 0x80;
+                    r0 = *0x8f6e1318;
+                    r0 = loc_ffffffff8f6524b4(r0 + r6, 0x8f6e1318);
+                    if (r0 == 0x0) {
+                            r0 = *0x8f6e130c;
+                            r0 = loc_ffffffff8f6524b4(r0 + r6);
+                            if (r0 == 0x0) {
+                                    if (loc_ffffffff8f650ad0(0x0, 0x0, 0x8000, 0x0, 0x8f6e1400) != 0x0) {
+                                            r0 = 0x13 ^ 0xffffffff;
+                                    }
+                                    else {
+                                            r1 = 0x0 ^ 0xffffffff;
+                                            r0 = 0xffffbe00;
+                                            stack[2038] = 0x8f6e9600;
+                                            asm{ umlal      r0, r1, r3, r2 };
+                                            r0 = loc_ffffffff8f650ad0(r0, r1, 0x4200, 0x0, stack[2038]);
+                                            if (r0 != 0x0) {
+                                                    r0 = 0x13 ^ 0xffffffff;
+                                            }
+                                    }
+                            }
+                    }
+            }
+            else {
+                    r0 = 0x1 ^ 0xffffffff;
+            }
+    }
+    else {
+            r0 = 0x2 ^ 0xffffffff;
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

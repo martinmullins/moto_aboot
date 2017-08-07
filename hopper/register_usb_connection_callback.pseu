@@ -1,0 +1,32 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r6 = arg0;
+    stack[2043] = *0x8f7112f4;
+    loc_ffffffff8f6346d0(arg0, arg1);
+    r0 = loc_ffffffff8f64aacc(0xc);
+    COND = r4 != 0x0;
+    if (!COND) {
+            if (stack[2043] == *0x8f7112f4) {
+                    r0 = loc_ffffffff8f656968(0x0 ^ 0xffffffff, "failed to allocate memory for usb connection event\n");
+            }
+            else {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    else {
+            r5 = 0x8f7112f4;
+            loc_ffffffff8f656968(0x2, "register callback %p\n", r6);
+            *(r4 + 0x8) = r6;
+            loc_ffffffff8f61afc0(0x8f6e0724);
+            r2 = *0x8f6e0740;
+            *0x8f6e0740 = r4;
+            asm{ stm        r4, {r2, r3} };
+            *(r2 + 0x4) = r4;
+            if (stack[2043] != *r5) {
+                    r0 = loc_ffffffff8f648514();
+            }
+            else {
+                    r0 = loc_ffffffff8f61b098(0x8f6e0724);
+            }
+    }
+    return r0;
+

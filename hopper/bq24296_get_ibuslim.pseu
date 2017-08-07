@@ -1,0 +1,22 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    r0 = *0x8f6e0aa0;
+    if (r0 != 0x0) {
+            r0 = loc_ffffffff8f612dc8();
+            COND = r5 >= 0x0;
+            if (COND) {
+                    r0 = stack[2043];
+            }
+            if (CPU_FLAGS & GE) {
+                    r0 = r0 & 0x7;
+            }
+            if (!CPU_FLAGS & GE) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "BQ24296: Couldn't read reg: %X (%d)\n", 0x0, r5);
+                    r0 = r5;
+            }
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

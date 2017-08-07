@@ -1,0 +1,65 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r7 = arg0;
+    stack[2041] = *0x8f7112f4;
+    r0 = loc_ffffffff8f671ed0(arg0, arg1);
+    r4 = r0;
+    if (r0 != 0xff) {
+            r4 = 0x0;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f672918;
+
+loc_8f67284c:
+    r5 = loc_ffffffff8f66219c(sp + 0x6, sp + 0x8);
+    loc_ffffffff8f656968(0x1, "dbvc_cid: %02x status: %02x\n", 0x2, r5);
+    r2 = 0x2;
+    r3 = zero_extend_32(r5 << r2 * 0x100) | r2 / 0x100;
+    if (r3 != 0xde) {
+            CMP(r3, 0xff);
+    }
+    if ((CPU_FLAGS & NE) || (r5 != 0xf)) goto loc_8f6728ac;
+
+loc_8f672894:
+    loc_ffffffff8f656968(0x1, "PSE Status: %02x\n", 0x9);
+    goto loc_8f6728cc;
+
+loc_8f6728cc:
+    if (loc_ffffffff8f672aa8() == 0x0) goto loc_8f6728ec;
+
+loc_8f6728d8:
+    loc_ffffffff8f656968(0x1, "unlock failed in sst oem unlock handler\n");
+    goto loc_8f6728e4;
+
+loc_8f6728e4:
+    r4 = 0x0;
+    goto loc_8f672918;
+
+loc_8f672918:
+    r0 = r4;
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f6728ec:
+    if (loc_ffffffff8f674a88() == 0x0) goto loc_8f672908;
+
+loc_8f6728f8:
+    if (loc_ffffffff8f672a18() == 0x0) goto loc_8f672918;
+    goto loc_8f6728d8;
+
+loc_8f672908:
+    if (loc_ffffffff8f672a60() == 0x0) goto loc_8f6728f8;
+    goto loc_8f6728d8;
+
+loc_8f6728ac:
+    if (loc_ffffffff8f671fd8(r7, sp + 0x5) != 0x0) {
+            r2 = 0x2;
+    }
+    if (CPU_FLAGS & NE) {
+            r3 = 0x8f6affb0;
+    }
+    if (CPU_FLAGS & NE) {
+            *r3 = r2;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f6728e4;
+

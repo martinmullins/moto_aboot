@@ -1,0 +1,76 @@
+    r1 = arg1;
+    r0 = arg0;
+    r12 = r0 - 0x4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    r2 = 0x0 - r12;
+    r2 = r2 + r12 + CARRY(FLAGS);
+    if ((r0 & 0xfb) == 0x0) {
+            *0x8f6e0c00 = r1;
+    }
+    if (r0 != 0x1) {
+            r12 = r2;
+    }
+    if (CPU_FLAGS & E) {
+            r12 = r2 | 0x1;
+    }
+    COND = r12 != 0x0;
+    r12 = r0 - 0x3;
+    if (COND) {
+            *(0x8f6e0c00 + 0x4) = r1;
+    }
+    r12 = zero_extend_32(r12);
+    if (r12 < 0x1) {
+            *(0x8f6e0c00 + 0xc) = r1;
+    }
+    if (r0 != 0x2) {
+            r0 = r2;
+    }
+    if (CPU_FLAGS & E) {
+            r0 = r2 | 0x1;
+    }
+    r2 = 0x8f6e0c40;
+    asm{ ldm        r3, {r2, r5} };
+    r5 = r5 + r2;
+    r2 = 0x8f6e0c40;
+    if (r0 != 0x0) {
+            *(0x8f6e0c00 + 0x8) = r1;
+    }
+    r0 = *r2;
+    r1 = *(0x8f6e0c10 + 0x8);
+    r2 = *(0x8f6e0c10 + 0xc);
+    if (r0 != 0x0) {
+            r12 = r1;
+    }
+    if (CPU_FLAGS & E) {
+            r12 = r2;
+    }
+    COND = r5 >= r12;
+    r5 = *(0x8f6e0c00 + 0xc);
+    if (COND) {
+            r12 = 0x0;
+    }
+    if (CPU_FLAGS & NS) {
+            *0x8f6e0c00 = r12;
+    }
+    if (CPU_FLAGS & NS) {
+            *(0x8f6e0c00 + 0x4) = r12;
+    }
+    r12 = *(0x8f6e0c00 + 0x8);
+    if (r0 == 0x0) {
+            r2 = r1;
+    }
+    if (r5 + r12 >= r2) {
+            r2 = 0x0;
+    }
+    if (CPU_FLAGS & NS) {
+            *(0x8f6e0c00 + 0x8) = r2;
+    }
+    if (CPU_FLAGS & NS) {
+            *(0x8f6e0c00 + 0xc) = r2;
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

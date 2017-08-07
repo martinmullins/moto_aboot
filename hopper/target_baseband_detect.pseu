@@ -1,0 +1,62 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x14;
+    r5 = lr;
+    stack[2043] = *0x8f7112f4;
+    r2 = *r0;
+    if (r2 > 0xf3) goto loc_8f600a28;
+
+loc_8f600a00:
+    if ((r2 >= 0xf2) || (r2 == 0xef)) goto loc_8f600a74;
+
+loc_8f600a10:
+    if (CPU_FLAGS & A) goto loc_8f600a7c;
+
+loc_8f600a14:
+    if ((r2 == 0xce) || (r2 == 0xe9)) goto loc_8f600a74;
+
+loc_8f600a88:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Platform type: %u is not supported\n");
+    loc_ffffffff8f6484ac(r5, "ASSERT FAILED at (%s:%d): %s\n", "target/msm8916/init.c", 0x1a6, 0x8f69c66f);
+    goto loc_8f600ab0;
+
+loc_8f600ab0:
+    if (stack[2043] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f600a74:
+    r2 = 0x0;
+    goto loc_8f600a80;
+
+loc_8f600a80:
+    *(r0 + 0x18) = r2;
+    goto loc_8f600ab0;
+
+loc_8f600a7c:
+    r2 = 0x1;
+    goto loc_8f600a80;
+
+loc_8f600a28:
+    if (r2 == 0x107) goto loc_8f600a74;
+
+loc_8f600a34:
+    if (CPU_FLAGS & A) goto loc_8f600a50;
+
+loc_8f600a38:
+    if (r2 == 0xf7) goto loc_8f600a7c;
+
+loc_8f600a40:
+    if ((CPU_FLAGS & B) || (r2 >= 0xfa)) goto loc_8f600a88;
+    goto loc_8f600a74;
+
+loc_8f600a50:
+    if (r2 < 0x10c) goto loc_8f600a88;
+
+loc_8f600a58:
+    r1 = 0x10e;
+    if (r2 < r1) goto loc_8f600a74;
+
+loc_8f600a64:
+    if (r2 == r1 + 0x1) goto loc_8f600a7c;
+

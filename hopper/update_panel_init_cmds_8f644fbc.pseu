@@ -1,0 +1,14 @@
+    stack[2044] = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    r0 = loc_ffffffff8f643dc0(sp, arg1);
+    if ((r0 == 0x0) && (stack[2044] <= 0x43)) {
+            *(0x8f6aedcc + 0x10) = 0x8f6aecc4;
+            *(0x8f6aedcc + 0x14) = 0x8;
+            r0 = loc_ffffffff8f64b2c0("qcom,mdss_dsi_mot_boe_499_720p_video_v1", "qcom,mdss_dsi_mot_boe_499_720p_video_v0", 0x40, 0x8f6aedcc);
+    }
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

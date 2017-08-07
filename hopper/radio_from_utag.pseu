@@ -1,0 +1,32 @@
+    stack[2042] = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    *(0xfffffffffffffff8 + sp + 0x8) = 0x0;
+    if (loc_ffffffff8f619de0("radio", sp, 0x4, 0x0, stack[2042], stack[2043], arg2, r4, 0x8f7112f4, lr) == 0x0) {
+            r0 = 0x0;
+    }
+    else {
+            if ((stack[2042] == 0x30) && (loc_ffffffff8f64a234(stack[2043]) == 0x78)) {
+                    r0 = loc_ffffffff8f649c50(sp);
+            }
+            else {
+                    if (loc_ffffffff8f64a1e0(stack[2042]) != 0x0) {
+                            r0 = stack[2042];
+                            if (loc_ffffffff8f64a0c8(stack[2042]) != 0x0) {
+                                    r0 = r0 - 0x30;
+                            }
+                            if (!CPU_FLAGS & NE) {
+                                    r0 = loc_ffffffff8f64a234();
+                                    r0 = r0 - 0x57;
+                            }
+                    }
+                    else {
+                            r0 = 0x0;
+                    }
+            }
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

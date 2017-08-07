@@ -1,0 +1,25 @@
+    stack[2044] = r4;
+    stack[2045] = r5;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = arg0;
+    r4 = arg1;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r0 = loc_ffffffff8f630c30(0x8f6812c2, r5, arg2, r3, arg0, stack[2043], stack[2044], stack[2045], 0x8f7112f4, lr);
+    *r4 = r0;
+    if (r0 == 0x0) {
+            loc_ffffffff8f656968(0x1, "No chip setting for lcd_bias\n");
+            r0 = 0x0 ^ 0xffffffff;
+    }
+    else {
+            r0 = loc_ffffffff8f6309d0("address", r5, r4 + 0x4);
+            if (r0 != -0x1) {
+                    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", "address", *(r4 + 0x4));
+                    r0 = 0x0;
+            }
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

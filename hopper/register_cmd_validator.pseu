@@ -1,0 +1,35 @@
+    stack[2044] = r6;
+    stack[2045] = r7;
+    stack[2046] = r8;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r6 = arg0;
+    r7 = arg1;
+    r8 = arg2;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    r0 = loc_ffffffff8f64aacc(0x10, arg1, arg2, r3, arg0, stack[2041], r4, 0x8f7112f4, stack[2044], stack[2045], stack[2046], lr);
+    COND = r4 != 0x0;
+    if (!COND) {
+            if (stack[2041] == *0x8f7112f4) {
+                    r0 = loc_ffffffff8f656968();
+            }
+            else {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    else {
+            r5 = 0x8f7112f4;
+            r0 = loc_ffffffff8f64adc8();
+            r3 = *r6;
+            *(r4 + 0x8) = r7;
+            *(r4 + 0xc) = r8;
+            asm{ stm        r4, {r3, r6} };
+            *(r3 + 0x4) = r4;
+            r3 = *r5;
+            *r6 = r4;
+            if (stack[2041] != r3) {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    return r0;
+

@@ -1,0 +1,25 @@
+    r1 = arg1;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    if (*0x8f7112f4 != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    else {
+            r0 = "fastboot_screen";
+            sp = sp + 0xc;
+            sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+            COND = r1 == 0x0;
+            stack[2045] = *0x8f7112f4;
+            if (!COND) {
+                    r0 = *0x8f6e0854;
+                    if (r0 != 0x0) {
+                            r0 = loc_ffffffff8f64b470(r0 + 0x8);
+                            r0 = 0x1 - r0;
+                            COND = r0 < 0x0;
+                    }
+            }
+            if (stack[2045] != *0x8f7112f4) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

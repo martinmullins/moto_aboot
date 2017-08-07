@@ -1,0 +1,16 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    loc_ffffffff8f62192c(0x8f683451, "usage: fastboot oem off_mode_charge [options]", arg2, r3, arg0, r3, r4, lr);
+    loc_ffffffff8f62192c(0x8f683451, 0x8f6a4e20);
+    loc_ffffffff8f62192c(0x8f683451, "                            Show current status");
+    loc_ffffffff8f62192c(0x8f683451, "  help                      Show usage");
+    loc_ffffffff8f62192c(0x8f683451, "  false,off,no,disable,0    Don't use charger mode");
+    loc_ffffffff8f62192c(0x8f683451, "  true,on,yes,enable,1      Default (charger)");
+    if (r3 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = loc_ffffffff8f62192c(0x8f683451, 0x8f6a4e20);
+    }
+    return r0;
+

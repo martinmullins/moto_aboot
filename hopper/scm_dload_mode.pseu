@@ -1,0 +1,50 @@
+    r11 = (sp - 0x4 - 0x4) + 0x4;
+    *(r11 + 0xffffffffffffffe8) = arg0;
+    *(r11 + 0xfffffffffffffff8) = *0x8f7112f4;
+    *(r11 + 0xfffffffffffffff0) = 0x0;
+    loc_ffffffff8f656968(0x2, "DLOAD mode: %d\n", *(r11 + 0xffffffffffffffe8), 0x0, stack[2040], stack[2041]);
+    if (*(r11 + 0xffffffffffffffe8) == 0x0) {
+            *(r11 + 0xfffffffffffffff4) = 0x10;
+    }
+    else {
+            if (*(r11 + 0xffffffffffffffe8) == 0x1) {
+                    *(r11 + 0xfffffffffffffff4) = 0x2;
+            }
+            else {
+                    if (*(r11 + 0xffffffffffffffe8) == 0x3) {
+                            *(r11 + 0xfffffffffffffff4) = 0x20;
+                    }
+                    else {
+                            *(r11 + 0xfffffffffffffff4) = 0x0;
+                    }
+            }
+    }
+    *(r11 + 0xfffffffffffffff0) = loc_ffffffff8f617768(0x1, 0x10, *(r11 + 0xfffffffffffffff4), 0x0);
+    if (*(r11 + 0xfffffffffffffff0) != 0x0) {
+            *(r11 + 0xfffffffffffffff0) = loc_ffffffff8f617658(0x193d100, *(r11 + 0xfffffffffffffff4));
+            if (*(r11 + 0xfffffffffffffff0) != 0x0) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to write to boot misc: %d\n", *(r11 + 0xfffffffffffffff0));
+            }
+            else {
+                    if (loc_ffffffff8f617514() != 0x0) {
+                            *(r11 + 0xfffffffffffffff0) = loc_ffffffff8f617768(0x1, 0x9, 0x1, 0x0);
+                            if (*(r11 + 0xfffffffffffffff0) != 0x0) {
+                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to disable the wdog debug \n");
+                            }
+                    }
+            }
+    }
+    else {
+            if (loc_ffffffff8f617514() != 0x0) {
+                    *(r11 + 0xfffffffffffffff0) = loc_ffffffff8f617768(0x1, 0x9, 0x1, 0x0);
+                    if (*(r11 + 0xfffffffffffffff0) != 0x0) {
+                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to disable the wdog debug \n");
+                    }
+            }
+    }
+    r0 = *0x8f7112f4;
+    if (*(r11 + 0xfffffffffffffff8) != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,115 @@
+    r1 = arg1;
+    r5 = arg3;
+    r4 = arg2;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x2c;
+    COND = r10 != 0x0;
+    r8 = arg0;
+    r11 = arg4;
+    stack[2037] = *0x8f7112f4;
+    if (COND) goto loc_8f6230cc;
+
+loc_8f6230bc:
+    loc_ffffffff8f656968(r10, "invalid image!\n");
+    goto loc_8f623244;
+
+loc_8f623244:
+    r0 = 0x0 ^ 0xffffffff;
+    asm{ strd       r2, r3, [sb] };
+    goto loc_8f623254;
+
+loc_8f623254:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f6230cc:
+    r0 = loc_ffffffff8f6539b0();
+    r6 = r0;
+    if (r0 != -0x1) goto loc_8f6230f8;
+
+loc_8f6230dc:
+    loc_ffffffff8f656968(0x0, "Unable to find partition \"%s\"\n", r8);
+    goto loc_8f6231ac;
+
+loc_8f6231ac:
+    loc_ffffffff8f62192c();
+    goto loc_8f623244;
+
+loc_8f6230f8:
+    loc_ffffffff8f653a28();
+    asm{ strd       r0, r1, [sp, #0x50 + var_40] };
+    r0 = loc_ffffffff8f653b20(r6);
+    asm{ strd       r0, r1, [sp, #0x50 + var_38] };
+    asm{ ldrd       r0, r1, [sp, #0x50 + var_40] };
+    if (r5 == r1) {
+            CMP(r4, r0);
+    }
+    if (CPU_FLAGS & A) goto loc_8f623134;
+
+loc_8f62311c:
+    asm{ ldrd       r6, r7, [sb] };
+    r2 = r4 + r6;
+    r3 = r5 + r7 + CARRY(FLAGS);
+    if (r3 == r1) {
+            CMP(r2, r0);
+    }
+    if (CPU_FLAGS & B) goto loc_8f62316c;
+
+loc_8f623134:
+    loc_ffffffff8f656968(0x0, "image %s size exceeds limit", r8);
+    asm{ ldrd       r2, r3, [sb] };
+    r0 = 0x0;
+    r1 = "partition size=0x%llx, flashed_sz=0x%llx, sz=0x%llx";
+    asm{ strd       r4, r5, [sp, #0x50 + var_48] };
+    asm{ strd       r2, r3, [sp, #0x50 + var_50] };
+    asm{ ldrd       r2, r3, [sp, #0x50 + var_40] };
+    loc_ffffffff8f656968(r0, r1);
+    goto loc_8f6231ac;
+
+loc_8f62316c:
+    COND = r1 != 0x0;
+    if (COND) goto loc_8f6231b4;
+
+loc_8f623174:
+    r1 = "erase partition %s\n";
+    r2 = r8;
+    loc_ffffffff8f656968(0x1, r1, r2);
+    r0 = loc_ffffffff8f622518(r8);
+    if (r0 != -0x1) goto loc_8f6231b4;
+
+loc_8f623194:
+    loc_ffffffff8f656968(0x0, "Failed to erase partition %s\n", r8);
+    goto loc_8f6231ac;
+
+loc_8f6231b4:
+    asm{ ldrd       r0, r1, [sp, #0x50 + var_38] };
+    asm{ ldrd       r2, r3, [sb] };
+    asm{ strd       r4, r5, [sp, #0x50 + var_48] };
+    r2 = r2 + r0;
+    r0 = 0x2;
+    r3 = r3 + r1 + CARRY(FLAGS);
+    r1 = "flashing image %s: offset=0x%llx, data_size=0x%llx\n";
+    asm{ strd       r2, r3, [sp, #0x50 + var_50] };
+    r2 = r8;
+    r0 = loc_ffffffff8f656968(r0, r1, r2, r3);
+    asm{ ldrd       r2, r3, [sp, #0x50 + var_38] };
+    asm{ ldrd       r0, r1, [sb] };
+    r0 = r0 + r2;
+    r2 = r4;
+    r0 = loc_ffffffff8f650ad0(r0, r1 + r3 + CARRY(FLAGS), r2, r5, r10);
+    if (r0 == 0x0) goto loc_8f623218;
+
+loc_8f623204:
+    loc_ffffffff8f62192c(0x8f683451, "Failed to flash partition %s\n", r8);
+    goto loc_8f623244;
+
+loc_8f623218:
+    if (r11 != 0x1) {
+            r3 = 0x8f6c03c0;
+            asm{ ldrd       r2, r3, [r3] };
+            r4 = r4 + r2;
+    }
+    asm{ strd       r4, r5, [sb] };
+    goto loc_8f623254;
+

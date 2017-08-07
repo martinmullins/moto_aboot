@@ -1,0 +1,13 @@
+    stack[2046] = r5;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = arg0;
+    r3 = *0x8f7112f4;
+    loc_ffffffff8f6029c8(0x1, arg1, arg2, r3, arg0, r3, arg2, r4, stack[2046], lr);
+    if (r3 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = loc_ffffffff8f606d48(0x12, r5, 0x0);
+    }
+    return r0;
+

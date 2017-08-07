@@ -1,0 +1,22 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2041] = *0x8f7112f4;
+    if (*0x8f6c0040 != 0x0) {
+            r0 = *0x8f6c003c;
+    }
+    if (!CPU_FLAGS & NE) {
+            r0 = loc_ffffffff8f61a4c4();
+            COND = r4 != 0x0;
+            if (!COND) {
+                    r4 = loc_ffffffff8f631668();
+                    loc_ffffffff8f656968(0x1, "get radio from FDT: 0x%x\n", r4);
+            }
+            r0 = r4;
+            *0x8f6c003c = r4;
+            *0x8f6c0040 = 0x1;
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

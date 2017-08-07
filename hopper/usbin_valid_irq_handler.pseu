@@ -1,0 +1,51 @@
+    stack[2044] = r4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg0;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r0 = loc_ffffffff8f645744(arg0, arg1, arg2, r3, arg0, stack[2043], stack[2044], r5, 0x8f7112f4, lr);
+    COND = r5 == 0x0;
+    if (COND) goto loc_8f645804;
+
+loc_8f6457b8:
+    loc_ffffffff8f60c558(0x5);
+    r0 = loc_ffffffff8f601fd4();
+    r4 = r0;
+    if (r0 != 0x3) goto loc_8f6457e4;
+
+loc_8f6457d0:
+    loc_ffffffff8f656968(0x1, "Factory cable detected\n");
+    goto loc_8f6457fc;
+
+loc_8f6457fc:
+    loc_ffffffff8f64675c();
+    goto loc_8f645848;
+
+loc_8f645848:
+    r0 = 0x0;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f6457e4:
+    if (r0 != 0x2) goto loc_8f645848;
+
+loc_8f6457ec:
+    loc_ffffffff8f656968(0x1, "Regular USB cable detected\n");
+    goto loc_8f6457fc;
+
+loc_8f645804:
+    if (loc_ffffffff8f646720() == 0x3) {
+            loc_ffffffff8f656968(0x1, "Kill via Factory\n");
+            loc_ffffffff8f634528();
+            loc_ffffffff8f656968(0x1, "Killing via Factory.\n");
+    }
+    else {
+            loc_ffffffff8f64675c(r5);
+            if (r4 != 0x0) {
+                    (r4)(r5);
+            }
+    }
+    goto loc_8f645848;
+

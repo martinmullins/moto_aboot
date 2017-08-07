@@ -1,0 +1,54 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r3 = *0x8f7112f4;
+    r6 = lr;
+    r7 = arg0;
+    r5 = arg1;
+    r4 = arg2;
+    stack[2041] = r3;
+    loc_ffffffff8f602384(arg0, arg1, arg2, r3, stack[2038]);
+    asm{ dsb        sy };
+    loc_ffffffff8f60306c(r7);
+    asm{ dsb        sy };
+    if (r5 != 0x0) {
+            r3 = 0x60;
+    }
+    if (CPU_FLAGS & NE) {
+            *r5 = r3;
+    }
+    asm{ dsb        sy };
+    *(r4 + 0xa0) = 0xcc;
+    asm{ dsb        sy };
+    *r4 = 0x0;
+    *(r4 + 0x4) = 0x34;
+    *(r4 + 0xb0) = 0x99;
+    *(r4 + 0x1c) = 0x0;
+    *(r4 + 0x20) = 0x0;
+    *(r4 + 0x18) = 0xf;
+    *(r4 + 0xb8) = 0x0;
+    *(r4 + 0x24) = 0x0;
+    *(r4 + 0xa8) = 0x10;
+    *(r4 + 0xa8) = 0x20;
+    *(r4 + 0xa8) = 0x30;
+    *(r4 + 0xa8) = 0xa0;
+    *(r4 + 0xa8) = 0x80;
+    *(r4 + 0x3c) = 0x0;
+    *(r4 + 0xa8) = 0x1;
+    *(r4 + 0xa8) = 0x4;
+    *(r4 + 0xa8) = 0x600;
+    *(r4 + 0xa8) = 0x80;
+    *(r4 + 0x34) = 0x220;
+    *(r4 + 0xa8) = 0x500;
+    r0 = loc_ffffffff8f64b354("\n*** Welcome to MBM Next Generation ***\n\n");
+    r0 = loc_ffffffff8f60d358(r4, "\n*** Welcome to MBM Next Generation ***\n\n", r0);
+    if (*0x8f6b8aec >= 0x3) {
+            r0 = loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm_shared/uart_dm.c", 0x1bc, "port < ARRAY_SIZE(port_lookup)");
+    }
+    r3 = *0x8f6b8aec;
+    *0x8f6b8aec = r3 + 0x1;
+    *(0x8f6b8adc + r3 * 0x4) = r4;
+    *0x8f6b8ad8 = 0x1;
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

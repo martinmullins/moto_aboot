@@ -1,0 +1,58 @@
+    r3 = arg3;
+    r2 = arg2;
+    r1 = arg1;
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    if (*(r0 + 0x8) != 0x0) {
+            r5 = *(r0 + 0x10);
+            if (r1 <= r5) {
+                    r4 = *(r0 + 0x14);
+                    if (r2 < r4) {
+                            r1 = r5 - r1;
+                    }
+                    if (CPU_FLAGS & B) {
+                            r2 = r4 - r2;
+                    }
+                    if (!CPU_FLAGS & B) {
+                            if (stack[2043] == *0x8f7112f4) {
+                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s width/height checking fails in gfx!", "putpixel24");
+                            }
+                            else {
+                                    loc_ffffffff8f648514();
+                            }
+                    }
+                    else {
+                            r4 = *(r0 + 0x18);
+                            r2 = r1 + r4 * r2;
+                            r1 = *r0;
+                            *(r1 + r2 + r2 * 0x2) = r4 >> (r3 & !0xff000000) / 0x10000;
+                            *(0x2 + r1 + r2 + r2 * 0x2) = r3 & !0xff000000;
+                            *(0x1 + r1 + r2 + r2 * 0x2) = r2 + r2 * 0x2 >> (r3 & !0xff000000) / 0x100;
+                            if (stack[2043] != *0x8f7112f4) {
+                                    loc_ffffffff8f648514();
+                            }
+                    }
+            }
+            else {
+                    if (stack[2043] == *0x8f7112f4) {
+                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s width/height checking fails in gfx!", "putpixel24");
+                    }
+                    else {
+                            loc_ffffffff8f648514();
+                    }
+            }
+    }
+    else {
+            r4 = *(r0 + 0x18);
+            r2 = r1 + r4 * r2;
+            r1 = *r0;
+            *(r1 + r2 + r2 * 0x2) = r4 >> (r3 & !0xff000000) / 0x10000;
+            *(0x2 + r1 + r2 + r2 * 0x2) = r3 & !0xff000000;
+            *(0x1 + r1 + r2 + r2 * 0x2) = r2 + r2 * 0x2 >> (r3 & !0xff000000) / 0x100;
+            if (stack[2043] != *0x8f7112f4) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

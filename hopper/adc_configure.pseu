@@ -1,0 +1,46 @@
+    stack[2044] = r4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg0;
+    r1 = *(r4 + 0x4);
+    r0 = *arg0;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    loc_ffffffff8f6452d8(r0 + 0x40, r1 << r1 * 0x8 & 0xf8, arg2, r3, arg0, stack[2043], stack[2044], r5, 0x8f7112f4, lr);
+    r0 = *r4;
+    loc_ffffffff8f6452d8(r0 + 0x48, *(r4 + 0x6));
+    r1 = *(r4 + 0x8);
+    r0 = *r4;
+    loc_ffffffff8f6452d8(r0 + 0x50, r1 << r1 * 0x4 & 0xfc);
+    r0 = *r4;
+    loc_ffffffff8f6452d8(r0 + 0x51, *(r4 + 0x9));
+    r0 = *r4;
+    loc_ffffffff8f6452d8(r0 + 0x5a, *(r4 + 0xa));
+    r0 = *r4;
+    loc_ffffffff8f6452d8(r0 + 0x46, 0x80);
+    r0 = *r4;
+    loc_ffffffff8f6452d8(r0 + 0x52, 0x80);
+    while ((loc_ffffffff8f645264(*r4 + 0x8) & 0x3) != 0x1) {
+            loc_ffffffff8f60c5a0(0xa);
+    }
+    loc_ffffffff8f656968(0x2, "ADC conversion is complete\n");
+    r5 = loc_ffffffff8f645264(*r4 + 0x61);
+    r0 = *r4;
+    r0 = loc_ffffffff8f645264(r0 + 0x60);
+    r0 = zero_extend_32(r0 | r5 * 0x100);
+    if (r0 < 0xa800) {
+            r5 = r0;
+    }
+    if (CPU_FLAGS & NS) {
+            r5 = 0xa800;
+    }
+    if (r0 < 0x6000) {
+            r5 = 0x6000;
+    }
+    r0 = *r4;
+    loc_ffffffff8f6452d8(r0 + 0x46, 0x7f);
+    r0 = r5;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

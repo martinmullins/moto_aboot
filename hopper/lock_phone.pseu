@@ -1,0 +1,38 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r6 = loc_ffffffff8f674cc4(arg0, arg1, arg2, r3, arg0, stack[2043], r4, 0x8f7112f4, r6, lr);
+    if ((loc_ffffffff8f674b74() != 0x0) && (CPU_FLAGS & NE)) {
+            loc_ffffffff8f656968();
+            r0 = 0x10;
+    }
+    else {
+            if (loc_ffffffff8f620d1c() != 0x0) {
+                    loc_ffffffff8f656968();
+                    r0 = 0x10;
+            }
+            else {
+                    r0 = loc_ffffffff8f620bc4();
+                    COND = r4 != 0x0;
+                    if (!COND) {
+                            r0 = 0x0 - r6 - 0x4;
+                            if (loc_ffffffff8f671c58(r0 + (r6 - 0x4) + CARRY(FLAGS)) != 0xff) {
+                                    loc_ffffffff8f656968(r4, "Failed to lock phone!\n");
+                                    r0 = 0xf;
+                            }
+                            else {
+                                    loc_ffffffff8f674774(0x3, 0x1);
+                                    r0 = r4;
+                            }
+                    }
+                    else {
+                            loc_ffffffff8f656968();
+                            r0 = 0x10;
+                    }
+            }
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

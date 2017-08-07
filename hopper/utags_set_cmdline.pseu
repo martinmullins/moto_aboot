@@ -1,0 +1,13 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    if (arg1 != 0x0) {
+            r1 = 0x8f6554ac;
+            asm{ stmib      sp, {r1, r2} };
+            *r1 = 0x0;
+            loc_ffffffff8f679d80();
+    }
+    if (stack[2045] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

@@ -1,0 +1,340 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x1d4;
+    r3 = *0x8f7112f4;
+    r5 = arg0;
+    s0 = arg1;
+    r6 = lr;
+    stack[2037] = r3;
+    loc_ffffffff8f64adc8(sp + 0x44, 0x0, 0x10, r3, stack[1922]);
+    loc_ffffffff8f64adc8(sp + 0x54, 0x0, 0x10);
+    loc_ffffffff8f64adc8(sp + 0x64, 0x0, 0x10);
+    loc_ffffffff8f64adc8(sp + 0x74, 0x0, 0x10);
+    loc_ffffffff8f64adc8(sp + 0x84, 0x0, 0x10);
+    loc_ffffffff8f64adc8(sp + 0x120, 0x0, 0x21);
+    *(sp + 0x28) = 0x0;
+    loc_ffffffff8f64adc8(sp + 0x144, 0x0, 0x21, 0xfffffe58, stack[1922], stack[1923]);
+    loc_ffffffff8f64adc8(sp + 0x168, 0x0, 0x24);
+    loc_ffffffff8f64adc8(sp + 0xb8, 0x0, 0x12);
+    loc_ffffffff8f64adc8(sp + 0xe4, 0x0, 0x19);
+    loc_ffffffff8f64adc8(sp + 0x100, 0x0, 0x20);
+    *(sp + 0x2c) = 0x0;
+    *(sp + 0x30) = 0x0;
+    loc_ffffffff8f64adc8(sp + 0x94, 0x0, 0x10, 0xfffffe60);
+    if (loc_ffffffff8f61e414() < 0x9) {
+            loc_8f61efec();
+    }
+    r4 = "normal";
+    if (r5 == 0x0) {
+            r8 = 0x0;
+            r10 = r8;
+    }
+    else {
+            if (*r5 != 0x0) {
+                    r8 = 0x1;
+                    r10 = 0x200;
+            }
+            else {
+                    r8 = 0x0;
+                    r10 = r8;
+            }
+    }
+    r7 = loc_ffffffff8f64b354(" androidboot.emmc=true");
+    r11 = loc_ffffffff8f64b354(" androidboot.serialno=");
+    loc_ffffffff8f60077c(sp + 0xa4);
+    r0 = loc_ffffffff8f64b354(sp + 0xa4);
+    r0 = r0 + r11 + r7;
+    r7 = r0 + r10;
+    r0 = loc_ffffffff8f600ae0(r0);
+    if (((r0 == 0x1) || (CPU_FLAGS & B)) || (r0 == 0x5)) {
+            r7 = loc_ffffffff8f64b354() + r7;
+    }
+    r11 = loc_ffffffff8f64b354(" androidboot.mode=");
+    stack[1925] = loc_ffffffff8f64b354(r4);
+    r0 = loc_ffffffff8f61a43c();
+    loc_ffffffff8f64a9f0(sp + 0x44, 0x10, 0x8f684f15, r0);
+    r10 = loc_ffffffff8f64b354(" androidboot.hwrev=");
+    stack[1929] = loc_ffffffff8f64b354(sp + 0x44);
+    r0 = loc_ffffffff8f61a57c();
+    loc_ffffffff8f64a9f0(sp + 0x54, 0x10, 0x8f684f15, r0);
+    stack[1926] = loc_ffffffff8f64b354(" androidboot.radio=");
+    r0 = loc_ffffffff8f64b354(sp + 0x54);
+    r7 = r7 + r0 + stack[1926] + stack[1929] + r10 + stack[1925] + r11;
+    if ((loc_ffffffff8f673228(r0 + stack[1926] + stack[1929] + r10 + stack[1925] + r11) == 0x0) && (loc_ffffffff8f64b0ac(0x8f6826e1, loc_ffffffff8f61e624()) == 0x0)) {
+            r7 = r7 + loc_ffffffff8f64b354(" androidboot.init_rc=") + loc_ffffffff8f64b354("/init.wff.rc");
+            r7 = r7 + loc_ffffffff8f64b354(" androidboot.selinux=");
+            r7 = r7 + loc_ffffffff8f64b354("permissive");
+    }
+    r0 = loc_ffffffff8f63787c();
+    loc_ffffffff8f64a9f0(sp + 0x74, 0x10, "0x%08X", r0);
+    r10 = loc_ffffffff8f64b354(" androidboot.powerup_reason=");
+    r0 = loc_ffffffff8f64b354(sp + 0x74);
+    r0 = r0 + r10;
+    r10 = r0 + r7;
+    if (loc_ffffffff8f637dfc(r0) != 0x0) {
+            r0 = loc_ffffffff8f637dfc();
+            loc_ffffffff8f64a9f0(sp + 0x64, 0x10, "0x%08X", r0);
+            r10 = r10 + loc_ffffffff8f64b354(" androidboot.last_powerup_reason=") + loc_ffffffff8f64b354(sp + 0x64);
+    }
+    r0 = loc_ffffffff8f637cd4();
+    loc_ffffffff8f64a9f0(sp + 0xe4, 0x19, 0x8f6853ea, r0);
+    r11 = loc_ffffffff8f64b354(" androidboot.bootreason=");
+    r7 = loc_ffffffff8f64b354(sp + 0xe4);
+    r0 = loc_ffffffff8f61a60c();
+    loc_ffffffff8f64a9f0(sp + 0x84, 0x10, 0x8f6853ea, r0);
+    stack[1925] = loc_ffffffff8f64b354(" androidboot.device=");
+    r0 = loc_ffffffff8f64b354(sp + 0x84);
+    stack[1927] = loc_ffffffff8f64b354(" androidboot.write_protect=", r0);
+    stack[1926] = loc_ffffffff8f64b354(" msm_poweroff.download_mode=");
+    r10 = r10 + loc_ffffffff8f64b354(" androidboot.fsg-id=") + stack[1926] + stack[1927] + r0 + stack[1925] + 0x2 + r11 + r7;
+    if (loc_ffffffff8f61e95c("fsg-id", sp + 0x120, 0x21, stack[1926] + stack[1927] + r0 + stack[1925] + 0x2 + r11 + r7) != 0x0) {
+            r10 = loc_ffffffff8f64b354(sp + 0x120) + r10;
+    }
+    if (loc_ffffffff8f61e95c("wifi_mac", sp + 0x168, 0x24) != 0x0) {
+            r10 = r10 + loc_ffffffff8f64b354(sp + 0x168) + loc_ffffffff8f64b354(" androidboot.wifimacaddr=");
+    }
+    if (loc_ffffffff8f61e95c("bt_mac", sp + 0xb8, 0x12) != 0x0) {
+            r10 = r10 + loc_ffffffff8f64b354(sp + 0xb8) + loc_ffffffff8f64b354(" androidboot.btmacaddr=");
+    }
+    r0 = loc_ffffffff8f673228();
+    loc_ffffffff8f64a9f0(sp + 0x28, 0x2, 0x8f6a697d, r0);
+    r7 = loc_ffffffff8f64b354(sp + 0x28);
+    r11 = loc_ffffffff8f64b354(" androidboot.secure_hardware=");
+    r0 = loc_ffffffff8f662564();
+    loc_ffffffff8f64aa80(sp + 0x3c, 0x8f684f15, r0);
+    stack[1926] = loc_ffffffff8f64b354(sp + 0x3c);
+    r10 = r10 + loc_ffffffff8f64b354(" androidboot.cid=") + stack[1926] + r11 + r7;
+    loc_ffffffff8f64adc8(sp + 0x18c, 0x0, 0x40, stack[1926] + r11 + r7);
+    if (loc_ffffffff8f61a810(sp + 0x18c, 0x40) != 0x0) {
+            r0 = loc_ffffffff8f64b354(sp + 0x18c);
+            COND = r7 == 0x0;
+            if (!COND) {
+                    r10 = loc_ffffffff8f64b354(" mdss_mdp.panel=") + r7 + r10;
+            }
+    }
+    loc_ffffffff8f64aa80(sp + 0x34, "0x%04X", 0x8104);
+    r7 = loc_ffffffff8f64b354(sp + 0x34);
+    r11 = loc_ffffffff8f64b354(" androidboot.bootloader=");
+    r0 = loc_ffffffff8f64b354(" androidboot.carrier=");
+    r10 = r10 + r0 + r11 + r7;
+    if (loc_ffffffff8f662654(r0 + r11 + r7) == 0x0) goto loc_8f61f4a0;
+
+loc_8f61f480:
+    r0 = loc_ffffffff8f6625dc();
+    COND = r7 != 0x0;
+    if (COND) goto loc_8f61f4b0;
+
+loc_8f61f48c:
+    loc_ffffffff8f61e95c(0x8f68851c, sp + 0x144, 0x21);
+    goto loc_8f61f5c0;
+
+loc_8f61f5c0:
+    r10 = loc_ffffffff8f64b354(sp + 0x144) + r10;
+    goto loc_8f61f5cc;
+
+loc_8f61f5cc:
+    if (loc_ffffffff8f61e95c(0x8f686d11, sp + 0x100, 0x20) != 0x0) {
+            r10 = r10 + loc_ffffffff8f64b354(sp + 0x100) + loc_ffffffff8f64b354(" androidboot.build_vars=");
+    }
+    *(0xfffffffffffffefc + sp + 0x1d0) = 0x0;
+    loc_ffffffff8f61eafc(0xfffffffffffffefc + sp + 0x1d0, 0x18);
+    r0 = loc_ffffffff8f64b354(0xfffffffffffffefc + sp + 0x1d0);
+    COND = s0 == 0x0;
+    if (!COND) {
+            r10 = loc_ffffffff8f64b354(" androidboot.hardware.sku=") + r10 + s0;
+    }
+    r0 = loc_ffffffff8f674cc4();
+    r7 = r0;
+    loc_ffffffff8f64aa80(sp + 0x2c, 0x8f6a697d);
+    s0 = loc_ffffffff8f64b354(" androidboot.bl_state=");
+    s0 = r10 + s0 + loc_ffffffff8f64b354(sp + 0x2c);
+    loc_ffffffff8f61ebbc(sp + 0x30, 0x2);
+    r0 = loc_ffffffff8f64b354(sp + 0x30);
+    COND = r10 == 0x0;
+    if (!COND) {
+            s0 = loc_ffffffff8f64b354(" androidboot.num-sims=") + s0 + r10;
+    }
+    loc_ffffffff8f61ec38(sp + 0x94, 0x10);
+    r0 = loc_ffffffff8f64b354(sp + 0x94);
+    COND = r7 == 0x0;
+    if (!COND) {
+            s0 = loc_ffffffff8f64b354(" androidboot.memtest=") + s0 + r7;
+    }
+    if (s0 > 0x0) {
+            r0 = loc_ffffffff8f64aacc(s0 + 0x4 & !0x3);
+            COND = r7 != 0x0;
+            if (!COND) {
+                    loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "app/mbm/linux_boot.c", 0x23a, "dst != NULL");
+            }
+            *r7 = 0x0;
+            if (r8 != 0x0) {
+                    loc_ffffffff8f61e688();
+            }
+            loc_ffffffff8f64b21c(r7, " androidboot.emmc=true", s0);
+            loc_ffffffff8f64b21c(r7, " androidboot.serialno=", s0);
+            loc_ffffffff8f64b21c(r7, sp + 0xa4, s0);
+            r0 = loc_ffffffff8f600ae0();
+            if (((r0 == 0x1) || (CPU_FLAGS & B)) || (r0 == 0x5)) {
+                    loc_ffffffff8f64b21c();
+            }
+            loc_ffffffff8f64b21c(r7, " androidboot.mode=", s0);
+            loc_ffffffff8f64b21c(r7, r4, s0);
+            loc_ffffffff8f64b21c(r7, " androidboot.device=", s0);
+            loc_ffffffff8f64b21c(r7, sp + 0x84, s0);
+            loc_ffffffff8f64b21c(r7, " androidboot.hwrev=", s0);
+            loc_ffffffff8f64b21c(r7, sp + 0x44, s0);
+            loc_ffffffff8f64b21c(r7, " androidboot.radio=", s0);
+            loc_ffffffff8f64b21c(r7, sp + 0x54, s0);
+            if ((loc_ffffffff8f673228() == 0x0) && (loc_ffffffff8f64b0ac(0x8f6826e1, loc_ffffffff8f61e624()) == 0x0)) {
+                    loc_ffffffff8f64b21c(r7, " androidboot.init_rc=", s0);
+                    loc_ffffffff8f64b21c(r7, "/init.wff.rc", s0);
+                    loc_ffffffff8f64b21c(r7, " androidboot.selinux=", s0);
+                    loc_ffffffff8f64b21c(r7, "permissive", s0);
+            }
+            loc_ffffffff8f64b21c(r7, " androidboot.powerup_reason=", s0);
+            loc_ffffffff8f64b21c(r7, sp + 0x74, s0);
+            if (loc_ffffffff8f637dfc() != 0x0) {
+                    loc_ffffffff8f64b21c(r7, " androidboot.last_powerup_reason=", s0);
+                    loc_ffffffff8f64b21c(r7, sp + 0x64, s0);
+            }
+            loc_ffffffff8f64b21c(r7, " androidboot.bootreason=", s0);
+            loc_ffffffff8f64b21c(r7, sp + 0xe4, s0);
+            loc_ffffffff8f64b21c(r7, " androidboot.write_protect=", s0);
+            loc_ffffffff8f64b21c();
+            loc_ffffffff8f64b21c(r7, " msm_poweroff.download_mode=", s0);
+            loc_ffffffff8f64b21c();
+            if ((loc_ffffffff8f6364dc() != 0x0) && (loc_ffffffff8f600e68(0x0) != 0x0)) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f67d00b);
+            }
+            loc_ffffffff8f64b21c(r7, " androidboot.fsg-id=", s0);
+            loc_ffffffff8f64b21c(r7, sp + 0x120, s0);
+            loc_ffffffff8f64b21c(r7, " androidboot.secure_hardware=", s0);
+            loc_ffffffff8f64b21c(r7, sp + 0x28, s0);
+            loc_ffffffff8f64b21c(r7, " androidboot.cid=", s0);
+            loc_ffffffff8f64b21c(r7, sp + 0x3c, s0);
+            if (loc_ffffffff8f64b354(sp + 0x168) != 0x0) {
+                    loc_ffffffff8f64b21c(r7, " androidboot.wifimacaddr=", s0);
+                    loc_ffffffff8f64b21c(r7, sp + 0x168, s0);
+            }
+            if (loc_ffffffff8f64b354(sp + 0xb8) != 0x0) {
+                    loc_ffffffff8f64b21c(r7, " androidboot.btmacaddr=", s0);
+                    loc_ffffffff8f64b21c(r7, sp + 0xb8, s0);
+            }
+            if (loc_ffffffff8f64b354(sp + 0x18c) != 0x0) {
+                    loc_ffffffff8f64b21c(r7, " mdss_mdp.panel=", s0);
+                    loc_ffffffff8f64b21c(r7, sp + 0x18c, s0);
+            }
+            loc_ffffffff8f64b21c(r7, " androidboot.bootloader=", s0);
+            loc_ffffffff8f64b21c(r7, sp + 0x34, s0);
+            loc_ffffffff8f64b21c(r7, " androidboot.carrier=", s0);
+            loc_ffffffff8f64b21c(r7, sp + 0x144, s0);
+            if (loc_ffffffff8f64b354(sp + 0x100) != 0x0) {
+                    loc_ffffffff8f64b21c(r7, " androidboot.build_vars=", s0);
+                    loc_ffffffff8f64b21c(r7, sp + 0x100, s0);
+            }
+            if (loc_ffffffff8f64b354(sp + 0xcc) != 0x0) {
+                    loc_ffffffff8f64b21c(r7, " androidboot.hardware.sku=", s0);
+                    loc_ffffffff8f64b21c(r7, sp + 0xcc, s0);
+            }
+            loc_ffffffff8f64b21c(r7, " androidboot.bl_state=", s0);
+            loc_ffffffff8f64b21c(r7, sp + 0x2c, s0);
+            if (loc_ffffffff8f64b354(sp + 0x30) != 0x0) {
+                    loc_ffffffff8f64b21c(r7, " androidboot.num-sims=", s0);
+                    loc_ffffffff8f64b21c(r7, sp + 0x30, s0);
+            }
+            if (loc_ffffffff8f64b354(sp + 0x94) != 0x0) {
+                    loc_ffffffff8f64b21c(r7, " androidboot.memtest=", s0);
+                    loc_ffffffff8f64b21c(r7, sp + 0x94, s0);
+            }
+    }
+    else {
+            r0 = loc_ffffffff8f64aacc(0x1);
+            COND = r7 != 0x0;
+            if (!COND) {
+                    loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "app/mbm/linux_boot.c", 0x2c4, "dst != NULL");
+            }
+            *r7 = 0x0;
+    }
+    r0 = loc_ffffffff8f64aacc(0x100);
+    COND = r4 != 0x0;
+    if (!COND) {
+            loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "app/mbm/linux_boot.c", 0x2ce, 0x8f682aca);
+    }
+    loc_ffffffff8f655718(0x1, r4, 0x100);
+    r0 = loc_ffffffff8f651db8(r7, r4);
+    COND = r5 == 0x0;
+    if (!COND) {
+            r0 = r7;
+            r7 = r5;
+            loc_ffffffff8f64ab9c(r0);
+    }
+    loc_ffffffff8f64ab9c(r4);
+    r0 = loc_ffffffff8f64aacc(0x100);
+    COND = r4 != 0x0;
+    if (!COND) {
+            loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "app/mbm/linux_boot.c", 0x2da, "overlay_buf != NULL");
+    }
+    if (loc_ffffffff8f61e95c(0x8f682af3, r4, 0x100) != 0x0) {
+            r0 = loc_ffffffff8f651db8(r7, r4);
+            COND = r5 == 0x0;
+            if (!COND) {
+                    r0 = r7;
+                    r7 = r5;
+                    loc_ffffffff8f64ab9c(r0);
+            }
+    }
+    loc_ffffffff8f64ab9c(r4);
+    loc_ffffffff8f656968(0x1, "cmdline: %s\n", r7);
+    r0 = r7;
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f61f4b0:
+    r0 = loc_ffffffff8f64b880(s0);
+    COND = r11 != 0x0;
+    if (CPU_FLAGS & NE) goto loc_8f61f504;
+
+loc_8f61f4c8:
+    r0 = loc_ffffffff8f64c50c(s0, 0x8f686fbc);
+    COND = r1 < 0x0;
+    if (COND) goto loc_8f61f5cc;
+
+loc_8f61f4dc:
+    r2 = 0x8f6829d9;
+    r3 = sp + 0x24;
+    r0 = loc_ffffffff8f64c438(s0);
+    COND = s0 != 0x0;
+    if (COND) {
+            r2 = 0x0;
+    }
+    if (CPU_FLAGS & NE) {
+            r3 = r11;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f61f540;
+
+loc_8f61f504:
+    loc_ffffffff8f656968();
+    goto loc_8f61f5cc;
+
+loc_8f61f540:
+    if (r11 < r2) goto loc_8f61f50c;
+    goto loc_8f61f5c0;
+
+loc_8f61f50c:
+    if (r3 == r7) goto loc_8f61f5b8;
+
+loc_8f61f518:
+    r0 = loc_ffffffff8f64b354();
+    r2 = r2;
+    r3 = zero_extend_32(r3 + 0x1);
+    r11 = r11 + r0 + 0x1;
+    s0 = s0 + r0 + 0x1;
+    goto loc_8f61f540;
+
+loc_8f61f5b8:
+    loc_ffffffff8f64b418();
+    goto loc_8f61f5c0;
+
+loc_8f61f4a0:
+    if (loc_ffffffff8f673228() == 0x0) goto loc_8f61f48c;
+

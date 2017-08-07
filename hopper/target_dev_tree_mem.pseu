@@ -1,0 +1,44 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x54;
+    r5 = lr;
+    r8 = arg0;
+    s0 = arg1;
+    r3 = *0x8f7112f4;
+    stack[2039] = r3;
+    if (loc_ffffffff8f604894(arg0, arg1, arg2, r3, stack[2020]) == 0x0) {
+            loc_ffffffff8f6484ac(r5, "ASSERT FAILED at (%s:%d): %s\n", "target/msm8916/meminfo.c", 0x2e, "smem_ram_ptable_init_v1()");
+    }
+    r4 = 0x0;
+    r7 = loc_ffffffff8f604a00();
+    goto loc_8f6014b4;
+
+loc_8f6014b4:
+    if (r4 == r7) goto loc_8f601524;
+
+loc_8f6014bc:
+    loc_ffffffff8f6049b8(sp + 0xc, r4);
+    if ((stack[2032] != 0xe) || (stack[2034] != 0x1)) goto loc_8f60151c;
+
+loc_8f6014e0:
+    r0 = loc_ffffffff8f615004(r8, s0, stack[2027], stack[2028], stack[2029], stack[2030]);
+    COND = r5 == 0x0;
+    if (COND) goto loc_8f60151c;
+
+loc_8f60150c:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to add secondary banks memory addresses\n");
+    goto loc_8f601528;
+
+loc_8f601528:
+    r0 = r5;
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f60151c:
+    r4 = r4 + 0x1;
+    goto loc_8f6014b4;
+
+loc_8f601524:
+    r5 = 0x0;
+    goto loc_8f601528;
+

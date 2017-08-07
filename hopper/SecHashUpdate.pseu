@@ -1,0 +1,15 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r1 = *0x8f7112f4;
+    r0 = loc_ffffffff8f606d48(0x5, arg0, arg1, arg0, arg0, r1, r4, lr);
+    r2 = r1;
+    if (r0 != 0x0) {
+            r0 = 0x10;
+    }
+    if (CPU_FLAGS & E) {
+            r0 = 0x0;
+    }
+    if (r2 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

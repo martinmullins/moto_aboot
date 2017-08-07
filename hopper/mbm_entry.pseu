@@ -1,0 +1,101 @@
+    r5 = 0x8f7112f4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x84;
+    r3 = *r5;
+    stack[2039] = r3;
+    loc_ffffffff8f64adc8(sp + 0x1c, 0x0, 0x1d, r3, stack[2008]);
+    loc_ffffffff8f64adc8(sp + 0xc, 0x0, 0xb);
+    stack[2011] = 0x0;
+    loc_ffffffff8f656968(0x1, "MBM version is %02X.%02X (%s)\n", 0x81, 0x4, "3220316");
+    r0 = loc_ffffffff8f6798a8(0x0, "console");
+    if ((r0 == 0x1) && (loc_ffffffff8f6797bc(0x0, "console", sp + 0xa) != 0x0)) {
+            r3 = stack[2011];
+            if (r3 != 0x0) {
+                    r3 = 0x8f6ac1a8;
+            }
+            if (CPU_FLAGS & E) {
+                    r3 = 0x8f6ac108;
+            }
+    }
+    else {
+            loc_ffffffff8f61caf4("console", sp + 0x18, 0x21);
+    }
+    loc_ffffffff8f61ed88();
+    if (loc_ffffffff8f61caf4("loglevel.uart", sp + 0xc, 0xb) != 0x0) {
+            r0 = loc_ffffffff8f6568d8(0x0, sp + 0xc);
+            r1 = r0;
+            if (r0 != -0xa) {
+                    loc_ffffffff8f656584(0x0, sign_extend_32(r1));
+            }
+    }
+    if (loc_ffffffff8f61caf4("loglevel.ui", sp + 0xc, 0xb) != 0x0) {
+            r0 = loc_ffffffff8f6568d8(0x2, sp + 0xc);
+            r1 = r0;
+            if (r0 != -0xa) {
+                    loc_ffffffff8f656584(0x2, sign_extend_32(r1));
+            }
+    }
+    if (loc_ffffffff8f61caf4("loglevel.ram", sp + 0xc, 0xb) != 0x0) {
+            r0 = loc_ffffffff8f6568d8(0x1, sp + 0xc);
+            r1 = r0;
+            if (r0 != -0xa) {
+                    loc_ffffffff8f656584(0x1, sign_extend_32(r1));
+            }
+    }
+    r0 = loc_ffffffff8f6798a8(0x0, "disable-reset");
+    if (r0 == 0x1) {
+            loc_ffffffff8f6797bc(0x0, "disable-reset", sp + 0xb);
+    }
+    loc_ffffffff8f6006ec(stack[2011]);
+    *0x8f7114b0 = stack[2011];
+    r0 = loc_ffffffff8f677058();
+    if (r0 == -0x2) {
+            loc_ffffffff8f656968(0x0, "Invalid sp partition - resetting...\n");
+            if (loc_ffffffff8f676f98() != 0x0) {
+                    loc_ffffffff8f656968(0x0, "Failed to initialize SP partition");
+            }
+            else {
+                    loc_ffffffff8f677058();
+            }
+    }
+    else {
+            if (r0 != 0x0) {
+                    loc_ffffffff8f656968(0x0, "Failed to initialize SP partition");
+            }
+    }
+    loc_ffffffff8f60077c(0x8f6c0298);
+    loc_ffffffff8f656968(0x1, "Serial number: \"%s\"\n", 0x8f6c0298);
+    r0 = loc_ffffffff8f6063a0();
+    *(r0 + 0x10) = 0x8f6c0298;
+    *0x8f7114b4 = r0;
+    if (loc_ffffffff8f65aa7c(0x1) != 0x0) {
+            loc_ffffffff8f673ef8();
+            loc_ffffffff8f65aa14(0x1);
+    }
+    loc_ffffffff8f6344d0();
+    r4 = 0x0;
+    do {
+            r5 = r5 << r4 * 0x10;
+            r3 = *(0x4 + 0x8f6ac10c + r5);
+            if (r3 == 0x0) {
+                break;
+            }
+            if ((r3)() != 0x0) {
+                break;
+            }
+            r4 = r4 + 0x1;
+    } while (true);
+    r6 = 0x8f6ac10c + r5;
+    r0 = (*(r6 + 0x8))(0x0);
+    if (*(r6 + 0xc) != 0x0) {
+            loc_ffffffff8f656968(0x1, "Entering %s mode fails, falling into its fail-safe mode.\n", *(0x8f6ac10c + r4 * 0x10));
+            if (*(r6 + 0xc) == 0x8f61dca0) {
+                    loc_ffffffff8f64a9f0(sp + 0x3c, 0x40, "Fall-through from %s boot mode", *(0x8f6ac10c + r4 * 0x10));
+                    loc_ffffffff8f61e53c(sp + 0x3c);
+            }
+            r0 = (*(0xc + 0x8f6ac10c + r5))(0x0);
+    }
+    if (stack[2039] != *r0) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

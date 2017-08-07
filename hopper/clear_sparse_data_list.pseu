@@ -1,0 +1,24 @@
+    r1 = arg1;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg0;
+    stack[2043] = *0x8f7112f4;
+    do {
+            r0 = *(r4 + 0x4);
+            if (r0 == r4) {
+                break;
+            }
+            r5 = 0x0;
+            r2 = *0x8f7112f4;
+            asm{ ldm        r0, {r1, r2} };
+            *r2 = r1;
+            r1 = *r0;
+            *(r1 + 0x4) = r2;
+            *(r0 + 0x4) = r5;
+            *r0 = r5;
+            loc_ffffffff8f67633c();
+    } while (true);
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,36 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    if (loc_ffffffff8f672808(arg0, arg1, arg2, r3, arg0, stack[2043], arg2, r4, 0x8f7112f4, lr) != 0xff) {
+            r4 = loc_ffffffff8f6716dc();
+            loc_ffffffff8f656968(0x0, "Failed to unlock phone!");
+            if (r4 <= 0x6) {
+                    loc_ffffffff8f656968();
+                    r0 = 0x14;
+            }
+            else {
+                    if (r4 == 0x7) {
+                            loc_ffffffff8f656968();
+                            r0 = 0x15;
+                    }
+                    else {
+                            if (r4 == 0x8) {
+                                    loc_ffffffff8f656968();
+                                    r0 = 0x16;
+                            }
+                            else {
+                                    loc_ffffffff8f656968();
+                                    r0 = 0x13;
+                            }
+                    }
+            }
+    }
+    else {
+            loc_ffffffff8f674774(0x4, 0x1);
+            r0 = 0x0;
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

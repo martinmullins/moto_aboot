@@ -1,0 +1,12 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r12 = *0x8f7112f4;
+    r0 = loc_ffffffff8f64c2bc(arg0, arg1, arg2, arg3, arg4, arg1, arg2, r12, r4, lr, arg4);
+    r2 = r12;
+    if (r0 != 0x0) {
+            r0 = r0 + 0xc;
+    }
+    if (r2 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,44 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    stack[2039] = *0x8f7112f4;
+    if (*(0x8f6afddc + 0x6) != r0) {
+            r4 = *(0x8f6afddc + 0x12);
+            if (r4 == r0) {
+                    r4 = 0x8f6afde8;
+            }
+            if (CPU_FLAGS & NE) {
+                    r4 = 0x8f6afdf4;
+            }
+    }
+    else {
+            r4 = 0x8f6afddc;
+    }
+    r0 = loc_ffffffff8f646220(r4);
+    r4 = *(r4 + 0xb);
+    r6 = r0;
+    if (r4 == 0x0) {
+            stack[2039] = r4;
+            s0 = loc_ffffffff8f646220(sp);
+            r0 = loc_ffffffff8f646220(sp);
+            r4 = r6 - r0;
+            r0 = loc_ffffffff8f67b488(0x98968, s0 - r0);
+            r4 = (r4 * r0 + 0x98968) * 0x2 + r4 * r0 + 0x98968;
+    }
+    else {
+            if (r4 != 0x1) {
+                    r4 = 0x0;
+            }
+            if (!CPU_FLAGS & NE) {
+                    stack[2039] = 0x0;
+                    s0 = loc_ffffffff8f646220(sp);
+                    r0 = loc_ffffffff8f646220(sp);
+                    r4 = (r6 - r0) * loc_ffffffff8f67b488(0x1b7740, s0 - r0);
+            }
+    }
+    loc_ffffffff8f656968(0x2, "Result: Raw %u\tCalibrated:%u\n", r6, r4);
+    r0 = r4;
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

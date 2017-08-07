@@ -1,0 +1,92 @@
+    stack[2044] = r7;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r7 = arg0;
+    loc_ffffffff8f656968(0x2, "cid_get_cid_data - START\n", arg2, 0x10, arg0, arg1, arg2, 0x10, r4, r5, r6, stack[2044], 0x8f7112f4, r10, lr);
+    r0 = loc_ffffffff8f64aacc(0xa46);
+    COND = r4 != 0x0;
+    if (COND) goto loc_8f6621e8;
+
+loc_8f6621d8:
+    loc_ffffffff8f656968(0x1, "cid_get_cid_data: malloc failure\n");
+    goto loc_8f662210;
+
+loc_8f662210:
+    r0 = 0x69;
+    goto loc_8f662364;
+
+loc_8f662364:
+    if (0x10 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f6621e8:
+    if (loc_ffffffff8f66c3f4() != 0x0) goto loc_8f662218;
+
+loc_8f6621f8:
+    loc_ffffffff8f656968(0x1, "read datablock error: %x\n", 0x55);
+    loc_ffffffff8f64ab9c(r4);
+    goto loc_8f662210;
+
+loc_8f662218:
+    r10 = *(r4 + 0x2);
+    if (r10 == 0x0) {
+            r6 = *(r4 + 0x3);
+            if (r6 == 0x1) {
+                    loc_ffffffff8f656968(r6, "cid_get_cid_data: Version 1 datablock\n");
+                    *0x36 = r10;
+                    *(0x36 + 0x1) = r6;
+                    r5 = 0x36;
+            }
+            else {
+                    loc_ffffffff8f656968(0x1, "cid_get_cid_data: Version 0 datablock\n");
+                    *0x0 = 0x0;
+                    *(0x0 + 0x1) = 0x0;
+                    r5 = 0x0;
+            }
+    }
+    else {
+            loc_ffffffff8f656968(0x1, "cid_get_cid_data: Version 0 datablock\n");
+            *0x0 = 0x0;
+            *(0x0 + 0x1) = 0x0;
+            r5 = 0x0;
+    }
+    r0 = loc_ffffffff8f663924(r4, 0xf0, sp + 0xb);
+    r6 = r0;
+    if (!CPU_FLAGS & NE) {
+            r10 = r4 + r5 + 0xac;
+            r0 = loc_ffffffff8f662690(r10, 0x0, 0x0);
+            r6 = r0;
+            if (r0 != 0xf) {
+                    loc_ffffffff8f656968();
+                    loc_ffffffff8f64ab9c(r4);
+                    r0 = r6;
+            }
+            else {
+                    r0 = loc_ffffffff8f6627f8(r4, r5 + 0x2c, r4 + r5 + 0x2c, 0x80, r10);
+                    r5 = r0;
+                    if (r0 != 0xf) {
+                            loc_ffffffff8f656968(0x1, "validate signature error: %x\n", r5);
+                            loc_ffffffff8f64ab9c(r4);
+                    }
+                    else {
+                            *0x8f70da99 = *(r4 + 0x28);
+                            r2 = *(r4 + 0x29);
+                            *(0x8f70da99 + 0x1) = r2;
+                            *r7 = *(r4 + 0x2a);
+                            *(r7 + 0x1) = *(r4 + 0x2b);
+                            *0x1 = 0x2;
+                            loc_ffffffff8f656968(0x1, "dbval_read_and_validate_cid_datablock - Success\n", r2, 0x2);
+                            loc_ffffffff8f64ab9c(r4);
+                            loc_ffffffff8f656968(0x1, "dbval_read_and_validate_cid_datablock - END\n");
+                    }
+                    r0 = r5;
+            }
+    }
+    else {
+            loc_ffffffff8f656968();
+            loc_ffffffff8f64ab9c(r4);
+            r0 = r6;
+    }
+    goto loc_8f662364;
+

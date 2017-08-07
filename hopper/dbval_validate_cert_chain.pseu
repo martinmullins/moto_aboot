@@ -1,0 +1,54 @@
+    r0 = arg0;
+    COND = r4 == 0x0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x38;
+    if (COND) {
+            r0 = 0xf0;
+    }
+    stack[2043] = *0x8f7112f4;
+    if (!CPU_FLAGS & E) {
+            loc_ffffffff8f663b90("dbval_validate_cert_chain: status == DBVAL_ERR_NONE");
+            r2 = *(r4 + 0x4b2);
+            r3 = *(r4 + 0x4b3);
+            stack[2035] = r3 | r2 * 0x100;
+            if ((r3 | r2 * 0x100) >= 0x4b0) {
+                    r0 = 0x55;
+            }
+            else {
+                    loc_ffffffff8f663b90("dbval_validate_cert_chain: Setup the pointer to the data location for the 1st cert");
+                    if (loc_ffffffff8f663378(stack[2035] + r4 + 0x4b4, 0x4b0 - stack[2035], 0x0) == 0xf) {
+                            loc_ffffffff8f663b90("dbval_validate_cert_chain: Setup the chain struct for the certificate");
+                            r2 = *r4;
+                            r3 = *(r4 + 0x1);
+                            stack[2039] = r3 | r2 * 0x100;
+                            if ((r3 | r2 * 0x100) <= 0x4b0) {
+                                    loc_ffffffff8f663b90("dbval_validate_cert_chain: Set the ptr to the data location for the 2nd cert");
+                                    r0 = loc_ffffffff8f663378(stack[2039] + r4 + 0x2, 0x4b0 - stack[2039], 0x0);
+                                    r4 = r0;
+                                    if (r0 == 0xf) {
+                                            loc_ffffffff8f663b90("dbval_validate_cert_chain: Setup the final chain");
+                                            if (loc_ffffffff8f6642e4(0x2, sp + 0x4) == 0x0) {
+                                                    loc_ffffffff8f663b90("dbval_validate_cert_chain: set success");
+                                                    r0 = r4;
+                                            }
+                                            else {
+                                                    r0 = 0x55;
+                                            }
+                                    }
+                                    else {
+                                            r0 = 0x55;
+                                    }
+                            }
+                            else {
+                                    r0 = 0x55;
+                            }
+                    }
+                    else {
+                            r0 = 0x55;
+                    }
+            }
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

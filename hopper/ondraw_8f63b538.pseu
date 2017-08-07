@@ -1,0 +1,74 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    stack[2037] = *0x8f7112f4;
+    r0 = loc_ffffffff8f63aa60(0xd, arg1, arg2, 0x8f6e09a0, stack[2034]);
+    r4 = *(0x8f6e09b0 + 0x4);
+    r6 = r0 + 0x1;
+    goto loc_8f63b574;
+
+loc_8f63b574:
+    r10 = r6 - 0x1;
+    if (r4 == 0x8f6e09b0) goto loc_8f63b68c;
+
+loc_8f63b584:
+    r5 = r4 + 0x8;
+    r0 = loc_ffffffff8f656968(0x2, "display menu item: %s\n", r5);
+    r2 = *(r4 + 0x48);
+    if (r2 != 0x1) goto loc_8f63b5bc;
+
+loc_8f63b5a4:
+    r0 = loc_ffffffff8f64fdb8(0x0, r10, 0x3, 0x808000);
+    goto loc_8f63b680;
+
+loc_8f63b680:
+    r4 = *(r4 + 0x4);
+    r6 = r6 + 0x1;
+    goto loc_8f63b574;
+
+loc_8f63b5bc:
+    if (r2 != 0x2) goto loc_8f63b5d8;
+
+loc_8f63b5c4:
+    r0 = loc_ffffffff8f64f890(r10, 0x1, 0x0);
+    goto loc_8f63b680;
+
+loc_8f63b5d8:
+    if (r2 == 0x0) {
+            r0 = r5;
+    }
+    if (CPU_FLAGS & E) goto loc_8f63b67c;
+
+loc_8f63b5ec:
+    r7 = *0x8f6e09a0;
+    r12 = 0x0 - r7 - r4;
+    r12 = r12 + (r7 - r4) + CARRY(FLAGS);
+    if (r7 == 0x0) {
+            r12 = 0x0;
+    }
+    if (r12 == 0x0) goto loc_8f63b654;
+
+loc_8f63b608:
+    r0 = *r0;
+    loc_ffffffff8f64ddd4(r0);
+    r0 = *0x8f6e09b8;
+    loc_ffffffff8f64de10(r0);
+    loc_ffffffff8f64f730(r5, r10, 0x0, *loc_ffffffff8f64f890(r10, 0x1, 0x0));
+    r0 = *0x8f6e0994;
+    loc_ffffffff8f64ddd4(r0);
+    r0 = *0x8f6e099c;
+    r0 = loc_ffffffff8f64de10(r0);
+    goto loc_8f63b680;
+
+loc_8f63b654:
+    loc_ffffffff8f64f890(r10, 0x1, r12);
+    goto loc_8f63b67c;
+
+loc_8f63b67c:
+    r0 = loc_ffffffff8f64f730();
+    goto loc_8f63b680;
+
+loc_8f63b68c:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

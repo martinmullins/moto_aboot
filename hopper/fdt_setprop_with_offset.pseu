@@ -1,0 +1,56 @@
+    stack[2037] = arg0;
+    stack[2040] = r4;
+    stack[2041] = r5;
+    stack[2042] = r6;
+    stack[2043] = r7;
+    stack[2046] = r11;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r6 = arg3;
+    r11 = arg0;
+    r7 = arg1;
+    r4 = arg2;
+    s0 = stack[2049];
+    r3 = *0x8f7112f4;
+    r5 = stack[2050];
+    stack[2038] = r3;
+    r0 = loc_ffffffff8f64cbcc(arg0, arg1, arg2, r3, stack[2037], stack[2038], arg2, stack[2040], stack[2041], stack[2042], stack[2043], r8, 0x8f7112f4, stack[2046], lr);
+    COND = r8 != 0x0;
+    if (COND) goto loc_8f64cf8c;
+
+loc_8f64cf10:
+    r0 = loc_ffffffff8f64c394(r11, r7, r4, sp);
+    COND = r4 == 0x0;
+    if (COND) goto loc_8f64cf84;
+
+loc_8f64cf2c:
+    r2 = stack[2037];
+    r7 = r6 + r5;
+    if (r2 >= r7) goto loc_8f64cf6c;
+
+loc_8f64cf3c:
+    r0 = loc_ffffffff8f64c924(r11, r4 + 0xc, r2 + 0x3 & !0x3, r7 + 0x3 & !0x3);
+    COND = r8 != 0x0;
+    if (COND) goto loc_8f64cf8c;
+
+loc_8f64cf60:
+    *(r4 + 0x4) = loc_ffffffff8f64c774(r7);
+    goto loc_8f64cf6c;
+
+loc_8f64cf6c:
+    loc_ffffffff8f64ac90(0xc + r4 + r6, s0, r5);
+    goto loc_8f64cf8c;
+
+loc_8f64cf8c:
+    r0 = r8;
+    goto loc_8f64cf90;
+
+loc_8f64cf90:
+    if (stack[2038] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f64cf84:
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f64cf90;
+

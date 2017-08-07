@@ -1,0 +1,36 @@
+    r1 = arg1;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    if (*0x8f6c0658 == 0x2) goto loc_8f62db14;
+
+.l6:
+    if (CPU_FLAGS & A) goto loc_8f62db0c;
+
+loc_8f62dac8:
+    *0x8f6c064c = 0xea60;
+    r3 = *0x8f6c0654;
+    *(r3 + 0x8) = 0x8f62d6e8;
+    r2 = 0x8f6c0650;
+    asm{ stm        r3, {r0, r1} };
+    r0 = *r2;
+    r0 = loc_ffffffff8f6052d8(r0, r3, r2, r3);
+    if (r0 >= 0x0) {
+            r0 = 0x0;
+    }
+    if (CPU_FLAGS & GE) goto loc_8f62db20;
+
+loc_8f62db0c:
+    loc_ffffffff8f656968();
+    goto loc_8f62db14;
+
+loc_8f62db14:
+    r0 = 0x0 ^ 0xffffffff;
+    *0x8f6c0658 = 0x2;
+    goto loc_8f62db20;
+
+loc_8f62db20:
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

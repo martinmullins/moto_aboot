@@ -1,0 +1,14 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x48;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    loc_ffffffff8f64adc8(sp, 0x0, 0x40, r3, 0x37, stack[2027], stack[2028], stack[2029], stack[2030]);
+    r0 = loc_ffffffff8f607a2c(arg0, sp);
+    if (r0 != 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed Sending CMD55\n");
+            r0 = 0x1;
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

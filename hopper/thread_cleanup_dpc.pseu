@@ -1,0 +1,33 @@
+    r2 = 0x8f7112f4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg0;
+    r6 = r2;
+    stack[2043] = *r2;
+    r3 = 0x8f6ac0f0;
+    r1 = *r3;
+    r5 = r3;
+    *r3 = r1 + 0x1;
+    if (r1 == 0x0) {
+            loc_ffffffff8f619448();
+    }
+    asm{ ldmib      r4, {r2, r3} };
+    *r3 = r2;
+    *(*(r4 + 0x4) + 0x4) = r3;
+    r2 = *r5;
+    *(r4 + 0x8) = 0x0;
+    *(r4 + 0x4) = 0x0;
+    *r5 = r2 - 0x1;
+    if (r2 == 0x1) {
+            loc_ffffffff8f619438();
+    }
+    if (*(r4 + 0x30) != 0x0) {
+            loc_ffffffff8f64ab9c();
+    }
+    if (stack[2043] != *r6) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = loc_ffffffff8f64ab9c(r4);
+    }
+    return r0;
+

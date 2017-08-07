@@ -1,0 +1,21 @@
+    r5 = 0x8f6ac374;
+    goto loc_8f61d614;
+
+loc_8f61d614:
+    loc_ffffffff8f61ac4c(0x8f7114b8);
+    (*(0x8f6ac374 + 0xc))();
+    loc_ffffffff8f63f924(0x64);
+    loc_ffffffff8f634164();
+    loc_ffffffff8f634c0c();
+    r3 = *0x8f6c02e0;
+    if (r3 != 0x0) {
+            (*(r3 + 0x4c))(0x0);
+    }
+    *0x8f6c02e0 = 0x0;
+    loc_ffffffff8f634c60();
+    loc_ffffffff8f6341bc();
+    loc_ffffffff8f63f924(0x32);
+    (*(r5 + 0x4))("fastboot_screen", 0x1);
+    loc_ffffffff8f656968(0x6, "Boot up failed");
+    goto loc_8f61d614;
+

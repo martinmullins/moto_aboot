@@ -1,0 +1,50 @@
+    stack[2044] = r6;
+    stack[2045] = r7;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r7 = lr;
+    r6 = arg0;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    loc_ffffffff8f602008(arg0, arg1, arg2, r3, arg0, arg1, arg2, stack[2041], r4, 0x8f7112f4, stack[2044], stack[2045], r8, lr);
+    *(0x78d9000 + 0x140) = 0x80002;
+    loc_ffffffff8f61b944(0x14);
+    do {
+            r3 = *(0x78d9000 + 0x140);
+            COND = r8 != 0x0;
+    } while (COND);
+    *(0x78d9000 + 0x184) = 0x80000000;
+    if (loc_ffffffff8f600b14() != -0x1) {
+            *(0x8f6b7930 + 0x90) = r8;
+            *(0x8f6b7930 + 0x98) = 0x8;
+            r4 = 0x8f6b7930;
+            loc_ffffffff8f64a310(0x1000, 0x40);
+            r0 = loc_ffffffff8f64ab04();
+            *r4 = r0;
+            if (r0 == 0x0) {
+                    loc_ffffffff8f6484ac(r7, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm_shared/hsusb.c", 0x316, 0x8f67d392);
+            }
+            loc_ffffffff8f656968(0x1, "USB init ept @ %p\n", *r4);
+            r0 = *r4;
+            loc_ffffffff8f64adc8(r0, 0x0, 0x800);
+            r0 = *r4;
+            loc_ffffffff8f6193d4(r0, 0x800);
+            *(0x78d9000 + 0x158) = loc_ffffffff8f601d18(*r4);
+            *(0x78d9000 + 0x1a8) = 0x2;
+            *(0x78d9000 + 0x1b4) = 0x0 ^ 0xffffffff;
+            loc_ffffffff8f61b944(0x14);
+            *0x8f6b7920 = loc_ffffffff8f604ef0(0x0, 0x0, 0x40, 0x0);
+            *0x8f6b7938 = loc_ffffffff8f604ef0(0x0, 0x1, 0x40, 0x0);
+            r0 = loc_ffffffff8f6050f0();
+            *0x8f6b7940 = r0;
+            *r0 = loc_ffffffff8f64ab04(0x40, 0x1000);
+            r0 = loc_ffffffff8f604d60(0x3, 0x0, 0x4);
+            *(r0 + 0xa) = 0x9;
+            *(r0 + 0xb) = 0x4;
+            loc_ffffffff8f604df0();
+            *0x8f6b794c = r6;
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

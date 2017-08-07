@@ -1,0 +1,47 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x54;
+    r6 = lr;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    if (loc_ffffffff8f604894(arg0, arg1, arg2, r3, stack[2022]) == 0x0) {
+            loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/platform.c", 0x12c, "smem_ram_ptable_init_v1()");
+    }
+    r4 = 0x0;
+    r5 = loc_ffffffff8f604a00();
+    goto loc_8f601f20;
+
+loc_8f601f20:
+    if (r4 == r5) goto loc_8f601f9c;
+
+loc_8f601f28:
+    loc_ffffffff8f6049b8(sp + 0xc, r4);
+    if (stack[2036] != 0x1) goto loc_8f601f94;
+
+loc_8f601f40:
+    r3 = stack[2034];
+    if (r3 != 0xe) {
+            CMP(r3, 0x5);
+    }
+    if (CPU_FLAGS & NE) goto loc_8f601f94;
+
+loc_8f601f50:
+    COND = r1 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/platform.c", 0x13a, "(ptn_entry.start & (MB-1)) == 0");
+    }
+    r0 = stack[2029];
+    goto loc_8f601fa0;
+
+loc_8f601fa0:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f601f94:
+    r4 = r4 + 0x1;
+    goto loc_8f601f20;
+
+loc_8f601f9c:
+    r0 = 0x0;
+    goto loc_8f601fa0;
+

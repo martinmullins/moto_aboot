@@ -1,0 +1,17 @@
+    sp = sp - 0x4 - 0x4 - 0x18;
+    r3 = *0x8f7112f4;
+    stack[2045] = r3;
+    r0 = loc_ffffffff8f61d7f4("bootmode", sp, 0x11, r3, stack[2040], stack[2041], stack[2042]);
+    if (r0 != 0x0) {
+            r0 = loc_ffffffff8f64b0ac(sp, "bp-tools");
+            r0 = 0x1 - r0;
+            COND = r0 < 0x0;
+            if (COND) {
+                    r0 = 0x0;
+            }
+    }
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,10 @@
+    r3 = *0x8f7112f4;
+    loc_ffffffff8f61bb00(0x8f681cf9, arg1, arg2, r3, arg0, r3, arg2, lr);
+    loc_ffffffff8f61bb4c(0x0);
+    *0x8f7114a8 = *0x8f7114ac;
+    goto loc_8f61bbd0;
+
+loc_8f61bbd0:
+    loc_ffffffff8f6194c4();
+    goto loc_8f61bbd0;
+

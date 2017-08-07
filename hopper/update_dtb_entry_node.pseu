@@ -1,0 +1,54 @@
+    r10 = arg1 - 0x1;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x28;
+    r4 = *(arg0 + 0x4);
+    r7 = arg0;
+    r8 = arg1;
+    stack[2039] = *arg0;
+    if (r4 == r7) goto loc_8f613374;
+
+loc_8f613208:
+    if (r4 != 0x0) goto loc_8f613220;
+
+loc_8f613210:
+    loc_ffffffff8f656968(0x2, "Current node is the end\n");
+    goto loc_8f613374;
+
+loc_8f613374:
+    r4 = *(r7 + 0x4);
+    r5 = r8 - 0x1;
+    if (r4 == r7) goto loc_8f613498;
+
+loc_8f613418:
+    if (r4 != 0x0) goto loc_8f613430;
+
+loc_8f613420:
+    loc_ffffffff8f656968(0x2, "Current node is the end\n");
+    goto loc_8f613498;
+
+loc_8f613498:
+    r0 = 0x1;
+    goto loc_8f61349c;
+
+loc_8f61349c:
+    if (stack[2039] != *r0) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f613430:
+    if (r5 < 0x5) {
+            loc_8f61343c();
+    }
+    goto loc_8f613380;
+
+loc_8f613380:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "ERROR: Unsupported version (%d) in dt node check \n", r8);
+    r0 = 0x0;
+    goto loc_8f61349c;
+
+loc_8f613220:
+    if (r10 < 0x5) {
+            loc_8f61322c();
+    }
+    goto loc_8f613380;
+

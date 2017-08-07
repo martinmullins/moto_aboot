@@ -1,0 +1,31 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    COND = r7 != 0x0;
+    r5 = 0x8f7112f4;
+    stack[2041] = *0x8f7112f4;
+    if (!COND) {
+            r6 = loc_ffffffff8f646720();
+            loc_ffffffff8f634a08(0x1);
+            loc_ffffffff8f64675c(r7);
+            if ((loc_ffffffff8f632f68() == 0x0) && (r6 == 0x3)) {
+                    loc_ffffffff8f656968(0x1, "Kill via Factory\n");
+                    loc_ffffffff8f634528();
+                    if (stack[2041] == *0x8f7112f4) {
+                            loc_ffffffff8f656968(0x1, "Killing via Factory.\n");
+                    }
+                    else {
+                            loc_ffffffff8f648514();
+                    }
+            }
+            else {
+                    if (stack[2041] != *r5) {
+                            loc_ffffffff8f648514();
+                    }
+            }
+    }
+    else {
+            if (stack[2041] != *r5) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

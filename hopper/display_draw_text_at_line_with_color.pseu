@@ -1,0 +1,44 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r7 = arg3;
+    r4 = r0;
+    r6 = arg1;
+    s0 = arg2;
+    stack[2040] = *0x8f7112f4;
+    if ((*0x8f6afe0c == 0x0) && (*0x8f6e0c38 != 0x0)) {
+            if (r0 != 0x0) {
+                    if (*0x8f6e0c40 == 0x0) {
+                            r10 = loc_ffffffff8f648ad4();
+                            r0 = loc_ffffffff8f648b18();
+                            r0 = loc_ffffffff8f64f39c(r4, r10, r6 * r0, r7);
+                    }
+                    else {
+                            r10 = loc_ffffffff8f648ad4();
+                            r0 = loc_ffffffff8f648b18();
+                            r0 = loc_ffffffff8f64f4ec(r4, r10, r6 * r0, r7);
+                    }
+            }
+            if (s0 != 0x0) {
+                    r0 = *0x8f6e0c38;
+                    r0 = loc_ffffffff8f64942c(r0);
+                    if (*0x8f6e0c3c != 0x0) {
+                            r0 = loc_ffffffff8f61017c();
+                    }
+            }
+            if (stack[2040] != *0x8f7112f4) {
+                    loc_ffffffff8f648514();
+            }
+            else {
+                    loc_ffffffff8f64d5d8();
+            }
+    }
+    else {
+            if (stack[2040] == *0x8f7112f4) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Display is not initialized!\n");
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

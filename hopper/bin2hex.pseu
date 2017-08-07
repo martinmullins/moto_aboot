@@ -1,0 +1,21 @@
+    r2 = arg2;
+    r1 = arg1;
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = r1 + r2;
+    r4 = "0123456789abcdef";
+    stack[2043] = *0x8f7112f4;
+    r3 = r0;
+    while (r1 != r5) {
+            r3 = r3 + 0x2;
+            *(r3 + 0xfffffffffffffffe) = *(r4 + *r1 / 0x10);
+            r6 = *r1;
+            r1 = r1 + 0x1;
+            *(r3 + 0xffffffffffffffff) = *(r4 + (r6 & 0xf));
+    }
+    *(r0 + r2 * 0x2) = 0x0;
+    if (stack[2043] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

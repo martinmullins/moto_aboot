@@ -1,0 +1,32 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    if (*0x8f6b7924 == 0x0) goto loc_8f604d30;
+
+loc_8f604ce0:
+    if (*0x8f6b7924 == 0x300) goto loc_8f604d10;
+
+loc_8f604ce8:
+    if (*0x8f6b7924 != 0x400) goto loc_8f604d30;
+
+loc_8f604cf0:
+    loc_ffffffff8f656968(0x1, "Entering test mode for TST_PKT\n");
+    r2 = *(0x78d9000 + 0x184);
+    r2 = r2 & !0xf0000 | 0x40000;
+    goto loc_8f604d2c;
+
+loc_8f604d2c:
+    *(0x78d9000 + 0x184) = r2;
+    goto loc_8f604d30;
+
+loc_8f604d30:
+    if (stack[2045] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f604d10:
+    loc_ffffffff8f656968(0x1, "Entering test mode for SE0-NAK\n");
+    r2 = *(0x78d9000 + 0x184);
+    r2 = r2 & !0xf0000 | 0x30000;
+    goto loc_8f604d2c;
+

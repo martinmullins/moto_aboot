@@ -1,0 +1,30 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    if (*0x8f6ac214 >= 0x0) goto loc_8f6314e4;
+
+loc_8f6314d0:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No product setting\n");
+    goto loc_8f6314dc;
+
+loc_8f6314dc:
+    r0 = 0x0;
+    goto loc_8f63150c;
+
+loc_8f63150c:
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f6314e4:
+    r0 = loc_ffffffff8f630c30("product_name");
+    COND = r4 != 0x0;
+    if (COND) {
+            r0 = r4;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f63150c;
+
+loc_8f6314f8:
+    loc_ffffffff8f656968(0x2, "Not found setting for %s\n", "product_name");
+    goto loc_8f6314dc;
+

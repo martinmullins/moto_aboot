@@ -1,0 +1,245 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x58;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    if (loc_ffffffff8f6430b8(0x116) != 0x0) {
+            if (loc_ffffffff8f6456c4() == 0x0) {
+                    loc_ffffffff8f61d6a0();
+                    r4 = 0x1;
+            }
+            else {
+                    if ((loc_ffffffff8f63787c() == 0x8000) && (loc_ffffffff8f646540() != 0x0)) {
+                            r0 = loc_ffffffff8f652bd8();
+                            COND = r4 != 0x0;
+                            if (!COND) {
+                                    loc_ffffffff8f61d6a0();
+                                    r4 = 0x1;
+                            }
+                            else {
+                                    r0 = loc_ffffffff8f673228();
+                                    COND = r5 == 0x0;
+                                    if (!COND) {
+                                            if (loc_ffffffff8f673ba8() != 0x0) {
+                                                    r3 = 0x8f6c02e4;
+                                            }
+                                            if (CPU_FLAGS & NE) {
+                                                    *r3 = 0x1;
+                                            }
+                                            if (!CPU_FLAGS & NE) {
+                                                    if (loc_ffffffff8f61d7f4("bootmode", sp, 0x11) != 0x0) {
+                                                            r0 = loc_ffffffff8f64b0ac(sp, "fastboot");
+                                                            if (r0 == 0x0) {
+                                                                    stack[2043] = r0;
+                                                                    loc_ffffffff8f64a9f0(sp + 0x14, 0x3f, "UTAG \"%s\" configured as fastboot", "bootmode", stack[2022]);
+                                                                    loc_ffffffff8f61d6a0();
+                                                            }
+                                                            else {
+                                                                    r0 = loc_ffffffff8f646eac();
+                                                                    COND = r5 == 0x0;
+                                                                    if (!COND) {
+                                                                            loc_ffffffff8f61d6a0();
+                                                                            r4 = r5;
+                                                                    }
+                                                                    else {
+                                                                            loc_ffffffff8f60dcc0() == 0x77665500;
+                                                                            if ((!CPU_FLAGS & E) && (loc_ffffffff8f60dcc0() != 0x7766550c)) {
+                                                                                    r4 = r5;
+                                                                            }
+                                                                            else {
+                                                                                    loc_ffffffff8f61d6a0();
+                                                                            }
+                                                                    }
+                                                            }
+                                                    }
+                                                    else {
+                                                            r0 = loc_ffffffff8f646eac();
+                                                            COND = r5 == 0x0;
+                                                            if (!COND) {
+                                                                    loc_ffffffff8f61d6a0();
+                                                                    r4 = r5;
+                                                            }
+                                                            else {
+                                                                    loc_ffffffff8f60dcc0() == 0x77665500;
+                                                                    if ((!CPU_FLAGS & E) && (loc_ffffffff8f60dcc0() != 0x7766550c)) {
+                                                                            r4 = r5;
+                                                                    }
+                                                                    else {
+                                                                            loc_ffffffff8f61d6a0();
+                                                                    }
+                                                            }
+                                                    }
+                                            }
+                                            else {
+                                                    loc_ffffffff8f61d6a0();
+                                                    r4 = r5;
+                                            }
+                                    }
+                                    else {
+                                            if (loc_ffffffff8f61d7f4("bootmode", sp, 0x11) != 0x0) {
+                                                    r0 = loc_ffffffff8f64b0ac(sp, "fastboot");
+                                                    if (r0 == 0x0) {
+                                                            stack[2043] = r0;
+                                                            loc_ffffffff8f64a9f0(sp + 0x14, 0x3f, "UTAG \"%s\" configured as fastboot", "bootmode", stack[2022]);
+                                                            loc_ffffffff8f61d6a0();
+                                                    }
+                                                    else {
+                                                            r0 = loc_ffffffff8f646eac();
+                                                            COND = r5 == 0x0;
+                                                            if (!COND) {
+                                                                    loc_ffffffff8f61d6a0();
+                                                                    r4 = r5;
+                                                            }
+                                                            else {
+                                                                    loc_ffffffff8f60dcc0() == 0x77665500;
+                                                                    if ((!CPU_FLAGS & E) && (loc_ffffffff8f60dcc0() != 0x7766550c)) {
+                                                                            r4 = r5;
+                                                                    }
+                                                                    else {
+                                                                            loc_ffffffff8f61d6a0();
+                                                                    }
+                                                            }
+                                                    }
+                                            }
+                                            else {
+                                                    r0 = loc_ffffffff8f646eac();
+                                                    COND = r5 == 0x0;
+                                                    if (!COND) {
+                                                            loc_ffffffff8f61d6a0();
+                                                            r4 = r5;
+                                                    }
+                                                    else {
+                                                            loc_ffffffff8f60dcc0() == 0x77665500;
+                                                            if ((!CPU_FLAGS & E) && (loc_ffffffff8f60dcc0() != 0x7766550c)) {
+                                                                    r4 = r5;
+                                                            }
+                                                            else {
+                                                                    loc_ffffffff8f61d6a0();
+                                                            }
+                                                    }
+                                            }
+                                    }
+                            }
+                    }
+                    else {
+                            loc_ffffffff8f61d6a0();
+                            r4 = 0x1;
+                    }
+            }
+    }
+    else {
+            r0 = loc_ffffffff8f652bd8();
+            COND = r4 != 0x0;
+            if (!COND) {
+                    loc_ffffffff8f61d6a0();
+                    r4 = 0x1;
+            }
+            else {
+                    r0 = loc_ffffffff8f673228();
+                    COND = r5 == 0x0;
+                    if (!COND) {
+                            if (loc_ffffffff8f673ba8() != 0x0) {
+                                    r3 = 0x8f6c02e4;
+                            }
+                            if (CPU_FLAGS & NE) {
+                                    *r3 = 0x1;
+                            }
+                            if (!CPU_FLAGS & NE) {
+                                    if (loc_ffffffff8f61d7f4("bootmode", sp, 0x11) != 0x0) {
+                                            r0 = loc_ffffffff8f64b0ac(sp, "fastboot");
+                                            if (r0 == 0x0) {
+                                                    stack[2043] = r0;
+                                                    loc_ffffffff8f64a9f0(sp + 0x14, 0x3f, "UTAG \"%s\" configured as fastboot", "bootmode", stack[2022]);
+                                                    loc_ffffffff8f61d6a0();
+                                            }
+                                            else {
+                                                    r0 = loc_ffffffff8f646eac();
+                                                    COND = r5 == 0x0;
+                                                    if (!COND) {
+                                                            loc_ffffffff8f61d6a0();
+                                                            r4 = r5;
+                                                    }
+                                                    else {
+                                                            loc_ffffffff8f60dcc0() == 0x77665500;
+                                                            if ((!CPU_FLAGS & E) && (loc_ffffffff8f60dcc0() != 0x7766550c)) {
+                                                                    r4 = r5;
+                                                            }
+                                                            else {
+                                                                    loc_ffffffff8f61d6a0();
+                                                            }
+                                                    }
+                                            }
+                                    }
+                                    else {
+                                            r0 = loc_ffffffff8f646eac();
+                                            COND = r5 == 0x0;
+                                            if (!COND) {
+                                                    loc_ffffffff8f61d6a0();
+                                                    r4 = r5;
+                                            }
+                                            else {
+                                                    loc_ffffffff8f60dcc0() == 0x77665500;
+                                                    if ((!CPU_FLAGS & E) && (loc_ffffffff8f60dcc0() != 0x7766550c)) {
+                                                            r4 = r5;
+                                                    }
+                                                    else {
+                                                            loc_ffffffff8f61d6a0();
+                                                    }
+                                            }
+                                    }
+                            }
+                            else {
+                                    loc_ffffffff8f61d6a0();
+                                    r4 = r5;
+                            }
+                    }
+                    else {
+                            if (loc_ffffffff8f61d7f4("bootmode", sp, 0x11) != 0x0) {
+                                    r0 = loc_ffffffff8f64b0ac(sp, "fastboot");
+                                    if (r0 == 0x0) {
+                                            stack[2043] = r0;
+                                            loc_ffffffff8f64a9f0(sp + 0x14, 0x3f, "UTAG \"%s\" configured as fastboot", "bootmode", stack[2022]);
+                                            loc_ffffffff8f61d6a0();
+                                    }
+                                    else {
+                                            r0 = loc_ffffffff8f646eac();
+                                            COND = r5 == 0x0;
+                                            if (!COND) {
+                                                    loc_ffffffff8f61d6a0();
+                                                    r4 = r5;
+                                            }
+                                            else {
+                                                    loc_ffffffff8f60dcc0() == 0x77665500;
+                                                    if ((!CPU_FLAGS & E) && (loc_ffffffff8f60dcc0() != 0x7766550c)) {
+                                                            r4 = r5;
+                                                    }
+                                                    else {
+                                                            loc_ffffffff8f61d6a0();
+                                                    }
+                                            }
+                                    }
+                            }
+                            else {
+                                    r0 = loc_ffffffff8f646eac();
+                                    COND = r5 == 0x0;
+                                    if (!COND) {
+                                            loc_ffffffff8f61d6a0();
+                                            r4 = r5;
+                                    }
+                                    else {
+                                            loc_ffffffff8f60dcc0() == 0x77665500;
+                                            if ((!CPU_FLAGS & E) && (loc_ffffffff8f60dcc0() != 0x7766550c)) {
+                                                    r4 = r5;
+                                            }
+                                            else {
+                                                    loc_ffffffff8f61d6a0();
+                                            }
+                                    }
+                            }
+                    }
+            }
+    }
+    r0 = r4;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

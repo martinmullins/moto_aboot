@@ -1,0 +1,17 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    loc_ffffffff8f62192c(0x8f683451, "usage: fastboot oem led [options]", arg2, r3, arg0, r3, r4, lr);
+    loc_ffffffff8f62192c(0x8f683451, 0x8f6a4e20);
+    loc_ffffffff8f62192c(0x8f683451, "options:");
+    loc_ffffffff8f62192c(0x8f683451, "  on      turn LED off");
+    loc_ffffffff8f62192c(0x8f683451, "  off     turn LED on");
+    loc_ffffffff8f62192c(0x8f683451, "  blink   blink the led every half a second");
+    loc_ffffffff8f62192c(0x8f683451, "  help    show usage");
+    if (r3 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = loc_ffffffff8f62192c(0x8f683451, 0x8f6a4e20);
+    }
+    return r0;
+

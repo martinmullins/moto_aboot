@@ -1,0 +1,59 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r7 = arg0;
+    r5 = *(arg0 + 0xc);
+    r10 = arg1 + 0x470;
+    r2 = arg1 + 0x14;
+    r4 = arg1;
+    r0 = r5 - arg1;
+    stack[2037] = *arg0;
+    *(arg1 + 0x480) = *(r5 + 0x5c);
+    *(arg1 + 0x488) = *(r5 + 0x60);
+    *(arg1 + 0x47c) = 0x10;
+    *(arg1 + 0x470) = 0x5f;
+    *(arg1 + 0x4b0) = 0x25;
+    r3 = arg1;
+    do {
+            r1 = *(r0 + r3);
+            r3 = r3 + 0x4;
+            *(r3 + 0x4fc) = r1;
+    } while (r3 != r2);
+    loc_ffffffff8f610d60();
+    r11 = r4 + 0x300;
+    r8 = 0x0;
+    do {
+            r3 = r8 + r5;
+            r6 = 0x0;
+            do {
+                    *(r11 + r6 * 0x4) = *(0x6a + r3 + r6);
+                    r6 = r6 + 0x1;
+                    loc_ffffffff8f61951c();
+                    r3 = r3;
+            } while (r6 != 0x9);
+            r8 = r8 + 0x9;
+            r11 = r11 + 0x40;
+    } while (r8 != 0x2d);
+    r3 = r4 + 0x440;
+    do {
+            r2 = *(r5 + 0x1c);
+            r5 = r5 + 0x4;
+            *r3 = r2;
+            r3 = r3 + 0x4;
+    } while (r3 != r10);
+    r3 = *(r7 + 0x1);
+    if (r3 == 0x1) {
+            r3 = 0x8;
+    }
+    if (CPU_FLAGS & E) {
+            *(r4 + 0x22c) = r3;
+    }
+    r3 = *(r7 + 0x2);
+    if (r3 != 0x0) {
+            *(r4 + 0xac) = r3;
+    }
+    *(r4 + 0xc0) = *(r7 + 0x4) & 0x3f3f;
+    r0 = 0x0;
+    if (stack[2037] != *loc_ffffffff8f61951c(r0)) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

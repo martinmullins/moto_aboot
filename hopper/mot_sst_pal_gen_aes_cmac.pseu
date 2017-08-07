@@ -1,0 +1,19 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    loc_ffffffff8f656968(0x1, "mot_sst_pal_gen_aes_cmac: START\n", arg2, r3, arg0, stack[2043], 0x8f7112f4, r5, r6, lr);
+    r0 = loc_ffffffff8f6072cc(arg0, arg2);
+    COND = r5 != 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968();
+            r0 = r5;
+    }
+    else {
+            loc_ffffffff8f656968();
+            r0 = 0xff;
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

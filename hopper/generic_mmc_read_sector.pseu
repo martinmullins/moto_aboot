@@ -1,0 +1,27 @@
+    r2 = arg2;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r12 = arg0;
+    COND = r4 == 0x0;
+    stack[2043] = *0x8f7112f4;
+    if (!COND) {
+            r0 = *(*0x8f7125ec + 0x14);
+            if (r4 + r12 >= r0) {
+                    loc_ffffffff8f656968(0x1, "Invalid sector range: start=%u, end=%u, total=%u\n", r12);
+                    r0 = 0x0 ^ 0xffffffff;
+            }
+            else {
+                    r1 = *0x8f7125ec;
+                    r6 = *(r1 + 0x38);
+                    asm{ umull      r0, r1, ip, r3 };
+                    asm{ umull      r2, r3, r4, r3 };
+                    r0 = (r6)();
+            }
+    }
+    else {
+            r0 = r4;
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,12 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x14;
+    r4 = r0;
+    stack[2043] = *0x8f7112f4;
+    if (*(*(r0 + 0x50) + 0xaf) == 0x0) {
+            (loc_ffffffff8f608f6c() == 0x0) && (loc_ffffffff8f609518(r4, r4 + 0x50) == 0x0);
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

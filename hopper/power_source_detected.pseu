@@ -1,0 +1,41 @@
+    r1 = arg1;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    r0 = loc_ffffffff8f6331a0(arg0, r1);
+    r2 = r3;
+    r3 = *0x8f7112f4;
+    if (r0 != 0x0) {
+            if (r2 == r3) {
+                    sp = sp + 0x8;
+                    r2 = *0x8f7112f4;
+                    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+                    stack[2043] = *0x8f7112f4;
+                    if (*0x8f6e0bd4 != 0x0) {
+                            r0 = loc_ffffffff8f612dc8();
+                            COND = r2 >= 0x0;
+                            if (!COND) {
+                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Read SMB1359(USB/DCIN) error %d\n");
+                            }
+                            else {
+                                    r0 = stack[2043] & 0x3;
+                                    COND = r0 != 0x0;
+                            }
+                    }
+                    if (stack[2043] != *0x8f7112f4) {
+                            loc_ffffffff8f648514();
+                    }
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (r2 != r3) {
+                    loc_ffffffff8f648514();
+            }
+            else {
+                    loc_ffffffff8f645744();
+            }
+    }
+    return;
+

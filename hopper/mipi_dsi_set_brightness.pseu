@@ -1,0 +1,31 @@
+    stack[2044] = r4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg0;
+    r2 = "mipi_dsi_set_brightness";
+    stack[2043] = *0x8f7112f4;
+    loc_ffffffff8f656968(0x2, "%s: set brightness to %d,bit=%d\n", r2, r4, arg1, arg1, arg2, stack[2043], stack[2044], 0x8f7112f4, r6, lr);
+    loc_ffffffff8f610228();
+    if (arg1 == 0x8) {
+            *(0x8f6acae8 + 0x1) = r4;
+            if (!CPU_FLAGS & E) {
+                    r0 = loc_ffffffff8f648514();
+            }
+            else {
+                    r0 = loc_ffffffff8f60f7a8();
+            }
+    }
+    else {
+            r5 = 0x8f7112f4;
+            r3 = 0x8f6acba4;
+            asm{ ubfx       r2, r4, #0x8, #0x4 };
+            *(r3 + 0x6) = r4;
+            *(r3 + 0x5) = r2;
+            if (!CPU_FLAGS & E) {
+                    r0 = loc_ffffffff8f648514();
+            }
+            else {
+                    r0 = loc_ffffffff8f60f7a8();
+            }
+    }
+    return r0;
+

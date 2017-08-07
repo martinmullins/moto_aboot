@@ -1,0 +1,51 @@
+    r1 = arg1;
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r2 = *0x8f7112f4;
+    r12 = *(r0 + 0x48);
+    stack[2045] = r2;
+    r2 = *(r0 + 0x38);
+    if (r12 < r2) {
+            r2 = 0x400;
+    }
+    if (CPU_FLAGS & GE) {
+            r2 = 0x0;
+    }
+    if (r1 > 0x100) {
+            loc_ffffffff8f656968(0x1, "HW doesn't support READs > 256 bytes\n");
+            r0 = 0x5c ^ 0xffffffff;
+    }
+    else {
+            COND = r1 <= *(r0 + 0x3c);
+            r3 = *(r0 + 0x4);
+            if (COND) {
+                    r2 = r2 | 0xc000;
+            }
+            if (CPU_FLAGS & G) {
+                    r2 = r2 | 0xd000;
+            }
+            if (CPU_FLAGS & LE) {
+                    *(r3 + 0x8) = r2;
+            }
+            if (CPU_FLAGS & G) {
+                    *(r3 + 0x8) = r2;
+            }
+            if (CPU_FLAGS & LE) {
+                    r3 = *(r0 + 0x4);
+            }
+            if (CPU_FLAGS & G) {
+                    r3 = *(r0 + 0x4);
+            }
+            r0 = 0x0;
+            if (CPU_FLAGS & LE) {
+                    *(r3 + 0x208) = r1;
+            }
+            if (CPU_FLAGS & G) {
+                    *(r3 + 0x200) = r1;
+            }
+    }
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

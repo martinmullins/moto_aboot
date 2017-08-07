@@ -1,0 +1,26 @@
+    r1 = arg1;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    if (*0x8f70da50 != 0x0) {
+            r2 = 0x0;
+            r12 = *0x8f70da68;
+            r5 = r12 + 0x30 * *(*0x8f70da54 + 0x3c);
+            r3 = 0x0;
+            while (r12 != r5) {
+                    r0 = *0x8f70da50;
+                    asm{ ldrd       r0, r1, [ip, #0x8] };
+                    r12 = r12 + 0x30;
+                    r2 = r2 + r0;
+                    r3 = r3 + r1 + CARRY(FLAGS);
+            }
+            r0 = r2;
+    }
+    else {
+            loc_ffffffff8f656968();
+            r0 = 0x0;
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

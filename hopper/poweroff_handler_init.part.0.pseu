@@ -1,0 +1,18 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    *(0x8f6e06b8 + 0x4) = 0x8f6e06b8;
+    *0x8f6e06b8 = 0x8f6e06b8;
+    loc_ffffffff8f61ab4c(0x8f6e06c0, 0x0, 0x1, 0x8f6e06b8, arg0, arg1, arg2, stack[2045], 0x8f7112f4, lr);
+    loc_ffffffff8f61af70(0x8f6e06e0);
+    if (loc_ffffffff8f61b490("power off handler", 0x8f634310, 0x0, 0x18, 0x1000) == 0x0) {
+            r0 = loc_ffffffff8f656968();
+    }
+    else {
+            r0 = loc_ffffffff8f61b6fc();
+    }
+    *0x8f6e06dc = 0x1;
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

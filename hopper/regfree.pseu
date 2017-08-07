@@ -1,0 +1,48 @@
+    COND = r5 != 0x0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r4 = lr;
+    stack[2041] = *0x8f7112f4;
+    if (!COND) {
+            loc_ffffffff8f6484ac(lr, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/regfree.c", 0x6a, 0x8f6a4a6c);
+    }
+    if (*r5 != 0xf265) {
+            loc_ffffffff8f6484ac(r4, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/regfree.c", 0x6c, "preg->re_magic == ((('r'^0200)<<8) | 'e')");
+    }
+    if (*r5 == 0xf265) {
+            r4 = *(r5 + 0xc);
+            if ((r4 != 0x0) && (*r4 == 0xd245)) {
+                    r0 = *(r4 + 0x4);
+                    *r5 = 0x0;
+                    *r4 = 0x0;
+                    if (r0 != 0x0) {
+                            loc_ffffffff8f64ab9c();
+                    }
+                    if (*(r4 + 0x10) != 0x0) {
+                            loc_ffffffff8f64ab9c();
+                    }
+                    if (*(r4 + 0x14) != 0x0) {
+                            loc_ffffffff8f64ab9c();
+                    }
+                    if (*(r4 + 0x3c) != 0x0) {
+                            loc_ffffffff8f64ab9c();
+                    }
+                    if (stack[2041] == *0x8f7112f4) {
+                            loc_ffffffff8f64ab9c(r4);
+                    }
+                    else {
+                            loc_ffffffff8f648514();
+                    }
+            }
+            else {
+                    if (stack[2041] != *0x8f7112f4) {
+                            loc_ffffffff8f648514();
+                    }
+            }
+    }
+    else {
+            if (stack[2041] != *0x8f7112f4) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

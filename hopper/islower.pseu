@@ -1,0 +1,15 @@
+    r3 = 0x8f7112f4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r0 = arg0 - 0x61;
+    r2 = *r3;
+    if (r0 > 0x19) {
+            r0 = 0x0;
+    }
+    if (CPU_FLAGS & B) {
+            r0 = 0x1;
+    }
+    if (r2 != *r3) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

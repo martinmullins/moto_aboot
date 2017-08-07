@@ -1,0 +1,21 @@
+    r3 = 0x8f7112f4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r2 = *r3;
+    r0 = *0x8f6afe00;
+    r2 = r2;
+    if (r0 != 0x4) {
+            r0 = *0x8f6afe00;
+            CMP(r0, 0x9);
+    }
+    r3 = *r3;
+    if (CPU_FLAGS & NE) {
+            r0 = 0x0;
+    }
+    if (CPU_FLAGS & E) {
+            r0 = 0x1;
+    }
+    if (r2 != r3) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

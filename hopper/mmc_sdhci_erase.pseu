@@ -1,0 +1,156 @@
+    r3 = arg3;
+    r2 = arg2;
+    r0 = arg0;
+    r8 = arg1;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x50;
+    r6 = r0;
+    stack[2039] = *0x8f7112f4;
+    r1 = *(r0 + 0x48);
+    r1 = r1 - 0x3;
+    if (r1 > 0x1) {
+            r1 = *(r0 + 0xe0);
+    }
+    if (CPU_FLAGS & A) {
+            s0 = *(r0 + 0xdc);
+    }
+    if (CPU_FLAGS & A) goto loc_8f60ac78;
+
+loc_8f60ac50:
+    r1 = *(r0 + 0x50);
+    if (*(r1 + 0xaf) != 0x0) {
+            s0 = *(r1 + 0xe0);
+    }
+    if (CPU_FLAGS & NE) {
+            s0 = s0 << s0 * 0x400;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f60ac7c;
+
+loc_8f60ac68:
+    r1 = *(r6 + 0xc0);
+    s0 = *(r6 + 0xbc);
+    r1 = r1 + 0x1;
+    s0 = s0 + 0x1;
+    goto loc_8f60ac78;
+
+loc_8f60ac78:
+    s0 = s0 * r1;
+    goto loc_8f60ac7c;
+
+loc_8f60ac7c:
+    r5 = r5 >> r3 / 0x200;
+    r4 = r4 >> r2 / 0x200 | r3 * 0x800000;
+    r2 = s0;
+    if (r5 == 0x0) {
+            CMP(r4, r2);
+    }
+    if (CPU_FLAGS & B) goto loc_8f60aed0;
+
+loc_8f60aca4:
+    r0 = loc_ffffffff8f67b5cc(r4, r5);
+    r10 = r0;
+    r5 = r8 + s0 * (r0 - 0x1);
+    if (r5 >= r8 + r4) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "The erase group overlaps the max requested for erase\n");
+            r5 = r5 - s0;
+    }
+    loc_ffffffff8f64adc8(sp + 0x8, 0x0, 0x40);
+    r3 = *(r6 + 0x48);
+    if (r3 > 0x4) {
+            r3 = 0x20;
+    }
+    if (!CPU_FLAGS & A) {
+            if (r3 == 0x4) {
+                    r3 = *(r6 + 0x38);
+            }
+            if (CPU_FLAGS & E) {
+                    r8 = r3 * r8;
+            }
+    }
+    r0 = loc_ffffffff8f607a2c(r6, sp + 0x8);
+    if (r0 != 0x0) goto loc_8f60aed0;
+
+loc_8f60ad3c:
+    if (0x1 >= 0x0) goto loc_8f60ad58;
+
+loc_8f60ad48:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Address for CMD35 is out of range\n");
+    goto loc_8f60aed0;
+
+loc_8f60aed0:
+    loc_ffffffff8f656968();
+    r8 = 0x1;
+    goto loc_8f60aed8;
+
+loc_8f60aed8:
+    r0 = r8;
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f60ad58:
+    r8 = r0;
+    loc_ffffffff8f64adc8(sp + 0x8, r8, 0x40);
+    r3 = *(r6 + 0x48);
+    if (r3 > 0x4) {
+            r3 = 0x21;
+    }
+    if (!CPU_FLAGS & A) {
+            if (r3 == 0x4) {
+                    r3 = *(r6 + 0x38);
+            }
+            if (CPU_FLAGS & E) {
+                    r5 = r3 * r5;
+            }
+    }
+    r0 = loc_ffffffff8f607a2c(r6, sp + 0x8);
+    COND = r1 != 0x0;
+    if (COND) goto loc_8f60aed0;
+
+loc_8f60add0:
+    if (0x1 < 0x0) goto loc_8f60ae3c;
+
+loc_8f60addc:
+    r3 = *(r6 + 0x50);
+    r3 = *(r3 + 0xdf);
+    loc_ffffffff8f64adc8(sp + 0x8);
+    r0 = r6;
+    r1 = sp + 0x8;
+    asm{ strd       r4, r5, [sp, #0x70 + var_40] };
+    if (loc_ffffffff8f607a2c(r0, r1) != 0x0) goto loc_8f60aed0;
+
+loc_8f60ae30:
+    r4 = 0x2710;
+    r5 = r6 + 0x30;
+    goto .l28;
+
+.l28:
+    if (CPU_FLAGS & NE) goto loc_8f60aeb0;
+
+loc_8f60ae80:
+    if ((stack[2021] & 0x8000) != 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Write Protect set for the region, only partial space was erased\n");
+    }
+    loc_ffffffff8f60c5a0(0x3e8);
+    r4 = r4 - 0x1;
+    COND = r4 != 0x0;
+    if (COND) goto loc_8f60ae54;
+
+loc_8f60aeb0:
+    loc_ffffffff8f656968();
+    goto loc_8f60aed0;
+
+loc_8f60ae54:
+    r3 = stack[2021];
+    if ((r3 & 0x100) != 0x0) goto loc_8f60aeb8;
+    goto .l28;
+
+loc_8f60aeb8:
+    asm{ ubfx       r3, r3, #0x9, #0x4 };
+    if (r3 == 0x7) goto .l28;
+    goto loc_8f60aed8;
+
+loc_8f60ae3c:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Address for CMD36 is out of range\n");
+    goto loc_8f60aed0;
+

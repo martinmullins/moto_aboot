@@ -1,0 +1,56 @@
+    r1 = arg1;
+    r0 = arg0;
+    r6 = arg3;
+    r10 = arg2;
+    r3 = 0x8f7112f4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r4 = r0;
+    r5 = r1;
+    r11 = *0x8f6e0c38;
+    r7 = r3;
+    s0 = arg4;
+    stack[2037] = *r3;
+    if (r11 == 0x0) {
+            if (stack[2037] == *r3) {
+                    loc_ffffffff8f656968(0x2, "Display not initialized\n");
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    else {
+            r3 = *0x8f6e0c40;
+            if (r3 == 0x0) {
+                    r3 = r10 + 0x1;
+            }
+            if (CPU_FLAGS & E) {
+                    r10 = r6 + 0x1;
+            }
+            if (CPU_FLAGS & E) {
+                    r10 = r10 - r1;
+            }
+            if (!CPU_FLAGS & E) {
+                    r10 = r10 - r4;
+                    r5 = r4;
+                    r4 = loc_ffffffff8f64f330() - r6;
+            }
+            loc_ffffffff8f649350(r11, r4, r5);
+            r2 = stack[2037];
+            r3 = *r7;
+            if (s0 != 0x0) {
+                    if (r2 == r3) {
+                            r0 = *0x8f6e0c38;
+                            loc_ffffffff8f64942c(r0);
+                    }
+                    else {
+                            loc_ffffffff8f648514();
+                    }
+            }
+            else {
+                    if (r2 != r3) {
+                            loc_ffffffff8f648514();
+                    }
+            }
+    }
+    return;
+

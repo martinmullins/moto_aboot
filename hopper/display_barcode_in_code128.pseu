@@ -1,0 +1,65 @@
+    COND = r8 == 0x0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x1c;
+    r6 = arg0;
+    r10 = 0x8f7112f4;
+    stack[2037] = *0x8f7112f4;
+    if ((COND) || (loc_ffffffff8f64b354(r8) == 0x0)) goto loc_8f63c118;
+
+loc_8f63bfcc:
+    r7 = loc_ffffffff8f648ad4();
+    s0 = *(loc_ffffffff8f633874() + 0x64);
+    r11 = loc_ffffffff8f648b18();
+    r5 = loc_ffffffff8f6319bc();
+    loc_ffffffff8f64f2c4();
+    if (loc_ffffffff8f651360() < loc_ffffffff8f64f2c4()) goto loc_8f63c030;
+
+loc_8f63c00c:
+    if (stack[2037] == *0x8f7112f4) {
+            loc_ffffffff8f656968(0x1, "Barcode is too long for the display\n");
+    }
+    else {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f63c030:
+    r6 = s0 + r6;
+    r5 = r11 * r5;
+    r11 = r8 - 0x1;
+    r7 = r7 + 0xb * loc_ffffffff8f6513b4();
+    r4 = loc_ffffffff8f6513b4();
+    loc_ffffffff8f651474(0x68);
+    r1 = r6;
+    r2 = r5;
+    r3 = r4;
+    asm{ stm        sp, {r0, sb} };
+    r7 = r7 + loc_ffffffff8f63bd34(r7, r1, r2, r3);
+    do {
+            r11 = r11 + 0x1;
+            if (*r11 == 0x0) {
+                break;
+            }
+            loc_ffffffff8f651434();
+            r1 = r6;
+            r2 = r5;
+            r3 = r4;
+            asm{ stm        sp, {r0, sb} };
+            r7 = r7 + loc_ffffffff8f63bd34(r7, r1, r2, r3);
+    } while (true);
+    r7 = loc_ffffffff8f63bd34(r7, r6, r5, r4, loc_ffffffff8f6514e8(r8), 0xb) + r7;
+    loc_ffffffff8f651474(0x6a);
+    r1 = r6;
+    r2 = r5;
+    r3 = r4;
+    asm{ stm        sp, {r0, r8} };
+    r8 = loc_ffffffff8f63bd34(r7, r1, r2, r3);
+    r0 = loc_ffffffff8f6514b4();
+    loc_ffffffff8f63bd34(r7 + r8, r6, r5, r4, r0, 0x2);
+    goto loc_8f63c118;
+
+loc_8f63c118:
+    if (stack[2037] != *r10) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

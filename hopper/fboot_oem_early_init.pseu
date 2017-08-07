@@ -1,0 +1,28 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x210;
+    r4 = 0x0;
+    stack[2043] = *0x8f7112f4;
+    r5 = loc_ffffffff8f633bb0();
+    loc_ffffffff8f64b2c0(sp + 0xc, "Display panel driver override\n", 0x200);
+    loc_ffffffff8f64b21c(sp + 0xc, "(choose from: ", 0x200);
+    while (r4 < loc_ffffffff8f678280(r5)) {
+            if (r4 > 0x0) {
+                    loc_ffffffff8f64b21c(sp + 0xc, 0x8f6887de, 0x200);
+            }
+            r1 = *(r5 + r4 * 0x4);
+            r4 = r4 + 0x1;
+            loc_ffffffff8f64b21c(sp + 0xc, r1, 0x200);
+    }
+    r6 = 0x8f7112f4;
+    r4 = 0x0;
+    loc_ffffffff8f64b21c(sp + 0xc, 0x8f687c45, 0x200);
+    r1 = 0x8f684a2d;
+    r2 = sp + 0xc;
+    r3 = 0x8f627e38;
+    asm{ stm        sp, {r4, r5} };
+    loc_ffffffff8f67a690(r4, r1, r2, r3);
+    r0 = loc_ffffffff8f67a690(r4, "sod.offset", "SOD header offset\n(used internaly by bootloader to track SOD header across blankflash boundaries)", r4, r4, r4);
+    if (stack[2043] != *r6) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

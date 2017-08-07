@@ -1,0 +1,164 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0xa4;
+    r3 = *0x8f7112f4;
+    stack[2037] = r3;
+    r10 = loc_ffffffff8f60155c(arg0, arg1, arg2, r3, stack[1998]);
+    r0 = loc_ffffffff8f65385c(0x8f6848d7);
+    COND = r1 == 0x0;
+    if (CPU_FLAGS & E) {
+            r1 = "Not found logo partition\n";
+    }
+    if (CPU_FLAGS & E) goto loc_8f620b50;
+
+loc_8f620888:
+    r0 = loc_ffffffff8f64ac90(sp + 0x18);
+    r3 = stack[2017];
+    r2 = 0x1;
+    asm{ ldrd       r0, r1, [sp, #0xc8 + var_90] };
+    asm{ bfi        r3, r2, #0x0, #0x4 };
+    asm{ ldrd       r2, r3, [sp, #0xc8 + var_88] };
+    r2 = r2 + 0x1;
+    r3 = r3 + 0x0 + CARRY(FLAGS);
+    r2 = r2 - r0;
+    r5 = r5 << (r3 - r1 + !CARRY(FLAGS)) * 0x200 | r2 / 0x800000;
+    r4 = r4 << r2 * 0x200;
+    r11 = loc_ffffffff8f67428c(sp + 0x18);
+    asm{ ldrd       r0, r1, [sp, #0xc8 + var_B8] };
+    if (loc_ffffffff8f6507a4() == 0x0) goto loc_8f62091c;
+
+loc_8f620904:
+    loc_ffffffff8f656968(0x5, "%s: failed in reading %s image header\n", "load_and_validate_logo", 0x8f6848d7);
+    goto loc_8f620b54;
+
+loc_8f620b54:
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f620b70;
+
+loc_8f620b70:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f62091c:
+    loc_ffffffff8f64ac90(r10 + 0x8, r10 + 0x9, 0xff7);
+    r6 = *(r10 + 0x9);
+    r0 = "MotoLogo";
+    r6 = *(r10 + 0x8) | r6 * 0x100;
+    r6 = r6 | *(r10 + 0xa) * 0x10000;
+    r3 = *(r10 + 0xb);
+    r6 = (r6 | r3 * 0x1000000) - 0x1;
+    *(r10 + 0x8) = r6;
+    asm{ ubfx       r3, r6, #0x8, #0x8 };
+    *(r10 + 0x9) = r3;
+    asm{ ubfx       r3, r6, #0x10, #0x8 };
+    *(r10 + 0xa) = r3;
+    *(r10 + 0xb) = r3 >> r6 / 0x1000000;
+    r0 = loc_ffffffff8f64b354(r0);
+    r1 = "MotoLogo";
+    r0 = loc_ffffffff8f64b470(r10, r1, r0);
+    if (r0 == 0x0) goto loc_8f6209e8;
+
+loc_8f620988:
+    r0 = loc_ffffffff8f64f20c();
+    r2 = r0;
+    r7 = r0;
+    r0 = r4 - r11 + 0x400;
+    if (0x0 == r5 - 0x0 + !CARRY(FLAGS)) {
+            CMP(r2, r0);
+    }
+    if (CPU_FLAGS & B) goto loc_8f6209bc;
+
+loc_8f620b50:
+    loc_ffffffff8f656968();
+    goto loc_8f620b54;
+
+loc_8f6209bc:
+    asm{ strd       r2, r3, [sp, #0xc8 + var_C8] };
+    r1 = r10;
+    if (CPU_FLAGS & NE) {
+            r1 = "failed to load logo partition";
+    }
+    if (CPU_FLAGS & E) goto loc_8f620aac;
+    goto loc_8f620b50;
+
+loc_8f620aac:
+    r6 = r10 + r7;
+    r0 = loc_ffffffff8f6745c4(sp + 0x18);
+    if (r0 == 0x0) goto loc_8f620b1c;
+
+loc_8f620ac0:
+    r1 = 0xff;
+    r3 = r4 - 0x400 - r11;
+    r11 = r11 + 0x400;
+    r2 = r3 - r7;
+    r7 = r6 + (r3 - r7);
+    r0 = loc_ffffffff8f64adc8(r6, r1, r2, r3);
+    asm{ ldrd       r0, r1, [sp, #0xc8 + var_B8] };
+    r0 = r0 + r4;
+    r1 = r1 + r5 + CARRY(FLAGS);
+    r0 = r0 - r11;
+    if (CPU_FLAGS & E) goto loc_8f620b5c;
+    goto loc_8f620b50;
+
+loc_8f620b5c:
+    r0 = loc_ffffffff8f673264(sp + 0x18, r10, r4, 0x0);
+    goto loc_8f620b70;
+
+loc_8f620b1c:
+    asm{ ldrd       r0, r1, [sp, #0xc8 + var_B8] };
+    r0 = r0 + r7;
+    r1 = r1 + 0x0 + CARRY(FLAGS);
+    r2 = r4 - r7;
+    if (loc_ffffffff8f6507a4(r0, r1, r2, r5 - 0x0 + !CARRY(FLAGS), r6) == 0x0) goto loc_8f620b5c;
+    goto loc_8f620b50;
+
+loc_8f6209e8:
+    r7 = 0xc;
+    r3 = r0;
+    r12 = r0;
+    r8 = r0;
+    do {
+            s0 = r10 + r7;
+            if (r7 >= r6) {
+                break;
+            }
+            loc_ffffffff8f64ac90(sp + 0x98, 0x8f6826be, 0x4);
+            r1 = sp + 0x98;
+            r7 = r7 + 0x20;
+            r3 = r3;
+            r12 = r12;
+            if (loc_ffffffff8f64af40(s0, r1, 0x4) != 0x0) {
+                    r3 = r10 + r8 * 0x20;
+            }
+            if (CPU_FLAGS & NE) {
+                    r8 = r8 + 0x1;
+            }
+            if (CPU_FLAGS & NE) {
+                    r12 = *(r3 + 0x24);
+            }
+            if (CPU_FLAGS & NE) {
+                    r3 = *(r3 + 0x28);
+            }
+    } while (CPU_FLAGS & NE);
+    if (CPU_FLAGS & E) {
+            r1 = "Invalid logo image format";
+    }
+    if (CPU_FLAGS & E) goto loc_8f620b50;
+
+loc_8f620a60:
+    r8 = r12 + r3;
+    s0 = 0x0 + CARRY(FLAGS);
+    r6 = r4 - r11 + 0x400;
+    if (s0 == r5 - 0x0 + !CARRY(FLAGS)) {
+            CMP(r8, r6);
+    }
+    if (CPU_FLAGS & A) goto loc_8f620b50;
+
+loc_8f620a84:
+    r7 = 0x0 + r12;
+    asm{ ldrd       r0, r1, [sp, #0xc8 + var_B8] };
+    if (CPU_FLAGS & NE) {
+            r1 = "failed to load logo image\n";
+    }
+    if (CPU_FLAGS & NE) goto loc_8f620b50;
+

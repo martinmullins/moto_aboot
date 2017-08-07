@@ -1,0 +1,70 @@
+    r1 = arg1;
+    r0 = arg0 - 0x1;
+    COND = r0 != 0x0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x8c;
+    r6 = r1;
+    stack[2041] = *0x8f7112f4;
+    if (COND) goto loc_8f627560;
+
+loc_8f627518:
+    if (loc_ffffffff8f63f870(sp) == 0x0) {
+            loc_ffffffff8f64a9f0(sp + 0x43 & !0x3f, 0x40, "backlight brightness is %d", stack[2008]);
+    }
+    loc_ffffffff8f62192c();
+    goto loc_8f627604;
+
+loc_8f627604:
+    r0 = 0x1;
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f627560:
+    if (r0 == 0x1) goto loc_8f627570;
+
+loc_8f627568:
+    loc_ffffffff8f624614();
+    goto loc_8f627604;
+
+loc_8f627570:
+    r4 = *(r1 + 0x4);
+    if (loc_ffffffff8f64b0ac(r4, 0x8f6844d9) != 0x0) goto loc_8f627590;
+
+loc_8f627588:
+    loc_ffffffff8f63f7d0();
+    goto loc_8f627604;
+
+loc_8f627590:
+    if (loc_ffffffff8f64b0ac(r4, 0x8f6844c2) != 0x0) goto loc_8f6275ac;
+
+loc_8f6275a4:
+    loc_ffffffff8f63f820();
+    goto loc_8f627604;
+
+loc_8f6275ac:
+    if (loc_ffffffff8f64b0ac(r4, 0x8f685dfd) != 0x0) {
+            r4 = 0x0;
+    }
+    if (CPU_FLAGS & E) goto loc_8f627568;
+
+loc_8f6275c4:
+    r5 = *(r6 + 0x4);
+    if (r4 >= loc_ffffffff8f64b354(r5)) goto loc_8f6275f0;
+
+loc_8f6275d8:
+    if (loc_ffffffff8f64a0c8(*(r5 + r4)) == 0x0) goto loc_8f627568;
+
+loc_8f6275e8:
+    r4 = r4 + 0x1;
+    goto loc_8f6275c4;
+
+loc_8f6275f0:
+    if (loc_ffffffff8f649d24(r5) >= 0x0) {
+            loc_ffffffff8f63f8d4();
+    }
+    else {
+            loc_ffffffff8f624614();
+    }
+    goto loc_8f627604;
+

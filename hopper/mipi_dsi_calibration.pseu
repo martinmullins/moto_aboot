@@ -1,0 +1,41 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    *(0x1a98000 + 0x518) = 0x1;
+    *(0x1a98000 + 0x534) = 0x0;
+    *(0x1a98000 + 0x53c) = 0x5a;
+    *(0x1a98000 + 0x544) = 0x10;
+    *(0x1a98000 + 0x548) = 0x1;
+    *(0x1a98000 + 0x538) = 0x1;
+    *(0x1a98000 + 0x528) = 0x1;
+    r2 = 0x1389;
+    *(0x1a98000 + 0x528) = 0x0;
+    r0 = *(0x1a98000 + 0x550);
+    goto loc_8f610db0;
+
+loc_8f610db0:
+    if ((r0 & 0x10) == 0x0) goto loc_8f610dec;
+
+loc_8f610db8:
+    r2 = r2 - 0x1;
+    COND = r2 != 0x0;
+    if (COND) goto loc_8f610de4;
+
+loc_8f610dc0:
+    if (stack[2045] == *0x8f7112f4) {
+            r0 = loc_ffffffff8f656968(0x0 ^ 0xffffffff, "DSI1 PHY REGULATOR NOT READY,exceeded polling TIMEOUT!\n");
+    }
+    else {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f610de4:
+    r0 = *(0x1a98000 + 0x550);
+    goto loc_8f610db0;
+
+loc_8f610dec:
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

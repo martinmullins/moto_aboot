@@ -1,0 +1,11 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg0;
+    stack[2043] = *0x8f7112f4;
+    if ((loc_ffffffff8f64b0ac(arg0, *0x8f6b009c) != 0x0) && (loc_ffffffff8f64b0ac(r4, *(0x8f6b009c + 0x60)) != 0x0)) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: failed uspace name = [%s]\n", "get_utags_id", r4);
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

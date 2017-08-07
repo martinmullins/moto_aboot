@@ -1,0 +1,15 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = arg0;
+    stack[2045] = *0x8f7112f4;
+    if (arg0 > 0x1) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: failed uspace = [%d]\n", "get_utags");
+            r0 = 0x0;
+    }
+    else {
+            r0 = 0x8f6b009c + 0x60 * r3;
+    }
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

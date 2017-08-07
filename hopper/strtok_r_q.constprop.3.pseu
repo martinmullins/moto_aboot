@@ -1,0 +1,113 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    COND = r4 != 0x0;
+    r2 = *0x8f7112f4;
+    stack[2041] = r2;
+    if (COND) goto loc_8f651c54;
+
+loc_8f651c40:
+    r4 = *0x8f6e12e4;
+    if (r4 == 0x0) {
+            r4 = *0x8f6e12e4;
+            r0 = r4;
+    }
+    if (CPU_FLAGS & E) goto loc_8f651d24;
+
+loc_8f651c54:
+    r0 = loc_ffffffff8f64b638(r4, 0x8f6826e5);
+    r3 = *(r4 + r0);
+    r7 = r4 + r0;
+    if (r3 != 0x0) {
+            r2 = 0x0;
+    }
+    if (CPU_FLAGS & NE) {
+            r12 = r7;
+    }
+    if (CPU_FLAGS & NE) {
+            r5 = r2;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f651cac;
+
+loc_8f651c7c:
+    r0 = r3;
+    *0x8f6e12e4 = r3;
+    goto loc_8f651d24;
+
+loc_8f651d24:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f651cac:
+    r1 = r12;
+    r3 = *r12;
+    r12 = r12 + 0x1;
+    if (r3 != 0x0) goto loc_8f651c8c;
+
+loc_8f651d18:
+    r0 = r7;
+    *0x8f6e12e4 = r3;
+    goto loc_8f651d24;
+
+loc_8f651c8c:
+    if (r2 != 0x0) goto loc_8f651cc0;
+
+loc_8f651c94:
+    if (r3 != 0x27) {
+            CMP(r3, 0x22);
+    }
+    if (CPU_FLAGS & NE) {
+            r0 = 0x8f6826e4;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f651ce4;
+
+loc_8f651ca4:
+    r2 = r3;
+    r5 = r1;
+    goto loc_8f651cac;
+
+loc_8f651ce4:
+    r0 = r0 + 0x1;
+    r2 = *r0;
+    if (r2 == 0x0) goto loc_8f651d10;
+
+loc_8f651cf0:
+    if (r3 != r2) goto loc_8f651ce4;
+
+loc_8f651cf8:
+    if (r1 != 0x0) {
+            r3 = r1 + 0x1;
+    }
+    if (CPU_FLAGS & NE) {
+            r2 = 0x0;
+    }
+    if (CPU_FLAGS & E) {
+            r3 = r1;
+    }
+    if (CPU_FLAGS & NE) {
+            *r1 = r2;
+    }
+    goto loc_8f651d18;
+
+loc_8f651d10:
+    r3 = r2;
+    goto loc_8f651ca4;
+
+loc_8f651cc0:
+    if (r3 == r2) {
+            if (r5 != 0x0) {
+                    r3 = *r5;
+                    if (r3 == 0x5c) {
+                            r3 = r2;
+                    }
+                    if (CPU_FLAGS & NE) {
+                            r3 = 0x0;
+                    }
+            }
+    }
+    else {
+            r3 = r2;
+    }
+    goto loc_8f651ca4;
+

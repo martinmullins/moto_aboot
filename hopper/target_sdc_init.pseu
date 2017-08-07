@@ -1,0 +1,41 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x7c;
+    r7 = lr;
+    r4 = sp + 0x2c;
+    stack[2041] = *0x8f7112f4;
+    r12 = 0x8f67c000;
+    r5 = loc_ffffffff8f632f34("emmc_drv_strength");
+    COND = r5 < 0x0;
+    asm{ ldm        ip!, {r0, r1, r2, r3} };
+    asm{ stm        r4!, {r0, r1, r2, r3} };
+    asm{ ldm        ip!, {r0, r1, r2, r3} };
+    asm{ stm        r4!, {r0, r1, r2, r3} };
+    r3 = *r12;
+    r12 = r12 + 0x4;
+    *r4 = r3;
+    r4 = sp + 0x50;
+    asm{ ldm        ip!, {r0, r1, r2, r3} };
+    asm{ stm        r4!, {r0, r1, r2, r3} };
+    asm{ ldm        ip!, {r0, r1, r2, r3} };
+    asm{ stm        r4!, {r0, r1, r2, r3} };
+    r3 = *r12;
+    *r4 = r3;
+    if (((CPU_FLAGS & L) || (loc_ffffffff8f6309d0("sdc1_clk", r5, sp + 0x8) != 0x0)) || ((loc_ffffffff8f6309d0("sdc1_cmd", r5, sp + 0xc) != 0x0) || (loc_ffffffff8f6309d0("sdc1_data", r5, sp + 0x10) != 0x0))) {
+            loc_ffffffff8f656968();
+    }
+    loc_ffffffff8f616208(sp + 0x2c, 0x3);
+    loc_ffffffff8f616268(sp + 0x50, 0x3);
+    r0 = loc_ffffffff8f609960(sp + 0x10);
+    *0x8f7112dc = r0;
+    if (r0 == 0x0) {
+            r0 = loc_ffffffff8f609960(sp + 0x10);
+            *0x8f7112dc = r0;
+            if (r0 == 0x0) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "mmc init failed!");
+                    r0 = loc_ffffffff8f6484ac(r7, "ASSERT FAILED at (%s:%d): %s\n", "target/msm8916/init.c", 0xb4, 0x8f69c66f);
+            }
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

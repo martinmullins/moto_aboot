@@ -1,0 +1,51 @@
+    stack[2044] = r4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = *(arg0 + 0xc);
+    r3 = *0x8f7112f4;
+    r4 = r4 + 0x1;
+    stack[2043] = r3;
+    if (((loc_ffffffff8f674b74(arg0, arg1, arg2, r3, arg0, stack[2043], stack[2044], r5, 0x8f7112f4, lr) == 0x0) || (loc_ffffffff8f674cc4() != 0x3)) || (loc_ffffffff8f64b0ac(r4, "cid_prov") == 0x0)) goto loc_8f62e10c;
+
+loc_8f62e104:
+    loc_ffffffff8f62ddd4();
+    goto loc_8f62e148;
+
+loc_8f62e148:
+    r0 = 0x3;
+    goto loc_8f62e1e0;
+
+loc_8f62e1e0:
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f62e10c:
+    if (((loc_ffffffff8f674b74() == 0x0) || (loc_ffffffff8f674cc4() != 0x6)) || (loc_ffffffff8f64b470(r4, 0x8f69bac7, 0x48) != 0x0)) goto loc_8f62e150;
+
+loc_8f62e13c:
+    loc_ffffffff8f62192c(0x8f683451, "Permission denied");
+    goto loc_8f62e148;
+
+loc_8f62e150:
+    if (loc_ffffffff8f64b470(r4, 0x8f682073, 0x48) != 0x0) goto loc_8f62e170;
+
+loc_8f62e168:
+    r0 = 0x1;
+    goto loc_8f62e1e0;
+
+loc_8f62e170:
+    if ((loc_ffffffff8f64b470(r4, "motoboot", 0x48) == 0x0) || (loc_ffffffff8f64b470(r4, "cid_prov", 0x48) == 0x0)) goto loc_8f62e168;
+
+loc_8f62e1a0:
+    r0 = loc_ffffffff8f65385c(r4);
+    COND = r5 != 0x0;
+    if (COND) goto loc_8f62e1c4;
+
+loc_8f62e1b0:
+    loc_ffffffff8f656968(0x1, "Invalid partition name %s", r4);
+    goto loc_8f62e13c;
+
+loc_8f62e1c4:
+    if ((loc_ffffffff8f673228() == 0x0) || ((*(r5 + 0x30) & 0x40) != 0x0)) goto loc_8f62e168;
+

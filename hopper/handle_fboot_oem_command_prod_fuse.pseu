@@ -1,0 +1,17 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2045] = r3;
+    loc_ffffffff8f63279c(arg0, arg1, arg2, r3, arg0, stack[2045], 0x8f7112f4, lr) == -0x1;
+    if (!CPU_FLAGS & E) {
+            if (loc_ffffffff8f674e8c() < 0x7) {
+                    loc_8f624c40();
+            }
+            loc_ffffffff8f62192c(0x8f683451, "Failed to make product phone.");
+    }
+    loc_ffffffff8f62192c();
+    r0 = 0x3;
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

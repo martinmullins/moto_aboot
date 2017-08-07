@@ -1,0 +1,18 @@
+    r11 = (sp - 0x4 - 0x4) + 0x4;
+    *(r11 + 0xfffffffffffffff0) = arg0;
+    *(r11 + 0xffffffffffffffec) = arg1;
+    *(r11 + 0xffffffffffffffe8) = arg2;
+    *(r11 + 0xffffffffffffffe4) = arg3;
+    *(r11 + 0xfffffffffffffff8) = *0x8f7112f4;
+    r3 = *(r11 + 0xfffffffffffffff0);
+    r2 = zero_extend_32(r3 << r3 * 0x400);
+    r3 = *(r11 + 0xffffffffffffffec);
+    asm{ ubfx       r3, r3, #0x0, #0xa };
+    r0 = (r2 | r3) << (r2 | r3) * 0x1000 | 0x220 | 0x2;
+    asm{ smc        #0x0 };
+    r0 = r0;
+    if (*(r11 + 0xfffffffffffffff8) != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,16 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    if (*0x8f6e0780 == 0x0) {
+            r0 = loc_ffffffff8f630acc("ramdump_setting", 0x8f69b188);
+            *0x8f6e0780 = 0x1;
+            if (r0 == 0x1) {
+                    *0x8f6e0788 = r0;
+            }
+    }
+    r3 = *0x8f7112f4;
+    r0 = *0x8f6e0788;
+    if (stack[2043] != r3) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

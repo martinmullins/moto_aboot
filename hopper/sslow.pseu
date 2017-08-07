@@ -1,0 +1,194 @@
+    r0 = arg0;
+    r10 = arg3;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x2c;
+    s0 = arg1;
+    r1 = *(r0 + 0x30);
+    stack[2031] = lr;
+    r4 = r0;
+    stack[2034] = arg2;
+    r11 = arg4;
+    stack[2037] = *0x8f7112f4;
+    stack[2033] = r1;
+    if (s0 != *(r0 + 0x10)) {
+            r8 = *(r0 + 0xffffffffffffffff);
+    }
+    if (CPU_FLAGS & E) {
+            r8 = 0x100;
+    }
+    if (s0 == 0x0) {
+            stack[2028] = "start != ((void *)0)";
+            loc_ffffffff8f6484ac(stack[2031], "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x366, stack[2028]);
+    }
+    if (stack[2034] == 0x0) {
+            stack[2028] = "stop != ((void *)0)";
+            loc_ffffffff8f6484ac(stack[2031], "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x367, stack[2028]);
+    }
+    r5 = 0x1;
+    r3 = r5 << r10;
+    r0 = *r4;
+    asm{ stm        sp, {r2, r3} };
+    r0 = loc_ffffffff8f65e14c(r0, r10, r11, r3);
+    stack[2035] = r5 << r11;
+    stack[2032] = 0x0;
+    r6 = r0;
+    do {
+            if (s0 != *(r4 + 0x14)) {
+                    r7 = *r0;
+            }
+            if (CPU_FLAGS & E) {
+                    r7 = 0x100;
+            }
+            if (r8 == 0xa) {
+                    r12 = *(*r4 + 0x18);
+                    r12 = r12 & 0x8;
+                    COND = r12 != 0x0;
+                    if (!COND) {
+                            r5 = r12;
+                    }
+                    else {
+                            r5 = 0x101;
+                            r12 = *(*r4 + 0x2c);
+                    }
+            }
+            else {
+                    if ((r8 == 0x100) && ((*(r4 + 0x4) & 0x1) == 0x0)) {
+                            r5 = 0x101;
+                            r12 = *(*r4 + 0x2c);
+                    }
+                    else {
+                            r12 = 0x0;
+                            r5 = r12;
+                    }
+            }
+            if (r7 == 0xa) {
+                    if ((*(*r4 + 0x18) & 0x8) != 0x0) {
+                            if (r5 == 0x101) {
+                                    r5 = 0x103;
+                            }
+                            r3 = *r4;
+                            if (CPU_FLAGS & NE) {
+                                    r5 = 0x102;
+                            }
+                            r12 = r12 + *(r3 + 0x30);
+                    }
+            }
+            else {
+                    if ((r7 == 0x100) && ((*(r4 + 0x4) & 0x2) == 0x0)) {
+                            if (r5 == 0x101) {
+                                    r5 = 0x103;
+                            }
+                            r3 = *r4;
+                            if (CPU_FLAGS & NE) {
+                                    r5 = 0x102;
+                            }
+                            r12 = r12 + *(r3 + 0x30);
+                    }
+            }
+            if (r12 != 0x0) {
+                    do {
+                            asm{ stm        sp, {r5, r6} };
+                            r12 = r12 - 0x1;
+                            COND = r12 != 0x0;
+                            r6 = loc_ffffffff8f65e14c(*r4, r10, r11, r6, stack[2028]);
+                    } while (COND);
+            }
+            if (r5 == 0x101) {
+                    if (r7 != 0x100) {
+                            if (loc_ffffffff8f64a18c(r7) != 0x0) {
+                                    r5 = 0x105;
+                            }
+                            if ((!CPU_FLAGS & NE) && (r7 == 0x5f)) {
+                                    r5 = 0x105;
+                            }
+                    }
+                    if (r8 != 0x100) {
+                            if ((loc_ffffffff8f64a18c(r8) != 0x0) || (r8 == 0x5f)) {
+                                    if (r5 == 0x102) {
+                                            r5 = 0x106;
+                                    }
+                                    else {
+                                            if (((r7 != 0x100) && (loc_ffffffff8f64a18c(r7) == 0x0)) && (r7 != 0x5f)) {
+                                                    r5 = 0x106;
+                                            }
+                                    }
+                            }
+                    }
+            }
+            else {
+                    if (r8 != 0x100) {
+                            if ((loc_ffffffff8f64a18c(r8) == 0x0) && (r8 != 0x5f)) {
+                                    if (r7 != 0x100) {
+                                            if (loc_ffffffff8f64a18c(r7) != 0x0) {
+                                                    r5 = 0x105;
+                                            }
+                                            if ((!CPU_FLAGS & NE) && (r7 == 0x5f)) {
+                                                    r5 = 0x105;
+                                            }
+                                    }
+                                    if (r8 != 0x100) {
+                                            if ((loc_ffffffff8f64a18c(r8) != 0x0) || (r8 == 0x5f)) {
+                                                    if (r5 == 0x102) {
+                                                            r5 = 0x106;
+                                                    }
+                                                    else {
+                                                            if (((r7 != 0x100) && (loc_ffffffff8f64a18c(r7) == 0x0)) && (r7 != 0x5f)) {
+                                                                    r5 = 0x106;
+                                                            }
+                                                    }
+                                            }
+                                    }
+                            }
+                            else {
+                                    if ((loc_ffffffff8f64a18c(r8) != 0x0) || (r8 == 0x5f)) {
+                                            if (r5 == 0x102) {
+                                                    r5 = 0x106;
+                                            }
+                                            else {
+                                                    if (((r7 != 0x100) && (loc_ffffffff8f64a18c(r7) == 0x0)) && (r7 != 0x5f)) {
+                                                            r5 = 0x106;
+                                                    }
+                                            }
+                                    }
+                            }
+                    }
+            }
+            if (r5 - 0x104 <= 0x2) {
+                    asm{ stm        sp, {r5, r6} };
+                    r6 = loc_ffffffff8f65e14c(*r4, r10, r11, r6);
+            }
+            r1 = stack[2032];
+            r2 = stack[2033];
+            r3 = stack[2034];
+            if ((r6 & stack[2035]) != 0x0) {
+                    r1 = s0;
+            }
+            stack[2032] = r1;
+            if (s0 != r3) {
+                    CMP(r6, r2);
+            }
+            if (CPU_FLAGS & E) {
+                break;
+            }
+            if (r7 == 0x100) {
+                    loc_ffffffff8f6484ac(stack[2031], "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x39e, "c != ((127 * 2 + 1)+1)");
+            }
+            stack[2028] = r7;
+            r1 = r10;
+            r2 = r11;
+            r6 = loc_ffffffff8f65e14c(*r4, r10, r11, r6, stack[2028], stack[2033]);
+            r0 = *r4;
+            asm{ stm        sp, {r3, r6} };
+            r0 = loc_ffffffff8f65e14c(r0, r1, r2, r6);
+            if (r0 != r6) {
+                    stack[2028] = "((sstep(m->g, startst, stopst, st, ((((127 * 2 + 1)+1)+1)+3), st)) == (st))";
+                    r0 = loc_ffffffff8f6484ac(stack[2031], "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/engine.c", 0x3a1, stack[2028]);
+            }
+            s0 = s0 + 0x1;
+            r8 = r7;
+    } while (true);
+    r0 = stack[2032];
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

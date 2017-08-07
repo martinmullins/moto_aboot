@@ -1,0 +1,20 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2045] = r3;
+    if (loc_ffffffff8f647270(0x7, 0x0, arg2, r3, arg0, stack[2045], 0x8f7112f4, lr) != 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "smb1359 disable IRQ failed\n");
+    }
+    if (loc_ffffffff8f647270(0x8, 0x0) != 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "smb1359 disable IRQ failed\n");
+    }
+    if (loc_ffffffff8f647270(0x9, 0x0) != 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "smb1359 disable IRQ failed\n");
+    }
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = loc_ffffffff8f60387c();
+    }
+    return r0;
+

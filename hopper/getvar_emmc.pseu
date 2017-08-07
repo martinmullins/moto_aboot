@@ -1,0 +1,10 @@
+    sp = sp - 0x4 - 0x4 - 0x18;
+    stack[2045] = *0x8f7112f4;
+    r3 = *0x8f7125ec;
+    loc_ffffffff8f64aa80(arg0, "%uGB %s REV=%02X PRV=%02X TYPE=%02X", *(r3 + 0x28), *(r3 + 0x18), *(r3 + 0x36), *(r3 + 0x35), *(r3 + 0x37));
+    r0 = 0x1;
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,34 @@
+    r0 = arg0;
+    r3 = 0x8f7112f4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = r3;
+    stack[2043] = *r3;
+    if (*0x8f6e0a8c == 0x0) {
+            if (stack[2043] == *r3) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: lm3697 dev is not initialized\n", "set_brightness");
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (r0 < 0xff) {
+                    r4 = r0;
+            }
+            if (CPU_FLAGS & NS) {
+                    r4 = 0xff;
+            }
+            COND = r3 != 0x0;
+            if (loc_ffffffff8f612ea4() < 0x0) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: fail to write REG_CONTROL_BANK_ENABLE\n", "set_brightness");
+            }
+            if (loc_ffffffff8f612ea4(*0x8f6e0a8c, 0x36, 0x21, zero_extend_32(r4)) < 0x0) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: fail to write REG_A_BRIGHTNESS_MSB\n", "set_brightness");
+            }
+            *0x8f6aca80 = r4;
+            if (stack[2043] != *r5) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

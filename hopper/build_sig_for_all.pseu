@@ -1,0 +1,107 @@
+    r11 = arg2;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    COND = r10 == 0x0;
+    r8 = arg0;
+    stack[2037] = *0x8f7112f4;
+    if (COND) goto loc_8f6518e8;
+
+loc_8f6516f4:
+    r1 = 0x8f6809a6;
+    if (loc_ffffffff8f64b470() == 0x0) goto loc_8f651758;
+
+loc_8f651708:
+    r1 = 0x8f6809ab;
+    if (loc_ffffffff8f64b470(r8, r1, 0x48) == 0x0) goto loc_8f651760;
+
+loc_8f651720:
+    r1 = 0x8f6809af;
+    if (loc_ffffffff8f64b470(r8, r1, 0x48) == 0x0) goto loc_8f651768;
+
+loc_8f651738:
+    r1 = 0x8f6809b2;
+    if (loc_ffffffff8f64b470(r8, r1, 0x48) != 0x0) goto loc_8f65189c;
+
+loc_8f651750:
+    r4 = 0x1ec00;
+    goto loc_8f65176c;
+
+loc_8f65176c:
+    s0 = loc_ffffffff8f6539b0(r8);
+    r6 = loc_ffffffff8f653b20();
+    r7 = r1;
+    COND = r1 != 0x0;
+    if (COND) goto loc_8f6517a4;
+
+loc_8f651790:
+    loc_ffffffff8f656968(0x1, "Partition %s not found\n", r8);
+    goto loc_8f6518e8;
+
+loc_8f6518e8:
+    if (stack[2037] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f6517a4:
+    r0 = loc_ffffffff8f653a28(s0);
+    r8 = r4 + 0x200;
+    if (CARRY(FLAGS) + 0x0 == r1) {
+            CMP(r8, r0);
+    }
+    if (CPU_FLAGS & A) goto loc_8f651860;
+
+loc_8f6517c8:
+    r0 = r4 + r6;
+    if (CPU_FLAGS & NE) goto loc_8f651860;
+
+loc_8f6517f0:
+    r8 = 0x8f6e1000;
+    if (CPU_FLAGS & NE) goto loc_8f651860;
+
+loc_8f651810:
+    r4 = r8 + loc_ffffffff8f64b354("BEGIN BUILD SIGNATURE") + 0x1;
+    r8 = r8 + 0x200;
+    goto loc_8f651824;
+
+loc_8f651824:
+    r0 = loc_ffffffff8f64b57c(r4, 0x64);
+    if (r0 == 0x64) {
+            r0 = 0x1;
+    }
+    if (CPU_FLAGS & E) goto loc_8f651860;
+
+loc_8f651844:
+    stack[2036] = r0 + 0x1;
+    if (r4 + r0 + 0x1 < r8) goto loc_8f651868;
+
+loc_8f651860:
+    loc_ffffffff8f656968();
+    goto loc_8f6518e8;
+
+loc_8f651868:
+    if (loc_ffffffff8f64b470(r4, "END BUILD SIGNATURE", 0x64) == 0x0) goto loc_8f6518e8;
+
+loc_8f651884:
+    (r10)(sp + 0x4, r11, 0x64);
+    r4 = r4 + stack[2036];
+    goto loc_8f651824;
+
+loc_8f65189c:
+    if ((loc_ffffffff8f64b470(r8, "aboot", 0x48) == 0x0) && (loc_ffffffff8f64b0ac(0x8f6a2ae1, 0x8f6a4e20) != 0x0)) {
+            loc_ffffffff8f64b354(0x8f6a2add) + 0x1;
+            (r10)(sp + 0x4, r11);
+    }
+    goto loc_8f6518e8;
+
+loc_8f651768:
+    r4 = 0x8ac00;
+    goto loc_8f65176c;
+
+loc_8f651760:
+    r4 = 0x3d400;
+    goto loc_8f65176c;
+
+loc_8f651758:
+    r4 = 0x7ec00;
+    goto loc_8f65176c;
+

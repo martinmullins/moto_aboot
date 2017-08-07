@@ -1,0 +1,17 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    r0 = loc_ffffffff8f671d58(arg0, arg1);
+    r2 = r3;
+    r0 = r0 & 0x1;
+    if (r0 != 0x0) {
+            r0 = 0x0;
+    }
+    if (CPU_FLAGS & E) {
+            r0 = 0x0 ^ 0xffffffff;
+    }
+    r0 = zero_extend_32(r0);
+    if (r2 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

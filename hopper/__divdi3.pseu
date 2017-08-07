@@ -1,0 +1,334 @@
+    r3 = arg3;
+    r2 = arg2;
+    r1 = arg1;
+    r0 = arg0;
+    r12 = r2;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r5 = r0;
+    r7 = r1;
+    r8 = r3;
+    if (r1 >= 0x0) {
+            r4 = 0x0;
+    }
+    if (!CPU_FLAGS & GE) {
+            r0 = 0x0 - r0;
+            r5 = r0;
+            r7 = 0x0 - r1 + !CARRY(FLAGS);
+            r4 = 0x0 ^ 0xffffffff;
+    }
+    if (r3 < 0x0) {
+            r2 = 0x0 - r2;
+            r3 = 0x0 - r3 + !CARRY(FLAGS);
+            r4 = r4 ^ 0xffffffff;
+            r12 = r2;
+            r8 = r3;
+    }
+    r6 = r12;
+    s0 = r5;
+    r10 = r7;
+    if (r8 != 0x0) goto loc_8f67b98c;
+
+loc_8f67b6e8:
+    if (r12 < r7) goto loc_8f67b7bc;
+
+loc_8f67b6f0:
+    asm{ clz        r3, ip };
+    if (r3 != 0x0) {
+            r2 = 0x20 - r3;
+    }
+    if (CPU_FLAGS & NE) {
+            r2 = r5 >> r2;
+    }
+    if (CPU_FLAGS & NE) {
+            r6 = r12 << r3;
+    }
+    if (CPU_FLAGS & NE) {
+            r10 = r2 |     r3;
+    r7;
+;
+    }
+    if (CPU_FLAGS & NE) {
+            s0 = r5 << r3;
+    }
+    r5 = r5 >> r6 / 0x10000;
+    r0 = loc_ffffffff8f67b3c0(r10, r5);
+    r8 = r8 << r6 * 0x10000 >> (r8 << r6 * 0x10000) / 0x10000;
+    r7 = r0;
+    r11 = r8 * r0;
+    loc_ffffffff8f67b468(r10, r5);
+    r1 = r3 >> s0 / 0x10000 | r5 * 0x10000;
+    if (r1 >= r11) {
+            r10 = r7;
+    }
+    if (!CPU_FLAGS & NB) {
+            r1 = r1 + r6;
+            COND = r1 >= 0x0;
+            r10 = r7 - 0x1;
+            if (!COND) {
+                    if (r1 < r11) {
+                            r10 = r7 - 0x2;
+                    }
+                    if (CPU_FLAGS & S) {
+                            r1 = r1 + r6;
+                    }
+            }
+    }
+    r0 = loc_ffffffff8f67b3c0(r1 - r11, r5);
+    r7 = r0;
+    r8 = r0 * r8;
+    loc_ffffffff8f67b468(r1 - r11, r5);
+    r1 = s0 << s0 * 0x10000 >> (s0 << s0 * 0x10000) / 0x10000 | r5 * 0x10000;
+    if (r1 >= r8) {
+            r12 = r7;
+    }
+    if (!CPU_FLAGS & NB) {
+            r6 = r1 + r6;
+            COND = r6 >= 0x0;
+            r12 = r7 - 0x1;
+            if ((!COND) && (r6 < r8)) {
+                    r12 = r7 - 0x2;
+            }
+    }
+    r12 = r12 | r10 * 0x10000;
+    goto loc_8f67bae8;
+
+loc_8f67bae8:
+    r5 = 0x0;
+    goto loc_8f67baf8;
+
+loc_8f67baf8:
+    r0 = r12;
+    r1 = r5;
+    if (r4 != 0x0) {
+            r0 = 0x0 - r0;
+    }
+    return r0;
+
+loc_8f67b7bc:
+    if (r12 == 0x0) {
+            r6 = loc_ffffffff8f67b3c0(0x1, r8);
+    }
+    asm{ clz        r3, r6 };
+    if (r3 == 0x0) {
+            r3 = r7 - r6;
+    }
+    if (CPU_FLAGS & E) {
+            r5 = 0x1;
+    }
+    if (!CPU_FLAGS & E) {
+            r6 = r6 << r3;
+            r2 = r7 >> 0x20 - r3;
+            r8 = r8 >> r6 / 0x10000;
+            r7 = r5 >> 0x20 - r3 |     r3;
+    r7;
+;
+            s0 = r5 << r3;
+            r0 = loc_ffffffff8f67b3c0(r2, r8, r2);
+            r11 = r11 << r6 * 0x10000 >> (r11 << r6 * 0x10000) / 0x10000;
+            r2 = r2;
+            r10 = r0;
+            stack[2037] = r11 * r0;
+            loc_ffffffff8f67b468(r2, r8, r2);
+            r12 = stack[2037];
+            r1 = r3 >> r7 / 0x10000 | r8 * 0x10000;
+            if (r1 >= r12) {
+                    r5 = r10;
+            }
+            if (!CPU_FLAGS & NB) {
+                    r1 = r1 + r6;
+                    COND = r1 >= 0x0;
+                    r5 = r10 - 0x1;
+                    if (!COND) {
+                            if (r1 < r12) {
+                                    r5 = r10 - 0x2;
+                            }
+                            if (CPU_FLAGS & S) {
+                                    r1 = r1 + r6;
+                            }
+                    }
+            }
+            r0 = loc_ffffffff8f67b3c0(r1 - r12, r8);
+            r10 = r0;
+            r11 = r0 * r11;
+            loc_ffffffff8f67b468(r1 - r12, r8);
+            r1 = r7 << r7 * 0x10000 >> (r7 << r7 * 0x10000) / 0x10000 | r8 * 0x10000;
+            if (r1 >= r11) {
+                    r2 = r10;
+            }
+            if (!CPU_FLAGS & NB) {
+                    r1 = r1 + r6;
+                    COND = r1 >= 0x0;
+                    r2 = r10 - 0x1;
+                    if (!COND) {
+                            if (r1 < r11) {
+                                    r2 = r10 - 0x2;
+                            }
+                            if (CPU_FLAGS & S) {
+                                    r1 = r1 + r6;
+                            }
+                    }
+            }
+            r3 = r1 - r11;
+            r5 = r2 | r5 * 0x10000;
+    }
+    r8 = r8 >> r6 / 0x10000;
+    r0 = loc_ffffffff8f67b3c0(r3, r8);
+    r10 = r10 << r6 * 0x10000 >> (r10 << r6 * 0x10000) / 0x10000;
+    r11 = r0;
+    r7 = r10 * r0;
+    loc_ffffffff8f67b468(r3, r8);
+    r1 = r3 >> s0 / 0x10000 | r8 * 0x10000;
+    if (r1 >= r7) {
+            r2 = r11;
+    }
+    if (!CPU_FLAGS & NB) {
+            r1 = r1 + r6;
+            COND = r1 >= 0x0;
+            r2 = r11 - 0x1;
+            if (!COND) {
+                    if (r1 < r7) {
+                            r2 = r11 - 0x2;
+                    }
+                    if (CPU_FLAGS & S) {
+                            r1 = r1 + r6;
+                    }
+            }
+    }
+    r11 = r1 - r7;
+    r0 = loc_ffffffff8f67b3c0(r11, r8);
+    r7 = r0;
+    r10 = r0 * r10;
+    loc_ffffffff8f67b468(r11, r8);
+    r2 = r2;
+    r1 = s0 << s0 * 0x10000 >> (s0 << s0 * 0x10000) / 0x10000 | r8 * 0x10000;
+    if (r1 >= r10) {
+            r12 = r7;
+    }
+    if (!CPU_FLAGS & NB) {
+            r6 = r1 + r6;
+            COND = r6 >= 0x0;
+            r12 = r7 - 0x1;
+            if ((!COND) && (r6 < r10)) {
+                    r12 = r7 - 0x2;
+            }
+    }
+    r12 = r12 | r2 * 0x10000;
+    goto loc_8f67baf8;
+
+loc_8f67b98c:
+    if (r8 > r7) goto loc_8f67baf0;
+
+loc_8f67b994:
+    asm{ clz        sb, r8 };
+    if (s0 != 0x0) goto loc_8f67b9c0;
+
+loc_8f67b9a0:
+    if (r7 < r8) {
+            CMP(r5, r12);
+    }
+    if (CPU_FLAGS & S) {
+            r5 = 0x0;
+    }
+    if (CPU_FLAGS & NS) {
+            r5 = 0x1;
+    }
+    if (CPU_FLAGS & NS) {
+            r12 = 0x1;
+    }
+    if (CPU_FLAGS & NS) {
+            r5 = s0;
+    }
+    if (!CPU_FLAGS & NB) {
+            r12 = r5;
+    }
+    goto loc_8f67baf8;
+
+loc_8f67b9c0:
+    r6 = r12 >> 0x20 - s0 |     r0;
+    r8;
+;
+    r2 = r7 >> 0x20 - s0;
+    r10 = r10 >> r6 / 0x10000;
+    r7 = r5 >> 0x20 - s0 |     r2;
+    r7;
+;
+    r0 = loc_ffffffff8f67b3c0(r2, r10, r2, r5 >> 0x20 - s0, stack[2034]);
+    r11 = r11 << r6 * 0x10000 >> (r11 << r6 * 0x10000) / 0x10000;
+    stack[2036] = r0;
+    stack[2037] = r11 * r0;
+    loc_ffffffff8f67b468(r2, r10, r2, r0, stack[2034], r2);
+    r2 = r2 >> r7 / 0x10000;
+    r12 = stack[2037];
+    r3 = stack[2036];
+    r1 = r2 | r10 * 0x10000;
+    if (r1 >= r12) {
+            r2 = r3;
+    }
+    if (!CPU_FLAGS & NB) {
+            r1 = r1 + r6;
+            COND = r1 >= 0x0;
+            r2 = r3 - 0x1;
+            if (!COND) {
+                    if (r1 < r12) {
+                            r2 = r3 - 0x2;
+                    }
+                    if (CPU_FLAGS & S) {
+                            r1 = r1 + r6;
+                    }
+            }
+    }
+    r0 = loc_ffffffff8f67b3c0(r1 - r12, r10);
+    r12 = r1 - r12;
+    r1 = r10;
+    r7 = r7 << r7 * 0x10000 >> (r7 << r7 * 0x10000) / 0x10000;
+    r3 = r0;
+    r11 = r0 * r11;
+    r0 = loc_ffffffff8f67b468(r12, r1);
+    asm{ ldmib      sp, {r2, r3} };
+    r1 = r7 | r1 * 0x10000;
+    if (r1 >= r11) {
+            r12 = r3;
+    }
+    if (!CPU_FLAGS & NB) {
+            r1 = r1 + r6;
+            COND = r1 >= 0x0;
+            r12 = r3 - 0x1;
+            if (!COND) {
+                    if (r1 < r11) {
+                            r12 = r3 - 0x2;
+                    }
+                    if (CPU_FLAGS & S) {
+                            r1 = r1 + r6;
+                    }
+            }
+    }
+    r12 = r12 | r2 * 0x10000;
+    asm{ umull      r2, r3, ip, r8 };
+    if (r3 > r1 - r11) goto loc_8f67bae4;
+
+loc_8f67bac8:
+    if (CPU_FLAGS & NE) {
+            r3 = 0x0;
+    }
+    if (CPU_FLAGS & E) {
+            r3 = 0x1;
+    }
+    if (r2 <     r0;
+    r5;
+) {
+            r5 = 0x0;
+    }
+    if (CPU_FLAGS & A) {
+            r5 = r3 & 0x1;
+    }
+    if (r5 == 0x0) goto loc_8f67baf8;
+
+loc_8f67bae4:
+    r12 = r12 - 0x1;
+    goto loc_8f67bae8;
+
+loc_8f67baf0:
+    r5 = 0x0;
+    r12 = r5;
+    goto loc_8f67baf8;
+

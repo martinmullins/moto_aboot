@@ -1,0 +1,172 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x58;
+    r8 = sp + 0x24;
+    r10 = sp + 0x34;
+    r7 = arg0;
+    r6 = arg1;
+    r3 = *arg0;
+    stack[2039] = r3;
+    loc_ffffffff8f64adc8(r8, 0x0, 0x10, r3, stack[2018], stack[2019], stack[2020], stack[2021], stack[2022], stack[2023], stack[2024], stack[2025], stack[2026]);
+    loc_ffffffff8f64adc8(r10, 0x0, 0x10);
+    loc_ffffffff8f64adc8(sp + 0x44, 0x0, 0x10);
+    r4 = *(r7 + 0x4);
+    goto loc_8f613520;
+
+loc_8f613520:
+    if (r4 == r7) goto loc_8f6135f4;
+
+loc_8f613528:
+    if (r4 != 0x0) goto loc_8f613544;
+
+loc_8f613530:
+    loc_ffffffff8f656968(0x2, "Current node is the end\n");
+    r5 = r4;
+    goto loc_8f613604;
+
+loc_8f613604:
+    r4 = *(r7 + 0x4);
+    goto loc_8f613644;
+
+loc_8f613644:
+    if (r4 == r7) goto loc_8f613714;
+
+loc_8f61364c:
+    if (r4 != 0x0) goto loc_8f613624;
+
+loc_8f613654:
+    loc_ffffffff8f656968(0x2, "Current node is the end\n");
+    goto loc_8f613714;
+
+loc_8f613714:
+    r0 = 0x1;
+    goto loc_8f613718;
+
+loc_8f613718:
+    if (stack[2039] != *r0) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f613624:
+    if (r6 != 0x0) goto loc_8f613664;
+
+loc_8f61362c:
+    CMP(**(r4 + 0x8) & 0xff0000, r5);
+    goto loc_8f61363c;
+
+loc_8f61363c:
+    if (CPU_FLAGS & NE) {
+            r3 = *(r4 + 0x8);
+            r0 = 0x2;
+            r1 = "Delete don't fit DTB entry %u/%08x/0x%08x/%x/%x/%x/%x/%x/%x/%x\n";
+            stack[2018] = *(r3 + 0x8);
+            stack[2019] = *(r3 + 0xc);
+            stack[2020] = *(r3 + 0x10);
+            stack[2021] = *(r3 + 0x14);
+            stack[2022] = *(r3 + 0x18);
+            stack[2023] = *(r3 + 0x1c);
+            stack[2024] = *(r3 + 0x20);
+            r2 = *(r3 + 0x24);
+            stack[2025] = r2;
+            asm{ ldm        r3, {r2, r3} };
+            loc_ffffffff8f656968(r0, r1, r2, r3, stack[2018], stack[2019], stack[2020], stack[2021], stack[2022], stack[2023], stack[2024], stack[2025]);
+            r10 = *r4;
+            loc_ffffffff8f613148(r4);
+            r4 = r10;
+    }
+    goto loc_8f613640;
+
+loc_8f613640:
+    r4 = *(r4 + 0x4);
+    goto loc_8f613644;
+
+loc_8f613664:
+    if (r6 != 0x7) goto loc_8f61360c;
+
+loc_8f61366c:
+    r2 = *(r4 + 0x8);
+    r3 = 0x0;
+    do {
+            r1 = *(r2 + 0x10);
+            r2 = r2 + 0x4;
+            *(r8 + r3) = r1;
+            r3 = r3 + 0x4;
+    } while (r3 != 0x10);
+    if (((stack[2027] != stack[2035]) || (stack[2028] != stack[2036])) || (stack[2029] != stack[2037])) goto loc_8f6136ac;
+
+loc_8f61373c:
+    CMP(stack[2030], stack[2038]);
+    goto loc_8f61363c;
+
+loc_8f6136ac:
+    r3 = *(r4 + 0x8);
+    r0 = 0x2;
+    r1 = "Delete don't fit DTB entry %u/%08x/0x%08x/%x/%x/%x/%x/%x/%x/%x\n";
+    stack[2018] = *(r3 + 0x8);
+    stack[2019] = *(r3 + 0xc);
+    stack[2020] = *(r3 + 0x10);
+    stack[2021] = *(r3 + 0x14);
+    stack[2022] = *(r3 + 0x18);
+    stack[2023] = *(r3 + 0x1c);
+    stack[2024] = *(r3 + 0x20);
+    r2 = *(r3 + 0x24);
+    stack[2025] = r2;
+    asm{ ldm        r3, {r2, r3} };
+    loc_ffffffff8f656968(r0, r1, r2, r3, stack[2018], stack[2019], stack[2020], stack[2021], stack[2022], stack[2023], stack[2024], stack[2025]);
+    r10 = *r4;
+    loc_ffffffff8f613148(r4);
+    r4 = r10;
+    goto loc_8f613640;
+
+loc_8f61360c:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "ERROR: Unsupported version (%d) in dt node check \n", r6);
+    r0 = 0x0;
+    goto loc_8f613718;
+
+loc_8f613544:
+    if (r6 == 0x0) goto loc_8f61355c;
+
+loc_8f61354c:
+    if (r6 != 0x7) goto loc_8f61360c;
+
+loc_8f613554:
+    r5 = 0x0;
+    do {
+            *(r8 + r5 * 0x4) = *(*(r4 + 0x8) + (r5 + 0x4) * 0x4);
+            *(r10 + r5 * 0x4) = zero_extend_32(loc_ffffffff8f60d860(zero_extend_32(r5)));
+            r5 = r5 + 0x1;
+    } while (r5 != 0x4);
+    r3 = stack[2027];
+    if (r3 != stack[2031]) goto loc_8f6135fc;
+
+loc_8f6135b4:
+    r0 = stack[2028];
+    if (r0 != stack[2032]) goto loc_8f6135fc;
+
+loc_8f6135c4:
+    r1 = stack[2029];
+    if (r1 != stack[2033]) goto loc_8f6135fc;
+
+loc_8f6135d4:
+    r2 = stack[2030];
+    if (r2 != stack[2034]) goto loc_8f6135fc;
+
+loc_8f6135e4:
+    stack[2035] = r3;
+    stack[2036] = r0;
+    stack[2037] = r1;
+    stack[2038] = r2;
+    goto loc_8f6135f4;
+
+loc_8f6135f4:
+    r5 = 0x0;
+    goto loc_8f613604;
+
+loc_8f6135fc:
+    r4 = *(r4 + 0x4);
+    goto loc_8f613520;
+
+loc_8f61355c:
+    r5 = **(r4 + 0x8);
+    r5 = r5 & 0xff0000;
+    if (r5 != loc_ffffffff8f60d824()) goto loc_8f6135fc;
+

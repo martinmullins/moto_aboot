@@ -1,0 +1,22 @@
+    r1 = arg1;
+    r0 = arg0;
+    stack[2044] = r0;
+    stack[2046] = 0x8f7112f4;
+    stack[2047] = lr;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = 0x8f7112f4;
+    stack[2045] = *r4;
+    r3 = 0x8f6e08b0;
+    asm{ stm        r0, {r2, r3} };
+    r2 = *r3;
+    *r3 = r0;
+    *(r2 + 0x4) = r0;
+    r2 = *0x8f6e084c;
+    *0x8f6e084c = r2 + 0x1;
+    r3 = *(r0 + 0x30);
+    (r3)(r0, r1, r2 + 0x1, r3, stack[2044], stack[2045], stack[2046], stack[2047]);
+    if (stack[2045] != *r4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

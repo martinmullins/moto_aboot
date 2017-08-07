@@ -1,0 +1,12 @@
+    sp = sp - 0x4 - 0x4 - 0x120;
+    stack[2045] = *0x8f7112f4;
+    loc_ffffffff8f606ff4(sp + 0xc, 0xf) != 0x0;
+    if (!CPU_FLAGS & NE) {
+            loc_ffffffff8f64aa80(sp + 0x1c, "3 proc uid bytes... %X,%X,%X", stack[1977], stack[1978], stack[1978]);
+    }
+    r0 = loc_ffffffff8f62192c();
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

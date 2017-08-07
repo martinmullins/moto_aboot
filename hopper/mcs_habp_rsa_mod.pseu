@@ -1,0 +1,117 @@
+    r6 = arg3;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x640 - 0x4;
+    r11 = arg1;
+    r7 = arg2;
+    r3 = *0x8f7112f4;
+    stack[1649] = arg0;
+    stack[2037] = r3;
+    r1 = stack[1649];
+    stack[1644] = r3 << r11 * 0x4;
+    r5 = (r5 << r6 * 0x10) - loc_ffffffff8f667964(arg2, r6, arg2, r3, stack[1638]);
+    r0 = loc_ffffffff8f667258(sp + 0x38, r1, r3 << r11 * 0x4, r3 << r11 * 0x4, stack[1638]);
+    if (r5 == 0x0) {
+            s0 = r11;
+    }
+    if (!CPU_FLAGS & E) {
+            loc_ffffffff8f6677a8(r7, r6, r5);
+            r1 = 0x0;
+            s0 = (r5 + 0xf >> (r5 + 0xf) / 0x10) + r11;
+            r0 = loc_ffffffff8f667304(stack[1644] + sp + 0x38, r1, r5 << (r5 + 0xf >> (r5 + 0xf) / 0x10) * 0x4);
+            COND = r2 == 0x0;
+            if (!COND) {
+                    r1 = r11 + 0x1;
+                    r0 = loc_ffffffff8f667884(sp + 0x38, r1, 0x10 - r2);
+            }
+    }
+    r3 = *(r7 + 0x4);
+    r8 = sp + 0x34;
+    stack[1647] = s0 << s0 * 0x4;
+    stack[1646] = r3;
+    r4 = (r3 << r6 * 0x4) + sp + 0x38;
+    stack[1645] = r7 + (r3 << r6 * 0x4);
+    stack[1642] = *r7;
+    stack[1651] = (s0 << s0 * 0x4) + sp + 0x38;
+    stack[1648] = (0x3 ^ 0xffffffff) * r6;
+    stack[1650] = r6 - 0x1;
+    while (r4 != stack[1651]) {
+            r10 = stack[1642];
+            s0 = *(r8 + 0x4);
+            r3 = *(r8 + 0x8);
+            if (s0 == r10) {
+                    r3 = r10 + r3;
+            }
+            if (CPU_FLAGS & E) {
+                    r0 = 0xffff;
+            }
+            if (!CPU_FLAGS & E) {
+                    r1 = stack[1642];
+                    r0 = loc_ffffffff8f67b3c0(r3 + s0 * 0x10000, r1);
+                    r3 = r3 + s0 * 0x10000 - stack[1642] * r0;
+            }
+            r2 = 0x0;
+            lr = stack[1646] * r0;
+            do {
+                    r1 = r1 >> r3 / 0x10000;
+                    COND = r1 == 0x0;
+                    if (!COND) {
+                        break;
+                    }
+                    r1 = *(r8 + 0xc);
+                    r1 = r1 + r3 * 0x10000;
+                    COND = r2 + lr < r1;
+                    r2 = r2 - stack[1646];
+                    if (COND) {
+                        break;
+                    }
+                    r0 = r0 - 0x1;
+                    r3 = r3 + stack[1642];
+            } while (true);
+            r1 = stack[1650];
+            stack[1641] = stack[1645];
+            r2 = 0x0;
+            r12 = r1;
+            r3 = r2;
+            while (r12 >= 0x0) {
+                    r12 = r12 - 0x1;
+                    r10 = *(stack[1641] + 0xfffffffffffffffc);
+                    stack[1641] = stack[1641] + 0xfffffffffffffffc;
+                    s0 = zero_extend_32(r10 * r0);
+                    stack[1639] = r10 * r0;
+                    r10 = *(r4 + r2);
+                    *(r4 + r2) = zero_extend_32((0x20000 - s0) + r10 - zero_extend_32(r3));
+                    r2 = r2 - 0x4;
+                    r3 = r3 / 0x10000 + (zero_extend_32((0x20000 - s0) + r10 - zero_extend_32(r3)) >> stack[1639] / 0x10000) + 0x2 - ((0x20000 - s0) + r10 - zero_extend_32(r3)) / 0x10000;
+            }
+            r2 = *(r8 + 0x4);
+            r0 = zero_extend_32(r2 + 0x10000 - zero_extend_32(r3));
+            r8 = r8 + 0x4;
+            *r8 = r0;
+            if (r3 / 0x10000 - (r2 + 0x10000 - zero_extend_32(r3) >> (r2 + 0x10000 - zero_extend_32(r3)) / 0x10000) != -0x1) {
+                    r0 = stack[1645];
+                    r3 = 0x0;
+                    r2 = r3;
+                    while (r1 >= 0x0) {
+                            r0 = r0 + 0xfffffffffffffffc;
+                            r1 = r1 - 0x1;
+                            r2 = r2 + *r0;
+                            r2 = r2 + *(r4 + r3);
+                            r12 = zero_extend_32(r2);
+                            r2 = r2 >> r2 / 0x10000;
+                            *(r4 + r3) = r12;
+                            r3 = r3 - 0x4;
+                    }
+                    *(r4 + r0) = zero_extend_32(r2 + *(r4 + r0));
+            }
+            r4 = r4 + 0x4;
+    }
+    if (r5 != 0x0) {
+            loc_ffffffff8f6677a8(sp + 0x38, r11 + 0x1, 0x10 - (r5 & 0xf));
+            loc_ffffffff8f667884(r7, r6, r5);
+    }
+    loc_ffffffff8f667258(stack[1649], sp + 0x38, stack[1644]);
+    r0 = loc_ffffffff8f6673b4(sp + 0x38, stack[1647]);
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

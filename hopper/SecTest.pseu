@@ -1,0 +1,136 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x110;
+    r4 = r0;
+    r6 = arg1;
+    stack[2043] = *0x8f7112f4;
+    if (r0 != 0x1) goto loc_8f637474;
+
+loc_8f637454:
+    r0 = loc_ffffffff8f6074b8(0x71);
+    loc_ffffffff8f64aa80(sp + 0xc, "*** Fastboot WRITE %d to fuse, status from TZ = %d\n", r6, r0);
+    goto loc_8f637714;
+
+loc_8f637714:
+    loc_ffffffff8f62192c();
+    goto loc_8f637718;
+
+loc_8f637718:
+    if (stack[2043] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f637474:
+    if (r0 != 0x2) goto loc_8f637524;
+
+loc_8f63747c:
+    r0 = loc_ffffffff8f606ecc(0x65);
+    loc_ffffffff8f64aa80(sp + 0xc, "*** SEC_AP_OS was *** %d\n", r0);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0xc);
+    r0 = loc_ffffffff8f606ecc(0x70);
+    loc_ffffffff8f64aa80(sp + 0xc, "*** SEC_TEST_BANK1 was *** %d\n", r0);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0xc);
+    r0 = loc_ffffffff8f606ecc(0x71);
+    loc_ffffffff8f64aa80(sp + 0xc, "*** SEC_TEST_BANK2 was *** %d\n", r0);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0xc);
+    r0 = loc_ffffffff8f606ecc(0x6a);
+    loc_ffffffff8f64aa80(sp + 0xc, "*** SEC_ENG was *** %d\n", r0);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0xc);
+    loc_ffffffff8f606ecc(0x6b);
+    goto loc_8f637678;
+
+loc_8f637678:
+    loc_ffffffff8f64aa80();
+    goto loc_8f637714;
+
+loc_8f637524:
+    if (r0 != 0x3) goto loc_8f637564;
+
+loc_8f63752c:
+    r6 = loc_ffffffff8f6070ac(0x100);
+    loc_ffffffff8f62192c(0x8f683451, 0x8f69b919);
+    if (r6 != 0x0) goto loc_8f637714;
+
+loc_8f637550:
+    loc_ffffffff8f62192c();
+    goto loc_8f6375a0;
+
+loc_8f6375a0:
+    if (loc_ffffffff8f60710c() == 0x0) {
+            loc_ffffffff8f62192c(0x8f683451, "Doing SechashFinal");
+            if (loc_ffffffff8f60715c(sp + 0xc, 0x20) == 0x0) {
+                    loc_ffffffff8f62192c(0x8f683451, "hash: 0x%x 0x%x 0x%x", stack[1979], stack[1980], stack[1980]);
+            }
+            else {
+                    loc_ffffffff8f62192c();
+            }
+    }
+    else {
+            loc_ffffffff8f62192c();
+    }
+    goto loc_8f637718;
+
+loc_8f637564:
+    if (r0 != 0x4) goto loc_8f637600;
+
+loc_8f63756c:
+    r4 = loc_ffffffff8f6070ac(0x1);
+    loc_ffffffff8f62192c(0x8f683451, 0x8f69b919);
+    if (r4 != 0x0) goto loc_8f637714;
+
+loc_8f637590:
+    loc_ffffffff8f62192c();
+    goto loc_8f6375a0;
+
+loc_8f637600:
+    if (r0 != 0x5) goto loc_8f637610;
+
+loc_8f637608:
+    loc_ffffffff8f6370d0();
+    goto loc_8f637718;
+
+loc_8f637610:
+    if (r0 != 0x6) goto loc_8f637620;
+
+loc_8f637618:
+    loc_ffffffff8f637168();
+    goto loc_8f637718;
+
+loc_8f637620:
+    if (r0 != 0x7) goto loc_8f637630;
+
+loc_8f637628:
+    loc_ffffffff8f637270();
+    goto loc_8f637718;
+
+loc_8f637630:
+    if ((CPU_FLAGS & E) || (CPU_FLAGS & E)) goto loc_8f637714;
+
+loc_8f637650:
+    if (r4 != 0xa) goto loc_8f637660;
+
+loc_8f637658:
+    loc_ffffffff8f6372f4();
+    goto loc_8f637718;
+
+loc_8f637660:
+    if (r4 != 0xb) goto loc_8f637688;
+
+loc_8f637668:
+    loc_ffffffff8f6076e8();
+    goto loc_8f637678;
+
+loc_8f637688:
+    loc_ffffffff8f62192c(0x8f683451, "shwi test supported commands");
+    loc_ffffffff8f62192c(0x8f683451, "1 [value]: write test fuse");
+    loc_ffffffff8f62192c(0x8f683451, "2: read fuses");
+    loc_ffffffff8f62192c(0x8f683451, "3: sha1 hash abc string");
+    loc_ffffffff8f62192c(0x8f683451, "4: sha256 hash abc string");
+    loc_ffffffff8f62192c(0x8f683451, "5: random num");
+    loc_ffffffff8f62192c(0x8f683451, "6: aes encrypt decrypt");
+    loc_ffffffff8f62192c(0x8f683451, "7: read proc uid");
+    loc_ffffffff8f62192c(0x8f683451, "8 [image size]: verify signed image");
+    loc_ffffffff8f62192c(0x8f683451, "9 [trusted]: verify signed keystore");
+    loc_ffffffff8f62192c(0x8f683451, 0x8f69bad0);
+    goto loc_8f637714;
+

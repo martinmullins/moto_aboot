@@ -1,0 +1,28 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r0 = loc_ffffffff8f656854(0x1, arg1, arg2, r3, arg0, stack[2043], arg2, r4, 0x8f7112f4, lr);
+    COND = r4 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f62192c(0x8f683451, "Dumping Boot Logs:");
+            r1 = "==============================";
+            loc_ffffffff8f62192c(0x8f683451, r1);
+            r3 = *(r4 + 0x8);
+            do {
+                    r3 = (r3)(0x8f683451, r1);
+                    if (r3 == 0x0) {
+                        break;
+                    }
+                    r1 = *(r3 + 0x4);
+                    loc_ffffffff8f62192c();
+                    r3 = *(r4 + 0xc);
+            } while (true);
+            loc_ffffffff8f62192c();
+            loc_ffffffff8f62192c(0x8f683451, "All Boot Logs have been dumped");
+    }
+    r0 = 0x0;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

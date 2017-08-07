@@ -1,0 +1,180 @@
+    r0 = arg0;
+    COND = s0 != 0x0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x38;
+    r6 = r0;
+    stack[2039] = *0x8f7112f4;
+    if (COND) goto loc_8f614cdc;
+
+loc_8f614cc8:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "ERROR: Bad parameter passed to %s \n", "dev_tree_get_entry_info");
+    goto loc_8f614cfc;
+
+loc_8f614cfc:
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f614fc8;
+
+loc_8f614fc8:
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f614cdc:
+    r4 = r0 + 0xc;
+    r0 = loc_ffffffff8f64aacc(0xc);
+    COND = r5 != 0x0;
+    if (COND) goto loc_8f614d04;
+
+loc_8f614cf0:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Out of memory\n");
+    goto loc_8f614cfc;
+
+loc_8f614d04:
+    *(r5 + 0x4) = r5;
+    *r5 = r5;
+    r10 = 0x0;
+    loc_ffffffff8f656968(0x1, "DTB Total entry: %d, DTB version: %d\n", *(r6 + 0x8), *(r6 + 0x4));
+    goto loc_8f614d24;
+
+loc_8f614d24:
+    if (r10 >= *(r6 + 0x8)) goto loc_8f614ee4;
+
+loc_8f614d30:
+    loc_ffffffff8f64adc8(sp + 0xc, 0x0, 0x28);
+    r7 = *(r6 + 0x4);
+    if (r7 == 0x2) goto loc_8f614dc4;
+
+loc_8f614d4c:
+    if (r7 == 0x3) goto loc_8f614e38;
+
+loc_8f614d54:
+    if (r7 != 0x1) goto loc_8f614e60;
+
+loc_8f614d5c:
+    r3 = *r4;
+    r2 = *(r4 + 0x8);
+    r4 = r4 + 0x14;
+    stack[2029] = r3;
+    r3 = *(r4 + 0xfffffffffffffff0);
+    stack[2030] = r3;
+    stack[2031] = r3 >> r3 / 0x1000000;
+    loc_ffffffff8f60d860(0x0);
+    loc_ffffffff8f60d860(r7);
+    loc_ffffffff8f60d860(0x2);
+    r0 = loc_ffffffff8f60d860(0x3);
+    goto loc_8f614e7c;
+
+loc_8f614e7c:
+    if (((stack[2029] == zero_extend_32(loc_ffffffff8f60d6f8())) && (stack[2030] == loc_ffffffff8f61a110())) && (stack[2031] <= loc_ffffffff8f61a43c())) {
+            r0 = loc_ffffffff8f613088();
+            r7 = r0;
+            r0 = *(r0 + 0x8);
+            loc_ffffffff8f64ac90(r0, sp + 0xc, 0x28);
+            asm{ stm        r7, {r3, r5} };
+            *(*r5 + 0x4) = r7;
+            *r5 = r7;
+    }
+    r10 = r10 + 0x1;
+    goto loc_8f614d24;
+
+loc_8f614e60:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "ERROR: Unsupported version (%d) in DT table \n", r7);
+    loc_ffffffff8f64ab9c(r5);
+    goto loc_8f614cfc;
+
+loc_8f614e38:
+    r1 = r4;
+    r4 = r4 + 0x28;
+    loc_ffffffff8f64ac90(sp + 0xc, r1, 0x28);
+    r3 = stack[2031];
+    if (r3 == 0x0) {
+            r3 = stack[2031];
+    }
+    if (CPU_FLAGS & E) {
+            stack[2031] = r3;
+    }
+    goto loc_8f614e7c;
+
+loc_8f614dc4:
+    r3 = *r4;
+    r2 = *(r4 + 0x4);
+    r4 = r4 + 0x18;
+    stack[2029] = r3;
+    stack[2030] = r2;
+    r3 = *(r4 + 0xfffffffffffffff0);
+    if (r3 == 0x0) {
+            r2 = r2 >> r2 / 0x1000000;
+    }
+    if (CPU_FLAGS & NE) {
+            stack[2031] = r3;
+    }
+    if (CPU_FLAGS & E) {
+            stack[2031] = r2;
+    }
+    loc_ffffffff8f60d860();
+    loc_ffffffff8f60d860(0x1);
+    loc_ffffffff8f60d860(0x2);
+    r0 = loc_ffffffff8f60d860(0x3);
+    goto loc_8f614e7c;
+
+loc_8f614ee4:
+    r6 = *(r5 + 0x4);
+    r7 = 0x0;
+    goto loc_8f614eec;
+
+loc_8f614eec:
+    if (r6 == r5) goto loc_8f614f1c;
+
+loc_8f614ef4:
+    r4 = *(r6 + 0x8);
+    if (r4 == 0x0) goto loc_8f614f14;
+
+loc_8f614f00:
+    if (*(r4 + 0x8) == loc_ffffffff8f61a43c()) goto loc_8f614f28;
+
+loc_8f614f10:
+    r7 = *(r6 + 0x8);
+    goto loc_8f614f14;
+
+loc_8f614f14:
+    r6 = *(r6 + 0x4);
+    goto loc_8f614eec;
+
+loc_8f614f28:
+    r7 = *(r4 + 0x4);
+    r6 = *(r4 + 0x8);
+    r10 = loc_ffffffff8f61a110();
+    r0 = loc_ffffffff8f61a43c();
+    r2 = r7;
+    r7 = 0x1;
+    loc_ffffffff8f656968(0x1, "Using device tree (0x%x, 0x%x) for device (0x%x, 0x%x)\n", r2, r6, r10, r0);
+    asm{ ldm        lr!, {r0, r1, r2, r3} };
+    asm{ stm        ip!, {r0, r1, r2, r3} };
+    asm{ ldm        lr!, {r0, r1, r2, r3} };
+    asm{ stm        ip!, {r0, r1, r2, r3} };
+    asm{ ldm        lr, {r0, r1} };
+    asm{ stm        ip, {r0, r1} };
+    goto loc_8f614fa0;
+
+loc_8f614fa0:
+    for (r0 = *(r5 + 0x4); r0 != r5; r0 = *(r4 + 0x4)) {
+            r4 = *r0;
+            loc_ffffffff8f613148();
+    }
+    r0 = loc_ffffffff8f64ab9c();
+    asm{ sbfx       r0, r7, #0x0, #0x1 };
+    goto loc_8f614fc8;
+
+loc_8f614f1c:
+    if (r7 == 0x0) goto loc_8f614f80;
+
+loc_8f614f24:
+    r4 = r7;
+    goto loc_8f614f28;
+
+loc_8f614f80:
+    r4 = loc_ffffffff8f61a110();
+    r0 = loc_ffffffff8f61a43c();
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Unable to find suitable device tree for device (0x%x, 0x%x)\n", r4, r0);
+    goto loc_8f614fa0;
+

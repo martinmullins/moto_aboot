@@ -1,0 +1,175 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x2c;
+    r11 = arg0;
+    asm{ strd       r2, r3, [sp, #0x50 + var_40] };
+    stack[2035] = stack[2048];
+    stack[2037] = *0x8f7112f4;
+    asm{ ldrd       r6, r7, [r3] };
+    if (*0x8f710e74 != 0x0) goto loc_8f67730c;
+
+loc_8f6772fc:
+    loc_ffffffff8f656968(*0x8f710e74, "SP not initialized\n");
+    goto loc_8f67732c;
+
+loc_8f67732c:
+    r10 = 0x0 ^ 0xffffffff;
+    goto loc_8f677480;
+
+loc_8f677480:
+    r0 = r10;
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f67730c:
+    r0 = loc_ffffffff8f676a08();
+    r10 = r0;
+    if (r0 == -0x1) goto loc_8f677334;
+
+loc_8f67731c:
+    loc_ffffffff8f656968(0x0, "block %s has existed\n", r11);
+    goto loc_8f67732c;
+
+loc_8f677334:
+    r3 = *(0x8f710c48 + 0x18);
+    if (CPU_FLAGS & E) goto loc_8f677478;
+
+loc_8f67734c:
+    r2 = 0x8f7112f4;
+    asm{ ldrd       r2, r3, [sp, #0x50 + var_40] };
+    r3 = r2 | r3;
+    COND = r3 == 0x0;
+    if (COND) goto loc_8f677444;
+
+loc_8f677358:
+    r1 = stack[2035];
+    if (r1 != 0x0) goto loc_8f677374;
+
+loc_8f677364:
+    loc_ffffffff8f656968(r1, "block data can't be NULL\n");
+    goto loc_8f677480;
+
+loc_8f677374:
+    asm{ ldrd       r2, r3, [sp, #0x50 + var_40] };
+    r4 = 0x1ff;
+    r5 = 0x0;
+    asm{ ldrd       r8, sb, [sp, #0x50 + var_40] };
+    r2 = r2 & r4;
+    r3 = r3 & r5;
+    COND = r1 == 0x0;
+    if (!COND) {
+            asm{ ldrd       r2, r3, [sp, #0x50 + var_40] };
+            r4 = r4 + r2;
+            r8 = 0xfffffe00 & r4;
+            s0 = (0x0 ^ 0xffffffff) & r5 + r3 + CARRY(FLAGS);
+    }
+    r6 = r6 + 0x1;
+    r7 = r7 + 0x0 + CARRY(FLAGS);
+    r0 = 0x0;
+    for (r1 = *(0x8f710c38 + 0x4); r1 != 0x8f710c38; r1 = *(r1 + 0x4)) {
+            asm{ ldrd       r2, r3, [r1, #0x8] };
+            if (r3 == s0) {
+                    CMP(r2, r8);
+            }
+            if (!CPU_FLAGS & B) {
+                    if (r3 == r7) {
+                            CMP(r2, r6);
+                    }
+                    if (CPU_FLAGS & S) {
+                            r6 = r2;
+                    }
+                    if (CPU_FLAGS & S) {
+                            r7 = r3;
+                    }
+                    if (CPU_FLAGS & S) {
+                            r0 = r1;
+                    }
+            }
+    }
+    if (r0 == 0x0) {
+            asm{ strdeq     r8, sb, [sp, #0x50 + var_50] };
+    }
+    if (CPU_FLAGS & E) goto loc_8f677438;
+
+loc_8f677408:
+    r6 = *(r0 + 0x10);
+    r5 = *(r0 + 0x14);
+    if (loc_ffffffff8f676ba4() == 0x0) goto loc_8f677450;
+
+loc_8f67742c:
+    asm{ strd       r8, sb, [sp, #0x50 + var_50] };
+    goto loc_8f677438;
+
+loc_8f677438:
+    loc_ffffffff8f656968();
+    goto loc_8f677480;
+
+loc_8f677450:
+    r4 = 0x8f710c70;
+    r3 = r4 + 0x200;
+    goto loc_8f677458;
+
+loc_8f677458:
+    r7 = *r4;
+    if (r7 == 0x0) goto loc_8f67749c;
+
+loc_8f677464:
+    r4 = r4 + 0x20;
+    if (r4 != r3) goto loc_8f677458;
+
+loc_8f677478:
+    loc_ffffffff8f656968();
+    goto loc_8f677480;
+
+loc_8f67749c:
+    loc_ffffffff8f64b21c(r4, r11, 0x10);
+    *(r4 + 0x1c) = r5;
+    asm{ strd       r8, sb, [r4, #0x10] };
+    r0 = 0x1;
+    *(r4 + 0x18) = r6;
+    r2 = r11;
+    r1 = "set new entry for %s: block [0x%llx, 0x%llx]";
+    asm{ strd       r8, sb, [sp, #0x50 + var_50] };
+    loc_ffffffff8f656968(r0, r1, r2);
+    r3 = 0x8f710c48;
+    r2 = *(r3 + 0x18);
+    r2 = r2 + 0x1;
+    *(r3 + 0x18) = r2;
+    r0 = loc_ffffffff8f676b00();
+    COND = r5 != 0x0;
+    if (!CPU_FLAGS & NE) {
+            asm{ ldrd       r2, r3, [sp, #0x50 + var_40] };
+            r3 = r2 | r3;
+            COND = r3 != 0x0;
+            if (!COND) {
+                    r10 = 0x0;
+            }
+            else {
+                    asm{ ldrd       r2, r3, [r4, #0x18] };
+                    r0 = 0x2;
+                    r1 = "save data to block block [0x%llx, 0x%llx]\n";
+                    asm{ strd       r2, r3, [sp, #0x50 + var_50] };
+                    asm{ ldrd       r2, r3, [sp, #0x50 + var_40] };
+                    loc_ffffffff8f656968(r0, r1);
+                    r2 = stack[2035];
+                    asm{ ldrd       r0, r1, [r4, #0x18] };
+                    asm{ ldrd       r2, r3, [sp, #0x50 + var_40] };
+                    if (loc_ffffffff8f650ad0() != 0x0) {
+                            loc_ffffffff8f656968();
+                    }
+                    else {
+                            r10 = 0x0;
+                    }
+            }
+    }
+    else {
+            loc_ffffffff8f656968();
+    }
+    goto loc_8f677480;
+
+loc_8f677444:
+    asm{ ldrd       r8, sb, [sp, #0x50 + var_40] };
+    r6 = stack[2032];
+    r5 = stack[2033];
+    goto loc_8f677450;
+

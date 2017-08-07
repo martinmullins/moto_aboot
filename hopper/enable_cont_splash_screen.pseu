@@ -1,0 +1,27 @@
+    r1 = arg1;
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    COND = *0x8f6ac220 == 0x0;
+    r2 = stack[2045];
+    if (!COND) {
+            if (r2 == *0x8f7112f4) {
+                    sp = sp + 0xc;
+                    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+                    r2 = *0x8f7112f4;
+                    *0x8f6ac0dc = 0x1;
+                    if (r2 != *0x8f7112f4) {
+                            loc_ffffffff8f648514();
+                    }
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (r2 != *0x8f7112f4) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

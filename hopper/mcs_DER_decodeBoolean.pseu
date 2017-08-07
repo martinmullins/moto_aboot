@@ -1,0 +1,42 @@
+    r2 = arg2;
+    r1 = arg1;
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    if (r1 != 0x1) {
+            r0 = 0x1;
+    }
+    stack[2045] = *0x8f7112f4;
+    r12 = 0x8f7112f4;
+    if (CPU_FLAGS & NE) goto loc_8f664e80;
+
+loc_8f664e50:
+    r3 = *(r2 + 0x4);
+    if (r3 == 0x0) goto loc_8f664e7c;
+
+loc_8f664e5c:
+    if (*(r2 + 0x2) != 0x1) {
+            r0 = 0x4;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f664e80;
+
+loc_8f664e6c:
+    r0 = *r0;
+    r0 = r0 + 0x0;
+    COND = r0 != 0x0;
+    if (COND) {
+            r0 = 0x1;
+    }
+    *r3 = r0;
+    goto loc_8f664e7c;
+
+loc_8f664e7c:
+    r0 = 0x0;
+    goto loc_8f664e80;
+
+loc_8f664e80:
+    *(r2 + 0x2) = r1;
+    if (stack[2045] != *r12) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

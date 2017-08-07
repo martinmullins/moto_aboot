@@ -1,0 +1,26 @@
+    r3 = 0x8f7112f4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = r3;
+    stack[2043] = *r3;
+    if (*0x8f6b8c84 != 0x0) {
+            r1 = "%s is called\n";
+            r2 = "turn_off_backlight";
+            r0 = loc_ffffffff8f656968(0x2, r1, r2);
+            r3 = *(0x8f6b8c84 + 0xc);
+            if (r3 != 0x0) {
+                    (r3)(r0, r1, r2, r3);
+            }
+            if (stack[2043] == *r5) {
+                    loc_ffffffff8f656968(0x2, "%s is done \n", "turn_off_backlight");
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (stack[2043] != *r3) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

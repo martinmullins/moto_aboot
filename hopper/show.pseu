@@ -1,0 +1,71 @@
+    stack[2043] = r5;
+    stack[2046] = r8;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = arg0;
+    r8 = arg1;
+    r3 = *0x8f7112f4;
+    stack[2040] = r3;
+    loc_ffffffff8f645d4c(arg0, arg1, arg2, r3, arg0, stack[2040], arg2, r4, stack[2043], 0x8f7112f4, r7, stack[2046], lr);
+    loc_ffffffff8f603674();
+    loc_ffffffff8f645c50();
+    loc_ffffffff8f638714();
+    if (r5 == 0x0) goto loc_8f638bd4;
+
+loc_8f638ae0:
+    r0 = *0x8f6e0854;
+    if (r0 != 0x0) goto loc_8f638bbc;
+
+loc_8f638af4:
+    while (*0x8f6e0849 == 0x0) {
+            loc_ffffffff8f61b944(0xa);
+    }
+    loc_ffffffff8f656968(0x2, "Searching screen for: %s\n", r5);
+    r4 = *(0x8f6e08b0 + 0x4);
+    goto loc_8f638b28;
+
+loc_8f638b28:
+    if (r4 == 0x8f6e08b0) goto loc_8f638bd4;
+
+loc_8f638b30:
+    if (loc_ffffffff8f64b470(r4 + 0x8, r5, 0x20) != 0x0) {
+            r4 = *(r4 + 0x4);
+    }
+    if (CPU_FLAGS & NE) goto loc_8f638b28;
+
+loc_8f638b4c:
+    if (r4 != 0x0) {
+            while (loc_ffffffff8f64fdf4() == 0x2) {
+                    loc_ffffffff8f61b944(0x5);
+            }
+            loc_ffffffff8f61afc0(0x8f6e0878);
+            r3 = *0x8f6e0854;
+            if (r3 != 0x0) {
+                    (*(r3 + 0x38))();
+            }
+            r3 = *(r4 + 0x34);
+            *0x8f6e0854 = r4;
+            (r3)();
+            loc_ffffffff8f61b098(0x8f6e0878);
+            if (stack[2040] == *0x8f7112f4) {
+                    loc_ffffffff8f638578(r8);
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (stack[2040] != *0x8f7112f4) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+
+loc_8f638bd4:
+    if (stack[2040] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f638bbc:
+    if (loc_ffffffff8f64b470(r0 + 0x8, r5, 0x20) != 0x0) goto loc_8f638af4;
+

@@ -1,0 +1,11 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    loc_ffffffff8f656968(0x6, "unlocking canceled", arg2, r3, arg0, r3, arg2, r4, r5, lr);
+    *0x8f711530 = 0x0;
+    loc_ffffffff8f61ac84(0x8f711514, 0x0);
+    r0 = (*(0x8f6ac374 + 0x4))("fastboot_screen", 0x0);
+    if (r3 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

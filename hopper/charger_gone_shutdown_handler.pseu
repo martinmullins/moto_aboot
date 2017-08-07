@@ -1,0 +1,43 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    loc_ffffffff8f61ac4c(0x8f6b5064, arg1, arg2, r3, arg0, stack[2043], arg2, r4, 0x8f7112f4, lr);
+    if (loc_ffffffff8f633128() != 0x0) {
+            while (loc_ffffffff8f642478() > 0x0) {
+                    loc_ffffffff8f642128(0x0, *0x8f6ab02c);
+                    r0 = loc_ffffffff8f642478();
+                    loc_ffffffff8f6423e8(r0 - 0x1);
+                    loc_ffffffff8f61b944(0x3e8);
+                    loc_ffffffff8f642128(0x1, *0x8f6ab02c);
+                    loc_ffffffff8f656968(0x1, "Dropping Input Rate!\n");
+                    if (loc_ffffffff8f6458d4() == 0x0) {
+                        continue;
+                    }
+                    loc_ffffffff8f61ac4c(0x8f6b5064);
+            }
+    }
+    else {
+            if (loc_ffffffff8f633218() != 0x0) {
+                    while (loc_ffffffff8f641c5c() > 0x0) {
+                            loc_ffffffff8f641734(0x0);
+                            r0 = loc_ffffffff8f641c5c();
+                            loc_ffffffff8f6419a8(r0 - 0x1);
+                            loc_ffffffff8f61b944(0x3e8);
+                            loc_ffffffff8f641734(0x1);
+                            loc_ffffffff8f656968(0x1, "Dropping Input Rate!\n");
+                            if (loc_ffffffff8f6458d4() == 0x0) {
+                                continue;
+                            }
+                            loc_ffffffff8f61ac4c(0x8f6b5064);
+                    }
+            }
+    }
+    loc_ffffffff8f656968(0x1, "Accessory Unplugged from device!\n");
+    loc_ffffffff8f6500ec();
+    loc_ffffffff8f634528();
+    r0 = 0x0;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

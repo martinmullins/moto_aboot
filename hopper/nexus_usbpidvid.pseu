@@ -1,0 +1,30 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2044] = 0x0 ^ 0xffffffff;
+    stack[2045] = *0x8f7112f4;
+    if (*0x8f6ac214 >= 0x0) goto loc_8f632934;
+
+loc_8f632928:
+    loc_ffffffff8f656968();
+    goto loc_8f63295c;
+
+loc_8f63295c:
+    if (stack[2044] == 0x1) {
+            loc_ffffffff8f656968(0x2, "Using nexus PID/VID");
+    }
+    r0 = stack[2044];
+    goto loc_8f632978;
+
+loc_8f632978:
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f632934:
+    r0 = loc_ffffffff8f6309d0("nexus_usbpidvid");
+    if (r0 == -0x1) goto loc_8f632978;
+
+loc_8f632948:
+    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", "nexus_usbpidvid", stack[2044]);
+    goto loc_8f63295c;
+

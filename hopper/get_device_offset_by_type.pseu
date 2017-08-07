@@ -1,0 +1,35 @@
+    stack[2046] = r6;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r6 = arg1;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r0 = loc_ffffffff8f63084c(arg0, arg1, arg2, r3, arg0, stack[2043], r4, 0x8f7112f4, stack[2046], lr);
+    COND = r4 < 0x0;
+    if (COND) goto loc_8f632ccc;
+
+loc_8f632cb4:
+    r0 = loc_ffffffff8f632c34();
+    COND = r1 != 0x0;
+    if (COND) goto loc_8f632cd4;
+
+loc_8f632cc0:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Not found battery device type!\n");
+    goto loc_8f632ccc;
+
+loc_8f632ccc:
+    r4 = 0x0 ^ 0xffffffff;
+    goto loc_8f632ce4;
+
+loc_8f632ce4:
+    r0 = r4;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f632cd4:
+    if (loc_ffffffff8f64b0ac(r6) != 0x0) {
+            r4 = 0x0 ^ 0xffffffff;
+    }
+    goto loc_8f632ce4;
+

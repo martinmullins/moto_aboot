@@ -1,0 +1,22 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2045] = r3;
+    loc_ffffffff8f62192c(0x8f683451, "usage: fastboot oem ramdump [options]", arg2, r3, arg0, stack[2045], 0x8f7112f4, lr);
+    loc_ffffffff8f62192c(0x8f683451, 0x8f6a4e20);
+    loc_ffffffff8f62192c(0x8f683451, "options:");
+    loc_ffffffff8f62192c(0x8f683451, "  (none given)        show status");
+    loc_ffffffff8f62192c(0x8f683451, "  enable              enable RAM dumping");
+    loc_ffffffff8f62192c(0x8f683451, "  disable             disable RAM dumping");
+    if (loc_ffffffff8f635424() == 0x0) {
+            loc_ffffffff8f62192c(0x8f683451, "  clear               clear existing RAM dumps");
+            loc_ffffffff8f62192c(0x8f683451, "  pull [<all>|<name>] pull RAM dump files");
+    }
+    loc_ffffffff8f62192c(0x8f683451, "  help                usage");
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = loc_ffffffff8f62192c(0x8f683451, 0x8f6a4e20);
+    }
+    return r0;
+

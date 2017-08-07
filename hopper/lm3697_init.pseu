@@ -1,0 +1,69 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x18;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    r0 = loc_ffffffff8f656968(0x2, 0x8f69b5ea, "lm3697_init", r3, stack[2036], stack[2037], stack[2038], stack[2039], stack[2040], stack[2041], r4);
+    if (*0x8f6e0a90 != 0x0) goto loc_8f63fd54;
+
+loc_8f63fb44:
+    r5 = 0x8f6e0a8c;
+    if (*0x8f6e0a8c != 0x0) goto loc_8f63fc4c;
+
+loc_8f63fb58:
+    r3 = *0x8f6e0a88;
+    if (loc_ffffffff8f6309d0(0x8f69d038, *(r3 + 0x2c), sp + 0x8, r3) != 0x0) goto loc_8f63fc10;
+
+loc_8f63fb78:
+    r3 = *0x8f6e0a88;
+    if (loc_ffffffff8f6309d0(0x8f69d081, *(r3 + 0x2c), sp + 0xc, r3) == 0x0) goto loc_8f63fba0;
+
+loc_8f63fc10:
+    r0 = loc_ffffffff8f656968();
+    goto loc_8f63fd54;
+
+loc_8f63fd54:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f63fba0:
+    r0 = loc_ffffffff8f612c30(stack[2038], stack[2039], 0x186a0, 0x124f800);
+    *0x8f6e0a8c = r0;
+    if (CPU_FLAGS & E) goto loc_8f63fc10;
+
+loc_8f63fbcc:
+    loc_ffffffff8f656968(0x2, "%s, qup_blsp_i2c_init(BLSP_ID_%d, QUP_ID_%d, 100000, 19200000)\n", "lm3697_init", stack[2038], stack[2039]);
+    r3 = *0x8f6e0a88;
+    r0 = loc_ffffffff8f6309d0("reset", *(r3 + 0x2c), sp + 0x10, r3);
+    COND = r1 == 0x0;
+    if (COND) goto loc_8f63fc18;
+    goto loc_8f63fc10;
+
+loc_8f63fc18:
+    loc_ffffffff8f602f2c(stack[2040]);
+    loc_ffffffff8f602f7c(stack[2040], 0x2);
+    loc_ffffffff8f602fb8(stack[2040], 0x1);
+    goto loc_8f63fc4c;
+
+loc_8f63fc4c:
+    loc_ffffffff8f60c558(0x5);
+    loc_ffffffff8f656968(0x2, "%s, LM3697_I2C_ADDRESS = 0x%x\n", "lm3697_init", 0x36);
+    if (loc_ffffffff8f612ea4(*r5, 0x36, 0x1a, 0x4) < 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: fail to write REG_BOOST_CONTROL\n", "lm3697_init");
+    }
+    if (loc_ffffffff8f612ea4(*r5, 0x36, 0x16, 0x1) < 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: fail to write REG_BRIGHTNESS_CONFIG\n", "lm3697_init");
+    }
+    if (loc_ffffffff8f612ea4(*r5, 0x36, 0x14, 0x5) < 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: fail to write REG_CONTROL_RT_RAMP\n", "lm3697_init");
+    }
+    if (loc_ffffffff8f612ea4(*r5, 0x36, 0x10, 0x0) < 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: fail to write REG_CURRENT_SINK_OUTPUT\n", "lm3697_init");
+    }
+    if (loc_ffffffff8f612ea4(*r5, 0x36, 0x17, 0x18) < 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: fail to write REG_A_FULL_SCALE_CURRENT\n", "lm3697_init");
+    }
+    r0 = loc_ffffffff8f60c558(0x2);
+    *0x8f6e0a90 = 0x1;
+    goto loc_8f63fd54;
+

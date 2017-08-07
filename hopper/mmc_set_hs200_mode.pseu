@@ -1,0 +1,50 @@
+    stack[2042] = r4;
+    stack[2043] = r5;
+    stack[2045] = r7;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg0;
+    r5 = arg1;
+    r7 = arg2;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    r0 = loc_ffffffff8f609084(arg0, arg1, arg2, r3, arg0, arg1, arg2, stack[2041], stack[2042], stack[2043], 0x8f7112f4, stack[2045], r8, lr);
+    COND = r8 != 0x0;
+    if (!CPU_FLAGS & NE) {
+            r0 = loc_ffffffff8f608f6c(r4, r5, 0x3, 0xb9, 0x2);
+            COND = r8 == 0x0;
+            if (!COND) {
+                    loc_ffffffff8f656968();
+                    r0 = r8;
+            }
+            else {
+                    loc_ffffffff8f60788c(r4, 0x3);
+                    if ((*(r4 + 0x27) != 0x0) && ((*(*(r5 + 0x20) + 0xc4) & 0xc0) != 0x0)) {
+                            *(r4 + 0x8) = 0x3;
+                            loc_ffffffff8f608660(r4);
+                            r0 = *(*(r4 + 0x28) + 0xb);
+                            loc_ffffffff8f602254(r0, 0x17d78400);
+                    }
+                    r0 = loc_ffffffff8f608754(r4, r5, r7);
+                    COND = r5 == 0x0;
+                    if (!COND) {
+                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Tuning for hs200 failed\n");
+                    }
+                    r3 = *(r4 + 0x8);
+                    *(r4 + 0x8) = 0x2;
+                    if (r3 == 0x3) {
+                            loc_ffffffff8f608660(r4);
+                            r0 = *(*(r4 + 0x28) + 0xb);
+                            loc_ffffffff8f602254(r0, 0xb71b000);
+                    }
+                    r0 = r5;
+            }
+    }
+    else {
+            loc_ffffffff8f656968();
+            r0 = r8;
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

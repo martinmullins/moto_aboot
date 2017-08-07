@@ -1,0 +1,66 @@
+    r5 = *0x8f710e74;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r8 = arg0;
+    r4 = r2;
+    r11 = stack[2048];
+    stack[2037] = *0x8f7112f4;
+    if (CPU_FLAGS & E) goto loc_8f677734;
+
+loc_8f6776f0:
+    if (r8 != 0x0) goto loc_8f67770c;
+
+loc_8f677700:
+    loc_ffffffff8f656968();
+    goto loc_8f677704;
+
+loc_8f677704:
+    s0 = 0x0 ^ 0xffffffff;
+    goto loc_8f6777c8;
+
+loc_8f6777c8:
+    r0 = s0;
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f67770c:
+    r0 = loc_ffffffff8f676a08();
+    s0 = r0;
+    if (CPU_FLAGS & E) goto loc_8f6777c0;
+
+loc_8f677724:
+    COND = r3 != 0x0;
+    if (COND) goto loc_8f67773c;
+
+loc_8f677734:
+    loc_ffffffff8f656968();
+    goto loc_8f677704;
+
+loc_8f67773c:
+    asm{ ldrd       r6, r7, [sb, #0x10] };
+    if (r5 == r7) {
+            CMP(r4, r6);
+    }
+    if (CPU_FLAGS & B) goto loc_8f677774;
+
+loc_8f677758:
+    asm{ strd       r6, r7, [sp, #0x38 + var_38] };
+    loc_ffffffff8f656968(0x0, "Mismatched block size: [0x%llx, 0x%llx]\n", r4, r5);
+    goto loc_8f677704;
+
+loc_8f677774:
+    asm{ ldrd       r2, r3, [sb, #0x18] };
+    r0 = 0x2;
+    r1 = "update data to block block [0x%llx, 0x%llx]\n";
+    asm{ strd       r2, r3, [sp, #0x38 + var_38] };
+    loc_ffffffff8f656968(r0, r1, r4, r5);
+    asm{ ldrd       r0, r1, [sb, #0x18] };
+    r0 = loc_ffffffff8f650ad0();
+    COND = s0 != 0x0;
+    if (CPU_FLAGS & NE) goto loc_8f677700;
+
+loc_8f6777c0:
+    loc_ffffffff8f656968();
+    goto loc_8f6777c8;
+

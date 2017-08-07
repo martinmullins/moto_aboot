@@ -1,0 +1,21 @@
+    stack[2044] = r4;
+    stack[2046] = r6;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg0;
+    r6 = arg2;
+    stack[2043] = *0x8f7112f4;
+    if (loc_ffffffff8f64c438(0x8f68ac00, arg1, r4, 0x0, arg0, stack[2043], stack[2044], 0x8f7112f4, stack[2046], lr) == 0x0) {
+            loc_ffffffff8f656968(0x2, "Not found setting for %s\n", r4);
+            r0 = 0x0 ^ 0xffffffff;
+    }
+    else {
+            r3 = *0x0;
+            r0 = 0x0;
+            asm{ rev        r3, r3 };
+            *r6 = r3;
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

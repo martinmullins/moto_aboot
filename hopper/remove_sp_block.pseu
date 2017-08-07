@@ -1,0 +1,319 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x54;
+    stack[2031] = arg0;
+    stack[2037] = *0x8f7112f4;
+    if (CPU_FLAGS & E) goto loc_8f677c14;
+
+loc_8f677848:
+    if (stack[2031] != 0x0) goto loc_8f677868;
+
+loc_8f67785c:
+    loc_ffffffff8f656968();
+    goto loc_8f677860;
+
+loc_8f677860:
+    r4 = 0x0 ^ 0xffffffff;
+    goto loc_8f677c2c;
+
+loc_8f677c2c:
+    r0 = r4;
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f677868:
+    r0 = loc_ffffffff8f676a08();
+    if (r0 != -0x1) goto loc_8f67788c;
+
+loc_8f677874:
+    r4 = 0x0;
+    loc_ffffffff8f656968(0x0, "Not found block %s\n", stack[2031]);
+    goto loc_8f677c2c;
+
+loc_8f67788c:
+    r3 = *0x8f710e74;
+    s0 = r0 * 0x20 + 0x8f710c70;
+    stack[2030] = s0;
+    asm{ ldrd       r2, r3, [sb, #0x10] };
+    COND = r5 == 0x0;
+    if (COND) goto loc_8f677be0;
+
+loc_8f6778a8:
+    asm{ ldrd       r0, r1, [sb, #0x18] };
+    r0 = loc_ffffffff8f650f94();
+    COND = r11 != 0x0;
+    if (COND) {
+            r0 = 0x0;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f67785c;
+
+loc_8f6778c0:
+    r2 = 0x1ff;
+    r3 = 0x0;
+    asm{ ldrd       r6, r7, [ip, #0x10] };
+    asm{ ldrd       r8, sb, [ip, #0x18] };
+    r2 = r2 & (r8 | r6);
+    COND = r1 == 0x0;
+    if (COND) goto loc_8f6778fc;
+
+loc_8f6778ec:
+    loc_ffffffff8f656968();
+    goto loc_8f67785c;
+
+loc_8f6778fc:
+    r3 = 0x8f710c38;
+    r4 = r8 + r6;
+    r5 = s0 + r7 + CARRY(FLAGS);
+    asm{ strd       r4, r5, [sp, #0x78 + var_40] };
+    r10 = *(r3 + 0x4);
+    r12 = r3;
+    goto loc_8f677914;
+
+loc_8f677914:
+    if (r10 == r12) goto loc_8f677b94;
+
+loc_8f67791c:
+    if (r11 == 0x0) goto loc_8f677934;
+
+loc_8f677924:
+    r3 = 0x8f710c38;
+    asm{ ldrd       r2, r3, [fp, #0x10] };
+    if (r3 == s0) {
+            CMP(r2, r8);
+    }
+    if (CPU_FLAGS & NB) goto loc_8f67796c;
+
+loc_8f677934:
+    asm{ ldrd       r0, r1, [sl, #0x10] };
+    asm{ ldrd       r4, r5, [sp, #0x78 + var_40] };
+    if (r1 == r5) {
+            CMP(r0, r4);
+    }
+    if (CPU_FLAGS & B) goto loc_8f67796c;
+
+loc_8f677948:
+    asm{ ldrd       r2, r3, [sl, #0x8] };
+    asm{ strd       r0, r1, [sp, #0x78 + var_78] };
+    r1 = "got the next block [0x%llx, 0x%llx]\n";
+    r0 = loc_ffffffff8f656968(0x2, r1);
+    COND = r11 != 0x0;
+    asm{ ldrd       r2, r3, [sl, #0x10] };
+    if (COND) goto loc_8f677978;
+
+loc_8f677994:
+    r3 = 0x8f710c38;
+    asm{ ldrd       r4, r5, [sp, #0x78 + var_40] };
+    if (r5 == r3) {
+            CMP(r4, r2);
+    }
+    if (CPU_FLAGS & NB) goto loc_8f677a0c;
+
+loc_8f6779a4:
+    asm{ strd       r8, sb, [sp, #0x78 + var_78] };
+    asm{ ldrd       r0, r1, [sl, #0x8] };
+    asm{ strd       r2, r3, [sp, #0x78 + var_68] };
+    r3 = r7;
+    r2 = r6;
+    asm{ strd       r0, r1, [sp, #0x78 + var_70] };
+    loc_ffffffff8f656968(0x2, "insert the released block [0x%llx, 0x%llx] before block [0x%llx, 0x%llx]\n", r2, r3);
+    r0 = loc_ffffffff8f676a78(r6, r8);
+    COND = r3 != 0x0;
+    if (COND) goto loc_8f6779f4;
+
+loc_8f6779dc:
+    asm{ strd       r8, sb, [sp, #0x78 + var_78] };
+    loc_ffffffff8f656968();
+    goto loc_8f67785c;
+
+loc_8f6779f4:
+    asm{ stm        r3, {r2, sl} };
+    *(*r10 + 0x4) = r3;
+    *r10 = r3;
+    goto loc_8f677be0;
+
+loc_8f677be0:
+    loc_ffffffff8f64adc8(stack[2030], 0x0, 0x20);
+    *(0x8f710c48 + 0x18) = *(0x8f710c48 + 0x18) - 0x1;
+    r0 = loc_ffffffff8f676b00();
+    COND = r4 == 0x0;
+    if (COND) goto loc_8f677c1c;
+
+loc_8f677c14:
+    loc_ffffffff8f656968();
+    goto loc_8f677860;
+
+loc_8f677c1c:
+    loc_ffffffff8f656968(0x1, "SP block %s has been removed\n", stack[2031]);
+    goto loc_8f677c2c;
+
+loc_8f677a0c:
+    if (r11 == 0x0) goto loc_8f677ae0;
+
+loc_8f677a14:
+    asm{ ldrd       r0, r1, [fp, #0x10] };
+    asm{ ldrd       r4, r5, [fp, #0x8] };
+    asm{ strd       r0, r1, [sp, #0x78 + var_38] };
+    r0 = r0 + r4;
+    r1 = r1 + r5 + CARRY(FLAGS);
+    asm{ strd       r4, r5, [sp, #0x78 + var_50] };
+    if (r1 == s0) {
+            CMP(r0, r8);
+    }
+    if (CPU_FLAGS & NE) goto loc_8f677ae0;
+
+loc_8f677a38:
+    r0 = r8 + r6;
+    asm{ ldrd       r4, r5, [sl, #0x10] };
+    r1 = s0 + r7 + CARRY(FLAGS);
+    if (r1 == r5) {
+            CMP(r0, r4);
+    }
+    if (CPU_FLAGS & NE) goto loc_8f677ae0;
+
+loc_8f677a50:
+    asm{ ldrd       r2, r3, [sp, #0x78 + var_50] };
+    asm{ ldrd       r4, r5, [sp, #0x78 + var_38] };
+    asm{ strd       r8, sb, [sp, #0x78 + var_78] };
+    asm{ strd       r2, r3, [sp, #0x78 + var_70] };
+    asm{ strd       r4, r5, [sp, #0x78 + var_68] };
+    asm{ ldrd       r2, r3, [sl, #0x8] };
+    asm{ strd       r0, r1, [sp, #0x78 + var_58] };
+    r0 = 0x2;
+    r1 = "merge block [0x%llx, 0x%llx] to prev block [0x%llx, 0x%llx] and next block [0x%llx, 0x%llx]\n";
+    asm{ strd       r2, r3, [sp, #0x78 + var_60] };
+    r2 = r6;
+    r3 = r7;
+    loc_ffffffff8f656968(r0, r1, r2, r3);
+    asm{ ldrd       r2, r3, [fp, #0x8] };
+    r0 = r6 + r2;
+    r1 = r7 + r3 + CARRY(FLAGS);
+    asm{ ldrd       r2, r3, [sl, #0x8] };
+    r2 = r2 + r0;
+    r3 = r3 + r1 + CARRY(FLAGS);
+    asm{ ldrd       r0, r1, [sl, #0x10] };
+    asm{ strd       r2, r3, [fp, #0x8] };
+    asm{ ldrd       r2, r3, [sl, #0x8] };
+    asm{ strd       r0, r1, [sp, #0x78 + var_78] };
+    loc_ffffffff8f656968(0x2, "remove next block [0x%llx, 0x%llx]\n", r2, r3);
+    asm{ ldm        sl, {r2, r3} };
+    *r3 = r2;
+    *(*r10 + 0x4) = r3;
+    *(r10 + 0x4) = 0x0;
+    *r10 = 0x0;
+    loc_ffffffff8f64ab9c(r10);
+    goto loc_8f677be0;
+
+loc_8f677ae0:
+    r3 = 0x8f710c38;
+    asm{ ldrd       r4, r5, [sp, #0x78 + var_40] };
+    if (r5 == r3) {
+            CMP(r4, r2);
+    }
+    if (CPU_FLAGS & NE) goto loc_8f677b2c;
+
+loc_8f677af0:
+    asm{ strd       r8, sb, [sp, #0x78 + var_78] };
+    r0 = 0x2;
+    asm{ ldrd       r2, r3, [sl, #0x8] };
+    r1 = "merge block [0x%llx, 0x%llx] to next block [0x%llx, 0x%llx]\n";
+    asm{ strd       r4, r5, [sp, #0x78 + var_68] };
+    asm{ strd       r2, r3, [sp, #0x78 + var_70] };
+    r2 = r6;
+    r3 = r7;
+    loc_ffffffff8f656968(r0, r1, r2, r3);
+    asm{ ldrd       r2, r3, [sl, #0x8] };
+    asm{ strd       r8, sb, [sl, #0x10] };
+    r2 = r2 + r6;
+    asm{ strd       r2, r3, [sl, #0x8] };
+    goto loc_8f677be0;
+
+loc_8f677b2c:
+    if (r11 == 0x0) goto loc_8f677b84;
+
+loc_8f677b34:
+    r3 = 0x8f710c38;
+    asm{ ldrd       r2, r3, [fp, #0x10] };
+    asm{ ldrd       r0, r1, [fp, #0x8] };
+    r4 = r0 + r2;
+    if (r1 + r3 + CARRY(FLAGS) == s0) {
+            CMP(r4, r8);
+    }
+    if (CPU_FLAGS & NE) goto loc_8f677b84;
+
+loc_8f677b50:
+    asm{ strd       r0, r1, [sp, #0x78 + var_70] };
+    r0 = 0x2;
+    asm{ strd       r2, r3, [sp, #0x78 + var_68] };
+    r2 = r6;
+    r3 = r7;
+    asm{ strd       r8, sb, [sp, #0x78 + var_78] };
+    loc_ffffffff8f656968(r0, "merge block [0x%llx, 0x%llx] to previous block [0x%llx, 0x%llx]\n", r2, r3);
+    asm{ ldrd       r2, r3, [fp, #0x8] };
+    r2 = r2 + r6;
+    asm{ strd       r2, r3, [fp, #0x8] };
+    goto loc_8f677be0;
+
+loc_8f677b84:
+    loc_ffffffff8f656968(0x0, "oops, why are you here?\n");
+    goto loc_8f67785c;
+
+loc_8f677978:
+    asm{ ldrd       r0, r1, [fp, #0x8] };
+    asm{ ldrd       r4, r5, [fp, #0x10] };
+    r4 = r4 + r0;
+    r5 = r5 + r1 + CARRY(FLAGS);
+    if (s0 == r5) {
+            CMP(r8, r4);
+    }
+    if (CPU_FLAGS & B) goto loc_8f677a14;
+    goto loc_8f677994;
+
+loc_8f67796c:
+    r11 = r10;
+    r10 = *(r10 + 0x4);
+    goto loc_8f677914;
+
+loc_8f677b94:
+    r3 = 0x8f710c38;
+    asm{ ldrd       r4, r5, [sl, #0x10] };
+    asm{ ldrd       r2, r3, [sl, #0x8] };
+    r0 = r2 + r4;
+    if (r3 + r5 + CARRY(FLAGS) == s0) {
+            CMP(r0, r8);
+    }
+    if (CPU_FLAGS & NE) goto loc_8f677c48;
+
+loc_8f677bb0:
+    asm{ strd       r2, r3, [sp, #0x78 + var_70] };
+    r0 = 0x2;
+    r2 = r6;
+    r3 = r7;
+    asm{ strd       r8, sb, [sp, #0x78 + var_78] };
+    asm{ strd       r4, r5, [sp, #0x78 + var_68] };
+    loc_ffffffff8f656968(r0, "merge block [0x%llx, 0x%llx] to last block [0x%llx, 0x%llx]\n", r2, r3);
+    asm{ ldrd       r2, r3, [sl, #0x8] };
+    r2 = r2 + r6;
+    asm{ strd       r2, r3, [sl, #0x8] };
+    goto loc_8f677be0;
+
+loc_8f677c48:
+    asm{ strd       r2, r3, [sp, #0x78 + var_70] };
+    r0 = 0x2;
+    r3 = r7;
+    r1 = "add block [0x%llx, 0x%llx] after last block [0x%llx, 0x%llx]\n";
+    r2 = r6;
+    asm{ strd       r8, sb, [sp, #0x78 + var_78] };
+    asm{ strd       r4, r5, [sp, #0x78 + var_68] };
+    loc_ffffffff8f656968(r0, r1, r2, r3);
+    r0 = loc_ffffffff8f676a78(r6, r8);
+    COND = r3 == 0x0;
+    if (COND) goto loc_8f6779dc;
+
+loc_8f677c7c:
+    r2 = *(r10 + 0x4);
+    *r3 = r10;
+    *(r3 + 0x4) = r2;
+    **(r10 + 0x4) = r3;
+    *(r10 + 0x4) = r3;
+    goto loc_8f677be0;
+

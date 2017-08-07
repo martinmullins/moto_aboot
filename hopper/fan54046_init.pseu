@@ -1,0 +1,98 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0xe0;
+    stack[2041] = *0x8f7112f4;
+    r0 = loc_ffffffff8f633070("fan54046");
+    COND = r4 >= 0x0;
+    if (COND) goto loc_8f641e14;
+
+loc_8f642098:
+    r0 = loc_ffffffff8f656968();
+    goto loc_8f6420a4;
+
+loc_8f6420a4:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f641e14:
+    if ((loc_ffffffff8f6309d0(0x8f69d038, r4, sp + 0x8) != 0x0) || (loc_ffffffff8f6309d0(0x8f69d081, r4, sp + 0xc) != 0x0)) goto loc_8f642098;
+
+loc_8f641e44:
+    r0 = loc_ffffffff8f612c30(stack[1988], stack[1989], 0x61a80, 0x124f800);
+    *0x8f6e0aac = r0;
+    if (CPU_FLAGS & E) goto loc_8f6420a0;
+
+loc_8f641e70:
+    if (loc_ffffffff8f612ea4() <= 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "fan540xx: Error setting Safety Register\n");
+    }
+    if (loc_ffffffff8f612ea4(*0x8f6e0aac, 0x6b, 0x6, 0xaa) <= 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "fan540xx: Error setting Safety Register redundant\n");
+    }
+    r0 = *0x8f6e0aac;
+    r0 = loc_ffffffff8f612dc8(r0, 0x6b, 0x3, sp + 0x6);
+    COND = r2 <= 0x0;
+    if (CPU_FLAGS & LE) goto loc_8f642098;
+
+loc_8f641ee0:
+    r3 = stack[1988];
+    r4 = r4 >> r3 / 0x40;
+    if (CPU_FLAGS & NE) goto loc_8f6420a0;
+
+loc_8f641ef8:
+    asm{ ubfx       r7, r3, #0x3, #0x3 };
+    loc_ffffffff8f656968(0x1, "fan540xx: part#: %X revision: 1.%d detected\n", r7, r3 & 0x7);
+    *0x8f6acab0 = r7;
+    if ((CPU_FLAGS & L) || (CPU_FLAGS & NE)) goto loc_8f6420a0;
+
+loc_8f641f60:
+    r0 = loc_ffffffff8f641ce8(0x13, 0x1, 0x1, 0x1);
+    COND = r1 != 0x0;
+    if (CPU_FLAGS & NE) goto loc_8f6420a0;
+
+loc_8f641f84:
+    r0 = loc_ffffffff8f641ce8(0x1);
+    COND = r2 != 0x0;
+    if (CPU_FLAGS & NE) goto loc_8f6420a0;
+
+loc_8f641fa4:
+    r0 = loc_ffffffff8f641ce8(0x5, 0x1);
+    COND = r1 != 0x0;
+    if ((CPU_FLAGS & NE) || (CPU_FLAGS & NE)) goto loc_8f6420a0;
+
+loc_8f641ff0:
+    r0 = loc_ffffffff8f641ce8(0x4, 0x9, 0x3, 0x4);
+    COND = r4 != 0x0;
+    if (CPU_FLAGS & NE) goto loc_8f6420a0;
+
+loc_8f642014:
+    loc_ffffffff8f656968(0x1, "FAN54 REG: 00 01 02 03 04 05 06 07 10 11 12 13 FA\n");
+    loc_ffffffff8f64aa80(sp + 0x14, 0x8f69d76b);
+    r2 = r4;
+    do {
+            r0 = *0x8f6e0aac;
+            loc_ffffffff8f612dc8(r0, 0x6b, zero_extend_32(r2), sp + 0x7);
+            loc_ffffffff8f64aa80(sp + 0x10, "%02X ", stack[1988]);
+            r4 = r4 + 0x1;
+            loc_ffffffff8f64afa0(sp + 0x14, sp + 0x10);
+            if (r4 == 0xd) {
+                break;
+            }
+            if (r4 != 0xc) {
+                    if (r4 > 0x7) {
+                            r2 = r4 + 0x8;
+                    }
+                    else {
+                            r2 = r4;
+                    }
+            }
+            else {
+                    r2 = 0xfa;
+            }
+    } while (true);
+    goto loc_8f642098;
+
+loc_8f6420a0:
+    r0 = loc_ffffffff8f656968();
+    goto loc_8f6420a4;
+

@@ -1,0 +1,28 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r0 = 0x8f7112f4;
+    stack[2045] = *r0;
+    *0x8f6e09c8 = 0xff6040;
+    *0x8f6e09c0 = 0x0;
+    *0x8f6e09c4 = 0xff000000 ^ 0xffffffff;
+    *0x8f6e09ec = 0xff6040;
+    r3 = 0x8f6e09f4;
+    *0x8f6ac92c = r3;
+    *0x8f6ac848 = 0x8f6ac92c;
+    *(0x8f6ac92c + 0x4) = 0x8f6ac848;
+    *(r3 + 0x4) = 0x8f6ac92c;
+    *(0x8f6ac848 + 0x4) = 0x8f6ac898;
+    *0x8f6ac898 = 0x8f6ac848;
+    *0x8f6ac97c = 0x8f6ac898;
+    *(0x8f6ac898 + 0x4) = 0x8f6ac97c;
+    r1 = 0x8f6ac9cc;
+    *(0x8f6ac97c + 0x4) = r1;
+    *r1 = 0x8f6ac97c;
+    r2 = 0x8f6ac7f8;
+    asm{ stm        r2, {r1, r3} };
+    *r3 = r2;
+    *(r1 + 0x4) = r2;
+    if (stack[2045] != *r0) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

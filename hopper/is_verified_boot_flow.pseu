@@ -1,0 +1,10 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r2 = *0x8f7112f4;
+    r12 = loc_ffffffff8f632a24(arg0, arg1) - 0x1;
+    r0 = 0x0 - r12;
+    r0 = r0 + r12 + CARRY(FLAGS);
+    if (r2 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

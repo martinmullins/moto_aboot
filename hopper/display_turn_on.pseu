@@ -1,0 +1,34 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    loc_ffffffff8f656968(0x2, "%s is called\n", "display_turn_on", r3, arg0, stack[2043], 0x8f6afe14, r5, 0x8f7112f4, lr);
+    r0 = loc_ffffffff8f633874();
+    COND = r5 == 0x0;
+    if ((!COND) && (*0x8f6afe14 != 0x1)) {
+            loc_ffffffff8f64da20();
+            if (*0x8f6e0c3c != 0x0) {
+                    loc_ffffffff8f61017c();
+            }
+            r0 = loc_ffffffff8f61b944(0x22);
+            r3 = *(r5 + 0x204);
+            if (r3 != 0x0) {
+                    (r3)(r0);
+            }
+            r3 = *(r5 + 0x1fc);
+            if (r3 != 0x0) {
+                    (r3)();
+            }
+            r3 = 0x1;
+    }
+    else {
+            r3 = 0x2;
+    }
+    *0x8f6afe14 = r3;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = loc_ffffffff8f656968(0x2, "%s is done\n", "display_turn_on");
+    }
+    return r0;
+

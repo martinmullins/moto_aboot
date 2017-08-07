@@ -1,0 +1,113 @@
+    r2 = arg2;
+    r1 = arg1;
+    r0 = arg0;
+    r11 = arg3;
+    r3 = 0x8f7112f4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x34;
+    r4 = lr;
+    r7 = r2;
+    asm{ strd       r0, r1, [sp, #0x58 + var_48] };
+    r3 = *r3;
+    stack[2037] = r3;
+    s0 = loc_ffffffff8f6006b0(r0, r1, r2, r3, stack[2026]);
+    r0 = loc_ffffffff8f60b698();
+    r3 = 0x0;
+    r2 = r0;
+    r6 = r0;
+    asm{ ldrd       r0, r1, [sp, #0x58 + var_48] };
+    asm{ strd       r2, r3, [sp, #0x58 + var_40] };
+    loc_ffffffff8f67b5cc();
+    COND = r1 == 0x0;
+    if (!COND) {
+            r3 = 0x7d;
+            loc_ffffffff8f6484ac(r4, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm_shared/mmc_wrapper.c", r3, "!(data_addr % block_size)");
+    }
+    r1 = r6;
+    loc_ffffffff8f67b468(r7, r1);
+    if (r1 != 0x0) {
+            r7 = r7 - 0x1;
+    }
+    if (CPU_FLAGS & NE) {
+            r3 = 0x0 - r6;
+    }
+    if (CPU_FLAGS & NE) {
+            r7 = r7 + r6;
+    }
+    if (CPU_FLAGS & NE) {
+            r7 = r3 & r7;
+    }
+    r0 = loc_ffffffff8f619be0();
+    if (r0 == 0x0) goto loc_8f60b860;
+
+loc_8f60b780:
+    r12 = 0x1fffe00;
+    r4 = 0x0;
+    r5 = 0x0;
+    goto loc_8f60b78c;
+
+loc_8f60b78c:
+    asm{ ldrd       r0, r1, [sp, #0x58 + var_48] };
+    r8 = r7 - r4;
+    r10 = r11 + r4;
+    r0 = r0 + r4;
+    r1 = r1 + r5 + CARRY(FLAGS);
+    if (r8 < r12) goto loc_8f60b804;
+
+loc_8f60b7a8:
+    asm{ ldrd       r2, r3, [sp, #0x58 + var_40] };
+    stack[2029] = r12;
+    loc_ffffffff8f67b5cc();
+    asm{ strd       r0, r1, [sp, #0x58 + var_38] };
+    r0 = loc_ffffffff8f67b3c0(0x1fffe00, r6);
+    asm{ ldrd       r2, r3, [sp, #0x58 + var_38] };
+    r1 = r10;
+    r0 = loc_ffffffff8f60ab48(s0, r1);
+    r12 = stack[2029];
+    r4 = r4 + 0x1fffe00;
+    r5 = r5 + 0x0 + CARRY(FLAGS);
+    COND = r8 == 0x0;
+    if (COND) goto loc_8f60b78c;
+
+loc_8f60b7f4:
+    asm{ ldrd       r2, r3, [sp, #0x58 + var_38] };
+    loc_ffffffff8f656968();
+    goto loc_8f60b8ac;
+
+loc_8f60b8ac:
+    r0 = r8;
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f60b804:
+    if (r8 != 0x0) {
+            asm{ ldrd       r2, r3, [sp, #0x58 + var_40] };
+            r4 = loc_ffffffff8f67b5cc();
+            r5 = r1;
+            r0 = loc_ffffffff8f67b3c0(r8, r6);
+            r0 = loc_ffffffff8f60ab48(s0, r10, r4, r5, r0);
+            COND = r8 == 0x0;
+            if (!COND) {
+                    loc_ffffffff8f656968();
+            }
+    }
+    goto loc_8f60b8ac;
+
+loc_8f60b860:
+    loc_ffffffff8f6193d4(r11, r7);
+    r0 = loc_ffffffff8f67b3c0(r7, r6);
+    asm{ ldrd       r2, r3, [sp, #0x58 + var_48] };
+    r0 = loc_ffffffff8f60b4c0(s0);
+    if (r0 == 0x0) {
+            r8 = r0;
+    }
+    if (!CPU_FLAGS & E) {
+            r0 = 0x0 ^ 0xffffffff;
+            r1 = "Error: UFS write failed writing to block: %llu\n";
+            asm{ ldrd       r2, r3, [sp, #0x58 + var_48] };
+            r8 = 0x1;
+            loc_ffffffff8f656968(r0, r1);
+    }
+    goto loc_8f60b8ac;
+

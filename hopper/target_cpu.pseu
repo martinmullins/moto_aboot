@@ -1,0 +1,38 @@
+    stack[2045] = r5;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    r5 = *(0x1110000 + 0x10);
+    *(0x8f6b5000 + 0x3f) = 0x0;
+    loc_ffffffff8f64a9f0(0x8f6b5000, 0x3f, "unknown (device id: 0x%08X)", r5, arg0, stack[2043], 0x8f6b5000, stack[2045], 0x8f7112f4, lr);
+    r3 = r5 & 0xffe;
+    if ((r3 == 0xe0) && ((r5 & 0x1) != 0x0)) {
+            asm{ ubfx       r3, r5, #0xc, #0x10 };
+            if (r3 != 0x709) {
+                    if (!CPU_FLAGS & A) {
+                            r2 = 0x705;
+                            if ((r3 == r2) || (CPU_FLAGS & E)) {
+                                    loc_ffffffff8f64b2c0();
+                            }
+                    }
+                    else {
+                            r2 = 0x90b;
+                            if ((r3 != r2) && (r3 != r2 + 0x4c)) {
+                                    if (r3 == 0x90a) {
+                                            loc_ffffffff8f64b2c0();
+                                    }
+                            }
+                            else {
+                                    loc_ffffffff8f64b2c0();
+                            }
+                    }
+            }
+            else {
+                    loc_ffffffff8f64b2c0();
+            }
+    }
+    r0 = 0x8f6b5000;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

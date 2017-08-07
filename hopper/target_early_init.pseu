@@ -1,0 +1,27 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x1c;
+    stack[2043] = *0x8f7112f4;
+    if (loc_ffffffff8f61a280() == 0x44) {
+            r4 = 0x1;
+            r1 = 0x0;
+            r2 = r4;
+            r3 = r4;
+            asm{ stm        sp, {r1, r4} };
+            loc_ffffffff8f602f2c(0x24, r1, r2, r3);
+            loc_ffffffff8f602f7c(0x24, 0x2);
+            loc_ffffffff8f602fb8(0x24, r4);
+            loc_ffffffff8f60c558(0x5);
+    }
+    stack[2041] = 0x0;
+    stack[2042] = 0x0;
+    if (loc_ffffffff8f632ad0(sp + 0xc) != 0x0) {
+            loc_ffffffff8f656968(0x1, "Not get uart setting, use default\n");
+            stack[2041] = 0x78af000;
+            stack[2042] = 0x1;
+    }
+    loc_ffffffff8f60d508(stack[2042], 0x0, stack[2041]);
+    r0 = loc_ffffffff8f656718();
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

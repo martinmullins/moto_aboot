@@ -1,0 +1,60 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x34;
+    stack[2041] = *0x8f7112f4;
+    if (*0x8f6ac218 == 0xffff) goto loc_8f633d5c;
+
+loc_8f633d54:
+    r0 = 0x0;
+    goto loc_8f633e64;
+
+loc_8f633e64:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f633d5c:
+    if (*0x8f6e06ac == 0x0) goto loc_8f633d88;
+
+loc_8f633d6c:
+    r0 = loc_ffffffff8f6798a8(0x0, 0x8f6808de);
+    r4 = r0;
+    if ((r0 == 0x1) && (loc_ffffffff8f6797bc(0x0, 0x8f6808de, sp + 0x7, r4) != 0x0)) {
+            loc_ffffffff8f656968();
+            r0 = 0x0;
+    }
+    else {
+            loc_ffffffff8f656968(0x2, "CANNOT find UTAG \"%s\"!\n", 0x8f6808de);
+            if (*0x8f6e06ad != 0x0) {
+                    loc_ffffffff8f656968(0x1, "auto detection enabled by DTS!\n");
+                    r0 = 0x1;
+            }
+            else {
+                    r0 = 0x0;
+            }
+    }
+    goto loc_8f633e64;
+
+loc_8f633d88:
+    if (loc_ffffffff8f6335f4(sp + 0x8, 0x20) == 0x0) goto loc_8f633d6c;
+
+loc_8f633d9c:
+    r4 = *(0x8f711550 + 0x4);
+    goto loc_8f633da8;
+
+loc_8f633da8:
+    if (r4 == 0x8f711550) goto loc_8f633d6c;
+
+loc_8f633db0:
+    r0 = loc_ffffffff8f64b354(sp + 0x8);
+    r0 = loc_ffffffff8f64b470(r4 + 0x8, sp + 0x8, r0);
+    COND = r7 != 0x0;
+    if (COND) goto loc_8f633de4;
+
+loc_8f633dd0:
+    loc_ffffffff8f656968(0x1, "find UTAG \"%s\", skip auto detect!\n", 0x8f684a2d);
+    goto loc_8f633d54;
+
+loc_8f633de4:
+    r4 = *(r4 + 0x4);
+    goto loc_8f633da8;
+

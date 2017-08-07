@@ -1,0 +1,20 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    r2 = *(arg1 + 0x31);
+    r2 = r2 & 0xf;
+    if (r2 != 0x4) {
+            CMP(r2, 0x1);
+    }
+    if (CPU_FLAGS & E) {
+            r0 = 0x1000;
+    }
+    if (!CPU_FLAGS & E) {
+            loc_ffffffff8f656968(0x0, "Not supported sign type(%d) to get signature\n");
+            r0 = 0x0 ^ 0xffffffff;
+    }
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

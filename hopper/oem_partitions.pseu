@@ -1,0 +1,19 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = 0x0;
+    stack[2043] = *0x8f7112f4;
+    do {
+            r0 = r4;
+            r4 = r4 + 0x1;
+            r0 = loc_ffffffff8f65367c(r0);
+            COND = r2 == 0x0;
+            if (COND) {
+                break;
+            }
+            loc_ffffffff8f62192c(0x8f683451, 0x8f6853ea);
+    } while (true);
+    r0 = 0x1;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

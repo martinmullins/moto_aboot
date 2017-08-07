@@ -1,0 +1,30 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    r2 = *0x8f6ac0f0;
+    *0x8f6ac0f0 = r2 + 0x1;
+    if (r2 == 0x0) {
+            r0 = loc_ffffffff8f619448();
+    }
+    r2 = stack[2045];
+    if (r2 == *0x8f7112f4) goto loc_8f6483f4;
+
+loc_8f6483f0:
+    loc_ffffffff8f648514();
+    return;
+
+loc_8f6483f4:
+    sp = sp + 0x8;
+    if (!CPU_FLAGS & NE) {
+            loc_ffffffff8f656968();
+            loc_ffffffff8f60dd74(0x1);
+    }
+    loc_ffffffff8f656968();
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "HALT: reboot into fastboot mode...\n");
+    loc_ffffffff8f60dd74(0x0);
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "HALT: reboot failed, spinning forever...\n");
+    goto loc_8f60441c;
+
+loc_8f60441c:
+    goto loc_8f60441c;
+

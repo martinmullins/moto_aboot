@@ -1,0 +1,25 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    loc_ffffffff8f62192c(0x8f683451, "usage: fastboot oem wptest [options]", arg2, r3, arg0, r3, r4, lr);
+    loc_ffffffff8f62192c(0x8f683451, 0x8f6a4e20);
+    loc_ffffffff8f62192c(0x8f683451, "options:");
+    loc_ffffffff8f62192c(0x8f683451, "  enable         enable writeprotect");
+    loc_ffffffff8f62192c(0x8f683451, "  disable        disable writeprotect");
+    loc_ffffffff8f62192c(0x8f683451, "  test <number>  run a test");
+    loc_ffffffff8f62192c(0x8f683451, "                 1 - display system image info");
+    loc_ffffffff8f62192c(0x8f683451, "                 2 - enable write protect");
+    loc_ffffffff8f62192c(0x8f683451, "                 3 - reset eMMC");
+    loc_ffffffff8f62192c(0x8f683451, "                 4 - hash system image");
+    loc_ffffffff8f62192c(0x8f683451, "                 5 - enable enhance erase");
+    loc_ffffffff8f62192c(0x8f683451, "                 6 - check if system partition is writable");
+    loc_ffffffff8f62192c(0x8f683451, "                 7 - enable hw_test (OTP) and print error code");
+    loc_ffffffff8f62192c(0x8f683451, "                 <sector> - check if specified sector is writable");
+    loc_ffffffff8f62192c(0x8f683451, "  help           show usage");
+    if (r3 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = loc_ffffffff8f62192c(0x8f683451, 0x8f6a4e20);
+    }
+    return r0;
+

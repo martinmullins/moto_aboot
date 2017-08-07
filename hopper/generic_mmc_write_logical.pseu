@@ -1,0 +1,238 @@
+    stack[2048] = arg4;
+    r2 = arg2;
+    r1 = arg1;
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4c;
+    r4 = r0;
+    r5 = r1;
+    asm{ strd       r2, r3, [sp, #0x70 + var_38] };
+    r3 = 0x8f7112f4;
+    asm{ ldrd       r6, r7, [sp, #0x70 + var_38] };
+    r8 = stack[2048];
+    r3 = *r3;
+    r7 = r6 | r7;
+    COND = r7 == 0x0;
+    stack[2037] = r3;
+    if (COND) goto loc_8f650e2c;
+
+loc_8f650b00:
+    asm{ ldrd       r6, r7, [sp, #0x70 + var_38] };
+    r12 = *r0;
+    r6 = r6 + r0;
+    r7 = r7 + r1 + CARRY(FLAGS);
+    asm{ strd       r6, r7, [sp, #0x70 + var_40] };
+    asm{ ldrd       r2, r3, [ip, #0x20] };
+    if (r7 == r3) {
+            CMP(r6, r2);
+    }
+    if (CPU_FLAGS & B) goto loc_8f650b48;
+
+loc_8f650b28:
+    asm{ strd       r2, r3, [sp, #0x70 + var_68] };
+    r0 = 0x0;
+    asm{ strd       r6, r7, [sp, #0x70 + var_70] };
+    loc_ffffffff8f656968(r0, "Invalid logical range: start=%llu, end=%llu, total=%llu\n", r4, r5);
+    goto loc_8f650c00;
+
+loc_8f650c00:
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f650e38;
+
+loc_8f650e38:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f650b48:
+    r4 = *(r12 + 0x8);
+    r5 = 0x0;
+    r3 = r5;
+    r10 = r10 >> r0 / 0x200 | r1 * 0x800000;
+    r11 = r11 >> r1 / 0x200;
+    r2 = r4;
+    loc_ffffffff8f67b5cc();
+    asm{ ldrd       r0, r1, [sp, #0x70 + var_40] };
+    asm{ strd       r2, r3, [sp, #0x70 + var_48] };
+    asm{ ldrd       r2, r3, [sp, #0x70 + var_40] };
+    r2 = r2 - 0x1;
+    r6 = r6 >> r2 / 0x200;
+    r6 = r6 | (r3 - 0x0 + !CARRY(FLAGS)) * 0x800000;
+    r7 = r7 >> (r3 - 0x0 + !CARRY(FLAGS)) / 0x200;
+    r3 = r5;
+    loc_ffffffff8f67b5cc();
+    asm{ ldrd       r0, r1, [sp, #0x70 + var_48] };
+    asm{ strd       sl, fp, [sp, #0x70 + var_70] };
+    asm{ strd       r6, r7, [sp, #0x70 + var_60] };
+    asm{ strd       r0, r1, [sp, #0x70 + var_68] };
+    r0 = 0x2;
+    r1 = "%s: start_sector=0x%llx, leading_size=%lld, ending_sector=0x%llx, trailing_size=%lld, buf=%p\n";
+    asm{ strd       r2, r3, [sp, #0x70 + var_40] };
+    asm{ strd       r2, r3, [sp, #0x70 + var_58] };
+    r2 = "generic_mmc_write_logical";
+    r0 = loc_ffffffff8f656968(r0, r1, r2);
+    asm{ ldrd       r2, r3, [sp, #0x70 + var_48] };
+    r3 = r2 | r3;
+    COND = r3 == 0x0;
+    if (COND) goto loc_8f650cf0;
+
+loc_8f650bcc:
+    asm{ ldrd       r0, r1, [sp, #0x70 + var_48] };
+    r0 = r8 - r0;
+    r1 = 0x0 - r1 + !CARRY(FLAGS);
+    COND = lr == 0x0;
+    if (COND) goto loc_8f650c08;
+
+loc_8f650bf0:
+    loc_ffffffff8f656968(0x0, "%s: buffer address not well aligned\n", "generic_mmc_write_logical");
+    goto loc_8f650c00;
+
+loc_8f650c08:
+    r12 = *r0;
+    r2 = *(r12 + 0x8);
+    r12 = *(r12 + 0x38);
+    asm{ umull      r0, r1, sl, r2 };
+    r0 = (r12)();
+    COND = r5 >= 0x0;
+    if (COND) goto loc_8f650c50;
+
+loc_8f650c34:
+    r0 = 0x0;
+    asm{ strd       sl, fp, [sp, #0x70 + var_70] };
+    loc_ffffffff8f656968(r0, "%s: Failed to read emmc 1 sector from 0x%llx\n", "generic_mmc_write_logical");
+    r0 = r5;
+    goto loc_8f650e38;
+
+loc_8f650c50:
+    r1 = stack[2030];
+    if (r11 == r7) {
+            CMP(r10, r6);
+    }
+    r4 = 0x8f6e0c80;
+    if (CPU_FLAGS & NE) goto loc_8f650c8c;
+
+loc_8f650c64:
+    r1 = r8;
+    r12 = *loc_ffffffff8f64ac90();
+    r2 = *(r12 + 0x8);
+    asm{ umull      r0, r1, sl, r2 };
+    goto loc_8f650e20;
+
+loc_8f650e20:
+    r0 = (*(r12 + 0x3c))();
+    goto loc_8f650e38;
+
+loc_8f650c8c:
+    r1 = r8;
+    r5 = 0x200 - stack[2030];
+    r12 = *loc_ffffffff8f64ac90();
+    r3 = 0x0;
+    r2 = *(r12 + 0x8);
+    r12 = *(r12 + 0x3c);
+    asm{ umull      r0, r1, sl, r2 };
+    r1 = r1 + r2 * r11;
+    r0 = (r12)();
+    COND = r4 == 0x0;
+    if (COND) goto loc_8f650ce0;
+
+loc_8f650cc8:
+    asm{ strd       sl, fp, [sp, #0x70 + var_70] };
+    loc_ffffffff8f656968(0x0, "%s: Failed to write to emmc 1 sector from 0x%llx\n", "generic_mmc_write_logical");
+    goto loc_8f650e34;
+
+loc_8f650e34:
+    r0 = r4;
+    goto loc_8f650e38;
+
+loc_8f650ce0:
+    r10 = r10 + 0x1;
+    r8 = r8 + r5;
+    r11 = r11 + 0x0 + CARRY(FLAGS);
+    goto loc_8f650cf4;
+
+loc_8f650cf4:
+    asm{ ldrd       r0, r1, [sp, #0x70 + var_40] };
+    r1 = r0 | r1;
+    COND = r1 == 0x0;
+    if (!COND) {
+            r6 = r6 - 0x1;
+            r7 = r7 - 0x0 + !CARRY(FLAGS);
+    }
+    if (r7 == r11) {
+            CMP(r6, r10);
+    }
+    if (CPU_FLAGS & B) goto loc_8f650d98;
+
+loc_8f650d14:
+    r2 = r6 - r10;
+    r3 = r7 - r11 + !CARRY(FLAGS);
+    r0 = r2 + 0x1;
+    r12 = *r0;
+    r1 = r3 + 0x0 + CARRY(FLAGS);
+    asm{ strd       r0, r1, [sp, #0x70 + var_48] };
+    r4 = *(r12 + 0x8);
+    stack[2020] = r8;
+    r12 = *(r12 + 0x3c);
+    asm{ umull      r2, r3, lr, r4 };
+    lr = stack[2031];
+    asm{ umull      r0, r1, sl, r4 };
+    r1 = r1 + r4 * r11;
+    r0 = (r12)(r0, r1, r2, r3 + r4 * lr, stack[2020]);
+    COND = r4 >= 0x0;
+    if (COND) goto loc_8f650d88;
+
+loc_8f650d68:
+    asm{ ldrd       r6, r7, [sp, #0x70 + var_48] };
+    r0 = 0x0;
+    asm{ strd       sl, fp, [sp, #0x70 + var_68] };
+    r1 = "%s: Failed to read %lld sectors from sector 0x%llx\n";
+    asm{ strd       r6, r7, [sp, #0x70 + var_70] };
+    loc_ffffffff8f656968(r0, r1, "generic_mmc_write_logical");
+    goto loc_8f650e34;
+
+loc_8f650d88:
+    r3 = *r0;
+    r3 = *(r3 + 0x8);
+    r8 = r8 + r3 * stack[2030];
+    goto loc_8f650d98;
+
+loc_8f650d98:
+    asm{ ldrd       r2, r3, [sp, #0x70 + var_40] };
+    r3 = r2 | r3;
+    COND = r3 == 0x0;
+    if (COND) goto loc_8f650e34;
+
+loc_8f650da4:
+    r4 = 0x8f6e0c81;
+    r5 = CARRY(FLAGS) + 0x8f7125ec;
+    r12 = *0x8f7125ec;
+    r2 = *(r12 + 0x8);
+    r12 = *(r12 + 0x38);
+    asm{ umull      r0, r1, r4, r2 };
+    r0 = (r12)();
+    COND = s0 >= 0x0;
+    if (COND) goto loc_8f650df8;
+
+loc_8f650ddc:
+    r0 = 0x0;
+    asm{ strd       r4, r5, [sp, #0x70 + var_70] };
+    loc_ffffffff8f656968(r0, "%s: Failed to read emmc 1 sector from 0x%llx\n", "generic_mmc_write_logical");
+    r0 = s0;
+    goto loc_8f650e38;
+
+loc_8f650df8:
+    r1 = r8;
+    loc_ffffffff8f64ac90(0x8f6e0c80, r1, stack[2032]);
+    r12 = *0x8f7125ec;
+    r2 = *(r12 + 0x8);
+    asm{ umull      r0, r1, r4, r2 };
+    goto loc_8f650e20;
+
+loc_8f650cf0:
+    r4 = 0x0 ^ 0xffffffff;
+    goto loc_8f650cf4;
+
+loc_8f650e2c:
+    r0 = 0x0;
+    goto loc_8f650e38;
+

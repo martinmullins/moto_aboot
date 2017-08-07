@@ -1,0 +1,69 @@
+    stack[2041] = arg1;
+    stack[2042] = arg2;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r0 = loc_ffffffff8f633070("bq24296", arg1, arg2, r3, arg0, stack[2041], stack[2042], stack[2043], r4, 0x8f7112f4, r6, lr);
+    COND = r4 >= 0x0;
+    if (!COND) {
+            r0 = loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error: DT settings for \"%s\" missing or incomplete\n", "bq24296");
+    }
+    else {
+            if (loc_ffffffff8f6309d0(0x8f69d038, r4, sp + 0x4) == 0x0) {
+                    r0 = loc_ffffffff8f6309d0(0x8f69d081, r4, sp + 0x8);
+                    COND = r6 != 0x0;
+                    if (!COND) {
+                            r0 = loc_ffffffff8f612c30(stack[2041], stack[2042], 0x61a80, 0x124f800);
+                            *0x8f6e0aa0 = r0;
+                            if (!CPU_FLAGS & E) {
+                                    r0 = loc_ffffffff8f630990("charger_ce_pin", r4);
+                                    COND = r4 >= 0x0;
+                                    if (!COND) {
+                                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "No charger_ce_pin  found\n");
+                                    }
+                                    else {
+                                            loc_ffffffff8f64adc8(0x8f6e0aa4, r6, 0x8);
+                                            *0x8f6acaac = loc_ffffffff8f618030(r4, 0x8f6e0aa4, 0x1, "charger_ce_pin");
+                                    }
+                                    r0 = loc_ffffffff8f6415a8(0x1, 0x1, 0x6, 0x1);
+                                    COND = r1 == 0x0;
+                                    if (!COND) {
+                                            r0 = loc_ffffffff8f656968();
+                                    }
+                                    else {
+                                            if (((loc_ffffffff8f6415a8(0x5) == 0x0) && (!CPU_FLAGS & NE)) && (!CPU_FLAGS & NE)) {
+                                                    if (!CPU_FLAGS & NE) {
+                                                            loc_ffffffff8f6419a8(0x2);
+                                                            if (loc_ffffffff8f6415a8(0x2, 0x17, 0x2, 0x6) != 0x0) {
+                                                                    r0 = loc_ffffffff8f656968();
+                                                            }
+                                                            else {
+                                                                    r0 = loc_ffffffff8f641680();
+                                                            }
+                                                    }
+                                                    else {
+                                                            r0 = loc_ffffffff8f656968();
+                                                    }
+                                            }
+                                            else {
+                                                    r0 = loc_ffffffff8f656968();
+                                            }
+                                    }
+                            }
+                            else {
+                                    r0 = loc_ffffffff8f656968();
+                            }
+                    }
+                    else {
+                            r0 = loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error: DT settings for \"%s\" missing or incomplete\n", "bq24296");
+                    }
+            }
+            else {
+                    r0 = loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error: DT settings for \"%s\" missing or incomplete\n", "bq24296");
+            }
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

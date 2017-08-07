@@ -1,0 +1,13 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x14;
+    stack[2043] = *0x8f7112f4;
+    r0 = loc_ffffffff8f608f6c(arg0, arg1, 0x3, 0xb7, arg2);
+    COND = r5 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Switch cmd failed\n");
+    }
+    r0 = r5;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

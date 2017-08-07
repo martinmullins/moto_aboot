@@ -1,0 +1,129 @@
+    r1 = arg1;
+    r0 = arg0;
+    r6 = arg2;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x1c;
+    if (r0 != 0x0) {
+            CMP(r1, 0x0);
+    }
+    s0 = r0;
+    r8 = r1;
+    stack[2037] = *0x8f7112f4;
+    if (!CPU_FLAGS & E) {
+            r2 = *r0;
+            r2 = r2 - 0xd;
+            if (r2 <= 0x3) {
+                    r12 = *(0x8f6a6bb4 + 0x8);
+                    r7 = *(0x8f6a6bb4 + zero_extend_32(r2));
+                    stack[2033] = *(0x8f6a6bb8 + zero_extend_32(r2) * 0x4);
+                    r10 = *(0x8f6a6bc8 + zero_extend_32(r2) * 0x4);
+                    r11 = *(0x8f6a6bd8 + zero_extend_32(r2));
+                    if (r12 < r7) {
+                            asm{ ldrd       r4, r5, [sb, #0xd0] };
+                            r2 = 0x0 ^ 0xffffffff;
+                            if (r5 == (0xe0000000 ^ 0xffffffff)) {
+                                    CMP(r4, r2);
+                            }
+                            if (!CPU_FLAGS & A) {
+                                    r4 = r4 + r6;
+                                    r5 = r5 + 0x0 + CARRY(FLAGS);
+                                    asm{ strd       r2, r3, [sp, #0x40 + var_38] };
+                                    r2 = 0x0 ^ 0xffffffff;
+                                    r3 = 0xe0000000 ^ 0xffffffff;
+                                    if (r5 == r3) {
+                                            CMP(r4, r2);
+                                    }
+                                    if (!CPU_FLAGS & A) {
+                                            if (r12 != 0x0) {
+                                                    r2 = r6 + r12;
+                                                    if (r2 < r7) {
+                                                            r4 = 0x0;
+                                                    }
+                                                    if (!CPU_FLAGS & B) {
+                                                            r4 = r7 - r12;
+                                                            r6 = r6 - r4;
+                                                            loc_ffffffff8f64ac90(0xc + s0 + r12);
+                                                            r1 = s0 + 0x90;
+                                                            r0 = s0 + 0xc;
+                                                            r2 = r1;
+                                                            if (r11 == 0x1) {
+                                                                    r0 = (r10)(r0, r1, r2);
+                                                            }
+                                                            else {
+                                                                    r3 = stack[2033];
+                                                                    r0 = (r3)(r0, r1, r2);
+                                                            }
+                                                            if (r0 == 0x0) {
+                                                                    *(r0 + 0x8) = r0;
+                                                            }
+                                                    }
+                                                    else {
+                                                            r0 = r4;
+                                                    }
+                                            }
+                                            else {
+                                                    r4 = r12;
+                                                    r0 = r4;
+                                            }
+                                            r4 = r8 + r4;
+                                            r5 = s0 + 0x90;
+                                            do {
+                                                    if (r6 >= r7) {
+                                                            CMP(r0, 0x0);
+                                                    }
+                                                    r1 = r4 - r8;
+                                                    if (CPU_FLAGS & NE) {
+                                                        break;
+                                                    }
+                                                    r0 = r4;
+                                                    r1 = r5;
+                                                    r2 = r5;
+                                                    if (r11 == 0x1) {
+                                                            r0 = (r10)(r0, r1, r2);
+                                                    }
+                                                    else {
+                                                            r3 = stack[2033];
+                                                            r0 = (r3)(r0, r1, r2);
+                                                    }
+                                                    r6 = r6 - r7;
+                                                    r4 = r4 + r7;
+                                            } while (true);
+                                            if (r0 == 0x0) {
+                                                    if (r6 != 0x0) {
+                                                            r0 = *(r0 + 0x8);
+                                                            r1 = r8 + r1;
+                                                            r0 = loc_ffffffff8f64ac90(0xc + s0 + r0, r1, r6);
+                                                            r2 = *(r0 + 0x8);
+                                                            *(r0 + 0x8) = r2 + r6;
+                                                    }
+                                                    r0 = 0x0;
+                                                    asm{ ldrd       r0, r1, [sb, #0xd0] };
+                                                    asm{ ldrd       r2, r3, [sp, #0x40 + var_38] };
+                                                    r0 = r0 + r2;
+                                                    asm{ strd       r0, r1, [sb, #0xd0] };
+                                                    r0 = 0x0;
+                                            }
+                                    }
+                                    else {
+                                            r0 = 0x1;
+                                    }
+                            }
+                            else {
+                                    r0 = 0x1;
+                            }
+                    }
+                    else {
+                            r0 = 0x1;
+                    }
+            }
+            else {
+                    r0 = 0x1;
+            }
+    }
+    else {
+            r0 = 0x1;
+    }
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

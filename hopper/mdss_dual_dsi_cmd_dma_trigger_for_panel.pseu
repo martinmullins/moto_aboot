@@ -1,0 +1,41 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    r3 = 0x1a98000;
+    *(r3 + 0x110) = 0x3030303;
+    *(r3 + 0x90) = 0x1;
+    asm{ dsb        sy };
+    *(0x110 + r3 + 0x8000) = 0x3030303;
+    *(0x90 + r3 + 0x8000) = 0x1;
+    asm{ dsb        sy };
+    r3 = 0x10000;
+    r2 = *(0x1aa0000 + 0x110);
+    goto loc_8f60f4a4;
+
+loc_8f60f4a4:
+    r2 = 0x1aa0000;
+    if (0x1aa0000 == 0x1) goto loc_8f60f4d8;
+
+loc_8f60f4b0:
+    r2 = *(0x1aa0000 + 0x110);
+    r3 = r3 - 0x1;
+    COND = r3 != 0x0;
+    if (COND) goto loc_8f60f4a4;
+
+loc_8f60f4c0:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: Panel CMD: command mode dma test failed\n", "mdss_dual_dsi_cmd_dma_trigger_for_panel");
+    r0 = 0x1;
+    goto loc_8f60f4fc;
+
+loc_8f60f4fc:
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f60f4d8:
+    r3 = *(r2 + 0x110);
+    *(r2 + 0x110) = r3 | 0x1000000 | 0x1;
+    loc_ffffffff8f656968(0x2, "%s: Panel CMD: command mode dma tested successfully\n", "mdss_dual_dsi_cmd_dma_trigger_for_panel", r3 | 0x1000000 | 0x1);
+    r0 = 0x0;
+    goto loc_8f60f4fc;
+

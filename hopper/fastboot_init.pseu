@@ -1,0 +1,32 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    loc_ffffffff8f61af70(0x8f6c0398, arg1, arg2, r3, stack[2038]);
+    loc_ffffffff8f6534d0(0x8f6ac1b8);
+    loc_ffffffff8f64adc8(0x8f7114fc, 0x0, 0x10);
+    *0x8f7114fc = arg0;
+    *(0x8f7114fc + 0x4) = arg1;
+    r0 = loc_ffffffff8f62dc1c();
+    COND = r4 != 0x0;
+    if (!CPU_FLAGS & NE) {
+            loc_ffffffff8f63072c();
+            r0 = loc_ffffffff8f61b490("fastboot", 0x8f621660, r4, 0x10, 0x2000);
+            *0x8f6c03d8 = r0;
+            if (r0 == 0x0) {
+                    loc_ffffffff8f656968();
+                    r0 = 0x0 ^ 0xffffffff;
+            }
+            else {
+                    loc_ffffffff8f61b6fc();
+                    r0 = r4;
+            }
+    }
+    else {
+            loc_ffffffff8f656968();
+            r0 = 0x0 ^ 0xffffffff;
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

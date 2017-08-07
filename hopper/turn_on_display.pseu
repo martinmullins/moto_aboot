@@ -1,0 +1,25 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = arg0;
+    stack[2043] = *0x8f7112f4;
+    while (*0x8f6e0849 == 0x0) {
+            loc_ffffffff8f61b944(0xa);
+    }
+    loc_ffffffff8f61afc0(0x8f6e0878);
+    if (r5 != 0x0) {
+            if (loc_ffffffff8f64ff4c() == 0x0) {
+                    loc_ffffffff8f64ff94();
+            }
+    }
+    else {
+            if (loc_ffffffff8f64ff4c() != 0x0) {
+                    loc_ffffffff8f6500ec();
+            }
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = loc_ffffffff8f61b098(0x8f6e0878);
+    }
+    return r0;
+

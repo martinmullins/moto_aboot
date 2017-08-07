@@ -1,0 +1,51 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2045] = r3;
+    loc_ffffffff8f656968(0x1, "platform_init()\n", arg2, r3, arg0, stack[2045], 0x8f7112f4, lr);
+    loc_ffffffff8f603760();
+    loc_ffffffff8f6173a0();
+    loc_ffffffff8f603618();
+    if (loc_ffffffff8f6331a0() != 0x0) {
+            loc_ffffffff8f656968(0x1, "Charger device is SMB1359\n");
+            loc_ffffffff8f647538();
+    }
+    else {
+            if (loc_ffffffff8f633128() != 0x0) {
+                    loc_ffffffff8f656968(0x1, "Charger device is FAN54046\n");
+                    loc_ffffffff8f641de0();
+            }
+            else {
+                    if (loc_ffffffff8f633218() != 0x0) {
+                            loc_ffffffff8f656968(0x1, "Charger device is BQ24296\n");
+                            loc_ffffffff8f641a38();
+                    }
+            }
+    }
+    if (loc_ffffffff8f6330b0() != 0x0) {
+            if (stack[2045] == *0x8f7112f4) {
+                    r0 = loc_ffffffff8f6431fc();
+            }
+            else {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    else {
+            r0 = loc_ffffffff8f633290();
+            r2 = stack[2045];
+            r3 = *0x8f7112f4;
+            if (r0 != 0x0) {
+                    if (r2 == r3) {
+                            r0 = loc_ffffffff8f6436c4();
+                    }
+                    else {
+                            r0 = loc_ffffffff8f648514();
+                    }
+            }
+            else {
+                    if (r2 != r3) {
+                            r0 = loc_ffffffff8f648514();
+                    }
+            }
+    }
+    return r0;
+

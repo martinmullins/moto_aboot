@@ -1,0 +1,166 @@
+    r5 = arg0 - 0x1;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x2c;
+    r0 = arg1 + arg0 * 0x4;
+    r8 = arg1;
+    stack[2037] = *0x8f7112f4;
+    goto loc_8f62add0;
+
+loc_8f62add0:
+    if (r5 <= 0x0) goto loc_8f62adf0;
+
+loc_8f62add8:
+    r0 = r0 + 0xfffffffffffffffc;
+    if (**r0 != 0x0) goto loc_8f62adfc;
+
+loc_8f62ade8:
+    r5 = r5 - 0x1;
+    goto loc_8f62add0;
+
+loc_8f62adfc:
+    r4 = *(r8 + 0x4);
+    if (loc_ffffffff8f64b0ac(r4, 0x8f685dfd) == 0x0) goto loc_8f62adf4;
+
+loc_8f62ae14:
+    r0 = loc_ffffffff8f64b0ac(r4, "enable");
+    COND = r7 != 0x0;
+    if (COND) goto loc_8f62ae70;
+
+loc_8f62ae28:
+    if (loc_ffffffff8f628168() != 0x0) {
+            r0 = loc_ffffffff8f679ff0(r7);
+            COND = r4 == 0x0;
+    }
+    goto loc_8f62aeb0;
+
+loc_8f62aeb0:
+    loc_ffffffff8f62192c();
+    goto loc_8f62b0ac;
+
+loc_8f62b0ac:
+    r0 = 0x0;
+    goto loc_8f62b0f4;
+
+loc_8f62b0f4:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f62ae70:
+    r0 = loc_ffffffff8f64b0ac(r4, "disable");
+    COND = r7 != 0x0;
+    if (COND) goto loc_8f62aeb8;
+
+loc_8f62ae84:
+    if (loc_ffffffff8f628168() != 0x0) {
+            r0 = loc_ffffffff8f679ff0(r7);
+            COND = r4 != 0x0;
+    }
+    goto loc_8f62aeb0;
+
+loc_8f62aeb8:
+    if (r5 != 0x2) goto loc_8f62b0ec;
+
+loc_8f62aec0:
+    r0 = loc_ffffffff8f64b0ac(r4, 0x8f69badb);
+    COND = r7 != 0x0;
+    if (COND) goto loc_8f62b0ec;
+
+loc_8f62aed4:
+    r8 = loc_ffffffff8f649d24(*(r8 + 0x8), 0x8f69badb);
+    s0 = loc_ffffffff8f6539b0("system");
+    r4 = r4 >> loc_ffffffff8f653b20() / 0x200 | 0x8f69badb * 0x800000;
+    r0 = loc_ffffffff8f653a28(s0);
+    s0 = r4;
+    r11 = r0;
+    r10 = 0x8f69badb;
+    if (r8 != 0x1) goto loc_8f62af84;
+
+loc_8f62af14:
+    r0 = loc_ffffffff8f62ad44();
+    loc_ffffffff8f62192c(0x8f683451, "write protect enabled is %d", r0);
+    r0 = loc_ffffffff8f62ef58("system", r8);
+    loc_ffffffff8f62192c(0x8f683451, "write protect supported is %d", r0);
+    loc_ffffffff8f62192c(0x8f683451, "starting sector %d", r4);
+    loc_ffffffff8f62192c(0x8f683451, "ending sector %d", (r4 >> r11 / 0x200 | r10 * 0x800000) + r4 - 0x1);
+    loc_ffffffff8f6511fc();
+    goto loc_8f62b0a8;
+
+loc_8f62b0a8:
+    loc_ffffffff8f62192c();
+    goto loc_8f62b0ac;
+
+loc_8f62af84:
+    if (r8 != 0x2) goto loc_8f62afa4;
+
+loc_8f62af8c:
+    loc_ffffffff8f673c8c("system");
+    goto loc_8f62b0a8;
+
+loc_8f62afa4:
+    if (r8 != 0x3) goto loc_8f62afc0;
+
+loc_8f62afac:
+    loc_ffffffff8f6504a4();
+    goto loc_8f62b0a8;
+
+loc_8f62afc0:
+    if (r8 != 0x4) goto loc_8f62b054;
+
+loc_8f62afc8:
+    r0 = loc_ffffffff8f64aacc(0x1000);
+    COND = r5 == 0x0;
+    if (!COND) {
+            r4 = 0x0;
+            loc_ffffffff8f6070ac(0x1);
+            do {
+                    r0 = r4 + s0;
+                    r4 = r4 + 0x8;
+                    loc_ffffffff8f65066c(r0, 0x8, r5);
+                    loc_ffffffff8f60710c(r5, 0x1000);
+            } while (r4 != 0x320);
+            loc_ffffffff8f60715c(sp + 0x10, 0x14);
+            loc_ffffffff8f62192c(0x8f683451, "Digest %x%x%x%x%x %d sectors\n", stack[2032], stack[2033], stack[2033], stack[2033], stack[2033], r4);
+            loc_ffffffff8f64ab9c(r5);
+    }
+    goto loc_8f62b0ac;
+
+loc_8f62b054:
+    if (r8 != 0x5) goto loc_8f62b070;
+
+loc_8f62b05c:
+    loc_ffffffff8f60bfe0();
+    goto loc_8f62b0a8;
+
+loc_8f62b070:
+    if (r8 != 0x6) goto loc_8f62b090;
+
+loc_8f62b078:
+    loc_ffffffff8f673cf8("system");
+    goto loc_8f62b0a8;
+
+loc_8f62b090:
+    if (r8 != 0x7) goto loc_8f62b0b4;
+
+loc_8f62b098:
+    loc_ffffffff8f60bfa8();
+    goto loc_8f62b0a8;
+
+loc_8f62b0b4:
+    loc_ffffffff8f62192c(0x8f683451, "checking write protect status for sector %d", r8);
+    loc_ffffffff8f62192c();
+    loc_ffffffff8f60bf30(r8);
+    goto loc_8f62b0ac;
+
+loc_8f62b0ec:
+    loc_ffffffff8f624444();
+    r0 = 0x3;
+    goto loc_8f62b0f4;
+
+loc_8f62adf4:
+    loc_ffffffff8f624444();
+    goto loc_8f62b0ac;
+
+loc_8f62adf0:
+    if (CPU_FLAGS & NE) goto loc_8f62adfc;
+

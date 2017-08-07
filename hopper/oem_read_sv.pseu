@@ -1,0 +1,19 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x8c;
+    r3 = *0x8f7112f4;
+    loc_ffffffff8f64a9f0(sp + 0x43 & !0x3f, 0x40, "Note: 0x%X indicates SV fuse read failure", 0x0 ^ 0xffffffff, stack[2010]);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0x43 & !0x3f);
+    r0 = loc_ffffffff8f606ecc(0x66);
+    loc_ffffffff8f64a9f0(sp + 0x43 & !0x3f, 0x40, "BOOTLOADER = 0x%X", r0);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0x43 & !0x3f);
+    r0 = loc_ffffffff8f606ecc(0x65);
+    loc_ffffffff8f64a9f0(sp + 0x43 & !0x3f, 0x40, "AP = 0x%X", r0);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0x43 & !0x3f);
+    r0 = loc_ffffffff8f606ecc(0x68);
+    loc_ffffffff8f64a9f0(sp + 0x43 & !0x3f, 0x40, "MODEM = 0x%X", r0);
+    loc_ffffffff8f62192c(0x8f683451, sp + 0x43 & !0x3f);
+    r0 = 0x1;
+    if (r3 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,47 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = 0x0;
+    stack[2041] = *0x8f7112f4;
+    goto loc_8f64d920;
+
+loc_8f64d920:
+    loc_ffffffff8f633f18();
+    r0 = loc_ffffffff8f633f58(r4);
+    COND = r4 != 0x0;
+    if (COND) goto loc_8f64d954;
+
+loc_8f64d934:
+    *0x8f6e0c2c = 0x1;
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "NOT able to match panel with display driver!\n", 0x1, 0x8f6e0c2c);
+    r0 = r4;
+    goto loc_8f64d9e8;
+
+loc_8f64d9e8:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f64d954:
+    if ((*(r4 + 0x234) != 0x0) && (*(r4 + 0x230) != 0x0)) {
+            loc_ffffffff8f633b3c();
+            loc_ffffffff8f610548(r4, *0x8f6e0bfc);
+            loc_ffffffff8f6341bc();
+            loc_ffffffff8f610c70(r4);
+            loc_ffffffff8f634164();
+            loc_ffffffff8f60c558(0xc8);
+            loc_ffffffff8f633f18();
+            *0x8f6e0c30 = loc_ffffffff8f633fa8();
+    }
+    else {
+            loc_ffffffff8f656968(0x1, "Panel %s doesn't support supplier id!, skipping...\n", r4 + 0x8);
+    }
+    if (*0x8f6e0c30 == 0x0) goto loc_8f64d920;
+
+loc_8f64d9c0:
+    *0x8f6e0c2c = 0x2;
+    loc_ffffffff8f656968(0x1, "Display auto detection success\n", 0x2, 0x8f6e0c2c);
+    r0 = *0x8f6e0c30;
+    loc_ffffffff8f633b3c(r0);
+    r0 = 0x1;
+    goto loc_8f64d9e8;
+

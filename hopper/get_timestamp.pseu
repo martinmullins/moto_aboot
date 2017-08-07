@@ -1,0 +1,13 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r1 = 0x8f7112f4;
+    stack[2045] = *r1;
+    r2 = *0x4a3000;
+    r3 = 0x3e8;
+    asm{ umull      r2, r3, r2, r3 };
+    r0 = r0 >> r2 / 0x8000 | r3 * 0x20000;
+    if (stack[2045] != *r1) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

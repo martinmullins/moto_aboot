@@ -1,0 +1,19 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2045] = r3;
+    if (loc_ffffffff8f673228(arg0, arg1, arg2, r3, arg0, arg1, arg2, stack[2045], 0x8f7112f4, lr) != 0x0) {
+            r2 = 0x8f6a4aed;
+            loc_ffffffff8f61a60c();
+    }
+    else {
+            r2 = 0x8f67d4e5;
+            loc_ffffffff8f61a60c();
+    }
+    loc_ffffffff8f64a9f0(0x8f6b7954, 0x23, "Fastboot %s %s");
+    r0 = 0x8f6ac050;
+    *(r0 + 0xc) = 0x8f6b7954;
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

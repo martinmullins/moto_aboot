@@ -1,0 +1,33 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x14;
+    stack[2043] = *0x8f7112f4;
+    loc_ffffffff8f61c234(0x8f6e091c);
+    r3 = *0x8f6e08d4;
+    if ((r3 == 0x0) && (loc_ffffffff8f633874() != 0x0)) {
+            if (loc_ffffffff8f638d54() != 0x0) {
+                    r3 = 0x1;
+            }
+            if (CPU_FLAGS & NE) {
+                    *0x8f6e08d4 = r3;
+            }
+    }
+    r0 = loc_ffffffff8f650180(0x0);
+    if (*0x8f6e0938 == 0x1) {
+            loc_ffffffff8f61af70(0x8f6e08d8);
+            r0 = loc_ffffffff8f61ab4c(0x8f6e08fc, 0x0, 0x8f6e08f4);
+            if (*0x8f6e08f4 == 0x0) {
+                    r0 = loc_ffffffff8f61b490("dbr_timeout_process", 0x8f6390e4);
+                    *0x8f6e08f4 = r0;
+                    if (r0 == 0x0) {
+                            r0 = loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: dbr timeout thread create fail\n", "start");
+                    }
+                    else {
+                            r0 = loc_ffffffff8f61b6fc();
+                    }
+            }
+    }
+    *(0x8f6ac394 + 0x2c) = 0x1;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

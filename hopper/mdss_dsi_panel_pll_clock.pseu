@@ -1,0 +1,18 @@
+    stack[2044] = r4;
+    stack[2046] = r6;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r6 = arg0;
+    r4 = arg1;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    if (loc_ffffffff8f642554(arg1, arg1, arg2, r3, arg0, stack[2043], stack[2044], 0x8f7112f4, stack[2046], lr) != 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Clock calculation failed \n");
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = loc_ffffffff8f60161c(r6, r4);
+    }
+    return r0;
+

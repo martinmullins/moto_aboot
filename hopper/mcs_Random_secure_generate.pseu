@@ -1,0 +1,56 @@
+    r8 = r3;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x64;
+    r5 = r2;
+    stack[2015] = arg0;
+    s0 = sp + 0x1c;
+    r6 = stack[2048];
+    r11 = s0 + 0x14;
+    r10 = 0x0;
+    stack[2037] = *(r8 + 0x13);
+    r0 = loc_ffffffff8f67b3c0(r8 + 0x13, 0x14);
+    r7 = r0;
+    while (r10 != r7) {
+            r2 = 0x0;
+            r4 = 0x14;
+            do {
+                    r4 = r4 - 0x1;
+                    COND = r4 != 0x0;
+                    r2 = *(r6 + r4) + (r2 & !0xff);
+                    asm{ uxtah      r2, r1, r2 };
+                    r2 = zero_extend_32(r2);
+                    *(r4 + r0) = r2;
+            } while (COND);
+            loc_ffffffff8f667304(r11, r4, 0x2c);
+            loc_ffffffff8f669324(s0, 0x8f6a6a00, sp + 0x8);
+            r1 = s0 + 0x1;
+            r2 = r4;
+            do {
+                    r1 = r1 + 0x4;
+                    r0 = *(r2 + sp + 0x8);
+                    r2 = r2 + 0x4;
+                    *(r1 + 0xfffffffffffffffe) = r0;
+                    *(r1 + 0xfffffffffffffffb) = lr >> r0 / 0x1000000;
+                    *(r1 + 0xfffffffffffffffc) = lr >> r0 / 0x1000000 >> r0 / 0x10000;
+                    lr = lr >> r0 / 0x1000000 >> r0 / 0x10000 >> r0 / 0x100;
+                    *(r1 + 0xfffffffffffffffd) = lr;
+            } while (r2 != 0x14);
+            r0 = loc_ffffffff8f667348();
+            r1 = 0x100;
+            r2 = 0x14;
+            do {
+                    r2 = r2 - 0x1;
+                    COND = r2 != 0x0;
+                    r1 = *(r0 + r2) + (r1 & !0xff);
+                    r0 = *(r6 + r2);
+                    asm{ uxtah      r1, r0, r1 };
+                    r1 = zero_extend_32(r1);
+                    *(r6 + r2) = r1;
+            } while (COND);
+            r10 = r10 + 0x1;
+            r5 = r5 + 0x14;
+    }
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

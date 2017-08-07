@@ -1,0 +1,16 @@
+    r3 = arg3;
+    r7 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x1c;
+    r6 = arg1;
+    r5 = arg2;
+    stack[2041] = *0x8f7112f4;
+    r0 = *0x8f6e0be4;
+    if (r0 != 0x0) {
+            asm{ stmib      sp, {r1, r2} };
+            r0 = (*(r0 + 0x20))();
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

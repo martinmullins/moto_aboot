@@ -1,0 +1,15 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r12 = *0x8f7112f4;
+    r3 = *0x8f7112f4;
+    *(0x8f6bc000 + (arg1 >> arg1 / 0x100000) * 0x4) = arg2 | 0x2 | arg0 >> arg0 / 0x100000 << (arg0 >> arg0 / 0x100000) * 0x100000;
+    if (r12 != r3) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = 0x0;
+            asm{ mcr        p15, #0x0, r0, c8, c7, #0x0 };
+            asm{ dsb        sy };
+            asm{ isb        sy };
+    }
+    return r0;
+

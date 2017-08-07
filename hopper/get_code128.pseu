@@ -1,0 +1,9 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r2 = *0x8f7112f4;
+    r3 = *0x8f7112f4;
+    r0 = *(0xffffffffffffffc0 + 0x8f6a28d8 + arg0 * 0x2);
+    if (r2 != r3) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

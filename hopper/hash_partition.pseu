@@ -1,0 +1,167 @@
+    r1 = arg1;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0xac;
+    r4 = arg0;
+    r8 = *(r1 + 0x4);
+    r5 = r1;
+    r11 = arg2;
+    r3 = *0x8f7112f4;
+    stack[2037] = r3;
+    loc_ffffffff8f6539b0(r8, r1, arg2, r3, stack[1996]);
+    if (r4 > 0x2) {
+            r0 = *(r5 + 0x8);
+            r0 = loc_ffffffff8f649f1c(r0);
+            if (r4 == 0x3) {
+                    r4 = 0x0;
+            }
+            if (CPU_FLAGS & E) {
+                    r5 = 0x0;
+            }
+            r6 = r0;
+            r7 = r1;
+            if (!CPU_FLAGS & E) {
+                    r4 = loc_ffffffff8f649f1c(*(r5 + 0xc));
+                    r5 = r1;
+            }
+    }
+    else {
+            r6 = 0x0;
+            r7 = 0x0;
+            r4 = 0x0;
+            r5 = 0x0;
+    }
+    loc_ffffffff8f673228() != 0x0;
+    if (CPU_FLAGS & NE) goto loc_8f625f40;
+
+loc_8f625ec0:
+    r2 = sp + 0x18;
+    r3 = sp + 0x20;
+    if (loc_ffffffff8f624b54(r8, sp + 0x14, r2, r3) != 0x0) goto loc_8f625ef4;
+
+loc_8f625ee8:
+    loc_ffffffff8f62192c();
+    goto loc_8f625eec;
+
+loc_8f625eec:
+    r0 = 0x3;
+    goto loc_8f6260c4;
+
+loc_8f6260c4:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f625ef4:
+    asm{ ldrd       r2, r3, [sp, #0xd0 + var_B0] };
+    if (r7 == r3) {
+            CMP(r6, r2);
+    }
+    if (CPU_FLAGS & NB) goto loc_8f625f40;
+
+loc_8f625f0c:
+    COND = r1 != 0x0;
+    if (!COND) {
+            r4 = r2 - r6;
+            r5 = r3 - r7 + !CARRY(FLAGS);
+    }
+    r0 = r4 + r6;
+    if (r5 + r7 + CARRY(FLAGS) == r3) {
+            CMP(r0, r2);
+    }
+    if (CPU_FLAGS & B) goto loc_8f625f48;
+
+loc_8f625f40:
+    loc_ffffffff8f62192c();
+    goto loc_8f625eec;
+
+loc_8f625f48:
+    COND = r1 != 0x0;
+    if (CPU_FLAGS & NE) goto loc_8f625ee8;
+
+loc_8f625f6c:
+    r2 = r8;
+    r0 = 0x8f683451;
+    r1 = "%s: offset=0x%llx, size=0x%llx";
+    asm{ strd       r6, r7, [sp, #0xd0 + var_D0] };
+    asm{ strd       r4, r5, [sp, #0xd0 + var_C8] };
+    loc_ffffffff8f62192c(r0, r1, r2);
+    asm{ ldrd       r8, sb, [sp, #0xd0 + var_B8] };
+    r8 = r8 + r6;
+    s0 = s0 + r7 + CARRY(FLAGS);
+    r0 = loc_ffffffff8f64aacc(0x20000);
+    COND = r10 != 0x0;
+    if (COND) goto loc_8f625fb0;
+
+loc_8f625fa0:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error: out of memory\n");
+    goto loc_8f625eec;
+
+loc_8f625fb0:
+    if (r11 == 0x0) {
+            loc_ffffffff8f65a754(sp + 0x2c);
+    }
+    else {
+            loc_ffffffff8f6070ac(0x100);
+    }
+    goto loc_8f625ff8;
+
+loc_8f625ff8:
+    COND = r3 == 0x0;
+    if (COND) goto loc_8f626068;
+
+loc_8f626000:
+    if (r5 == 0x0) {
+            CMP(r4, 0x20000);
+    }
+    r6 = r4;
+    if (CPU_FLAGS & A) {
+            r6 = 0x20000;
+    }
+    r7 = r5;
+    if (CPU_FLAGS & A) {
+            r7 = 0x0;
+    }
+    if (loc_ffffffff8f60b8ec() == 0x0) goto loc_8f625fd0;
+
+loc_8f626040:
+    loc_ffffffff8f62192c(0x8f683451, "Error reading partition");
+    loc_ffffffff8f64ab9c(r10);
+    goto loc_8f625eec;
+
+loc_8f625fd0:
+    if (r11 == 0x0) {
+            loc_ffffffff8f65a7c0(sp + 0x2c, r10, r6);
+    }
+    else {
+            loc_ffffffff8f60710c(r10, r6);
+    }
+    r8 = r8 + r6;
+    s0 = s0 + r7 + CARRY(FLAGS);
+    r4 = r4 - r6;
+    r5 = r5 - r7 + !CARRY(FLAGS);
+    goto loc_8f625ff8;
+
+loc_8f626068:
+    r5 = sp + 0x84;
+    if (r11 == 0x0) {
+            loc_ffffffff8f65a8c8(sp + 0x2c, r5);
+    }
+    else {
+            loc_ffffffff8f60715c(r5, 0x20);
+    }
+    r4 = 0x0;
+    do {
+            if (r11 == 0x0) goto (null);
+            if (r4 >= 0xf) {
+                break;
+            }
+            r0 = r10 + r4 * 0x2;
+            r2 = *(r5 + r4);
+            r4 = r4 + 0x1;
+            loc_ffffffff8f64aa80(r0, 0x8f684e2f, r2);
+    } while (true);
+    loc_ffffffff8f62192c(0x8f683451, "%ssum: %s");
+    loc_ffffffff8f64ab9c(r10);
+    r0 = 0x1;
+    goto loc_8f6260c4;
+

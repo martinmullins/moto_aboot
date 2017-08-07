@@ -1,0 +1,15 @@
+    stack[2044] = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2045] = r3;
+    r0 = loc_ffffffff8f643d34(sp, arg1, arg2, r3, stack[2044], stack[2045], 0x8f7112f4, lr);
+    if ((r0 == 0x0) && (stack[2044] <= 0x4)) {
+            *(0x8f6adb78 + 0x10) = 0x8f6ad83c;
+            *(0x8f6adb78 + 0x14) = 0x24;
+            r0 = loc_ffffffff8f64b2c0("qcom,mdss_dsi_mot_inx_450_qhd_video_v1", "qcom,mdss_dsi_mot_inx_450_qhd_video_v0", 0x40, 0x8f6adb78);
+    }
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

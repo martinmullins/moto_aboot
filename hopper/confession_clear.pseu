@@ -1,0 +1,13 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r0 = *0x8f6e12ec;
+    stack[2043] = *0x8f7112f4;
+    if (r0 != 0x0) {
+            r0 = loc_ffffffff8f64ab9c();
+            *0x8f6e12ec = 0x0;
+    }
+    *0x8f6e12f0 = 0x0;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

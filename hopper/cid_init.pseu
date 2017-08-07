@@ -1,0 +1,33 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    stack[2042] = 0x2;
+    r0 = loc_ffffffff8f66219c(sp + 0x6, sp + 0x8, arg2, 0x2, arg0, arg1, stack[2042], stack[2043], r4, r5, 0x8f7112f4, lr);
+    r4 = r0;
+    if (r0 == 0xf) {
+            loc_ffffffff8f656968(0x1, "before swap: dbvc_cid =0x%04X\n", stack[2042]);
+            r2 = stack[2042];
+            r0 = 0x1;
+            r1 = "after swap: dbvc_cid =0x%04X\n";
+            asm{ rev16      r2, r2 };
+            stack[2042] = r2;
+            loc_ffffffff8f656968(r0, r1, zero_extend_32(r2));
+            *0x8f70da9b = 0x1;
+    }
+    if ((loc_ffffffff8f673228() != 0x0) && (r4 == 0x69)) {
+            loc_ffffffff8f656968(0x4, "CID Read Failure");
+            r5 = 0x0;
+    }
+    else {
+            r5 = 0x1;
+    }
+    *0x8f6affa4 = stack[2042];
+    loc_ffffffff8f656968(0x2, "set_cid_value: dbvc_cid_status =0x%2X\n", r4, 0x8f6affa4);
+    if (r5 == 0x0) {
+            loc_ffffffff8f656968(0x5, "Invalid CID status 0x%02x", r4);
+    }
+    r0 = r5;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,80 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    r3 = 0xb000800;
+    goto loc_8f60c068;
+
+loc_8f60c068:
+    r2 = *r3;
+    COND = r5 != 0x0;
+    if (COND) goto loc_8f60c090;
+
+loc_8f60c078:
+    r3 = r3 + 0x4;
+    if (r3 != 0xb000820) goto loc_8f60c068;
+
+loc_8f60c084:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "GIC CPU mask not found\n");
+    goto loc_8f60c090;
+
+loc_8f60c090:
+    r0 = 0x0 ^ 0xffffffff;
+    r1 = zero_extend_32(r5) | zero_extend_32(r5) * 0x100 | (zero_extend_32(r5) | zero_extend_32(r5) * 0x100) * 0x10000;
+    *0xb000000 = 0x0;
+    r2 = 0x20;
+    r3 = *(0xb000000 + 0x4);
+    r3 = (r3 & 0x1f) + 0x1 << ((r3 & 0x1f) + 0x1) * 0x20;
+    do {
+            if (r2 < r3) {
+                    asm{ ubfxlo     ip, r2, #0x2, #0x1c };
+            }
+            if (CPU_FLAGS & S) {
+                    r2 = r2 + 0x10;
+            }
+            if (CPU_FLAGS & S) {
+                    r12 = r12 + 0xb000000;
+            }
+            if (CPU_FLAGS & S) {
+                    *(r12 + 0xc00) = r0;
+            }
+    } while (CPU_FLAGS & B);
+    r0 = 0x0 ^ 0xffffffff;
+    *(0xb000000 + 0xc04) = r0;
+    r2 = 0x20;
+    do {
+            if (r2 < r3) {
+                    r0 = r2 & !0xc0000000;
+            }
+            if (CPU_FLAGS & S) {
+                    r2 = r2 + 0x4;
+            }
+            if (CPU_FLAGS & S) {
+                    r0 = r0 + 0xb000000;
+            }
+            if (CPU_FLAGS & S) {
+                    *(r0 + 0x800) = r1;
+            }
+    } while (CPU_FLAGS & B);
+    r2 = 0x0;
+    do {
+            r1 = r2 & !0xc0000000;
+            r2 = r2 + 0x4;
+            r1 = r1 + 0xb000000;
+            *(r1 + 0x400) = 0xa0a0a0a0;
+    } while (r2 < r3);
+    r2 = 0x0;
+    r0 = 0x0 ^ 0xffffffff;
+    do {
+            asm{ ubfx       r1, r2, #0x3, #0x1b };
+            r2 = r2 + 0x20;
+            r1 = r1 + 0xb000000;
+            *(r1 + 0x180) = r0;
+    } while (r2 < r3);
+    *(0xb000000 + 0x100) = 0xffff;
+    *0xb000000 = 0x1;
+    *(0xb002000 + 0x4) = 0xf0;
+    *0xb002000 = 0x1;
+    if (stack[2043] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

@@ -1,0 +1,70 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x30;
+    r8 = arg0;
+    r6 = arg1;
+    r7 = zero_extend_32(r2);
+    stack[2039] = *arg0;
+    r0 = loc_ffffffff8f6798a8(arg0, arg1);
+    r10 = r0 - 0x1;
+    r4 = r0;
+    if (r10 > 0xa) goto loc_8f656c24;
+
+loc_8f656b24:
+    r0 = loc_ffffffff8f6797bc(r8, r6, sp, r4);
+    r5 = sp;
+    if (r0 == 0x0) goto loc_8f656c78;
+
+loc_8f656b44:
+    r1 = sp + 0x30;
+    if (*(0xffffffffffffffd0 + r1 + r10) == 0x0) goto loc_8f656b6c;
+
+loc_8f656b58:
+    if (r4 == 0xb) goto loc_8f656c78;
+
+loc_8f656b60:
+    *(0xffffffffffffffd0 + r1 + r4) = 0x0;
+    goto loc_8f656b6c;
+
+loc_8f656b6c:
+    stack[2039] = 0x0;
+    loc_ffffffff8f64b418(sp + 0xc, r6, 0x1f, 0x0, stack[2028]);
+    r0 = loc_ffffffff8f64b5d8(sp + 0xc, 0x3a);
+    r0 = loc_ffffffff8f656480();
+    if (r0 == 0x0) {
+            loc_ffffffff8f64b21c(sp + 0xc, 0x8f686ac4, 0x1f);
+            loc_ffffffff8f64b21c(sp + 0xc, 0x8f67c04d, 0x1f);
+            r0 = loc_ffffffff8f64b5d8(sp + 0xc, 0x3a);
+            r0 = loc_ffffffff8f656480();
+    }
+    if (!CPU_FLAGS & E) {
+            r0 = loc_ffffffff8f679520(r8, sp + 0xc, sp, r4);
+            if (r0 == 0x0) {
+                    r0 = loc_ffffffff8f656968(0x0 ^ 0xffffffff, "!!! utag_validation FAIL for %s:%s\n", r6, sp);
+            }
+            else {
+                    if (r5 != 0x0) {
+                            r0 = loc_ffffffff8f6568d8(r7, sp);
+                            r1 = r0;
+                            if (r0 != -0xa) {
+                                    loc_ffffffff8f656584(r7, sign_extend_32(r1));
+                            }
+                            r0 = loc_ffffffff8f656968(0x1, "Log level changed\n");
+                    }
+            }
+    }
+    else {
+            r0 = loc_ffffffff8f656968();
+    }
+    goto loc_8f656c78;
+
+loc_8f656c78:
+    if (stack[2039] != *r0) {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f656c24:
+    if (r0 >= 0xb) {
+            r0 = loc_ffffffff8f656968();
+    }
+    goto loc_8f656c78;
+

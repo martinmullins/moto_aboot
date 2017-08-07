@@ -1,0 +1,23 @@
+    r2 = arg2;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2045] = r3;
+    if (loc_ffffffff8f65385c(arg0, arg1, r2, r3, arg0, stack[2045], 0x8f7112f4, lr) == 0x0) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Could not get partition info\n");
+    }
+    else {
+            if (loc_ffffffff8f672f08() == 0x0) {
+                    r3 = 0x8f70f724;
+            }
+            if (CPU_FLAGS & E) {
+                    r2 = 0x1;
+            }
+            if (CPU_FLAGS & E) {
+                    *r3 = r2;
+            }
+    }
+    if (stack[2045] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

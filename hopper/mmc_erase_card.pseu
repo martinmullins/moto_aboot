@@ -1,0 +1,139 @@
+    r2 = arg2;
+    r1 = arg1;
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x2c;
+    r10 = 0x8f7112f4;
+    r6 = lr;
+    asm{ strd       r2, r3, [sp, #0x50 + var_40] };
+    asm{ strd       r0, r1, [sp, #0x50 + var_48] };
+    r3 = *r10;
+    stack[2037] = r3;
+    stack[2035] = loc_ffffffff8f60b698(r0, r1, r2, r3, stack[2028]);
+    r2 = stack[2035];
+    r3 = 0x0;
+    r5 = r3;
+    r4 = r2;
+    s0 = loc_ffffffff8f6006b0();
+    asm{ ldrd       r0, r1, [sp, #0x50 + var_48] };
+    loc_ffffffff8f67b5cc();
+    COND = r12 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm_shared/mmc_wrapper.c", 0x14e, "!(addr % block_size)");
+    }
+    asm{ ldrd       r0, r1, [sp, #0x50 + var_40] };
+    loc_ffffffff8f67b5cc();
+    COND = r1 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm_shared/mmc_wrapper.c", 0x14f, "!(len % block_size)");
+    }
+    if (loc_ffffffff8f619be0() == 0x0) goto loc_8f60be5c;
+
+loc_8f60bc80:
+    r6 = loc_ffffffff8f60b5c4();
+    loc_ffffffff8f656968(0x2, "erase_unit_sz:0x%x\n", r6);
+    asm{ ldrd       r0, r1, [sp, #0x50 + var_48] };
+    r0 = loc_ffffffff8f67b5cc();
+    r7 = r0;
+    r8 = r0;
+    asm{ ldrd       r0, r1, [sp, #0x50 + var_40] };
+    r0 = loc_ffffffff8f67b5cc();
+    r5 = r0;
+    r4 = r0;
+    loc_ffffffff8f656968(0x1, "Erasing card: 0x%x:0x%x\n", r7, r5);
+    if (loc_ffffffff8f67b3c0(r5 + r7, r6) != loc_ffffffff8f67b3c0(r7, r6)) goto loc_8f60bd2c;
+
+loc_8f60bd00:
+    r0 = loc_ffffffff8f656968(0x1, "SDHCI unit erase not required\n");
+    if (stack[2037] == *0x8f7112f4) {
+            r0 = s0;
+    }
+    if (!CPU_FLAGS & E) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = loc_ffffffff8f60bafc();
+    }
+    return r0;
+
+loc_8f60bd2c:
+    loc_ffffffff8f67b468(r7, r6);
+    r11 = r6 - r6;
+    if (r11 >= r6) goto loc_8f60bdd0;
+
+loc_8f60bd44:
+    loc_ffffffff8f656968(0x2, "Handling unaligned head blocks\n");
+    if (loc_ffffffff8f60bafc(s0, r7, r11) != 0x0) goto loc_8f60be90;
+
+loc_8f60bd68:
+    r8 = r7 + r11;
+    r4 = r5 - r11;
+    if (loc_ffffffff8f67b3c0(r8 + r4 - 0x1, r6) - loc_ffffffff8f67b3c0(r8, r6) > 0x1) goto loc_8f60bdd0;
+
+loc_8f60bd9c:
+    r0 = loc_ffffffff8f656968(0x1, "SDHCI unit erase not required\n");
+    if (stack[2037] == *0x8f7112f4) {
+            r0 = s0;
+    }
+    if (!CPU_FLAGS & NE) {
+            r0 = loc_ffffffff8f60bafc();
+    }
+    else {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f60bdd0:
+    r1 = r6;
+    loc_ffffffff8f67b468(r4, r1);
+    r0 = 0x2;
+    r2 = r8;
+    r6 = r4 - r1;
+    r7 = r1;
+    r1 = "Performing SDHCI erase: 0x%x:0x%llx\n";
+    asm{ strd       r4, r5, [sp, #0x50 + var_50] };
+    loc_ffffffff8f656968(r0, r1, r2);
+    r1 = r8;
+    r0 = s0;
+    asm{ umull      r2, r3, r6, ip };
+    if (CPU_FLAGS & NE) goto loc_8f60be8c;
+
+loc_8f60be24:
+    if (r7 == 0x0) {
+            r0 = 0x0;
+    }
+    else {
+            loc_ffffffff8f656968(0x2, "Handling unaligned tail blocks\n");
+            r0 = loc_ffffffff8f60bafc(s0, r6 + r8, r7);
+            r0 = r0 + 0x0;
+            COND = r0 != 0x0;
+            if (COND) {
+                    r0 = 0x1;
+            }
+    }
+    goto loc_8f60be94;
+
+loc_8f60be94:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f60be8c:
+    loc_ffffffff8f656968();
+    goto loc_8f60be90;
+
+loc_8f60be90:
+    r0 = 0x1;
+    goto loc_8f60be94;
+
+loc_8f60be5c:
+    asm{ ldrd       r0, r1, [sp, #0x50 + var_40] };
+    r0 = loc_ffffffff8f67b5cc();
+    asm{ ldrd       r2, r3, [sp, #0x50 + var_48] };
+    if (loc_ffffffff8f60b590(s0) == 0x0) goto loc_8f60be2c;
+    goto loc_8f60be8c;
+
+loc_8f60be2c:
+    r0 = 0x0;
+    goto loc_8f60be94;
+

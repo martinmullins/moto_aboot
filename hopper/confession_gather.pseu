@@ -1,0 +1,17 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = "SRK.CA614.wtls.crt";
+    r6 = "SRK.CA614.wtls.crt";
+    stack[2043] = *0x8f7112f4;
+    while (r4 - 0x8 != r6) {
+            r3 = *(r4 + 0xfffffffffffffff8);
+            if (r3 != 0x0) {
+                    r0 = *(r4 + 0xfffffffffffffffc);
+                    (r3)(r0);
+            }
+            r4 = r4 + 0x8;
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

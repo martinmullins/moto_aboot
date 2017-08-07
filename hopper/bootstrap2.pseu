@@ -1,0 +1,16 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    loc_ffffffff8f656968(0x2, "top of bootstrap2()\n", arg2, r3, arg0, r3, r4, lr);
+    loc_ffffffff8f61916c();
+    loc_ffffffff8f656968(0x2, "initializing platform\n");
+    loc_ffffffff8f601980();
+    loc_ffffffff8f656968(0x2, "initializing target\n");
+    loc_ffffffff8f6011b0();
+    loc_ffffffff8f656968(0x2, "calling apps_init()\n");
+    loc_ffffffff8f61c6f4();
+    r0 = 0x0;
+    if (r3 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

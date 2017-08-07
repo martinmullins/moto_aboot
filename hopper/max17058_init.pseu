@@ -1,0 +1,37 @@
+    stack[2041] = arg1;
+    stack[2042] = arg2;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    if (*0x8f6e0b5c != 0x0) {
+            r0 = 0x0;
+    }
+    else {
+            r0 = loc_ffffffff8f633030("max17058");
+            COND = r5 >= 0x0;
+            if (!COND) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6811c5, "max17058");
+                    r0 = 0x0 ^ 0xffffffff;
+            }
+            else {
+                    if ((loc_ffffffff8f6309d0(0x8f69d038, r5, sp + 0x4) == 0x0) && (loc_ffffffff8f6309d0(0x8f69d081, r5, sp + 0x8) == 0x0)) {
+                            r0 = loc_ffffffff8f612c30(stack[2041], stack[2042], 0x61a80, 0x124f800);
+                            *0x8f6e0b5c = r0;
+                            if (r0 == 0x0) {
+                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed initializing I2C to max17058\n");
+                                    r0 = 0x13 ^ 0xffffffff;
+                            }
+                            else {
+                                    r0 = 0x0;
+                            }
+                    }
+                    else {
+                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f6811c5, "max17058");
+                            r0 = 0x0 ^ 0xffffffff;
+                    }
+            }
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

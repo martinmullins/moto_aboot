@@ -1,0 +1,20 @@
+    stack[2046] = r6;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r6 = arg0;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    r0 = loc_ffffffff8f64b354(arg0, arg1, arg2, r3, arg0, stack[2043], 0x8f7112f4, r5, stack[2046], lr);
+    r0 = loc_ffffffff8f64aacc(r0 + 0x1);
+    COND = r5 != 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "malloc: failed to allocate memory\n");
+    }
+    else {
+            loc_ffffffff8f64b108();
+    }
+    r0 = r5;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

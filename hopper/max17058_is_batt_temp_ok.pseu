@@ -1,0 +1,21 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    if (*0x8f6acab8 < 0x3) {
+            loc_8f6439b8();
+    }
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Temp %d Temp State %d\n", 0xfa, *0x8f6acab8);
+    r0 = *0x8f6acab8;
+    r2 = stack[2043];
+    r3 = *0x8f7112f4;
+    r0 = zero_extend_32(r0 - 0x1);
+    if (r0 < 0x1) {
+            r0 = 0x0;
+    }
+    if (CPU_FLAGS & A) {
+            r0 = 0x1;
+    }
+    if (r2 != r3) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

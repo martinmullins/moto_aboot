@@ -1,0 +1,32 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2045] = r3;
+    if (loc_ffffffff8f601d78(arg0, arg1, arg2, r3, arg0, stack[2045], 0x8f7112f4, lr) != 0x0) {
+            *(0x8f6aa6a4 + 0x18) = 0x8f6aad0c;
+    }
+    else {
+            if (loc_ffffffff8f601dd8() != 0x0) {
+                    *(0x8f6aa6a4 + 0x18) = 0x8f6aad0c;
+            }
+    }
+    r2 = stack[2045];
+    if (r2 != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    else {
+            sp = sp + 0x8;
+            if (0x8f6aa7a0 != 0x0) {
+                    CMP(0x1a, 0x0);
+            }
+            r3 = 0x8f7112f4;
+            sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+            stack[2045] = *r3;
+            if (CPU_FLAGS & NE) {
+                    asm{ stmne      r2, {r0, r1} };
+            }
+            if (stack[2045] != *r3) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

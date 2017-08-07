@@ -1,0 +1,68 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2041] = *0x8f7112f4;
+    r3 = *r0;
+    if (r3 != 0x30) goto loc_8f649cac;
+
+loc_8f649c6c:
+    if (*(r0 + 0x1) == 0x78) {
+            r5 = r0 + 0x2;
+    }
+    if (CPU_FLAGS & E) {
+            r4 = 0x0;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f649cbc;
+
+loc_8f649c80:
+    do {
+            r0 = *r5;
+            r5 = r5 + 0x1;
+            if ((r0 == 0x0) || (loc_ffffffff8f64a1e0() == 0x0)) {
+                break;
+            }
+            r4 = (r4 << r4 * 0x10) + loc_ffffffff8f649be4(*(r5 + 0xffffffffffffffff));
+    } while (true);
+    goto loc_8f649d00;
+
+loc_8f649d00:
+    r0 = r4;
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f649cbc:
+    r5 = 0x0;
+    goto loc_8f649cc0;
+
+loc_8f649cc0:
+    r6 = r0;
+    r4 = 0x0;
+    do {
+            r0 = *r6;
+            r6 = r6 + 0x1;
+            if (r0 == 0x0) {
+                break;
+            }
+            if (loc_ffffffff8f64a0c8() == 0x0) {
+                break;
+            }
+            r4 = *(r6 + 0xffffffffffffffff) + 0xa * r4 - 0x30;
+    } while (true);
+    if (r5 != 0x0) {
+            r4 = 0x0 - r4;
+    }
+    goto loc_8f649d00;
+
+loc_8f649cac:
+    if (r3 == 0x2d) {
+            r0 = r0 + 0x1;
+    }
+    if (CPU_FLAGS & E) {
+            r5 = 0x1;
+    }
+    if (!CPU_FLAGS & E) {
+            r5 = 0x0;
+    }
+    goto loc_8f649cc0;
+

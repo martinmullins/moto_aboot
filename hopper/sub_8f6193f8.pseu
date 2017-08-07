@@ -1,0 +1,9 @@
+    r2 = arg0 + arg1;
+    r0 = arg0 & !0x3f;
+    do {
+            asm{ mcr        p15, #0x0, r0, c7, c6, #0x1 };
+            r0 = r0 + 0x40;
+    } while (r0 < r2);
+    asm{ dsb        sy };
+    return 0x0;
+

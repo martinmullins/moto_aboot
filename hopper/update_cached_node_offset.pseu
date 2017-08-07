@@ -1,0 +1,70 @@
+    r2 = arg2;
+    r1 = arg1;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    s0 = arg0;
+    r4 = r1;
+    stack[2040] = *0x8f7112f4;
+    r3 = *0x8f6ac0bc;
+    if (r1 == r3) goto loc_8f61304c;
+
+loc_8f612f84:
+    r1 = *(0x8f6ac0c0 + r1 * 0x4);
+    if (r1 == -0x1) {
+            r2 = 0x1;
+    }
+    if (!CPU_FLAGS & E) {
+            if (r3 != -0x1) {
+                    r2 = 0x0;
+            }
+            if (CPU_FLAGS & E) {
+                    r2 = 0x1;
+            }
+    }
+    if (*(0x8f6ac0c0 + r3 * 0x4) >= r1) goto loc_8f613028;
+
+loc_8f612fb0:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "restart search offset %s, this might cause performance issue", *(0x8f6ac0ac + r4 * 0x4), 0x8f6ac0ac);
+    r2 = *0x8f6ac0bc;
+    r3 = 0x0;
+    r0 = 0x0 ^ 0xffffffff;
+    do {
+            if ((r3 != r2) && (*(0x8f6ac0c0 + r3 * 0x4) > *(0x8f6ac0c0 + r2 * 0x4))) {
+                    *(0x8f6ac0c0 + r3 * 0x4) = r0;
+            }
+            r3 = r3 + 0x1;
+    } while (r3 != 0x4);
+    goto loc_8f612ff8;
+
+loc_8f612ff8:
+    r0 = loc_ffffffff8f64c50c(s0, *(0x8f6ac0ac + r4 * 0x4));
+    COND = r3 >= 0x0;
+    if (COND) goto loc_8f613034;
+
+loc_8f613010:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Could not find %s node.\n", *(0x8f6ac0ac + r4 * 0x4));
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f613050;
+
+loc_8f613050:
+    if (stack[2040] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f613034:
+    r2 = *(0x8f6ac0ac + r4 * 0x4);
+    *(0x8f6ac0c0 + r4 * 0x4) = r3;
+    loc_ffffffff8f656968(0x2, "%s @ 0x%x\n", r2);
+    goto loc_8f613048;
+
+loc_8f613048:
+    *0x8f6ac0bc = r4;
+    goto loc_8f61304c;
+
+loc_8f61304c:
+    r0 = 0x0;
+    goto loc_8f613050;
+
+loc_8f613028:
+    if (r2 == 0x0) goto loc_8f613048;
+

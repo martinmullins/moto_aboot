@@ -1,0 +1,106 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r4 = arg0;
+    s0 = arg1;
+    r11 = arg2;
+    r3 = *0x8f7112f4;
+    stack[2037] = r3;
+    r6 = loc_ffffffff8f66c8a8(0x62, arg1, arg2, r3, stack[2034]);
+    r7 = loc_ffffffff8f66c8a8(0x8);
+    r0 = loc_ffffffff8f66c8a8(0x14);
+    if (r11 != 0x0) {
+            CMP(s0, 0x0);
+    }
+    r8 = r0;
+    if ((CPU_FLAGS & E) || (r6 == 0x0)) goto loc_8f662c14;
+
+loc_8f662afc:
+    if (r4 == 0x0) goto loc_8f662cec;
+
+loc_8f662b0c:
+    r0 = loc_ffffffff8f663b90("dbval_provision_cid_req - Check buffer large enough");
+    if (*r0 < 0xb5) {
+            r5 = 0x33;
+    }
+    if (CPU_FLAGS & B) goto loc_8f662bd4;
+
+loc_8f662b24:
+    loc_ffffffff8f663b90("dbval_provision_cid_req - Set Generic DB Fields");
+    r0 = loc_ffffffff8f6637a4(0xf0, r4 + 0x54, r4);
+    r5 = r0;
+    if (r0 != 0xf) goto loc_8f662bd4;
+
+loc_8f662b48:
+    *r4 = 0x8;
+    r0 = loc_ffffffff8f663bd4(r6, sp);
+    r5 = r0;
+    if ((r0 == 0xf) && (0x62 != 0x2c)) {
+            r5 = 0x55;
+            loc_ffffffff8f663b90("dbval_provision_cid_req - Read Success.  Tmpl length INVALID");
+    }
+    r0 = loc_ffffffff8f663b90("dbval_provision_cid_req - Success reading template.  Validate values.");
+    if (r5 != 0xf) goto loc_8f662bd4;
+
+loc_8f662b90:
+    if ((*r6 != 0x0) || (*(r6 + 0x1) != 0xf0)) goto loc_8f662ba8;
+
+loc_8f662bb8:
+    loc_ffffffff8f663b90("dbval_provision_cid_req - Get Primary Serial Number");
+    r0 = loc_ffffffff8f663c30(r7);
+    r5 = r0;
+    if (r0 == 0xf) goto loc_8f662c2c;
+
+loc_8f662bd4:
+    *r0 = 0xb6;
+    if (r7 != 0x0) {
+            loc_ffffffff8f66c8dc(r7);
+    }
+    if (r8 != 0x0) {
+            loc_ffffffff8f66c8dc(r8);
+    }
+    loc_ffffffff8f66c8dc(r6);
+    loc_ffffffff8f663b90("dbval_provision_cid_req - EXIT");
+    r0 = r5;
+    goto loc_8f662c18;
+
+loc_8f662c18:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f662c2c:
+    loc_ffffffff8f663b90("dbval_provision_cid_req - Get Secondary Serial Number");
+    r0 = loc_ffffffff8f663c80(r8);
+    r5 = r0;
+    if (r0 != 0xf) goto loc_8f662bd4;
+
+loc_8f662c48:
+    loc_ffffffff8f663b90("dbval_provision_cid_req - Setup values.");
+    loc_ffffffff8f66c80c(r4 + 0x7c, r6 + 0x2, 0x2);
+    loc_ffffffff8f66c80c(r4 + 0x7e, r6 + 0x4, 0x2);
+    loc_ffffffff8f66c5fc(sp + 0x4);
+    loc_ffffffff8f66c80c(r4 + 0x80, sp + 0x4, 0x2);
+    loc_ffffffff8f66c80c(r4 + 0x82, r7, 0x8);
+    loc_ffffffff8f663cd0(sp + 0x8);
+    loc_ffffffff8f66c80c(r4 + 0x8a, sp + 0x8, 0x14);
+    loc_ffffffff8f66c80c(r4 + 0x8c, r8, 0x14);
+    loc_ffffffff8f66c80c(r4 + 0xa0, r6 + 0x6, 0x2);
+    loc_ffffffff8f66c840(r4 + 0xa2, 0xff, 0x14);
+    *r4 = 0x1;
+    *r11 = 0x1;
+    goto loc_8f662cec;
+
+loc_8f662cec:
+    r5 = 0xf;
+    r0 = loc_ffffffff8f663b90("dbval_provision_cid_req - Success");
+    goto loc_8f662bd4;
+
+loc_8f662ba8:
+    r5 = 0x55;
+    r0 = loc_ffffffff8f663b90("dbval_provision_cid_req - Read Success.  Tmpl VALUE INVALID");
+    goto loc_8f662bd4;
+
+loc_8f662c14:
+    r0 = 0xf0;
+    goto loc_8f662c18;
+

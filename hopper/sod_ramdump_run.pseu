@@ -1,0 +1,220 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x2c;
+    r3 = *0x8f7112f4;
+    stack[2035] = lr;
+    stack[2037] = r3;
+    r0 = loc_ffffffff8f6359f4(arg0, arg1, arg2, r3, stack[2028]);
+    COND = r6 != 0x0;
+    if (!COND) {
+            loc_ffffffff8f6484ac(stack[2035], "ASSERT FAILED at (%s:%d): %s\n", "app/mbm/sod.c", 0x307, 0x8f69ceba);
+    }
+    loc_ffffffff8f63a38c();
+    if (*0x8f6e0784 != 0x0) {
+            (*0x8f6e0784)(0x0, 0x0);
+    }
+    r10 = *(r6 + 0x20);
+    r8 = r6 + 0x68 * r10 + 0xa8;
+    r4 = r6 + 0x68 * r10 + 0x58;
+    goto loc_8f635f6c;
+
+loc_8f635f6c:
+    if (r10 == 0x0) goto loc_8f6361d8;
+
+loc_8f635f74:
+    if (((*(r8 + 0xffffffffffffff98) & 0x3) != 0x0) || (loc_ffffffff8f635424() != 0x0)) goto loc_8f6361c8;
+
+loc_8f635f8c:
+    r2 = r4;
+    stack[2028] = *(r4 + 0xfffffffffffffffc);
+    loc_ffffffff8f656968(0x1, "Dumping \"%s\", mem_base=0x%X, size=0x%X\n", r2, *(r4 + 0xfffffffffffffff8), stack[2028]);
+    r3 = *0x8f6e0784;
+    if (r3 != 0x0) {
+            (r3)(0x1, r4, r2, r3, stack[2028]);
+    }
+    r5 = 0x0;
+    goto loc_8f635fcc;
+
+loc_8f635fcc:
+    r0 = *(r4 + 0xfffffffffffffffc);
+    if (r5 >= r0) goto loc_8f6360d4;
+
+loc_8f635fd8:
+    r11 = *r0;
+    if (r11 != 0x0) {
+            *(0xfffffffffffffff8 + sp + 0x28) = 0x64 - loc_ffffffff8f67b3c0(r0 - r5, loc_ffffffff8f67b3c0());
+            (r11)(0x2, 0xfffffffffffffff8 + sp + 0x28);
+    }
+    r11 = *(r4 + 0xfffffffffffffffc);
+    r3 = 0x0;
+    r2 = *(r4 + 0xfffffffffffffff8);
+    r11 = r11 - r5;
+    if (r11 >= 0x100000) {
+            r11 = 0x100000;
+    }
+    r2 = r5 + r2;
+    r0 = r11 + r2;
+    goto loc_8f636038;
+
+loc_8f636038:
+    r12 = 0x8f6ac224;
+    r1 = *(r3 + r12);
+    if ((r2 < r1) || (r2 >= r1 + *(0x4 + r12 + r3))) goto loc_8f63605c;
+
+loc_8f6361f8:
+    if ((*(r4 + 0xffffffffffffffe8) & 0x4) != 0x0) goto loc_8f636088;
+
+loc_8f6360c4:
+    r5 = r5 + r11;
+    loc_ffffffff8f656968();
+    goto loc_8f635fcc;
+
+loc_8f636088:
+    asm{ ldrd       r0, r1, [r4, #-0x10] };
+    r0 = r0 + r5;
+    if (CPU_FLAGS & NE) goto loc_8f6361c4;
+
+loc_8f6360b4:
+    r2 = *(r4 + 0xfffffffffffffff8);
+    goto loc_8f6360c4;
+
+loc_8f6361c4:
+    loc_ffffffff8f656968();
+    goto loc_8f6361c8;
+
+loc_8f6361c8:
+    r10 = r10 - 0x1;
+    r8 = r8 - 0x68;
+    r4 = r4 - 0x68;
+    goto loc_8f635f6c;
+
+loc_8f63605c:
+    if (r0 < r1) goto loc_8f63607c;
+
+loc_8f636064:
+    r1 = r1 + *(0x4 + 0x8f6ac224 + r3);
+    if (r0 < r1) goto loc_8f6361f8;
+
+loc_8f63607c:
+    r3 = r3 + 0x10;
+    if (r3 != 0x50) goto loc_8f636038;
+    goto loc_8f636088;
+
+loc_8f6360d4:
+    r3 = *0x8f6e0784;
+    if (r3 != 0x0) {
+            *(0xfffffffffffffff8 + sp + 0x28) = 0x64;
+            (r3)(0x2, 0xfffffffffffffff8 + sp + 0x28, 0x64, r3);
+    }
+    r5 = r6 + 0xc0;
+    r11 = 0x0;
+    goto loc_8f6360fc;
+
+loc_8f6360fc:
+    if (r11 >= *(r6 + 0x20)) goto loc_8f636190;
+
+loc_8f636108:
+    r1 = *(r5 + 0xffffffffffffffe8);
+    if ((r1 & 0x2) == 0x0) goto loc_8f636184;
+
+loc_8f636114:
+    r2 = *(r5 + 0xfffffffffffffff8);
+    r3 = *(r4 + 0xfffffffffffffff8);
+    if (r2 < r3) goto loc_8f636184;
+
+loc_8f636124:
+    r0 = *(r4 + 0xfffffffffffffffc);
+    r0 = r3 + r0;
+    if (r2 >= r0) goto loc_8f636184;
+
+loc_8f636134:
+    r2 = r2 + *(r5 + 0xfffffffffffffffc);
+    if ((r2 < r3) || (r2 >= r0)) goto loc_8f636184;
+
+loc_8f636210:
+    if ((r1 & 0x1) == 0x0) {
+            loc_ffffffff8f6484ac(stack[2035], "ASSERT FAILED at (%s:%d): %s\n", "app/mbm/sod.c", 0x2ca, "r->flags & SOD_REGION_IS_ON_DISK");
+    }
+    r0 = loc_ffffffff8f64aacc(0x80000);
+    COND = s0 != 0x0;
+    if (COND) goto loc_8f636150;
+    goto loc_8f6361c4;
+
+loc_8f636150:
+    r1 = "Applying backup \"%s\", mem_base=0x%X, size=0x%X\n";
+    r7 = 0x0;
+    r0 = loc_ffffffff8f656968(0x1, r1, r5, *(r5 + 0xfffffffffffffff8), *(r5 + 0xfffffffffffffffc));
+    goto loc_8f636170;
+
+loc_8f636170:
+    r12 = *(r5 + 0xfffffffffffffffc);
+    if (r7 < r12) goto loc_8f636250;
+
+loc_8f63617c:
+    loc_ffffffff8f64ab9c(s0);
+    goto loc_8f636184;
+
+loc_8f636184:
+    r11 = r11 + 0x1;
+    r5 = r5 + 0x68;
+    goto loc_8f6360fc;
+
+loc_8f636250:
+    r2 = 0x7ffff;
+    r12 = r12 - r7;
+    asm{ ldrd       r0, r1, [r5, #-0x10] };
+    COND = r12 > r2;
+    asm{ strd       r2, r3, [sp, #0x50 + var_40] };
+    if (COND) {
+            r12 = 0x80000;
+    }
+    r3 = 0x0;
+    r2 = r12 + 0x1ff;
+    stack[2028] = s0;
+    lr = r2 & !0x1fc;
+    asm{ ldrd       r2, r3, [sp, #0x50 + var_40] };
+    r0 = r0 + r2;
+    r1 = r1 + r3 + CARRY(FLAGS);
+    r2 = lr & !0x3;
+    r3 = 0x0;
+    r12 = r12;
+    if (CPU_FLAGS & NE) goto loc_8f636304;
+
+loc_8f6362b4:
+    r1 = *(r4 + 0xfffffffffffffff8);
+    asm{ ldrd       r2, r3, [r4, #-0x10] };
+    r2 = r2 - r1;
+    r3 = r3 - 0x0 + !CARRY(FLAGS);
+    stack[2028] = s0;
+    r0 = r2 + *(r5 + 0xfffffffffffffff8);
+    stack[2031] = r12;
+    r1 = r3 + 0x0 + CARRY(FLAGS);
+    asm{ ldrd       r2, r3, [sp, #0x50 + var_40] };
+    r0 = r0 + r2;
+    r0 = loc_ffffffff8f650ad0(r0, r1 + r3 + CARRY(FLAGS), r12, 0x0, stack[2028]);
+    r12 = stack[2031];
+    if (r0 == 0x0) goto loc_8f636314;
+
+loc_8f636304:
+    loc_ffffffff8f656968();
+    loc_ffffffff8f64ab9c(s0);
+    goto loc_8f6361c8;
+
+loc_8f636314:
+    r7 = r7 + r12;
+    r1 = "0x%X/0x%X\n";
+    r0 = loc_ffffffff8f656968(0x1, r1, r7, *(r5 + 0xfffffffffffffffc));
+    goto loc_8f636170;
+
+loc_8f636190:
+    *(r8 + 0xffffffffffffff98) = *(r8 + 0xffffffffffffff98) | 0x1;
+    *(r6 + 0x4) = *(r6 + 0x4) | 0x10;
+    goto loc_8f6361c4;
+
+loc_8f6361d8:
+    if (*0x8f6e0784 != 0x0) {
+            (*0x8f6e0784)(0x3, r10);
+    }
+    if (stack[2037] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

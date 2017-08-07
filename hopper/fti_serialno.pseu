@@ -1,0 +1,41 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r8 = lr;
+    r5 = *0x8f6e12f4;
+    r6 = 0x8f6e12f4;
+    stack[2041] = *0x8f7112f4;
+    if (r5 != 0x0) goto loc_8f6523c0;
+
+loc_8f652380:
+    r0 = loc_ffffffff8f64aacc(0x3f);
+    *0x8f6e12f4 = r0;
+    if (r0 == 0x0) goto loc_8f652420;
+
+loc_8f652398:
+    if (loc_ffffffff8f6797bc(r5, 0x8f687e90) == 0x3f) goto loc_8f6523c0;
+
+loc_8f6523b0:
+    r0 = *0x8f6e12f4;
+    loc_ffffffff8f64ab9c(r0);
+    *0x8f6e12f4 = r5;
+    goto loc_8f652420;
+
+loc_8f652420:
+    r0 = 0x0;
+    goto loc_8f65240c;
+
+loc_8f65240c:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f6523c0:
+    if (*r6 == 0x0) {
+            loc_ffffffff8f6484ac(r8, "ASSERT FAILED at (%s:%d): %s\n", "lib/fti/fti.c", 0x3c, "fti_cache && sizeof(sn)>sizeof(fti_cache->serial)");
+    }
+    r1 = *r6;
+    *0x8f6e12f8 = 0x0;
+    loc_ffffffff8f64b21c(0x8f6e12f8, r1 + 0x15, 0xb, 0x0);
+    r0 = 0x8f6e12f8;
+    goto loc_8f65240c;
+

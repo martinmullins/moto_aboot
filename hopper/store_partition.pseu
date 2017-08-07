@@ -1,0 +1,81 @@
+    r12 = 0x8f7112f4;
+    r11 = arg3;
+    r3 = *r12;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x34;
+    COND = r7 == 0x0;
+    r6 = arg0;
+    r10 = arg2;
+    asm{ ldrd       r8, sb, [sp, #0x58 + ret_addr] };
+    stack[2037] = r3;
+    if (CPU_FLAGS & E) goto loc_8f67b168;
+
+loc_8f67b104:
+    COND = r1 == 0x0;
+    if (CPU_FLAGS & E) goto loc_8f67b168;
+
+loc_8f67b114:
+    r2 = *(*0x8f7125ec + 0x8);
+    r0 = loc_ffffffff8f67b5cc(r10, r11, r2, 0x0, stack[2026]);
+    r12 = r12;
+    COND = r1 == 0x0;
+    if (COND) goto loc_8f67b158;
+
+loc_8f67b140:
+    asm{ strd       sl, fp, [sp, #0x58 + var_58] };
+    loc_ffffffff8f656968(0x0, "%s: offset must be sector aligned: 0x%llx\n", "store_partition");
+    goto loc_8f67b288;
+
+loc_8f67b288:
+    r0 = 0x0 ^ 0xffffffff;
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f67b158:
+    if (r6 != 0x0) goto loc_8f67b174;
+
+loc_8f67b168:
+    loc_ffffffff8f656968();
+    goto loc_8f67b288;
+
+loc_8f67b174:
+    r4 = *(r6 + 0x20) | *(r6 + 0x21) * 0x100 | *(r6 + 0x22) * 0x10000 | *(r6 + 0x23) * 0x1000000;
+    r0 = r0 << r4 * 0x200;
+    r5 = *(r6 + 0x24) | *(r6 + 0x25) * 0x100 | *(r6 + 0x26) * 0x10000 | *(r6 + 0x27) * 0x1000000;
+    r1 = r1 << r5 * 0x200 | r4 / 0x800000;
+    r2 = *(r6 + 0x2d);
+    r3 = *(r6 + 0x2c);
+    r3 = r3 | r2 * 0x100 | *(r6 + 0x2e) * 0x10000;
+    r2 = *(r6 + 0x2f);
+    r2 = r3 | r2 * 0x1000000;
+    asm{ ldrd       r2, r3, [sp, #0x58 + var_38] };
+    r2 = r2 + 0x1;
+    r3 = r3 + 0x0 + CARRY(FLAGS);
+    r2 = r2 - r4;
+    r4 = r4 << r2 * 0x200;
+    r5 = r5 << (r3 - r5 + !CARRY(FLAGS)) * 0x200 | r2 / 0x800000;
+    r2 = r8 + r10;
+    if (s0 + r11 + CARRY(FLAGS) == r5) {
+            CMP(r2, r4);
+    }
+    if (CPU_FLAGS & B) goto loc_8f67b258;
+
+loc_8f67b22c:
+    r0 = loc_ffffffff8f6537f0(r6);
+    asm{ strd       r4, r5, [sp, #0x58 + var_58] };
+    asm{ strd       sl, fp, [sp, #0x58 + var_50] };
+    asm{ strd       r8, sb, [sp, #0x58 + var_48] };
+    loc_ffffffff8f656968(0x0, "%s: data range exceeds partition %s size: [0x%llx, 0x%llx, 0x%llx]\n", "store_partition", r0);
+    goto loc_8f67b288;
+
+loc_8f67b258:
+    if (stack[2037] == *r12) {
+            r0 = r0 + r10;
+            r0 = loc_ffffffff8f650ad0(r0, r1 + r11 + CARRY(FLAGS), r8, s0, r7);
+    }
+    else {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

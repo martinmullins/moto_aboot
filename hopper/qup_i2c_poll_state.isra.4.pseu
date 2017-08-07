@@ -1,0 +1,40 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg1 | 0x4;
+    r6 = arg0;
+    stack[2043] = *0x8f7112f4;
+    r3 = 0x0;
+    goto loc_8f612404;
+
+loc_8f612404:
+    if ((*(*r6 + 0x4) & r4) == r4) goto loc_8f612448;
+
+loc_8f612418:
+    r2 = r3 + 0x1;
+    if (r3 != 0x3e8) goto loc_8f612438;
+
+loc_8f612424:
+    loc_ffffffff8f60c5a0(0x64);
+    r2 = 0x3e9;
+    goto loc_8f612430;
+
+loc_8f612430:
+    r3 = r2;
+    goto loc_8f612404;
+
+loc_8f612438:
+    if (r2 != 0x7d0) goto loc_8f612430;
+
+loc_8f612440:
+    r0 = 0x6d ^ 0xffffffff;
+    goto loc_8f61244c;
+
+loc_8f61244c:
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f612448:
+    r0 = 0x0;
+    goto loc_8f61244c;
+

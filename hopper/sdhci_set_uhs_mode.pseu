@@ -1,0 +1,59 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r5 = arg0;
+    r7 = lr;
+    stack[2041] = *0x8f7112f4;
+    r3 = *arg0;
+    *(r3 + 0x2c) = *(r3 + 0x2c) & 0xfffb;
+    r4 = *(r3 + 0x3e) & 0xfff8;
+    if (arg1 < 0x4) {
+            loc_8f6078dc();
+    }
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error: Invalid UHS mode: %x\n");
+    loc_ffffffff8f6484ac(r7, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm_shared/sdhci.c", 0x13d, 0x8f69c66f);
+    r6 = 0x8f7112f4;
+    *(*r5 + 0x3e) = r4;
+    r2 = stack[2041];
+    if (r2 != *r6) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = r5;
+            sp = sp + 0x14;
+            r3 = 0x8f7112f4;
+            sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+            r5 = r0;
+            r7 = *(r0 + 0x18);
+            r6 = 0x0;
+            r8 = r3;
+            stack[2040] = *r3;
+            if (0x0 >= r7) {
+                    r4 = 0x0;
+            }
+            if (!CPU_FLAGS & NB) {
+                    r4 = 0x2;
+                    do {
+                            if (loc_ffffffff8f67b3c0(r7, r4) < r6) {
+                                break;
+                            }
+                            r4 = r4 + 0x2;
+                    } while (r4 != 0x7fe);
+                    r4 = r4 >> r4 / 0x2;
+            }
+            r3 = r3 << r4 * 0x100;
+            asm{ ubfx       r4, r4, #0x8, #0x2 };
+            r4 = zero_extend_32(r3) | 0x1 | r4 * 0x40;
+            r3 = *r5;
+            r1 = r3 + 0x2c;
+            *(r3 + 0x2c) = r4;
+            do {
+            } while ((*r1 & 0x2) == 0x0);
+            r0 = 0x0;
+            *(r3 + 0x2c) = *(r3 + 0x2c) | 0x4;
+            r3 = *r8;
+            *(r5 + 0x4) = r6;
+            if (stack[2040] != r3) {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    return r0;
+

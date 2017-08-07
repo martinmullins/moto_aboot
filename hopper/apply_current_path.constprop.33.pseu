@@ -1,0 +1,41 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = arg0;
+    r4 = arg1;
+    r8 = 0x8f7112f4;
+    stack[2041] = *0x8f7112f4;
+    r0 = loc_ffffffff8f679470(0x1, arg1);
+    r6 = r0;
+    if (*r5 == 0x2f) {
+            if (!CPU_FLAGS & E) {
+                    r0 = loc_ffffffff8f648514();
+            }
+            else {
+                    r0 = loc_ffffffff8f64b2c0();
+            }
+    }
+    else {
+            if ((r0 != 0x0) && (loc_ffffffff8f64b354() != 0x0)) {
+                    loc_ffffffff8f656968(0x2, "%s: using current path [%s]", "apply_current_path", r6);
+                    loc_ffffffff8f64b2c0(r4, r6, 0x21);
+                    if (*(0xffffffffffffffff + r4 + loc_ffffffff8f64b354(r4)) != 0x2f) {
+                            loc_ffffffff8f64b21c(r4, 0x8f686fbc, 0x21);
+                    }
+                    loc_ffffffff8f64b21c(r4, r5, 0x21);
+                    if (stack[2041] == *r8) {
+                            r0 = loc_ffffffff8f656968(0x2, "%s: fixed name %s", "apply_current_path", r4);
+                    }
+                    else {
+                            r0 = loc_ffffffff8f648514();
+                    }
+            }
+            else {
+                    if (!CPU_FLAGS & E) {
+                            r0 = loc_ffffffff8f648514();
+                    }
+                    else {
+                            r0 = loc_ffffffff8f64b2c0();
+                    }
+            }
+    }
+    return r0;
+

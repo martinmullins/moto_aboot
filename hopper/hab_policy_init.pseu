@@ -1,0 +1,19 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2045] = r3;
+    if (loc_ffffffff8f675ecc(arg0, arg1, arg2, r3, arg0, stack[2045], 0x8f7112f4, lr) < 0x0) {
+            loc_ffffffff8f656968(0x0, "Failed to init hab rsa\n");
+            r0 = 0x0 ^ 0xffffffff;
+    }
+    else {
+            r0 = 0x0;
+            *(0x8f6b0070 + 0x4) = 0x8f71302c;
+            *(0x8f6b0070 + 0x8) = *0x8f710c34;
+            *(0x8f6b0044 + 0x4) = 0x8f713044;
+            *(0x8f6b0044 + 0x8) = *0x8f710c30;
+    }
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

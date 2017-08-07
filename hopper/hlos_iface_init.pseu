@@ -1,0 +1,92 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x3c;
+    r5 = sp + 0xc;
+    stack[2028] = r5;
+    r3 = *0x8f7112f4;
+    stack[2037] = r3;
+    r0 = loc_ffffffff8f679d80(0x1, 0x8f65597c, r5, r3, stack[2024], stack[2025]);
+    r2 = *0x8f6ac0f0;
+    *0x8f6ac0f0 = r2 + 0x1;
+    if (r2 == 0x0) {
+            r0 = loc_ffffffff8f619448();
+    }
+    r4 = stack[2028];
+    if (r4 == r5) goto loc_8f656384;
+
+loc_8f656268:
+    r6 = *(r4 + 0x4);
+    goto loc_8f656270;
+
+loc_8f656270:
+    r11 = r4 + 0x8;
+    stack[2037] = 0x0;
+    r8 = r4 + 0x28;
+    loc_ffffffff8f64b418(sp + 0x14, r11, 0x1f);
+    r0 = loc_ffffffff8f64b5d8(sp + 0x14, 0x3a);
+    if (loc_ffffffff8f654ff4() != 0xff) goto loc_8f6562c4;
+
+loc_8f6562ac:
+    r0 = loc_ffffffff8f654e98();
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error: not a string type: %s\n", r0);
+    goto loc_8f656308;
+
+loc_8f656308:
+    r3 = r8;
+    r2 = "utags_autodetect";
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: failed to store [%s] to [%s]\n", r2, r3, r11);
+    goto loc_8f656320;
+
+loc_8f656320:
+    r7 = 0x0;
+    asm{ ldm        r4, {r2, r3} };
+    *r3 = r2;
+    *(*r4 + 0x4) = r3;
+    *(r4 + 0x4) = r7;
+    *r4 = r7;
+    loc_ffffffff8f64ab9c(r4);
+    r3 = *(r6 + 0x4);
+    if (r6 != r5) {
+            r4 = r6;
+    }
+    if (CPU_FLAGS & NE) {
+            r6 = r3;
+    }
+    if (CPU_FLAGS & NE) goto loc_8f656270;
+
+loc_8f656354:
+    loc_ffffffff8f656968(0x2, "DEBUG: %s: flush utags\n", "utags_autodetect");
+    r0 = loc_ffffffff8f679ff0(0x1);
+    if (r0 != 0x0) {
+            r0 = loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: failed to flush utags\n", "utags_autodetect");
+    }
+    goto loc_8f656384;
+
+loc_8f656384:
+    r3 = *r0;
+    *r0 = r3 - 0x1;
+    if (r3 == 0x1) {
+            r0 = loc_ffffffff8f619438();
+    }
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f6562c4:
+    r0 = loc_ffffffff8f64b57c(r8, 0x400);
+    r3 = r0;
+    if (r0 != 0x400) goto loc_8f6562ec;
+
+loc_8f6562dc:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error: string too long\n");
+    goto loc_8f656308;
+
+loc_8f6562ec:
+    r2 = r8;
+    r3 = r3 + 0x1;
+    if (loc_ffffffff8f67961c(0x1, sp + 0x14, r2, r3) == 0x0) {
+            r3 = r8;
+            r2 = "utags_autodetect";
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: failed to store [%s] to [%s]\n", r2, r3, r11);
+    }
+    goto loc_8f656320;
+

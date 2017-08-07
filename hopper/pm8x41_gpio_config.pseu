@@ -1,0 +1,25 @@
+    stack[2043] = r4;
+    stack[2044] = r5;
+    stack[2045] = r6;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg1;
+    r5 = r5 << (arg0 + 0xbf) * 0x100;
+    r6 = r5 + 0x46;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    r0 = loc_ffffffff8f645264(r6, arg1, arg2, r3, arg0, stack[2041], arg2, stack[2043], stack[2044], stack[2045], 0x8f7112f4, lr);
+    loc_ffffffff8f6452d8(r6, r0 & 0x7f);
+    loc_ffffffff8f6452d8(r5 + 0x40, zero_extend_32(*(r4 + 0x18) | *r4 * 0x10));
+    loc_ffffffff8f6452d8(r5 + 0x42, *(r4 + 0xc));
+    loc_ffffffff8f6452d8(r5 + 0x41, *(r4 + 0x10));
+    if (*r4 == 0x1) {
+            loc_ffffffff8f6452d8(r5 + 0x45, zero_extend_32(*(r4 + 0x14) | *(r4 + 0x4) * 0x10));
+    }
+    r0 = loc_ffffffff8f645264(r6);
+    loc_ffffffff8f6452d8(r6, zero_extend_32((r0 * 0x2000000 ^ 0xffffffff) / 0x2000000 ^ 0xffffffff));
+    r0 = 0x0;
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

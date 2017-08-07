@@ -1,0 +1,234 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x3c;
+    r5 = arg0;
+    r8 = arg1;
+    s0 = arg2;
+    r6 = arg0 + arg2;
+    r7 = arg1 + arg3;
+    COND = arg3 == 0x0;
+    stack[2037] = *0x8f7112f4;
+    asm{ ldm        r4!, {r0, r1, r2, r3} };
+    asm{ stm        ip!, {r0, r1, r2, r3} };
+    asm{ ldm        r4, {r0, r1, r2, r3} };
+    asm{ stm        ip, {r0, r1, r2, r3} };
+    if (COND) goto loc_8f657ee4;
+
+loc_8f657eb4:
+    r2 = r6 - 0x8;
+    r0 = r8;
+    r3 = r5;
+    stack[2024] = r7 - 0xc;
+    r10 = r7 - 0x8;
+    stack[2025] = r2;
+    stack[2026] = r6 - 0x6;
+    stack[2027] = r7 - 0x5;
+    goto loc_8f658110;
+
+loc_8f658110:
+    r1 = *r3;
+    r12 = r3 + 0x1;
+    r2 = r2 >> r1 / 0x10;
+    if (r2 == 0xf) {
+            r3 = 0xff;
+    }
+    if (!CPU_FLAGS & NE) {
+            while (r12 < r6) {
+                    if (r3 != 0xff) {
+                        break;
+                    }
+                    r3 = *r12;
+                    r12 = r12 + 0x1;
+                    r2 = r2 + r3;
+            }
+    }
+    r4 = r0 + r2;
+    r3 = r12 + r2;
+    if ((r4 > stack[2024]) || (r3 > stack[2025])) goto loc_8f65812c;
+
+loc_8f657f34:
+    do {
+            r2 = *(r12 + 0x1);
+            r0 = r0 + 0x8;
+            r3 = *r12;
+            r12 = r12 + 0x8;
+            r3 = r3 | r2 * 0x100 | *(r12 + 0xfffffffffffffffa) * 0x10000;
+            r2 = *(r12 + 0xfffffffffffffffb);
+            r3 = r3 | r2 * 0x1000000;
+            *(r0 + 0xfffffffffffffff8) = r3;
+            asm{ ubfx       r2, r3, #0x8, #0x8 };
+            *(r0 + 0xfffffffffffffff9) = r2;
+            asm{ ubfx       r2, r3, #0x10, #0x8 };
+            *(r0 + 0xfffffffffffffffa) = r2;
+            *(r0 + 0xfffffffffffffffb) = r3 >> r3 / 0x1000000;
+            r2 = *(r12 + 0xfffffffffffffffd);
+            r3 = *(r12 + 0xfffffffffffffffc);
+            r3 = r3 | r2 * 0x100 | *(r12 + 0xfffffffffffffffe) * 0x10000;
+            r2 = *(r12 + 0xffffffffffffffff);
+            r3 = r3 | r2 * 0x1000000;
+            *(r0 + 0xfffffffffffffffc) = r3;
+            asm{ ubfx       r2, r3, #0x8, #0x8 };
+            *(r0 + 0xfffffffffffffffd) = r2;
+            asm{ ubfx       r2, r3, #0x10, #0x8 };
+            *(r0 + 0xfffffffffffffffe) = r2;
+            *(r0 + 0xffffffffffffffff) = r3 >> r3 / 0x1000000;
+    } while (r0 < r4);
+    r12 = (r12 - r0 - r4) + 0x2;
+    r2 = *(r12 + 0xffffffffffffffff);
+    r2 = r4 - (*(r12 + 0xfffffffffffffffe) | r2 * 0x100);
+    if (r2 < r8) goto loc_8f658238;
+
+loc_8f657fd8:
+    r1 = r1 & 0xf;
+    CMP(r1, 0xf);
+    while (CPU_FLAGS & E) {
+            if (r12 >= stack[2026]) {
+                break;
+            }
+            r3 = *r12;
+            r12 = r12 + 0x1;
+            r1 = r1 + r3;
+            CMP(r3, 0xff);
+    }
+    r0 = r4 + 0x4;
+    r3 = *r2;
+    if (r4 - r2 <= 0x3) {
+            *r4 = r3;
+            *(r4 + 0x1) = *(r2 + 0x1);
+            *(r4 + 0x2) = *(r2 + 0x2);
+            *(r4 + 0x3) = *(r2 + 0x3);
+            r3 = r0;
+            r11 = *(0xffffffffffffffdc + (r0 - r2 + 0x4) * 0x4 + sp + 0x38);
+            r2 = (0x0 - r11) + r2 + 0x4;
+            s0 = *(r0 + (0x0 - r11));
+            s0 = s0 | *(r2 + 0x1) * 0x100;
+            s0 = s0 | *(r2 + 0x2) * 0x10000;
+            r11 = *(r2 + 0x3);
+            s0 = s0 | r11 * 0x1000000;
+            *(r4 + 0x4) = s0;
+            asm{ ubfx       fp, sb, #0x8, #0x8 };
+            *(r4 + 0x5) = r11;
+            asm{ ubfx       fp, sb, #0x10, #0x8 };
+            *(r4 + 0x6) = r11;
+            *(r4 + 0x7) = s0 >> s0 / 0x1000000;
+    }
+    else {
+            s0 = *(r2 + 0x1);
+            r2 = r2 + 0x4;
+            r3 = r3 | s0 * 0x100 | *(r2 + 0xfffffffffffffffe) * 0x10000;
+            s0 = *(r2 + 0xffffffffffffffff);
+            r3 = r3 | s0 * 0x1000000;
+            *r4 = r3;
+            asm{ ubfx       sb, r3, #0x8, #0x8 };
+            *(r4 + 0x1) = s0;
+            asm{ ubfx       sb, r3, #0x10, #0x8 };
+            *(r4 + 0x2) = s0;
+            *(r4 + 0x3) = r3 >> r3 / 0x1000000;
+            r3 = r0;
+    }
+    r0 = r0 + r1;
+    if (r0 < r10) goto loc_8f6581b4;
+
+loc_8f658078:
+    if (r0 > stack[2027]) goto loc_8f658238;
+
+loc_8f658084:
+    do {
+            r4 = *(r2 + 0x1);
+            r3 = r3 + 0x8;
+            r1 = *r2;
+            r2 = r2 + 0x8;
+            r1 = r1 | r4 * 0x100 | *(r2 + 0xfffffffffffffffa) * 0x10000;
+            r4 = *(r2 + 0xfffffffffffffffb);
+            r1 = r1 | r4 * 0x1000000;
+            *(r3 + 0xfffffffffffffff8) = r1;
+            asm{ ubfx       r4, r1, #0x8, #0x8 };
+            *(r3 + 0xfffffffffffffff9) = r4;
+            asm{ ubfx       r4, r1, #0x10, #0x8 };
+            *(r3 + 0xfffffffffffffffa) = r4;
+            *(r3 + 0xfffffffffffffffb) = r1 >> r1 / 0x1000000;
+            r4 = *(r2 + 0xfffffffffffffffd);
+            r1 = *(r2 + 0xfffffffffffffffc);
+            r1 = r1 | r4 * 0x100 | *(r2 + 0xfffffffffffffffe) * 0x10000;
+            r4 = *(r2 + 0xffffffffffffffff);
+            r1 = r1 | r4 * 0x1000000;
+            *(r3 + 0xfffffffffffffffc) = r1;
+            asm{ ubfx       r4, r1, #0x8, #0x8 };
+            *(r3 + 0xfffffffffffffffd) = r4;
+            asm{ ubfx       r4, r1, #0x10, #0x8 };
+            *(r3 + 0xfffffffffffffffe) = r4;
+            *(r3 + 0xffffffffffffffff) = r1 >> r1 / 0x1000000;
+    } while (r3 < r10);
+    while (r3 < r0) {
+            r1 = *r2;
+            r2 = r2 + 0x1;
+            *r3 = r1;
+            r3 = r3 + 0x1;
+    }
+    goto loc_8f65810c;
+
+loc_8f65810c:
+    r3 = r12;
+    goto loc_8f658110;
+
+loc_8f658238:
+    r0 = r5 - r12 - 0x1;
+    goto loc_8f658248;
+
+loc_8f658248:
+    if (stack[2037] != *r0) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f6581b4:
+    do {
+            r4 = *(r2 + 0x1);
+            r3 = r3 + 0x8;
+            r1 = *r2;
+            r2 = r2 + 0x8;
+            r1 = r1 | r4 * 0x100 | *(r2 + 0xfffffffffffffffa) * 0x10000;
+            r4 = *(r2 + 0xfffffffffffffffb);
+            r1 = r1 | r4 * 0x1000000;
+            *(r3 + 0xfffffffffffffff8) = r1;
+            asm{ ubfx       r4, r1, #0x8, #0x8 };
+            *(r3 + 0xfffffffffffffff9) = r4;
+            asm{ ubfx       r4, r1, #0x10, #0x8 };
+            *(r3 + 0xfffffffffffffffa) = r4;
+            *(r3 + 0xfffffffffffffffb) = r1 >> r1 / 0x1000000;
+            r4 = *(r2 + 0xfffffffffffffffd);
+            r1 = *(r2 + 0xfffffffffffffffc);
+            r1 = r1 | r4 * 0x100 | *(r2 + 0xfffffffffffffffe) * 0x10000;
+            r4 = *(r2 + 0xffffffffffffffff);
+            r1 = r1 | r4 * 0x1000000;
+            *(r3 + 0xfffffffffffffffc) = r1;
+            asm{ ubfx       r4, r1, #0x8, #0x8 };
+            *(r3 + 0xfffffffffffffffd) = r4;
+            asm{ ubfx       r4, r1, #0x10, #0x8 };
+            *(r3 + 0xfffffffffffffffe) = r4;
+            *(r3 + 0xffffffffffffffff) = r1 >> r1 / 0x1000000;
+    } while (r3 < r0);
+    goto loc_8f65810c;
+
+loc_8f65812c:
+    if ((r6 == r3) && (r4 <= r7)) {
+            loc_ffffffff8f64ac90();
+            r0 = r4 - r8;
+    }
+    else {
+            r0 = r5 - r12 - 0x1;
+    }
+    goto loc_8f658248;
+
+loc_8f657ee4:
+    if (s0 == 0x1) {
+            r0 = *r5;
+            r0 = r0 - 0x0;
+            COND = r0 != 0x0;
+            if (COND) {
+                    r0 = 0x0 ^ 0xffffffff;
+            }
+    }
+    else {
+            r0 = 0x0 ^ 0xffffffff;
+    }
+    goto loc_8f658248;
+

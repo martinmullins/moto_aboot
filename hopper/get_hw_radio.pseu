@@ -1,0 +1,20 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = 0x0 ^ 0xffffffff;
+    stack[2042] = r4;
+    stack[2043] = *0x8f7112f4;
+    if (*0x8f6ac1f4 < 0x0) {
+            loc_ffffffff8f656968(0x1, "Not found radio specific setting\n");
+            r0 = r4;
+    }
+    else {
+            r0 = loc_ffffffff8f6309d0("radio");
+            if (r0 != -0x1) {
+                    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", "radio", stack[2042]);
+                    r0 = stack[2042];
+            }
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,16 @@
+    r1 = arg1;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    if (*0x8f7112f4 != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    else {
+            sp = sp + 0xc;
+            sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+            r2 = *0x8f7112f4;
+            *((0x0 >> 0x0 / 0x20) + 0x2c00060 << ((0x0 >> 0x0 / 0x20) + 0x2c00060) * 0x4) = 0x1 << (0x0 & 0x1f);
+            if (r2 != *0x8f7112f4) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

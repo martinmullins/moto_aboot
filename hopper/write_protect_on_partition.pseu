@@ -1,0 +1,22 @@
+    stack[2045] = r4;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg0;
+    r1 = *(arg0 + 0x21);
+    r12 = *(r4 + 0x29);
+    stack[2043] = *0x8f7112f4;
+    r1 = *(arg0 + 0x20) | r1 * 0x100;
+    r1 = r1 | *(arg0 + 0x22) * 0x10000;
+    r3 = *(arg0 + 0x23);
+    r0 = *(arg0 + 0x28);
+    r0 = r0 | r12 * 0x100 | *(r4 + 0x2a) * 0x10000;
+    r0 = loc_ffffffff8f6512d8(r1 | r3 * 0x1000000, (r0 | *(r4 + 0x2b) * 0x1000000) + 0x1 - (r1 | r3 * 0x1000000), 0x0, r3, arg0, stack[2043], arg2, stack[2045], 0x8f7112f4, lr);
+    if (r0 != 0x0) {
+            r0 = loc_ffffffff8f6537f0(r4);
+            loc_ffffffff8f656968(0x0, "Failed to write protect on %s\n", r0);
+            r0 = 0x0 ^ 0xffffffff;
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

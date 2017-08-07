@@ -1,0 +1,21 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x108;
+    r4 = 0x0;
+    stack[2041] = *0x8f7112f4;
+    loc_ffffffff8f652104(0x8f6826e7);
+    loc_ffffffff8f652104("------------------------\n");
+    loc_ffffffff8f652104(" Bootloader variables\n");
+    loc_ffffffff8f652104("------------------------\n");
+    do {
+            r5 = 0x8f688c8c + r4;
+            r6 = *r5;
+            r4 = r4 + 0xc;
+            loc_ffffffff8f64b2c0(sp + 0x4, r6, 0x100);
+            r0 = (*(r5 + 0x4))(sp + 0x4);
+            loc_ffffffff8f652104("  %s: %s\n");
+    } while (r4 != 0x210);
+    r0 = loc_ffffffff8f652104(0x8f6826e7);
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

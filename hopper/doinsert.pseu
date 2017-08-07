@@ -1,0 +1,50 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = arg3;
+    s0 = arg2;
+    COND = r4 != 0x0;
+    r6 = lr;
+    r10 = arg1;
+    stack[2040] = *0x8f7112f4;
+    if (!COND) {
+            loc_ffffffff8f6484ac(lr, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/regcomp.c", 0x6ab, "p != ((void *)0)");
+    }
+    if (*(r4 + 0x8) == 0x0) {
+            r7 = *(r4 + 0x14);
+            loc_ffffffff8f65b978(r4, r10, s0);
+            if (*(r4 + 0x14) != r7 + 0x1) {
+                    loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/regcomp.c", 0x6b3, "(p->slen) == sn+1");
+            }
+            r7 = *(*(r4 + 0xc) + r7 * 0x4);
+            if (r5 == 0x0) {
+                    loc_ffffffff8f6484ac(r6, "ASSERT FAILED at (%s:%d): %s\n", "lib/regex/regcomp.c", 0x6b7, "pos > 0");
+            }
+            r1 = r4;
+            r3 = 0x1;
+            do {
+                    r2 = *(r1 + 0x24);
+                    r3 = r3 + 0x1;
+                    r1 = r1 + 0x4;
+                    if (r2 >= r5) {
+                            r2 = r2 + 0x1;
+                    }
+                    if (CPU_FLAGS & NS) {
+                            *(r1 + 0x20) = r2;
+                    }
+                    r2 = *(r1 + 0x48);
+                    if (r2 >= r5) {
+                            r2 = r2 + 0x1;
+                    }
+                    if (CPU_FLAGS & NS) {
+                            *(r1 + 0x48) = r2;
+                    }
+            } while (r3 != 0xa);
+            r3 = *(r4 + 0x14);
+            r1 = *(r4 + 0xc);
+            loc_ffffffff8f64ac90(r1 + (r5 + 0x1 << (r5 + 0x1) * 0x4), r1 + ((r5 + 0x1 << (r5 + 0x1) * 0x4) - 0x4), r3 - 0xc0000001 - r5 << (r3 - 0xc0000001 - r5) * 0x4, r3 - 0xc0000001);
+            *(*(r4 + 0xc) + ((r5 + 0x1 << (r5 + 0x1) * 0x4) - 0x4)) = r7;
+    }
+    if (stack[2040] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

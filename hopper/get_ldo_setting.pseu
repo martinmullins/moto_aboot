@@ -1,0 +1,124 @@
+    stack[2042] = r4;
+    stack[2043] = r5;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = arg0;
+    r4 = arg1;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    if (loc_ffffffff8f6309d0(0x8f6810cb, r5, r4, r3, arg0, stack[2041], stack[2042], stack[2043], r6, r7, 0x8f7112f4, lr) != -0x1) goto loc_8f632158;
+
+loc_8f632150:
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f632500;
+
+loc_8f632500:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f632158:
+    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", 0x8f6810cb, *r4);
+    if (loc_ffffffff8f6309d0("voltage", r5, r4 + 0x4) == -0x1) goto loc_8f632150;
+
+loc_8f632188:
+    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", "voltage", *(r4 + 0x4));
+    if (loc_ffffffff8f6309d0("pre_delay", r5, r4 + 0x8) == -0x1) goto loc_8f632150;
+
+loc_8f6321b4:
+    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", "pre_delay", *(r4 + 0x8));
+    if (loc_ffffffff8f6309d0("post_delay", r5, r4 + 0xc) == -0x1) goto loc_8f632150;
+
+loc_8f6321e0:
+    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", "post_delay", *(r4 + 0xc));
+    if (loc_ffffffff8f6309d0("ldo_enable_gpio", r5, r4 + 0x10) == -0x1) goto loc_8f6324fc;
+
+loc_8f63220c:
+    r6 = *(r4 + 0x10);
+    if (r6 != 0x1) goto loc_8f632354;
+
+loc_8f632218:
+    loc_ffffffff8f656968(r6, "Getting enable GPIO for LDO %d...\n", *r4);
+    if (loc_ffffffff8f6309d0("en_gpio", r5, r4 + 0x14) == -0x1) goto loc_8f632150;
+
+loc_8f632244:
+    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", "en_gpio", *(r4 + 0x14));
+    if (loc_ffffffff8f6309d0(0x8f68a792, r5, r4 + 0x18) == -0x1) goto loc_8f632150;
+
+loc_8f632270:
+    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", 0x8f68a792, *(r4 + 0x18));
+    if (loc_ffffffff8f6309d0("en_pull", r5, r4 + 0x1c) == -0x1) goto loc_8f632150;
+
+loc_8f63229c:
+    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", "en_pull", *(r4 + 0x1c));
+    if (loc_ffffffff8f6309d0(0x8f68a7a2, r5, r4 + 0x20) == -0x1) goto loc_8f632150;
+
+loc_8f6322c8:
+    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", 0x8f68a7a2, *(r4 + 0x20));
+    if (loc_ffffffff8f6309d0(0x8f68a7a9, r5, r4 + 0x24) == -0x1) goto loc_8f632150;
+
+loc_8f6322f4:
+    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", 0x8f68a7a9, *(r4 + 0x24));
+    if (loc_ffffffff8f6309d0(0x8f68a7b0, r5, r4 + 0x2c) == -0x1) goto loc_8f632150;
+
+loc_8f632320:
+    r3 = *(r4 + 0x2c);
+    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", 0x8f68a7b0, r3);
+    if (loc_ffffffff8f6309d0(0x8f68a7ba, r5, r4 + 0x28) < 0x0) {
+            r3 = *(r4 + 0x24);
+    }
+    if (CPU_FLAGS & L) {
+            *(r4 + 0x28) = r3;
+    }
+    goto loc_8f6324a4;
+
+loc_8f6324a4:
+    if (loc_ffffffff8f6309d0(0x8f68a7c5, r5, r4 + 0x30) == -0x1) goto loc_8f632150;
+
+loc_8f6324bc:
+    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", 0x8f68a7c5, *(r4 + 0x30));
+    if (loc_ffffffff8f6309d0(0x8f68a7d2, r5, r4 + 0x34) == -0x1) goto loc_8f632150;
+
+loc_8f6324e8:
+    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", 0x8f68a7d2, *(r4 + 0x34));
+    goto loc_8f6324fc;
+
+loc_8f6324fc:
+    r0 = 0x0;
+    goto loc_8f632500;
+
+loc_8f632354:
+    if (r6 != 0x2) goto loc_8f6324fc;
+
+loc_8f63235c:
+    loc_ffffffff8f656968(0x1, "Getting enable PMIC_GPIO for LDO %d...\n", *r4);
+    if (loc_ffffffff8f6309d0("en_gpio", r5, r4 + 0x14) == -0x1) goto loc_8f632150;
+
+loc_8f632388:
+    loc_ffffffff8f656968(r6, "get prop %s: 0x%x\n", "en_gpio", *(r4 + 0x14));
+    if (loc_ffffffff8f6309d0("en_mode", r5, r4 + 0x18) == -0x1) goto loc_8f632150;
+
+loc_8f6323b4:
+    loc_ffffffff8f656968(r6, "get prop %s: 0x%x\n", "en_mode", *(r4 + 0x18));
+    if (loc_ffffffff8f6309d0("en_pull", r5, r4 + 0x1c) == -0x1) goto loc_8f632150;
+
+loc_8f6323e0:
+    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", "en_pull", *(r4 + 0x1c));
+    if (loc_ffffffff8f6309d0(0x8f68a810, r5, r4 + 0x20) == -0x1) goto loc_8f632150;
+
+loc_8f63240c:
+    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", 0x8f68a810, *(r4 + 0x20));
+    if (loc_ffffffff8f6309d0(0x8f68a81b, r5, r4 + 0x24) == -0x1) goto loc_8f632150;
+
+loc_8f632438:
+    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", 0x8f68a81b, *(r4 + 0x24));
+    if (loc_ffffffff8f6309d0(0x8f68a82a, r5, r4 + 0x28) == -0x1) goto loc_8f632150;
+
+loc_8f632464:
+    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", 0x8f68a82a, *(r4 + 0x28));
+    if (loc_ffffffff8f6309d0(0x8f68a7b0, r5, r4 + 0x2c) == -0x1) goto loc_8f632150;
+
+loc_8f632490:
+    loc_ffffffff8f656968(0x2, "get prop %s: 0x%x\n", 0x8f68a7b0, *(r4 + 0x2c));
+    goto loc_8f6324a4;
+

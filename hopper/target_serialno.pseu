@@ -1,0 +1,69 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = arg0;
+    r6 = 0x8f7112f4;
+    stack[2043] = *0x8f7112f4;
+    if ((loc_ffffffff8f600244("serialno", r5) == 0x0) && (loc_ffffffff8f600244("barcode", r5) == 0x0)) {
+            r0 = loc_ffffffff8f652354();
+            COND = r1 == 0x0;
+            if (!COND) {
+                    if (stack[2043] == *0x8f7112f4) {
+                            r0 = r5;
+                            sp = sp + 0x8;
+                            sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+                            stack[2045] = *0x8f7112f4;
+                            r3 = 0x0;
+                            do {
+                                    if (r3 == 0x11) {
+                                        break;
+                                    }
+                                    r12 = *(r1 + r3);
+                                    *(r0 + r3) = r12;
+                                    r3 = r3 + 0x1;
+                            } while (r12 != 0x0);
+                            if (stack[2045] != *0x8f7112f4) {
+                                    loc_ffffffff8f648514();
+                            }
+                    }
+                    else {
+                            loc_ffffffff8f648514();
+                    }
+            }
+            else {
+                    r0 = loc_ffffffff8f619f80();
+                    COND = r6 == 0x0;
+                    if (!COND) {
+                            r4 = 0x8f7112f4;
+                            loc_ffffffff8f60b648();
+                            if (stack[2043] == *r4) {
+                                    r0 = r5;
+                                    r2 = 0x8f68a084;
+                                    sp = sp + 0x8;
+                                    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+                                    r3 = *0x8f7112f4;
+                                    loc_ffffffff8f64a49c();
+                                    if (r3 != *0x8f7112f4) {
+                                            loc_ffffffff8f648514();
+                                    }
+                            }
+                            else {
+                                    loc_ffffffff8f648514();
+                            }
+                    }
+                    else {
+                            loc_ffffffff8f64b108(r5, "(null)");
+                            if (stack[2043] == *0x8f7112f4) {
+                                    loc_ffffffff8f656968(r6, "Error: failed to read device SN\n");
+                            }
+                            else {
+                                    loc_ffffffff8f648514();
+                            }
+                    }
+            }
+    }
+    else {
+            if (stack[2043] != *r6) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

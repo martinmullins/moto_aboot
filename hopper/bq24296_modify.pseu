@@ -1,0 +1,43 @@
+    stack[2039] = arg0;
+    stack[2041] = r4;
+    stack[2043] = r6;
+    stack[2046] = r10;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r10 = arg3;
+    r4 = arg0;
+    r5 = 0x8f6e0aa0;
+    r6 = arg2;
+    r3 = *0x8f7112f4;
+    r0 = *r5;
+    stack[2040] = r3;
+    r0 = loc_ffffffff8f612dc8(r0, 0x6b, r4, sp + 0x3, stack[2039], stack[2040], stack[2041], 0x8f6e0aa0, stack[2043], r7, 0x8f7112f4, stack[2046], lr);
+    COND = r7 >= 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "BQ24296: Couldn't read reg: %X (%d)\n", r4, r7);
+            r0 = r7;
+    }
+    else {
+            r0 = *r5;
+            r3 = zero_extend_32(stack[2040] & !    r6;
+        0x0 ^ 0xffffffff;
+    r10;
+ ^ 0xffffffff;
+ |     r0;
+    r6;
+);
+            stack[2040] = r3;
+            r0 = loc_ffffffff8f612ea4(r0, 0x6b, r4, r3, stack[2039]);
+            COND = r5 >= 0x0;
+            if (COND) {
+                    r0 = 0x0;
+            }
+            if (!CPU_FLAGS & GE) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "BQ24296: Couldn't write reg: %X (%d)\n", r4, r5);
+                    r0 = r5;
+            }
+    }
+    if (stack[2040] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

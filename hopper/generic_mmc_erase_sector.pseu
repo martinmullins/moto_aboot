@@ -1,0 +1,38 @@
+    r2 = arg0;
+    COND = r12 == 0x0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x14;
+    r5 = 0x8f7112f4;
+    stack[2043] = *0x8f7112f4;
+    if (COND) goto loc_8f6511d0;
+
+loc_8f651178:
+    r1 = *0x8f7125ec;
+    r4 = *(r1 + 0x14);
+    if (r12 + r2 < r4) goto loc_8f6511a8;
+
+loc_8f651190:
+    loc_ffffffff8f656968(0x1, "Invalid sector range: start=%u, end=%u, total=%u\n");
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f6511d4;
+
+loc_8f6511d4:
+    if (stack[2043] != *r5) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f6511a8:
+    if (stack[2043] == *0x8f7112f4) {
+            asm{ umull      r0, r1, r2, r3 };
+            asm{ umull      r2, r3, ip, r3 };
+            r0 = loc_ffffffff8f650f94();
+    }
+    else {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f6511d0:
+    r0 = r12;
+    goto loc_8f6511d4;
+

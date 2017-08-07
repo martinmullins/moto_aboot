@@ -1,0 +1,19 @@
+    r1 = arg1;
+    r12 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    do {
+            r2 = r12;
+            r12 = r12 + 0x1;
+            r3 = *r2;
+    } while (r3 != 0x0);
+    do {
+            r12 = *(r1 + r3);
+            *(r2 + r3) = r12;
+            r3 = r3 + 0x1;
+    } while (r12 != 0x0);
+    if (stack[2045] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

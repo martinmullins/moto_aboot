@@ -1,0 +1,63 @@
+    COND = s0 == 0x0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x1c;
+    r6 = arg1;
+    stack[2037] = 0x0;
+    stack[2039] = *0x8f7112f4;
+    if (CPU_FLAGS & E) goto loc_8f622404;
+
+loc_8f6223dc:
+    loc_ffffffff8f64b2c0(sp + 0x10, 0x8f687f5a, 0x4);
+    if (loc_ffffffff8f6539b0(sp + 0x10) != -0x1) goto loc_8f622410;
+
+loc_8f622404:
+    loc_ffffffff8f62192c();
+    goto loc_8f622408;
+
+loc_8f622408:
+    r0 = 0x3;
+    goto loc_8f6224d4;
+
+loc_8f6224d4:
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f622410:
+    r4 = r6;
+    r2 = loc_ffffffff8f653a28();
+    if (0x0 == 0x8f687f5a) {
+            CMP(r4, r2);
+    }
+    if (CPU_FLAGS & B) goto loc_8f622444;
+
+loc_8f622430:
+    loc_ffffffff8f62192c(0x8f683451, "image limit: size=0x%llx, actual=0x%x\n");
+    goto loc_8f622408;
+
+loc_8f622444:
+    r0 = loc_ffffffff8f663020(0x0, sp + 0xc, sp + 0xb);
+    if (CPU_FLAGS & NE) goto loc_8f6224b8;
+
+loc_8f622468:
+    r3 = stack[2037];
+    if ((r3 > r6) || (r6 - r3 >= 0x64)) goto loc_8f622480;
+
+loc_8f622494:
+    if (loc_ffffffff8f663020(s0 + 0x8f683451, sp + 0xc, sp + 0xb) == 0xf) goto loc_8f6224c0;
+
+loc_8f6224b8:
+    loc_ffffffff8f62192c();
+    goto loc_8f622408;
+
+loc_8f6224c0:
+    loc_ffffffff8f62192c();
+    loc_ffffffff8f6623b4();
+    loc_ffffffff8f646e70();
+    r0 = 0x1;
+    goto loc_8f6224d4;
+
+loc_8f622480:
+    loc_ffffffff8f62192c(0x8f683451, "CID prov store failed, size %d  db_len %d\n", r6);
+    goto loc_8f622408;
+

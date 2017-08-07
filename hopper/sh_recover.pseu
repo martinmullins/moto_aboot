@@ -1,0 +1,125 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x20;
+    r6 = arg0;
+    r1 = sp + 0x8;
+    r0 = 0x0;
+    r7 = lr;
+    stack[2041] = *0x8f7112f4;
+    r3 = 0x0;
+    asm{ strd       r2, r3, [sp, #0x38 + var_30] };
+    asm{ strd       r2, r3, [sp, #0x38 + var_28] };
+    r2 = sp + 0x10;
+    if (loc_ffffffff8f634d98(r0, r1, r2, r3, stack[2034], stack[2035], stack[2036], stack[2037], stack[2038], stack[2039], stack[2040]) == 0x0) {
+            r2 = "app/mbm/sod.c";
+            r3 = 0x13d;
+            loc_ffffffff8f6484ac(r7, "ASSERT FAILED at (%s:%d): %s\n", r2, r3, 0x8f69c66f);
+    }
+    asm{ ldrd       r2, r3, [sp, #0x38 + var_30] };
+    COND = r1 != 0x0;
+    if (!COND) {
+            r2 = "app/mbm/sod.c";
+            r3 = 0x13f;
+            loc_ffffffff8f6484ac(r7, "ASSERT FAILED at (%s:%d): %s\n", r2, r3, 0x8f6887e5);
+    }
+    asm{ ldrd       r2, r3, [sp, #0x38 + var_28] };
+    r3 = r3 & (0x0 ^ 0xffffffff);
+    r1 = 0x0;
+    r2 = r2 & 0xfffe0000;
+    r0 = *(r6 + 0x10);
+    asm{ strd       r2, r3, [sp, #0x38 + var_28] };
+    if (r3 == r1) {
+            CMP(r2, r0);
+    }
+    if (!CPU_FLAGS & A) {
+            r1 = "ASSERT FAILED at (%s:%d): %s\n";
+            r2 = "app/mbm/sod.c";
+            r0 = loc_ffffffff8f6484ac(r7, r1, r2, 0x142, "size > sh->preamble.handover_size");
+    }
+    r3 = *(r6 + 0x10);
+    asm{ ldrd       r0, r1, [sp, #0x38 + var_28] };
+    r0 = r0 - r3;
+    r1 = r1 - 0x0 + !CARRY(FLAGS);
+    asm{ ldrd       r2, r3, [r6, #0x18] };
+    asm{ strd       r0, r1, [sp, #0x38 + var_28] };
+    if (r1 == r3) {
+            CMP(r0, r2);
+    }
+    if (!CPU_FLAGS & A) {
+            r1 = "ASSERT FAILED at (%s:%d): %s\n";
+            r2 = "app/mbm/sod.c";
+            r3 = 0x144;
+            r0 = loc_ffffffff8f6484ac(r7, r1, r2, r3, "size > sh->preamble.ddr_size");
+    }
+    asm{ ldrd       r4, r5, [sp, #0x38 + var_28] };
+    asm{ ldrd       r2, r3, [r6, #0x18] };
+    r4 = r4 - r2;
+    r5 = r5 - r3 + !CARRY(FLAGS);
+    asm{ ldrd       r2, r3, [sp, #0x38 + var_30] };
+    asm{ strd       r4, r5, [sp, #0x38 + var_28] };
+    r4 = r4 + r2;
+    r5 = r5 + r3 + CARRY(FLAGS);
+    asm{ ldrd       r2, r3, [r6, #0x8] };
+    if (r5 == r3) {
+            CMP(r4, r2);
+    }
+    if (!CPU_FLAGS & NE) {
+            asm{ ldrd       r0, r1, [sp, #0x38 + var_28] };
+            asm{ ldrd       r2, r3, [sp, #0x38 + var_30] };
+            asm{ ldrd       r4, r5, [r6, #0x8] };
+            r2 = r2 + r0;
+            if (r3 + r1 + CARRY(FLAGS) == r5) {
+                    CMP(r2, r4);
+            }
+            r0 = loc_ffffffff8f634f04();
+    }
+    else {
+            COND = r3 != 0x0;
+            if (!COND) {
+                    r1 = "ASSERT FAILED at (%s:%d): %s\n";
+                    r2 = "app/mbm/sod.c";
+                    r3 = 0xda;
+                    r0 = loc_ffffffff8f6484ac(r7, r1, r2, r3, "sh && new_offset");
+            }
+            asm{ ldrd       r2, r3, [r6, #0x8] };
+            if (r3 == r5) {
+                    CMP(r2, r4);
+            }
+            if (!CPU_FLAGS & E) {
+                    if (loc_ffffffff8f6364dc() != 0x0) {
+                            loc_ffffffff8f6356d0();
+                    }
+                    r0 = loc_ffffffff8f634e38(r6);
+                    if (r0 == 0x0) {
+                            asm{ strd       r4, r5, [r6, #0x8] };
+                            *(r6 + 0x20) = r0;
+                            if (loc_ffffffff8f6364dc() != 0x0) {
+                                    loc_ffffffff8f6355e8(r6);
+                            }
+                            r0 = loc_ffffffff8f635198(r6);
+                            if (r0 == 0x0) {
+                                    asm{ ldrd       r0, r1, [sp, #0x38 + var_28] };
+                                    asm{ ldrd       r2, r3, [sp, #0x38 + var_30] };
+                                    asm{ ldrd       r4, r5, [r6, #0x8] };
+                                    r2 = r2 + r0;
+                                    if (r3 + r1 + CARRY(FLAGS) == r5) {
+                                            CMP(r2, r4);
+                                    }
+                                    r0 = loc_ffffffff8f634f04();
+                            }
+                    }
+            }
+            else {
+                    asm{ ldrd       r0, r1, [sp, #0x38 + var_28] };
+                    asm{ ldrd       r2, r3, [sp, #0x38 + var_30] };
+                    asm{ ldrd       r4, r5, [r6, #0x8] };
+                    r2 = r2 + r0;
+                    if (r3 + r1 + CARRY(FLAGS) == r5) {
+                            CMP(r2, r4);
+                    }
+                    r0 = loc_ffffffff8f634f04();
+            }
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

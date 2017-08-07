@@ -1,0 +1,85 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    if (loc_ffffffff8f61caf4(0x8f6822ac, 0x8f6c02ca, 0x13, r3, arg0, stack[2043], arg2, r4, 0x8f7112f4, lr) != 0x0) {
+            r4 = 0x0;
+            loc_ffffffff8f656968(0x1, "IMEI/MEID: %s\n", 0x8f6c02ca);
+    }
+    else {
+            loc_ffffffff8f64b2c0(0x8f6c02ca, "000000000000000", 0x13);
+            r0 = loc_ffffffff8f61c9d8(0x8f6822ac, 0x8f6c02ca);
+            COND = r4 != 0x0;
+            if (COND) {
+                    r4 = 0x1;
+            }
+            if (!CPU_FLAGS & NE) {
+                    loc_ffffffff8f656968(0x1, "Failed to update default IMEI\n");
+            }
+    }
+    if (loc_ffffffff8f61caf4(0x8f6822ef, 0x8f6c02aa, 0x10) != 0x0) {
+            loc_ffffffff8f656968(0x1, "SKU: %s\n", 0x8f6c02aa);
+    }
+    else {
+            loc_ffffffff8f64b2c0(0x8f6c02aa, "000000000000000", 0x10);
+            if (loc_ffffffff8f61c9d8(0x8f6822ef, 0x8f6c02aa) != 0x0) {
+                    r4 = 0x1;
+            }
+            if (!CPU_FLAGS & NE) {
+                    loc_ffffffff8f656968(0x1, "Failed to update default SKU\n");
+            }
+    }
+    if (loc_ffffffff8f61caf4(0x8f69b92e, 0x8f6c02ba, 0x10) == 0x0) goto loc_8f61d528;
+
+loc_8f61d514:
+    r0 = loc_ffffffff8f656968(0x1, "DATE: %s\n", 0x8f6c02ba);
+    goto loc_8f61d56c;
+
+loc_8f61d56c:
+    if (r4 != 0x0) {
+            r0 = loc_ffffffff8f679ff0(0x0);
+            if (r0 != 0x0) {
+                    if (stack[2043] == *0x8f7112f4) {
+                            r0 = loc_ffffffff8f656968(0x1, "Failed to flash barcodes back\n");
+                    }
+                    else {
+                            r0 = loc_ffffffff8f648514();
+                    }
+            }
+            else {
+                    if (stack[2043] != *0x8f7112f4) {
+                            r0 = loc_ffffffff8f648514();
+                    }
+            }
+    }
+    else {
+            if (stack[2043] != *0x8f7112f4) {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    return r0;
+
+loc_8f61d528:
+    loc_ffffffff8f64b2c0(0x8f6c02ba, "01-01-1970", 0x10);
+    if (loc_ffffffff8f61c9d8(0x8f69b92e, 0x8f6c02ba) == 0x0) goto loc_8f61d560;
+
+loc_8f61d54c:
+    r0 = loc_ffffffff8f679ff0(0x0);
+    if (r0 != 0x0) {
+            if (stack[2043] == *0x8f7112f4) {
+                    r0 = loc_ffffffff8f656968(0x1, "Failed to flash barcodes back\n");
+            }
+            else {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (stack[2043] != *0x8f7112f4) {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    return r0;
+
+loc_8f61d560:
+    r0 = loc_ffffffff8f656968(0x1, "Failed to update default DATE\n");
+    goto loc_8f61d56c;
+

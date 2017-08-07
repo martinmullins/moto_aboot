@@ -1,0 +1,36 @@
+    stack[2040] = r4;
+    stack[2044] = r8;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = arg1;
+    r3 = *0x8f7112f4;
+    r8 = arg0 + r4 * 0x4;
+    stack[2038] = r3;
+    loc_ffffffff8f667304(stack[2049], 0x0, arg1 + arg3 << (arg1 + arg3) * 0x4, r3, arg0, stack[2038], arg2, stack[2040], r5, r6, r7, stack[2044], r10, r11, lr);
+    r3 = arg3 - 0x1;
+    r5 = arg2 + arg3 * 0x4;
+    r1 = stack[2049] + ((arg3 - 0xc0000001) + r4) * 0x4;
+    while (r3 >= 0x0) {
+            r12 = 0x0;
+            r6 = r4 - 0x1;
+            r7 = r8;
+            r2 = r12;
+            while (r6 >= 0x0) {
+                    r6 = r6 - 0x1;
+                    r7 = r7 + 0xfffffffffffffffc;
+                    r2 = r2 + *r7 * *(r5 + 0xfffffffffffffffc);
+                    r2 = r2 + *(r1 + r12);
+                    r10 = zero_extend_32(r2);
+                    r2 = r2 >> r2 / 0x10000;
+                    *(r1 + r12) = r10;
+                    r12 = r12 - 0x4;
+            }
+            *(r1 + 0x8f7112f4) = r2;
+            r3 = r3 - 0x1;
+            r1 = r1 - 0x4;
+            r5 = r5 - 0x4;
+    }
+    if (stack[2038] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

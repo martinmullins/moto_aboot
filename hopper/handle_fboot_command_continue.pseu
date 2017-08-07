@@ -1,0 +1,36 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2043] = r3;
+    loc_ffffffff8f656968(0x1, "continue rebooting\n", arg2, r3, arg0, stack[2043], arg2, 0x8f7112f4, r5, lr);
+    r0 = loc_ffffffff8f61e570();
+    COND = r5 == 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x5, "Command not allowed");
+            loc_ffffffff8f62192c(0x8f683451, "Command not allowed");
+            r0 = 0x3;
+    }
+    else {
+            loc_ffffffff8f621534(0x8f6833d5, "Booting normally");
+            loc_ffffffff8f60c558(0x64);
+            loc_ffffffff8f6061e4();
+            loc_ffffffff8f646e70();
+            (*(0x8f6ac374 + 0xc))();
+            loc_ffffffff8f634c0c();
+            loc_ffffffff8f63f924(0x64);
+            loc_ffffffff8f634164();
+            loc_ffffffff8f61e388(r5);
+            r3 = *0x8f6ac0f0;
+            *0x8f6ac0f0 = r3 + 0x1;
+            if (r3 == 0x0) {
+                    loc_ffffffff8f619448();
+            }
+            loc_ffffffff8f650068();
+            loc_ffffffff8f601a7c();
+            loc_ffffffff8f60dd74(0x77665500);
+            r0 = 0x1;
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

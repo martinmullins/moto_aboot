@@ -1,0 +1,41 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x2c;
+    r4 = arg0;
+    loc_ffffffff8f64b418(sp + 0x4, 0x8f684a2d, 0x1f, 0x0, stack[2034]);
+    r0 = loc_ffffffff8f64b5d8(sp + 0x4, 0x3a);
+    r0 = loc_ffffffff8f6333d4();
+    if (r0 == 0x0) {
+            loc_ffffffff8f64b21c(sp + 0x4, 0x8f686ac4, 0x1f);
+            loc_ffffffff8f64b21c(sp + 0x4, 0x8f67c04d, 0x1f);
+            r0 = loc_ffffffff8f64b5d8(sp + 0x4, 0x3a);
+            r0 = loc_ffffffff8f6333d4();
+    }
+    if (r0 != 0xff) goto loc_8f633580;
+
+loc_8f633568:
+    r0 = loc_ffffffff8f633308();
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error: not a string type: %s\n", r0);
+    goto loc_8f6335a4;
+
+loc_8f6335a4:
+    r0 = 0x0;
+    goto loc_8f6335c0;
+
+loc_8f6335c0:
+    if (0x0 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f633580:
+    r0 = loc_ffffffff8f64b57c(r4, 0x400);
+    r3 = r0;
+    if (r0 != 0x400) goto loc_8f6335ac;
+
+loc_8f633598:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Error: string too long\n");
+    goto loc_8f6335a4;
+
+loc_8f6335ac:
+    r0 = loc_ffffffff8f67961c(0x0, sp + 0x4, r4, r3 + 0x1);
+    goto loc_8f6335c0;
+

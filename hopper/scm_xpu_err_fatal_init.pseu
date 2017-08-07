@@ -1,0 +1,34 @@
+    r11 = (sp - 0x4 - 0x4) + 0x4;
+    *(r11 + 0xfffffffffffffff8) = *0x8f7112f4;
+    *(r11 + 0xffffffffffffffa0) = 0x0;
+    *(r11 + 0xffffffffffffff9c) = 0x0;
+    loc_ffffffff8f64adc8(r11 - 0x48, 0x0, 0x40, 0x40, stack[2020], stack[2021]);
+    *(r11 - 0x54) = 0x0;
+    *((r11 - 0x54) + 0x4) = 0x0;
+    *((r11 - 0x54) + 0x8) = 0x0;
+    if (zero_extend_32(*0x8f6b8c80 ^ 0x1) != 0x0) {
+            *(r11 + 0xffffffffffffffa4) = 0x0;
+            *(r11 + 0xffffffffffffffa8) = 0x0;
+            *(r11 + 0xffffffffffffffa0) = loc_ffffffff8f6166bc(0xc, 0xe, r11 - 0x5c, 0x8, r11 - 0x64, 0x4);
+    }
+    else {
+            *(r11 + 0xffffffffffffffb8) = 0x2000c0e;
+            *(r11 + 0xffffffffffffffbc) = 0x2;
+            *(r11 + 0xffffffffffffffc0) = 0x0;
+            *(r11 + 0xffffffffffffffc4) = 0x0;
+            *(r11 + 0xffffffffffffffa0) = loc_ffffffff8f6168f8(r11 - 0x48, r11 - 0x54, r11 - 0x48, r11 - 0x54);
+            *(r11 + 0xffffffffffffff9c) = *(r11 + 0xffffffffffffffac);
+    }
+    if (*(r11 + 0xffffffffffffffa0) != 0x0) {
+            r3 = *(r11 + 0xffffffffffffff9c);
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to set XPU violations as fatal errors: %u\n", r3, r3);
+    }
+    else {
+            loc_ffffffff8f656968(0x1, "Configured XPU violations to be fatal errors\n");
+    }
+    r0 = *(r11 + 0xffffffffffffffa0);
+    if (*(r11 + 0xfffffffffffffff8) != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

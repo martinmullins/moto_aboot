@@ -1,0 +1,63 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x88;
+    r6 = arg1;
+    r7 = arg0;
+    stack[2039] = *0x8f7112f4;
+    loc_ffffffff8f64adc8(sp + 0x8, 0x0, 0x7c, 0x20, stack[2006]);
+    r0 = loc_ffffffff8f64b000(r6, 0x2e);
+    COND = r5 != 0x0;
+    if (!COND) {
+            r8 = loc_ffffffff8f64b354(r6) + 0x21;
+            r0 = loc_ffffffff8f64aacc(r8);
+            COND = r4 != 0x0;
+            if (!COND) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "out of memory (%s)\n", "utag_set_cmdline_cb");
+            }
+            else {
+                    loc_ffffffff8f64b2c0();
+                    loc_ffffffff8f64b21c(r4, "/.cmdline", r8);
+                    loc_ffffffff8f656968(0x2, "%s: check [%s] exists and not empty\n", "utag_set_cmdline_cb", r4);
+                    if (loc_ffffffff8f6798a8(r7, r4) >= 0x1) {
+                            r0 = loc_ffffffff8f6550f8(r7, r4, sp + 0x5, 0x7f);
+                            COND = r8 != 0x0;
+                            if (!COND) {
+                                    r5 = r8;
+                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f685f93, r4);
+                            }
+                            else {
+                                    r0 = loc_ffffffff8f6798a8(r7, r6);
+                                    r8 = r0;
+                                    if (!CPU_FLAGS & B) {
+                                            r0 = loc_ffffffff8f64aacc();
+                                            COND = r5 == 0x0;
+                                            if ((!CPU_FLAGS & E) && (loc_ffffffff8f6550f8(r7, r6, r5, r8) != 0x0)) {
+                                                    loc_ffffffff8f64b21c(sp + 0x4, r6, 0x80);
+                                                    loc_ffffffff8f64b21c(sp + 0x4, 0x8f69c373, 0x80);
+                                                    loc_ffffffff8f64b21c(sp + 0x4, r5, 0x80);
+                                                    r0 = loc_ffffffff8f656968(0x1, "add [%s] to cmdline\n", sp + 0x4);
+                                                    r0 = *r0;
+                                                    loc_ffffffff8f64b21c(r0, sp + 0x4, *(r0 + 0x4));
+                                            }
+                                            else {
+                                                    loc_ffffffff8f656968();
+                                            }
+                                    }
+                                    else {
+                                            loc_ffffffff8f656968();
+                                    }
+                            }
+                    }
+                    else {
+                            loc_ffffffff8f656968(0x2, "%s: [%s] does not exist\n", "utag_set_cmdline_cb", r4);
+                    }
+                    loc_ffffffff8f64ab9c(r4);
+                    if (r5 != 0x0) {
+                            loc_ffffffff8f64ab9c(r5);
+                    }
+            }
+    }
+    r0 = 0x0;
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

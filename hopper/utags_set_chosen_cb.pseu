@@ -1,0 +1,67 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x90;
+    r7 = arg0;
+    r5 = arg1;
+    r3 = *0x8f7112f4;
+    stack[2039] = r3;
+    r0 = loc_ffffffff8f64b000(arg1, 0x2e, arg2, r3, stack[2004], stack[2005], stack[2006], stack[2007], stack[2008], stack[2009], stack[2010], stack[2011], stack[2012]);
+    COND = r4 != 0x0;
+    if (!COND) {
+            r8 = loc_ffffffff8f64b354(r5) + 0x21;
+            r0 = loc_ffffffff8f64aacc(r8);
+            COND = r6 != 0x0;
+            if (!COND) {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "out of memory (%s)\n", "utags_set_chosen_cb");
+            }
+            else {
+                    loc_ffffffff8f64b2c0();
+                    loc_ffffffff8f64b21c(r6, "/.chosen", r8);
+                    loc_ffffffff8f656968(0x2, "%s: check [%s] exists and not empty\n", "utags_set_chosen_cb", r6);
+                    if (loc_ffffffff8f6798a8(r7, r6) >= 0x1) {
+                            r0 = loc_ffffffff8f6550f8(r7, r6, sp + 0xc, 0x80);
+                            COND = r8 != 0x0;
+                            if (!COND) {
+                                    r4 = r8;
+                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, 0x8f685f93, r6);
+                            }
+                            else {
+                                    loc_ffffffff8f64b21c(sp + 0xc, r5, 0x80);
+                                    r0 = loc_ffffffff8f6798a8(r7, r5);
+                                    r8 = r0;
+                                    if (!CPU_FLAGS & B) {
+                                            r0 = loc_ffffffff8f64aacc();
+                                            COND = r4 == 0x0;
+                                            if ((!CPU_FLAGS & E) && (!CPU_FLAGS & E)) {
+                                                    r0 = loc_ffffffff8f64b354(r4);
+                                                    r0 = r0 + 0x1;
+                                                    asm{ ldm        sb, {r0, r1} };
+                                                    if (loc_ffffffff8f64cde0(r0) != 0x0) {
+                                                            loc_ffffffff8f656968();
+                                                    }
+                                                    else {
+                                                            loc_ffffffff8f656968();
+                                                    }
+                                            }
+                                            else {
+                                                    loc_ffffffff8f656968();
+                                            }
+                                    }
+                                    else {
+                                            loc_ffffffff8f656968();
+                                    }
+                            }
+                    }
+                    else {
+                            loc_ffffffff8f656968();
+                    }
+                    loc_ffffffff8f64ab9c(r6);
+                    if (r4 != 0x0) {
+                            loc_ffffffff8f64ab9c(r4);
+                    }
+            }
+    }
+    r0 = 0x0;
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

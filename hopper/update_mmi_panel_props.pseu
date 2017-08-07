@@ -1,0 +1,24 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = arg0;
+    r4 = arg1;
+    stack[2041] = *0x8f7112f4;
+    if (*(arg1 + 0x248) != 0x0) {
+            if (loc_ffffffff8f612f5c() != -0x1) {
+                    r0 = loc_ffffffff8f615320(r5, *(0x8f6ac0c0 + 0xc), *(r4 + 0x60), 0x8f6ac0c0);
+                    COND = r6 < 0x0;
+                    if (!COND) {
+                            loc_ffffffff8f656968(0x1, "%s: modifying the dsi mipi freq info\n", "update_mmi_panel_props");
+                            if (loc_ffffffff8f613764(r5, r6, "qcom,mdss-dsi-v-pulse-width", *(r4 + 0x48)) + loc_ffffffff8f613764(r5, r6, "qcom,mdss-dsi-v-back-porch", *(r4 + 0x44)) + loc_ffffffff8f613764(r5, r6, "qcom,mdss-dsi-v-front-porch", *(r4 + 0x40)) + loc_ffffffff8f613764(r5, r6, "qcom,mdss-dsi-h-pulse-width", *(r4 + 0x3c)) + loc_ffffffff8f613764(r5, r6, "qcom,mdss-dsi-h-back-porch", *(r4 + 0x38)) + loc_ffffffff8f613764(r5, r6, "qcom,mdss-dsi-h-front-porch", *(r4 + 0x34)) + loc_ffffffff8f64cde0(r5, r6, 0x8f6802b1, r4 + 0x4e, 0xc) + loc_ffffffff8f613764(r5, r6, "qcom,mdss-dsi-panel-clockrate", *(r4 + 0x30)) + loc_ffffffff8f613764(r5, r6, 0x8f680262, *(r4 + 0x4c)) + loc_ffffffff8f613764(r5, r6, 0x8f68027a, *(r4 + 0x4d)) != 0x0) {
+                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to set node\n");
+                            }
+                    }
+                    else {
+                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to find node %s\n", *(r4 + 0x60));
+                    }
+            }
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

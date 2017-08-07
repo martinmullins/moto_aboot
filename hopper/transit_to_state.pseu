@@ -1,0 +1,48 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r10 = arg3;
+    r7 = arg2;
+    r4 = r0;
+    s0 = arg1;
+    stack[2040] = *0x8f7112f4;
+    r6 = 0x8f6b000c + r0 * 0x8;
+    r2 = *(r6 + 0x4);
+    if (r2 == 0x0) {
+            loc_ffffffff8f656968(r2, "Not allowed state transition to %d\n", r4);
+            r0 = 0xc;
+    }
+    else {
+            r2 = *(0x8f6b000c + r0 * 0x8);
+            if (r2 == 0x0) {
+                    r0 = loc_ffffffff8f6750a4();
+            }
+            else {
+                    r0 = (r2)();
+            }
+            r5 = r0;
+            if (r0 != 0x0) {
+                    loc_ffffffff8f656968(0x0, "Failed to pass validation to new state %d\n", r4);
+                    r0 = r5;
+            }
+            else {
+                    if (r7 != 0x0) {
+                            r0 = (r7)(r10);
+                            COND = r7 == 0x0;
+                            if (!COND) {
+                                    loc_ffffffff8f656968(r5, "Failed to pass user validator to state %d\n", r4);
+                                    r0 = r7;
+                            }
+                            else {
+                                    r0 = (*(r6 + 0x4))(s0);
+                            }
+                    }
+                    else {
+                            r0 = (*(r6 + 0x4))(s0);
+                    }
+            }
+    }
+    if (stack[2040] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,56 @@
+    r0 = arg0;
+    r5 = *0x8f710e74;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r8 = r0;
+    r4 = r2;
+    r10 = stack[2048];
+    stack[2037] = *r0;
+    if (*0x8f710e74 != 0x0) goto loc_8f6775e0;
+
+loc_8f6775d0:
+    loc_ffffffff8f656968(*0x8f710e74, "SP not initialized\n");
+    goto loc_8f677670;
+
+loc_8f677670:
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f677674;
+
+loc_8f677674:
+    if (stack[2037] != *r0) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f6775e0:
+    if (CPU_FLAGS & E) goto loc_8f67766c;
+
+loc_8f6775f0:
+    r0 = loc_ffffffff8f676a08();
+    r6 = r0;
+    if (CPU_FLAGS & E) goto loc_8f67766c;
+
+loc_8f677608:
+    COND = r3 != 0x0;
+    if (COND) goto loc_8f677618;
+
+loc_8f677610:
+    r0 = 0x0;
+    goto loc_8f677674;
+
+loc_8f677618:
+    r6 = 0x8f710c48 + r6 * 0x20;
+    asm{ ldrd       r6, r7, [fp, #0x10] };
+    if (r5 == r7) {
+            CMP(r4, r6);
+    }
+    if (!CPU_FLAGS & B) {
+            loc_ffffffff8f656968(0x0, "read data exceeds the saved data\n");
+            asm{ ldrd       r4, r5, [fp, #0x10] };
+    }
+    asm{ ldrd       r0, r1, [fp, #0x18] };
+    if (loc_ffffffff8f6507a4() == 0x0) goto loc_8f677610;
+
+loc_8f67766c:
+    loc_ffffffff8f656968();
+    goto loc_8f677670;
+

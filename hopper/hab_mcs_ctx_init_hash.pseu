@@ -1,0 +1,88 @@
+    r0 = arg0;
+    COND = r6 == 0x0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x34;
+    r5 = r0;
+    stack[2037] = *0x8f7112f4;
+    if (!COND) {
+            r4 = r0 - 0xd;
+            if (r4 <= 0x3) {
+                    r4 = zero_extend_32(r4);
+                    loc_ffffffff8f64adc8(r6, 0x0, 0xd8);
+                    *r6 = r5;
+                    r7 = *(0x8f6a6c1c + r4);
+                    r12 = *(0x8f6a6c20 + r4 * 0x4);
+                    r3 = *(0x8f6a6b09 + r4);
+                    if (r3 != 0x1) {
+                            r7 = r7 & 0xfc;
+                    }
+                    if (CPU_FLAGS & NE) {
+                            r3 = r6 + 0x8c;
+                    }
+                    if (CPU_FLAGS & NE) {
+                            r7 = r12 + r7;
+                    }
+                    if (!CPU_FLAGS & NE) {
+                            r7 = r7 >> r7 / 0x8;
+                            r1 = 0x0;
+                            do {
+                                    r12 = r12 + 0x8;
+                                    if (r1 == r7) {
+                                        break;
+                                    }
+                                    r8 = 0x0;
+                                    r3 = 0x0;
+                                    r1 = r1 + 0x1;
+                                    s0 = s0 << *(r12 + 0xfffffffffffffff8) * 0x1000000;
+                                    r4 = r4 << *(r12 + 0xfffffffffffffff9) * 0x10000;
+                                    asm{ ldrd       r4, r5, [sp, #0x58 + var_48] };
+                                    r2 = *(r12 + 0xffffffffffffffff);
+                                    r5 = r5 | s0;
+                                    r2 = r2 | r4 | r8;
+                                    r4 = *(r12 + 0xfffffffffffffffa);
+                                    r3 = r3 | r5;
+                                    r10 = r10 << r4 * 0x100;
+                                    asm{ ldrd       r4, r5, [sp, #0x58 + var_40] };
+                                    r3 = r3 | r5;
+                                    r5 = *(r12 + 0xfffffffffffffffb);
+                                    r2 = r2 | r4;
+                                    asm{ ldrd       r4, r5, [sp, #0x58 + var_38] };
+                                    r2 = r2 | r4;
+                                    r4 = *(r12 + 0xfffffffffffffffc);
+                                    r3 = r3 | r5;
+                                    r10 = r10 << r4 * 0x1000000;
+                                    asm{ ldrd       r4, r5, [sp, #0x58 + var_58] };
+                                    r2 = r2 | r4;
+                                    r4 = *(r12 + 0xfffffffffffffffd);
+                                    r3 = r3 | r5;
+                                    r10 = r10 << r4 * 0x10000;
+                                    asm{ ldrd       r4, r5, [sp, #0x58 + var_50] };
+                                    r2 = r2 | r4;
+                                    r4 = *(r12 + 0xfffffffffffffffe);
+                                    r10 = r10 << r4 * 0x100;
+                                    asm{ strd       r2, r3, [r0, #0x8]! };
+                            } while (true);
+                    }
+                    else {
+                            while (r12 != r7) {
+                                    r2 = *(r12 + 0x1);
+                                    r12 = r12 + 0x4;
+                                    r3 = r3 + 0x4;
+                                    *r3 = r2 << r2 * 0x10000 | *(r12 + 0xfffffffffffffffc) * 0x1000000 | *(r12 + 0xffffffffffffffff) | *(r12 + 0xfffffffffffffffe) * 0x100;
+                            }
+                    }
+                    r0 = 0x0;
+                    *(r6 + 0x8) = r0;
+                    asm{ strd       r2, r3, [r6, #0xd0] };
+            }
+            else {
+                    r0 = 0x1;
+            }
+    }
+    else {
+            r0 = 0x1;
+    }
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

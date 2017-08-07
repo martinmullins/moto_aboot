@@ -1,0 +1,12 @@
+    r2 = arg2;
+    r1 = arg1;
+    r0 = loc_ffffffff8fa7901e(arg0, r1, r2);
+    asm{ vrhadd.u16 d14, d14, d31 };
+    asm{ mrc        p15, #0x0, apsr_nzcv, c9, c14, #0x0 };
+    r0 = r0 + 0x4;
+    r0 = 0x2c;
+    r0 = r2 >> 0x1c;
+    asm{ cdp        p0, #0x1, c0, c1, c4, #0x0 };
+    r0 = loc_ffffffff8f61a8f8();
+    return r0;
+

@@ -1,0 +1,148 @@
+    r3 = arg3;
+    r1 = arg1;
+    r5 = arg2;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x24;
+    r4 = arg0;
+    r7 = r1;
+    r8 = stack[2049];
+    stack[2037] = *arg0;
+    if (*0x8f6afe0c != 0x0) goto loc_8f64ee3c;
+
+loc_8f64ec4c:
+    r6 = *0x8f6e0c38;
+    if (r6 == 0x0) goto loc_8f64ee3c;
+
+loc_8f64ec5c:
+    r2 = *(r6 + 0x14);
+    if (r5 > r2) goto loc_8f64ec74;
+
+loc_8f64ec68:
+    r11 = *(r6 + 0x10);
+    if (r1 < r11) goto .l18;
+
+loc_8f64ec74:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Image (%d x %d) is too large for screen\n", r7, r5);
+    goto loc_8f64ee3c;
+
+loc_8f64ee3c:
+    r0 = 0x0;
+    goto loc_8f64ee28;
+
+loc_8f64ee28:
+    if (stack[2037] != *r0) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+.l18:
+    if (CPU_FLAGS & A) goto loc_8f64ed28;
+
+loc_8f64eca4:
+    r12 = *0x8f6e0c40;
+    if (r12 != 0x0) goto loc_8f64eddc;
+
+loc_8f64ecb4:
+    r3 = r3;
+    r12 = r12;
+    if (loc_ffffffff8f64af40() != 0x0) goto loc_8f64ed30;
+
+loc_8f64ecd8:
+    r1 = *(r4 + 0xb);
+    r5 = *(r4 + 0xa);
+    r2 = *(r4 + 0x9);
+    r7 = *(r4 + 0x8);
+    r5 = r1 | r5 * 0x100;
+    COND = r5 != 0x0;
+    if (COND) {
+            r1 = 0x0;
+    }
+    if (CPU_FLAGS & E) {
+            r1 = 0x1;
+    }
+    r7 = r2 | r7 * 0x100;
+    COND = r7 != 0x0;
+    if (COND) {
+            r2 = r1;
+    }
+    if (CPU_FLAGS & E) {
+            r2 = r1 | 0x1;
+    }
+    if (r2 != 0x0) goto loc_8f64ee3c;
+
+loc_8f64ed08:
+    r2 = *(r6 + 0x1c);
+    if (r2 == 0x3) {
+            r4 = r4 + 0xc;
+    }
+    if (CPU_FLAGS & E) {
+            r2 = 0x1;
+    }
+    if (CPU_FLAGS & E) goto loc_8f64ed34;
+
+loc_8f64ed28:
+    loc_ffffffff8f656968();
+    goto loc_8f64ee3c;
+
+loc_8f64ed34:
+    r12 = *(r6 + 0x1c);
+    if (r2 == 0x0) goto loc_8f64ed6c;
+
+loc_8f64ed40:
+    if (loc_ffffffff8f64d664(r4, r7, r5, 0x0, r8, 0x0, 0x0) != 0x0) {
+            loc_ffffffff8f656968(0x2, "flush surface...\n");
+            r0 = *0x8f6e0c38;
+            loc_ffffffff8f64942c(r0);
+            loc_ffffffff8f656968(0x2, "flush surface end\n");
+            if (*0x8f6e0c3c != 0x0) {
+                    loc_ffffffff8f61017c();
+            }
+            loc_ffffffff8f64d5d8();
+            r0 = 0x1;
+    }
+    else {
+            r0 = 0x0;
+    }
+    goto loc_8f64ee28;
+
+loc_8f64ed6c:
+    if (r3 != 0x0) {
+            r11 = r11 * r12;
+            r3 = *r6;
+            r7 = r12 * r7;
+            r6 = r2;
+            r8 = r3 + r11 * (r5 - 0x1);
+            r3 = r7 + 0x3 & !0x3;
+            while (r6 != r5) {
+                    loc_ffffffff8f64ac90(r8, r4, r7);
+                    r3 = r3;
+                    r8 = r8 - r11;
+                    r6 = r6 + 0x1;
+                    r4 = r4 + r3;
+            }
+    }
+    else {
+            r0 = *r6;
+            loc_ffffffff8f64ac90(r0, r4, r12 * r5 * r7);
+    }
+    goto loc_8f64edec;
+
+loc_8f64edec:
+    loc_ffffffff8f656968(0x2, "flush surface...\n");
+    r0 = *0x8f6e0c38;
+    loc_ffffffff8f64942c(r0);
+    loc_ffffffff8f656968(0x2, "flush surface end\n");
+    if (*0x8f6e0c3c != 0x0) {
+            loc_ffffffff8f61017c();
+    }
+    loc_ffffffff8f64d5d8();
+    r0 = 0x1;
+    goto loc_8f64ee28;
+
+loc_8f64ed30:
+    r2 = r12;
+    goto loc_8f64ed34;
+
+loc_8f64eddc:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "%s: unsupported feature!\n", "draw_image_left_in_landscape");
+    goto loc_8f64edec;
+

@@ -1,0 +1,18 @@
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2045] = *0x8f7112f4;
+    r1 = 0x1fe;
+    if (r0 >= r1) {
+            loc_ffffffff8f656968(0x1, "Invalid keycode requested: %d\n");
+            r0 = 0x0 ^ 0xffffffff;
+    }
+    else {
+            r2 = r0 & 0x1f;
+            r0 = *(0x8f6e0af4 + (r1 >> r0 / 0x20) * 0x4);
+            r0 = r0 >> r2 & 0x1;
+    }
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

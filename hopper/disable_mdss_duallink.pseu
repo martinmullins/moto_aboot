@@ -1,0 +1,101 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r4 = arg0;
+    stack[2039] = *0x8f7112f4;
+    if (loc_ffffffff8f60d6f8(arg0) != 0xb2) goto loc_8f613b34;
+
+loc_8f6139a4:
+    r0 = loc_ffffffff8f612f5c(r4, 0x3);
+    if (r0 == -0x1) goto loc_8f613b38;
+
+loc_8f6139b8:
+    r6 = 0x2;
+    r7 = *(0x8f6ac0c0 + 0xc);
+    r5 = r7;
+    goto loc_8f6139c8;
+
+loc_8f6139c8:
+    r0 = loc_ffffffff8f64c6d8(r4, r5, "qcom,mdss-dsi-ctrl");
+    COND = r5 < 0x0;
+    if (CPU_FLAGS & L) goto loc_8f613a4c;
+
+loc_8f6139e8:
+    r0 = loc_ffffffff8f64c438(r4, r5, "cell-index", 0x0);
+    if (r0 == 0x0) goto loc_8f613a6c;
+
+loc_8f613a04:
+    r0 = *r0;
+    r0 = loc_ffffffff8f612f08(r0);
+    s0 = r0;
+    if (r0 != 0x1) goto loc_8f613a6c;
+
+loc_8f613a18:
+    r0 = loc_ffffffff8f64b354("disabled");
+    r0 = loc_ffffffff8f64cde0(r4, r5, "status", "disabled", r0 + 0x1);
+    COND = r5 >= 0x0;
+    if (COND) goto loc_8f613a58;
+
+loc_8f613a4c:
+    loc_ffffffff8f656968();
+    r0 = r5;
+    goto loc_8f613b38;
+
+loc_8f613b38:
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f613a58:
+    loc_ffffffff8f656968(s0, "Disable mdss_dsi1\n");
+    goto loc_8f613a64;
+
+loc_8f613a64:
+    r5 = 0x0;
+    goto loc_8f613aa0;
+
+loc_8f613aa0:
+    r0 = loc_ffffffff8f64c6d8(r4, r7, "qcom,mdss-fb");
+    COND = r6 >= 0x0;
+    if (COND) goto loc_8f613a78;
+
+loc_8f613ab8:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "ERROR: Can't find compatible of qcom,mdss-fb\n");
+    r0 = r6;
+    goto loc_8f613b38;
+
+loc_8f613a78:
+    r0 = loc_ffffffff8f64c438(r4, r6, "cell-index", 0x0);
+    if (r0 != 0x0) goto loc_8f613acc;
+
+loc_8f613a94:
+    r5 = r5 + 0x1;
+    if (r5 == 0x3) goto loc_8f613b34;
+    goto loc_8f613aa0;
+
+loc_8f613b34:
+    r0 = 0x0;
+    goto loc_8f613b38;
+
+loc_8f613acc:
+    if (loc_ffffffff8f612f08(*r0) != 0x0) goto loc_8f613a94;
+
+loc_8f613adc:
+    if (loc_ffffffff8f64d0d0(r4, r6, "qcom,mdss-fb-split") == 0x0) {
+            loc_ffffffff8f656968(0x1, "Delete prop=qcom,mdss-fb-split, mdss-fb%d", r5);
+    }
+    r0 = loc_ffffffff8f64d0d0(r4, r6, "qcom,mdss-fb-rot-180");
+    COND = r4 != 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x1, "Delete prop=qcom,mdss-fb-rot-180, mdss-fb%d", r5);
+            r0 = r4;
+    }
+    else {
+            r0 = 0x0;
+    }
+    goto loc_8f613b38;
+
+loc_8f613a6c:
+    r6 = r6 - 0x1;
+    COND = r6 == 0x0;
+    if (COND) goto loc_8f613a64;
+

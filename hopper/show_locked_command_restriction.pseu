@@ -1,0 +1,22 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    loc_ffffffff8f62192c(0x8f683451, "Command restricted in locked mode!", arg2, r3, arg0, r3, r4, lr);
+    loc_ffffffff8f62192c(0x8f683451, "Please switch to verified or unlocked mode with commands:");
+    loc_ffffffff8f62192c(0x8f683451, 0x8f689068);
+    loc_ffffffff8f62192c(0x8f683451, 0x8f687a35);
+    r0 = loc_ffffffff8f62192c(0x8f683451, 0x8f689082);
+    if (r3 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            sp = sp + 0x8;
+            sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+            if (*0x8f7112f4 != *0x8f7112f4) {
+                    r0 = loc_ffffffff8f648514();
+            }
+            else {
+                    r0 = loc_ffffffff8f646d70(0x100, 0x0);
+            }
+    }
+    return r0;
+

@@ -1,0 +1,16 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x810 - 0xc;
+    r2 = *0x8f7112f4;
+    r6 = loc_ffffffff8f663dc4(arg0, arg2, r2);
+    r0 = loc_ffffffff8f663dc4(arg1, arg2);
+    r11 = arg2 - r0;
+    r5 = r0;
+    r8 = r0 + 0x1 >> (r0 + 0x1) / 0x2;
+    loc_ffffffff8f6673fc(arg0 + (arg2 - r6), sp + 0x14, r6, arg0);
+    loc_ffffffff8f6673fc(arg1 + r11, sp + 0x214, r5);
+    loc_ffffffff8f6676cc(sp + 0x14, r6 + 0x1 >> (r6 + 0x1) / 0x2, sp + 0x214, r8, sp + 0x414);
+    r0 = loc_ffffffff8f667964(sp + 0x414, r8 + (r6 + 0x1 >> (r6 + 0x1) / 0x2));
+    if (r2 != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

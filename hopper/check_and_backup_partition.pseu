@@ -1,0 +1,48 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x14;
+    r7 = arg0;
+    r6 = arg1;
+    s0 = arg2;
+    r3 = *0x8f7112f4;
+    r8 = 0x8f7112f4;
+    stack[2039] = r3;
+    r0 = loc_ffffffff8f6736c4(arg0, arg1, arg2, r3, stack[2036]);
+    COND = r5 == 0x0;
+    if (COND) goto loc_8f62e8d4;
+
+loc_8f62e82c:
+    if (loc_ffffffff8f6539b0() != -0x1) goto loc_8f62e864;
+
+loc_8f62e838:
+    if (stack[2039] == *0x8f7112f4) {
+            loc_ffffffff8f656968(0x1, "backup partition %s for %s not exists\n", r5, r7, stack[2048]);
+    }
+    else {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f62e864:
+    if (loc_ffffffff8f6764b0(r6) != 0x0) goto loc_8f62e8b0;
+
+loc_8f62e874:
+    loc_ffffffff8f656968(0x1, "flash backup partition %s for %s\n", r5, r7);
+    loc_ffffffff8f65385c(r5);
+    asm{ strd       r2, r3, [sp, #0x30 + var_30] };
+    loc_ffffffff8f67b0d0();
+    goto loc_8f62e8d4;
+
+loc_8f62e8d4:
+    if (stack[2039] != *r8) {
+            loc_ffffffff8f648514();
+    }
+    return;
+
+loc_8f62e8b0:
+    if (stack[2039] == *0x8f7112f4) {
+            loc_ffffffff8f656968(0x1, "backup not supported for SPARSE image\n");
+    }
+    else {
+            loc_ffffffff8f648514();
+    }
+    return;
+

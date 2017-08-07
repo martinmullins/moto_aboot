@@ -1,0 +1,35 @@
+    r2 = arg2;
+    r1 = arg1;
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2040] = *0x8f7112f4;
+    r3 = *0x8f710ed4;
+    if (!CPU_FLAGS & NE) {
+            do {
+                    r12 = r3;
+                    r4 = 0x8;
+                    do {
+                            r5 = 0xedb88320;
+                            asm{ sbfx       sb, ip, #0x0, #0x1 };
+                            r4 = r4 - 0x1;
+                            COND = r4 != 0x0;
+                            r12 = s0 & r5 ^ r12 / 0x2;
+                    } while (COND);
+                    *(0x8f710ed8 + r3 * 0x4) = r12;
+                    r3 = r3 + 0x1;
+            } while (r3 != 0x100);
+            *0x8f710ed4 = 0x1;
+    }
+    r2 = r1 + r2;
+    r0 = r0 ^ 0xffffffff;
+    while (r1 != r2) {
+            r4 = *r1;
+            r1 = r1 + 0x1;
+            r0 = *(0x8f710ed8 + (r4 ^ zero_extend_32(r0)) * 0x4) ^ r0 / 0x100;
+    }
+    r0 = r0 ^ 0xffffffff;
+    if (stack[2040] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

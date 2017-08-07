@@ -1,0 +1,40 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    r1 = *0x8f6ed814;
+    stack[2043] = r3;
+    *0x8f6ed834 = 0x1;
+    r1 = *0x8f6ed810 + r1;
+    do {
+            r4 = r1;
+            r3 = r1 - *0x8f6ed810;
+            r1 = r1 + 0x1;
+    } while (*r4 == 0x0);
+    r0 = 0x8f6ed834;
+    *(r0 + 0x4) = r4;
+    r1 = r3;
+    *0x8f6ed814 = r3;
+    while (r3 < *0x8f6ed818) {
+            r4 = *(*0x8f6ed810 + r3);
+            if (r4 != 0xa) {
+                    CMP(r4, 0x0);
+            }
+            if (!CPU_FLAGS & NE) {
+                break;
+            }
+            r3 = r3 + 0x1;
+    }
+    if (r3 == r1) {
+            r0 = 0x0 ^ 0xffffffff;
+    }
+    if (!CPU_FLAGS & E) {
+            r2 = *0x8f6ed810;
+            *(0x0 + 0x8) = r3 - r1;
+            r0 = 0x0;
+            *(r2 + r3) = r0;
+            *0x8f6ed814 = r3 + 0x1;
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

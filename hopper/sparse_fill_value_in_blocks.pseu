@@ -1,0 +1,68 @@
+    r8 = arg3;
+    r2 = arg2 * r8;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x1c;
+    r5 = 0x0;
+    r7 = arg1;
+    r6 = arg0;
+    s0 = arg4;
+    r11 = r5;
+    r4 = r2;
+    if (r5 == 0x0) {
+            CMP(r4, 0x8000000);
+    }
+    r10 = r2;
+    stack[2037] = *0x8f7112f4;
+    if (CPU_FLAGS & A) {
+            r10 = 0x8000000;
+    }
+    if (CPU_FLAGS & A) {
+            r11 = 0x0;
+    }
+    loc_ffffffff8f64ae60();
+    asm{ strd       r4, r5, [sp, #0x40 + var_40] };
+    loc_ffffffff8f656968(0x2, "Fill value(0x%x) to %d blocks: size=0x%llx\n", s0, r8);
+    r12 = 0x87000000;
+    goto loc_8f62148c;
+
+loc_8f62148c:
+    COND = r1 == 0x0;
+    if (COND) goto loc_8f621504;
+
+loc_8f621494:
+    if (r5 == r11) {
+            CMP(r4, r10);
+    }
+    r8 = r4;
+    s0 = r5;
+    stack[2032] = r12;
+    if (CPU_FLAGS & A) {
+            r8 = r10;
+    }
+    if (CPU_FLAGS & A) {
+            s0 = r11;
+    }
+    r12 = r12;
+    if (loc_ffffffff8f650ad0(r6, r7, r8, s0, stack[2032]) == 0x0) goto loc_8f6214f0;
+
+loc_8f6214d4:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Failed to fill value at 0x%llx\n", r6, r7);
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f621508;
+
+loc_8f621508:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f6214f0:
+    r6 = r6 + r8;
+    r7 = r7 + s0 + CARRY(FLAGS);
+    r4 = r4 - r8;
+    r5 = r5 - s0 + !CARRY(FLAGS);
+    goto loc_8f62148c;
+
+loc_8f621504:
+    r0 = 0x0;
+    goto loc_8f621508;
+

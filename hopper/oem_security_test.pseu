@@ -1,0 +1,31 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r2 = *0x8f7112f4;
+    r5 = *(arg1 + 0x4);
+    stack[2043] = r2;
+    r2 = *(arg1 + 0x8);
+    if (arg0 <= 0x2) goto loc_8f625344;
+
+loc_8f625334:
+    r4 = loc_ffffffff8f649d24(r2);
+    goto loc_8f62534c;
+
+loc_8f62534c:
+    r5 = loc_ffffffff8f649d24(r5);
+    loc_ffffffff8f62192c(0x8f683451, "Calling SecTest test %d option %d", r5, r4);
+    loc_ffffffff8f63742c(r5, r4);
+    goto loc_8f625378;
+
+loc_8f625378:
+    r0 = 0x1;
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f625344:
+    if (CPU_FLAGS & NE) goto loc_8f625378;
+
+loc_8f625348:
+    r4 = 0x0;
+    goto loc_8f62534c;
+

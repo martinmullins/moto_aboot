@@ -1,0 +1,12 @@
+    r2 = arg2;
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    if ((arg1 < *(r0 + 0x10)) && (r2 < *(r0 + 0x14))) {
+            (*(r0 + 0x30))();
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

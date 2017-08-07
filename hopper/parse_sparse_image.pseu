@@ -1,0 +1,97 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x2c;
+    r3 = *0x8f7112f4;
+    r7 = arg0;
+    stack[2037] = r3;
+    r0 = loc_ffffffff8f64aacc(0x34, arg1, arg2, r3, stack[2028]);
+    COND = r6 != 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Out of memory");
+            r0 = r6;
+    }
+    else {
+            *(r6 + 0x4) = r6;
+            r11 = 0x0;
+            *(r6 + 0x14) = 0x8f6760e8;
+            *r6 = r6;
+            *(r6 + 0x18) = 0x8f676120;
+            *(r6 + 0x1c) = 0x8f676158;
+            *(r6 + 0x20) = 0x8f6761bc;
+            *(r6 + 0x24) = 0x8f67622c;
+            *(r6 + 0x28) = 0x8f67629c;
+            *(r6 + 0x2c) = 0x8f676300;
+            *(r6 + 0x30) = 0x8f6763ac;
+            r3 = *(r7 + 0x8);
+            r8 = r7 + r3;
+            if (r3 > 0x1c) {
+                    r3 = r3 - 0x1c;
+            }
+            if (CPU_FLAGS & A) {
+                    r8 = r8 + r3;
+            }
+            loc_ffffffff8f656968();
+            loc_ffffffff8f656968(0x2, "magic: 0x%x\n", *r7);
+            loc_ffffffff8f656968(0x2, "major_version: 0x%x\n", *(r7 + 0x4));
+            loc_ffffffff8f656968(0x2, "minor_version: 0x%x\n", *(r7 + 0x6));
+            loc_ffffffff8f656968(0x2, "file_hdr_sz: %d\n", *(r7 + 0x8));
+            loc_ffffffff8f656968(0x2, "chunk_hdr_sz: %d\n", *(r7 + 0xa));
+            loc_ffffffff8f656968(0x2, "blk_sz: %d\n", *(r7 + 0xc));
+            loc_ffffffff8f656968(0x2, "total_blks: %d\n", *(r7 + 0x10));
+            loc_ffffffff8f656968(0x2, "total_chunks: %d\n", *(r7 + 0x14));
+            r3 = *(r7 + 0xc);
+            r2 = *(r7 + 0x10);
+            *(r6 + 0x8) = r3;
+            asm{ umull      r4, r5, r2, r3 };
+            *(r6 + 0xc) = r2;
+            asm{ strd       r4, r5, [sp, #0x50 + var_38] };
+            asm{ strd       r4, r5, [sp, #0x50 + var_50] };
+            r3 = *(r7 + 0x14);
+            if (r11 < r3) {
+                    loc_ffffffff8f656968(0x2, "=== Chunk Header ===\n");
+                    r10 = r8 + 0xc;
+                    loc_ffffffff8f656968(0x2, "chunk_type: 0x%x\n", *r8);
+                    loc_ffffffff8f656968(0x2, "chunk_data_sz: 0x%llx\n", *(r8 + 0x4));
+                    r2 = *(r8 + 0x8);
+                    loc_ffffffff8f656968(0x2, "total_size: 0x%x\n", r2);
+                    r12 = *(r7 + 0xa);
+                    asm{ umull      r4, r5, r1, r0 };
+                    if (r12 > 0xc) {
+                            r3 = r12 - 0xc;
+                    }
+                    asm{ strd       r4, r5, [sp, #0x50 + var_48] };
+                    asm{ ldrd       r4, r5, [sp, #0x50 + var_50] };
+                    asm{ umlal      r4, r5, r0, r1 };
+                    asm{ strd       r4, r5, [sp, #0x50 + var_40] };
+                    r5 = 0x0;
+                    asm{ ldrd       r2, r3, [sp, #0x50 + var_38] };
+                    if (r5 == r3) {
+                            CMP(0x0, r2);
+                    }
+                    if ((!CPU_FLAGS & A) && (*r8 - 0xca00 < 0xc4)) {
+                            loc_8f6766f8();
+                    }
+                    loc_ffffffff8f656968();
+                    loc_ffffffff8f676448(r6);
+                    loc_ffffffff8f64ab9c(r6);
+                    r0 = 0x0;
+            }
+            else {
+                    r0 = loc_ffffffff8f656968(0x1, "Wrote %d blocks, expected to write %d blocks\n", 0x0, *(r7 + 0x10));
+                    if (0x0 == *(r7 + 0x10)) {
+                            r0 = r6 + 0x14;
+                    }
+                    if (CPU_FLAGS & NE) {
+                            r0 = 0x0 ^ 0xffffffff;
+                    }
+                    if (CPU_FLAGS & NE) {
+                            loc_ffffffff8f656968();
+                            loc_ffffffff8f676448(r6);
+                            loc_ffffffff8f64ab9c(r6);
+                            r0 = 0x0;
+                    }
+            }
+    }
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

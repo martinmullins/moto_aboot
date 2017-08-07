@@ -1,0 +1,56 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r6 = arg0;
+    stack[2043] = *0x8f7112f4;
+    if (arg0 >= 0xac) {
+            loc_ffffffff8f6484ac(lr, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm8916/gpio.c", 0x102, "gpio < NR_GPIO_IRQS");
+    }
+    r4 = *(0x8f6b505c + 0x4);
+    goto loc_8f6033a4;
+
+loc_8f6033a4:
+    if (r4 == 0x8f6b505c) goto loc_8f60342c;
+
+loc_8f6033ac:
+    if (*(r4 + 0x8) != r6) goto loc_8f603424;
+
+loc_8f6033b8:
+    r3 = 0x8f6ac0f0;
+    r2 = *r3;
+    r6 = r3;
+    r2 = r2 + 0x1;
+    *r3 = r2;
+    if (r2 == 0x1) {
+            loc_ffffffff8f619448();
+    }
+    asm{ ldm        r4, {r2, r3} };
+    *r3 = r2;
+    *(*r4 + 0x4) = r3;
+    r2 = *r6;
+    *r4 = 0x0;
+    *(r4 + 0x4) = 0x0;
+    *r6 = r2 - 0x1;
+    if (r2 == 0x1) {
+            if (stack[2043] == *0x8f7112f4) {
+                    loc_ffffffff8f619438();
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (stack[2043] != *0x8f7112f4) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+
+loc_8f603424:
+    r4 = *(r4 + 0x4);
+    goto loc_8f6033a4;
+
+loc_8f60342c:
+    if (stack[2043] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

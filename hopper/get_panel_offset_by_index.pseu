@@ -1,0 +1,21 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x18;
+    r4 = arg0;
+    stack[2043] = *0x8f7112f4;
+    if (arg0 == -0x1) {
+            loc_ffffffff8f656968();
+            r0 = r4;
+    }
+    else {
+            loc_ffffffff8f64a9f0(sp + 0x4, 0x10, "panel@%d");
+            r0 = loc_ffffffff8f64c090(0x8f68ac00, r4, sp + 0x4);
+            r5 = r0;
+            if (r0 == -0x1) {
+                    loc_ffffffff8f656968();
+            }
+            r0 = r5;
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

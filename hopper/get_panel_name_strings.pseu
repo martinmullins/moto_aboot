@@ -1,0 +1,73 @@
+    stack[2040] = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    stack[2041] = r3;
+    r0 = loc_ffffffff8f632f34("panels", arg1, arg2, r3, stack[2040], stack[2041], arg2, r4, r5, r6, 0x8f7112f4, lr);
+    COND = r6 >= 0x0;
+    if (!COND) {
+            loc_ffffffff8f656968(0x1, "Error: DT settings for \"%s\" missing or incomplete\n", "panels");
+            r0 = 0x0;
+    }
+    else {
+            r1 = r6;
+            r2 = sp;
+            r0 = loc_ffffffff8f6309d0("panel_count", r1, r2);
+            COND = r4 != 0x0;
+            if (!COND) {
+                    if (stack[2040] > 0x0) {
+                            r0 = loc_ffffffff8f6781b4();
+                            COND = r5 != 0x0;
+                            if (COND) {
+                                    r2 = stack[2040];
+                            }
+                            if (CPU_FLAGS & NE) {
+                                    r3 = r4;
+                            }
+                            if (CPU_FLAGS & NE) {
+                                    r1 = r4;
+                            }
+                            if (!CPU_FLAGS & NE) {
+                                    loc_ffffffff8f656968();
+                            }
+                            else {
+                                    do {
+                                            if (r3 < r2) {
+                                                    *(r5 + r3 * 0x4) = r1;
+                                            }
+                                            if (CPU_FLAGS & L) {
+                                                    r3 = r3 + 0x1;
+                                            }
+                                    } while (CPU_FLAGS & L);
+                                    for (r4 = 0x0; r4 < stack[2040]; r4 = r4 + 0x1) {
+                                            r0 = loc_ffffffff8f631c84(r6, r4);
+                                            if (!CPU_FLAGS & E) {
+                                                    r0 = loc_ffffffff8f630c30(0x8f684089);
+                                                    COND = r3 != 0x0;
+                                                    if (COND) {
+                                                            *(r5 + r4 * 0x4) = r3;
+                                                    }
+                                                    if (!CPU_FLAGS & NE) {
+                                                            loc_ffffffff8f656968();
+                                                    }
+                                            }
+                                            else {
+                                                    loc_ffffffff8f656968();
+                                            }
+                                    }
+                            }
+                            r0 = r5;
+                    }
+                    else {
+                            r0 = r4;
+                    }
+            }
+            else {
+                    loc_ffffffff8f656968(0x1, "Error: DT settings for \"%s\" missing or incomplete\n", "panels");
+                    r0 = 0x0;
+            }
+    }
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

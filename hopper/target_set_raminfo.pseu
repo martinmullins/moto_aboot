@@ -1,0 +1,67 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x20;
+    r5 = 0x8f7112f4;
+    r8 = r5;
+    stack[2041] = *r5;
+    r0 = loc_ffffffff8f619d7c(arg0, arg1);
+    COND = r4 != 0x0;
+    if (!COND) {
+            r2 = stack[2041];
+            if (r2 == *0x8f7112f4) {
+                    r0 = 0x8f711464;
+                    r1 = "Unknown";
+                    sp = sp + 0x20;
+                    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+                    r3 = *0x8f7112f4;
+                    loc_ffffffff8f64aa3c();
+                    if (r3 != *0x8f7112f4) {
+                            loc_ffffffff8f648514();
+                    }
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    else {
+            r3 = zero_extend_32(*r4);
+            if (CPU_FLAGS & B) {
+                    r5 = *(0x8f6817d4 + r3 * 0x4);
+            }
+            if (!CPU_FLAGS & B) {
+                    if (r3 != 0xfe) {
+                            r2 = "unknown";
+                            r5 = "Micron";
+                            if (r3 != 0xff) {
+                                    r5 = r2;
+                            }
+                    }
+                    else {
+                            r5 = "Numonyx";
+                    }
+            }
+            r2 = *(r4 + 0xc);
+            r3 = 0x8f681a84;
+            r0 = r2 & 0x3;
+            r7 = *(r3 + r0 * 0x4);
+            asm{ ubfx       r3, r2, #0x2, #0x4 };
+            if (r3 != 0xf) {
+                    r0 = 0x8f681a94;
+            }
+            if (CPU_FLAGS & E) {
+                    r6 = "reserved";
+            }
+            if (CPU_FLAGS & NE) {
+                    r6 = *(r0 + 0x8f681a84 * 0x4);
+            }
+            stack[2034] = *(r4 + 0x10);
+            loc_ffffffff8f656968(0x1, "RAM: %s, %s, %u MB, MR5:0x%02X, MR6:0x%02X, MR7:0x%02X, MR8:0x%02X\n", r5, r7, stack[2034], 0x40, *(r4 + 0x4), *(r4 + 0x8), r2);
+            r3 = *(r4 + 0x10);
+            r2 = "%uGB %s %s DIE=%s";
+            r1 = 0x40;
+            asm{ stm        sp, {r5, r7} };
+            loc_ffffffff8f64a9f0(0x8f711464, r1, r2, r3 >> r3 / 0x400, stack[2034]);
+            if (stack[2041] != *r8) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

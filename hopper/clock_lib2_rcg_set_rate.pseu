@@ -1,0 +1,43 @@
+    r1 = arg1;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r7 = arg0 - 0x20;
+    r8 = lr;
+    r4 = *(arg0 + 0xfffffffffffffff8);
+    r5 = arg0;
+    stack[2041] = *0x8f7112f4;
+    goto loc_8f60d11c;
+
+loc_8f60d11c:
+    r3 = *r4;
+    if (r3 == -0x2) goto loc_8f60d138;
+
+loc_8f60d128:
+    if (r3 == r1) goto loc_8f60d140;
+
+loc_8f60d130:
+    r4 = r4 + 0x18;
+    goto loc_8f60d11c;
+
+loc_8f60d140:
+    if (r4 != *(r5 + 0xfffffffffffffffc)) {
+            r0 = *(r4 + 0x4);
+            loc_ffffffff8f60cbe0(r0);
+            if (*(r5 + 0xfffffffffffffff4) == 0x0) {
+                    loc_ffffffff8f6484ac(r8, "ASSERT FAILED at (%s:%d): %s\n", "platform/msm_shared/clock_lib2.c", 0x88, "rclk->set_rate");
+            }
+            (*(r5 + 0xfffffffffffffff4))(r7, r4);
+            *(r5 + 0xfffffffffffffffc) = r4;
+    }
+    r0 = 0x0;
+    goto loc_8f60d194;
+
+loc_8f60d194:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f60d138:
+    r0 = 0x7 ^ 0xffffffff;
+    goto loc_8f60d194;
+

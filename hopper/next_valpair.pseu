@@ -1,0 +1,84 @@
+    r6 = arg2;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x1c;
+    COND = r5 == 0x0;
+    r10 = arg1;
+    stack[2035] = arg3;
+    r11 = arg4;
+    s0 = arg5;
+    stack[2037] = *0x8f7112f4;
+    if (COND) goto loc_8f654e60;
+
+loc_8f654d4c:
+    r4 = *r5;
+    if ((r4 == 0x0) || (*r4 == 0x0)) goto loc_8f654e60;
+
+loc_8f654d64:
+    r7 = loc_ffffffff8f64b354(r4);
+    if (s0 == 0x0) goto loc_8f654dec;
+
+loc_8f654d78:
+    r0 = loc_ffffffff8f64b354(s0);
+    r2 = r0;
+    if (CPU_FLAGS & LE) goto loc_8f654e08;
+
+loc_8f654d98:
+    if (*(r4 + r2) == r6) goto loc_8f654dc0;
+
+loc_8f654da4:
+    loc_ffffffff8f656968(0x2, "%s: delimiter [%c] not found after expected value1 [%s]", "next_valpair", r6, s0);
+    goto loc_8f654e60;
+
+loc_8f654e60:
+    r0 = 0x0 ^ 0xffffffff;
+    goto loc_8f654e64;
+
+loc_8f654e64:
+    if (stack[2037] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f654dc0:
+    if (loc_ffffffff8f64b470(r4, s0) == 0x0) goto loc_8f654dec;
+
+loc_8f654dd4:
+    loc_ffffffff8f656968(0x2, "%s: val1 does not match expected value [%s]", "next_valpair", s0);
+    goto loc_8f654e60;
+
+loc_8f654dec:
+    r0 = loc_ffffffff8f64b000(r4, r6);
+    COND = r6 != 0x0;
+    if (COND) goto loc_8f654e14;
+
+loc_8f654e08:
+    loc_ffffffff8f656968();
+    goto loc_8f654e60;
+
+loc_8f654e14:
+    r0 = loc_ffffffff8f64b000(r6 + 0x1, r11);
+    *r10 = r4;
+    *stack[2035] = r6 + 0x1;
+    r3 = 0x0;
+    *r6 = r3;
+    if (r0 != 0x0) {
+            r3 = 0x0;
+            *r0 = r3;
+            r0 = r0 + 0x1;
+    }
+    if (CPU_FLAGS & NE) {
+            *r5 = r0;
+    }
+    if (CPU_FLAGS & E) {
+            r3 = *r5;
+    }
+    if (CPU_FLAGS & NE) {
+            r0 = r3;
+    }
+    if (CPU_FLAGS & E) {
+            r7 = r3 + r7;
+    }
+    if (CPU_FLAGS & E) {
+            *r5 = r7;
+    }
+    goto loc_8f654e64;
+

@@ -1,0 +1,39 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r0 = *0x8f6e0b48;
+    stack[2043] = *0x8f7112f4;
+    if (r0 != 0x0) {
+            r4 = 0x0;
+            r0 = loc_ffffffff8f612d58();
+            COND = r2 < 0x0;
+            if (!COND) {
+                    r4 = zero_extend_32(stack[2043] & 0x2);
+                    if (r4 != 0x0) {
+                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Power-on Reset occurred\n");
+                            r0 = 0x2;
+                    }
+                    else {
+                            r0 = *0x8f6e0b48;
+                            r0 = loc_ffffffff8f612d58(r0, 0x36, 0x6, sp + 0x2);
+                            COND = r2 >= 0x0;
+                            if (!COND) {
+                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Read MAX17050 error %d\n");
+                                    r0 = r4;
+                            }
+                            else {
+                                    r2 = stack[2043] >> stack[2043] / 0x100;
+                                    stack[2043] = r2;
+                                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Battery Capacity : %d\n", r2);
+                                    r0 = stack[2043];
+                            }
+                    }
+            }
+            else {
+                    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Read MAX17050 error %d\n");
+                    r0 = r4;
+            }
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

@@ -1,0 +1,18 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = 0x8f6e09a4;
+    stack[2045] = *0x8f7112f4;
+    if (CPU_FLAGS & E) {
+            r3 = *(r3 + 0x8);
+    }
+    if ((!CPU_FLAGS & E) && (CPU_FLAGS & E)) {
+            r3 = *r3;
+    }
+    loc_ffffffff8f64a9f0();
+    if (stack[2045] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    else {
+            r0 = loc_ffffffff8f656968(0x1, "Kernel console menu item content: %s.\n", 0x8f6ac7b0);
+    }
+    return r0;
+

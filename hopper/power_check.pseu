@@ -1,0 +1,27 @@
+    stack[2046] = r5;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    r5 = 0x8f7112f4;
+    stack[2043] = r3;
+    if ((((loc_ffffffff8f646540(arg0, arg1, arg2, r3, arg0, stack[2043], arg2, 0x8f7112f4, stack[2046], lr) == 0x0) && (loc_ffffffff8f646664() == 0x0)) && (loc_ffffffff8f64661c() == 0x0)) && (loc_ffffffff8f64689c(0xde8) == 0x0)) {
+            loc_ffffffff8f656cb4();
+            loc_ffffffff8f6341bc();
+            loc_ffffffff8f639d98(0x3);
+            (*(0x8f6ac374 + 0x4))("logo_screen", 0x1);
+            loc_ffffffff8f61b944(0xbb8);
+            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Battery low, power down\n");
+            loc_ffffffff8f6500ec();
+            if (stack[2043] == *0x8f7112f4) {
+                    loc_ffffffff8f634528();
+            }
+            else {
+                    loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (stack[2043] != *r5) {
+                    loc_ffffffff8f648514();
+            }
+    }
+    return;
+

@@ -1,0 +1,108 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x20;
+    r5 = 0x8f7112f4;
+    r8 = r5;
+    stack[2041] = *r5;
+    r0 = loc_ffffffff8f64aacc(0x3c);
+    COND = r4 == 0x0;
+    if (COND) {
+            r5 = 0xff;
+    }
+    if (CPU_FLAGS & E) goto loc_8f671854;
+
+loc_8f67174c:
+    r0 = loc_ffffffff8f672a18();
+    COND = r5 == 0x0;
+    if (COND) goto loc_8f671768;
+
+loc_8f671758:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Erase token fail\n");
+    goto loc_8f671854;
+
+loc_8f671854:
+    r6 = 0x0;
+    goto loc_8f671858;
+
+loc_8f671858:
+    loc_ffffffff8f672d58("mot_sst_create_token: Getting PSV\n");
+    if (r6 != 0xff) goto loc_8f6718a8;
+
+loc_8f671868:
+    if (loc_ffffffff8f672d1c(sp + 0x14) == 0x0) goto loc_8f671884;
+
+loc_8f671878:
+    loc_ffffffff8f672d58("mot_sst_create_token: Unable to retrieve PSV\n");
+    goto loc_8f6718a8;
+
+loc_8f6718a8:
+    r6 = 0x0;
+    goto loc_8f6718ac;
+
+loc_8f6718ac:
+    loc_ffffffff8f672d58("mot_sst_create_token: Generate token code\n");
+    if (r6 == 0xff) {
+            r0 = loc_ffffffff8f672d94(sp + 0x14);
+            if (((r0 == 0x0) && (0x0 == 0x10)) && (loc_ffffffff8f672dd0(r4 + 0xa) == 0x0)) {
+                    loc_ffffffff8f672d58("mot_sst_create_token: token code generated!\n");
+                    r0 = loc_ffffffff8f6729b4(r4);
+                    COND = r5 == 0x0;
+                    if (!COND) {
+                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Store token fail\n");
+                    }
+            }
+    }
+    else {
+            loc_ffffffff8f672d58("mot_sst_create_token: Unable to generate token code\n");
+    }
+    loc_ffffffff8f656968(0x1, "create_token status: %d\n", r5);
+    if (r4 != 0x0) {
+            loc_ffffffff8f64ab9c(r4);
+    }
+    r0 = r5;
+    if (stack[2041] != *r8) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f671884:
+    if (0x0 != 0x2) goto loc_8f671878;
+
+loc_8f671890:
+    r0 = loc_ffffffff8f672cc8(r4 + 0x2a);
+    if (r0 == 0x0) {
+            r5 = r0;
+    }
+    if (CPU_FLAGS & E) goto loc_8f6718ac;
+    goto loc_8f671878;
+
+loc_8f671768:
+    r7 = r4 + 0xa;
+    r6 = r4 + 0x1a;
+    *(r4 + 0x3) = 0x54;
+    *(r4 + 0x4) = r5;
+    *(r4 + 0x2) = 0x4f;
+    *(r4 + 0x5) = r5;
+    *(r4 + 0x1) = 0x4b;
+    *(r4 + 0x6) = r5;
+    *r4 = 0x4e;
+    *(r4 + 0x7) = r5;
+    *(r4 + 0x9) = 0x2c;
+    *(r4 + 0x8) = r5;
+    loc_ffffffff8f64adc8(r7, 0xff, 0x10, 0x2c);
+    loc_ffffffff8f64adc8(r6, 0xff, 0x10);
+    loc_ffffffff8f64adc8(r4 + 0x2a, 0xff, 0x2);
+    loc_ffffffff8f64adc8(r4 + 0x2c, 0xff, 0x10);
+    loc_ffffffff8f672d58("mot_sst_create_token: Creating token\n");
+    if (((loc_ffffffff8f672c8c(sp + 0x14) != 0x0) || (0x0 != 0x10)) || (loc_ffffffff8f672c38(r7) != 0x0)) goto loc_8f671850;
+
+loc_8f671828:
+    loc_ffffffff8f672d58("mot_sst_create_token: Getting flash uid\n");
+    if (((loc_ffffffff8f672bfc(sp + 0x14) != 0x0) || (0x0 != 0x10)) || (loc_ffffffff8f672bb0(r6) != 0x0)) goto loc_8f671850;
+
+loc_8f67197c:
+    r6 = 0xff;
+    goto loc_8f671858;
+
+loc_8f671850:
+    loc_ffffffff8f672d58();
+    goto loc_8f671854;
+

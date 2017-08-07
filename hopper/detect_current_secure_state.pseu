@@ -1,0 +1,45 @@
+    stack[2046] = r6;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r4 = 0x8f7112f4;
+    r3 = *r4;
+    r6 = r4;
+    stack[2043] = r3;
+    if (loc_ffffffff8f673228(arg0, arg1, arg2, r3, arg0, arg1, arg2, stack[2043], 0x8f7112f4, r5, stack[2046], lr) == 0x0) {
+            r4 = 0x1;
+    }
+    if (!CPU_FLAGS & E) {
+            if (loc_ffffffff8f671e14() != 0xff) {
+                    r4 = 0x2;
+            }
+            if (!CPU_FLAGS & NE) {
+                    if (loc_ffffffff8f671ed0() != 0xff) {
+                            r4 = 0x4;
+                    }
+                    if (CPU_FLAGS & E) {
+                            r4 = 0x3;
+                    }
+            }
+    }
+    if (loc_ffffffff8f67759c("secure_state") == 0x0) {
+            r5 = stack[2043];
+    }
+    if (!CPU_FLAGS & E) {
+            loc_ffffffff8f656968(0x1, "no state got from SP\n");
+            r5 = 0x0;
+    }
+    loc_ffffffff8f656968(0x1, "Current state: fuse=%d, sp=%d\n", r4, r5);
+    if (r4 >= 0x4) {
+            *0x8f710a25 = r4;
+            r0 = loc_ffffffff8f677818("secure_state");
+    }
+    else {
+            if ((loc_ffffffff8f674b74() != 0x0) && (r5 == 0x0)) {
+                    CMP(r4, 0x3);
+            }
+            r0 = loc_ffffffff8f674774();
+    }
+    if (stack[2043] != *r6) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

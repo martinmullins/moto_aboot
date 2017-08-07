@@ -1,0 +1,35 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = arg0;
+    r7 = arg1;
+    r4 = "lm3697";
+    stack[2041] = *0x8f7112f4;
+    goto loc_8f63f988;
+
+loc_8f63f988:
+    if (r4 == 0x8f6b18bc) goto loc_8f63f9d4;
+
+loc_8f63f990:
+    if (loc_ffffffff8f64b470(r4, r5, 0xf) != 0x0) goto loc_8f63f9cc;
+
+loc_8f63f9a8:
+    r5 = loc_ffffffff8f64aacc(0x34);
+    loc_ffffffff8f64ac90();
+    *(r5 + 0x2c) = r7;
+    r0 = r5;
+    goto loc_8f63f9e8;
+
+loc_8f63f9e8:
+    if (stack[2041] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
+loc_8f63f9cc:
+    r4 = r4 + 0x34;
+    goto loc_8f63f988;
+
+loc_8f63f9d4:
+    loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Not able to find %s backlight driver!", r5);
+    r0 = 0x0;
+    goto loc_8f63f9e8;
+

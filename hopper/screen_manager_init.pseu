@@ -1,0 +1,29 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r3 = *0x8f7112f4;
+    *(0x8f6e08b0 + 0x4) = 0x8f6e08b0;
+    *0x8f6e08b0 = 0x8f6e08b0;
+    loc_ffffffff8f61ab4c(0x8f6e085c, 0x0, 0x1, 0x8f6e08b0, arg0, arg1, arg2, r3, r4, lr);
+    loc_ffffffff8f61ab4c(0x8f6e0894, 0x0, 0x1);
+    loc_ffffffff8f61af70(0x8f6e0878);
+    loc_ffffffff8f61c234(0x8f6e082c);
+    r0 = loc_ffffffff8f61b490("key_handler", 0x8f6383f0, 0x0, 0x10, 0x1000);
+    *0x8f6e0858 = r0;
+    r2 = r3;
+    if (r0 != 0x0) {
+            if (r2 == *0x8f7112f4) {
+                    r0 = loc_ffffffff8f61b6fc();
+            }
+            else {
+                    r0 = loc_ffffffff8f648514();
+            }
+    }
+    else {
+            if (r2 != *0x8f7112f4) {
+                    r0 = loc_ffffffff8f648514();
+            }
+            else {
+                    r0 = loc_ffffffff8f656968(0x1, "%s: key_handler thread_create fail\n", "screen_manager_init");
+            }
+    }
+    return r0;
+

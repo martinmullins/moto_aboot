@@ -1,0 +1,27 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    r5 = arg0;
+    r8 = arg1;
+    r4 = 0x0;
+    r2 = *0x8f7112f4;
+    stack[2041] = r2;
+    do {
+            r6 = sp + 0x4;
+            r2 = *(r5 + (SAR(r2, r4 / 0x4)) * 0x4);
+            *(r4 + r6) = r2 >> (r4 & 0x3) << (r4 & 0x3) * 0x8;
+            r4 = r4 + 0x1;
+    } while (r4 != 0x8);
+    r2 = *r5;
+    loc_ffffffff8f65a7c0(r5, 0x8f6a4218, (0x37 - (r2 >> r2 / 0x8) & 0x3f) + 0x1);
+    r1 = r6;
+    loc_ffffffff8f65a7c0(r5, r1, r4);
+    r3 = 0x0;
+    do {
+            r1 = *(r5 + ((SAR(r1, r3 / 0x4)) + 0x2) * 0x4);
+            *(r8 + r3) = r1 >> (r3 & 0x3) << (r3 & 0x3) * 0x8;
+            r3 = r3 + 0x1;
+    } while (r3 != 0x10);
+    if (stack[2041] != *0x8f7112f4) {
+            loc_ffffffff8f648514();
+    }
+    return;
+

@@ -1,0 +1,36 @@
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x54;
+    r5 = arg0;
+    r3 = *0x8f7112f4;
+    r7 = arg1;
+    stack[2039] = r3;
+    loc_ffffffff8f64adc8(sp + 0x8, 0x0, 0x40, r3, stack[2020]);
+    r0 = loc_ffffffff8f607a2c(r5, sp + 0x8);
+    COND = r4 != 0x0;
+    if (!CPU_FLAGS & NE) {
+            r0 = loc_ffffffff8f608ed4(r5, r7, sp + 0x4);
+            COND = r4 == 0x0;
+            if (!COND) {
+                    loc_ffffffff8f656968();
+            }
+            else {
+                    r3 = 0x2;
+                    asm{ ubfx       r3, r2, #0x9, #0x4 };
+                    if (r3 != 0x4) {
+                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Switch cmd failed. Card not in tran state %x\n");
+                            r4 = 0x1;
+                    }
+                    if ((stack[2021] & 0x80) != 0x0) {
+                            loc_ffffffff8f656968(0x0 ^ 0xffffffff, "Switch cmd failed. Switch Error.\n");
+                            r4 = 0x1;
+                    }
+            }
+    }
+    else {
+            loc_ffffffff8f656968();
+    }
+    r0 = r4;
+    if (stack[2039] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+

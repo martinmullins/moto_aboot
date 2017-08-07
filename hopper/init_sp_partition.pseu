@@ -1,0 +1,28 @@
+    r1 = arg1;
+    r0 = arg0;
+    sp = sp - 0x4 - 0x4 - 0x4 - 0x4 - 0x4 - 0x4;
+    stack[2043] = *0x8f7112f4;
+    asm{ ldrd       r0, r1, [r3] };
+    asm{ ldrd       r2, r3, [r3] };
+    r0 = loc_ffffffff8f650f94(r0, r1);
+    COND = r5 != 0x0;
+    if (!CPU_FLAGS & NE) {
+            loc_ffffffff8f64adc8(0x8f710c48, r5, 0x228);
+            loc_ffffffff8f64b21c(0x8f710c48, "MOTO SP", 0x8);
+            loc_ffffffff8f606ff4(0x8f710c50, 0xe);
+            *(0x8f710c48 + 0x18) = r5;
+            r0 = loc_ffffffff8f676b00();
+            if (r0 != 0x0) {
+                    loc_ffffffff8f656968();
+                    r0 = 0x0 ^ 0xffffffff;
+            }
+    }
+    else {
+            loc_ffffffff8f656968();
+            r0 = 0x0 ^ 0xffffffff;
+    }
+    if (stack[2043] != *0x8f7112f4) {
+            r0 = loc_ffffffff8f648514();
+    }
+    return r0;
+
